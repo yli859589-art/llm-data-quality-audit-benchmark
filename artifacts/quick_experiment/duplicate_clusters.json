@@ -1,0 +1,167 @@
+{
+  "exact_duplicate_clusters": [
+    {
+      "representative_index": 4,
+      "member_indices": [
+        6,
+        65
+      ]
+    },
+    {
+      "representative_index": 13,
+      "member_indices": [
+        25
+      ]
+    },
+    {
+      "representative_index": 18,
+      "member_indices": [
+        28
+      ]
+    },
+    {
+      "representative_index": 20,
+      "member_indices": [
+        30,
+        42,
+        50,
+        76
+      ]
+    },
+    {
+      "representative_index": 24,
+      "member_indices": [
+        35
+      ]
+    },
+    {
+      "representative_index": 22,
+      "member_indices": [
+        37
+      ]
+    },
+    {
+      "representative_index": 19,
+      "member_indices": [
+        41
+      ]
+    },
+    {
+      "representative_index": 39,
+      "member_indices": [
+        49
+      ]
+    },
+    {
+      "representative_index": 8,
+      "member_indices": [
+        52
+      ]
+    },
+    {
+      "representative_index": 16,
+      "member_indices": [
+        55
+      ]
+    },
+    {
+      "representative_index": 57,
+      "member_indices": [
+        63,
+        82
+      ]
+    },
+    {
+      "representative_index": 32,
+      "member_indices": [
+        66
+      ]
+    },
+    {
+      "representative_index": 7,
+      "member_indices": [
+        70
+      ]
+    },
+    {
+      "representative_index": 23,
+      "member_indices": [
+        73
+      ]
+    },
+    {
+      "representative_index": 12,
+      "member_indices": [
+        74
+      ]
+    },
+    {
+      "representative_index": 14,
+      "member_indices": [
+        78
+      ]
+    }
+  ],
+  "near_duplicate_clusters": [
+    {
+      "representative_index": 4,
+      "member_index": 21,
+      "jaccard_similarity": 1.0,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 26,
+      "member_index": 33,
+      "jaccard_similarity": 0.9905660377358491,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 34,
+      "member_index": 36,
+      "jaccard_similarity": 0.9882352941176471,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 4,
+      "member_index": 45,
+      "jaccard_similarity": 1.0,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 40,
+      "member_index": 52,
+      "jaccard_similarity": 0.9873417721518988,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 42,
+      "member_index": 55,
+      "jaccard_similarity": 0.9882352941176471,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 2,
+      "member_index": 57,
+      "jaccard_similarity": 0.9861111111111112,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 7,
+      "member_index": 58,
+      "jaccard_similarity": 0.9864864864864865,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 30,
+      "member_index": 62,
+      "jaccard_similarity": 0.9861111111111112,
+      "threshold": 0.82
+    },
+    {
+      "representative_index": 67,
+      "member_index": 69,
+      "jaccard_similarity": 0.9875,
+      "threshold": 0.82
+    }
+  ]
+}

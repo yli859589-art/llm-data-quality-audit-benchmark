@@ -1,0 +1,13 @@
+{
+  "dataset_name": "c4_sample",
+  "provider": "huggingface",
+  "hf_path": "allenai/c4",
+  "hf_name": "en",
+  "split": "train",
+  "text_field": "text",
+  "sample_documents": 500,
+  "source": "Optional streamed C4 sample adapter",
+  "url": "https://huggingface.co/datasets/allenai/c4",
+  "license_or_usage_note": "Optional dataset. Review the upstream dataset card and terms before use.",
+  "offline_fallback_config": "configs/datasets/tiny_shakespeare.yaml"
+}

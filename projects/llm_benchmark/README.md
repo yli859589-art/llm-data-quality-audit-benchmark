@@ -1,24 +1,16 @@
-# LLM Data Quality and Efficient Attention Benchmark Platform
+# LLM Data Quality Benchmark
 
-This is the repository's focused portfolio project. It benchmarks data-quality controls and attention implementations using a checksum-verified public Tiny Shakespeare corpus.
+This is the primary research-prototype project in the suite. Its implementation
+is under `src/course_project_suite/llm_benchmark/`.
 
-## Research question
-
-How much do deterministic data-quality controls improve compact GPT training, and how do attention implementations compare on correctness, throughput, and estimated memory?
-
-## Reproduce
+Run:
 
 ```bash
-python scripts/run_llm_benchmark.py
+python scripts/run_quick_experiment.py
+python scripts/make_tables.py
+python scripts/make_figures.py
+python scripts/check_artifacts.py
 ```
 
-## Artifacts
-
-- `artifacts/llm_benchmark/REPORT.md`
-- `artifacts/llm_benchmark/results.json`
-- `artifacts/llm_benchmark/training_curves.svg`
-- `artifacts/llm_benchmark/attention_throughput.svg`
-
-## Scope
-
-The public corpus is real. Noise injection is a deterministic stress test. Results are local CPU measurements, not official leaderboard scores.
+Read `docs/METHOD.md`, `docs/EXPERIMENTS.md`, and
+`artifacts/quick_experiment/REPORT.md`.

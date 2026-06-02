@@ -1,12 +1,12 @@
 Name                                                             Stmts   Miss  Cover   Missing
 ----------------------------------------------------------------------------------------------
 src\course_project_suite\__init__.py                                 2      0   100%
-src\course_project_suite\common.py                                  74      2    97%   98-99
+src\course_project_suite\common.py                                  79      5    94%   96, 98, 100, 107-108
 src\course_project_suite\coursera_ml\__init__.py                     0      0   100%
-src\course_project_suite\coursera_ml\advanced.py                    47      0   100%
-src\course_project_suite\coursera_ml\runner.py                      27      0   100%
-src\course_project_suite\coursera_ml\supervised.py                  25      2    92%   27-28
-src\course_project_suite\coursera_ml\unsupervised_recsys_rl.py      43      4    91%   14-15, 46-47
+src\course_project_suite\coursera_ml\advanced.py                    79      1    99%   78
+src\course_project_suite\coursera_ml\runner.py                      44      0   100%
+src\course_project_suite\coursera_ml\supervised.py                  40      2    95%   50-51
+src\course_project_suite\coursera_ml\unsupervised_recsys_rl.py      71     12    83%   18-20, 76-79, 82-84, 87-88
 src\course_project_suite\cs188\__init__.py                           0      0   100%
 src\course_project_suite\cs188\inference.py                         51      2    96%   18, 53
 src\course_project_suite\cs188\ml.py                                25      7    72%   19, 21-26
@@ -36,14 +36,21 @@ src\course_project_suite\cs336\scaling.py                            8      0   
 src\course_project_suite\cs336\systems.py                           23      0   100%
 src\course_project_suite\cs336\tokenizer.py                         38      0   100%
 src\course_project_suite\d2l\__init__.py                             0      0   100%
-src\course_project_suite\d2l\core.py                                30      5    83%   11, 26-29
-src\course_project_suite\d2l\runner.py                              13      0   100%
+src\course_project_suite\d2l\core.py                                45      8    82%   18, 22-23, 48-52
+src\course_project_suite\d2l\runner.py                              23      0   100%
 src\course_project_suite\llm_benchmark\__init__.py                   2      0   100%
-src\course_project_suite\llm_benchmark\attention.py                 38      2    95%   11, 19
-src\course_project_suite\llm_benchmark\char_lm.py                   75      3    96%   30, 38, 47
-src\course_project_suite\llm_benchmark\dataset.py                  102      6    94%   33-37, 41
-src\course_project_suite\llm_benchmark\experiment.py                65      0   100%
-src\course_project_suite\llm_benchmark\reporting.py                 38      0   100%
-src\course_project_suite\run_all.py                                 22      9    59%   16-25
+src\course_project_suite\llm_benchmark\attention.py                 54      2    96%   18, 39
+src\course_project_suite\llm_benchmark\char_lm.py                   91      7    92%   34, 42, 53, 101, 126-128
+src\course_project_suite\llm_benchmark\config.py                    13      3    77%   13-14, 16
+src\course_project_suite\llm_benchmark\dataset.py                  124     11    91%   48-49, 55-61, 65, 97, 236, 241
+src\course_project_suite\llm_benchmark\datasets.py                  48     21    56%   24-25, 49, 51, 56-88
+src\course_project_suite\llm_benchmark\dedup.py                     49      2    96%   36, 51
+src\course_project_suite\llm_benchmark\experiment.py               136      5    96%   63, 208-209, 236-240
+src\course_project_suite\llm_benchmark\noise.py                     75      0   100%
+src\course_project_suite\llm_benchmark\privacy.py                   15      0   100%
+src\course_project_suite\llm_benchmark\quality.py                   84      7    92%   50, 76, 78, 85, 135-137
+src\course_project_suite\llm_benchmark\reporting.py                 98      6    94%   32, 111, 138, 237-239
+src\course_project_suite\llm_benchmark\statistics.py                10      1    90%   9
+src\course_project_suite\run_all.py                                 24     11    54%   18-38, 42
 ----------------------------------------------------------------------------------------------
-TOTAL                                                             1391    114    92%
+TOTAL                                                             1994    185    91%

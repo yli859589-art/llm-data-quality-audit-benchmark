@@ -1,0 +1,9 @@
+{
+  "name": "small-gpt-debug",
+  "tokenizer": "character",
+  "architecture": "decoder-only causal transformer",
+  "n_layer": 2,
+  "n_head": 2,
+  "n_embd": 64,
+  "block_size": 64
+}

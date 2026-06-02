@@ -2,45 +2,21 @@
 
 ## Name
 
-LLM Data Quality and Efficient Attention Benchmark Platform
+LLM Data Quality Benchmark
 
-## Purpose
+## Intended Use
 
-Measure how deterministic data-quality controls affect compact character-level GPT training and compare readable attention implementations on correctness, throughput, and estimated memory.
+Reproducible research-prototype experiments for data-quality interventions in
+small-scale language-model pretraining.
 
-## Dataset
+## Primary Evidence
 
-- Tiny Shakespeare public corpus.
-- Source and SHA-256: [`data/tinyshakespeare/SOURCE.md`](../data/tinyshakespeare/SOURCE.md).
-- Training subset: early corpus chunks with deterministic injected stress-test noise.
-- Validation subset: clean held-out text from the end of the corpus.
+Run `python scripts/run_quick_experiment.py`, then inspect
+`artifacts/quick_experiment/REPORT.md`. Quick mode is single-seed smoke-test
+evidence. See `docs/LIMITATIONS.md` before describing results.
 
-## Baseline and ablations
+## Auxiliary Measurement
 
-- `raw_noisy_baseline`
-- `clean_redact`
-- `deduplicate_only`
-- `quality_filter_only`
-- `full_pipeline`
-
-Language-model training is reported for the raw baseline, cleaning/redaction ablation, and full pipeline. Data-quality metrics are reported for all variants.
-
-## Metrics
-
-- Duplicate rate, PII hits, quality-filter pass rate, and retained characters.
-- Held-out validation loss and perplexity.
-- Attention query tokens per second and maximum absolute error against the naive reference.
-- Estimated algorithmic working-set bytes and CUDA peak allocation when available.
-
-## Intended use
-
-- Portfolio demonstration.
-- Local reproducibility exercise.
-- Starting point for a rubric-specific course project after instructor approval.
-
-## Out-of-scope use
-
-- Production corpus certification.
-- Claims about natural web-noise prevalence.
-- State-of-the-art model evaluation.
-- Official leaderboard or institutional certification claims.
+Attention throughput is a hardware-dependent supporting benchmark. CPU
+working-set values are estimates; PyTorch SDPA is not introduced as a novel
+algorithm.

@@ -1,0 +1,9 @@
+{
+  "name": "char-mini-gpt",
+  "tokenizer": "character",
+  "architecture": "decoder-only causal transformer",
+  "n_layer": 1,
+  "n_head": 2,
+  "n_embd": 32,
+  "block_size": 32
+}

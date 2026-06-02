@@ -1,0 +1,10 @@
+{
+  "name": "bpe-mini-gpt",
+  "tokenizer": "BPETokenizer from course_project_suite.cs336.tokenizer",
+  "architecture": "decoder-only causal transformer",
+  "status": "supported implementation; excluded from CPU quick matrix",
+  "n_layer": 1,
+  "n_head": 2,
+  "n_embd": 32,
+  "block_size": 32
+}

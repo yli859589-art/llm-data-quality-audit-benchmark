@@ -1,0 +1,10 @@
+{
+  "name": "medium-gpt-optional",
+  "tokenizer": "character or BPE",
+  "architecture": "decoder-only causal transformer",
+  "status": "optional CUDA-oriented extension; not run in CI",
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128,
+  "block_size": 128
+}

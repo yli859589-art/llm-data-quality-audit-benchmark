@@ -1,0 +1,15 @@
+line-length = 100
+target-version = "py310"
+exclude = [
+  "artifacts",
+  "data",
+  "projects",
+  "src/course_project_suite/cs188",
+  "src/course_project_suite/cs224n",
+  "src/course_project_suite/cs229",
+  "src/course_project_suite/cs231n",
+  "src/course_project_suite/cs336",
+]
+
+[lint]
+select = ["E9", "F63", "F7", "F82"]

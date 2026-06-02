@@ -1,0 +1,9 @@
+{
+  "dataset_name": "tiny_shakespeare",
+  "provider": "local",
+  "local_path": "data/tinyshakespeare/input.txt",
+  "source": "karpathy/char-rnn Tiny Shakespeare mirror",
+  "url": "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt",
+  "split": "train",
+  "license_or_usage_note": "Public-domain Shakespeare-derived text mirror. See data/tinyshakespeare/SOURCE.md."
+}

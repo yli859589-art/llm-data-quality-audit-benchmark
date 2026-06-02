@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.0 - 2026-06-03
+
+- Refocused the repository on data-quality interventions for small-scale
+  language-model pretraining.
+- Added deterministic 12-family corruption, HDQS scoring, near deduplication,
+  equal-budget comparisons, privacy checks, downstream metrics, multi-seed
+  support, generated tables, and generated figures.
+- Added dataset and model configs, offline fallback behavior, research
+  documentation, repository hygiene checks, formatting, linting, typing,
+  pre-commit, and CPU-bounded CI.
+- Repositioned attention measurements as an auxiliary hardware-dependent
+  benchmark with median and interquartile statistics.
+
 ## 3.0.0
 
 - Added the focused LLM Data Quality and Efficient Attention Benchmark Platform.

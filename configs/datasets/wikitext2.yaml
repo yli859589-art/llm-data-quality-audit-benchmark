@@ -1,0 +1,13 @@
+{
+  "dataset_name": "wikitext2",
+  "provider": "huggingface",
+  "hf_path": "Salesforce/wikitext",
+  "hf_name": "wikitext-2-raw-v1",
+  "split": "train",
+  "text_field": "text",
+  "sample_documents": 1000,
+  "source": "Optional Hugging Face WikiText-2 adapter",
+  "url": "https://huggingface.co/datasets/Salesforce/wikitext",
+  "license_or_usage_note": "Optional dataset. Review the upstream dataset card and terms before use.",
+  "offline_fallback_config": "configs/datasets/tiny_shakespeare.yaml"
+}

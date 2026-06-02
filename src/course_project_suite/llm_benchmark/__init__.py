@@ -1,5 +1,5 @@
-"""Focused LLM data-quality and efficient-attention benchmark platform."""
+"""Reproducible LLM data-quality research prototype."""
 
 from .experiment import BenchmarkConfig, run_benchmark
 
-__all__ = ['BenchmarkConfig', 'run_benchmark']
+__all__ = ["BenchmarkConfig", "run_benchmark"]

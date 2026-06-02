@@ -1,0 +1,91 @@
+{
+  "environment": {
+    "hardware": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pytorch_version": "2.11.0+cu126",
+    "device": "cpu",
+    "dtype": "float32",
+    "torch_num_threads": 1,
+    "cuda_available": true
+  },
+  "rows": [
+    {
+      "implementation": "naive",
+      "sequence_length": 32,
+      "median_seconds_per_call": 0.00039230000038514845,
+      "p25_seconds_per_call": 0.0003644499993242789,
+      "p75_seconds_per_call": 0.000578049999603536,
+      "seconds_per_call": 0.00039230000038514845,
+      "query_tokens_per_second": 81570.22678711025,
+      "max_abs_error_vs_naive": 0.0,
+      "estimated_working_set_bytes": 40960,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    },
+    {
+      "implementation": "online_reference",
+      "sequence_length": 32,
+      "median_seconds_per_call": 0.00046179999844753183,
+      "p25_seconds_per_call": 0.0004478999999264488,
+      "p75_seconds_per_call": 0.00046254999870143365,
+      "seconds_per_call": 0.00046179999844753183,
+      "query_tokens_per_second": 69294.06692849033,
+      "max_abs_error_vs_naive": 4.76837158203125e-07,
+      "estimated_working_set_bytes": 40960,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    },
+    {
+      "implementation": "torch_sdpa",
+      "sequence_length": 32,
+      "median_seconds_per_call": 9.11999995878432e-05,
+      "p25_seconds_per_call": 9.054999827640131e-05,
+      "p75_seconds_per_call": 9.259999933419749e-05,
+      "seconds_per_call": 9.11999995878432e-05,
+      "query_tokens_per_second": 350877.19456816255,
+      "max_abs_error_vs_naive": 5.960464477539062e-07,
+      "estimated_working_set_bytes": 32768,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    },
+    {
+      "implementation": "naive",
+      "sequence_length": 64,
+      "median_seconds_per_call": 0.0005935000008321367,
+      "p25_seconds_per_call": 0.0005895000012969831,
+      "p75_seconds_per_call": 0.0006641000018134946,
+      "seconds_per_call": 0.0005935000008321367,
+      "query_tokens_per_second": 107834.87769210892,
+      "max_abs_error_vs_naive": 0.0,
+      "estimated_working_set_bytes": 98304,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    },
+    {
+      "implementation": "online_reference",
+      "sequence_length": 64,
+      "median_seconds_per_call": 0.0007289999994100071,
+      "p25_seconds_per_call": 0.0006653500004176749,
+      "p75_seconds_per_call": 0.0007933999986562412,
+      "seconds_per_call": 0.0007289999994100071,
+      "query_tokens_per_second": 87791.49526995384,
+      "max_abs_error_vs_naive": 3.5762786865234375e-07,
+      "estimated_working_set_bytes": 98304,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    },
+    {
+      "implementation": "torch_sdpa",
+      "sequence_length": 64,
+      "median_seconds_per_call": 0.00017469999875174835,
+      "p25_seconds_per_call": 0.0001736999984132126,
+      "p75_seconds_per_call": 0.00017535000006319024,
+      "seconds_per_call": 0.00017469999875174835,
+      "query_tokens_per_second": 366342.3037051367,
+      "max_abs_error_vs_naive": 4.172325134277344e-07,
+      "estimated_working_set_bytes": 65536,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Algorithmic working-set bytes are estimates. CUDA peak allocation is reported only when CUDA is used."
+    }
+  ]
+}

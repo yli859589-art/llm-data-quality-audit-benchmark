@@ -1,0 +1,12 @@
+{
+  "dataset_name": "openwebtext_sample",
+  "provider": "huggingface",
+  "hf_path": "Skylion007/openwebtext",
+  "split": "train",
+  "text_field": "text",
+  "sample_documents": 500,
+  "source": "Optional streamed OpenWebText sample adapter",
+  "url": "https://huggingface.co/datasets/Skylion007/openwebtext",
+  "license_or_usage_note": "Optional dataset. Review the upstream dataset card and terms before use.",
+  "offline_fallback_config": "configs/datasets/tiny_shakespeare.yaml"
+}

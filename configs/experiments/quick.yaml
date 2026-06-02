@@ -1,0 +1,8 @@
+{
+  "mode": "quick",
+  "dataset": "configs/datasets/tiny_shakespeare.yaml",
+  "seeds": [23],
+  "equal_character_budget": true,
+  "network_required": false,
+  "note": "CPU smoke-test configuration. Do not treat one-seed results as paper-level evidence."
+}

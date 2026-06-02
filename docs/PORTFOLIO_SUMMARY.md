@@ -1,25 +1,10 @@
 # Portfolio Summary
 
-## Primary project
+The primary project is **LLM Data Quality Benchmark**, a personal research
+prototype for auditable data interventions in small-scale language-model
+pretraining. It includes controlled noise, redaction, exact and near
+deduplication, HDQS, equal-budget ablations, privacy checks, model metrics,
+generated artifacts, and an auxiliary attention benchmark.
 
-**LLM Data Quality and Efficient Attention Benchmark Platform**
-
-A CPU-runnable benchmark that measures data-quality pipeline effects on character-level GPT validation loss and compares naive, online-reference, and PyTorch SDPA attention implementations.
-
-## Evidence
-
-- Checksum-verified public Tiny Shakespeare corpus.
-- Raw baseline plus four data-quality ablations.
-- Held-out validation loss and perplexity curves.
-- Sanitized removed-document error analysis.
-- Attention correctness, throughput, and estimated-memory comparison.
-- `20/20` tests and `92%` measured source coverage.
-- Cross-platform scripts and GitHub Actions workflow.
-
-## Supporting library
-
-The broader open-course-inspired implementation suite demonstrates algorithmic foundations across AI, classical ML, deep learning, NLP, and LLM systems.
-
-## Disclosure
-
-This is a personal portfolio project, not official coursework, grader certification, or a leaderboard submission.
+Use `docs/RESUME.md` for resume-safe wording and `docs/LIMITATIONS.md` for the
+empirical boundary.

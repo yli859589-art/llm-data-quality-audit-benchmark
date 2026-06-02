@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 from dataclasses import asdict, dataclass
 import math
+from pathlib import Path
 import time
 
 import torch
@@ -20,14 +22,16 @@ class TrainConfig:
     n_head: int = 2
     n_embd: int = 32
     seed: int = 23
-    device: str = 'cpu'
+    device: str = "cpu"
+    gradient_clip_norm: float = 1.0
+    checkpoint_path: str | None = None
 
 
 class CharVocab:
     def __init__(self, text: str):
         chars = sorted(set(text))
         if not chars:
-            raise ValueError('Cannot build a vocabulary from empty text.')
+            raise ValueError("Cannot build a vocabulary from empty text.")
         self.stoi = {char: index for index, char in enumerate(chars)}
         self.itos = {index: char for char, index in self.stoi.items()}
 
@@ -35,35 +39,48 @@ class CharVocab:
         return [self.stoi[char] for char in text if char in self.stoi]
 
     def decode(self, ids: list[int]) -> str:
-        return ''.join(self.itos[index] for index in ids)
+        return "".join(self.itos[index] for index in ids)
 
     def __len__(self) -> int:
         return len(self.stoi)
 
 
-def _batch(data: torch.Tensor, config: TrainConfig, generator: torch.Generator) -> tuple[torch.Tensor, torch.Tensor]:
+def _batch(
+    data: torch.Tensor, config: TrainConfig, generator: torch.Generator
+) -> tuple[torch.Tensor, torch.Tensor]:
     high = len(data) - config.block_size - 1
     if high <= 0:
-        raise ValueError('Text is too short for the configured block size.')
+        raise ValueError("Text is too short for the configured block size.")
     starts = torch.randint(high, (config.batch_size,), generator=generator)
-    x = torch.stack([data[start:start + config.block_size] for start in starts])
-    y = torch.stack([data[start + 1:start + config.block_size + 1] for start in starts])
+    x = torch.stack([data[start : start + config.block_size] for start in starts])
+    y = torch.stack([data[start + 1 : start + config.block_size + 1] for start in starts])
     return x.to(config.device), y.to(config.device)
 
 
 @torch.no_grad()
-def _evaluate(model: MiniGPT2, data: torch.Tensor, config: TrainConfig, generator: torch.Generator) -> float:
+def _evaluate(
+    model: MiniGPT2,
+    data: torch.Tensor,
+    config: TrainConfig,
+    generator: torch.Generator,
+) -> tuple[float, float]:
     model.eval()
     losses = []
+    correct = 0
+    total = 0
     for _ in range(config.eval_batches):
         x, y = _batch(data, config, generator)
-        _, loss = model(x, y)
+        logits, loss = model(x, y)
         losses.append(float(loss.detach()))
+        correct += int((logits.argmax(dim=-1) == y).sum())
+        total += y.numel()
     model.train()
-    return sum(losses) / len(losses)
+    return sum(losses) / len(losses), correct / max(1, total)
 
 
-def train_character_lm(train_text: str, val_text: str, shared_vocab_text: str, config: TrainConfig) -> dict[str, object]:
+def train_character_lm(
+    train_text: str, val_text: str, shared_vocab_text: str, config: TrainConfig
+) -> dict[str, object]:
     torch.manual_seed(config.seed)
     vocab = CharVocab(shared_vocab_text)
     train_ids = torch.tensor(vocab.encode(train_text), dtype=torch.long)
@@ -80,32 +97,58 @@ def train_character_lm(train_text: str, val_text: str, shared_vocab_text: str, c
     train_generator = torch.Generator().manual_seed(config.seed)
     eval_generator = torch.Generator().manual_seed(config.seed + 1)
     curve = []
+    if config.device.startswith("cuda") and torch.cuda.is_available():
+        torch.cuda.reset_peak_memory_stats()
     started = time.perf_counter()
     for step in range(config.steps + 1):
         if step % config.eval_interval == 0 or step == config.steps:
-            curve.append({
-                'step': step,
-                'train_loss': _evaluate(model, train_ids, config, eval_generator),
-                'val_loss': _evaluate(model, val_ids, config, eval_generator),
-            })
+            train_loss, train_accuracy = _evaluate(model, train_ids, config, eval_generator)
+            val_loss, val_accuracy = _evaluate(model, val_ids, config, eval_generator)
+            curve.append(
+                {
+                    "step": step,
+                    "train_loss": train_loss,
+                    "train_next_char_accuracy": train_accuracy,
+                    "val_loss": val_loss,
+                    "val_next_char_accuracy": val_accuracy,
+                }
+            )
         if step == config.steps:
             break
         x, y = _batch(train_ids, config, train_generator)
         _, loss = model(x, y)
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), config.gradient_clip_norm)
         optimizer.step()
     elapsed = time.perf_counter() - started
-    final_val_loss = curve[-1]['val_loss']
+    if config.checkpoint_path:
+        checkpoint = Path(config.checkpoint_path)
+        checkpoint.parent.mkdir(parents=True, exist_ok=True)
+        torch.save({"model": model.state_dict(), "config": asdict(config)}, checkpoint)
+    final_val_loss = curve[-1]["val_loss"]
     return {
-        'config': asdict(config),
-        'vocab_size': len(vocab),
-        'train_characters': len(train_ids),
-        'validation_characters': len(val_ids),
-        'elapsed_seconds': elapsed,
-        'tokens_per_second': config.steps * config.batch_size * config.block_size / max(elapsed, 1e-12),
-        'final_train_loss': curve[-1]['train_loss'],
-        'final_val_loss': final_val_loss,
-        'final_val_perplexity': math.exp(final_val_loss),
-        'curve': curve,
+        "config": asdict(config),
+        "tokenizer": "character",
+        "model": "decoder-only causal MiniGPT",
+        "parameter_count": sum(parameter.numel() for parameter in model.parameters()),
+        "vocab_size": len(vocab),
+        "train_characters": len(train_ids),
+        "validation_characters": len(val_ids),
+        "elapsed_seconds": elapsed,
+        "tokens_per_second": config.steps
+        * config.batch_size
+        * config.block_size
+        / max(elapsed, 1e-12),
+        "peak_cuda_memory_bytes": (
+            torch.cuda.max_memory_allocated()
+            if config.device.startswith("cuda") and torch.cuda.is_available()
+            else None
+        ),
+        "final_train_loss": curve[-1]["train_loss"],
+        "final_val_loss": final_val_loss,
+        "final_val_perplexity": math.exp(final_val_loss),
+        "final_val_bits_per_character": final_val_loss / math.log(2),
+        "final_val_next_char_accuracy": curve[-1]["val_next_char_accuracy"],
+        "curve": curve,
     }

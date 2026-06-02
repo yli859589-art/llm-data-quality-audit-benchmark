@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llm-data-quality-attention-benchmark-suite"
-version = "3.0.0"
-description = "Reproducible LLM data-quality and efficient-attention benchmark with supporting AI/ML implementations."
+version = "4.0.0"
+description = "Reproducible research prototype for data-quality interventions in small-scale language-model pretraining."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
@@ -15,3 +15,24 @@ keywords = ["machine-learning", "language-modeling", "data-quality", "attention"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+extend-exclude = '''
+/(
+  artifacts
+  | data
+  | projects
+  | src/course_project_suite/(cs188|cs224n|cs229|cs231n|cs336)
+  | src/course_project_suite/common.py
+  | src/course_project_suite/run_all.py
+  | all_course_projects.py
+  | tests/test_algorithm_edges.py
+  | tests/test_llm_benchmark.py
+  | tests/test_smoke.py
+)/
+'''
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -58,9 +58,11 @@ def make_regression(n=100, d=3, seed=1):
     return X.astype(np.float64), y.astype(np.float64), w.astype(np.float64)
 
 
-def numerical_gradient(f: Callable[[np.ndarray], float], x: np.ndarray, h: float = 1e-5) -> np.ndarray:
+def numerical_gradient(
+    f: Callable[[np.ndarray], float], x: np.ndarray, h: float = 1e-5
+) -> np.ndarray:
     grad = np.zeros_like(x, dtype=np.float64)
-    it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
+    it = np.nditer(x, flags=["multi_index"], op_flags=["readwrite"])
     while not it.finished:
         idx = it.multi_index
         old = x[idx]
@@ -75,7 +77,8 @@ def numerical_gradient(f: Callable[[np.ndarray], float], x: np.ndarray, h: float
 
 
 def rel_error(x: np.ndarray, y: np.ndarray) -> float:
-    return float(np.max(np.abs(x-y) / np.maximum(1e-8, np.abs(x)+np.abs(y))))
+    return float(np.max(np.abs(x - y) / np.maximum(1e-8, np.abs(x) + np.abs(y))))
+
 
 @dataclass
 class CheckResult:
@@ -85,15 +88,21 @@ class CheckResult:
 
     def to_dict(self):
         def clean(v):
-            if isinstance(v, dict): return {str(k): clean(val) for k, val in v.items()}
-            if isinstance(v, (list, tuple)): return [clean(x) for x in v]
-            if isinstance(v, (np.integer,)): return int(v)
-            if isinstance(v, (np.floating,)): return float(v)
-            if isinstance(v, (np.bool_,)): return bool(v)
+            if isinstance(v, dict):
+                return {str(k): clean(val) for k, val in v.items()}
+            if isinstance(v, (list, tuple)):
+                return [clean(x) for x in v]
+            if isinstance(v, (np.integer,)):
+                return int(v)
+            if isinstance(v, (np.floating,)):
+                return float(v)
+            if isinstance(v, (np.bool_,)):
+                return bool(v)
             return v
+
         return {"name": self.name, "ok": bool(self.ok), "metrics": clean(self.metrics)}
 
 
 def save_json(path: str | Path, obj: Any) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding='utf-8')
+    Path(path).write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")

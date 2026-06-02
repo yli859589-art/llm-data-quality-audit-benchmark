@@ -1,0 +1,42 @@
+{
+  "full_pipeline": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.029296875,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "hdqs_filter": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.029296875,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "raw_noisy_baseline": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.029296875,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "rule_filter_only": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.029296875,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  }
+}
