@@ -1,0 +1,1 @@
+{'python_files': 56, 'source_modules': 45, 'project_families': 7, 'non_blank_non_comment_python_loc': 1942}

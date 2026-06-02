@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "evaluation_protocol": {
+    "runtime": "CPU-friendly deterministic local checks",
+    "classical_ml": "fixed-seed held-out validation splits and synthetic anomaly probes",
+    "recommender": "fixed-seed held-out synthetic rating entries",
+    "deep_learning_and_llm": "toy numerical, interface, and forward-pass checks"
+  },
+  "project_families": 6,
+  "results": [
+    {
+      "name": "cs188_pacman_projects_public_alignment",
+      "ok": true,
+      "metrics": {
+        "bfs_len": 2,
+        "corners_astar_len": 8,
+        "alpha_beta_action": "East",
+        "mdp_start_value": 0.374,
+        "hmm_final_cold_prob": 0.783,
+        "viterbi": "H-C-C",
+        "perceptron_val_acc": 1.0
+      }
+    },
+    {
+      "name": "coursera_ml_specialization_public_alignment",
+      "ok": true,
+      "metrics": {
+        "lin_val_rmse": 0.236042735252434,
+        "log_val_acc": 1.0,
+        "nn_val_acc": 1.0,
+        "tree_val_acc": 1.0,
+        "kmeans_clusters": 3,
+        "anomaly_probe_detected": true,
+        "mf_train_mse": 0.0007148893820730919,
+        "mf_val_mse": 0.2581672167192282
+      }
+    },
+    {
+      "name": "cs231n_assignments_public_alignment",
+      "ok": true,
+      "metrics": {
+        "knn_val_acc": 1.0,
+        "two_layer_val_acc": 1.0,
+        "conv_shape": [
+          2,
+          2,
+          5,
+          5
+        ],
+        "bn_dx_norm": 3.1686366545756537e-16,
+        "attention_shape": [
+          2,
+          3,
+          4
+        ],
+        "diffusion_shape": [
+          3,
+          4
+        ],
+        "clip_loss": 9.962750845715563
+      }
+    },
+    {
+      "name": "d2l_textbook_public_alignment",
+      "ok": true,
+      "metrics": {
+        "linreg_w_error": 0.0008638912159666415,
+        "linreg_b": 4.199041314474638,
+        "softmax_val_acc": 1.0,
+        "conv_sum": -16.0,
+        "attention_shape": [
+          2,
+          1,
+          5
+        ]
+      }
+    },
+    {
+      "name": "cs224n_assignments_default_gpt2_public_alignment",
+      "ok": true,
+      "metrics": {
+        "vocab": 6,
+        "ppmi_sum": 10.468901729926717,
+        "neg_sampling_loss": 3.110146423138711,
+        "deps": 2,
+        "logits_shape": [
+          2,
+          8,
+          64
+        ],
+        "lm_loss": 2.3704330921173096,
+        "gen_len": 5,
+        "rouge_l": 0.8571428571423673,
+        "paraphrase_jaccard": 0.5
+      }
+    },
+    {
+      "name": "cs336_language_modeling_from_scratch_public_alignment",
+      "ok": true,
+      "metrics": {
+        "bpe_vocab": 24,
+        "encoded_len": 2,
+        "lm_loss": 1.5780730247497559,
+        "attention_diff": 4.76837158203125e-07,
+        "scaling_pred": 2.8357967720967037,
+        "quality": true,
+        "dedup_count": 2,
+        "dpo_loss": 0.6660533547401428,
+        "activation_memory": 12288,
+        "cosine_lr_10": 0.0009931806517013613
+      }
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "project": "LLM Data Quality and Efficient Attention Benchmark Platform",
+  "research_question": "Measure data-quality pipeline effects on a compact GPT validation loss and compare attention implementations.",
+  "dataset": {
+    "path": "C:\\Users\\18104\\Documents\\New project\\resume_ready_ai_ml_project_suite_audit\\resume_ready_course_project_suite\\data\\tinyshakespeare\\input.txt",
+    "url": "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt",
+    "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+    "chars": 1115394
+  },
+  "configuration": {
+    "data_path": "C:\\Users\\18104\\Documents\\New project\\resume_ready_ai_ml_project_suite_audit\\resume_ready_course_project_suite\\data\\tinyshakespeare\\input.txt",
+    "output_dir": "C:\\Users\\18104\\Documents\\New project\\resume_ready_ai_ml_project_suite_audit\\resume_ready_course_project_suite\\artifacts\\llm_benchmark",
+    "max_documents": 140,
+    "train_chars": 52000,
+    "validation_chars": 9000,
+    "train_config": {
+      "block_size": 32,
+      "batch_size": 8,
+      "steps": 120,
+      "eval_interval": 20,
+      "eval_batches": 4,
+      "learning_rate": 0.003,
+      "n_layer": 1,
+      "n_head": 2,
+      "n_embd": 32,
+      "seed": 23,
+      "device": "cpu"
+    },
+    "attention_lengths": [
+      32,
+      64,
+      128
+    ],
+    "attention_repeats": 4,
+    "device": "cpu"
+  },
+  "data_quality_ablation": {
+    "raw_noisy_baseline": {
+      "documents": 310,
+      "characters": 107118,
+      "duplicate_documents": 28,
+      "duplicate_rate": 0.09032258064516129,
+      "email_hits": 24,
+      "phone_hits": 24,
+      "quality_pass_rate": 0.5419354838709678
+    },
+    "clean_redact": {
+      "documents": 310,
+      "characters": 102863,
+      "duplicate_documents": 28,
+      "duplicate_rate": 0.09032258064516129,
+      "email_hits": 0,
+      "phone_hits": 0,
+      "quality_pass_rate": 0.5419354838709678
+    },
+    "deduplicate_only": {
+      "documents": 282,
+      "characters": 96305,
+      "duplicate_documents": 0,
+      "duplicate_rate": 0.0,
+      "email_hits": 20,
+      "phone_hits": 20,
+      "quality_pass_rate": 0.49645390070921985
+    },
+    "quality_filter_only": {
+      "documents": 168,
+      "characters": 64707,
+      "duplicate_documents": 28,
+      "duplicate_rate": 0.16666666666666666,
+      "email_hits": 24,
+      "phone_hits": 24,
+      "quality_pass_rate": 1.0
+    },
+    "full_pipeline": {
+      "documents": 140,
+      "characters": 50789,
+      "duplicate_documents": 0,
+      "duplicate_rate": 0.0,
+      "email_hits": 0,
+      "phone_hits": 0,
+      "quality_pass_rate": 1.0
+    }
+  },
+  "language_model_ablation": {
+    "raw_noisy_baseline": {
+      "config": {
+        "block_size": 32,
+        "batch_size": 8,
+        "steps": 120,
+        "eval_interval": 20,
+        "eval_batches": 4,
+        "learning_rate": 0.003,
+        "n_layer": 1,
+        "n_head": 2,
+        "n_embd": 32,
+        "seed": 23,
+        "device": "cpu"
+      },
+      "vocab_size": 79,
+      "train_characters": 52000,
+      "validation_characters": 9000,
+      "elapsed_seconds": 2.3882187999988673,
+      "tokens_per_second": 12863.1430252599,
+      "final_train_loss": 2.8403444290161133,
+      "final_val_loss": 3.692263185977936,
+      "final_val_perplexity": 40.13557852588861,
+      "curve": [
+        {
+          "step": 0,
+          "train_loss": 18.590417861938477,
+          "val_loss": 21.635417938232422
+        },
+        {
+          "step": 20,
+          "train_loss": 6.418673872947693,
+          "val_loss": 8.249014377593994
+        },
+        {
+          "step": 40,
+          "train_loss": 3.9040281176567078,
+          "val_loss": 5.130405426025391
+        },
+        {
+          "step": 60,
+          "train_loss": 3.1206313371658325,
+          "val_loss": 4.51034414768219
+        },
+        {
+          "step": 80,
+          "train_loss": 3.024116814136505,
+          "val_loss": 4.164159417152405
+        },
+        {
+          "step": 100,
+          "train_loss": 2.620727300643921,
+          "val_loss": 4.028998136520386
+        },
+        {
+          "step": 120,
+          "train_loss": 2.8403444290161133,
+          "val_loss": 3.692263185977936
+        }
+      ]
+    },
+    "clean_redact": {
+      "config": {
+        "block_size": 32,
+        "batch_size": 8,
+        "steps": 120,
+        "eval_interval": 20,
+        "eval_batches": 4,
+        "learning_rate": 0.003,
+        "n_layer": 1,
+        "n_head": 2,
+        "n_embd": 32,
+        "seed": 23,
+        "device": "cpu"
+      },
+      "vocab_size": 79,
+      "train_characters": 52000,
+      "validation_characters": 9000,
+      "elapsed_seconds": 2.1885627999981807,
+      "tokens_per_second": 14036.6088649709,
+      "final_train_loss": 2.3628607988357544,
+      "final_val_loss": 3.775046706199646,
+      "final_val_perplexity": 43.59954463720501,
+      "curve": [
+        {
+          "step": 0,
+          "train_loss": 18.890235424041748,
+          "val_loss": 21.635417938232422
+        },
+        {
+          "step": 20,
+          "train_loss": 6.278976678848267,
+          "val_loss": 8.118900060653687
+        },
+        {
+          "step": 40,
+          "train_loss": 3.9656375646591187,
+          "val_loss": 5.461931109428406
+        },
+        {
+          "step": 60,
+          "train_loss": 3.4479475021362305,
+          "val_loss": 4.78087705373764
+        },
+        {
+          "step": 80,
+          "train_loss": 2.9829301834106445,
+          "val_loss": 4.329195559024811
+        },
+        {
+          "step": 100,
+          "train_loss": 2.9732415676116943,
+          "val_loss": 4.1653733253479
+        },
+        {
+          "step": 120,
+          "train_loss": 2.3628607988357544,
+          "val_loss": 3.775046706199646
+        }
+      ]
+    },
+    "full_pipeline": {
+      "config": {
+        "block_size": 32,
+        "batch_size": 8,
+        "steps": 120,
+        "eval_interval": 20,
+        "eval_batches": 4,
+        "learning_rate": 0.003,
+        "n_layer": 1,
+        "n_head": 2,
+        "n_embd": 32,
+        "seed": 23,
+        "device": "cpu"
+      },
+      "vocab_size": 79,
+      "train_characters": 51067,
+      "validation_characters": 9000,
+      "elapsed_seconds": 2.274546000000555,
+      "tokens_per_second": 13505.99196498664,
+      "final_train_loss": 3.213604688644409,
+      "final_val_loss": 3.5836504697799683,
+      "final_val_perplexity": 36.00473543908136,
+      "curve": [
+        {
+          "step": 0,
+          "train_loss": 22.685726165771484,
+          "val_loss": 21.635417938232422
+        },
+        {
+          "step": 20,
+          "train_loss": 7.109683156013489,
+          "val_loss": 7.673475384712219
+        },
+        {
+          "step": 40,
+          "train_loss": 4.3478745222091675,
+          "val_loss": 5.041849136352539
+        },
+        {
+          "step": 60,
+          "train_loss": 3.5497220754623413,
+          "val_loss": 4.488990962505341
+        },
+        {
+          "step": 80,
+          "train_loss": 3.460822880268097,
+          "val_loss": 4.0248212814331055
+        },
+        {
+          "step": 100,
+          "train_loss": 3.3762577176094055,
+          "val_loss": 3.8790536522865295
+        },
+        {
+          "step": 120,
+          "train_loss": 3.213604688644409,
+          "val_loss": 3.5836504697799683
+        }
+      ]
+    }
+  },
+  "attention_benchmark": [
+    {
+      "implementation": "naive",
+      "sequence_length": 32,
+      "seconds_per_call": 0.0010051250001197332,
+      "query_tokens_per_second": 31836.836210608704,
+      "max_abs_error_vs_naive": 0.0,
+      "estimated_working_set_bytes": 40960,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "online_reference",
+      "sequence_length": 32,
+      "seconds_per_call": 0.001130274999923131,
+      "query_tokens_per_second": 28311.694058681554,
+      "max_abs_error_vs_naive": 4.76837158203125e-07,
+      "estimated_working_set_bytes": 40960,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "torch_sdpa",
+      "sequence_length": 32,
+      "seconds_per_call": 0.00018714999987423653,
+      "query_tokens_per_second": 170985.8403500068,
+      "max_abs_error_vs_naive": 5.960464477539062e-07,
+      "estimated_working_set_bytes": 32768,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "naive",
+      "sequence_length": 64,
+      "seconds_per_call": 0.0007540500000686734,
+      "query_tokens_per_second": 84875.00828084523,
+      "max_abs_error_vs_naive": 0.0,
+      "estimated_working_set_bytes": 98304,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "online_reference",
+      "sequence_length": 64,
+      "seconds_per_call": 0.0010450499994476559,
+      "query_tokens_per_second": 61241.08897548075,
+      "max_abs_error_vs_naive": 3.5762786865234375e-07,
+      "estimated_working_set_bytes": 98304,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "torch_sdpa",
+      "sequence_length": 64,
+      "seconds_per_call": 0.00018679999993764795,
+      "query_tokens_per_second": 342612.4198145749,
+      "max_abs_error_vs_naive": 4.172325134277344e-07,
+      "estimated_working_set_bytes": 65536,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "naive",
+      "sequence_length": 128,
+      "seconds_per_call": 0.0009503500004939269,
+      "query_tokens_per_second": 134687.22042771016,
+      "max_abs_error_vs_naive": 0.0,
+      "estimated_working_set_bytes": 262144,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "online_reference",
+      "sequence_length": 128,
+      "seconds_per_call": 0.0014618500008509727,
+      "query_tokens_per_second": 87560.28315182036,
+      "max_abs_error_vs_naive": 4.172325134277344e-07,
+      "estimated_working_set_bytes": 262144,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    },
+    {
+      "implementation": "torch_sdpa",
+      "sequence_length": 128,
+      "seconds_per_call": 0.0002523000002838671,
+      "query_tokens_per_second": 507332.5400554299,
+      "max_abs_error_vs_naive": 5.364418029785156e-07,
+      "estimated_working_set_bytes": 131072,
+      "cuda_peak_memory_bytes": null,
+      "memory_note": "Estimated algorithmic working set on CPU; CUDA peak is reported only when available."
+    }
+  ],
+  "error_analysis": {
+    "removed_documents": 170,
+    "sanitized_removed_examples": [
+      "@@@@ #### $$$$ !!!! **** 93 @@@@ #### $$$$ !!!! **** 93 @@@@ #### $$$$ !!!! **** 93 @@@@ #### $$$$ !!!! **** 93 @@@@ #### $$$$ !!!! **** 93 @@@@ #### $$$$ !!!! **** 93 @@@@ #### $$",
+      "@@@@ #### $$$$ !!!! **** 85 @@@@ #### $$$$ !!!! **** 85 @@@@ #### $$$$ !!!! **** 85 @@@@ #### $$$$ !!!! **** 85 @@@@ #### $$$$ !!!! **** 85 @@@@ #### $$$$ !!!! **** 85 @@@@ #### $$",
+      "@@@@ #### $$$$ !!!! **** 34 @@@@ #### $$$$ !!!! **** 34 @@@@ #### $$$$ !!!! **** 34 @@@@ #### $$$$ !!!! **** 34 @@@@ #### $$$$ !!!! **** 34 @@@@ #### $$$$ !!!! **** 34 @@@@ #### $$"
+    ],
+    "note": "Examples are redacted before reporting and may include duplicates or quality-filter failures."
+  }
+}

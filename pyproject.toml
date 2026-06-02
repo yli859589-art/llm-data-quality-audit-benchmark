@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-data-quality-attention-benchmark-suite"
+version = "3.0.0"
+description = "Reproducible LLM data-quality and efficient-attention benchmark with supporting AI/ML implementations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "YuHan Li"}]
+dependencies = ["numpy>=1.23", "torch>=2.0"]
+keywords = ["machine-learning", "language-modeling", "data-quality", "attention", "benchmark", "nlp"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

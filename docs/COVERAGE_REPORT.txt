@@ -1,0 +1,49 @@
+Name                                                             Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------
+src\course_project_suite\__init__.py                                 2      0   100%
+src\course_project_suite\common.py                                  74      2    97%   98-99
+src\course_project_suite\coursera_ml\__init__.py                     0      0   100%
+src\course_project_suite\coursera_ml\advanced.py                    47      0   100%
+src\course_project_suite\coursera_ml\runner.py                      27      0   100%
+src\course_project_suite\coursera_ml\supervised.py                  25      2    92%   27-28
+src\course_project_suite\coursera_ml\unsupervised_recsys_rl.py      43      4    91%   14-15, 46-47
+src\course_project_suite\cs188\__init__.py                           0      0   100%
+src\course_project_suite\cs188\inference.py                         51      2    96%   18, 53
+src\course_project_suite\cs188\ml.py                                25      7    72%   19, 21-26
+src\course_project_suite\cs188\multiagent.py                        65      8    88%   26, 40-45, 66
+src\course_project_suite\cs188\pacman_core.py                       74     15    80%   42, 44, 58-70
+src\course_project_suite\cs188\rl.py                                50      3    94%   50, 53-54
+src\course_project_suite\cs188\runner.py                            24      0   100%
+src\course_project_suite\cs188\search.py                           100     20    80%   71-78, 88, 91-100, 112
+src\course_project_suite\cs224n\__init__.py                          0      0   100%
+src\course_project_suite\cs224n\gpt2.py                             47      4    91%   49-52
+src\course_project_suite\cs224n\parser.py                           25     10    60%   9-10, 14, 20-26
+src\course_project_suite\cs224n\runner.py                           17      0   100%
+src\course_project_suite\cs224n\tasks.py                            11      0   100%
+src\course_project_suite\cs224n\word_vectors.py                     23      0   100%
+src\course_project_suite\cs231n\__init__.py                          0      0   100%
+src\course_project_suite\cs231n\classifiers.py                      25      0   100%
+src\course_project_suite\cs231n\diffusion_contrastive.py            18      3    83%   19-21
+src\course_project_suite\cs231n\layers.py                           59      3    95%   14-15, 29
+src\course_project_suite\cs231n\runner.py                           17      0   100%
+src\course_project_suite\cs231n\sequence.py                         17      5    71%   16-20
+src\course_project_suite\cs336\__init__.py                           0      0   100%
+src\course_project_suite\cs336\alignment.py                          9      1    89%   8
+src\course_project_suite\cs336\data.py                              19      0   100%
+src\course_project_suite\cs336\optim.py                             22      0   100%
+src\course_project_suite\cs336\runner.py                            21      0   100%
+src\course_project_suite\cs336\scaling.py                            8      0   100%
+src\course_project_suite\cs336\systems.py                           23      0   100%
+src\course_project_suite\cs336\tokenizer.py                         38      0   100%
+src\course_project_suite\d2l\__init__.py                             0      0   100%
+src\course_project_suite\d2l\core.py                                30      5    83%   11, 26-29
+src\course_project_suite\d2l\runner.py                              13      0   100%
+src\course_project_suite\llm_benchmark\__init__.py                   2      0   100%
+src\course_project_suite\llm_benchmark\attention.py                 38      2    95%   11, 19
+src\course_project_suite\llm_benchmark\char_lm.py                   75      3    96%   30, 38, 47
+src\course_project_suite\llm_benchmark\dataset.py                  102      6    94%   33-37, 41
+src\course_project_suite\llm_benchmark\experiment.py                65      0   100%
+src\course_project_suite\llm_benchmark\reporting.py                 38      0   100%
+src\course_project_suite\run_all.py                                 22      9    59%   16-25
+----------------------------------------------------------------------------------------------
+TOTAL                                                             1391    114    92%
