@@ -53,7 +53,7 @@ lower than the raw noisy baseline. The result must be validated with the larger
 matrix before it is presented as a research conclusion.
 
 At auxiliary attention sequence length `64`, the generated local CPU artifact
-reports PyTorch SDPA at approximately `3.40x` the naive reference throughput
+reports PyTorch SDPA at approximately `2.50x` the naive reference throughput
 with an estimated `33.3%` smaller algorithmic working set. These values are
 hardware-dependent. Estimated CPU working-set values are not measured peak
 memory.
