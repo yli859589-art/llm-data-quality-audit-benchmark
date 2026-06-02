@@ -15,6 +15,7 @@ def run(*args: str) -> None:
     subprocess.run(args, cwd=root, env=env, check=True)
 
 
+run(sys.executable, 'scripts/fetch_public_data.py')
 run(sys.executable, 'all_course_projects.py', '--self-check', '--json')
 run(sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v')
 run(sys.executable, 'scripts/check_repo.py')

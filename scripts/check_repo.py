@@ -1,4 +1,5 @@
 from pathlib import Path
+import hashlib
 import subprocess
 
 required = [
@@ -42,6 +43,12 @@ required = [
 missing = [p for p in required if not Path(p).exists()]
 if missing:
     raise SystemExit('Missing required files: ' + ', '.join(missing))
+
+dataset = Path('data/tinyshakespeare/input.txt')
+expected_sha256 = '86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed'
+actual_sha256 = hashlib.sha256(dataset.read_bytes()).hexdigest()
+if actual_sha256 != expected_sha256:
+    raise SystemExit(f'Unexpected Tiny Shakespeare SHA-256: {actual_sha256}')
 
 try:
     tracked = subprocess.run(
