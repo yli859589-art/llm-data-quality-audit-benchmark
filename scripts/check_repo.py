@@ -19,6 +19,7 @@ required = [
     'docs/RESUME_BULLETS.md',
     'docs/VERIFICATION_REPORT.md',
     'docs/EXPERIMENT_REPORT.md',
+    'docs/ENGINEERING_EVIDENCE.md',
     'docs/COVERAGE_REPORT.txt',
     'docs/BENCHMARK_CARD.md',
     'docs/REFERENCES.md',
