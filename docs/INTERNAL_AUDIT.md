@@ -12,8 +12,8 @@ The repository should be presented as a reproducible paper prototype for:
 > Data Quality Interventions for Small-Scale Language Model Pretraining
 
 The attention benchmark remains an auxiliary systems experiment. The project
-must not claim Carnegie Mellon University enrollment, official coursework,
-competition placement, or CCF-C acceptance.
+must not claim institutional enrollment, official coursework, competition
+placement, or CCF-C acceptance.
 
 ## Audit Findings
 
@@ -46,4 +46,3 @@ The upgrade is complete only when:
    equal budgets, and benchmark statistics.
 5. Documentation distinguishes generated quick evidence from larger experiments
    that still need to be run before a paper submission.
-

@@ -44,5 +44,6 @@ The attention measurements compare readable references with PyTorch SDPA. They a
 ## Limits
 
 - Quick mode uses one seed and a compact CPU budget for smoke-test reproducibility.
+- Standalone HDQS filtering is reported separately from the full pipeline; quick-mode artifacts do not support a claim that HDQS alone consistently improves model quality.
 - Full multi-seed experiments remain necessary before making paper-level empirical claims.
 - Tiny Shakespeare and injected corruption are controlled debugging instruments, not a production web-corpus evaluation.

@@ -2,30 +2,38 @@
 
 ## English
 
-**LLM Data Quality Benchmark | Personal Research Prototype**
+**LLM Data Quality Benchmark Platform | Python / PyTorch / NumPy**
 
-- Built a reproducible small-scale language-model pretraining benchmark with
-  deterministic noise injection, PII redaction, exact and Jaccard-based near
-  deduplication, and a transparent HDQS quality score.
-- Added equal-budget ablations, multi-seed experiment support, generated
-  privacy and utility reports, CPU-bounded CI checks, and script-generated
-  tables and figures.
-- Implemented an auxiliary attention benchmark with correctness checks,
-  median and interquartile throughput statistics, environment metadata, and
-  explicitly estimated CPU working-set reporting.
+- Built a reproducible benchmark for small-scale language-model pretraining
+  data quality, including deterministic noise injection, PII redaction, exact
+  deduplication, Jaccard and MinHash/LSH near-duplicate detection, HDQS
+  document-quality scoring, equal-budget ablations, and an auxiliary attention
+  systems benchmark.
+- Implemented script-generated reports, JSON/CSV artifacts, SVG
+  visualizations, unit/numerical/regression tests, source-coverage reporting,
+  GitHub Actions CI, repository hygiene checks, and offline quick-mode
+  reproducibility.
+- Verified the deterministic quick stress test as a single-seed CPU smoke
+  benchmark and observed preliminary perplexity improvement for the full
+  pipeline over the raw noisy baseline; larger multi-seed, multi-dataset
+  experiments remain future work.
 
 ## 中文
 
-**LLM 数据质量基准平台 | 个人研究原型**
+**LLM 数据质量基准平台 | Python / PyTorch / NumPy**
 
-- 构建可复现的小规模语言模型预训练基准，支持确定性噪声注入、PII 脱敏、精确去重、
-  基于 Jaccard 相似度的近重复检测，以及透明可解释的 HDQS 文档质量评分。
-- 加入公平训练预算消融、多随机种子实验、隐私与效用报告、CPU 约束 CI，以及脚本生成的
-  表格和可视化产物。
-- 实现辅助性质的注意力系统基准，报告正确性、中位数与四分位吞吐统计、运行环境信息，
-  并明确区分 CPU 内存估算与真实 CUDA 峰值。
+- 构建小规模语言模型预训练数据质量 Benchmark，支持确定性噪声注入、PII 脱敏、
+  精确去重、Jaccard/MinHash 近重复检测、HDQS 文档质量评分、等预算训练消融和
+  辅助注意力系统基准。
+- 实现可复现实验脚本、单元/数值/回归测试、源码覆盖率统计、GitHub Actions CI、
+  仓库卫生检查，以及脚本生成的 JSON/CSV 实验报告与 SVG 可视化。
+- 在 deterministic quick stress test 中验证数据处理流程可复现，并观察到 full
+  pipeline 相比 raw noisy baseline 有初步 perplexity 改善；多数据集、多随机种子
+  full matrix 仍属于后续工作。
 
 ## Claim Boundary
 
-Do not describe this project as official CMU coursework, a competition award,
-or an accepted CCF-C paper. Those claims are not supported by the repository.
+Use this as a personal research-oriented GitHub project or a CCF-C paper
+direction research prototype. Do not describe it as a completed CCF-C paper
+project, official coursework, a competition award, an accepted paper, or
+evidence of private-grader completion.

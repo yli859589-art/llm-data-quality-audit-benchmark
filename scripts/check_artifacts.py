@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import re
+from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 artifact_dir = root / "artifacts" / "quick_experiment"
@@ -11,6 +11,7 @@ required = [
     "results.json",
     "dataset_card.json",
     "noise_report.json",
+    "hdqs_sweep_report.json",
     "token_budget_report.json",
     "privacy_report.json",
     "downstream_report.json",
@@ -23,6 +24,7 @@ required = [
     "results_summary.md",
     "main_results_table.md",
     "ablation_table.md",
+    "hdqs_interpretation_note.md",
     "retention_vs_perplexity.svg",
     "quality_score_distribution.svg",
     "privacy_vs_utility.svg",

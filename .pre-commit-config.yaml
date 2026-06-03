@@ -9,6 +9,11 @@ repos:
       - id: black
   - repo: local
     hooks:
+      - id: main-mypy
+        name: main benchmark type check
+        entry: mypy src/course_project_suite/llm_benchmark
+        language: system
+        pass_filenames: false
       - id: repository-hygiene
         name: repository hygiene
         entry: python scripts/check_repo.py

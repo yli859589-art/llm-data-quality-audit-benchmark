@@ -1,18 +1,20 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, replace
 import csv
 import json
 import os
-from pathlib import Path
 import platform
 import time
+from dataclasses import asdict, dataclass, replace
+from pathlib import Path
+from typing import Any, cast
 
 import torch
 
 from .attention import attention_environment, benchmark_attention_suite
 from .char_lm import TrainConfig, train_character_lm
 from .dataset import (
+    CorpusSource,
     analyze_removed_documents,
     build_ablation_variants,
     build_dataset_card,
@@ -25,7 +27,7 @@ from .dataset import (
 from .dedup import exact_deduplicate, near_deduplicate
 from .noise import NoiseConfig, inject_controlled_noise
 from .privacy import evaluate_synthetic_canaries, pii_hit_count
-from .quality import score_documents
+from .quality import filter_by_quality, score_documents
 from .reporting import generate_figures
 from .statistics import summarize
 
@@ -54,11 +56,11 @@ class BenchmarkConfig:
     device: str = "cpu"
 
 
-def _write_json(path: Path, payload: object) -> None:
+def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
-def _write_csv(path: Path, rows: list[dict[str, object]]) -> None:
+def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     if not rows:
         return
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -67,7 +69,7 @@ def _write_csv(path: Path, rows: list[dict[str, object]]) -> None:
         writer.writerows(rows)
 
 
-def _model_summary(runs: list[dict[str, object]]) -> dict[str, dict[str, object]]:
+def _model_summary(runs: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     summary = {}
     metrics = [
         "final_train_loss",
@@ -80,15 +82,16 @@ def _model_summary(runs: list[dict[str, object]]) -> dict[str, dict[str, object]
     ]
     for variant in sorted({str(run["variant"]) for run in runs}):
         variant_runs = [run for run in runs if run["variant"] == variant]
-        summary[variant] = {
+        variant_summary: dict[str, Any] = {
             metric: summarize([float(run[metric]) for run in variant_runs]) for metric in metrics
         }
-        summary[variant]["train_characters"] = variant_runs[0]["train_characters"]
-        summary[variant]["seeds"] = [run["seed"] for run in variant_runs]
+        variant_summary["train_characters"] = variant_runs[0]["train_characters"]
+        variant_summary["seeds"] = [run["seed"] for run in variant_runs]
+        summary[variant] = variant_summary
     return summary
 
 
-def _write_summary_tables(output: Path, summary: dict[str, dict[str, object]]) -> None:
+def _write_summary_tables(output: Path, summary: dict[str, dict[str, Any]]) -> None:
     rows = []
     for variant, metrics in summary.items():
         rows.append(
@@ -109,19 +112,88 @@ def _write_summary_tables(output: Path, summary: dict[str, dict[str, object]]) -
     lines = [
         "# Model Results Summary",
         "",
-        "| Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | BPC | Next-char accuracy |",
+        (
+            "| Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | "
+            "BPC | Next-char accuracy |"
+        ),
         "| --- | --- | ---: | ---: | ---: | ---: |",
     ]
     for row in rows:
         lines.append(
-            f"| `{row['variant']}` | {row['seeds']} | {row['val_loss_mean']:.4f} +/- {row['val_loss_std']:.4f} | "
+            f"| `{row['variant']}` | {row['seeds']} | {row['val_loss_mean']:.4f} "
+            f"+/- {row['val_loss_std']:.4f} | "
             f"{row['perplexity_mean']:.2f} +/- {row['perplexity_std']:.2f} | "
             f"{row['bits_per_character_mean']:.3f} | {row['next_char_accuracy_mean']:.3f} |"
         )
     (output / "results_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def _write_report(path: Path, payload: dict[str, object]) -> None:
+def _build_hdqs_sweep_report(
+    documents: list[str],
+    *,
+    raw_perplexity: float | None = None,
+    hdqs_perplexity: float | None = None,
+) -> dict[str, Any]:
+    thresholds = [0.74, 0.76, 0.78, 0.80, 0.82, 0.84, 0.86]
+    threshold_rows = []
+    for threshold in thresholds:
+        retained, scored = filter_by_quality(documents, threshold=threshold)
+        metrics = quality_metrics(retained)
+        threshold_rows.append(
+            {
+                "threshold": threshold,
+                "retained_documents": metrics["documents"],
+                "retained_characters": metrics["characters"],
+                "retention_rate_documents": metrics["documents"] / max(1, len(documents)),
+                "mean_hdqs_retained": metrics["mean_hdqs"],
+                "pii_like_hits": metrics["email_hits"]
+                + metrics["phone_hits"]
+                + metrics["id_like_hits"],
+                "min_score": min((row.score for row in scored), default=None),
+                "max_score": max((row.score for row in scored), default=None),
+            }
+        )
+    top_k_rows = []
+    for ratio in [0.25, 0.50, 0.75]:
+        retained, _ = filter_by_quality(documents, retention_ratio=ratio)
+        metrics = quality_metrics(retained)
+        top_k_rows.append(
+            {
+                "retention_ratio": ratio,
+                "retained_documents": metrics["documents"],
+                "retained_characters": metrics["characters"],
+                "mean_hdqs_retained": metrics["mean_hdqs"],
+                "pii_like_hits": metrics["email_hits"]
+                + metrics["phone_hits"]
+                + metrics["id_like_hits"],
+            }
+        )
+
+    status = "not_evaluated_with_model"
+    if raw_perplexity is not None and hdqs_perplexity is not None:
+        status = (
+            "standalone_hdqs_better_in_this_quick_run"
+            if hdqs_perplexity < raw_perplexity
+            else "standalone_hdqs_not_better_than_raw_in_this_quick_run"
+        )
+
+    return {
+        "type": "deterministic_hdqs_threshold_and_top_k_sweep",
+        "threshold_rows": threshold_rows,
+        "top_k_rows": top_k_rows,
+        "raw_noisy_baseline_perplexity": raw_perplexity,
+        "hdqs_filter_perplexity": hdqs_perplexity,
+        "standalone_hdqs_status": status,
+        "interpretation": (
+            "In quick mode, HDQS should be interpreted as a transparent pipeline component. "
+            "Standalone HDQS filtering is not treated as a consistently "
+            "performance-improving method "
+            "until multi-seed and multi-dataset experiments verify that behavior."
+        ),
+    }
+
+
+def _write_report(path: Path, payload: dict[str, Any]) -> None:
     mode = payload["mode"]
     variants = payload["data_quality_ablation"]
     summary = payload["model_summary"]
@@ -132,30 +204,43 @@ def _write_report(path: Path, payload: dict[str, object]) -> None:
         "",
         f"Mode: `{mode}`",
         "",
-        "This report is generated from a reproducible local experiment. It is evidence for a paper prototype, not a paper acceptance or institutional-coursework claim.",
+        (
+            "This report is generated from a reproducible local experiment. It is evidence "
+            "for a paper prototype, not a paper acceptance or institutional-coursework claim."
+        ),
         "",
         "## Research Question",
         "",
-        "How do deterministic data-quality interventions affect equal-budget small-scale language-model pretraining under a controlled corruption stress test?",
+        (
+            "How do deterministic data-quality interventions affect equal-budget "
+            "small-scale language-model pretraining under a controlled corruption stress test?"
+        ),
         "",
         "## Data Processing",
         "",
         f"- Raw noisy documents: `{raw['documents']}`",
         f"- Full-pipeline retained documents: `{full['documents']}`",
         f"- Raw PII-like hits: `{raw['email_hits'] + raw['phone_hits'] + raw['id_like_hits']}`",
-        f"- Full-pipeline PII-like hits: `{full['email_hits'] + full['phone_hits'] + full['id_like_hits']}`",
+        (
+            f"- Full-pipeline PII-like hits: "
+            f"`{full['email_hits'] + full['phone_hits'] + full['id_like_hits']}`"
+        ),
         f"- Equal character budget: `{payload['token_budget_report']['equal_budget_enabled']}`",
         "",
         "## Model Summary",
         "",
-        "| Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | Next-char accuracy |",
+        (
+            "| Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | "
+            "Next-char accuracy |"
+        ),
         "| --- | --- | ---: | ---: | ---: |",
     ]
     for name, metrics in summary.items():
         lines.append(
             f"| `{name}` | {','.join(str(seed) for seed in metrics['seeds'])} | "
             f"{metrics['final_val_loss']['mean']:.4f} +/- {metrics['final_val_loss']['std']:.4f} | "
-            f"{metrics['final_val_perplexity']['mean']:.2f} +/- {metrics['final_val_perplexity']['std']:.2f} | "
+            f"{metrics['final_val_perplexity']['mean']:.2f} +/- "
+            f"{metrics['final_val_perplexity']['std']:.2f} | "
             f"{metrics['final_val_next_char_accuracy']['mean']:.3f} |"
         )
     lines.extend(
@@ -163,7 +248,11 @@ def _write_report(path: Path, payload: dict[str, object]) -> None:
             "",
             "## Auxiliary Attention Benchmark",
             "",
-            "The attention measurements compare readable references with PyTorch SDPA. They are hardware-dependent systems measurements and not a novel attention-algorithm claim. CPU working-set values are estimates.",
+            (
+                "The attention measurements compare readable references with PyTorch SDPA. "
+                "They are hardware-dependent systems measurements and not a novel "
+                "attention-algorithm claim. CPU working-set values are estimates."
+            ),
             "",
             "## Figures",
             "",
@@ -180,14 +269,25 @@ def _write_report(path: Path, payload: dict[str, object]) -> None:
             "## Limits",
             "",
             "- Quick mode uses one seed and a compact CPU budget for smoke-test reproducibility.",
-            "- Full multi-seed experiments remain necessary before making paper-level empirical claims.",
-            "- Tiny Shakespeare and injected corruption are controlled debugging instruments, not a production web-corpus evaluation.",
+            (
+                "- Standalone HDQS filtering is reported separately from the full pipeline; "
+                "quick-mode artifacts do not support a claim that HDQS alone consistently "
+                "improves model quality."
+            ),
+            (
+                "- Full multi-seed experiments remain necessary before making paper-level "
+                "empirical claims."
+            ),
+            (
+                "- Tiny Shakespeare and injected corruption are controlled debugging "
+                "instruments, not a production web-corpus evaluation."
+            ),
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def _environment() -> dict[str, object]:
+def _environment() -> dict[str, Any]:
     return {
         "python": platform.python_version(),
         "platform": platform.platform(),
@@ -199,7 +299,7 @@ def _environment() -> dict[str, object]:
     }
 
 
-def _portable_configuration(config: BenchmarkConfig) -> dict[str, object]:
+def _portable_configuration(config: BenchmarkConfig) -> dict[str, Any]:
     payload = asdict(config)
     for name in ("data_path", "output_dir"):
         path = Path(str(payload[name]))
@@ -211,10 +311,11 @@ def _portable_configuration(config: BenchmarkConfig) -> dict[str, object]:
     return payload
 
 
-def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
+def run_benchmark_from_text(
+    corpus: str, source: CorpusSource, config: BenchmarkConfig
+) -> dict[str, Any]:
     started = time.perf_counter()
     torch.set_num_threads(int(os.environ.get("OMP_NUM_THREADS", "1")))
-    corpus, source = load_public_corpus(config.data_path)
     validation_text = corpus[-config.validation_chars :]
     base_documents = chunk_documents(
         corpus[: -config.validation_chars], max_documents=config.max_documents
@@ -243,10 +344,13 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
             "variants": {
                 name: {"training_characters": len(text)} for name, text in lm_inputs.items()
             },
-            "note": "Unequal retention tradeoff mode; do not interpret this as a strict equal-budget comparison.",
+            "note": (
+                "Unequal retention tradeoff mode; do not interpret this as a strict "
+                "equal-budget comparison."
+            ),
         }
     shared_vocab = "".join(lm_inputs.values()) + validation_text
-    model_runs = []
+    model_runs: list[dict[str, Any]] = []
     for variant, train_text in lm_inputs.items():
         for seed in config.seeds:
             train_config = replace(
@@ -255,6 +359,13 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
             metrics = train_character_lm(train_text, validation_text, shared_vocab, train_config)
             model_runs.append({"variant": variant, "seed": seed, **metrics})
     summary = _model_summary(model_runs)
+    hdqs_sweep_report = _build_hdqs_sweep_report(
+        noisy_documents,
+        raw_perplexity=summary.get("raw_noisy_baseline", {})
+        .get("final_val_perplexity", {})
+        .get("mean"),
+        hdqs_perplexity=summary.get("hdqs_filter", {}).get("final_val_perplexity", {}).get("mean"),
+    )
     attention = benchmark_attention_suite(
         config.attention_lengths,
         repeats=config.attention_repeats,
@@ -264,7 +375,7 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
     canary_report = evaluate_synthetic_canaries(
         noisy_documents,
         full_documents,
-        noise_result.report["synthetic_pii_canaries"],
+        cast(list[dict[str, str]], noise_result.report["synthetic_pii_canaries"]),
     )
     privacy_report = {
         **canary_report,
@@ -305,6 +416,7 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
         "data_quality_ablation": variant_metrics,
         "model_runs": model_runs,
         "model_summary": summary,
+        "hdqs_sweep_report": hdqs_sweep_report,
         "downstream_report": downstream_report,
         "privacy_report": privacy_report,
         "attention_benchmark": {
@@ -331,6 +443,7 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
     _write_json(output / "dataset_card.json", dataset_card)
     _write_json(output / "noise_report.json", noise_result.report)
     _write_json(output / "token_budget_report.json", budget_report)
+    _write_json(output / "hdqs_sweep_report.json", hdqs_sweep_report)
     _write_json(output / "privacy_report.json", privacy_report)
     _write_json(output / "downstream_report.json", downstream_report)
     _write_json(output / "attention_benchmark.json", payload["attention_benchmark"])
@@ -347,3 +460,8 @@ def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
     generate_figures(payload, output)
     _write_report(output / "REPORT.md", payload)
     return payload
+
+
+def run_benchmark(config: BenchmarkConfig) -> dict[str, object]:
+    corpus, source = load_public_corpus(config.data_path)
+    return run_benchmark_from_text(corpus, source, config)

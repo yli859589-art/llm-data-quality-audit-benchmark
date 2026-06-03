@@ -17,11 +17,18 @@ keeps CI offline and prevents an implicit large download.
 | `configs/datasets/mixed_debug.yaml` | Local debug file | Used for pipeline debugging |
 
 Network access is explicit: call `load_configured_dataset(...,
-allow_network=True)` and install the optional `datasets` package. Review each
-upstream dataset card and usage policy before a larger run.
+allow_network=True)`, or run `python scripts/run_dataset_matrix.py --mode full
+--allow-network`, and install the optional `datasets` package. Without network
+or that package, optional Hugging Face configs fall back to the local Tiny
+Shakespeare corpus and mark `used_fallback=true` in the matrix summary.
 
 ## Dataset Cards
 
 Each experiment generates `dataset_card.json` with source, usage note, split,
 raw and retained characters, retention rate, duplicate removals, PII-like hit
 counts, seed, timestamp, and code version when available.
+
+The matrix runner writes per-dataset artifacts to
+`artifacts/dataset_matrix/<dataset_name>/` and writes aggregate summaries to
+`artifacts/dataset_matrix/dataset_matrix_summary.csv` and
+`artifacts/dataset_matrix/dataset_matrix_summary.md`.

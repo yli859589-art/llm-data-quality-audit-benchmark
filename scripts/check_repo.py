@@ -1,12 +1,21 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
-from pathlib import Path
 import re
 import subprocess
 import sys
+from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--zip-export",
+    action="store_true",
+    help="Fail if repository-only metadata such as .git is present.",
+)
+args = parser.parse_args()
+
 required = [
     "README.md",
     "LICENSE",
@@ -37,6 +46,8 @@ required = [
     "scripts/run_quick_experiment.py",
     "scripts/run_full_experiment.py",
     "scripts/run_multi_seed.py",
+    "scripts/run_dataset_matrix.py",
+    "scripts/tune_hdqs_quick.py",
     "scripts/make_tables.py",
     "scripts/make_figures.py",
     "scripts/check_artifacts.py",
@@ -52,6 +63,8 @@ expected_sha256 = "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc56
 actual_sha256 = hashlib.sha256(dataset.read_bytes()).hexdigest()
 if actual_sha256 != expected_sha256:
     raise SystemExit(f"Unexpected Tiny Shakespeare SHA-256: {actual_sha256}")
+if args.zip_export and (root / ".git").exists():
+    raise SystemExit("ZIP export contains .git metadata.")
 
 cache_names = {".coverage", "coverage.xml", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
 cache_paths = []
@@ -93,11 +106,33 @@ for phrase in [
         raise SystemExit(f"README missing required boundary phrase: {phrase}")
 for unsupported_claim in [
     "CCF-C accepted paper",
-    "official CMU course project",
-    "Carnegie Mellon University competition winner",
+    "official " + "C" + "MU" + " course project",
+    "Car" + "negie " + "Mellon University competition winner",
+    "completed Stan" + "ford official coursework",
+    "completed Berk" + "eley official coursework",
+    "private grader passed",
 ]:
     if unsupported_claim.casefold() in readme.casefold():
         raise SystemExit(f"README contains unsupported claim: {unsupported_claim}")
+institution_terms = ["C" + "MU", "Car" + "negie " + "Mellon"]
+for institution_specific in institution_terms:
+    if institution_specific.casefold() in readme.casefold():
+        raise SystemExit(f"README contains institution-specific claim: {institution_specific}")
+
+all_text = "\n".join(
+    path.read_text(encoding="utf-8", errors="ignore")
+    for path in [root / "README.md", root / "docs" / "RESUME.md", root / "docs" / "PAPER_DRAFT.md"]
+)
+for institution_specific in institution_terms:
+    if institution_specific.casefold() in all_text.casefold():
+        raise SystemExit(
+            f"Documentation contains institution-specific claim: {institution_specific}"
+        )
+
+workflow = (root / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+for env_name in ["OMP_NUM_THREADS", "MKL_NUM_THREADS"]:
+    if env_name not in workflow:
+        raise SystemExit(f"GitHub Actions workflow missing {env_name}")
 
 subprocess.run([sys.executable, "scripts/check_artifacts.py"], cwd=root, check=True)
 print("Repository hygiene check: ok")

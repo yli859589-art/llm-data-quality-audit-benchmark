@@ -1,5 +1,24 @@
 # Changelog
 
+## 4.1.0 - 2026-06-03
+
+- Added a dataset-matrix runner with configurable Tiny Shakespeare, WikiText-2,
+  OpenWebText-sample, C4-sample, and mixed-debug dataset entries, including
+  offline fallback behavior and portable summary artifacts.
+- Added MinHash/LSH near-duplicate detection alongside the deterministic
+  Jaccard reference implementation.
+- Added HDQS sweep artifacts and interpretation notes so quick runs distinguish
+  standalone HDQS behavior from the stronger full cleaning pipeline.
+- Expanded tests for dataset loading, dataset-matrix dry runs, MinHash/LSH
+  stability, HDQS edge cases, supporting algorithm families, and artifact
+  hygiene, raising measured source coverage to `93%`.
+- Tightened lint/type/CI scope around the main LLM benchmark modules and
+  strengthened repository export checks for cache files, absolute paths,
+  unsupported claims, and missing experiment artifacts.
+- Expanded the paper draft, resume note, experiment docs, dataset docs, and
+  limitations to present the project as a personal research prototype rather
+  than official coursework, competition, or publication evidence.
+
 ## 4.0.0 - 2026-06-03
 
 - Refocused the repository on data-quality interventions for small-scale

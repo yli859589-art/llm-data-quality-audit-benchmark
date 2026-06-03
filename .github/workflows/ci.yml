@@ -30,9 +30,9 @@ jobs:
       - name: Formatting
         run: black --check .
       - name: Type check
-        run: mypy src
+        run: mypy src/course_project_suite/llm_benchmark
       - name: Unit tests
-        run: python -m pytest tests -q
+        run: python -m unittest discover -s tests -v
       - name: Quick benchmark smoke test
         run: python scripts/run_quick_experiment.py
       - name: Regenerate tables and figures

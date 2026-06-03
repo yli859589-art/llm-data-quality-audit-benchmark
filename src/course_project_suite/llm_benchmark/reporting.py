@@ -3,7 +3,7 @@ from __future__ import annotations
 import html
 import json
 from pathlib import Path
-
+from typing import Any
 
 COLORS = ["#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2"]
 
@@ -59,7 +59,7 @@ def write_line_chart(
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_bar_chart(path: str | Path, rows: list[dict[str, object]], title: str) -> None:
+def write_bar_chart(path: str | Path, rows: list[dict[str, Any]], title: str) -> None:
     write_named_bar_chart(
         path,
         [
@@ -164,7 +164,7 @@ def write_scatter_chart(
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def generate_figures(payload: dict[str, object], output_dir: str | Path) -> None:
+def generate_figures(payload: dict[str, Any], output_dir: str | Path) -> None:
     output = Path(output_dir)
     runs = payload["model_runs"]
     write_line_chart(

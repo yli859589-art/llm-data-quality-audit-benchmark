@@ -6,9 +6,9 @@ from course_project_suite.llm_benchmark.dataset import enforce_equal_character_b
 from course_project_suite.llm_benchmark.datasets import load_configured_dataset
 from course_project_suite.llm_benchmark.dedup import (
     exact_deduplicate,
-    jaccard_similarity,
     near_deduplicate,
 )
+from course_project_suite.llm_benchmark.near_dedup import jaccard_similarity
 from course_project_suite.llm_benchmark.noise import NoiseConfig, inject_controlled_noise
 from course_project_suite.llm_benchmark.privacy import evaluate_synthetic_canaries
 from course_project_suite.llm_benchmark.quality import filter_by_quality, score_document

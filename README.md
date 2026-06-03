@@ -11,9 +11,9 @@ artifacts. A small attention benchmark is included as an auxiliary systems
 measurement.
 
 This is a **personal research and portfolio prototype**. It does **not** claim
-Carnegie Mellon University enrollment, institutional affiliation, official
-coursework completion, competition placement, private-grader access, or CCF-C
-paper acceptance.
+enrollment at any institution, official coursework completion, competition
+placement, private-grader access, paper acceptance, or institutional
+affiliation.
 
 ## Research Question
 
@@ -39,8 +39,11 @@ python -m pytest tests -q
 The generated quick report is in
 [`artifacts/quick_experiment/REPORT.md`](artifacts/quick_experiment/REPORT.md).
 Quick results are **single-seed smoke-test evidence**, not paper-level empirical
-claims. Use `python scripts/run_full_experiment.py` for the larger local
-three-seed matrix.
+claims. The deterministic quick stress test verifies that the pipeline is
+reproducible and shows a preliminary perplexity improvement for the full
+pipeline over the raw noisy baseline. It does not prove a general model-quality
+improvement. Use `python scripts/run_dataset_matrix.py --mode full` for the
+larger multi-dataset entry point.
 
 ## Architecture
 
@@ -65,6 +68,8 @@ flowchart LR
 - Baselines and ablations: raw, cleaning, PII redaction, exact deduplication,
   near deduplication, rule filtering, proxy perplexity filtering, HDQS, and
   full-pipeline variants.
+- Near-dedup methods: Jaccard reference deduplication for quick runs and
+  MinHash/LSH for larger matrix runs.
 - Fair comparison: all model variants are trimmed to one shared character
   budget by default.
 - Model metrics: train loss, held-out loss, perplexity, bits per character,
@@ -83,6 +88,7 @@ Run the quick experiment before reading these generated files:
 - [`main_results_table.md`](artifacts/quick_experiment/main_results_table.md)
 - [`ablation_table.md`](artifacts/quick_experiment/ablation_table.md)
 - [`dataset_card.json`](artifacts/quick_experiment/dataset_card.json)
+- [`hdqs_sweep_report.json`](artifacts/quick_experiment/hdqs_sweep_report.json)
 - [`privacy_report.json`](artifacts/quick_experiment/privacy_report.json)
 - [`token_budget_report.json`](artifacts/quick_experiment/token_budget_report.json)
 - [`quality_score_distribution.svg`](artifacts/quick_experiment/quality_score_distribution.svg)
@@ -112,10 +118,9 @@ See [datasets](docs/DATASETS.md), [method](docs/METHOD.md),
 ## Submission Boundary
 
 This repository is suitable as a portfolio prototype and as a foundation for a
-research-style course submission only after checking the actual course rubric,
-dataset policy, and AI-assistance policy. Before any paper-style submission,
-run the multi-seed and multi-dataset experiments listed in
-[limitations](docs/LIMITATIONS.md).
+research-style submission only after checking the actual rubric, dataset
+policy, and assistance policy. Before any paper-style submission, run the
+multi-seed and multi-dataset experiments listed in [limitations](docs/LIMITATIONS.md).
 
 ## Supporting Implementations
 

@@ -67,8 +67,8 @@
     "pii_count_before": 39,
     "pii_count_after": 0,
     "random_seed": 17,
-    "created_at": "2026-06-02T19:23:12.859584+00:00",
-    "code_version/git_commit": "4a126abb219656cca9f16d58618bc195273df5f7",
+    "created_at": "2026-06-03T09:32:51.782819+00:00",
+    "code_version/git_commit": "ae740fe653a5295e3c9c2ba52576e8053dafe1ac",
     "corpus_path": "data/tinyshakespeare/input.txt",
     "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
   },
@@ -315,8 +315,8 @@
       "vocab_size": 84,
       "train_characters": 18000,
       "validation_characters": 5000,
-      "elapsed_seconds": 0.05018660000132513,
-      "tokens_per_second": 40807.70564146454,
+      "elapsed_seconds": 0.30247330000565853,
+      "tokens_per_second": 6770.8455588036595,
       "peak_cuda_memory_bytes": null,
       "final_train_loss": 12.628420352935791,
       "final_val_loss": 12.328615188598633,
@@ -371,8 +371,8 @@
       "vocab_size": 84,
       "train_characters": 18000,
       "validation_characters": 5000,
-      "elapsed_seconds": 0.026000900001236005,
-      "tokens_per_second": 78766.5042326475,
+      "elapsed_seconds": 0.19795719999819994,
+      "tokens_per_second": 10345.670680422954,
       "peak_cuda_memory_bytes": null,
       "final_train_loss": 12.858680725097656,
       "final_val_loss": 12.415561199188232,
@@ -427,8 +427,8 @@
       "vocab_size": 84,
       "train_characters": 18000,
       "validation_characters": 5000,
-      "elapsed_seconds": 0.024846600001183106,
-      "tokens_per_second": 82425.76448699145,
+      "elapsed_seconds": 0.2008044000103837,
+      "tokens_per_second": 10198.979703104598,
       "peak_cuda_memory_bytes": null,
       "final_train_loss": 12.723582744598389,
       "final_val_loss": 12.331533908843994,
@@ -483,8 +483,8 @@
       "vocab_size": 84,
       "train_characters": 18000,
       "validation_characters": 5000,
-      "elapsed_seconds": 0.02466400000048452,
-      "tokens_per_second": 83036.00389068146,
+      "elapsed_seconds": 0.19572920000064187,
+      "tokens_per_second": 10463.43621694302,
       "peak_cuda_memory_bytes": null,
       "final_train_loss": 12.534553527832031,
       "final_val_loss": 12.296938419342041,
@@ -555,14 +555,14 @@
       },
       "tokens_per_second": {
         "count": 1,
-        "mean": 83036.00389068146,
+        "mean": 10463.43621694302,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
       },
       "elapsed_seconds": {
         "count": 1,
-        "mean": 0.02466400000048452,
+        "mean": 0.19572920000064187,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
@@ -610,14 +610,14 @@
       },
       "tokens_per_second": {
         "count": 1,
-        "mean": 82425.76448699145,
+        "mean": 10198.979703104598,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
       },
       "elapsed_seconds": {
         "count": 1,
-        "mean": 0.024846600001183106,
+        "mean": 0.2008044000103837,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
@@ -665,14 +665,14 @@
       },
       "tokens_per_second": {
         "count": 1,
-        "mean": 40807.70564146454,
+        "mean": 6770.8455588036595,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
       },
       "elapsed_seconds": {
         "count": 1,
-        "mean": 0.05018660000132513,
+        "mean": 0.30247330000565853,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
@@ -720,14 +720,14 @@
       },
       "tokens_per_second": {
         "count": 1,
-        "mean": 78766.5042326475,
+        "mean": 10345.670680422954,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
       },
       "elapsed_seconds": {
         "count": 1,
-        "mean": 0.026000900001236005,
+        "mean": 0.19795719999819994,
         "std": 0.0,
         "ci95_low": null,
         "ci95_high": null
@@ -737,6 +737,108 @@
         23
       ]
     }
+  },
+  "hdqs_sweep_report": {
+    "type": "deterministic_hdqs_threshold_and_top_k_sweep",
+    "threshold_rows": [
+      {
+        "threshold": 0.74,
+        "retained_documents": 77,
+        "retained_characters": 31461,
+        "retention_rate_documents": 0.8279569892473119,
+        "mean_hdqs_retained": 0.8755605637139877,
+        "pii_like_hits": 30,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.76,
+        "retained_documents": 75,
+        "retained_characters": 30509,
+        "retention_rate_documents": 0.8064516129032258,
+        "mean_hdqs_retained": 0.8790695081098722,
+        "pii_like_hits": 24,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.78,
+        "retained_documents": 73,
+        "retained_characters": 29575,
+        "retention_rate_documents": 0.7849462365591398,
+        "mean_hdqs_retained": 0.8821044640854349,
+        "pii_like_hits": 24,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.8,
+        "retained_documents": 60,
+        "retained_characters": 24022,
+        "retention_rate_documents": 0.6451612903225806,
+        "mean_hdqs_retained": 0.9012654579916429,
+        "pii_like_hits": 24,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.82,
+        "retained_documents": 54,
+        "retained_characters": 21541,
+        "retention_rate_documents": 0.5806451612903226,
+        "mean_hdqs_retained": 0.9118626357950548,
+        "pii_like_hits": 24,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.84,
+        "retained_documents": 52,
+        "retained_characters": 20664,
+        "retention_rate_documents": 0.5591397849462365,
+        "mean_hdqs_retained": 0.9152467480435964,
+        "pii_like_hits": 21,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      },
+      {
+        "threshold": 0.86,
+        "retained_documents": 49,
+        "retained_characters": 19266,
+        "retention_rate_documents": 0.5268817204301075,
+        "mean_hdqs_retained": 0.9191372966554351,
+        "pii_like_hits": 12,
+        "min_score": 0.7064311892161644,
+        "max_score": 0.9584118151532266
+      }
+    ],
+    "top_k_rows": [
+      {
+        "retention_ratio": 0.25,
+        "retained_documents": 24,
+        "retained_characters": 8878,
+        "mean_hdqs_retained": 0.941625800779598,
+        "pii_like_hits": 0
+      },
+      {
+        "retention_ratio": 0.5,
+        "retained_documents": 47,
+        "retained_characters": 18425,
+        "mean_hdqs_retained": 0.9213706902520117,
+        "pii_like_hits": 9
+      },
+      {
+        "retention_ratio": 0.75,
+        "retained_documents": 70,
+        "retained_characters": 28223,
+        "mean_hdqs_retained": 0.8862515037793385,
+        "pii_like_hits": 24
+      }
+    ],
+    "raw_noisy_baseline_perplexity": 226073.44166812417,
+    "hdqs_filter_perplexity": 226734.25068847716,
+    "standalone_hdqs_status": "standalone_hdqs_not_better_than_raw_in_this_quick_run",
+    "interpretation": "In quick mode, HDQS should be interpreted as a transparent pipeline component. Standalone HDQS filtering is not treated as a consistently performance-improving method until multi-seed and multi-dataset experiments verify that behavior."
   },
   "downstream_report": {
     "full_pipeline": {
@@ -807,11 +909,11 @@
       {
         "implementation": "naive",
         "sequence_length": 32,
-        "median_seconds_per_call": 4.2199997551506385e-05,
-        "p25_seconds_per_call": 4.184999852441251e-05,
-        "p75_seconds_per_call": 4.269999772077426e-05,
-        "seconds_per_call": 4.2199997551506385e-05,
-        "query_tokens_per_second": 758293.8828596618,
+        "median_seconds_per_call": 0.00034020000020973384,
+        "p25_seconds_per_call": 0.0003359499969519675,
+        "p75_seconds_per_call": 0.0003538000019034371,
+        "seconds_per_call": 0.00034020000020973384,
+        "query_tokens_per_second": 94062.31622654894,
         "max_abs_error_vs_naive": 0.0,
         "estimated_working_set_bytes": 40960,
         "cuda_peak_memory_bytes": null,
@@ -820,11 +922,11 @@
       {
         "implementation": "online_reference",
         "sequence_length": 32,
-        "median_seconds_per_call": 6.170000051497482e-05,
-        "p25_seconds_per_call": 6.015000144543592e-05,
-        "p75_seconds_per_call": 6.325000140350312e-05,
-        "seconds_per_call": 6.170000051497482e-05,
-        "query_tokens_per_second": 518638.56941514096,
+        "median_seconds_per_call": 0.0005624999903375283,
+        "p25_seconds_per_call": 0.0005110499914735556,
+        "p75_seconds_per_call": 0.0007320499935303815,
+        "seconds_per_call": 0.0005624999903375283,
+        "query_tokens_per_second": 56888.88986611074,
         "max_abs_error_vs_naive": 4.76837158203125e-07,
         "estimated_working_set_bytes": 40960,
         "cuda_peak_memory_bytes": null,
@@ -833,11 +935,11 @@
       {
         "implementation": "torch_sdpa",
         "sequence_length": 32,
-        "median_seconds_per_call": 1.340000017080456e-05,
-        "p25_seconds_per_call": 1.3199998647905886e-05,
-        "p75_seconds_per_call": 1.3650000255438499e-05,
-        "seconds_per_call": 1.340000017080456e-05,
-        "query_tokens_per_second": 2388059.6710528745,
+        "median_seconds_per_call": 0.00017309999384451658,
+        "p25_seconds_per_call": 0.00013519999629352242,
+        "p75_seconds_per_call": 0.000243950002186466,
+        "seconds_per_call": 0.00017309999384451658,
+        "query_tokens_per_second": 184864.2468973357,
         "max_abs_error_vs_naive": 5.960464477539062e-07,
         "estimated_working_set_bytes": 32768,
         "cuda_peak_memory_bytes": null,
@@ -846,11 +948,11 @@
       {
         "implementation": "naive",
         "sequence_length": 64,
-        "median_seconds_per_call": 6.500000017695129e-05,
-        "p25_seconds_per_call": 6.479999865405262e-05,
-        "p75_seconds_per_call": 6.53000006423099e-05,
-        "seconds_per_call": 6.500000017695129e-05,
-        "query_tokens_per_second": 984615.3819349391,
+        "median_seconds_per_call": 0.000552199999219738,
+        "p25_seconds_per_call": 0.000538200001756195,
+        "p75_seconds_per_call": 0.0005559000055654906,
+        "seconds_per_call": 0.000552199999219738,
+        "query_tokens_per_second": 115900.0363825288,
         "max_abs_error_vs_naive": 0.0,
         "estimated_working_set_bytes": 98304,
         "cuda_peak_memory_bytes": null,
@@ -859,11 +961,11 @@
       {
         "implementation": "online_reference",
         "sequence_length": 64,
-        "median_seconds_per_call": 8.750000051804818e-05,
-        "p25_seconds_per_call": 8.730000081413891e-05,
-        "p75_seconds_per_call": 8.795000030659139e-05,
-        "seconds_per_call": 8.750000051804818e-05,
-        "query_tokens_per_second": 731428.5670981115,
+        "median_seconds_per_call": 0.0008849000005284324,
+        "p25_seconds_per_call": 0.0008425999985774979,
+        "p75_seconds_per_call": 0.0009650499996496364,
+        "seconds_per_call": 0.0008849000005284324,
+        "query_tokens_per_second": 72324.55640386637,
         "max_abs_error_vs_naive": 3.5762786865234375e-07,
         "estimated_working_set_bytes": 98304,
         "cuda_peak_memory_bytes": null,
@@ -872,11 +974,11 @@
       {
         "implementation": "torch_sdpa",
         "sequence_length": 64,
-        "median_seconds_per_call": 2.600000152597204e-05,
-        "p25_seconds_per_call": 2.595000114524737e-05,
-        "p75_seconds_per_call": 2.615000084915664e-05,
-        "seconds_per_call": 2.600000152597204e-05,
-        "query_tokens_per_second": 2461538.3170677447,
+        "median_seconds_per_call": 0.00022200000239536166,
+        "p25_seconds_per_call": 0.00020145000598859042,
+        "p75_seconds_per_call": 0.0002587999988463707,
+        "seconds_per_call": 0.00022200000239536166,
+        "query_tokens_per_second": 288288.2851776815,
         "max_abs_error_vs_naive": 4.172325134277344e-07,
         "estimated_working_set_bytes": 65536,
         "cuda_peak_memory_bytes": null,
@@ -992,62 +1094,72 @@
       {
         "representative_index": 4,
         "member_index": 21,
-        "jaccard_similarity": 1.0,
-        "threshold": 0.82
+        "similarity": 1.0,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 26,
         "member_index": 33,
-        "jaccard_similarity": 0.9905660377358491,
-        "threshold": 0.82
+        "similarity": 0.9905660377358491,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 34,
         "member_index": 36,
-        "jaccard_similarity": 0.9882352941176471,
-        "threshold": 0.82
+        "similarity": 0.9882352941176471,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 4,
         "member_index": 45,
-        "jaccard_similarity": 1.0,
-        "threshold": 0.82
+        "similarity": 1.0,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 40,
         "member_index": 52,
-        "jaccard_similarity": 0.9873417721518988,
-        "threshold": 0.82
+        "similarity": 0.9873417721518988,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 42,
         "member_index": 55,
-        "jaccard_similarity": 0.9882352941176471,
-        "threshold": 0.82
+        "similarity": 0.9882352941176471,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 2,
         "member_index": 57,
-        "jaccard_similarity": 0.9861111111111112,
-        "threshold": 0.82
+        "similarity": 0.9861111111111112,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 7,
         "member_index": 58,
-        "jaccard_similarity": 0.9864864864864865,
-        "threshold": 0.82
+        "similarity": 0.9864864864864865,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 30,
         "member_index": 62,
-        "jaccard_similarity": 0.9861111111111112,
-        "threshold": 0.82
+        "similarity": 0.9861111111111112,
+        "threshold": 0.82,
+        "method": "jaccard"
       },
       {
         "representative_index": 67,
         "member_index": 69,
-        "jaccard_similarity": 0.9875,
-        "threshold": 0.82
+        "similarity": 0.9875,
+        "threshold": 0.82,
+        "method": "jaccard"
       }
     ]
   },
@@ -2276,11 +2388,11 @@
     "platform": "Windows-11-10.0.26200-SP0",
     "torch": "2.11.0+cu126",
     "device": "cuda",
-    "omp_num_threads": "1",
-    "mkl_num_threads": "1",
+    "omp_num_threads": null,
+    "mkl_num_threads": null,
     "torch_num_threads": 1
   },
-  "walltime_seconds": 1.6657569999988482,
+  "walltime_seconds": 19.276363299999502,
   "limitations": [
     "Quick mode is a CPU smoke-test experiment.",
     "Tiny Shakespeare is not a production web crawl.",

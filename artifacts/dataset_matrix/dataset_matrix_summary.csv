@@ -1,0 +1,2 @@
+dataset_key,dataset_name,output_dir,used_fallback,status,raw_perplexity,full_pipeline_perplexity,error
+tiny_shakespeare,tiny_shakespeare,artifacts/dataset_matrix/tiny_shakespeare,False,ok,226073.44166812417,219024.4002682036,

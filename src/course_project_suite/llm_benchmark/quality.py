@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from collections import Counter
-from dataclasses import asdict, dataclass
 import math
 import re
-
+from collections import Counter
+from dataclasses import asdict, dataclass
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 PHONE_RE = re.compile(r"\b(?:\+?\d[\d\-\s]{7,}\d)\b")
@@ -48,7 +47,7 @@ def repetition_penalty(text: str) -> float:
     words = re.findall(r"\w+", text.casefold())
     if len(words) < 2:
         return 1.0
-    bigrams = list(zip(words, words[1:]))
+    bigrams = list(zip(words, words[1:], strict=False))
     repeated_fraction = 1 - len(set(bigrams)) / max(1, len(bigrams))
     return max(0.0, 1 - repeated_fraction)
 
@@ -89,10 +88,11 @@ def language_consistency(text: str) -> float:
 
 def score_document(
     text: str,
-    weights: QualityWeights = QualityWeights(),
+    weights: QualityWeights | None = None,
     *,
     duplicate_cluster_penalty: float = 1.0,
 ) -> tuple[float, dict[str, float]]:
+    weights = weights or QualityWeights()
     components = {
         "lexical_diversity": lexical_diversity(text),
         "char_entropy": char_entropy(text),
@@ -113,7 +113,7 @@ def score_document(
 
 
 def score_documents(
-    documents: list[str], weights: QualityWeights = QualityWeights()
+    documents: list[str], weights: QualityWeights | None = None
 ) -> list[DocumentQuality]:
     output = []
     for index, document in enumerate(documents):
@@ -127,7 +127,7 @@ def filter_by_quality(
     *,
     threshold: float = 0.58,
     retention_ratio: float | None = None,
-    weights: QualityWeights = QualityWeights(),
+    weights: QualityWeights | None = None,
 ) -> tuple[list[str], list[DocumentQuality]]:
     scored = score_documents(documents, weights)
     ranked = sorted(scored, key=lambda row: row.score, reverse=True)

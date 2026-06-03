@@ -91,7 +91,7 @@ def benchmark_attention_suite(
         "online_reference": online_attention,
         "torch_sdpa": torch_sdpa_attention,
     }
-    rows = []
+    rows: list[dict[str, object]] = []
     for seq in seq_lengths:
         q = torch.randn(batch, heads, seq, dim, device=device)
         k = torch.randn_like(q)

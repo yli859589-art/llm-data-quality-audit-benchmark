@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
 import random
+from dataclasses import asdict, dataclass
 
 
 @dataclass(frozen=True)
@@ -31,10 +31,9 @@ def _increment(counts: dict[str, int], name: str) -> None:
     counts[name] = counts.get(name, 0) + 1
 
 
-def inject_controlled_noise(
-    documents: list[str], config: NoiseConfig = NoiseConfig()
-) -> NoiseResult:
+def inject_controlled_noise(documents: list[str], config: NoiseConfig | None = None) -> NoiseResult:
     """Inject deterministic stress-test noise with independently toggled families."""
+    config = config or NoiseConfig()
     rng = random.Random(config.seed)
     output: list[str] = []
     counts: dict[str, int] = {}

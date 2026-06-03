@@ -2,6 +2,8 @@
 
 Generated from `artifacts/quick_experiment/results.json` in `quick` mode.
 
+Quick mode is a CPU, single-seed smoke test. The table verifies reproducibility and preliminary behavior; it is not a paper-level result.
+
 | Variant | Validation loss mean +/- std | Perplexity mean +/- std | BPC | Next-char accuracy |
 | --- | ---: | ---: | ---: | ---: |
 | `full_pipeline` | 12.2969 +/- 0.0000 | 219024.40 +/- 0.00 | 17.741 | 0.029 |

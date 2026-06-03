@@ -4,12 +4,24 @@ exclude = [
   "artifacts",
   "data",
   "projects",
+  "all_course_projects.py",
+  "src/course_project_suite/common.py",
+  "src/course_project_suite/run_all.py",
+  "src/course_project_suite/coursera_ml",
+  "src/course_project_suite/d2l",
   "src/course_project_suite/cs188",
   "src/course_project_suite/cs224n",
   "src/course_project_suite/cs229",
   "src/course_project_suite/cs231n",
   "src/course_project_suite/cs336",
+  "tests/test_algorithm_edges.py",
+  "tests/test_smoke.py",
 ]
 
 [lint]
-select = ["E9", "F63", "F7", "F82"]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[lint.per-file-ignores]
+"scripts/*.py" = ["E402"]
+"tests/*.py" = ["E402"]
+"src/course_project_suite/llm_benchmark/reporting.py" = ["E501"]

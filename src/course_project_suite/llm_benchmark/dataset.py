@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from collections import Counter
-from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
 import hashlib
-from pathlib import Path
 import re
 import subprocess
+from collections import Counter
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, cast
 from urllib.request import urlopen
 
 from course_project_suite.cs336.data import (
@@ -18,7 +19,6 @@ from course_project_suite.cs336.data import (
 from .dedup import exact_deduplicate, near_deduplicate
 from .noise import NoiseConfig, inject_controlled_noise
 from .quality import EMAIL_RE, ID_RE, PHONE_RE, filter_by_quality, score_documents
-
 
 DATASET_URL = (
     "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
@@ -138,7 +138,7 @@ def build_ablation_variants(
     quality_threshold: float = 0.80,
     near_threshold: float = 0.82,
 ) -> dict[str, list[str]]:
-    settings = {
+    settings: dict[str, dict[str, bool | float]] = {
         "raw_noisy_baseline": {},
         "clean_only": {"clean": True},
         "pii_redact_only": {"redact": True},
@@ -170,7 +170,7 @@ def build_ablation_variants(
         "near_threshold": near_threshold,
     }
     return {
-        name: apply_pipeline(documents, **(defaults | overrides))
+        name: apply_pipeline(documents, **cast(Any, defaults | overrides))
         for name, overrides in settings.items()
     }
 

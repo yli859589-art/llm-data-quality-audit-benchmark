@@ -17,10 +17,12 @@ independently.
 
 ## Deduplication
 
-Exact deduplication hashes document strings. Near deduplication uses normalized
-word three-grams and Jaccard similarity. A later document is removed when its
-similarity to an earlier retained document meets the configured threshold.
-`duplicate_clusters.json` preserves the removal evidence.
+Exact deduplication hashes document strings. The quick experiment uses a
+Jaccard word-shingle reference implementation because it is transparent and
+easy to audit on small corpora. Larger matrix runs can use MinHash/LSH, which
+generates deterministic signatures, buckets them by band, and verifies
+candidate pairs before removal. `duplicate_clusters.json` preserves the method,
+threshold, representative index, member index, and similarity evidence.
 
 ## HDQS
 
@@ -38,7 +40,10 @@ transparent score in `[0, 1]`. It is the configurable weighted mean of:
 - optional duplicate-cluster penalty
 
 The implementation supports threshold filtering and top-k retention ratios.
-`quality_scores.csv` preserves per-document scores and components.
+`quality_scores.csv` preserves per-document scores and components, while
+`hdqs_sweep_report.json` records threshold and top-k retention sweeps. In quick
+mode, HDQS is treated as a pipeline component rather than a standalone
+performance claim.
 
 ## Fairness Rule
 

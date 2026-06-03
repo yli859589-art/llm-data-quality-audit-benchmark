@@ -9,10 +9,6 @@
 - PyTorch, [`scaled_dot_product_attention`](https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html).
 - PyTorch, [`AdamW`](https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html).
 
-## Academic integrity
-
-- Carnegie Mellon University, [Academic Integrity Policy](https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html).
-
 ## Scope note
 
 The supporting AI/ML modules are independent compact implementations inspired by public learning themes. Add any additional papers, textbooks, starter code, or human collaboration used before publishing or submitting the project.

@@ -17,7 +17,7 @@ Before submitting this repository for academic credit, obtain and review:
 
 ## Academic integrity review
 
-Carnegie Mellon University's [Academic Integrity Policy](https://www.cmu.edu/policies/student-and-student-life/academic-integrity.html) states that academic credit should represent the student's own work, that assistance on graded work requires instructor authorization, and that sources and permitted assistance must be acknowledged.
+Academic-integrity policies generally require that academic credit represent the student's own work, that assistance on graded work be authorized, and that sources and permitted assistance be acknowledged. Check the exact target institution, course, or venue policy before submitting.
 
 Before an academic submission:
 
@@ -25,7 +25,7 @@ Before an academic submission:
 - Confirm whether AI-assisted review, debugging, and documentation edits are permitted.
 - Complete `docs/PROVENANCE_AND_ASSISTANCE.md` accurately.
 - Cite public references, starter code, datasets, and external assistance.
-- Do not describe this repository as CMU coursework unless it was accepted for that purpose by the instructor.
+- Do not describe this repository as official coursework unless it was accepted for that purpose by the instructor or organizer.
 
 ## Engineering verification
 
@@ -38,6 +38,6 @@ Before an academic submission:
 
 ## Portfolio wording
 
-Use: `Personal AI/ML open-course-inspired implementation suite`.
+Use: `Personal research and portfolio prototype for LLM data quality benchmarking`.
 
 Avoid claims of official affiliation, hidden-grader completion, leaderboard placement, or institutional certification unless independently verified.

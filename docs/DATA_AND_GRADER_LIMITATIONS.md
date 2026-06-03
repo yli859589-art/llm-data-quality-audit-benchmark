@@ -8,11 +8,11 @@
 
 ## Not included
 
-- Private Gradescope tests, Coursera graders, or instructor-only test cases.
+- Private graders, hosted-course validators, or instructor-only test cases.
 - Course-internal notebooks or official solution files.
 - Restricted datasets requiring course accounts.
 - Production-scale web crawls, distributed training artifacts, or official leaderboard submissions.
-- A CMU course rubric or instructor authorization for academic submission.
+- A course rubric, venue rubric, or instructor authorization for academic submission.
 
 ## Claim boundary
 

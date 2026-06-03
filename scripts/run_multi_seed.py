@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from pathlib import Path
 import sys
+from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 src = root / "src"
@@ -10,7 +10,6 @@ if str(src) not in sys.path:
 
 from course_project_suite.llm_benchmark import BenchmarkConfig, run_benchmark
 from course_project_suite.llm_benchmark.char_lm import TrainConfig
-
 
 payload = run_benchmark(
     BenchmarkConfig(

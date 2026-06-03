@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
 import math
-from pathlib import Path
 import time
+from dataclasses import asdict, dataclass
+from pathlib import Path
 
 import torch
 

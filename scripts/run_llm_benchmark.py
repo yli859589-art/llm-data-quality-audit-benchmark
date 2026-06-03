@@ -1,7 +1,8 @@
 from __future__ import annotations
+
 import argparse
-from pathlib import Path
 import sys
+from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 src = root / "src"
@@ -39,6 +40,7 @@ models = payload["language_model_ablation"]
 print("LLM benchmark complete")
 for name, metrics in models.items():
     print(
-        f"{name}: val_loss={metrics['final_val_loss']:.4f}, perplexity={metrics['final_val_perplexity']:.2f}"
+        f"{name}: val_loss={metrics['final_val_loss']:.4f}, "
+        f"perplexity={metrics['final_val_perplexity']:.2f}"
     )
 print(f"Report: {Path(args.output_dir) / 'REPORT.md'}")
