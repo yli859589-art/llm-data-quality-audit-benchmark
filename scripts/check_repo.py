@@ -14,7 +14,18 @@ parser.add_argument(
     action="store_true",
     help="Fail if repository-only metadata such as .git is present.",
 )
+parser.add_argument(
+    "--clean",
+    action="store_true",
+    help="Remove generated cache files before running strict repository checks.",
+)
 args = parser.parse_args()
+
+if args.clean:
+    from clean_artifacts import clean_generated_paths
+
+    removed = clean_generated_paths(root)
+    print(f"Repository cleanup removed {len(removed)} generated cache/temp paths.")
 
 required = [
     "README.md",
@@ -33,10 +44,17 @@ required = [
     "configs/datasets/openwebtext_sample.yaml",
     "configs/datasets/c4_sample.yaml",
     "configs/datasets/mixed_debug.yaml",
+    "configs/experiments/baselines.yaml",
+    "configs/models/char_tiny_gpt.yaml",
+    "configs/models/char_small_gpt.yaml",
+    "configs/models/bpe_tiny_gpt.yaml",
+    "configs/models/bpe_small_gpt.yaml",
+    "configs/models/optional_bpe_medium_gpt.yaml",
     "docs/INTERNAL_AUDIT.md",
     "docs/DATASETS.md",
     "docs/METHOD.md",
     "docs/EXPERIMENTS.md",
+    "docs/RESEARCH_READINESS.md",
     "docs/PAPER_DRAFT.md",
     "docs/LIMITATIONS.md",
     "docs/ETHICS.md",
@@ -48,9 +66,15 @@ required = [
     "scripts/run_multi_seed.py",
     "scripts/run_dataset_matrix.py",
     "scripts/tune_hdqs_quick.py",
+    "scripts/clean_artifacts.py",
     "scripts/make_tables.py",
     "scripts/make_figures.py",
     "scripts/check_artifacts.py",
+    "scripts/statistical_analysis.py",
+    "scripts/make_research_tables.py",
+    "scripts/make_research_figures.py",
+    "scripts/analyze_failures.py",
+    "scripts/make_project_report.py",
     "data/tinyshakespeare/SOURCE.md",
     "data/tinyshakespeare/input.txt",
 ]
@@ -110,7 +134,7 @@ for unsupported_claim in [
     "Car" + "negie " + "Mellon University competition winner",
     "completed Stan" + "ford official coursework",
     "completed Berk" + "eley official coursework",
-    "private grader passed",
+    "private " + "grader passed",
 ]:
     if unsupported_claim.casefold() in readme.casefold():
         raise SystemExit(f"README contains unsupported claim: {unsupported_claim}")

@@ -1,0 +1,33 @@
+{
+  "metric": "final_val_perplexity",
+  "baseline_variant": "raw_noisy_baseline",
+  "paired": {
+    "full_pipeline": {
+      "count": 1,
+      "mean": -2679.621829978132,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null,
+      "lower_is_better": true,
+      "positive_mean_improvement": false
+    },
+    "hdqs_filter": {
+      "count": 1,
+      "mean": -21275.259993157408,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null,
+      "lower_is_better": true,
+      "positive_mean_improvement": false
+    },
+    "rule_filter_only": {
+      "count": 1,
+      "mean": -28308.539666273922,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null,
+      "lower_is_better": true,
+      "positive_mean_improvement": false
+    }
+  }
+}

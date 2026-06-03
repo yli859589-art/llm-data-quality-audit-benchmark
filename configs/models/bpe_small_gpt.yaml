@@ -1,0 +1,10 @@
+{
+  "name": "bpe_small_gpt",
+  "tokenizer": "local BPE tokenizer",
+  "architecture": "decoder-only causal transformer",
+  "n_layer": 2,
+  "n_head": 4,
+  "n_embd": 96,
+  "block_size": 96,
+  "status": "paper-prototype dry-run configuration"
+}

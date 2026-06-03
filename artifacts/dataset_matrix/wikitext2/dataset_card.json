@@ -1,0 +1,26 @@
+{
+  "dataset_name": "tiny_shakespeare",
+  "path": "data/tinyshakespeare/input.txt",
+  "source": "karpathy/char-rnn Tiny Shakespeare mirror",
+  "url": "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt",
+  "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "chars": 1115394,
+  "license_or_usage_note": "Public-domain Shakespeare-derived text mirror. See data/tinyshakespeare/SOURCE.md.",
+  "split": "train",
+  "used_fallback": true,
+  "dry_run": true,
+  "configuration": {
+    "dataset_name": "wikitext2",
+    "provider": "huggingface",
+    "hf_path": "Salesforce/wikitext",
+    "hf_name": "wikitext-2-raw-v1",
+    "split": "train",
+    "text_field": "text",
+    "sample_documents": 1000,
+    "source": "Optional Hugging Face WikiText-2 adapter",
+    "url": "https://huggingface.co/datasets/Salesforce/wikitext",
+    "license_or_usage_note": "Optional dataset. Review the upstream dataset card and terms before use.",
+    "offline_fallback_config": "configs/datasets/tiny_shakespeare.yaml"
+  },
+  "note": "Dataset matrix dry-run card. It validates loading, fallback, source attribution, and output routing without training a model."
+}

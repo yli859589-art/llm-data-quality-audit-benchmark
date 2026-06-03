@@ -1,0 +1,25 @@
+{
+  "baseline_matrix": [
+    "raw_noisy_baseline",
+    "clean_only",
+    "pii_redact_only",
+    "exact_dedup_only",
+    "jaccard_near_dedup_only",
+    "minhash_lsh_near_dedup_only",
+    "rule_quality_filter",
+    "proxy_perplexity_filter",
+    "hdqs_filter",
+    "hdqs_curriculum",
+    "full_pipeline",
+    "full_pipeline_without_clean",
+    "full_pipeline_without_redact",
+    "full_pipeline_without_exact_dedup",
+    "full_pipeline_without_near_dedup",
+    "full_without_hdqs",
+    "random_retention_matched_baseline",
+    "length_matched_baseline",
+    "quality_retention_matched_baseline"
+  ],
+  "fairness_rule": "All trained variants must use a shared fixed character/token budget.",
+  "note": "The full matrix is generated as data-quality metrics in quick mode. Only configured lm_variants are trained unless a larger experiment explicitly opts in."
+}

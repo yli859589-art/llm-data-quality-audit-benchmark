@@ -29,7 +29,16 @@ from .noise import NoiseConfig, inject_controlled_noise
 from .privacy import evaluate_synthetic_canaries, pii_hit_count
 from .quality import filter_by_quality, score_documents
 from .reporting import generate_figures
-from .statistics import summarize
+from .research import (
+    build_curriculum_report,
+    build_downstream_rows,
+    build_generation_quality_report,
+    build_pipeline_order_report,
+    build_privacy_utility_tradeoff_rows,
+    build_retention_pareto_rows,
+    generation_samples_markdown,
+)
+from .statistics import aggregate_model_runs, summarize
 
 
 @dataclass(frozen=True)
@@ -169,6 +178,39 @@ def _build_hdqs_sweep_report(
             }
         )
 
+    weight_sweep_rows = []
+    weight_configs = [
+        {
+            "name": "balanced_default",
+            "weights": {},
+            "status": "configured_default",
+        },
+        {
+            "name": "privacy_heavy",
+            "weights": {"pii_density_penalty": 2.0, "url_html_noise_penalty": 1.4},
+            "status": "requires_model_validation",
+        },
+        {
+            "name": "anti_repetition_heavy",
+            "weights": {"repetition_penalty": 2.0, "ngram_repetition_penalty": 1.6},
+            "status": "requires_model_validation",
+        },
+        {
+            "name": "diversity_heavy",
+            "weights": {"lexical_diversity": 1.8, "token_entropy": 1.4},
+            "status": "requires_model_validation",
+        },
+    ]
+    for config in weight_configs:
+        weight_sweep_rows.append(
+            {
+                "config_name": config["name"],
+                "weights": config["weights"],
+                "status": config["status"],
+                "selection_metric": "retention_and_quality_proxy_only",
+            }
+        )
+
     status = "not_evaluated_with_model"
     if raw_perplexity is not None and hdqs_perplexity is not None:
         status = (
@@ -179,8 +221,17 @@ def _build_hdqs_sweep_report(
 
     return {
         "type": "deterministic_hdqs_threshold_and_top_k_sweep",
+        "method_name": "HDQS++ / DQCS prototype",
         "threshold_rows": threshold_rows,
         "top_k_rows": top_k_rows,
+        "weight_sweep_rows": weight_sweep_rows,
+        "best_config": {
+            "name": "not_selected_from_quick_mode",
+            "reason": (
+                "Quick mode does not tune weights on a held-out development split. "
+                "The report lists candidate configurations without claiming a winner."
+            ),
+        },
         "raw_noisy_baseline_perplexity": raw_perplexity,
         "hdqs_filter_perplexity": hdqs_perplexity,
         "standalone_hdqs_status": status,
@@ -191,6 +242,30 @@ def _build_hdqs_sweep_report(
             "until multi-seed and multi-dataset experiments verify that behavior."
         ),
     }
+
+
+def _write_hdqs_sweep_table(path: Path, report: dict[str, Any]) -> None:
+    lines = [
+        "# HDQS++ Sweep Table",
+        "",
+        "Threshold and top-k rows are deterministic data-selection diagnostics.",
+        "",
+        "| Type | Setting | Retained docs | Retained chars | Mean HDQS | PII-like hits |",
+        "| --- | --- | ---: | ---: | ---: | ---: |",
+    ]
+    for row in report["threshold_rows"]:
+        lines.append(
+            f"| threshold | {row['threshold']} | {row['retained_documents']} | "
+            f"{row['retained_characters']} | {row['mean_hdqs_retained']:.3f} | "
+            f"{row['pii_like_hits']} |"
+        )
+    for row in report["top_k_rows"]:
+        lines.append(
+            f"| top-k | {row['retention_ratio']} | {row['retained_documents']} | "
+            f"{row['retained_characters']} | {row['mean_hdqs_retained']:.3f} | "
+            f"{row['pii_like_hits']} |"
+        )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def _write_report(path: Path, payload: dict[str, Any]) -> None:
@@ -382,13 +457,21 @@ def run_benchmark_from_text(
         "raw_pii_hits": pii_hit_count(noisy_documents),
         "full_pipeline_pii_hits": pii_hit_count(full_documents),
     }
-    downstream_report = {
+    downstream_report: dict[str, Any] = {
         variant: {
             "task": "held-out next-character prediction",
             "next_char_accuracy": metrics["final_val_next_char_accuracy"],
         }
         for variant, metrics in summary.items()
     }
+    downstream_rows = build_downstream_rows(summary)
+    downstream_report["rows"] = downstream_rows
+    generation_quality_report = build_generation_quality_report(model_runs)
+    curriculum_report = build_curriculum_report(noisy_documents)
+    pipeline_order_report = build_pipeline_order_report(noisy_documents)
+    retention_pareto_rows = build_retention_pareto_rows(variant_metrics, summary)
+    privacy_utility_rows = build_privacy_utility_tradeoff_rows(variant_metrics, summary)
+    seed_rows, aggregate_rows, statistical_tests = aggregate_model_runs(model_runs)
     dataset_card = build_dataset_card(
         source,
         raw_documents=noisy_documents,
@@ -417,8 +500,14 @@ def run_benchmark_from_text(
         "model_runs": model_runs,
         "model_summary": summary,
         "hdqs_sweep_report": hdqs_sweep_report,
+        "curriculum_report": curriculum_report,
+        "pipeline_order_report": pipeline_order_report,
+        "retention_pareto": retention_pareto_rows,
+        "privacy_utility_tradeoff": privacy_utility_rows,
         "downstream_report": downstream_report,
+        "generation_quality_report": generation_quality_report,
         "privacy_report": privacy_report,
+        "statistical_tests": statistical_tests,
         "attention_benchmark": {
             "environment": attention_environment(config.device),
             "rows": attention,
@@ -444,8 +533,22 @@ def run_benchmark_from_text(
     _write_json(output / "noise_report.json", noise_result.report)
     _write_json(output / "token_budget_report.json", budget_report)
     _write_json(output / "hdqs_sweep_report.json", hdqs_sweep_report)
+    _write_hdqs_sweep_table(output / "hdqs_sweep_table.md", hdqs_sweep_report)
+    _write_json(output / "curriculum_report.json", curriculum_report)
+    _write_json(output / "pipeline_order_report.json", pipeline_order_report)
+    _write_csv(output / "retention_pareto.csv", retention_pareto_rows)
+    _write_csv(output / "privacy_utility_tradeoff.csv", privacy_utility_rows)
     _write_json(output / "privacy_report.json", privacy_report)
+    _write_json(output / "canary_memorization_report.json", privacy_report)
     _write_json(output / "downstream_report.json", downstream_report)
+    _write_csv(output / "downstream_results.csv", downstream_rows)
+    _write_json(output / "generation_quality_report.json", generation_quality_report)
+    (output / "generation_samples.md").write_text(
+        generation_samples_markdown(model_runs), encoding="utf-8"
+    )
+    _write_csv(output / "seed_level_results.csv", seed_rows)
+    _write_csv(output / "aggregated_results.csv", aggregate_rows)
+    _write_json(output / "statistical_tests.json", statistical_tests)
     _write_json(output / "attention_benchmark.json", payload["attention_benchmark"])
     _write_json(output / "duplicate_clusters.json", payload["duplicate_clusters"])
     _write_json(output / "environment.json", payload["environment"])
@@ -456,6 +559,24 @@ def run_benchmark_from_text(
         for point in run["curve"]
     ]
     _write_csv(output / "training_curves.csv", curve_rows)
+    injected_counts = cast(dict[str, int], noise_result.report["injected_counts"])
+    noise_rows = [
+        {"noise_type": name, "count": count} for name, count in sorted(injected_counts.items())
+    ]
+    _write_csv(output / "noise_type_breakdown.csv", noise_rows)
+    removal_rows = [
+        {
+            "variant": name,
+            "documents": metrics["documents"],
+            "duplicate_documents": metrics["duplicate_documents"],
+            "pii_like_hits": int(metrics["email_hits"])
+            + int(metrics["phone_hits"])
+            + int(metrics["id_like_hits"]),
+            "mean_hdqs": metrics["mean_hdqs"],
+        }
+        for name, metrics in variant_metrics.items()
+    ]
+    _write_csv(output / "noise_removal_effectiveness.csv", removal_rows)
     _write_summary_tables(output, summary)
     generate_figures(payload, output)
     _write_report(output / "REPORT.md", payload)

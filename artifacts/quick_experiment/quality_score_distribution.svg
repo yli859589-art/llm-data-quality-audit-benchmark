@@ -3,24 +3,24 @@
 <text x="410.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">HDQS quality-score distribution</text>
 <line x1="72" y1="378" x2="748" y2="378" stroke="#111827"/>
 <text x="18" y="225.0" text-anchor="middle" transform="rotate(-90 18 225.0)" font-family="Arial" font-size="13">Documents</text>
-<rect x="76.0" y="133.2" width="59.6" height="244.8" fill="#2563eb"/>
-<text x="105.8" y="392" text-anchor="end" transform="rotate(-38 105.8 392)" font-family="Arial" font-size="10">0.71</text>
-<rect x="143.6" y="347.4" width="59.6" height="30.6" fill="#dc2626"/>
-<text x="173.4" y="392" text-anchor="end" transform="rotate(-38 173.4 392)" font-family="Arial" font-size="10">0.73</text>
-<rect x="211.2" y="347.4" width="59.6" height="30.6" fill="#16a34a"/>
-<text x="241.0" y="392" text-anchor="end" transform="rotate(-38 241.0 392)" font-family="Arial" font-size="10">0.76</text>
-<rect x="278.8" y="117.9" width="59.6" height="260.1" fill="#9333ea"/>
-<text x="308.6" y="392" text-anchor="end" transform="rotate(-38 308.6 392)" font-family="Arial" font-size="10">0.78</text>
-<rect x="346.4" y="316.8" width="59.6" height="61.2" fill="#ea580c"/>
-<text x="376.2" y="392" text-anchor="end" transform="rotate(-38 376.2 392)" font-family="Arial" font-size="10">0.81</text>
-<rect x="414.0" y="332.1" width="59.6" height="45.9" fill="#0891b2"/>
-<text x="443.8" y="392" text-anchor="end" transform="rotate(-38 443.8 392)" font-family="Arial" font-size="10">0.83</text>
-<rect x="481.6" y="316.8" width="59.6" height="61.2" fill="#2563eb"/>
-<text x="511.4" y="392" text-anchor="end" transform="rotate(-38 511.4 392)" font-family="Arial" font-size="10">0.86</text>
-<rect x="549.2" y="163.8" width="59.6" height="214.2" fill="#dc2626"/>
-<text x="579.0" y="392" text-anchor="end" transform="rotate(-38 579.0 392)" font-family="Arial" font-size="10">0.88</text>
-<rect x="616.8" y="209.7" width="59.6" height="168.3" fill="#16a34a"/>
-<text x="646.6" y="392" text-anchor="end" transform="rotate(-38 646.6 392)" font-family="Arial" font-size="10">0.91</text>
+<rect x="76.0" y="230.7" width="59.6" height="147.3" fill="#2563eb"/>
+<text x="105.8" y="392" text-anchor="end" transform="rotate(-38 105.8 392)" font-family="Arial" font-size="10">0.60</text>
+<rect x="143.6" y="378.0" width="59.6" height="0.0" fill="#dc2626"/>
+<text x="173.4" y="392" text-anchor="end" transform="rotate(-38 173.4 392)" font-family="Arial" font-size="10">0.64</text>
+<rect x="211.2" y="378.0" width="59.6" height="0.0" fill="#16a34a"/>
+<text x="241.0" y="392" text-anchor="end" transform="rotate(-38 241.0 392)" font-family="Arial" font-size="10">0.67</text>
+<rect x="278.8" y="378.0" width="59.6" height="0.0" fill="#9333ea"/>
+<text x="308.6" y="392" text-anchor="end" transform="rotate(-38 308.6 392)" font-family="Arial" font-size="10">0.71</text>
+<rect x="346.4" y="321.3" width="59.6" height="56.7" fill="#ea580c"/>
+<text x="376.2" y="392" text-anchor="end" transform="rotate(-38 376.2 392)" font-family="Arial" font-size="10">0.74</text>
+<rect x="414.0" y="287.3" width="59.6" height="90.7" fill="#0891b2"/>
+<text x="443.8" y="392" text-anchor="end" transform="rotate(-38 443.8 392)" font-family="Arial" font-size="10">0.77</text>
+<rect x="481.6" y="208.0" width="59.6" height="170.0" fill="#2563eb"/>
+<text x="511.4" y="392" text-anchor="end" transform="rotate(-38 511.4 392)" font-family="Arial" font-size="10">0.81</text>
+<rect x="549.2" y="298.7" width="59.6" height="79.3" fill="#dc2626"/>
+<text x="579.0" y="392" text-anchor="end" transform="rotate(-38 579.0 392)" font-family="Arial" font-size="10">0.84</text>
+<rect x="616.8" y="174.0" width="59.6" height="204.0" fill="#16a34a"/>
+<text x="646.6" y="392" text-anchor="end" transform="rotate(-38 646.6 392)" font-family="Arial" font-size="10">0.88</text>
 <rect x="684.4" y="72.0" width="59.6" height="306.0" fill="#9333ea"/>
-<text x="714.2" y="392" text-anchor="end" transform="rotate(-38 714.2 392)" font-family="Arial" font-size="10">0.93</text>
+<text x="714.2" y="392" text-anchor="end" transform="rotate(-38 714.2 392)" font-family="Arial" font-size="10">0.91</text>
 </svg>

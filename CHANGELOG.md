@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.2.0 - 2026-06-03
+
+- Added `scripts/clean_artifacts.py` and `python scripts/check_repo.py --clean`
+  for safe cache cleanup without deleting official quick or dataset-matrix
+  artifacts.
+- Added dataset-matrix `paper-prototype` mode with offline fallback and dry-run
+  dataset cards.
+- Expanded HDQS into an HDQS++ / DQCS research prototype with curriculum,
+  pipeline-order, retention Pareto, privacy-utility, downstream, generation,
+  and statistical artifacts.
+- Added broader baseline definitions, model-scale configs, research table and
+  figure scripts, failure analysis, generated project report, and
+  `docs/RESEARCH_READINESS.md`.
+- Unified README, CI, reproducibility, and final verification commands around
+  editable install, `unittest`, and `mypy src/course_project_suite/llm_benchmark`.
+
 ## 4.1.0 - 2026-06-03
 
 - Added a dataset-matrix runner with configurable Tiny Shakespeare, WikiText-2,

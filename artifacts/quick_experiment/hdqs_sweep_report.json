@@ -1,75 +1,76 @@
 {
   "type": "deterministic_hdqs_threshold_and_top_k_sweep",
+  "method_name": "HDQS++ / DQCS prototype",
   "threshold_rows": [
     {
       "threshold": 0.74,
-      "retained_documents": 77,
-      "retained_characters": 31461,
-      "retention_rate_documents": 0.8279569892473119,
-      "mean_hdqs_retained": 0.8755605637139877,
-      "pii_like_hits": 30,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "retained_documents": 80,
+      "retained_characters": 33416,
+      "retention_rate_documents": 0.8602150537634409,
+      "mean_hdqs_retained": 0.8702598956828416,
+      "pii_like_hits": 39,
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.76,
-      "retained_documents": 75,
-      "retained_characters": 30509,
-      "retention_rate_documents": 0.8064516129032258,
-      "mean_hdqs_retained": 0.8790695081098722,
-      "pii_like_hits": 24,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "retained_documents": 77,
+      "retained_characters": 31461,
+      "retention_rate_documents": 0.8279569892473119,
+      "mean_hdqs_retained": 0.8749396379473,
+      "pii_like_hits": 30,
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.78,
-      "retained_documents": 73,
-      "retained_characters": 29575,
-      "retention_rate_documents": 0.7849462365591398,
-      "mean_hdqs_retained": 0.8821044640854349,
+      "retained_documents": 75,
+      "retained_characters": 30509,
+      "retention_rate_documents": 0.8064516129032258,
+      "mean_hdqs_retained": 0.87774705032358,
       "pii_like_hits": 24,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.8,
-      "retained_documents": 60,
-      "retained_characters": 24022,
-      "retention_rate_documents": 0.6451612903225806,
-      "mean_hdqs_retained": 0.9012654579916429,
+      "retained_documents": 73,
+      "retained_characters": 29575,
+      "retention_rate_documents": 0.7849462365591398,
+      "mean_hdqs_retained": 0.8802456992815094,
       "pii_like_hits": 24,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.82,
-      "retained_documents": 54,
-      "retained_characters": 21541,
-      "retention_rate_documents": 0.5806451612903226,
-      "mean_hdqs_retained": 0.9118626357950548,
+      "retained_documents": 56,
+      "retained_characters": 22371,
+      "retention_rate_documents": 0.6021505376344086,
+      "mean_hdqs_retained": 0.9015836334745237,
       "pii_like_hits": 24,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.84,
       "retained_documents": 52,
       "retained_characters": 20664,
       "retention_rate_documents": 0.5591397849462365,
-      "mean_hdqs_retained": 0.9152467480435964,
+      "mean_hdqs_retained": 0.9069926374778416,
       "pii_like_hits": 21,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     },
     {
       "threshold": 0.86,
-      "retained_documents": 49,
-      "retained_characters": 19266,
-      "retention_rate_documents": 0.5268817204301075,
-      "mean_hdqs_retained": 0.9191372966554351,
-      "pii_like_hits": 12,
-      "min_score": 0.7064311892161644,
-      "max_score": 0.9584118151532266
+      "retained_documents": 50,
+      "retained_characters": 19754,
+      "retention_rate_documents": 0.5376344086021505,
+      "mean_hdqs_retained": 0.9089929592015422,
+      "pii_like_hits": 15,
+      "min_score": 0.6037845531575804,
+      "max_score": 0.9444325152109664
     }
   ],
   "top_k_rows": [
@@ -77,26 +78,65 @@
       "retention_ratio": 0.25,
       "retained_documents": 24,
       "retained_characters": 8878,
-      "mean_hdqs_retained": 0.941625800779598,
+      "mean_hdqs_retained": 0.9280775865527934,
       "pii_like_hits": 0
     },
     {
       "retention_ratio": 0.5,
       "retained_documents": 47,
       "retained_characters": 18425,
-      "mean_hdqs_retained": 0.9213706902520117,
+      "mean_hdqs_retained": 0.9118601845306963,
       "pii_like_hits": 9
     },
     {
       "retention_ratio": 0.75,
       "retained_documents": 70,
       "retained_characters": 28223,
-      "mean_hdqs_retained": 0.8862515037793385,
+      "mean_hdqs_retained": 0.8835837488753061,
       "pii_like_hits": 24
     }
   ],
-  "raw_noisy_baseline_perplexity": 226073.44166812417,
-  "hdqs_filter_perplexity": 226734.25068847716,
+  "weight_sweep_rows": [
+    {
+      "config_name": "balanced_default",
+      "weights": {},
+      "status": "configured_default",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "privacy_heavy",
+      "weights": {
+        "pii_density_penalty": 2.0,
+        "url_html_noise_penalty": 1.4
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "anti_repetition_heavy",
+      "weights": {
+        "repetition_penalty": 2.0,
+        "ngram_repetition_penalty": 1.6
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "diversity_heavy",
+      "weights": {
+        "lexical_diversity": 1.8,
+        "token_entropy": 1.4
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    }
+  ],
+  "best_config": {
+    "name": "not_selected_from_quick_mode",
+    "reason": "Quick mode does not tune weights on a held-out development split. The report lists candidate configurations without claiming a winner."
+  },
+  "raw_noisy_baseline_perplexity": 394545.7639490097,
+  "hdqs_filter_perplexity": 415821.0239421671,
   "standalone_hdqs_status": "standalone_hdqs_not_better_than_raw_in_this_quick_run",
   "interpretation": "In quick mode, HDQS should be interpreted as a transparent pipeline component. Standalone HDQS filtering is not treated as a consistently performance-improving method until multi-seed and multi-dataset experiments verify that behavior."
 }

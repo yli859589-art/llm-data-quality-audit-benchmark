@@ -2,60 +2,79 @@
 
 ## Problem Definition
 
-The prototype asks whether auditable data interventions improve small-scale
-language-model pretraining when compared under an equal text budget. Controlled
-corruption creates a deterministic stress test; it is not an estimate of
-naturally occurring web noise.
+The prototype studies how data-quality interventions affect small-scale
+language-model pretraining under fixed character/token budgets. Controlled
+corruption and pseudo-real web noise create reproducible stress tests; they are
+not estimates of natural web noise prevalence.
 
-## Controlled Noise
+## HDQS++ / DQCS
 
-`noise.py` implements 12 seed-controlled families: HTML boilerplate, URL spam,
-PII canaries, exact duplicates, near duplicates, OCR-like corruption,
-mojibake, repeated n-grams, low-information templates, mixed-language snippets,
-excessive symbols, and generated-like repetition. Each family can be disabled
-independently.
+HDQS++ is a transparent document-quality scoring prototype. Each document
+receives component scores for lexical diversity, character entropy, token
+entropy, repetition, n-gram repetition, HTML/URL noise, PII density, symbol
+noise, language consistency, length prior, optional LM surprisal, and
+near-duplicate cluster penalty.
+
+DQCS, or Data Quality Curriculum Selection, builds deterministic curricula
+from HDQS++ scores:
+
+- random baseline;
+- high-quality-first;
+- low-quality-first;
+- easy-to-hard;
+- hard-to-easy;
+- quality-stratified sampling;
+- mixed-quality curriculum.
+
+Quick artifacts validate that these curricula can be constructed reproducibly.
+They do not claim curriculum training gains until multi-seed model runs are
+performed.
 
 ## Deduplication
 
-Exact deduplication hashes document strings. The quick experiment uses a
-Jaccard word-shingle reference implementation because it is transparent and
-easy to audit on small corpora. Larger matrix runs can use MinHash/LSH, which
-generates deterministic signatures, buckets them by band, and verifies
-candidate pairs before removal. `duplicate_clusters.json` preserves the method,
-threshold, representative index, member index, and similarity evidence.
+Exact deduplication hashes full document strings. Jaccard near deduplication is
+kept as a readable reference. MinHash/LSH produces deterministic signatures and
+candidate buckets, then verifies candidates with exact Jaccard similarity
+before removal. Duplicate clusters preserve representative/member indices,
+thresholds, and method metadata.
 
-## HDQS
+## Pipeline Order Study
 
-The Heuristic Document Quality Score, abbreviated HDQS or DQScore, is a
-transparent score in `[0, 1]`. It is the configurable weighted mean of:
+The pipeline-order study compares deterministic preprocessing outcomes for:
 
-- lexical diversity
-- normalized character entropy
-- repetition penalty
-- PII-density penalty
-- URL and HTML-noise penalty
-- non-linguistic-symbol penalty
-- length prior
-- language consistency
-- optional duplicate-cluster penalty
+- clean -> redact -> exact dedup -> near dedup -> HDQS;
+- clean -> dedup -> redact -> HDQS;
+- HDQS -> clean -> dedup;
+- redact before dedup;
+- redact after dedup;
+- near dedup before HDQS;
+- near dedup after HDQS.
 
-The implementation supports threshold filtering and top-k retention ratios.
-`quality_scores.csv` preserves per-document scores and components, while
-`hdqs_sweep_report.json` records threshold and top-k retention sweeps. In quick
-mode, HDQS is treated as a pipeline component rather than a standalone
-performance claim.
+The output is `pipeline_order_report.json` and
+`pipeline_order_comparison.svg`. These rows are preprocessing diagnostics, not
+separate model-training claims unless a later experiment explicitly trains
+each order.
 
-## Fairness Rule
+## Privacy Utility
 
-Strict comparison mode concatenates each selected variant and trims every
-training text to the same shared character budget: the minimum of the requested
-budget and every retained variant length. `token_budget_report.json` records the
-decision. Unequal-budget mode is available only for retention-tradeoff studies
-and must not be described as a strict comparison.
+The privacy component uses synthetic canaries only. It reports detection
+before processing, residual canary count, recall, precision, false-positive
+rate, redaction side effects, a lightweight exposure-reduction indicator, and
+utility metrics such as held-out perplexity and next-character accuracy when a
+variant was trained.
 
-## Models
+This is not a formal privacy audit or safety certification.
 
-Quick mode trains a character-tokenized decoder-only causal MiniGPT. The
-supporting suite also includes a BPE tokenizer. Metrics include held-out loss,
-perplexity, bits per character, next-character accuracy, throughput, wall time,
-and optional CUDA peak allocation.
+## Equal Budget Rule
+
+Strict comparison mode trims every trained variant to the same shared
+character budget. `token_budget_report.json` records the selected budget and
+per-variant lengths. Unequal retained-data studies are reported separately as
+retention/utility tradeoffs.
+
+## Auxiliary Attention Benchmark
+
+Attention measurements include sequence-length sweeps, warmup, median/p25/p75
+timing, correctness checks, thread/device/PyTorch metadata, and algorithmic
+working-set estimates. They are auxiliary systems checks; SDPA speed is not
+claimed as a new algorithmic contribution.

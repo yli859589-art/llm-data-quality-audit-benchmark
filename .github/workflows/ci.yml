@@ -24,7 +24,7 @@ jobs:
           python -m pip install -r requirements-dev.txt
           python -m pip install -e .
       - name: Repository hygiene
-        run: python scripts/check_repo.py
+        run: python scripts/check_repo.py --clean
       - name: Lint
         run: ruff check .
       - name: Formatting
@@ -35,6 +35,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Quick benchmark smoke test
         run: python scripts/run_quick_experiment.py
+      - name: Dataset matrix smoke test
+        run: python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
       - name: Regenerate tables and figures
         run: |
           python scripts/make_tables.py

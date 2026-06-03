@@ -2,116 +2,122 @@
 
 Date: 2026-06-03
 
-Verified package target: `4.1.0`.
+Verified package target: `4.2.0`.
 
 This repository is a personal research prototype. It does not claim paper
 acceptance, official institutional coursework status, private-grader access, or
 competition results.
 
-## Second-Pass Audit Summary
+## Audit Result
 
-The second-pass review found that the previous package was already a usable
-portfolio project, but still needed stronger research evidence and cleaner
-export hygiene before it could be described as a high-level
-course-competition-style prototype. This revision narrows the claim boundary
-and strengthens one main theme: data quality and efficient attention
-benchmarking for small-scale language-model pretraining.
+The v4.1.0 project already had a strong LLM data-quality benchmark foundation:
+dataset configs, quick artifacts, MinHash/LSH near deduplication, HDQS sweep,
+CI, tests, and bounded resume documentation. The remaining gaps were research
+system depth and operational polish: inconsistent README/CI commands, no clean
+mode, no `paper-prototype` dataset mode, limited multi-seed statistics, no
+curriculum/pipeline-order artifacts, and no generated research-level summary
+tables/figures.
 
-Key changes:
+## Changes Completed
 
-- Added a configurable dataset matrix with Tiny Shakespeare, WikiText-2,
-  OpenWebText-sample, C4-sample, and mixed-debug entries. Network-backed public
-  datasets remain opt-in, with deterministic offline fallback for local checks.
-- Added MinHash/LSH near-duplicate detection while keeping exact and Jaccard
-  paths as deterministic references.
-- Added HDQS sweep reporting and a standalone interpretation note, so quick
-  artifacts do not overclaim that HDQS alone improves perplexity.
-- Expanded tests around dataset loading, matrix dry runs, near-dedup stability,
-  HDQS scoring, selected supporting algorithm edge cases, and artifact hygiene.
-- Tightened lint, typing, CI, pre-commit, artifact, and zip-export checks.
-- Rewrote resume and paper documentation to avoid official-coursework,
-  institution-affiliation, private-grader, competition, or paper-acceptance
-  claims.
+- Added `scripts/clean_artifacts.py` and `python scripts/check_repo.py --clean`.
+- Added dataset-matrix `paper-prototype` mode with offline fallback and dry-run
+  `dataset_card.json` files.
+- Expanded HDQS into HDQS++ / DQCS with richer component scores, curriculum
+  diagnostics, pipeline-order study, retention Pareto rows, and privacy-utility
+  rows.
+- Expanded baseline definitions and model config matrix for char/BPE tiny,
+  small, and optional medium variants.
+- Added multi-seed aggregate/statistical outputs, bootstrap CI helpers, paired
+  difference summaries, research table/figure scripts, failure analysis, and a
+  generated project report.
+- Updated README, METHOD, EXPERIMENTS, DATASETS, REPRODUCIBILITY,
+  RESEARCH_READINESS, LIMITATIONS, RESUME, and internal audit docs.
 
 ## Verified Commands
 
 | Command | Result |
 | --- | --- |
-| `python scripts/run_quick_experiment.py` | Passed; generated reproducible quick artifacts |
+| `python scripts/check_repo.py --clean` | Passed |
+| `python scripts/run_quick_experiment.py` | Passed |
+| `python scripts/tune_hdqs_quick.py` | Passed |
 | `python scripts/make_tables.py` | Passed |
 | `python scripts/make_figures.py` | Passed |
+| `python scripts/statistical_analysis.py` | Passed |
+| `python scripts/run_dataset_matrix.py --mode quick` | Passed |
+| `python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run` | Passed |
+| `python scripts/make_research_tables.py` | Passed |
+| `python scripts/make_research_figures.py` | Passed |
+| `python scripts/analyze_failures.py` | Passed |
+| `python scripts/make_project_report.py` | Passed |
 | `python scripts/check_artifacts.py` | Passed |
-| `python scripts/run_dataset_matrix.py --mode quick --datasets tiny_shakespeare` | Passed; generated portable dataset-matrix quick artifacts |
-| `python -m unittest discover -s tests -v` | Passed: `53` tests |
-| `python all_course_projects.py --self-check --json` | Passed: `6/6` project families |
+| `python -m unittest discover -s tests -v` | Passed: `61` tests |
 | `ruff check .` | Passed |
-| `mypy src/course_project_suite/llm_benchmark` | Passed: `15` main benchmark source files |
-| `python -m py_compile ...` | Passed for source, script, and test files |
-| `python scripts/run_coverage.py` | Passed: `93%` measured source coverage |
-| `python scripts/check_repo.py` | Passed after cache cleanup |
+| `mypy src/course_project_suite/llm_benchmark` | Passed: `16` source files |
+| `python -m py_compile ...` | Passed for source, scripts, tests, and root entry point |
+| `python all_course_projects.py --self-check --json` | Passed: `6/6` supporting project families |
+| `python scripts/run_coverage.py` | Passed: `93%` total source coverage |
+| `black --check .` | Blocked locally by CPython `3.12.5` Black safety guard |
 
-## Black Environment Note
+## Quick Evidence
 
-`black --check .` is configured in CI and pre-commit with Black `25.1.0`.
-The local machine uses CPython `3.12.5`; Black intentionally refuses to run on
-that interpreter because of its upstream AST safety warning. GitHub Actions
-uses Python `3.10`, where the configured Black check remains active.
-
-## Generated Quick Evidence
-
-Quick mode is CPU-oriented, offline, and single-seed (`23`). It is a
-reproducibility smoke test, not publication-level evidence.
+Quick mode is CPU-oriented, offline, and single-seed (`23`). It is
+reproducibility and systems evidence, not paper-level empirical evidence.
 
 | Item | Generated result |
 | --- | ---: |
 | Shared training-character budget | `18,000` |
 | Raw noisy documents | `93` |
-| Full-pipeline retained documents | `56` |
-| Exact duplicate removals | `21` |
-| Near-duplicate removals after exact deduplication | `10` |
+| Full-pipeline retained documents | `57` |
 | Raw PII-like hits | `39` |
 | Full-pipeline PII-like hits | `0` |
 | Synthetic-canary removal recall | `1.0` |
 | Synthetic-canary removal precision | `1.0` |
-| Raw held-out perplexity | `226073.44` |
-| HDQS-only held-out perplexity | `226734.25` |
-| Full-pipeline held-out perplexity | `219024.40` |
+| Raw held-out perplexity | `394545.76` |
+| HDQS-only held-out perplexity | `415821.02` |
+| Full-pipeline held-out perplexity | `397225.39` |
 
-In this compact smoke test, full-pipeline perplexity is approximately `3.1%`
-lower than the raw noisy baseline. The result must be validated with the larger
-matrix before it is presented as a research conclusion.
+In this specific quick run, standalone HDQS is weaker than the raw baseline and
+the full pipeline is approximately `0.68%` worse in held-out perplexity than
+the raw noisy baseline. This is reported intentionally: v4.2.0 improves the
+research system, baselines, diagnostics, and reproducibility, but it does not
+claim a new positive quick-mode performance result.
 
-The generated HDQS sweep artifact records that standalone HDQS is not better
-than the raw baseline in this quick single-seed run. The current evidence
-supports the full pipeline as the stronger intervention, not HDQS alone.
+## Paper-Prototype Dry Run
 
-At auxiliary attention sequence length `64`, the generated local CPU artifact
-reports PyTorch SDPA at approximately `2.50x` the naive reference throughput
-with an estimated `33.3%` smaller algorithmic working set. These values are
-hardware-dependent. Estimated CPU working-set values are not measured peak
-memory.
+`python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run`
+validated all configured dataset entries:
 
-## Required Larger Experiments
+- `tiny_shakespeare`: local, no fallback.
+- `mixed_debug`: local, no fallback.
+- `wikitext2`: offline fallback recorded.
+- `openwebtext_sample`: offline fallback recorded.
+- `c4_sample`: offline fallback recorded.
 
-Before describing this as a venue-submission-level paper prototype:
+Each entry writes a relative output path and a dry-run `dataset_card.json`.
 
-1. Run the three-seed full matrix with seeds `23`, `42`, and `3407`.
-2. Add explicit-network sampled WikiText-2, OpenWebText, and C4 runs after
-   reviewing each upstream dataset card and usage policy.
-3. Tune HDQS weights and thresholds on a separate development split.
-4. Add retention-ratio sweeps, BPE-model comparisons, and deeper privacy and
-   language-bias analysis.
-5. Report multi-seed mean, standard deviation, confidence intervals, and
-   failure-case analysis from the generated artifacts.
+## Black Environment Note
+
+`black --check .` is configured in CI and pre-commit with Black `25.1.0`.
+The local machine uses CPython `3.12.5`; Black may refuse to run on that
+interpreter because of its upstream AST safety warning. If it fails locally,
+that failure is environment-specific and must be reported rather than hidden.
+In this verification run, Black did fail for that interpreter-safety reason.
+
+## Remaining Work For Paper Conversion
+
+1. Run explicit-network or local WikiText-2, OpenWebText, and C4 samples after
+   reviewing dataset policies.
+2. Tune HDQS++ weights on a held-out development split.
+3. Run paper-prototype/full multi-seed model training across at least two model
+   scales.
+4. Report confidence intervals, paired comparisons, and failure categories for
+   every trained baseline.
+5. Add deeper privacy and memorization evaluations before making privacy
+   claims beyond synthetic-canary redaction.
 
 ## Deliverable Scope
 
-Modified and new files include the main benchmark package, dataset configs,
-experiment scripts, tests, generated quick artifacts, generated dataset-matrix
-artifacts, CI/pre-commit/tooling files, and research/resume documentation. No
-files were intentionally deleted in this pass.
-
-This package is ready to present as a personal LLM data-quality benchmark
-prototype on a resume or GitHub. It is not yet evidence for an official course
-submission, competition placement, accepted paper, or institution-affiliated
-project.
+The repository is ready to present as a resume-ready and CCF-C-convertible LLM
+data-quality benchmark research prototype. It is not a completed CCF-C paper,
+not ready-for-publication evidence, and not official coursework.

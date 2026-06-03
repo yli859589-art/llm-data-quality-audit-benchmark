@@ -15,7 +15,7 @@ from course_project_suite.llm_benchmark.dataset_matrix import (
 )
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--mode", choices=["quick", "full"], default="quick")
+parser.add_argument("--mode", choices=["quick", "paper-prototype", "full"], default="quick")
 parser.add_argument("--datasets", nargs="*", default=None)
 parser.add_argument("--allow-network", action="store_true")
 parser.add_argument("--dry-run", action="store_true")

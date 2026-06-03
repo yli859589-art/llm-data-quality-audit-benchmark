@@ -1,0 +1,10 @@
+{
+  "name": "bpe_tiny_gpt",
+  "tokenizer": "local BPE tokenizer",
+  "architecture": "decoder-only causal transformer",
+  "n_layer": 1,
+  "n_head": 2,
+  "n_embd": 32,
+  "block_size": 32,
+  "status": "implementation available; excluded from default CPU quick run"
+}

@@ -1,0 +1,13 @@
+noise_type,count
+exact_duplicates,12
+excessive_symbols,10
+generated_repetition,5
+html_boilerplate,20
+low_information_templates,8
+mixed_language,5
+mojibake,6
+near_duplicates,8
+ocr_corruption,7
+pii_canaries,9
+repeated_ngrams,6
+url_spam,15

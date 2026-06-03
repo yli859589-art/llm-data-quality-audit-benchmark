@@ -127,6 +127,22 @@ def train_character_lm(
         checkpoint.parent.mkdir(parents=True, exist_ok=True)
         torch.save({"model": model.state_dict(), "config": asdict(config)}, checkpoint)
     final_val_loss = curve[-1]["val_loss"]
+    model.eval()
+    with torch.no_grad():
+        prompt_ids = val_ids[: config.block_size].tolist()
+        generated = list(prompt_ids)
+        context = torch.tensor(
+            [generated[-config.block_size :]], dtype=torch.long, device=config.device
+        )
+        for _ in range(80):
+            logits, _ = model(context)
+            next_id = int(torch.argmax(logits[0, -1]).detach().cpu())
+            generated.append(next_id)
+            context = torch.tensor(
+                [generated[-config.block_size :]], dtype=torch.long, device=config.device
+            )
+    sample_prompt = vocab.decode(prompt_ids)
+    sample_generation = vocab.decode(generated)
     return {
         "config": asdict(config),
         "tokenizer": "character",
@@ -150,5 +166,7 @@ def train_character_lm(
         "final_val_perplexity": math.exp(final_val_loss),
         "final_val_bits_per_character": final_val_loss / math.log(2),
         "final_val_next_char_accuracy": curve[-1]["val_next_char_accuracy"],
+        "sample_prompt": sample_prompt,
+        "sample_generation": sample_generation,
         "curve": curve,
     }

@@ -17,6 +17,7 @@ from course_project_suite.cs336.data import (
 )
 
 from .dedup import exact_deduplicate, near_deduplicate
+from .near_dedup import near_deduplicate as near_deduplicate_with_method
 from .noise import NoiseConfig, inject_controlled_noise
 from .quality import EMAIL_RE, ID_RE, PHONE_RE, filter_by_quality, score_documents
 
@@ -138,18 +139,68 @@ def build_ablation_variants(
     quality_threshold: float = 0.80,
     near_threshold: float = 0.82,
 ) -> dict[str, list[str]]:
+    full_pipeline = apply_pipeline(
+        documents,
+        clean=True,
+        redact=True,
+        exact_dedup=True,
+        near_dedup=True,
+        hdqs_filter=True,
+        quality_threshold=quality_threshold,
+        near_threshold=near_threshold,
+    )
+    full_retention = len(full_pipeline) / max(1, len(documents))
+    exact_docs = exact_deduplicate(documents).documents
+    jaccard_docs = near_deduplicate(documents, threshold=near_threshold).documents
+    minhash_docs = near_deduplicate_with_method(
+        documents, method="minhash_lsh", threshold=near_threshold
+    ).documents
+    quality_ranked, _ = filter_by_quality(documents, retention_ratio=full_retention)
+    length_ranked = sorted(documents, key=len, reverse=True)[: max(1, len(full_pipeline))]
+    random_retention = documents[: max(1, len(full_pipeline))]
     settings: dict[str, dict[str, bool | float]] = {
         "raw_noisy_baseline": {},
         "clean_only": {"clean": True},
         "pii_redact_only": {"redact": True},
         "exact_dedup_only": {"exact_dedup": True},
         "near_dedup_only": {"near_dedup": True},
+        "jaccard_near_dedup_only": {"near_dedup": True},
         "rule_filter_only": {"rule_filter": True},
+        "rule_quality_filter": {"rule_filter": True},
         "perplexity_filter_proxy": {
             "hdqs_filter": True,
             "quality_threshold": quality_threshold + 0.04,
         },
+        "proxy_perplexity_filter": {
+            "hdqs_filter": True,
+            "quality_threshold": quality_threshold + 0.04,
+        },
         "hdqs_filter": {"hdqs_filter": True},
+        "hdqs_curriculum": {"hdqs_filter": True},
+        "full_pipeline_without_clean": {
+            "redact": True,
+            "exact_dedup": True,
+            "near_dedup": True,
+            "hdqs_filter": True,
+        },
+        "full_pipeline_without_redact": {
+            "clean": True,
+            "exact_dedup": True,
+            "near_dedup": True,
+            "hdqs_filter": True,
+        },
+        "full_pipeline_without_exact_dedup": {
+            "clean": True,
+            "redact": True,
+            "near_dedup": True,
+            "hdqs_filter": True,
+        },
+        "full_pipeline_without_near_dedup": {
+            "clean": True,
+            "redact": True,
+            "exact_dedup": True,
+            "hdqs_filter": True,
+        },
         "full_without_hdqs": {
             "clean": True,
             "redact": True,
@@ -169,10 +220,18 @@ def build_ablation_variants(
         "quality_threshold": quality_threshold,
         "near_threshold": near_threshold,
     }
-    return {
+    variants = {
         name: apply_pipeline(documents, **cast(Any, defaults | overrides))
         for name, overrides in settings.items()
     }
+    variants["full_pipeline"] = full_pipeline
+    variants["minhash_lsh_near_dedup_only"] = minhash_docs
+    variants["random_retention_matched_baseline"] = random_retention
+    variants["length_matched_baseline"] = length_ranked
+    variants["quality_retention_matched_baseline"] = quality_ranked
+    variants["exact_dedup_only"] = exact_docs
+    variants["jaccard_near_dedup_only"] = jaccard_docs
+    return variants
 
 
 def quality_metrics(documents: list[str]) -> dict[str, float | int]:

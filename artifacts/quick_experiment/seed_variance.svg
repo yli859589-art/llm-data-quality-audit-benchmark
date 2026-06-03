@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="450" viewBox="0 0 820 450">
+<rect width="100%" height="100%" fill="white"/>
+<text x="410.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Seed variance</text>
+<line x1="72" y1="378" x2="748" y2="378" stroke="#111827"/>
+<text x="18" y="225.0" text-anchor="middle" transform="rotate(-90 18 225.0)" font-family="Arial" font-size="13">Perplexity std</text>
+<rect x="76.0" y="378.0" width="161.0" height="0.0" fill="#2563eb"/>
+<text x="156.5" y="392" text-anchor="end" transform="rotate(-38 156.5 392)" font-family="Arial" font-size="10">full_pipeline</text>
+<rect x="245.0" y="378.0" width="161.0" height="0.0" fill="#dc2626"/>
+<text x="325.5" y="392" text-anchor="end" transform="rotate(-38 325.5 392)" font-family="Arial" font-size="10">hdqs_filter</text>
+<rect x="414.0" y="378.0" width="161.0" height="0.0" fill="#16a34a"/>
+<text x="494.5" y="392" text-anchor="end" transform="rotate(-38 494.5 392)" font-family="Arial" font-size="10">raw_noisy_baseline</text>
+<rect x="583.0" y="378.0" width="161.0" height="0.0" fill="#9333ea"/>
+<text x="663.5" y="392" text-anchor="end" transform="rotate(-38 663.5 392)" font-family="Arial" font-size="10">rule_filter_only</text>
+</svg>

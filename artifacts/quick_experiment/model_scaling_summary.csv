@@ -1,0 +1,10 @@
+model,tokenizer,vocab_size_assumption,estimated_parameter_count,block_size,status
+bpe-mini-gpt,BPETokenizer from course_project_suite.cs336.tokenizer,512,28672,32,supported implementation; excluded from CPU quick matrix
+bpe_small_gpt,local BPE tokenizer,512,270336,96,paper-prototype dry-run configuration
+bpe_tiny_gpt,local BPE tokenizer,512,28672,32,implementation available; excluded from default CPU quick run
+char-mini-gpt,character,96,15360,32,configured
+char_small_gpt,character,96,104448,64,paper-prototype small-run configuration
+char_tiny_gpt,character,96,9216,32,quick-mode supported
+medium-gpt-optional,character or BPE,512,851968,128,optional CUDA-oriented extension; not run in CI
+optional_bpe_medium_gpt,local BPE tokenizer,512,851968,128,optional CUDA-oriented extension; not run in CI
+small-gpt-debug,character,96,104448,64,configured

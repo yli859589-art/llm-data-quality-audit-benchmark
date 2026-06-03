@@ -1,0 +1,10 @@
+{
+  "name": "optional_bpe_medium_gpt",
+  "tokenizer": "local BPE tokenizer",
+  "architecture": "decoder-only causal transformer",
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128,
+  "block_size": 128,
+  "status": "optional CUDA-oriented extension; not run in CI"
+}

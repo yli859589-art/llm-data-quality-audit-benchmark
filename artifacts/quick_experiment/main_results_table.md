@@ -6,7 +6,7 @@ Quick mode is a CPU, single-seed smoke test. The table verifies reproducibility 
 
 | Variant | Validation loss mean +/- std | Perplexity mean +/- std | BPC | Next-char accuracy |
 | --- | ---: | ---: | ---: | ---: |
-| `full_pipeline` | 12.2969 +/- 0.0000 | 219024.40 +/- 0.00 | 17.741 | 0.029 |
-| `hdqs_filter` | 12.3315 +/- 0.0000 | 226734.25 +/- 0.00 | 17.791 | 0.029 |
-| `raw_noisy_baseline` | 12.3286 +/- 0.0000 | 226073.44 +/- 0.00 | 17.786 | 0.029 |
-| `rule_filter_only` | 12.4156 +/- 0.0000 | 246609.45 +/- 0.00 | 17.912 | 0.029 |
+| `full_pipeline` | 12.8923 +/- 0.0000 | 397225.39 +/- 0.00 | 18.600 | 0.027 |
+| `hdqs_filter` | 12.9380 +/- 0.0000 | 415821.02 +/- 0.00 | 18.666 | 0.027 |
+| `raw_noisy_baseline` | 12.8855 +/- 0.0000 | 394545.76 +/- 0.00 | 18.590 | 0.029 |
+| `rule_filter_only` | 12.9548 +/- 0.0000 | 422854.30 +/- 0.00 | 18.690 | 0.027 |

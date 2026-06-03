@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import csv
-from dataclasses import dataclass
+import json
+import shutil
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
@@ -32,10 +34,10 @@ class DatasetMatrixResult:
 
 def dataset_keys_for_mode(mode: str) -> tuple[str, ...]:
     if mode == "quick":
-        return ("tiny_shakespeare",)
-    if mode == "full":
+        return ("tiny_shakespeare", "mixed_debug")
+    if mode in {"paper-prototype", "full"}:
         return tuple(DATASET_CONFIGS)
-    raise ValueError("mode must be 'quick' or 'full'.")
+    raise ValueError("mode must be 'quick', 'paper-prototype', or 'full'.")
 
 
 def resolve_dataset_config(dataset_key: str, root: Path) -> Path:
@@ -60,6 +62,13 @@ def benchmark_config_for_dataset(
         train_chars = 18000
         validation_chars = 5000
         attention_lengths: tuple[int, ...] = (32, 64)
+    elif mode == "paper-prototype":
+        train_config = TrainConfig(steps=8, eval_interval=4, eval_batches=2, n_embd=24)
+        seeds = (23, 42, 3407)
+        max_documents = 80
+        train_chars = 22000
+        validation_chars = 6000
+        attention_lengths = (32, 64)
     elif mode == "full":
         train_config = TrainConfig()
         seeds = (23, 42, 3407)
@@ -68,7 +77,7 @@ def benchmark_config_for_dataset(
         validation_chars = 9000
         attention_lengths = (32, 64, 128)
     else:
-        raise ValueError("mode must be 'quick' or 'full'.")
+        raise ValueError("mode must be 'quick', 'paper-prototype', or 'full'.")
 
     return BenchmarkConfig(
         data_path=dataset.source.path,
@@ -80,7 +89,7 @@ def benchmark_config_for_dataset(
         train_config=train_config,
         seeds=seeds,
         attention_lengths=attention_lengths,
-        attention_repeats=3 if mode == "quick" else 6,
+        attention_repeats=3 if mode in {"quick", "paper-prototype"} else 6,
     )
 
 
@@ -141,7 +150,26 @@ def run_dataset_matrix(
                 dataset, dataset_key=dataset_key, mode=mode, output_dir=output_dir
             )
             if dry_run:
-                (output_dir / dataset_key).mkdir(parents=True, exist_ok=True)
+                dataset_output = output_dir / dataset_key
+                dataset_output.mkdir(parents=True, exist_ok=True)
+                for child in dataset_output.iterdir():
+                    if child.is_dir():
+                        shutil.rmtree(child)
+                    else:
+                        child.unlink()
+                dry_run_card = {
+                    **asdict(dataset.source),
+                    "used_fallback": dataset.used_fallback,
+                    "dry_run": True,
+                    "configuration": dataset.configuration,
+                    "note": (
+                        "Dataset matrix dry-run card. It validates loading, fallback, "
+                        "source attribution, and output routing without training a model."
+                    ),
+                }
+                (dataset_output / "dataset_card.json").write_text(
+                    json.dumps(dry_run_card, indent=2), encoding="utf-8"
+                )
                 rows.append(
                     DatasetMatrixResult(
                         dataset_key=dataset_key,
@@ -172,7 +200,7 @@ def run_dataset_matrix(
                 DatasetMatrixResult(
                     dataset_key=dataset_key,
                     dataset_name="unknown",
-                    output_dir=(output_dir / dataset_key).as_posix(),
+                    output_dir=_portable_path(output_dir / dataset_key, root),
                     used_fallback=False,
                     status="error",
                     error=str(error),

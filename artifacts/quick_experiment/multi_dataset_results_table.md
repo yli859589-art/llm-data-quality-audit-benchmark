@@ -1,0 +1,9 @@
+# Multi-Dataset Results Table
+
+| dataset_key | dataset_name | output_dir | used_fallback | status | raw_perplexity | full_pipeline_perplexity | error |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| tiny_shakespeare | tiny_shakespeare | artifacts/dataset_matrix/tiny_shakespeare | False | dry_run |  |  |  |
+| wikitext2 | tiny_shakespeare | artifacts/dataset_matrix/wikitext2 | True | dry_run |  |  |  |
+| openwebtext_sample | tiny_shakespeare | artifacts/dataset_matrix/openwebtext_sample | True | dry_run |  |  |  |
+| c4_sample | tiny_shakespeare | artifacts/dataset_matrix/c4_sample | True | dry_run |  |  |  |
+| mixed_debug | mixed_debug | artifacts/dataset_matrix/mixed_debug | False | dry_run |  |  |  |

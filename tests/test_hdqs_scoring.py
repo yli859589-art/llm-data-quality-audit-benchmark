@@ -1,7 +1,12 @@
 import unittest
 
 from course_project_suite.llm_benchmark.experiment import _build_hdqs_sweep_report
-from course_project_suite.llm_benchmark.quality import filter_by_quality, score_document
+from course_project_suite.llm_benchmark.quality import (
+    filter_by_quality,
+    ngram_repetition_penalty,
+    score_document,
+    token_entropy,
+)
 
 
 class HdqsScoringTests(unittest.TestCase):
@@ -37,6 +42,13 @@ class HdqsScoringTests(unittest.TestCase):
         )
         self.assertGreater(len(report["threshold_rows"]), 3)
         self.assertEqual(len(report["top_k_rows"]), 3)
+        self.assertIn("weight_sweep_rows", report)
+
+    def test_hdqs_plus_components_penalize_repetition(self):
+        varied = "alpha beta gamma delta epsilon zeta eta theta"
+        repeated = "alpha alpha alpha alpha alpha alpha alpha alpha"
+        self.assertGreater(token_entropy(varied), token_entropy(repeated))
+        self.assertGreater(ngram_repetition_penalty(varied), ngram_repetition_penalty(repeated))
 
 
 if __name__ == "__main__":

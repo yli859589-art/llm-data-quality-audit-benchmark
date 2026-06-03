@@ -11,7 +11,7 @@ How do deterministic data-quality interventions affect equal-budget small-scale 
 ## Data Processing
 
 - Raw noisy documents: `93`
-- Full-pipeline retained documents: `56`
+- Full-pipeline retained documents: `57`
 - Raw PII-like hits: `39`
 - Full-pipeline PII-like hits: `0`
 - Equal character budget: `True`
@@ -20,10 +20,10 @@ How do deterministic data-quality interventions affect equal-budget small-scale 
 
 | Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | Next-char accuracy |
 | --- | --- | ---: | ---: | ---: |
-| `full_pipeline` | 23 | 12.2969 +/- 0.0000 | 219024.40 +/- 0.00 | 0.029 |
-| `hdqs_filter` | 23 | 12.3315 +/- 0.0000 | 226734.25 +/- 0.00 | 0.029 |
-| `raw_noisy_baseline` | 23 | 12.3286 +/- 0.0000 | 226073.44 +/- 0.00 | 0.029 |
-| `rule_filter_only` | 23 | 12.4156 +/- 0.0000 | 246609.45 +/- 0.00 | 0.029 |
+| `full_pipeline` | 23 | 12.8923 +/- 0.0000 | 397225.39 +/- 0.00 | 0.027 |
+| `hdqs_filter` | 23 | 12.9380 +/- 0.0000 | 415821.02 +/- 0.00 | 0.027 |
+| `raw_noisy_baseline` | 23 | 12.8855 +/- 0.0000 | 394545.76 +/- 0.00 | 0.029 |
+| `rule_filter_only` | 23 | 12.9548 +/- 0.0000 | 422854.30 +/- 0.00 | 0.027 |
 
 ## Auxiliary Attention Benchmark
 

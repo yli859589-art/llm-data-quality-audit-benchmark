@@ -16,7 +16,9 @@ class DatasetMatrixTests(unittest.TestCase):
         self.root = Path(__file__).resolve().parents[1]
 
     def test_dataset_keys_by_mode(self):
-        self.assertEqual(dataset_keys_for_mode("quick"), ("tiny_shakespeare",))
+        self.assertEqual(dataset_keys_for_mode("quick"), ("tiny_shakespeare", "mixed_debug"))
+        self.assertIn("mixed_debug", dataset_keys_for_mode("paper-prototype"))
+        self.assertIn("c4_sample", dataset_keys_for_mode("paper-prototype"))
         self.assertIn("wikitext2", dataset_keys_for_mode("full"))
         with self.assertRaises(ValueError):
             dataset_keys_for_mode("paper")
@@ -54,6 +56,23 @@ class DatasetMatrixTests(unittest.TestCase):
             self.assertTrue(rows[0].used_fallback)
             self.assertTrue((Path(tmp) / "dataset_matrix_summary.csv").exists())
             self.assertTrue((Path(tmp) / "wikitext2").exists())
+            self.assertTrue((Path(tmp) / "wikitext2" / "dataset_card.json").exists())
+
+    def test_dry_run_clears_stale_dataset_outputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            stale = Path(tmp) / "tiny_shakespeare" / "results.json"
+            stale.parent.mkdir(parents=True)
+            stale.write_text("stale", encoding="utf-8")
+            run_dataset_matrix(
+                root=self.root,
+                output_dir=Path(tmp),
+                dataset_keys=("tiny_shakespeare",),
+                mode="paper-prototype",
+                allow_network=False,
+                dry_run=True,
+            )
+            self.assertFalse(stale.exists())
+            self.assertTrue((stale.parent / "dataset_card.json").exists())
 
 
 if __name__ == "__main__":

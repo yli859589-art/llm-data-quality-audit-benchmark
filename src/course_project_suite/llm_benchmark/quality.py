@@ -15,12 +15,15 @@ URL_HTML_RE = re.compile(r"https?://\S+|<[^>]+>")
 class QualityWeights:
     lexical_diversity: float = 1.0
     char_entropy: float = 1.0
+    token_entropy: float = 0.8
     repetition_penalty: float = 1.3
+    ngram_repetition_penalty: float = 1.0
     pii_density_penalty: float = 1.2
     url_html_noise_penalty: float = 1.0
     non_linguistic_symbol_penalty: float = 1.0
     length_prior: float = 0.8
     language_consistency: float = 0.7
+    optional_lm_surprisal: float = 0.0
     duplicate_cluster_penalty: float = 0.0
 
 
@@ -43,12 +46,29 @@ def char_entropy(text: str) -> float:
     return min(1.0, entropy / 5.0)
 
 
+def token_entropy(text: str) -> float:
+    words = re.findall(r"\w+", text.casefold())
+    counts = Counter(words)
+    total = max(1, len(words))
+    entropy = -sum((count / total) * math.log2(count / total) for count in counts.values())
+    return min(1.0, entropy / 8.0)
+
+
 def repetition_penalty(text: str) -> float:
     words = re.findall(r"\w+", text.casefold())
     if len(words) < 2:
         return 1.0
     bigrams = list(zip(words, words[1:], strict=False))
     repeated_fraction = 1 - len(set(bigrams)) / max(1, len(bigrams))
+    return max(0.0, 1 - repeated_fraction)
+
+
+def ngram_repetition_penalty(text: str, n: int = 3) -> float:
+    words = re.findall(r"\w+", text.casefold())
+    if len(words) < n:
+        return 1.0
+    ngrams = list(zip(*(words[offset:] for offset in range(n)), strict=False))
+    repeated_fraction = 1 - len(set(ngrams)) / max(1, len(ngrams))
     return max(0.0, 1 - repeated_fraction)
 
 
@@ -86,6 +106,17 @@ def language_consistency(text: str) -> float:
     return ascii_letters / len(letters)
 
 
+def optional_lm_surprisal_quality(lm_surprisal: float | None = None) -> float:
+    """Map an optional external surprisal estimate to a bounded quality signal.
+
+    Quick mode does not compute a separate LM-based filter, so the neutral value
+    is `1.0`. Larger experiments can pass a positive surprisal estimate.
+    """
+    if lm_surprisal is None:
+        return 1.0
+    return 1 / (1 + max(0.0, lm_surprisal))
+
+
 def score_document(
     text: str,
     weights: QualityWeights | None = None,
@@ -96,12 +127,15 @@ def score_document(
     components = {
         "lexical_diversity": lexical_diversity(text),
         "char_entropy": char_entropy(text),
+        "token_entropy": token_entropy(text),
         "repetition_penalty": repetition_penalty(text),
+        "ngram_repetition_penalty": ngram_repetition_penalty(text),
         "pii_density_penalty": pii_density_penalty(text),
         "url_html_noise_penalty": url_html_noise_penalty(text),
         "non_linguistic_symbol_penalty": non_linguistic_symbol_penalty(text),
         "length_prior": length_prior(text),
         "language_consistency": language_consistency(text),
+        "optional_lm_surprisal": optional_lm_surprisal_quality(),
         "duplicate_cluster_penalty": duplicate_cluster_penalty,
     }
     weight_map = asdict(weights)

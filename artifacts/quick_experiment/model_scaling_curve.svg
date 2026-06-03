@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="450" viewBox="0 0 820 450">
+<rect width="100%" height="100%" fill="white"/>
+<text x="410.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Configured model scaling</text>
+<line x1="72" y1="378" x2="748" y2="378" stroke="#111827"/>
+<text x="18" y="225.0" text-anchor="middle" transform="rotate(-90 18 225.0)" font-family="Arial" font-size="13">Estimated parameters</text>
+<rect x="76.0" y="367.7" width="67.1" height="10.3" fill="#2563eb"/>
+<text x="109.6" y="392" text-anchor="end" transform="rotate(-38 109.6 392)" font-family="Arial" font-size="10">bpe-mini-gpt</text>
+<rect x="151.1" y="280.9" width="67.1" height="97.1" fill="#dc2626"/>
+<text x="184.7" y="392" text-anchor="end" transform="rotate(-38 184.7 392)" font-family="Arial" font-size="10">bpe_small_gpt</text>
+<rect x="226.2" y="367.7" width="67.1" height="10.3" fill="#16a34a"/>
+<text x="259.8" y="392" text-anchor="end" transform="rotate(-38 259.8 392)" font-family="Arial" font-size="10">bpe_tiny_gpt</text>
+<rect x="301.3" y="372.5" width="67.1" height="5.5" fill="#9333ea"/>
+<text x="334.9" y="392" text-anchor="end" transform="rotate(-38 334.9 392)" font-family="Arial" font-size="10">char-mini-gpt</text>
+<rect x="376.4" y="340.5" width="67.1" height="37.5" fill="#ea580c"/>
+<text x="410.0" y="392" text-anchor="end" transform="rotate(-38 410.0 392)" font-family="Arial" font-size="10">char_small_gpt</text>
+<rect x="451.6" y="374.7" width="67.1" height="3.3" fill="#0891b2"/>
+<text x="485.1" y="392" text-anchor="end" transform="rotate(-38 485.1 392)" font-family="Arial" font-size="10">char_tiny_gpt</text>
+<rect x="526.7" y="72.0" width="67.1" height="306.0" fill="#2563eb"/>
+<text x="560.2" y="392" text-anchor="end" transform="rotate(-38 560.2 392)" font-family="Arial" font-size="10">medium-gpt-optional</text>
+<rect x="601.8" y="72.0" width="67.1" height="306.0" fill="#dc2626"/>
+<text x="635.3" y="392" text-anchor="end" transform="rotate(-38 635.3 392)" font-family="Arial" font-size="10">optional_bpe_medium_gpt</text>
+<rect x="676.9" y="340.5" width="67.1" height="37.5" fill="#16a34a"/>
+<text x="710.4" y="392" text-anchor="end" transform="rotate(-38 710.4 392)" font-family="Arial" font-size="10">small-gpt-debug</text>
+</svg>

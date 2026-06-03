@@ -12,11 +12,11 @@
       "training_characters": 18000
     },
     "hdqs_filter": {
-      "available_characters": 24140,
+      "available_characters": 29719,
       "training_characters": 18000
     },
     "full_pipeline": {
-      "available_characters": 21174,
+      "available_characters": 21604,
       "training_characters": 18000
     }
   },

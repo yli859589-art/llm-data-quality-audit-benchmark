@@ -1,34 +1,27 @@
 # Datasets
 
-## Default Offline Dataset
+## Configured Matrix
 
-Quick mode uses the checked-in Tiny Shakespeare mirror at
-`data/tinyshakespeare/input.txt`. The loader validates SHA-256 before use. This
-keeps CI offline and prevents an implicit large download.
+Dataset configs live under `configs/datasets/`:
 
-## Configured Adapters
+- `tiny_shakespeare`: local, checksum-verified public debugging corpus.
+- `mixed_debug`: local Tiny Shakespeare-backed debug entry for mixed-noise
+  matrix checks.
+- `wikitext2`: optional streamed WikiText-2 adapter.
+- `openwebtext_sample`: optional streamed OpenWebText sample adapter.
+- `c4_sample`: optional streamed C4 sample adapter.
 
-| Config | Provider | Default behavior |
-| --- | --- | --- |
-| `configs/datasets/tiny_shakespeare.yaml` | Local file | Used by quick mode |
-| `configs/datasets/wikitext2.yaml` | Optional Hugging Face stream | Falls back to Tiny Shakespeare offline |
-| `configs/datasets/openwebtext_sample.yaml` | Optional Hugging Face stream | Falls back to Tiny Shakespeare offline |
-| `configs/datasets/c4_sample.yaml` | Optional Hugging Face stream | Falls back to Tiny Shakespeare offline |
-| `configs/datasets/mixed_debug.yaml` | Local debug file | Used for pipeline debugging |
+Optional public datasets require explicit network permission and upstream
+dataset-card review. Offline mode falls back to Tiny Shakespeare and records
+`used_fallback=true`.
 
-Network access is explicit: call `load_configured_dataset(...,
-allow_network=True)`, or run `python scripts/run_dataset_matrix.py --mode full
---allow-network`, and install the optional `datasets` package. Without network
-or that package, optional Hugging Face configs fall back to the local Tiny
-Shakespeare corpus and mark `used_fallback=true` in the matrix summary.
+## Modes
 
-## Dataset Cards
+- `quick`: `tiny_shakespeare`, `mixed_debug`.
+- `paper-prototype`: all configured entries with offline fallback and dry-run
+  support.
+- `full`: all configured entries with longer training and optional network.
 
-Each experiment generates `dataset_card.json` with source, usage note, split,
-raw and retained characters, retention rate, duplicate removals, PII-like hit
-counts, seed, timestamp, and code version when available.
-
-The matrix runner writes per-dataset artifacts to
-`artifacts/dataset_matrix/<dataset_name>/` and writes aggregate summaries to
-`artifacts/dataset_matrix/dataset_matrix_summary.csv` and
-`artifacts/dataset_matrix/dataset_matrix_summary.md`.
+Every dataset-matrix entry writes a relative output path and a
+`dataset_card.json`. Dry-run cards record source, license note, fallback
+status, and `dry_run=true`; trained cards include data-processing metrics.

@@ -1,48 +1,55 @@
-# Internal Audit: Research Prototype Upgrade
+# Internal Audit: v4.2 Research Prototype Upgrade
 
 Date: 2026-06-03
 
-This document records the repository audit performed before the research-style
-upgrade. It is an internal engineering checklist, not a publication claim.
+This audit was performed before modifying the v4.1.0 repository. It records
+what already existed, what was missing, and what this pass changed.
 
-## Target Positioning
+## Confirmed Existing Functions
 
-The repository should be presented as a reproducible paper prototype for:
+- Main project framing around LLM data-quality benchmarking.
+- Configured dataset adapters for Tiny Shakespeare, WikiText-2, OpenWebText
+  sample, C4 sample, and mixed debug.
+- Quick experiment, dataset matrix, multi-seed script, HDQS sweep script,
+  table/figure generation, artifact checks, coverage script, CI, ruff, mypy,
+  and pre-commit configuration.
+- Exact deduplication, Jaccard near deduplication, and MinHash/LSH near
+  deduplication.
+- Controlled noise families, privacy canary report, equal-budget character LM
+  training, attention benchmark, generated quick artifacts, and 53+ tests.
 
-> Data Quality Interventions for Small-Scale Language Model Pretraining
+## Confirmed Gaps
 
-The attention benchmark remains an auxiliary systems experiment. The project
-must not claim institutional enrollment, official coursework, competition
-placement, or CCF-C acceptance.
+- README used `pytest` and `mypy src`, while CI used `unittest` and
+  `mypy src/course_project_suite/llm_benchmark`.
+- There was no `scripts/clean_artifacts.py` and no `check_repo.py --clean`.
+- Dataset matrix lacked `paper-prototype` mode and dry-run dataset cards.
+- Multi-seed script did not emit seed-level, aggregate, and statistical-test
+  artifacts.
+- HDQS was not yet documented or artifacted as HDQS++ / DQCS with curriculum,
+  pipeline-order, retention, and privacy-utility studies.
+- Research tables, research figures, failure analysis, and generated project
+  report were not separate reproducible scripts.
+- Resume Chinese text had mojibake from an earlier encoding issue.
 
-## Audit Findings
+## Changes Made In This Pass
 
-| Area | Finding | Required action |
-| --- | --- | --- |
-| Project framing | The prior title gives data quality and attention equal weight. | Retitle the project around LLM data quality and move attention to an auxiliary benchmark section. |
-| Dataset support | Only a local Tiny Shakespeare loader exists. | Add dataset configs, dataset cards, optional Hugging Face adapters, and an offline fallback. |
-| Noise simulation | The current injector covers only a small subset of web noise patterns. | Add deterministic, independently configurable noise types and a generated noise report. |
-| Deduplication | Only exact string deduplication is implemented. | Add configurable near-deduplication and duplicate cluster artifacts. |
-| Quality scoring | The current quality filter is a binary rule. | Add a documented HDQS/DQScore with component scores, configurable weights, threshold filtering, and top-k retention. |
-| Experiment fairness | Variants can receive unequal retained text lengths. | Add an explicit equal-character/token-budget mode and a generated token budget report. |
-| Statistical evidence | The benchmark currently reports a single seed. | Support quick single-seed mode and full multi-seed mode with mean, standard deviation, and optional confidence intervals. |
-| Model evidence | The current character LM reports validation loss and perplexity only. | Add bits-per-character, gradient clipping, downstream next-character accuracy, timing, and checkpoint support. |
-| Privacy evidence | PII removal is counted but not evaluated as a privacy utility tradeoff. | Add synthetic-canary precision/recall, residual counts, validation side effects, and lightweight exposure-style reporting. |
-| Attention evidence | Timings use averages only. | Report median, p25, p75, environment metadata, and clearly label estimated memory. |
-| Artifact portability | Older benchmark artifacts may embed absolute local dataset paths. | Generate repository-relative paths and reject absolute local paths during hygiene checks. |
-| Engineering checks | CI lacks CPU thread limits, formatting, linting, typing, and pre-commit checks. | Add the required toolchain and a CPU-bounded quick CI workflow. |
-| Documentation | Reproducibility, method, datasets, ethics, limitations, paper draft, citation, and resume-safe positioning docs are absent. | Add the missing documents and keep claims bounded by generated artifacts. |
-| Packaging | The previous engineering package intentionally preserved `.git`. | Produce the final submission ZIP without `.git`, caches, temporary files, or absolute paths. |
+- Added clean-artifact workflow and integrated `check_repo.py --clean`.
+- Added `paper-prototype` dataset mode with offline fallback and dry-run cards.
+- Added HDQS++ components, DQCS curriculum diagnostics, pipeline-order study,
+  retention Pareto rows, privacy-utility rows, downstream CSV, generation
+  samples, and canary memorization report.
+- Expanded baselines and added `configs/experiments/baselines.yaml`.
+- Added model config entries for char/BPE tiny/small/optional medium variants.
+- Added multi-seed statistical outputs and bootstrap/paired-difference helpers.
+- Added research table/figure/failure/project-report scripts.
+- Updated README, METHOD, EXPERIMENTS, DATASETS, REPRODUCIBILITY,
+  RESEARCH_READINESS, LIMITATIONS, RESUME, and final verification docs.
 
-## Acceptance Boundary
+## Not Changed
 
-The upgrade is complete only when:
-
-1. Quick mode runs on CPU without network access or large downloads.
-2. Tables and figures are generated by scripts from machine-readable artifacts.
-3. Repository checks reject absolute paths, cache files, oversized files, and
-   unsupported institutional claims.
-4. Tests cover configurable noise, HDQS ordering, exact and near deduplication,
-   equal budgets, and benchmark statistics.
-5. Documentation distinguishes generated quick evidence from larger experiments
-   that still need to be run before a paper submission.
+- The project is still not presented as a completed paper or official course
+  result.
+- Full public-data training is not run by default because dataset-policy review
+  and user-approved network access are required.
+- Attention remains auxiliary and is not framed as the main contribution.
