@@ -28,8 +28,27 @@ elif args.mode == "paper-prototype":
 else:
     seeds = (23,)
 
-steps = 8 if args.mode == "quick" else 12
-output_dir = root / (args.output_dir or f"artifacts/multi_seed_{args.mode}")
+steps = 8 if args.mode == "quick" else 10
+default_output = (
+    "artifacts/multi_seed" if args.mode == "paper-prototype" else "artifacts/multi_seed_quick"
+)
+output_dir = root / (args.output_dir or default_output)
+lm_variants = (
+    (
+        "raw_noisy_baseline",
+        "hdqs_filter",
+        "hdqs_curriculum",
+        "full_pipeline_without_hdqs",
+        "full_pipeline",
+    )
+    if args.mode == "paper-prototype"
+    else (
+        "raw_noisy_baseline",
+        "rule_filter_only",
+        "hdqs_filter",
+        "full_pipeline",
+    )
+)
 payload = run_benchmark(
     BenchmarkConfig(
         data_path=str(root / "data" / "tinyshakespeare" / "input.txt"),
@@ -37,6 +56,7 @@ payload = run_benchmark(
         mode=f"multi_seed_{args.mode}",
         train_config=TrainConfig(steps=steps, eval_interval=4, eval_batches=2, n_embd=24),
         seeds=seeds,
+        lm_variants=lm_variants,
     )
 )
 seed_rows, aggregate_rows, tests = aggregate_model_runs(payload["model_runs"])
@@ -50,5 +70,32 @@ with (output_dir / "aggregated_results.csv").open("w", encoding="utf-8", newline
     writer.writeheader()
     writer.writerows(aggregate_rows)
 (output_dir / "statistical_tests.json").write_text(json.dumps(tests, indent=2), encoding="utf-8")
+summary_lines = [
+    "# Multi-Seed Summary",
+    "",
+    f"Mode: `{args.mode}`",
+    f"Seeds: `{','.join(str(seed) for seed in seeds)}`",
+    "",
+    "| Variant | n | Mean perplexity | Std | CI low | CI high |",
+    "| --- | ---: | ---: | ---: | ---: | ---: |",
+]
+for row in aggregate_rows:
+    summary_lines.append(
+        f"| `{row['variant']}` | {row['count']} | {row['mean']:.4f} | "
+        f"{row['std']:.4f} | {row['ci95_low']} | {row['ci95_high']} |"
+    )
+summary_lines.extend(
+    [
+        "",
+        "## Paired Comparisons",
+        "",
+        "Positive mean improvement means the candidate has lower perplexity. "
+        "Unstable or non-improving directions are reported directly.",
+        "",
+    ]
+)
+for name, row in tests["paired"].items():
+    summary_lines.append(f"- `{name}`: `{row.get('direction', row.get('status'))}`")
+(output_dir / "multi_seed_summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
 print(f"Multi-seed experiment complete: {output_dir}")
 print(f"Mode: {args.mode}; seeds: {','.join(str(seed) for seed in seeds)}")

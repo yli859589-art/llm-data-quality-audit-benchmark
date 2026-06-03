@@ -1,0 +1,5 @@
+variant,seed,metric,value,final_val_loss,next_char_accuracy
+raw_noisy_baseline,23,final_val_perplexity,925491.3130419138,13.738080024719238,0.0078125
+rule_filter_only,23,final_val_perplexity,863574.6643605457,13.668835639953613,0.0078125
+hdqs_filter,23,final_val_perplexity,854940.1741203051,13.65878677368164,0.0078125
+full_pipeline,23,final_val_perplexity,898811.7804628533,13.708828926086426,0.0078125

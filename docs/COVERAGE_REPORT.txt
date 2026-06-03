@@ -42,18 +42,18 @@ src\course_project_suite\llm_benchmark\__init__.py                   2      0   
 src\course_project_suite\llm_benchmark\attention.py                 54      2    96%   18, 39
 src\course_project_suite\llm_benchmark\char_lm.py                  103      6    94%   34, 53, 101, 126-128
 src\course_project_suite\llm_benchmark\config.py                    13      1    92%   16
-src\course_project_suite\llm_benchmark\dataset.py                  142     11    92%   49-50, 56-62, 66, 98, 295, 300
-src\course_project_suite\llm_benchmark\dataset_matrix.py           101     14    86%   72-80, 157, 183-199
+src\course_project_suite\llm_benchmark\dataset.py                  143     11    92%   49-50, 56-62, 66, 98, 296, 301
+src\course_project_suite\llm_benchmark\dataset_matrix.py           138     21    85%   92-100, 191-192, 209, 224, 314-361
 src\course_project_suite\llm_benchmark\datasets.py                  48      3    94%   58-59, 73
 src\course_project_suite\llm_benchmark\dedup.py                     17      0   100%
-src\course_project_suite\llm_benchmark\experiment.py               195      5    97%   74, 383-384, 412-416
+src\course_project_suite\llm_benchmark\experiment.py               206      5    98%   74, 424-425, 453-457
 src\course_project_suite\llm_benchmark\near_dedup.py               100      6    94%   20, 34, 90, 106, 120, 122
-src\course_project_suite\llm_benchmark\noise.py                     76      0   100%
+src\course_project_suite\llm_benchmark\noise.py                    123      1    99%   50
 src\course_project_suite\llm_benchmark\privacy.py                   16      0   100%
 src\course_project_suite\llm_benchmark\quality.py                  105      6    94%   60, 69, 97, 104, 117, 170
-src\course_project_suite\llm_benchmark\reporting.py                 99      7    93%   32, 111, 138, 140, 237-239
-src\course_project_suite\llm_benchmark\research.py                  93      0   100%
-src\course_project_suite\llm_benchmark\statistics.py                58      7    88%   12, 33, 35, 62, 64, 117-118
+src\course_project_suite\llm_benchmark\reporting.py                 99      6    94%   32, 111, 138, 237-239
+src\course_project_suite\llm_benchmark\research.py                  95      0   100%
+src\course_project_suite\llm_benchmark\statistics.py                63      7    89%   12, 33, 35, 62, 64, 133-134
 src\course_project_suite\run_all.py                                 24      3    88%   36-37, 42
 ----------------------------------------------------------------------------------------------
-TOTAL                                                             2417    168    93%
+TOTAL                                                             2520    175    93%

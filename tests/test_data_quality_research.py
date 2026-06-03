@@ -31,6 +31,17 @@ class DataQualityResearchTests(unittest.TestCase):
             mixed_language=False,
             excessive_symbols=False,
             generated_repetition=False,
+            navigation_bars=False,
+            footer_copyright=False,
+            seo_keyword_stuffing=False,
+            ad_blocks=False,
+            cookie_banners=False,
+            malformed_html=False,
+            boilerplate_templates=False,
+            multilingual_fragments=False,
+            encoding_artifacts=False,
+            low_information_pages=False,
+            repeated_template_pages=False,
         )
         self.assertEqual(inject_controlled_noise(documents, disabled).documents, documents)
         enabled = replace(disabled, pii_canaries=True)
@@ -38,6 +49,13 @@ class DataQualityResearchTests(unittest.TestCase):
         second = inject_controlled_noise(documents, enabled)
         self.assertEqual(first.documents, second.documents)
         self.assertGreater(first.report["injected_counts"]["pii_canaries"], 0)
+
+    def test_pseudo_real_noise_families_are_reported(self):
+        documents = ["A clean source document with enough useful words."] * 20
+        result = inject_controlled_noise(documents, NoiseConfig(seed=3))
+        counts = result.report["injected_counts"]
+        self.assertIn("navigation_bars", counts)
+        self.assertIn("cookie_banners", counts)
 
     def test_hdqs_scores_clean_document_above_repetition(self):
         clean = (

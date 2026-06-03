@@ -7,6 +7,11 @@ language-model pretraining under fixed character/token budgets. Controlled
 corruption and pseudo-real web noise create reproducible stress tests; they are
 not estimates of natural web noise prevalence.
 
+The v4.3 paper-prototype path deliberately separates three evidence levels:
+quick smoke tests, local small-run dataset evidence, and optional remote
+dataset fallback records. A fallback record proves routing and provenance, not
+model quality on that remote dataset.
+
 ## HDQS++ / DQCS
 
 HDQS++ is a transparent document-quality scoring prototype. Each document
@@ -14,6 +19,17 @@ receives component scores for lexical diversity, character entropy, token
 entropy, repetition, n-gram repetition, HTML/URL noise, PII density, symbol
 noise, language consistency, length prior, optional LM surprisal, and
 near-duplicate cluster penalty.
+
+The sweep report selects a best diagnostic configuration with a
+retention-aware objective:
+
+`mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits`
+
+This objective favors cleaner retained data without silently rewarding extreme
+filtering. It is a diagnostic proxy, not a tuned paper method. The generated
+`hdqs_best_config.json` and `hdqs_failure_cases.md` files document both the
+chosen setting and examples where quality filters can remove useful text or
+retain noisy text.
 
 DQCS, or Data Quality Curriculum Selection, builds deterministic curricula
 from HDQS++ scores:
@@ -27,8 +43,9 @@ from HDQS++ scores:
 - mixed-quality curriculum.
 
 Quick artifacts validate that these curricula can be constructed reproducibly.
-They do not claim curriculum training gains until multi-seed model runs are
-performed.
+The current three-seed paper-prototype run reports curriculum comparisons, but
+the intervals remain wide; it should be read as preliminary evidence, not as a
+settled curriculum-training gain.
 
 ## Deduplication
 
@@ -54,6 +71,10 @@ The output is `pipeline_order_report.json` and
 `pipeline_order_comparison.svg`. These rows are preprocessing diagnostics, not
 separate model-training claims unless a later experiment explicitly trains
 each order.
+
+The default full-pipeline order is clean, redact synthetic PII canaries, remove
+exact duplicates, remove near duplicates, score with HDQS++, then apply the
+retention-aware quality filter.
 
 ## Privacy Utility
 

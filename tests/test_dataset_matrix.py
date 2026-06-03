@@ -18,6 +18,8 @@ class DatasetMatrixTests(unittest.TestCase):
     def test_dataset_keys_by_mode(self):
         self.assertEqual(dataset_keys_for_mode("quick"), ("tiny_shakespeare", "mixed_debug"))
         self.assertIn("mixed_debug", dataset_keys_for_mode("paper-prototype"))
+        self.assertIn("synthetic_web_noise", dataset_keys_for_mode("paper-prototype"))
+        self.assertIn("local_wikitext_sample", dataset_keys_for_mode("paper-prototype"))
         self.assertIn("c4_sample", dataset_keys_for_mode("paper-prototype"))
         self.assertIn("wikitext2", dataset_keys_for_mode("full"))
         with self.assertRaises(ValueError):
@@ -57,6 +59,7 @@ class DatasetMatrixTests(unittest.TestCase):
             self.assertTrue((Path(tmp) / "dataset_matrix_summary.csv").exists())
             self.assertTrue((Path(tmp) / "wikitext2").exists())
             self.assertTrue((Path(tmp) / "wikitext2" / "dataset_card.json").exists())
+            self.assertTrue((Path(tmp) / "wikitext2" / "fallback_report.json").exists())
 
     def test_dry_run_clears_stale_dataset_outputs(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -73,6 +76,21 @@ class DatasetMatrixTests(unittest.TestCase):
             )
             self.assertFalse(stale.exists())
             self.assertTrue((stale.parent / "dataset_card.json").exists())
+
+    def test_paper_prototype_remote_fallback_records_without_training(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rows = run_dataset_matrix(
+                root=self.root,
+                output_dir=Path(tmp),
+                dataset_keys=("wikitext2",),
+                mode="paper-prototype",
+                allow_network=False,
+                dry_run=False,
+            )
+            self.assertEqual(rows[0].status, "fallback_recorded")
+            self.assertTrue((Path(tmp) / "paper_prototype_summary.csv").exists())
+            result = (Path(tmp) / "wikitext2" / "results.json").read_text(encoding="utf-8")
+            self.assertIn("fallback_recorded", result)
 
 
 if __name__ == "__main__":

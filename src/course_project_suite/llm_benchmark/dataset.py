@@ -225,6 +225,7 @@ def build_ablation_variants(
         for name, overrides in settings.items()
     }
     variants["full_pipeline"] = full_pipeline
+    variants["full_pipeline_without_hdqs"] = variants["full_without_hdqs"]
     variants["minhash_lsh_near_dedup_only"] = minhash_docs
     variants["random_retention_matched_baseline"] = random_retention
     variants["length_matched_baseline"] = length_ranked

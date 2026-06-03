@@ -1,0 +1,24 @@
+{
+  "equal_budget_enabled": true,
+  "requested_characters": 5200,
+  "shared_character_budget": 5200,
+  "variants": {
+    "raw_noisy_baseline": {
+      "available_characters": 21529,
+      "training_characters": 5200
+    },
+    "rule_filter_only": {
+      "available_characters": 18257,
+      "training_characters": 5200
+    },
+    "hdqs_filter": {
+      "available_characters": 15791,
+      "training_characters": 5200
+    },
+    "full_pipeline": {
+      "available_characters": 11353,
+      "training_characters": 5200
+    }
+  },
+  "note": "All compared model variants are trimmed to the same character budget."
+}

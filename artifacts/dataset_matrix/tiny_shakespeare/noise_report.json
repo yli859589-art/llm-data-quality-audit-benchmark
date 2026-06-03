@@ -1,0 +1,80 @@
+{
+  "seed": 17,
+  "configuration": {
+    "seed": 17,
+    "intensity": 1.0,
+    "html_boilerplate": true,
+    "url_spam": true,
+    "pii_canaries": true,
+    "exact_duplicates": true,
+    "near_duplicates": true,
+    "ocr_corruption": true,
+    "mojibake": true,
+    "repeated_ngrams": true,
+    "low_information_templates": true,
+    "mixed_language": true,
+    "excessive_symbols": true,
+    "generated_repetition": true,
+    "navigation_bars": true,
+    "footer_copyright": true,
+    "seo_keyword_stuffing": true,
+    "ad_blocks": true,
+    "cookie_banners": true,
+    "malformed_html": true,
+    "boilerplate_templates": true,
+    "multilingual_fragments": true,
+    "encoding_artifacts": true,
+    "low_information_pages": true,
+    "repeated_template_pages": true
+  },
+  "input_documents": 28,
+  "output_documents": 49,
+  "injected_counts": {
+    "html_boilerplate": 10,
+    "url_spam": 7,
+    "pii_canaries": 4,
+    "ocr_corruption": 4,
+    "mojibake": 3,
+    "repeated_ngrams": 3,
+    "mixed_language": 3,
+    "excessive_symbols": 5,
+    "exact_duplicates": 6,
+    "near_duplicates": 4,
+    "low_information_templates": 4,
+    "generated_repetition": 3,
+    "low_information_pages": 2,
+    "repeated_template_pages": 2,
+    "navigation_bars": 7,
+    "footer_copyright": 6,
+    "seo_keyword_stuffing": 5,
+    "ad_blocks": 4,
+    "cookie_banners": 4,
+    "malformed_html": 3,
+    "boilerplate_templates": 3,
+    "multilingual_fragments": 3,
+    "encoding_artifacts": 2
+  },
+  "synthetic_pii_canaries": [
+    {
+      "email": "editor0@example.org",
+      "phone": "+1 412 555 1000",
+      "id_like": "ID-17-0000"
+    },
+    {
+      "email": "editor7@example.org",
+      "phone": "+1 412 555 1007",
+      "id_like": "ID-17-0007"
+    },
+    {
+      "email": "editor14@example.org",
+      "phone": "+1 412 555 1014",
+      "id_like": "ID-17-0014"
+    },
+    {
+      "email": "editor21@example.org",
+      "phone": "+1 412 555 1021",
+      "id_like": "ID-17-0021"
+    }
+  ],
+  "note": "Counts describe deterministic synthetic stress-test interventions. They do not estimate naturally occurring web-corpus noise."
+}

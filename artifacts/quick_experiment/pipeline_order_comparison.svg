@@ -7,7 +7,7 @@
 <text x="120.3" y="392" text-anchor="end" transform="rotate(-38 120.3 392)" font-family="Arial" font-size="10">clean_redact_exact_near_hdqs</text>
 <rect x="172.6" y="72.0" width="88.6" height="306.0" fill="#dc2626"/>
 <text x="216.9" y="392" text-anchor="end" transform="rotate(-38 216.9 392)" font-family="Arial" font-size="10">clean_dedup_redact_hdqs</text>
-<rect x="269.1" y="77.4" width="88.6" height="300.6" fill="#16a34a"/>
+<rect x="269.1" y="87.8" width="88.6" height="290.2" fill="#16a34a"/>
 <text x="313.4" y="392" text-anchor="end" transform="rotate(-38 313.4 392)" font-family="Arial" font-size="10">hdqs_clean_dedup</text>
 <rect x="365.7" y="72.0" width="88.6" height="306.0" fill="#9333ea"/>
 <text x="410.0" y="392" text-anchor="end" transform="rotate(-38 410.0 392)" font-family="Arial" font-size="10">redact_before_dedup</text>

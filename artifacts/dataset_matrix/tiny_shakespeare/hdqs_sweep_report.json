@@ -1,0 +1,145 @@
+{
+  "type": "deterministic_hdqs_threshold_and_top_k_sweep",
+  "method_name": "HDQS++ / DQCS prototype",
+  "threshold_rows": [
+    {
+      "threshold": 0.74,
+      "retained_documents": 38,
+      "retained_characters": 18183,
+      "retention_rate_documents": 0.7755102040816326,
+      "mean_hdqs_retained": 0.8627311281376286,
+      "pii_like_hits": 18,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.76,
+      "retained_documents": 35,
+      "retained_characters": 16228,
+      "retention_rate_documents": 0.7142857142857143,
+      "mean_hdqs_retained": 0.8723812381869905,
+      "pii_like_hits": 9,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.78,
+      "retained_documents": 34,
+      "retained_characters": 15725,
+      "retention_rate_documents": 0.6938775510204082,
+      "mean_hdqs_retained": 0.8752316674801932,
+      "pii_like_hits": 6,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.8,
+      "retained_documents": 34,
+      "retained_characters": 15725,
+      "retention_rate_documents": 0.6938775510204082,
+      "mean_hdqs_retained": 0.8752316674801932,
+      "pii_like_hits": 6,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.82,
+      "retained_documents": 24,
+      "retained_characters": 11033,
+      "retention_rate_documents": 0.4897959183673469,
+      "mean_hdqs_retained": 0.9018329991251187,
+      "pii_like_hits": 6,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.84,
+      "retained_documents": 22,
+      "retained_characters": 10085,
+      "retention_rate_documents": 0.4489795918367347,
+      "mean_hdqs_retained": 0.9087644811221498,
+      "pii_like_hits": 6,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    },
+    {
+      "threshold": 0.86,
+      "retained_documents": 21,
+      "retained_characters": 9545,
+      "retention_rate_documents": 0.42857142857142855,
+      "mean_hdqs_retained": 0.9117979598421118,
+      "pii_like_hits": 6,
+      "min_score": 0.5951008774008226,
+      "max_score": 0.9447662406821601
+    }
+  ],
+  "top_k_rows": [
+    {
+      "retention_ratio": 0.25,
+      "retained_documents": 13,
+      "retained_characters": 5649,
+      "mean_hdqs_retained": 0.925751976275409,
+      "pii_like_hits": 0
+    },
+    {
+      "retention_ratio": 0.5,
+      "retained_documents": 25,
+      "retained_characters": 11464,
+      "mean_hdqs_retained": 0.8984364038019739,
+      "pii_like_hits": 6
+    },
+    {
+      "retention_ratio": 0.75,
+      "retained_documents": 37,
+      "retained_characters": 17534,
+      "mean_hdqs_retained": 0.8657880306289198,
+      "pii_like_hits": 15
+    }
+  ],
+  "weight_sweep_rows": [
+    {
+      "config_name": "balanced_default",
+      "weights": {},
+      "status": "configured_default",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "privacy_heavy",
+      "weights": {
+        "pii_density_penalty": 2.0,
+        "url_html_noise_penalty": 1.4
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "anti_repetition_heavy",
+      "weights": {
+        "repetition_penalty": 2.0,
+        "ngram_repetition_penalty": 1.6
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    },
+    {
+      "config_name": "diversity_heavy",
+      "weights": {
+        "lexical_diversity": 1.8,
+        "token_entropy": 1.4
+      },
+      "status": "requires_model_validation",
+      "selection_metric": "retention_and_quality_proxy_only"
+    }
+  ],
+  "best_config": {
+    "name": "proxy_best_threshold_from_quick_diagnostics",
+    "threshold": 0.78,
+    "selection_objective": "mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits",
+    "status": "diagnostic_proxy_not_model_validated",
+    "reason": "Quick mode does not tune weights on a held-out development split. This config is a reproducible diagnostic selection, not a performance claim."
+  },
+  "raw_noisy_baseline_perplexity": 925491.3130419138,
+  "hdqs_filter_perplexity": 854940.1741203051,
+  "standalone_hdqs_status": "standalone_hdqs_better_in_this_quick_run",
+  "interpretation": "In quick mode, HDQS should be interpreted as a transparent pipeline component. Standalone HDQS filtering is not treated as a consistently performance-improving method until multi-seed and multi-dataset experiments verify that behavior."
+}

@@ -1,0 +1,8 @@
+{
+  "mode": "dataset_matrix_paper_prototype",
+  "dataset_key": "c4_sample",
+  "status": "fallback_recorded",
+  "used_fallback": true,
+  "fallback_reason": "Optional remote dataset was not downloaded. Provide local data or pass --allow-network after reviewing the upstream dataset policy.",
+  "command": "python scripts/run_dataset_matrix.py --mode paper-prototype"
+}

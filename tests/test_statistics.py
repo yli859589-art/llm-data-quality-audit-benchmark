@@ -38,7 +38,11 @@ class StatisticsTests(unittest.TestCase):
         seed_rows, aggregate_rows, tests = aggregate_model_runs(runs)
         self.assertEqual(len(seed_rows), 4)
         self.assertEqual(len(aggregate_rows), 2)
-        self.assertIn("full_pipeline", tests["paired"])
+        self.assertIn("raw_noisy_baseline_vs_full_pipeline", tests["paired"])
+        self.assertEqual(
+            tests["paired"]["raw_noisy_baseline_vs_hdqs_filter"]["status"],
+            "skipped_missing_variant",
+        )
 
 
 if __name__ == "__main__":

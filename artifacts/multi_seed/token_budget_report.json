@@ -1,0 +1,28 @@
+{
+  "equal_budget_enabled": true,
+  "requested_characters": 18000,
+  "shared_character_budget": 18000,
+  "variants": {
+    "raw_noisy_baseline": {
+      "available_characters": 44562,
+      "training_characters": 18000
+    },
+    "hdqs_filter": {
+      "available_characters": 33405,
+      "training_characters": 18000
+    },
+    "hdqs_curriculum": {
+      "available_characters": 33405,
+      "training_characters": 18000
+    },
+    "full_pipeline_without_hdqs": {
+      "available_characters": 26297,
+      "training_characters": 18000
+    },
+    "full_pipeline": {
+      "available_characters": 25222,
+      "training_characters": 18000
+    }
+  },
+  "note": "All compared model variants are trimmed to the same character budget."
+}

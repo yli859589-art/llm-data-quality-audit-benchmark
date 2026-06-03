@@ -1,0 +1,69 @@
+{
+  "type": "pipeline_order_study",
+  "rows": [
+    {
+      "pipeline_order": "clean_redact_exact_near_hdqs",
+      "steps": "clean -> redact -> exact_dedup -> near_dedup -> hdqs",
+      "retained_documents": 6,
+      "retained_characters": 2706,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.9180734362673206
+    },
+    {
+      "pipeline_order": "clean_dedup_redact_hdqs",
+      "steps": "clean -> exact_dedup -> near_dedup -> redact -> hdqs",
+      "retained_documents": 6,
+      "retained_characters": 2706,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.9180734362673206
+    },
+    {
+      "pipeline_order": "hdqs_clean_dedup",
+      "steps": "hdqs -> clean -> exact_dedup -> near_dedup",
+      "retained_documents": 5,
+      "retained_characters": 2161,
+      "retention_rate_documents": 0.38461538461538464,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.9376609530612177
+    },
+    {
+      "pipeline_order": "redact_before_dedup",
+      "steps": "redact -> exact_dedup -> near_dedup -> hdqs",
+      "retained_documents": 6,
+      "retained_characters": 2885,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.8824387863482993
+    },
+    {
+      "pipeline_order": "redact_after_dedup",
+      "steps": "exact_dedup -> near_dedup -> redact -> hdqs",
+      "retained_documents": 6,
+      "retained_characters": 2885,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.8824387863482993
+    },
+    {
+      "pipeline_order": "near_dedup_before_hdqs",
+      "steps": "clean -> redact -> near_dedup -> hdqs",
+      "retained_documents": 6,
+      "retained_characters": 2706,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.9180734362673206
+    },
+    {
+      "pipeline_order": "near_dedup_after_hdqs",
+      "steps": "clean -> redact -> hdqs -> near_dedup",
+      "retained_documents": 6,
+      "retained_characters": 2706,
+      "retention_rate_documents": 0.46153846153846156,
+      "pii_like_hits": 0,
+      "mean_hdqs": 0.9180734362673206
+    }
+  ],
+  "limitations": "Rows describe deterministic preprocessing outcomes. They are not separate trained-model results unless an experiment mode explicitly trains them."
+}

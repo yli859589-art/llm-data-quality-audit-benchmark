@@ -4,19 +4,19 @@
   "shared_character_budget": 18000,
   "variants": {
     "raw_noisy_baseline": {
-      "available_characters": 36931,
+      "available_characters": 44562,
       "training_characters": 18000
     },
     "rule_filter_only": {
-      "available_characters": 33574,
+      "available_characters": 37884,
       "training_characters": 18000
     },
     "hdqs_filter": {
-      "available_characters": 29719,
+      "available_characters": 33405,
       "training_characters": 18000
     },
     "full_pipeline": {
-      "available_characters": 21604,
+      "available_characters": 25222,
       "training_characters": 18000
     }
   },

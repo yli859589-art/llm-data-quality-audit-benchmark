@@ -1,0 +1,124 @@
+{
+  "rows": [
+    {
+      "variant": "raw_noisy_baseline",
+      "seed": 23,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "raw_noisy_baseline",
+      "seed": 42,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "raw_noisy_baseline",
+      "seed": 3407,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_filter",
+      "seed": 23,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_filter",
+      "seed": 42,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_filter",
+      "seed": 3407,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_curriculum",
+      "seed": 23,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_curriculum",
+      "seed": 42,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "hdqs_curriculum",
+      "seed": 3407,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline_without_hdqs",
+      "seed": 23,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline_without_hdqs",
+      "seed": 42,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline_without_hdqs",
+      "seed": 3407,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline",
+      "seed": 23,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline",
+      "seed": 42,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    },
+    {
+      "variant": "full_pipeline",
+      "seed": 3407,
+      "sample_characters": 112,
+      "generation_repeated_trigrams": 0,
+      "generation_repetition_rate": 0.0,
+      "note": "Small model output; not human preference evaluation."
+    }
+  ]
+}

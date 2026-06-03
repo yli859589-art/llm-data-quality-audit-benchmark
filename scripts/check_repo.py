@@ -44,6 +44,8 @@ required = [
     "configs/datasets/openwebtext_sample.yaml",
     "configs/datasets/c4_sample.yaml",
     "configs/datasets/mixed_debug.yaml",
+    "configs/datasets/synthetic_web_noise.yaml",
+    "configs/datasets/local_wikitext_sample.yaml",
     "configs/experiments/baselines.yaml",
     "configs/models/char_tiny_gpt.yaml",
     "configs/models/char_small_gpt.yaml",
@@ -75,8 +77,11 @@ required = [
     "scripts/make_research_figures.py",
     "scripts/analyze_failures.py",
     "scripts/make_project_report.py",
+    "scripts/run_model_scaling.py",
     "data/tinyshakespeare/SOURCE.md",
     "data/tinyshakespeare/input.txt",
+    "data/samples/synthetic_web_noise.txt",
+    "data/samples/local_wikitext_sample.txt",
 ]
 missing = [path for path in required if not (root / path).exists()]
 if missing:

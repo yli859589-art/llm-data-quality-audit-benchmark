@@ -5,7 +5,7 @@
   "synthetic_canary_removal_recall": 1.0,
   "synthetic_canary_removal_precision": 1.0,
   "synthetic_canary_false_positive_rate": 0.0,
-  "redaction_placeholders": 18,
+  "redaction_placeholders": 21,
   "redaction_validation_side_effect_count": 0,
   "lightweight_exposure_reduction_bits": 4.807354922057604,
   "canary_memorization_status": "no_residual_synthetic_canary_values",

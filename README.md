@@ -42,18 +42,21 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 Run the reproducible CPU smoke experiment:
 
 ```bash
-python scripts/check_repo.py --clean
 python scripts/run_quick_experiment.py
 python scripts/tune_hdqs_quick.py
+python scripts/run_dataset_matrix.py --mode quick
+python scripts/run_dataset_matrix.py --mode paper-prototype
+python scripts/run_multi_seed.py --mode paper-prototype
+python scripts/run_model_scaling.py
 python scripts/make_tables.py
 python scripts/make_figures.py
 python scripts/statistical_analysis.py
-python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
 python scripts/make_research_tables.py
 python scripts/make_research_figures.py
 python scripts/analyze_failures.py
 python scripts/make_project_report.py
 python scripts/check_artifacts.py
+python scripts/check_repo.py --clean
 ```
 
 Quality gates:
@@ -67,17 +70,21 @@ python scripts/run_coverage.py
 ```
 
 Quick results are single-seed CPU smoke-test evidence. They verify that the
-pipeline is reproducible and that the full pipeline behaves better than the
-raw noisy baseline in this controlled run. They do not prove a general
-model-quality improvement.
+pipeline is executable, deterministic, and fully instrumented. Current quick
+and paper-prototype numbers must be interpreted as workflow validation and
+early diagnostic evidence rather than paper-level model-quality proof. Even
+when a short run points in a favorable direction, the confidence intervals are
+wide and the datasets are intentionally small.
 
 ## Experiment Modes
 
 - `quick`: local Tiny Shakespeare plus `mixed_debug`, one seed by default,
   offline CPU smoke testing.
-- `paper-prototype`: all configured datasets with offline fallback, three
-  default seeds for multi-seed runners, and dry-run support for demonstrating
-  the future paper experiment matrix without large downloads.
+- `paper-prototype`: a real lightweight small-run for local repository
+  datasets: `tiny_shakespeare`, `mixed_debug`, `synthetic_web_noise`, and
+  `local_wikitext_sample`. Optional remote datasets write explicit fallback
+  records when local files or network access are unavailable. It also supports
+  `--dry-run` for routing checks without training.
 - `full`: longer training and larger dataset matrix. Use only after explicitly
   enabling network access or providing local datasets and reviewing usage
   policies.
@@ -87,6 +94,7 @@ Dataset entry point:
 ```bash
 python scripts/run_dataset_matrix.py --mode quick
 python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
+python scripts/run_dataset_matrix.py --mode paper-prototype
 python scripts/run_dataset_matrix.py --mode full --allow-network
 ```
 
@@ -107,10 +115,23 @@ Core quick artifacts live under `artifacts/quick_experiment/`:
 - `downstream_results.csv`, `generation_samples.md`
 - `seed_level_results.csv`, `aggregated_results.csv`, `statistical_tests.json`
 - `privacy_vs_utility.svg`, `pipeline_order_comparison.svg`,
-  `model_scaling_curve.svg`, `quality_score_distribution.svg`
+  `model_scaling_curve.svg`, `quality_score_distribution.svg`,
+  `hdqs_sweep_heatmap.svg`, `privacy_retention_pareto.svg`
 
 Dataset matrix artifacts live under `artifacts/dataset_matrix/`, including
-summary CSV/Markdown files and one `dataset_card.json` per dataset entry.
+summary CSV/Markdown files, `paper_prototype_summary.csv`, fallback reports,
+and one `dataset_card.json` per dataset entry.
+
+Multi-seed paper-prototype artifacts live under `artifacts/multi_seed/`:
+
+- `seed_level_results.csv`, `aggregated_results.csv`,
+  `statistical_tests.json`, and `multi_seed_summary.md`
+- paired comparisons for raw vs full, raw vs HDQS, raw vs HDQS curriculum, and
+  full vs full-without-HDQS
+
+Model-scaling artifacts live under `artifacts/model_scaling/` and summarize
+configured char/BPE model sizes. They are config evidence, not proof that every
+model has completed full training.
 
 ## Method Surface
 

@@ -1,0 +1,11 @@
+{
+  "dataset_key": "tiny_shakespeare",
+  "dataset_name": "tiny_shakespeare",
+  "used_fallback": false,
+  "status": "trained",
+  "fallback_reason": null,
+  "command": "python scripts/run_dataset_matrix.py --mode paper-prototype",
+  "source": "karpathy/char-rnn Tiny Shakespeare mirror",
+  "license_note": "Public-domain Shakespeare-derived text mirror. See data/tinyshakespeare/SOURCE.md.",
+  "note": "Remote optional datasets are not treated as real multi-dataset evidence unless local data or explicit network access is available."
+}

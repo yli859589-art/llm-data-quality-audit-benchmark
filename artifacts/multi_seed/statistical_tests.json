@@ -1,0 +1,51 @@
+{
+  "metric": "final_val_perplexity",
+  "baseline_variant": "raw_noisy_baseline",
+  "paired": {
+    "raw_noisy_baseline_vs_full_pipeline": {
+      "count": 3,
+      "mean": 6845.2819800826355,
+      "std": 20391.429035203917,
+      "ci95_low": -16229.792223484186,
+      "ci95_high": 29920.35618364946,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    },
+    "raw_noisy_baseline_vs_hdqs_filter": {
+      "count": 3,
+      "mean": 5146.696787370165,
+      "std": 15521.814457163697,
+      "ci95_low": -12417.889772733412,
+      "ci95_high": 22711.28334747374,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    },
+    "raw_noisy_baseline_vs_hdqs_curriculum": {
+      "count": 3,
+      "mean": 5146.696787370165,
+      "std": 15521.814457163697,
+      "ci95_low": -12417.889772733412,
+      "ci95_high": 22711.28334747374,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    },
+    "full_pipeline_vs_full_pipeline_without_hdqs": {
+      "count": 3,
+      "mean": 12232.254348284177,
+      "std": 16684.26777086121,
+      "ci95_low": -6647.771969643318,
+      "ci95_high": 31112.28066621167,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    }
+  },
+  "interpretation": "Positive mean improvement means the candidate has lower perplexity than the baseline for lower-is-better metrics. Non-positive or mixed directions are reported without filtering."
+}

@@ -1,8 +1,8 @@
 # Downstream Table
 
-| variant | next_character_accuracy | held_out_perplexity | held_out_bits_per_character | cloze_proxy | status |
-| --- | --- | --- | --- | --- | --- |
-| full_pipeline | 0.02734375 | 397225.38577898784 | 18.59959829963732 | next_character_prediction | quick_trained_metric |
-| hdqs_filter | 0.02734375 | 415821.0239421671 | 18.66560317724666 | next_character_prediction | quick_trained_metric |
-| raw_noisy_baseline | 0.029296875 | 394545.7639490097 | 18.58983312472133 | next_character_prediction | quick_trained_metric |
-| rule_filter_only | 0.02734375 | 422854.3036152836 | 18.689801136223053 | next_character_prediction | quick_trained_metric |
+| variant | next_character_accuracy | held_out_perplexity | held_out_bits_per_character | held_out_noisy_robustness_proxy | simple_cloze_proxy_accuracy | toy_sentiment_proxy | small_classification_proxy | status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| full_pipeline | 0.02734375 | 559217.5970602097 | 19.093050233562288 | 1.788212683679788e-06 | 0.02734375 | not_run_in_quick_mode | not_run_in_quick_mode | quick_trained_metric |
+| hdqs_filter | 0.025390625 | 604081.1564385192 | 19.204382858633025 | 1.6554067104090767e-06 | 0.025390625 | not_run_in_quick_mode | not_run_in_quick_mode | quick_trained_metric |
+| raw_noisy_baseline | 0.02734375 | 581636.8320220296 | 19.14975910492719 | 1.7192858927512433e-06 | 0.02734375 | not_run_in_quick_mode | not_run_in_quick_mode | quick_trained_metric |
+| rule_filter_only | 0.02734375 | 610303.4309267955 | 19.219167175231796 | 1.6385292123975422e-06 | 0.02734375 | not_run_in_quick_mode | not_run_in_quick_mode | quick_trained_metric |

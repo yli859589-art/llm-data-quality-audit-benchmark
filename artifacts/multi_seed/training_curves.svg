@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Held-out validation loss</text>
+<line x1="62" y1="368" x2="698" y2="368" stroke="#111827"/>
+<line x1="62" y1="62" x2="62" y2="368" stroke="#111827"/>
+<text x="380.0" y="414" text-anchor="middle" font-family="Arial" font-size="13">Training step</text>
+<text x="18" y="215.0" text-anchor="middle" transform="rotate(-90 18 215.0)" font-family="Arial" font-size="13">Validation loss</text>
+<polyline points="62.0,150.0 316.4,239.6 570.8,300.7 698.0,343.0" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<text x="538" y="62" font-family="Arial" font-size="12" fill="#2563eb">raw_noisy_baseline seed=23</text>
+<polyline points="62.0,173.6 316.4,204.9 570.8,317.0 698.0,360.3" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="538" y="80" font-family="Arial" font-size="12" fill="#dc2626">raw_noisy_baseline seed=42</text>
+<polyline points="62.0,62.0 316.4,169.8 570.8,249.8 698.0,321.6" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<text x="538" y="98" font-family="Arial" font-size="12" fill="#16a34a">raw_noisy_baseline seed=3407</text>
+<polyline points="62.0,150.0 316.4,239.5 570.8,298.5 698.0,340.8" fill="none" stroke="#9333ea" stroke-width="2.5"/>
+<text x="538" y="116" font-family="Arial" font-size="12" fill="#9333ea">hdqs_filter seed=23</text>
+<polyline points="62.0,173.6 316.4,206.0 570.8,319.1 698.0,362.3" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+<text x="538" y="134" font-family="Arial" font-size="12" fill="#ea580c">hdqs_filter seed=42</text>
+<polyline points="62.0,62.0 316.4,172.4 570.8,254.2 698.0,324.4" fill="none" stroke="#0891b2" stroke-width="2.5"/>
+<text x="538" y="152" font-family="Arial" font-size="12" fill="#0891b2">hdqs_filter seed=3407</text>
+<polyline points="62.0,150.0 316.4,239.5 570.8,298.5 698.0,340.8" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<text x="538" y="170" font-family="Arial" font-size="12" fill="#2563eb">hdqs_curriculum seed=23</text>
+<polyline points="62.0,173.6 316.4,206.0 570.8,319.1 698.0,362.3" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="538" y="188" font-family="Arial" font-size="12" fill="#dc2626">hdqs_curriculum seed=42</text>
+<polyline points="62.0,62.0 316.4,172.4 570.8,254.2 698.0,324.4" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<text x="538" y="206" font-family="Arial" font-size="12" fill="#16a34a">hdqs_curriculum seed=3407</text>
+<polyline points="62.0,150.0 316.4,241.1 570.8,303.6 698.0,346.4" fill="none" stroke="#9333ea" stroke-width="2.5"/>
+<text x="538" y="224" font-family="Arial" font-size="12" fill="#9333ea">full_pipeline_without_hdqs seed=23</text>
+<polyline points="62.0,173.6 316.4,207.2 570.8,324.8 698.0,368.0" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+<text x="538" y="242" font-family="Arial" font-size="12" fill="#ea580c">full_pipeline_without_hdqs seed=42</text>
+<polyline points="62.0,62.0 316.4,171.6 570.8,252.6 698.0,323.8" fill="none" stroke="#0891b2" stroke-width="2.5"/>
+<text x="538" y="260" font-family="Arial" font-size="12" fill="#0891b2">full_pipeline_without_hdqs seed=3407</text>
+<polyline points="62.0,150.0 316.4,240.2 570.8,302.9 698.0,345.6" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<text x="538" y="278" font-family="Arial" font-size="12" fill="#2563eb">full_pipeline seed=23</text>
+<polyline points="62.0,173.6 316.4,206.9 570.8,323.3 698.0,367.4" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="538" y="296" font-family="Arial" font-size="12" fill="#dc2626">full_pipeline seed=42</text>
+<polyline points="62.0,62.0 316.4,171.2 570.8,250.7 698.0,319.4" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<text x="538" y="314" font-family="Arial" font-size="12" fill="#16a34a">full_pipeline seed=3407</text>
+</svg>

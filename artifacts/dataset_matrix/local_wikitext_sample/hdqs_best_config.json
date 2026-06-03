@@ -1,0 +1,7 @@
+{
+  "name": "proxy_best_threshold_from_quick_diagnostics",
+  "threshold": 0.78,
+  "selection_objective": "mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits",
+  "status": "diagnostic_proxy_not_model_validated",
+  "reason": "Quick mode does not tune weights on a held-out development split. This config is a reproducible diagnostic selection, not a performance claim."
+}

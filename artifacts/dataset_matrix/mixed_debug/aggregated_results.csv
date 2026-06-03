@@ -1,0 +1,5 @@
+variant,metric,count,mean,std,ci95_low,ci95_high,bootstrap_ci_low,bootstrap_ci_high
+full_pipeline,final_val_perplexity,1,898811.7804628533,0.0,,,898811.7804628533,898811.7804628533
+hdqs_filter,final_val_perplexity,1,854940.1741203051,0.0,,,854940.1741203051,854940.1741203051
+raw_noisy_baseline,final_val_perplexity,1,925491.3130419138,0.0,,,925491.3130419138,925491.3130419138
+rule_filter_only,final_val_perplexity,1,863574.6643605457,0.0,,,863574.6643605457,863574.6643605457

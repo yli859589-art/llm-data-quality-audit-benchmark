@@ -1,6 +1,6 @@
 # Error Analysis
 
-Removed documents: `36`
+Removed documents: `44`
 
 Known quick-mode failure boundaries:
 

@@ -30,12 +30,13 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ## Acceptance Commands
 
 ```bash
-python scripts/check_repo.py --clean
 python -m unittest discover -s tests -v
 python scripts/run_quick_experiment.py
 python scripts/tune_hdqs_quick.py
 python scripts/run_dataset_matrix.py --mode quick
-python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
+python scripts/run_dataset_matrix.py --mode paper-prototype
+python scripts/run_multi_seed.py --mode paper-prototype
+python scripts/run_model_scaling.py
 python scripts/make_tables.py
 python scripts/make_figures.py
 python scripts/statistical_analysis.py
@@ -44,6 +45,7 @@ python scripts/make_research_figures.py
 python scripts/analyze_failures.py
 python scripts/make_project_report.py
 python scripts/check_artifacts.py
+python scripts/check_repo.py --clean
 python all_course_projects.py --self-check --json
 python scripts/run_coverage.py
 ruff check .

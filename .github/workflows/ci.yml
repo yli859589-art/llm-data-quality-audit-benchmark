@@ -36,11 +36,20 @@ jobs:
       - name: Quick benchmark smoke test
         run: python scripts/run_quick_experiment.py
       - name: Dataset matrix smoke test
-        run: python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
+        run: |
+          python scripts/run_dataset_matrix.py --mode quick
+          python scripts/run_dataset_matrix.py --mode paper-prototype
+          python scripts/run_multi_seed.py --mode paper-prototype
+          python scripts/run_model_scaling.py
       - name: Regenerate tables and figures
         run: |
           python scripts/make_tables.py
           python scripts/make_figures.py
+          python scripts/statistical_analysis.py
+          python scripts/make_research_tables.py
+          python scripts/make_research_figures.py
+          python scripts/analyze_failures.py
+          python scripts/make_project_report.py
           python scripts/check_artifacts.py
       - name: Python compile check
         run: python scripts/run_verification.py

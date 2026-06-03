@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.3.0 - 2026-06-03
+
+- Reframed quick-mode results as workflow and instrumentation evidence only,
+  with no claim that quick metrics prove a stable model-quality improvement.
+- Added real `paper-prototype` small runs for `tiny_shakespeare`,
+  `mixed_debug`, `synthetic_web_noise`, and `local_wikitext_sample`, plus
+  explicit fallback records for optional remote dataset entries.
+- Added per-dataset fallback reports, paper-prototype summaries, three-seed
+  aggregate statistics, paired comparisons, and multi-seed summary artifacts.
+- Added pseudo-real web-noise controls, model-scaling artifact generation, HDQS
+  best-config reporting, HDQS failure cases, privacy-retention Pareto and HDQS
+  sweep heatmap figures.
+- Updated documentation, CI smoke commands, artifact checks, resume wording,
+  and verification reports for the v4.3 research-prototype scope.
+
 ## 4.2.0 - 2026-06-03
 
 - Added `scripts/clean_artifacts.py` and `python scripts/check_repo.py --clean`

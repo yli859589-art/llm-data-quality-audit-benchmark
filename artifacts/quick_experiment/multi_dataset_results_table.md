@@ -1,9 +1,11 @@
 # Multi-Dataset Results Table
 
-| dataset_key | dataset_name | output_dir | used_fallback | status | raw_perplexity | full_pipeline_perplexity | error |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| tiny_shakespeare | tiny_shakespeare | artifacts/dataset_matrix/tiny_shakespeare | False | dry_run |  |  |  |
-| wikitext2 | tiny_shakespeare | artifacts/dataset_matrix/wikitext2 | True | dry_run |  |  |  |
-| openwebtext_sample | tiny_shakespeare | artifacts/dataset_matrix/openwebtext_sample | True | dry_run |  |  |  |
-| c4_sample | tiny_shakespeare | artifacts/dataset_matrix/c4_sample | True | dry_run |  |  |  |
-| mixed_debug | mixed_debug | artifacts/dataset_matrix/mixed_debug | False | dry_run |  |  |  |
+| dataset_key | dataset_name | output_dir | used_fallback | status | raw_perplexity | full_pipeline_perplexity | fallback_reason | error |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| tiny_shakespeare | tiny_shakespeare | artifacts/dataset_matrix/tiny_shakespeare | False | paper_prototype_small_run | 925491.3130419138 | 898811.7804628533 |  |  |
+| mixed_debug | mixed_debug | artifacts/dataset_matrix/mixed_debug | False | paper_prototype_small_run | 925491.3130419138 | 898811.7804628533 |  |  |
+| synthetic_web_noise | synthetic_web_noise | artifacts/dataset_matrix/synthetic_web_noise | False | paper_prototype_small_run | 544605.0456011071 | 473494.64837886137 |  |  |
+| local_wikitext_sample | local_wikitext_sample | artifacts/dataset_matrix/local_wikitext_sample | False | paper_prototype_small_run | 998585.9398935687 | 844138.9457508345 |  |  |
+| wikitext2 | tiny_shakespeare | artifacts/dataset_matrix/wikitext2 | True | fallback_recorded |  |  | Optional remote dataset was not downloaded. Provide local data or pass --allow-network after reviewing the upstream dataset policy. |  |
+| openwebtext_sample | tiny_shakespeare | artifacts/dataset_matrix/openwebtext_sample | True | fallback_recorded |  |  | Optional remote dataset was not downloaded. Provide local data or pass --allow-network after reviewing the upstream dataset policy. |  |
+| c4_sample | tiny_shakespeare | artifacts/dataset_matrix/c4_sample | True | fallback_recorded |  |  | Optional remote dataset was not downloaded. Provide local data or pass --allow-network after reviewing the upstream dataset policy. |  |

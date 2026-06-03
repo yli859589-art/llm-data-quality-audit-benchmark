@@ -1,0 +1,88 @@
+{
+  "full_pipeline": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.0078125,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "hdqs_filter": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.0078125,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "raw_noisy_baseline": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.0078125,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "rule_filter_only": {
+    "task": "held-out next-character prediction",
+    "next_char_accuracy": {
+      "count": 1,
+      "mean": 0.0078125,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null
+    }
+  },
+  "rows": [
+    {
+      "variant": "full_pipeline",
+      "next_character_accuracy": 0.0078125,
+      "held_out_perplexity": 844138.9457508345,
+      "held_out_bits_per_character": 19.687120961339843,
+      "held_out_noisy_robustness_proxy": 1.1846390988518272e-06,
+      "simple_cloze_proxy_accuracy": 0.0078125,
+      "toy_sentiment_proxy": "not_run_in_quick_mode",
+      "small_classification_proxy": "not_run_in_quick_mode",
+      "status": "quick_trained_metric"
+    },
+    {
+      "variant": "hdqs_filter",
+      "next_character_accuracy": 0.0078125,
+      "held_out_perplexity": 981624.0684719377,
+      "held_out_bits_per_character": 19.90481109735716,
+      "held_out_noisy_robustness_proxy": 1.0187199276365214e-06,
+      "simple_cloze_proxy_accuracy": 0.0078125,
+      "toy_sentiment_proxy": "not_run_in_quick_mode",
+      "small_classification_proxy": "not_run_in_quick_mode",
+      "status": "quick_trained_metric"
+    },
+    {
+      "variant": "raw_noisy_baseline",
+      "next_character_accuracy": 0.0078125,
+      "held_out_perplexity": 998585.9398935687,
+      "held_out_bits_per_character": 19.929527068077956,
+      "held_out_noisy_robustness_proxy": 1.0014160625039262e-06,
+      "simple_cloze_proxy_accuracy": 0.0078125,
+      "toy_sentiment_proxy": "not_run_in_quick_mode",
+      "small_classification_proxy": "not_run_in_quick_mode",
+      "status": "quick_trained_metric"
+    },
+    {
+      "variant": "rule_filter_only",
+      "next_character_accuracy": 0.0078125,
+      "held_out_perplexity": 957009.2139492035,
+      "held_out_bits_per_character": 19.868173289278555,
+      "held_out_noisy_robustness_proxy": 1.0449220189567353e-06,
+      "simple_cloze_proxy_accuracy": 0.0078125,
+      "toy_sentiment_proxy": "not_run_in_quick_mode",
+      "small_classification_proxy": "not_run_in_quick_mode",
+      "status": "quick_trained_metric"
+    }
+  ]
+}

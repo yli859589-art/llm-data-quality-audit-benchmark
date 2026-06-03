@@ -1,0 +1,223 @@
+{
+  "method": "DQCS: Data Quality Curriculum Selection",
+  "strategies": [
+    {
+      "strategy": "random_baseline",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        13,
+        14,
+        11,
+        1,
+        15,
+        7,
+        10,
+        3,
+        16,
+        5,
+        8,
+        12,
+        6,
+        4
+      ],
+      "mean_selected_hdqs": 0.7669386449396038,
+      "first_five_scores": [
+        0.6037845531575804,
+        0.6014524859500122,
+        0.9197876946192097,
+        0.5951008774008226,
+        0.7913386458710977
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "high_quality_first",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        3,
+        11,
+        0,
+        10,
+        17,
+        2,
+        4,
+        6,
+        16,
+        15,
+        12,
+        7,
+        8,
+        5
+      ],
+      "mean_selected_hdqs": 0.8319734438216605,
+      "first_five_scores": [
+        0.9197876946192097,
+        0.9197876946192097,
+        0.9111879569329674,
+        0.9006857824965937,
+        0.9002700333577063
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "low_quality_first",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        1,
+        14,
+        13,
+        9,
+        5,
+        8,
+        7,
+        12,
+        15,
+        16,
+        6,
+        4,
+        2,
+        17
+      ],
+      "mean_selected_hdqs": 0.7429118052125417,
+      "first_five_scores": [
+        0.5951008774008226,
+        0.6014524859500122,
+        0.6037845531575804,
+        0.604248271631904,
+        0.6133682225187076
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "easy_to_hard",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        3,
+        11,
+        0,
+        10,
+        17,
+        2,
+        4,
+        6,
+        16,
+        15,
+        12,
+        7,
+        8,
+        5
+      ],
+      "mean_selected_hdqs": 0.8319734438216605,
+      "first_five_scores": [
+        0.9197876946192097,
+        0.9197876946192097,
+        0.9111879569329674,
+        0.9006857824965937,
+        0.9002700333577063
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "hard_to_easy",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        1,
+        14,
+        13,
+        9,
+        5,
+        8,
+        7,
+        12,
+        15,
+        16,
+        6,
+        4,
+        2,
+        17
+      ],
+      "mean_selected_hdqs": 0.7429118052125417,
+      "first_five_scores": [
+        0.5951008774008226,
+        0.6014524859500122,
+        0.6037845531575804,
+        0.604248271631904,
+        0.6133682225187076
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "quality_stratified_sampling",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        3,
+        1,
+        11,
+        14,
+        0,
+        13,
+        10,
+        9,
+        17,
+        5,
+        2,
+        8,
+        4,
+        7
+      ],
+      "mean_selected_hdqs": 0.775874315713098,
+      "first_five_scores": [
+        0.9197876946192097,
+        0.5951008774008226,
+        0.9197876946192097,
+        0.6014524859500122,
+        0.9111879569329674
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    },
+    {
+      "strategy": "mixed_quality_curriculum",
+      "seed": 23,
+      "retention_ratio": 0.75,
+      "selected_documents": 14,
+      "selected_indices": [
+        15,
+        16,
+        12,
+        6,
+        7,
+        4,
+        8,
+        2,
+        5,
+        17,
+        9,
+        10,
+        13,
+        0
+      ],
+      "mean_selected_hdqs": 0.7868632606467365,
+      "first_five_scores": [
+        0.7913386458710977,
+        0.8064659055536659,
+        0.7657755046213367,
+        0.8263939256140954,
+        0.764385799580416
+      ],
+      "status": "deterministic_selection_only_not_a_model_result"
+    }
+  ],
+  "limitations": "This quick artifact validates deterministic curriculum construction. Model-quality effects require multi-seed training runs."
+}

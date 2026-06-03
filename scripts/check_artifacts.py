@@ -13,6 +13,8 @@ required = [
     "noise_report.json",
     "hdqs_sweep_report.json",
     "hdqs_sweep_table.md",
+    "hdqs_best_config.json",
+    "hdqs_failure_cases.md",
     "curriculum_report.json",
     "pipeline_order_report.json",
     "retention_pareto.csv",
@@ -48,6 +50,7 @@ required = [
     "failure_cases.md",
     "error_analysis.md",
     "project_report.md",
+    "research_readiness_summary.md",
     "retention_vs_perplexity.svg",
     "quality_score_distribution.svg",
     "privacy_vs_utility.svg",
@@ -60,6 +63,8 @@ required = [
     "seed_variance.svg",
     "model_scaling_curve.svg",
     "retention_vs_perplexity_research.svg",
+    "hdqs_sweep_heatmap.svg",
+    "privacy_retention_pareto.svg",
     "noise_type_breakdown.csv",
     "noise_removal_effectiveness.csv",
 ]
@@ -110,8 +115,28 @@ dataset_matrix = root / "artifacts" / "dataset_matrix"
 for name in ["dataset_matrix_summary.csv", "dataset_matrix_summary.md"]:
     if not (dataset_matrix / name).exists():
         raise SystemExit(f"Missing dataset-matrix artifact: {name}")
+for name in ["paper_prototype_summary.csv", "paper_prototype_summary.md"]:
+    if not (dataset_matrix / name).exists():
+        raise SystemExit(f"Missing paper-prototype artifact: {name}")
 for dataset_dir in [path for path in dataset_matrix.iterdir() if path.is_dir()]:
     if not (dataset_dir / "dataset_card.json").exists():
         raise SystemExit(f"Dataset matrix entry missing dataset_card.json: {dataset_dir.name}")
+    if not (dataset_dir / "fallback_report.json").exists():
+        raise SystemExit(f"Dataset matrix entry missing fallback_report.json: {dataset_dir.name}")
+
+multi_seed = root / "artifacts" / "multi_seed"
+for name in [
+    "seed_level_results.csv",
+    "aggregated_results.csv",
+    "statistical_tests.json",
+    "multi_seed_summary.md",
+]:
+    if not (multi_seed / name).exists():
+        raise SystemExit(f"Missing multi-seed artifact: {name}")
+
+model_scaling = root / "artifacts" / "model_scaling"
+for name in ["model_scaling_summary.csv", "model_scaling_summary.md", "scaling_curve.svg"]:
+    if not (model_scaling / name).exists():
+        raise SystemExit(f"Missing model-scaling artifact: {name}")
 
 print("Artifact check: ok")

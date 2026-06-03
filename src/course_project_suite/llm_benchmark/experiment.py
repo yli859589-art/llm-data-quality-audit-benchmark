@@ -219,6 +219,14 @@ def _build_hdqs_sweep_report(
             else "standalone_hdqs_not_better_than_raw_in_this_quick_run"
         )
 
+    def _threshold_objective(row: dict[str, Any]) -> float:
+        return (
+            float(cast(float, row["mean_hdqs_retained"]))
+            * float(cast(float, row["retention_rate_documents"]))
+            - 0.02 * float(cast(int, row["pii_like_hits"]))
+        )
+
+    best_threshold = max(threshold_rows, key=_threshold_objective)
     return {
         "type": "deterministic_hdqs_threshold_and_top_k_sweep",
         "method_name": "HDQS++ / DQCS prototype",
@@ -226,10 +234,16 @@ def _build_hdqs_sweep_report(
         "top_k_rows": top_k_rows,
         "weight_sweep_rows": weight_sweep_rows,
         "best_config": {
-            "name": "not_selected_from_quick_mode",
+            "name": "proxy_best_threshold_from_quick_diagnostics",
+            "threshold": best_threshold["threshold"],
+            "selection_objective": (
+                "mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits"
+            ),
+            "status": "diagnostic_proxy_not_model_validated",
             "reason": (
                 "Quick mode does not tune weights on a held-out development split. "
-                "The report lists candidate configurations without claiming a winner."
+                "This config is a reproducible diagnostic selection, not a "
+                "performance claim."
             ),
         },
         "raw_noisy_baseline_perplexity": raw_perplexity,
@@ -264,6 +278,33 @@ def _write_hdqs_sweep_table(path: Path, report: dict[str, Any]) -> None:
             f"| top-k | {row['retention_ratio']} | {row['retained_documents']} | "
             f"{row['retained_characters']} | {row['mean_hdqs_retained']:.3f} | "
             f"{row['pii_like_hits']} |"
+        )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _write_hdqs_failure_cases(path: Path, payload: dict[str, Any]) -> None:
+    rows = sorted(
+        payload["quality_scores"],
+        key=lambda row: (
+            float(row["score"]),
+            float(row.get("pii_density_penalty", 1.0)),
+            float(row.get("url_html_noise_penalty", 1.0)),
+        ),
+    )[:8]
+    lines = [
+        "# HDQS++ Failure Cases",
+        "",
+        "These are score-component diagnostics, not human labels.",
+        "",
+        "| Document index | Score | PII penalty | URL/HTML penalty | Repetition penalty |",
+        "| ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for row in rows:
+        lines.append(
+            f"| {row['document_index']} | {float(row['score']):.4f} | "
+            f"{float(row.get('pii_density_penalty', 0.0)):.4f} | "
+            f"{float(row.get('url_html_noise_penalty', 0.0)):.4f} | "
+            f"{float(row.get('repetition_penalty', 0.0)):.4f} |"
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -534,6 +575,7 @@ def run_benchmark_from_text(
     _write_json(output / "token_budget_report.json", budget_report)
     _write_json(output / "hdqs_sweep_report.json", hdqs_sweep_report)
     _write_hdqs_sweep_table(output / "hdqs_sweep_table.md", hdqs_sweep_report)
+    _write_json(output / "hdqs_best_config.json", hdqs_sweep_report["best_config"])
     _write_json(output / "curriculum_report.json", curriculum_report)
     _write_json(output / "pipeline_order_report.json", pipeline_order_report)
     _write_csv(output / "retention_pareto.csv", retention_pareto_rows)
@@ -553,6 +595,7 @@ def run_benchmark_from_text(
     _write_json(output / "duplicate_clusters.json", payload["duplicate_clusters"])
     _write_json(output / "environment.json", payload["environment"])
     _write_csv(output / "quality_scores.csv", quality_scores)
+    _write_hdqs_failure_cases(output / "hdqs_failure_cases.md", payload)
     curve_rows = [
         {"variant": run["variant"], "seed": run["seed"], **point}
         for run in model_runs

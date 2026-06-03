@@ -2,25 +2,26 @@
 
 | variant | residual_pii_like_hits | mean_hdqs | next_char_accuracy_mean | perplexity_mean | status |
 | --- | --- | --- | --- | --- | --- |
-| raw_noisy_baseline | 39 | 0.8334314550043062 | 0.029296875 | 394545.7639490097 | trained |
-| clean_only | 39 | 0.8691762508254504 |  |  | data_only |
-| pii_redact_only | 0 | 0.8313706361572665 |  |  | data_only |
-| exact_dedup_only | 33 | 0.8555469597165857 |  |  | data_only |
-| near_dedup_only | 27 | 0.8647942156949819 |  |  | data_only |
-| jaccard_near_dedup_only | 27 | 0.8647942156949819 |  |  | data_only |
-| rule_filter_only | 39 | 0.8702598956828416 | 0.02734375 | 422854.3036152836 | trained |
-| rule_quality_filter | 39 | 0.8702598956828416 |  |  | data_only |
-| perplexity_filter_proxy | 21 | 0.9069926374778416 |  |  | data_only |
-| proxy_perplexity_filter | 21 | 0.9069926374778416 |  |  | data_only |
-| hdqs_filter | 24 | 0.8802456992815094 | 0.02734375 | 415821.0239421671 | trained |
-| hdqs_curriculum | 24 | 0.8802456992815094 |  |  | data_only |
-| full_pipeline_without_clean | 0 | 0.8748786311286871 |  |  | data_only |
-| full_pipeline_without_redact | 27 | 0.9131317417301255 |  |  | data_only |
-| full_pipeline_without_exact_dedup | 0 | 0.9097148834162351 |  |  | data_only |
-| full_pipeline_without_near_dedup | 0 | 0.9090274825018975 |  |  | data_only |
-| full_without_hdqs | 0 | 0.9037563212922757 |  |  | data_only |
-| full_pipeline | 0 | 0.9097148834162351 | 0.02734375 | 397225.38577898784 | trained |
-| minhash_lsh_near_dedup_only | 27 | 0.8647942156949819 |  |  | data_only |
-| random_retention_matched_baseline | 33 | 0.8302623154279124 |  |  | data_only |
-| length_matched_baseline | 39 | 0.8479223770042881 |  |  | data_only |
-| quality_retention_matched_baseline | 24 | 0.9000783170125188 |  |  | data_only |
+| raw_noisy_baseline | 39 | 0.8082002142935474 | 0.02734375 | 581636.8320220296 | trained |
+| clean_only | 39 | 0.8486843191663868 |  |  | data_only |
+| pii_redact_only | 0 | 0.8069924493630979 |  |  | data_only |
+| exact_dedup_only | 33 | 0.8427568647356982 |  |  | data_only |
+| near_dedup_only | 27 | 0.8502522525789185 |  |  | data_only |
+| jaccard_near_dedup_only | 27 | 0.8502522525789185 |  |  | data_only |
+| rule_filter_only | 39 | 0.864505278222692 | 0.02734375 | 610303.4309267955 | trained |
+| rule_quality_filter | 39 | 0.864505278222692 |  |  | data_only |
+| perplexity_filter_proxy | 18 | 0.9116002651343742 |  |  | data_only |
+| proxy_perplexity_filter | 18 | 0.9116002651343742 |  |  | data_only |
+| hdqs_filter | 21 | 0.8751028584282857 | 0.025390625 | 604081.1564385192 | trained |
+| hdqs_curriculum | 21 | 0.8751028584282857 |  |  | data_only |
+| full_pipeline_without_clean | 0 | 0.8679635339405667 |  |  | data_only |
+| full_pipeline_without_redact | 27 | 0.9175787884509886 |  |  | data_only |
+| full_pipeline_without_exact_dedup | 0 | 0.9118222918375225 |  |  | data_only |
+| full_pipeline_without_near_dedup | 0 | 0.9114230362261059 |  |  | data_only |
+| full_without_hdqs | 0 | 0.9077680041976565 |  |  | data_only |
+| full_pipeline | 0 | 0.9118222918375225 | 0.02734375 | 559217.5970602097 | trained |
+| full_pipeline_without_hdqs | 0 | 0.9077680041976565 |  |  | data_only |
+| minhash_lsh_near_dedup_only | 27 | 0.8502522525789185 |  |  | data_only |
+| random_retention_matched_baseline | 24 | 0.8010697295249538 |  |  | data_only |
+| length_matched_baseline | 39 | 0.8561316897543153 |  |  | data_only |
+| quality_retention_matched_baseline | 21 | 0.8910767836708475 |  |  | data_only |

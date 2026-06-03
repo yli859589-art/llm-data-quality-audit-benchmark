@@ -27,9 +27,11 @@ Resume-ready and CCF-C-convertible research prototype; not a completed paper.
 - `privacy_vs_utility.svg`
 - `pipeline_order_comparison.svg`
 - `model_scaling_curve.svg`
+- `hdqs_sweep_heatmap.svg`
+- `privacy_retention_pareto.svg`
 
 ## Remaining Full Experiments
 
 - Run explicit-network or local WikiText-2/OpenWebText/C4 samples.
-- Run paper-prototype and full modes across three seeds.
+- Scale full mode across larger datasets, longer budgets, and model sizes.
 - Tune HDQS++ weights on a development split.

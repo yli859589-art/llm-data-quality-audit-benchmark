@@ -1,0 +1,11 @@
+{
+  "dataset_key": "local_wikitext_sample",
+  "dataset_name": "local_wikitext_sample",
+  "used_fallback": false,
+  "status": "trained",
+  "fallback_reason": null,
+  "command": "python scripts/run_dataset_matrix.py --mode paper-prototype",
+  "source": "Repository-local WikiText-style miniature sample",
+  "license_note": "Small repository-local text sample for offline paper-prototype smoke runs.",
+  "note": "Remote optional datasets are not treated as real multi-dataset evidence unless local data or explicit network access is available."
+}

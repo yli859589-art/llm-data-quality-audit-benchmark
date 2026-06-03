@@ -1,0 +1,9 @@
+{
+  "dataset_name": "synthetic_web_noise",
+  "provider": "local",
+  "local_path": "data/samples/synthetic_web_noise.txt",
+  "source": "Repository-local synthetic pseudo-web-noise sample",
+  "url": "",
+  "split": "train",
+  "license_or_usage_note": "Synthetic repository-local sample created for reproducible pipeline testing."
+}

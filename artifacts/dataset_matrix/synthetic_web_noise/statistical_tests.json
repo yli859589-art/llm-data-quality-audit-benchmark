@@ -1,0 +1,35 @@
+{
+  "metric": "final_val_perplexity",
+  "baseline_variant": "raw_noisy_baseline",
+  "paired": {
+    "raw_noisy_baseline_vs_full_pipeline": {
+      "count": 1,
+      "mean": 71110.3972222457,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    },
+    "raw_noisy_baseline_vs_hdqs_filter": {
+      "count": 1,
+      "mean": 54578.04741559166,
+      "std": 0.0,
+      "ci95_low": null,
+      "ci95_high": null,
+      "lower_is_better": true,
+      "positive_mean_improvement": true,
+      "status": "ok",
+      "direction": "candidate_better"
+    },
+    "raw_noisy_baseline_vs_hdqs_curriculum": {
+      "status": "skipped_missing_variant"
+    },
+    "full_pipeline_vs_full_pipeline_without_hdqs": {
+      "status": "skipped_missing_variant"
+    }
+  },
+  "interpretation": "Positive mean improvement means the candidate has lower perplexity than the baseline for lower-is-better metrics. Non-positive or mixed directions are reported without filtering."
+}

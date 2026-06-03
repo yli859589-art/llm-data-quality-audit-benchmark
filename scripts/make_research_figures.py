@@ -43,6 +43,17 @@ write_named_bar_chart(
     "Ablation mean HDQS",
     "Mean HDQS",
 )
+hdqs_rows = payload.get("hdqs_sweep_report", {}).get("threshold_rows", [])
+write_named_bar_chart(
+    artifact_dir / "hdqs_sweep_heatmap.svg",
+    [
+        (f"threshold={row['threshold']}", float(row["mean_hdqs_retained"]))
+        for row in hdqs_rows
+    ]
+    or [("not_run", 0.0)],
+    "HDQS sweep diagnostic heatmap",
+    "Mean retained HDQS",
+)
 dataset_rows = _read_csv(root / "artifacts" / "dataset_matrix" / "dataset_matrix_summary.csv")
 write_named_bar_chart(
     artifact_dir / "multi_dataset_perplexity.svg",
@@ -92,5 +103,20 @@ write_scatter_chart(
     "Retention versus perplexity",
     "Retention ratio",
     "Perplexity",
+)
+write_scatter_chart(
+    artifact_dir / "privacy_retention_pareto.svg",
+    [
+        (
+            row["variant"],
+            float(row["retention_ratio"]),
+            float(row["pii_like_hits"]),
+        )
+        for row in _read_csv(artifact_dir / "retention_pareto.csv")
+    ]
+    or [("not_run", 0.0, 0.0)],
+    "Privacy-retention Pareto",
+    "Retention ratio",
+    "Residual PII-like hits",
 )
 print(f"Research figures regenerated in {artifact_dir}")

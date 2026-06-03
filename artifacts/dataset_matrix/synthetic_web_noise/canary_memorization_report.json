@@ -1,0 +1,15 @@
+{
+  "synthetic_canary_values": 6,
+  "detected_before_processing": 6,
+  "residual_canary_values_after_processing": 0,
+  "synthetic_canary_removal_recall": 1.0,
+  "synthetic_canary_removal_precision": 0.75,
+  "synthetic_canary_false_positive_rate": 0.25,
+  "redaction_placeholders": 8,
+  "redaction_validation_side_effect_count": 2,
+  "lightweight_exposure_reduction_bits": 2.807354922057604,
+  "canary_memorization_status": "no_residual_synthetic_canary_values",
+  "note": "This is a synthetic-canary redaction validation, not a formal membership-inference or memorization study.",
+  "raw_pii_hits": 14,
+  "full_pipeline_pii_hits": 0
+}

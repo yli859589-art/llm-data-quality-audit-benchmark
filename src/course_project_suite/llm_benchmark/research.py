@@ -202,13 +202,18 @@ def build_privacy_utility_tradeoff_rows(
 def build_downstream_rows(summary: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     rows = []
     for variant, metrics in summary.items():
+        next_acc = float(metrics["final_val_next_char_accuracy"]["mean"])
+        perplexity = float(metrics["final_val_perplexity"]["mean"])
         rows.append(
             {
                 "variant": variant,
-                "next_character_accuracy": metrics["final_val_next_char_accuracy"]["mean"],
-                "held_out_perplexity": metrics["final_val_perplexity"]["mean"],
+                "next_character_accuracy": next_acc,
+                "held_out_perplexity": perplexity,
                 "held_out_bits_per_character": metrics["final_val_bits_per_character"]["mean"],
-                "cloze_proxy": "next_character_prediction",
+                "held_out_noisy_robustness_proxy": 1 / max(1.0, perplexity),
+                "simple_cloze_proxy_accuracy": next_acc,
+                "toy_sentiment_proxy": "not_run_in_quick_mode",
+                "small_classification_proxy": "not_run_in_quick_mode",
                 "status": "quick_trained_metric",
             }
         )
@@ -230,6 +235,7 @@ def build_generation_quality_report(model_runs: list[dict[str, Any]]) -> dict[st
                 "seed": run["seed"],
                 "sample_characters": len(sample),
                 "generation_repeated_trigrams": repeated,
+                "generation_repetition_rate": repeated / max(1, len(tokens) - 2),
                 "note": "Small model output; not human preference evaluation.",
             }
         )

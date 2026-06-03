@@ -18,7 +18,8 @@ summary_lines = [
     "",
     (
         "Quick mode is a CPU, single-seed smoke test. The table verifies "
-        "reproducibility and preliminary behavior; it is not a paper-level result."
+        "reproducibility and instrumentation; it is not model-quality evidence "
+        "or a paper-level result."
     ),
     "",
     (

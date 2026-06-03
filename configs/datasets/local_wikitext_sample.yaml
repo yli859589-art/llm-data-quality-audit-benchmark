@@ -1,0 +1,9 @@
+{
+  "dataset_name": "local_wikitext_sample",
+  "provider": "local",
+  "local_path": "data/samples/local_wikitext_sample.txt",
+  "source": "Repository-local WikiText-style miniature sample",
+  "url": "",
+  "split": "train",
+  "license_or_usage_note": "Small repository-local text sample for offline paper-prototype smoke runs."
+}

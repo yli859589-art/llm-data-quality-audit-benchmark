@@ -1,0 +1,25 @@
+{
+  "exact_duplicate_clusters": [
+    {
+      "representative_index": 0,
+      "member_indices": [
+        2
+      ]
+    },
+    {
+      "representative_index": 4,
+      "member_indices": [
+        6
+      ]
+    }
+  ],
+  "near_duplicate_clusters": [
+    {
+      "representative_index": 0,
+      "member_index": 5,
+      "similarity": 0.9887640449438202,
+      "threshold": 0.82,
+      "method": "jaccard"
+    }
+  ]
+}

@@ -79,6 +79,12 @@ def aggregate_model_runs(
     *,
     metric: str = "final_val_perplexity",
     baseline_variant: str = "raw_noisy_baseline",
+    paired_comparisons: tuple[tuple[str, str], ...] = (
+        ("raw_noisy_baseline", "full_pipeline"),
+        ("raw_noisy_baseline", "hdqs_filter"),
+        ("raw_noisy_baseline", "hdqs_curriculum"),
+        ("full_pipeline", "full_pipeline_without_hdqs"),
+    ),
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     seed_rows = [
         {
@@ -106,16 +112,34 @@ def aggregate_model_runs(
                 "bootstrap_ci_high": bootstrap_mean_ci(values, samples=200)["ci_high"],
             }
         )
-    tests: dict[str, Any] = {"metric": metric, "baseline_variant": baseline_variant, "paired": {}}
-    baseline_rows = sorted(by_variant.get(baseline_variant, []), key=lambda row: int(row["seed"]))
-    baseline_values = [float(row["value"]) for row in baseline_rows]
-    for variant, rows in sorted(by_variant.items()):
-        if variant == baseline_variant:
+    tests: dict[str, Any] = {
+        "metric": metric,
+        "baseline_variant": baseline_variant,
+        "paired": {},
+        "interpretation": (
+            "Positive mean improvement means the candidate has lower perplexity "
+            "than the baseline for lower-is-better metrics. Non-positive or mixed "
+            "directions are reported without filtering."
+        ),
+    }
+    for left_variant, right_variant in paired_comparisons:
+        left_rows = sorted(by_variant.get(left_variant, []), key=lambda row: int(row["seed"]))
+        right_rows = sorted(by_variant.get(right_variant, []), key=lambda row: int(row["seed"]))
+        key = f"{left_variant}_vs_{right_variant}"
+        if not left_rows or not right_rows:
+            tests["paired"][key] = {"status": "skipped_missing_variant"}
             continue
-        ordered = sorted(rows, key=lambda row: int(row["seed"]))
-        if [row["seed"] for row in ordered] != [row["seed"] for row in baseline_rows]:
-            tests["paired"][variant] = {"status": "skipped_seed_mismatch"}
+        if [row["seed"] for row in left_rows] != [row["seed"] for row in right_rows]:
+            tests["paired"][key] = {"status": "skipped_seed_mismatch"}
             continue
-        values = [float(row["value"]) for row in ordered]
-        tests["paired"][variant] = paired_difference_summary(baseline_values, values)
+        left_values = [float(row["value"]) for row in left_rows]
+        right_values = [float(row["value"]) for row in right_rows]
+        comparison: dict[str, Any] = paired_difference_summary(left_values, right_values)
+        comparison["status"] = "ok"
+        comparison["direction"] = (
+            "candidate_better"
+            if comparison["positive_mean_improvement"]
+            else "candidate_not_better_or_unstable"
+        )
+        tests["paired"][key] = comparison
     return seed_rows, aggregate_rows, tests
