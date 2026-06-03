@@ -1,12 +1,89 @@
 from __future__ import annotations
 
+import csv
 import json
 import re
 from pathlib import Path
+from typing import Any
 
 root = Path(__file__).resolve().parents[1]
-artifact_dir = root / "artifacts" / "quick_experiment"
-required = [
+quick_dir = root / "artifacts" / "quick_experiment"
+dataset_matrix = root / "artifacts" / "dataset_matrix"
+multi_seed = root / "artifacts" / "multi_seed"
+model_scaling = root / "artifacts" / "model_scaling"
+research = root / "artifacts" / "research"
+
+
+def _load_json(path: Path) -> Any:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Invalid JSON artifact: {path.relative_to(root)}") from exc
+
+
+def _load_csv(path: Path) -> list[dict[str, str]]:
+    try:
+        with path.open(encoding="utf-8", newline="") as handle:
+            return [dict(row) for row in csv.DictReader(handle)]
+    except csv.Error as exc:
+        raise SystemExit(f"Invalid CSV artifact: {path.relative_to(root)}") from exc
+
+
+def _require(path: Path, label: str) -> None:
+    if not path.exists():
+        raise SystemExit(f"Missing {label}: {path.relative_to(root)}")
+
+
+def _require_fields(payload: dict[str, Any], fields: list[str], label: str) -> None:
+    missing = [field for field in fields if field not in payload]
+    if missing:
+        raise SystemExit(f"{label} missing fields: {', '.join(missing)}")
+
+
+def _check_no_absolute_paths() -> None:
+    absolute_path = re.compile(rf"(?:[A-Za-z]:(?:\\+|/(?!/))|/{'Users'}/|/{'home'}/[^/]+/)")
+    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research]:
+        if not base.exists():
+            continue
+        for path in base.rglob("*"):
+            if not path.is_file():
+                continue
+            try:
+                text = path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+            if absolute_path.search(text):
+                raise SystemExit(
+                    f"Artifact contains an absolute local path: {path.relative_to(root)}"
+                )
+
+
+def _check_no_unlabeled_placeholders() -> None:
+    forbidden = {"fake_result", "placeholder_without_label"}
+    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research]:
+        if not base.exists():
+            continue
+        for path in base.rglob("*.json"):
+            text = path.read_text(encoding="utf-8")
+            for token in forbidden:
+                if token in text:
+                    raise SystemExit(
+                        f"Artifact contains forbidden placeholder token `{token}`: "
+                        f"{path.relative_to(root)}"
+                    )
+
+
+def _check_table_metadata(path: Path) -> None:
+    text = path.read_text(encoding="utf-8")
+    required_phrases = ["Mode:", "Seed setting:", "Training budget:", "Interpretation:"]
+    missing = [phrase for phrase in required_phrases if phrase not in text]
+    if missing:
+        raise SystemExit(
+            f"Markdown table missing metadata {missing}: {path.relative_to(root)}"
+        )
+
+
+quick_required = [
     "REPORT.md",
     "results.json",
     "dataset_card.json",
@@ -68,75 +145,171 @@ required = [
     "noise_type_breakdown.csv",
     "noise_removal_effectiveness.csv",
 ]
-missing = [name for name in required if not (artifact_dir / name).exists()]
-if missing:
-    raise SystemExit("Missing quick-experiment artifacts: " + ", ".join(missing))
+for name in quick_required:
+    _require(quick_dir / name, "quick-experiment artifact")
 
-absolute_path = re.compile(rf"(?:[A-Za-z]:(?:\\+|/(?!/))|/{'Users'}/|/{'home'}/[^/]+/)")
-for path in artifact_dir.rglob("*"):
-    if path.is_file():
-        try:
-            text = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
-            continue
-        if absolute_path.search(text):
-            raise SystemExit(f"Artifact contains an absolute local path: {path.relative_to(root)}")
-
-dataset_card = json.loads((artifact_dir / "dataset_card.json").read_text(encoding="utf-8"))
-required_card_fields = [
-    "dataset_name",
-    "source",
-    "license_or_usage_note",
-    "split",
-    "raw_chars",
-    "retained_chars",
-    "retention_rate",
-    "num_docs",
-    "num_duplicates_removed",
-    "num_near_duplicates_removed",
-    "pii_count_before",
-    "pii_count_after",
-    "random_seed",
-    "created_at",
-    "code_version/git_commit",
-]
-missing_fields = [field for field in required_card_fields if field not in dataset_card]
-if missing_fields:
-    raise SystemExit("Dataset card missing fields: " + ", ".join(missing_fields))
-
-budget = json.loads((artifact_dir / "token_budget_report.json").read_text(encoding="utf-8"))
+results = _load_json(quick_dir / "results.json")
+_require_fields(
+    results,
+    [
+        "project",
+        "mode",
+        "configuration",
+        "dataset_card",
+        "token_budget_report",
+        "model_runs",
+        "model_summary",
+        "privacy_report",
+        "limitations",
+    ],
+    "quick results.json",
+)
+dataset_card = _load_json(quick_dir / "dataset_card.json")
+_require_fields(
+    dataset_card,
+    [
+        "dataset_name",
+        "source",
+        "license_or_usage_note",
+        "split",
+        "raw_chars",
+        "retained_chars",
+        "retention_rate",
+        "num_docs",
+        "num_duplicates_removed",
+        "num_near_duplicates_removed",
+        "pii_count_before",
+        "pii_count_after",
+        "random_seed",
+        "created_at",
+        "code_version/git_commit",
+    ],
+    "quick dataset_card.json",
+)
+budget = _load_json(quick_dir / "token_budget_report.json")
 if not budget["equal_budget_enabled"]:
     raise SystemExit("Quick artifact must use strict equal-budget mode.")
 training_lengths = {row["training_characters"] for row in budget["variants"].values()}
 if len(training_lengths) != 1:
     raise SystemExit("Compared variants do not use an equal training-character budget.")
 
-dataset_matrix = root / "artifacts" / "dataset_matrix"
 for name in ["dataset_matrix_summary.csv", "dataset_matrix_summary.md"]:
-    if not (dataset_matrix / name).exists():
-        raise SystemExit(f"Missing dataset-matrix artifact: {name}")
+    _require(dataset_matrix / name, "dataset-matrix artifact")
 for name in ["paper_prototype_summary.csv", "paper_prototype_summary.md"]:
-    if not (dataset_matrix / name).exists():
-        raise SystemExit(f"Missing paper-prototype artifact: {name}")
+    _require(dataset_matrix / name, "paper-prototype artifact")
 for dataset_dir in [path for path in dataset_matrix.iterdir() if path.is_dir()]:
-    if not (dataset_dir / "dataset_card.json").exists():
-        raise SystemExit(f"Dataset matrix entry missing dataset_card.json: {dataset_dir.name}")
-    if not (dataset_dir / "fallback_report.json").exists():
-        raise SystemExit(f"Dataset matrix entry missing fallback_report.json: {dataset_dir.name}")
+    card_path = dataset_dir / "dataset_card.json"
+    fallback_path = dataset_dir / "fallback_report.json"
+    results_path = dataset_dir / "results.json"
+    _require(card_path, "dataset-matrix dataset card")
+    _require(fallback_path, "dataset-matrix fallback report")
+    _require(results_path, "dataset-matrix results file")
+    card = _load_json(card_path)
+    fallback = _load_json(fallback_path)
+    row_results = _load_json(results_path)
+    _require_fields(
+        fallback,
+        [
+            "dataset_key",
+            "dataset_name",
+            "used_fallback",
+            "status",
+            "fallback_reason",
+            "command",
+            "source",
+            "license_note",
+        ],
+        f"{dataset_dir.name} fallback_report.json",
+    )
+    _require_fields(
+        row_results,
+        ["mode", "dataset_key", "status", "used_fallback", "command"],
+        f"{dataset_dir.name} results.json",
+    )
+    if fallback["used_fallback"] and row_results["status"] != "fallback_recorded":
+        raise SystemExit(f"Fallback dataset is not marked fallback_recorded: {dataset_dir.name}")
+    if "fallback" not in card:
+        raise SystemExit(f"Dataset card missing fallback field: {dataset_dir.name}")
 
-multi_seed = root / "artifacts" / "multi_seed"
 for name in [
     "seed_level_results.csv",
     "aggregated_results.csv",
     "statistical_tests.json",
     "multi_seed_summary.md",
+    "seed_variance.svg",
 ]:
-    if not (multi_seed / name).exists():
-        raise SystemExit(f"Missing multi-seed artifact: {name}")
+    _require(multi_seed / name, "multi-seed artifact")
+tests = _load_json(multi_seed / "statistical_tests.json")
+expected_comparisons = {
+    "raw_noisy_baseline_vs_full_pipeline",
+    "raw_noisy_baseline_vs_hdqs_filter",
+    "raw_noisy_baseline_vs_hdqs_curriculum",
+    "full_pipeline_vs_full_pipeline_without_hdqs",
+}
+if not expected_comparisons.issubset(set(tests.get("paired", {}))):
+    raise SystemExit("Multi-seed statistical_tests.json missing required paired comparisons.")
 
-model_scaling = root / "artifacts" / "model_scaling"
 for name in ["model_scaling_summary.csv", "model_scaling_summary.md", "scaling_curve.svg"]:
-    if not (model_scaling / name).exists():
-        raise SystemExit(f"Missing model-scaling artifact: {name}")
+    _require(model_scaling / name, "model-scaling artifact")
 
+research_required = [
+    "multi_dataset_results_table.md",
+    "multi_seed_results_table.md",
+    "model_scaling_table.md",
+    "privacy_utility_table.md",
+    "downstream_table.md",
+    "statistical_tests_table.md",
+    "research_readiness_summary.md",
+    "error_analysis.md",
+    "ablation_heatmap.svg",
+    "multi_dataset_perplexity.svg",
+    "pipeline_order_comparison.svg",
+    "data_pipeline_summary.svg",
+    "hdqs_sweep_heatmap.svg",
+    "privacy_retention_pareto.svg",
+]
+for name in research_required:
+    _require(research / name, "research artifact")
+
+for table_name in [
+    "results_summary.md",
+    "main_results_table.md",
+    "ablation_table.md",
+    "hdqs_sweep_table.md",
+    "multi_dataset_results_table.md",
+    "multi_seed_results_table.md",
+    "model_scaling_table.md",
+    "privacy_utility_table.md",
+    "downstream_table.md",
+    "statistical_tests_table.md",
+]:
+    _check_table_metadata(quick_dir / table_name)
+for table_name in [
+    "dataset_matrix_summary.md",
+    "paper_prototype_summary.md",
+]:
+    _check_table_metadata(dataset_matrix / table_name)
+for table_name in [
+    "multi_dataset_results_table.md",
+    "multi_seed_results_table.md",
+    "model_scaling_table.md",
+    "privacy_utility_table.md",
+    "downstream_table.md",
+    "statistical_tests_table.md",
+]:
+    _check_table_metadata(research / table_name)
+
+for csv_path in [
+    quick_dir / "retention_pareto.csv",
+    quick_dir / "privacy_utility_tradeoff.csv",
+    quick_dir / "downstream_results.csv",
+    dataset_matrix / "paper_prototype_summary.csv",
+    multi_seed / "aggregated_results.csv",
+    model_scaling / "model_scaling_summary.csv",
+]:
+    if not _load_csv(csv_path):
+        raise SystemExit(f"CSV artifact has no rows: {csv_path.relative_to(root)}")
+
+_check_no_absolute_paths()
+_check_no_unlabeled_placeholders()
 print("Artifact check: ok")

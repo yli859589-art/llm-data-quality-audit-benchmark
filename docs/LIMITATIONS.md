@@ -1,24 +1,27 @@
 # Limitations
 
-- Quick results are single-seed or small-seed CPU smoke-test evidence.
+- Quick results are smoke-test evidence for reproducibility and
+  instrumentation, not paper-level model-quality evidence.
+- Paper-prototype results are lightweight small runs. They show that the
+  experiment matrix is executable, not that the method is proven at scale.
 - Tiny Shakespeare, `mixed_debug`, `synthetic_web_noise`, and
   `local_wikitext_sample` are compact debugging or prototype corpora, not
   production web crawls.
-- Paper-prototype optional public rows are fallback records unless approved
-  network access or local dataset files are provided.
-- Controlled corruption is useful for reproducible stress testing but does not
-  estimate natural web-noise rates.
-- HDQS++ weights are not tuned on a held-out development split in quick mode.
-- Standalone HDQS can be weaker than the raw baseline in quick runs; the
-  current evidence supports evaluating the full pipeline rather than HDQS
-  alone.
-- Current three-seed comparisons have favorable mean directions for several
-  candidates, but wide confidence intervals prevent paper-level claims.
-- BPE and larger model configs are present as research-system scaffolding, but
-  default quick artifacts train only compact character models.
-- Synthetic-canary checks are not formal privacy certification,
-  membership-inference testing, or a guarantee that real private data is safe.
-- CPU attention timing is hardware-dependent; SDPA is an optimized PyTorch
-  primitive, not a new algorithmic contribution.
+- Optional public dataset entries are fallback records unless approved local
+  files or approved network access are provided.
+- Controlled and pseudo-real noise families are deterministic stress tests;
+  they do not estimate natural web-noise prevalence.
+- HDQS++ weights are not tuned and frozen on a held-out development split.
+- DQCS curriculum artifacts are diagnostics and do not yet prove stable
+  curriculum-training gains.
+- Current multi-seed comparisons have wide confidence intervals.
+- BPE and larger model configs are represented in model-scaling artifacts, but
+  not all listed configs are trained in quick or CI mode.
+- Synthetic-canary privacy checks are not formal privacy certification,
+  membership-inference testing, or a guarantee for real private data.
+- Downstream metrics are lightweight proxies and should be expanded before
+  paper submission.
+- CPU/CUDA attention timings are hardware-dependent and are auxiliary systems
+  checks.
 - The project is not official coursework, not a competition result, not a
   submitted paper, and not an accepted paper.

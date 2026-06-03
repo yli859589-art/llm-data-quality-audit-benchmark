@@ -2,6 +2,12 @@
 
 Generated from `artifacts/quick_experiment/results.json` in `quick` mode.
 
+Mode: `quick`
+Seed setting: `23`
+Training budget: `18000` characters per compared variant.
+Interpretation: this table is generated evidence for reproducibility and instrumentation.
+Limitation note: quick/small-run numbers are preliminary and not paper-level model-quality conclusions.
+
 Quick mode is a CPU, single-seed smoke test. The table verifies reproducibility and instrumentation; it is not model-quality evidence or a paper-level result.
 
 | Variant | Validation loss mean +/- std | Perplexity mean +/- std | BPC | Next-char accuracy |

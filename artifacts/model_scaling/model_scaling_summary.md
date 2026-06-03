@@ -1,5 +1,11 @@
 # Model Scaling Summary
 
+Mode label: `quick`
+Seed setting: not applicable; this is generated from model configs.
+Training budget: config-level summary only.
+Interpretation: this artifact compares configured character/BPE model sizes and context lengths.
+Limitation note: it is not a claim that every model has completed full training.
+
 This table is generated from model configs. It is not a claim that every model has completed full training.
 
 | Model | Tokenizer | Context | Estimated params | Status |

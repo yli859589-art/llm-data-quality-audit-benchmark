@@ -1,5 +1,11 @@
 # Model Results Summary
 
+Mode: generated from the benchmark configuration in `results.json`.
+Seed setting: see the `Seeds` column.
+Training budget: see `results_summary.csv` and `token_budget_report.json`.
+Interpretation: compact runs validate reproducibility and instrumentation; they are not paper-level model-quality conclusions.
+Limitation note: larger datasets, longer training, and fixed method tuning are still required for paper claims.
+
 | Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | BPC | Next-char accuracy |
 | --- | --- | ---: | ---: | ---: | ---: |
 | `full_pipeline` | 23,42,3407 | 12.5107 +/- 0.4219 | 287764.94 +/- 120974.50 | 18.049 | 0.027 |

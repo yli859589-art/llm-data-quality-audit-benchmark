@@ -13,6 +13,7 @@ if str(src) not in sys.path:
 
 from course_project_suite.llm_benchmark import BenchmarkConfig, run_benchmark
 from course_project_suite.llm_benchmark.char_lm import TrainConfig
+from course_project_suite.llm_benchmark.reporting import write_named_bar_chart
 from course_project_suite.llm_benchmark.statistics import aggregate_model_runs
 
 parser = argparse.ArgumentParser()
@@ -75,6 +76,15 @@ summary_lines = [
     "",
     f"Mode: `{args.mode}`",
     f"Seeds: `{','.join(str(seed) for seed in seeds)}`",
+    f"Training budget: `{steps}` optimization steps per seed/variant.",
+    (
+        "Interpretation: paper-prototype multi-seed results check whether the "
+        "experiment matrix is executable and whether directions are stable."
+    ),
+    (
+        "Limitation note: confidence intervals are wide in this compact run; "
+        "do not treat favorable means as paper-level conclusions."
+    ),
     "",
     "| Variant | n | Mean perplexity | Std | CI low | CI high |",
     "| --- | ---: | ---: | ---: | ---: | ---: |",
@@ -97,5 +107,11 @@ summary_lines.extend(
 for name, row in tests["paired"].items():
     summary_lines.append(f"- `{name}`: `{row.get('direction', row.get('status'))}`")
 (output_dir / "multi_seed_summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+write_named_bar_chart(
+    output_dir / "seed_variance.svg",
+    [(str(row["variant"]), float(row["std"])) for row in aggregate_rows],
+    "Paper-prototype seed variance",
+    "Perplexity std",
+)
 print(f"Multi-seed experiment complete: {output_dir}")
 print(f"Mode: {args.mode}; seeds: {','.join(str(seed) for seed in seeds)}")

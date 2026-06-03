@@ -31,12 +31,14 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 
 ```bash
 python -m unittest discover -s tests -v
+python -m compileall -q src scripts tests all_course_projects.py
 python scripts/run_quick_experiment.py
 python scripts/tune_hdqs_quick.py
 python scripts/run_dataset_matrix.py --mode quick
+python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
 python scripts/run_dataset_matrix.py --mode paper-prototype
 python scripts/run_multi_seed.py --mode paper-prototype
-python scripts/run_model_scaling.py
+python scripts/run_model_scaling.py --mode quick
 python scripts/make_tables.py
 python scripts/make_figures.py
 python scripts/statistical_analysis.py

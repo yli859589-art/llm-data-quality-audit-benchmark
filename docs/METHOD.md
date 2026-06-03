@@ -1,101 +1,206 @@
 # Method
 
-## Problem Definition
+## Overview
 
-The prototype studies how data-quality interventions affect small-scale
-language-model pretraining under fixed character/token budgets. Controlled
-corruption and pseudo-real web noise create reproducible stress tests; they are
-not estimates of natural web noise prevalence.
+The project studies data-quality interventions for small-scale language-model
+pretraining. It is a research prototype: the method pipeline, baselines,
+statistics, and artifacts are implemented, but current quick and
+paper-prototype results remain preliminary.
 
-The v4.3 paper-prototype path deliberately separates three evidence levels:
-quick smoke tests, local small-run dataset evidence, and optional remote
-dataset fallback records. A fallback record proves routing and provenance, not
-model quality on that remote dataset.
+The benchmark separates three evidence levels:
 
-## HDQS++ / DQCS
+- `quick`: reproducibility and instrumentation smoke test.
+- `paper-prototype`: executable local small-run matrix plus remote fallback records.
+- `full`: future large-dataset, longer-training mode required for paper claims.
 
-HDQS++ is a transparent document-quality scoring prototype. Each document
-receives component scores for lexical diversity, character entropy, token
-entropy, repetition, n-gram repetition, HTML/URL noise, PII density, symbol
-noise, language consistency, length prior, optional LM surprisal, and
-near-duplicate cluster penalty.
+## Data-Quality Intervention Pipeline
 
-The sweep report selects a best diagnostic configuration with a
-retention-aware objective:
+The default full pipeline is:
 
-`mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits`
+```text
+raw documents
+  -> controlled/pseudo-real noise injection
+  -> text cleaning
+  -> synthetic PII redaction
+  -> exact deduplication
+  -> MinHash-LSH near deduplication
+  -> HDQS++ scoring
+  -> retention-aware quality filtering
+  -> equal-budget Mini GPT training/evaluation
+```
 
-This objective favors cleaner retained data without silently rewarding extreme
-filtering. It is a diagnostic proxy, not a tuned paper method. The generated
-`hdqs_best_config.json` and `hdqs_failure_cases.md` files document both the
-chosen setting and examples where quality filters can remove useful text or
-retain noisy text.
+Pipeline-order artifacts compare alternate orderings, but those rows are
+preprocessing diagnostics unless a later experiment explicitly trains each
+order.
 
-DQCS, or Data Quality Curriculum Selection, builds deterministic curricula
-from HDQS++ scores:
+## Noise Modeling
 
-- random baseline;
-- high-quality-first;
-- low-quality-first;
-- easy-to-hard;
-- hard-to-easy;
-- quality-stratified sampling;
-- mixed-quality curriculum.
+Controlled synthetic noise includes HTML boilerplate, URL spam, synthetic PII
+canaries, exact duplicates, near duplicates, OCR-like corruption, mojibake,
+repeated n-grams, low-information templates, mixed language, excessive symbols,
+and generated-like repetition.
 
-Quick artifacts validate that these curricula can be constructed reproducibly.
-The current three-seed paper-prototype run reports curriculum comparisons, but
-the intervals remain wide; it should be read as preliminary evidence, not as a
-settled curriculum-training gain.
+Pseudo-real web noise adds navigation bars, footer copyright text, SEO keyword
+stuffing, ad blocks, cookie banners, malformed HTML, boilerplate templates,
+multilingual fragments, encoding artifacts, low-information pages, and
+repeated template pages.
 
-## Deduplication
+These stress tests are deterministic and seed-controlled. They do not estimate
+the true prevalence of web-corpus noise.
 
-Exact deduplication hashes full document strings. Jaccard near deduplication is
-kept as a readable reference. MinHash/LSH produces deterministic signatures and
-candidate buckets, then verifies candidates with exact Jaccard similarity
-before removal. Duplicate clusters preserve representative/member indices,
-thresholds, and method metadata.
+## PII Redaction And Synthetic Canaries
 
-## Pipeline Order Study
+The privacy component uses synthetic canaries only. It detects email-like,
+phone-like, and ID-like strings before and after processing, then reports
+residual hits, recall, precision, false-positive proxy behavior, and utility
+metrics where model runs exist.
 
-The pipeline-order study compares deterministic preprocessing outcomes for:
+This is not a formal privacy audit, membership-inference test, or guarantee for
+real private data.
 
-- clean -> redact -> exact dedup -> near dedup -> HDQS;
-- clean -> dedup -> redact -> HDQS;
-- HDQS -> clean -> dedup;
-- redact before dedup;
-- redact after dedup;
-- near dedup before HDQS;
-- near dedup after HDQS.
+## Exact Deduplication
 
-The output is `pipeline_order_report.json` and
-`pipeline_order_comparison.svg`. These rows are preprocessing diagnostics, not
-separate model-training claims unless a later experiment explicitly trains
-each order.
+Exact deduplication hashes full document strings and removes repeated copies
+while preserving duplicate-cluster metadata.
 
-The default full-pipeline order is clean, redact synthetic PII canaries, remove
-exact duplicates, remove near duplicates, score with HDQS++, then apply the
-retention-aware quality filter.
+## Jaccard Near Deduplication
 
-## Privacy Utility
+The Jaccard reference implementation compares token-shingle overlap directly.
+It is readable and deterministic, and it acts as a correctness reference for
+small cases.
 
-The privacy component uses synthetic canaries only. It reports detection
-before processing, residual canary count, recall, precision, false-positive
-rate, redaction side effects, a lightweight exposure-reduction indicator, and
-utility metrics such as held-out perplexity and next-character accuracy when a
-variant was trained.
+## MinHash-LSH Near Deduplication
 
-This is not a formal privacy audit or safety certification.
+The MinHash-LSH path builds deterministic signatures, groups candidates in LSH
+buckets, and verifies candidates with exact Jaccard similarity before removal.
+It is the scalable near-duplicate path used by the benchmark matrix.
 
-## Equal Budget Rule
+## HDQS++
 
-Strict comparison mode trims every trained variant to the same shared
-character budget. `token_budget_report.json` records the selected budget and
-per-variant lengths. Unequal retained-data studies are reported separately as
-retention/utility tradeoffs.
+HDQS++ is a transparent document-quality scoring prototype. Each document is
+scored from bounded components:
 
-## Auxiliary Attention Benchmark
+- lexical diversity
+- character entropy
+- token entropy
+- repetition penalty
+- n-gram repetition penalty
+- PII density penalty
+- URL/HTML noise penalty
+- non-linguistic symbol penalty
+- length prior
+- language consistency
+- optional LM surprisal quality
+- duplicate-cluster penalty
 
-Attention measurements include sequence-length sweeps, warmup, median/p25/p75
-timing, correctness checks, thread/device/PyTorch metadata, and algorithmic
-working-set estimates. They are auxiliary systems checks; SDPA speed is not
-claimed as a new algorithmic contribution.
+The implemented score is a weighted average:
+
+```text
+score(d) = sum_i weight_i * component_i(d) / sum_i weight_i
+```
+
+Current default weights are:
+
+```text
+lexical_diversity=1.0
+char_entropy=1.0
+token_entropy=0.8
+repetition_penalty=1.3
+ngram_repetition_penalty=1.0
+pii_density_penalty=1.2
+url_html_noise_penalty=1.0
+non_linguistic_symbol_penalty=1.0
+length_prior=0.8
+language_consistency=0.7
+optional_lm_surprisal=0.0
+duplicate_cluster_penalty=0.0
+```
+
+The HDQS sweep reports threshold and top-k retention behavior. Its
+retention-aware diagnostic objective is:
+
+```text
+mean_hdqs_retained * document_retention_rate - 0.02 * pii_like_hits
+```
+
+This objective discourages extreme filtering and residual PII-like content. It
+is a diagnostic proxy, not a tuned paper method. `hdqs_best_config.json` and
+`hdqs_failure_cases.md` document the current selection and failure boundaries.
+
+## DQCS Curriculum Selection
+
+DQCS, Data Quality Curriculum Selection, creates deterministic curriculum
+orders from HDQS++ scores:
+
+- random
+- high-quality-first
+- low-quality-first
+- easy-to-hard
+- hard-to-easy
+- quality-stratified
+- mixed-quality
+
+Current DQCS artifacts prove that curricula can be generated and compared
+reproducibly. They do not prove a stable training gain.
+
+## Pipeline-Order Study
+
+The pipeline-order report compares retained documents, retained characters,
+PII-like hits, duplicate counts, and mean HDQS under alternate preprocessing
+orders. It helps identify brittle ordering decisions before expensive training.
+
+## Equal-Token-Budget Design
+
+Strict comparison mode trims trained variants to the same shared character
+budget. `token_budget_report.json` records the selected budget and per-variant
+lengths. Retention-utility tradeoffs are reported separately so retained-data
+quantity is not confused with model-quality improvement.
+
+## Multi-Seed Aggregation
+
+Multi-seed aggregation writes seed-level rows, aggregate means, standard
+deviations, bootstrap intervals, and paired comparisons when seeds align. The
+current paper-prototype seeds are `23`, `42`, and `3407`.
+
+Positive mean improvement means lower perplexity for the candidate, but wide
+intervals are reported directly and must not be over-interpreted.
+
+## Privacy-Utility Metrics
+
+Privacy-utility artifacts combine residual PII-like hits, synthetic-canary
+removal, retention, held-out perplexity, and next-character accuracy when a
+variant was trained. These metrics are useful for engineering tradeoff analysis
+but are not a privacy certification.
+
+## Downstream Metrics
+
+Downstream artifacts currently include lightweight proxy tasks such as held-out
+next-character accuracy, noisy robustness proxies, and generation-quality
+signals. Full downstream NLP evaluation remains future work.
+
+## Attention Benchmark As Auxiliary System Check
+
+The attention benchmark compares readable attention implementations and
+PyTorch SDPA across short sequence lengths. It records timing, correctness, and
+environment metadata. This is an auxiliary systems sanity check, not the main
+research contribution.
+
+## Why This Is Research-Prototype Level
+
+The project has a defined research question, controllable intervention matrix,
+baselines, ablations, dataset cards, fallback records, multi-seed statistics,
+generated reports, CI, tests, and coverage. That makes it suitable as a
+resume-ready and CCF-C-convertible research prototype.
+
+It is not a completed paper because external datasets, longer training,
+larger-scale models, fixed method tuning, formal literature review, and
+paper-style writing are still required.
+
+## Current Limitations
+
+- Quick and paper-prototype runs are compact.
+- Optional public datasets are fallback records unless approved data are provided.
+- HDQS++ weights are not tuned on a held-out development split.
+- DQCS curriculum gains are not established.
+- Synthetic canaries are not a formal privacy audit.
+- CPU/GPU timing depends on local hardware and PyTorch kernels.

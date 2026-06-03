@@ -3,16 +3,16 @@
 <text x="410.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Auxiliary attention throughput (median)</text>
 <line x1="72" y1="378" x2="748" y2="378" stroke="#111827"/>
 <text x="18" y="225.0" text-anchor="middle" transform="rotate(-90 18 225.0)" font-family="Arial" font-size="13">Query tokens / second</text>
-<rect x="76.0" y="294.5" width="104.7" height="83.5" fill="#2563eb"/>
+<rect x="76.0" y="296.4" width="104.7" height="81.6" fill="#2563eb"/>
 <text x="128.3" y="392" text-anchor="end" transform="rotate(-38 128.3 392)" font-family="Arial" font-size="10">naive T=32</text>
-<rect x="188.7" y="321.0" width="104.7" height="57.0" fill="#dc2626"/>
+<rect x="188.7" y="325.3" width="104.7" height="52.7" fill="#dc2626"/>
 <text x="241.0" y="392" text-anchor="end" transform="rotate(-38 241.0 392)" font-family="Arial" font-size="10">online_reference T=32</text>
-<rect x="301.3" y="157.1" width="104.7" height="220.9" fill="#16a34a"/>
+<rect x="301.3" y="72.0" width="104.7" height="306.0" fill="#16a34a"/>
 <text x="353.7" y="392" text-anchor="end" transform="rotate(-38 353.7 392)" font-family="Arial" font-size="10">torch_sdpa T=32</text>
-<rect x="414.0" y="263.8" width="104.7" height="114.2" fill="#9333ea"/>
+<rect x="414.0" y="260.8" width="104.7" height="117.2" fill="#9333ea"/>
 <text x="466.3" y="392" text-anchor="end" transform="rotate(-38 466.3 392)" font-family="Arial" font-size="10">naive T=64</text>
-<rect x="526.7" y="215.9" width="104.7" height="162.1" fill="#ea580c"/>
+<rect x="526.7" y="288.5" width="104.7" height="89.5" fill="#ea580c"/>
 <text x="579.0" y="392" text-anchor="end" transform="rotate(-38 579.0 392)" font-family="Arial" font-size="10">online_reference T=64</text>
-<rect x="639.3" y="72.0" width="104.7" height="306.0" fill="#0891b2"/>
+<rect x="639.3" y="77.3" width="104.7" height="300.7" fill="#0891b2"/>
 <text x="691.7" y="392" text-anchor="end" transform="rotate(-38 691.7 392)" font-family="Arial" font-size="10">torch_sdpa T=64</text>
 </svg>

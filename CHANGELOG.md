@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.4.0 - 2026-06-03
+
+- Added final audit documentation with explicit project positioning, remaining
+  limitations, non-claims, and full-experiment conversion checklist.
+- Rewrote README, METHOD, EXPERIMENTS, RESEARCH_READINESS, LIMITATIONS, and
+  RESUME as final GitHub/resume-facing documentation.
+- Added independent `artifacts/research/` tables and figures while preserving
+  existing quick-experiment artifact paths.
+- Strengthened generated Markdown result tables with mode, seed, budget,
+  interpretation, and limitation metadata.
+- Strengthened artifact validation across quick, dataset matrix, multi-seed,
+  model-scaling, and research artifacts.
+- Added multi-seed seed-variance figure generation and made
+  `run_model_scaling.py --mode quick` part of the final verification path.
+
 ## 4.3.0 - 2026-06-03
 
 - Reframed quick-mode results as workflow and instrumentation evidence only,

@@ -38,9 +38,10 @@ jobs:
       - name: Dataset matrix smoke test
         run: |
           python scripts/run_dataset_matrix.py --mode quick
+          python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
           python scripts/run_dataset_matrix.py --mode paper-prototype
           python scripts/run_multi_seed.py --mode paper-prototype
-          python scripts/run_model_scaling.py
+          python scripts/run_model_scaling.py --mode quick
       - name: Regenerate tables and figures
         run: |
           python scripts/make_tables.py

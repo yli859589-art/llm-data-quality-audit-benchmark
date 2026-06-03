@@ -2,6 +2,9 @@
 
 Mode: `paper-prototype`
 Seeds: `23,42,3407`
+Training budget: `10` optimization steps per seed/variant.
+Interpretation: paper-prototype multi-seed results check whether the experiment matrix is executable and whether directions are stable.
+Limitation note: confidence intervals are wide in this compact run; do not treat favorable means as paper-level conclusions.
 
 | Variant | n | Mean perplexity | Std | CI low | CI high |
 | --- | ---: | ---: | ---: | ---: | ---: |

@@ -1,65 +1,133 @@
 # Research Readiness
 
-## Current Research Elements
+## Current Research Assets
 
-The project now has the core ingredients of a CCF-C-convertible AI research
-prototype:
+### Method
 
-- a clear research question about data quality under fixed training budgets;
-- configurable dataset matrix with offline fallback and dataset cards;
-- controlled synthetic and pseudo-real web-noise injection;
-- exact, Jaccard, and MinHash-LSH deduplication;
-- HDQS++ scoring and DQCS curriculum-selection diagnostics;
-- baseline and ablation matrix with retention-matched controls;
-- privacy-utility analysis based only on synthetic canaries;
-- multi-seed result tables and statistical summaries;
-- generated research tables, figures, failure analysis, and project report;
-- CI, lint, type checks, tests, coverage, and repository hygiene checks.
+- Deterministic controlled and pseudo-real web-noise injection.
+- PII redaction with synthetic canaries.
+- Exact, Jaccard, and MinHash-LSH deduplication.
+- HDQS++ transparent quality scoring.
+- DQCS curriculum-selection diagnostics.
+- Pipeline-order diagnostics.
+- Equal-budget small language-model training.
 
-## Results Already Run
+### Data Matrix
 
-The committed quick artifacts are CPU-bounded smoke-test evidence. They include
-model metrics for selected variants, quality-score distributions, privacy
-checks, HDQS sweep diagnostics, pipeline-order diagnostics, curriculum
-diagnostics, and dataset-matrix evidence.
+- Local small-run datasets: `tiny_shakespeare`, `mixed_debug`,
+  `synthetic_web_noise`, `local_wikitext_sample`.
+- Optional public dataset entries: `wikitext2`, `openwebtext_sample`,
+  `c4_sample`.
+- Fallback reports distinguish unavailable optional datasets from real results.
 
-The v4.3 paper-prototype artifacts add real lightweight runs on
-`tiny_shakespeare`, `mixed_debug`, `synthetic_web_noise`, and
-`local_wikitext_sample`, plus fallback-only records for `wikitext2`,
-`openwebtext_sample`, and `c4_sample` when local/network data are unavailable.
-The multi-seed run uses seeds `23`, `42`, and `3407` and writes paired
-comparisons, but the confidence intervals are still wide.
+### Baselines
 
-These results are useful for a resume and GitHub portfolio because they show
-that the system is executable, reproducible, and instrumented. They are not
-paper-level empirical evidence.
+The project contains raw, cleaning-only, PII-only, exact-dedup-only,
+near-dedup-only, quality-filter, HDQS, DQCS, full-pipeline,
+full-pipeline-ablation, and retention-matched baselines.
 
-## Why It Is CCF-C-Convertible
+### Multi-Seed
 
-The project can be converted into a paper-style submission because the method,
-experiment matrix, baselines, uncertainty reporting, and artifact pipeline are
-already implemented. A future paper can scale the same scripts to larger
-datasets and longer training runs without changing the research question.
+Paper-prototype multi-seed artifacts use seeds `23`, `42`, and `3407` and
+report seed-level rows, aggregate rows, paired comparisons, and seed variance.
 
-## Why It Is Not a Completed Paper
+### Privacy
 
-The project has not yet run the full explicit-network or local large-dataset
-matrix. HDQS++ weights have not been tuned on a separate development split.
-Most model evidence is still compact, CPU-oriented, and single-seed or
-small-seed. No venue submission, review, acceptance, or publication claim is
-made.
+Privacy artifacts use synthetic canaries and residual PII-like counts. They are
+useful for tradeoff analysis but not a formal privacy audit.
 
-## Full Experiment Checklist
+### Downstream
 
-Before paper submission:
+Current downstream artifacts are lightweight proxy checks. They validate the
+evaluation plumbing and should be expanded for paper conversion.
 
-1. Review usage policies for WikiText-2, OpenWebText, and C4.
-2. Replace fallback-only optional public rows with approved local or network
-   dataset runs.
-3. Run `full` mode with longer training budgets and at least two model scales.
-4. Tune HDQS++ weights on a development split, then freeze them.
-5. Report confidence intervals and paired comparisons for every trained
-   baseline.
-6. Add deeper privacy tests beyond synthetic canary redaction if making privacy
-   claims.
-7. Expand failure analysis with manually categorized, redacted examples.
+### Artifacts
+
+The repository generates JSON, CSV, Markdown, and SVG artifacts for quick
+experiments, dataset matrix, multi-seed statistics, model scaling, research
+tables, research figures, project reports, and failure analysis.
+
+### CI And Tests
+
+The repository includes GitHub Actions, ruff, Black configuration, mypy,
+unittest coverage, repository hygiene checks, artifact checks, and supporting
+AI/ML family self-checks.
+
+## Current Verified Results
+
+Quick mode has been run as a smoke test and generates model metrics, quality
+scores, privacy reports, attention timing, tables, and figures. It should be
+read as reproducibility and instrumentation evidence.
+
+Paper-prototype mode has real local small runs for `tiny_shakespeare`,
+`mixed_debug`, `synthetic_web_noise`, and `local_wikitext_sample`. It records
+fallback-only rows for `wikitext2`, `openwebtext_sample`, and `c4_sample` when
+local/network data are not available.
+
+Multi-seed paper-prototype mode has been run for seeds `23`, `42`, and `3407`.
+The paired comparisons show directions and variance, but intervals are wide.
+
+## Why The Project Is CCF-C-Convertible
+
+The project is convertible because it already has the research skeleton needed
+for a paper-style extension:
+
+- a concrete research question;
+- a reproducible intervention pipeline;
+- multiple baselines and ablations;
+- dataset cards and fallback provenance;
+- multi-seed statistics;
+- privacy and downstream proxy artifacts;
+- failure analysis and generated figures;
+- CI, tests, coverage, and repository hygiene gates.
+
+Convertible does not mean completed. It means the codebase can be scaled into a
+paper experiment if stronger data, training, tuning, and writing are added.
+
+## What Is Still Missing For An Actual CCF-C Paper
+
+- Full multi-dataset runs without fallback for optional public datasets.
+- Longer training budgets.
+- Larger model scales.
+- Real external dataset results.
+- Stronger statistical significance and wider seed coverage.
+- Held-out tuning and freezing of HDQS++ weights.
+- Stronger downstream tasks and privacy/memorization evaluations.
+- Formal literature review and paper writing.
+
+## Risk Assessment
+
+- HDQS++ may be unstable across datasets or longer training.
+- Short-run directions may not hold in long-run training.
+- Fallback datasets cannot replace true remote-dataset evidence.
+- CPU attention and throughput benchmarks are hardware-dependent.
+- Synthetic canary privacy checks do not cover real privacy threats.
+
+## Next-Stage Full Experiment Checklist
+
+- [ ] Review dataset licenses and usage policies.
+- [ ] Provide local or approved network data for WikiText-2, OpenWebText, and C4.
+- [ ] Run full dataset matrix without fallback rows.
+- [ ] Increase training steps and model sizes.
+- [ ] Tune HDQS++ on a development split and freeze it.
+- [ ] Run more seeds and report paired intervals.
+- [ ] Add stronger downstream tasks.
+- [ ] Add stronger privacy and memorization tests.
+- [ ] Expand manual failure taxonomy.
+- [ ] Write related work and paper-style experiment sections.
+
+## Claims Allowed
+
+- Resume-ready AI project.
+- CCF-C-convertible research prototype.
+- Reproducible LLM data-quality benchmark platform.
+- Paper-prototype small-run evidence.
+- Multi-seed diagnostic artifacts.
+
+## Claims Not Allowed
+
+- Completed CCF-C paper.
+- Ready-for-submission or ready-for-publication result.
+- Significant LLM performance improvement.
+- Official course project completion.
+- Private-grader access or private-grader success.

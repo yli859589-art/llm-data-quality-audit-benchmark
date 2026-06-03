@@ -12,8 +12,8 @@
   "pii_count_before": 14,
   "pii_count_after": 0,
   "random_seed": 17,
-  "created_at": "2026-06-03T14:25:58.086107+00:00",
-  "code_version/git_commit": "f821358c3c531a47e0267f5efa817dea352881ae",
+  "created_at": "2026-06-03T16:06:29.313647+00:00",
+  "code_version/git_commit": "a733f36e68fb7a9ecf79cfaf406d8fef81902493",
   "corpus_path": "data/samples/synthetic_web_noise.txt",
   "sha256": "87ffdece9bdd54504b9e55a6f3867cadf5f6e28a2a82ff11ced977b91d7d234d",
   "dataset_key": "synthetic_web_noise",
@@ -26,7 +26,7 @@
     "raw_noisy_baseline",
     "rule_filter_only"
   ],
-  "runtime_seconds": 2.549931999994442,
+  "runtime_seconds": 2.338617300003534,
   "command": "python scripts/run_dataset_matrix.py --mode paper-prototype",
   "license_note": "Synthetic repository-local sample created for reproducible pipeline testing.",
   "status": "paper_prototype_small_run"

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Privacy-retention Pareto</text>
+<line x1="70" y1="360" x2="690" y2="360" stroke="#111827"/>
+<line x1="70" y1="70" x2="70" y2="360" stroke="#111827"/>
+<text x="380.0" y="414" text-anchor="middle" font-family="Arial" font-size="13">Retention ratio</text>
+<text x="18" y="215.0" text-anchor="middle" transform="rotate(-90 18 215.0)" font-family="Arial" font-size="13">Residual PII-like hits</text>
+<circle cx="690.0" cy="70.0" r="5" fill="#2563eb"/>
+<text x="697.0" y="63.0" font-family="Arial" font-size="11" fill="#2563eb">raw_noisy_baseline</text>
+<circle cx="627.5" cy="70.0" r="5" fill="#dc2626"/>
+<text x="634.5" y="63.0" font-family="Arial" font-size="11" fill="#dc2626">clean_only</text>
+<circle cx="681.4" cy="360.0" r="5" fill="#16a34a"/>
+<text x="688.4" y="353.0" font-family="Arial" font-size="11" fill="#16a34a">pii_redact_only</text>
+<circle cx="420.7" cy="114.6" r="5" fill="#9333ea"/>
+<text x="427.7" y="107.6" font-family="Arial" font-size="11" fill="#9333ea">exact_dedup_only</text>
+<circle cx="301.4" cy="159.2" r="5" fill="#ea580c"/>
+<text x="308.4" y="152.2" font-family="Arial" font-size="11" fill="#ea580c">near_dedup_only</text>
+<circle cx="301.4" cy="159.2" r="5" fill="#0891b2"/>
+<text x="308.4" y="152.2" font-family="Arial" font-size="11" fill="#0891b2">jaccard_near_dedup_only</text>
+<circle cx="519.1" cy="70.0" r="5" fill="#2563eb"/>
+<text x="526.1" y="63.0" font-family="Arial" font-size="11" fill="#2563eb">rule_filter_only</text>
+<circle cx="519.1" cy="70.0" r="5" fill="#dc2626"/>
+<text x="526.1" y="63.0" font-family="Arial" font-size="11" fill="#dc2626">rule_quality_filter</text>
+<circle cx="70.0" cy="226.2" r="5" fill="#16a34a"/>
+<text x="77.0" y="219.2" font-family="Arial" font-size="11" fill="#16a34a">perplexity_filter_proxy</text>
+<circle cx="70.0" cy="226.2" r="5" fill="#9333ea"/>
+<text x="77.0" y="219.2" font-family="Arial" font-size="11" fill="#9333ea">proxy_perplexity_filter</text>
+<circle cx="404.1" cy="203.8" r="5" fill="#ea580c"/>
+<text x="411.1" y="196.8" font-family="Arial" font-size="11" fill="#ea580c">hdqs_filter</text>
+<circle cx="404.1" cy="203.8" r="5" fill="#0891b2"/>
+<text x="411.1" y="196.8" font-family="Arial" font-size="11" fill="#0891b2">hdqs_curriculum</text>
+<circle cx="234.2" cy="360.0" r="5" fill="#2563eb"/>
+<text x="241.2" y="353.0" font-family="Arial" font-size="11" fill="#2563eb">full_pipeline_without_clean</text>
+<circle cx="227.6" cy="159.2" r="5" fill="#dc2626"/>
+<text x="234.6" y="152.2" font-family="Arial" font-size="11" fill="#dc2626">full_pipeline_without_redact</text>
+<circle cx="194.1" cy="360.0" r="5" fill="#16a34a"/>
+<text x="201.1" y="353.0" font-family="Arial" font-size="11" fill="#16a34a">full_pipeline_without_exact_dedup</text>
+<circle cx="272.9" cy="360.0" r="5" fill="#9333ea"/>
+<text x="279.9" y="353.0" font-family="Arial" font-size="11" fill="#9333ea">full_pipeline_without_near_dedup</text>
+<circle cx="221.7" cy="360.0" r="5" fill="#ea580c"/>
+<text x="228.7" y="353.0" font-family="Arial" font-size="11" fill="#ea580c">full_without_hdqs</text>
+<circle cx="194.1" cy="360.0" r="5" fill="#0891b2"/>
+<text x="201.1" y="353.0" font-family="Arial" font-size="11" fill="#0891b2">full_pipeline</text>
+<circle cx="221.7" cy="360.0" r="5" fill="#2563eb"/>
+<text x="228.7" y="353.0" font-family="Arial" font-size="11" fill="#2563eb">full_pipeline_without_hdqs</text>
+<circle cx="301.4" cy="159.2" r="5" fill="#dc2626"/>
+<text x="308.4" y="152.2" font-family="Arial" font-size="11" fill="#dc2626">minhash_lsh_near_dedup_only</text>
+<circle cx="208.0" cy="181.5" r="5" fill="#16a34a"/>
+<text x="215.0" y="174.5" font-family="Arial" font-size="11" fill="#16a34a">random_retention_matched_baseline</text>
+<circle cx="289.1" cy="70.0" r="5" fill="#9333ea"/>
+<text x="296.1" y="63.0" font-family="Arial" font-size="11" fill="#9333ea">length_matched_baseline</text>
+<circle cx="235.2" cy="203.8" r="5" fill="#ea580c"/>
+<text x="242.2" y="196.8" font-family="Arial" font-size="11" fill="#ea580c">quality_retention_matched_baseline</text>
+</svg>

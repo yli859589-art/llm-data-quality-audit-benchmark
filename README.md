@@ -3,157 +3,184 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Resume-ready and CCF-C-convertible research prototype for **LLM data-quality
-benchmarking**. The central question is:
+A resume-ready and CCF-C-convertible AI research prototype for studying
+data-quality interventions in small-scale language-model pretraining.
 
-> How do data-quality interventions affect small-scale language-model
-> pretraining under controlled noise, pseudo-real web noise, fixed token
-> budgets, and privacy constraints?
+## What This Is
 
-The primary contribution is an auditable experiment system: deterministic
-noise injection, exact/Jaccard/MinHash-LSH deduplication, HDQS++ document
-quality scoring, DQCS curriculum selection, pipeline-order studies,
-privacy-utility analysis, equal-budget model training, dataset-matrix runners,
-multi-seed statistics, and script-generated artifacts. Attention benchmarking
-is included only as an auxiliary systems sanity check.
+This repository is a personal research and portfolio prototype: a personal AI
+research prototype and benchmark platform designed to make LLM data-quality
+experiments reproducible, auditable, and easy to inspect on GitHub. It is not a
+completed paper, not an official coursework submission, and not a competition
+result.
 
-This is a **personal research and portfolio prototype**. It does **not** claim
-enrollment at any institution, official coursework completion, competition
-placement, private-grader access, paper acceptance, or institutional
-affiliation.
+It does **not** claim institutional affiliation, official coursework
+completion, private-grader access, paper acceptance, publication readiness, or
+competition placement.
+
+## Research Question
+
+How do data-quality interventions affect small-scale language-model
+pretraining under controlled noise, pseudo-real web noise, fixed token budgets,
+and privacy constraints?
+
+## Core Capabilities
+
+- Controlled and pseudo-real web-noise injection
+- Synthetic PII canaries and PII redaction
+- Exact deduplication, Jaccard near deduplication, and MinHash-LSH near deduplication
+- HDQS++ document-quality scoring
+- DQCS curriculum-selection diagnostics
+- Pipeline-order studies
+- Equal-token-budget ablations
+- Character-level Mini GPT training
+- Dataset matrix and paper-prototype small runs
+- Multi-seed statistics and paired comparisons
+- Privacy-utility and downstream proxy reports
+- Model-scaling artifacts for character and BPE configs
+- Auxiliary attention systems sanity check
+- Script-generated JSON, CSV, Markdown, and SVG research artifacts
+
+## Architecture
+
+```text
+raw/local corpus
+      |
+      v
+controlled + pseudo-real noise injection
+      |
+      v
+cleaning + PII redaction + exact/near dedup
+      |
+      v
+HDQS++ scoring -----> DQCS curriculum diagnostics
+      |
+      v
+equal-budget variant builder
+      |
+      +--> Mini GPT training + validation metrics
+      +--> privacy-utility reports
+      +--> downstream proxy reports
+      +--> attention sanity benchmark
+      |
+      v
+dataset matrix + multi-seed aggregation
+      |
+      v
+research tables, figures, audit reports, resume-safe docs
+```
 
 ## Quick Start
-
-Recommended local setup:
 
 ```bash
 python -m pip install -r requirements.txt
 python -m pip install -r requirements-dev.txt
 python -m pip install -e .
-python -m unittest discover -s tests -v
-```
-
-No-install fallback:
-
-```bash
-PYTHONPATH=src python -m unittest discover -s tests -v
-```
-
-Run the reproducible CPU smoke experiment:
-
-```bash
+python scripts/check_repo.py --clean
 python scripts/run_quick_experiment.py
-python scripts/tune_hdqs_quick.py
-python scripts/run_dataset_matrix.py --mode quick
 python scripts/run_dataset_matrix.py --mode paper-prototype
 python scripts/run_multi_seed.py --mode paper-prototype
-python scripts/run_model_scaling.py
+python scripts/check_artifacts.py
+```
+
+Full local validation also includes:
+
+```bash
+python -m unittest discover -s tests -v
+python scripts/run_model_scaling.py --mode quick
 python scripts/make_tables.py
 python scripts/make_figures.py
-python scripts/statistical_analysis.py
 python scripts/make_research_tables.py
 python scripts/make_research_figures.py
 python scripts/analyze_failures.py
 python scripts/make_project_report.py
-python scripts/check_artifacts.py
-python scripts/check_repo.py --clean
-```
-
-Quality gates:
-
-```bash
-ruff check .
-black --check .
-mypy src/course_project_suite/llm_benchmark
-python all_course_projects.py --self-check --json
 python scripts/run_coverage.py
+ruff check .
+mypy src/course_project_suite/llm_benchmark
 ```
 
-Quick results are single-seed CPU smoke-test evidence. They verify that the
-pipeline is executable, deterministic, and fully instrumented. Current quick
-and paper-prototype numbers must be interpreted as workflow validation and
-early diagnostic evidence rather than paper-level model-quality proof. Even
-when a short run points in a favorable direction, the confidence intervals are
-wide and the datasets are intentionally small.
+`black --check .` is configured for CI. On local CPython 3.12.5, Black may
+refuse to run because of its upstream safety guard; see
+[FINAL_VERIFICATION_REPORT](docs/FINAL_VERIFICATION_REPORT.md).
 
 ## Experiment Modes
 
-- `quick`: local Tiny Shakespeare plus `mixed_debug`, one seed by default,
-  offline CPU smoke testing.
-- `paper-prototype`: a real lightweight small-run for local repository
-  datasets: `tiny_shakespeare`, `mixed_debug`, `synthetic_web_noise`, and
-  `local_wikitext_sample`. Optional remote datasets write explicit fallback
-  records when local files or network access are unavailable. It also supports
-  `--dry-run` for routing checks without training.
-- `full`: longer training and larger dataset matrix. Use only after explicitly
-  enabling network access or providing local datasets and reviewing usage
-  policies.
+- `quick`: CPU-oriented single-seed smoke mode. It validates reproducibility,
+  instrumentation, artifact generation, and equal-budget wiring.
+- `paper-prototype`: real lightweight small runs for local datasets
+  (`tiny_shakespeare`, `mixed_debug`, `synthetic_web_noise`,
+  `local_wikitext_sample`) plus explicit fallback records for optional remote
+  datasets when local/network data are unavailable.
+- `full`: future paper-conversion mode for approved external datasets, longer
+  training budgets, more seeds, and larger model scales.
 
-Dataset entry point:
+## Current Verified Status
 
-```bash
-python scripts/run_dataset_matrix.py --mode quick
-python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
-python scripts/run_dataset_matrix.py --mode paper-prototype
-python scripts/run_dataset_matrix.py --mode full --allow-network
-```
+- Unit tests: `63` passing
+- Source coverage: `93%` total
+- LLM benchmark type check: `mypy` passes on `16` source files
+- Repository hygiene: `python scripts/check_repo.py --clean` passes
+- Artifact integrity: `python scripts/check_artifacts.py` passes
+- Supporting AI/ML family checks: `6/6` pass
+- Current local limitation: Black is blocked by local CPython `3.12.5`, not by
+  repository formatting evidence
 
-Multi-seed entry point:
+## Small-Run Interpretation
 
-```bash
-python scripts/run_multi_seed.py --mode quick
-python scripts/run_multi_seed.py --mode paper-prototype
-```
+Quick and paper-prototype results are preliminary. They demonstrate that the
+experiment matrix is executable, deterministic, and instrumented. They do not
+prove that the full pipeline generally outperforms the raw noisy baseline, and
+they do not establish a paper-level performance conclusion.
 
-## Generated Evidence
+The current multi-seed paper-prototype artifacts report paired comparisons, but
+confidence intervals remain wide. Larger datasets, longer training, frozen
+HDQS++ tuning, and more model scales are required before making publication
+claims.
 
-Core quick artifacts live under `artifacts/quick_experiment/`:
+## Artifacts
 
-- `main_results_table.md`, `ablation_table.md`, `hdqs_sweep_table.md`
-- `curriculum_report.json`, `pipeline_order_report.json`
-- `retention_pareto.csv`, `privacy_utility_tradeoff.csv`
-- `downstream_results.csv`, `generation_samples.md`
-- `seed_level_results.csv`, `aggregated_results.csv`, `statistical_tests.json`
-- `privacy_vs_utility.svg`, `pipeline_order_comparison.svg`,
-  `model_scaling_curve.svg`, `quality_score_distribution.svg`,
-  `hdqs_sweep_heatmap.svg`, `privacy_retention_pareto.svg`
+- `artifacts/quick_experiment/`: quick results, token-budget report, privacy
+  report, attention benchmark, ablation tables, HDQS sweep, training curves,
+  failure cases, project report
+- `artifacts/dataset_matrix/`: dataset cards, paper-prototype summary,
+  fallback reports, per-dataset result records
+- `artifacts/multi_seed/`: seed-level results, aggregate results, paired
+  statistical tests, multi-seed summary, seed-variance figure
+- `artifacts/model_scaling/`: character/BPE model-scaling summaries and
+  scaling curve
+- `artifacts/research/`: research tables and figures mirrored for GitHub review
 
-Dataset matrix artifacts live under `artifacts/dataset_matrix/`, including
-summary CSV/Markdown files, `paper_prototype_summary.csv`, fallback reports,
-and one `dataset_card.json` per dataset entry.
+## Resume Positioning
 
-Multi-seed paper-prototype artifacts live under `artifacts/multi_seed/`:
+**LLM Data Quality Benchmark Platform | Python, PyTorch, NumPy**  
+Built a reproducible AI benchmark for studying data-quality interventions in
+small-scale language-model pretraining, with HDQS++ scoring, DQCS curriculum
+diagnostics, deduplication, privacy-utility analysis, multi-seed statistics,
+research artifacts, CI, tests, and coverage reporting.
 
-- `seed_level_results.csv`, `aggregated_results.csv`,
-  `statistical_tests.json`, and `multi_seed_summary.md`
-- paired comparisons for raw vs full, raw vs HDQS, raw vs HDQS curriculum, and
-  full vs full-without-HDQS
+## Limitations
 
-Model-scaling artifacts live under `artifacts/model_scaling/` and summarize
-configured char/BPE model sizes. They are config evidence, not proof that every
-model has completed full training.
+- Current results are compact quick and paper-prototype runs.
+- Optional remote datasets are fallback records unless approved local/network
+  data are provided.
+- HDQS++ and DQCS are research-prototype methods, not validated final methods.
+- Synthetic canaries are not a formal privacy audit.
+- Attention timing is an auxiliary systems check and is hardware-dependent.
 
-## Method Surface
+## What This Project Does Not Claim
 
-- Controlled synthetic and pseudo-real web noise: HTML, URLs, PII canaries,
-  exact/near duplicates, OCR-like corruption, mojibake, repeated n-grams,
-  boilerplate, mixed language, excessive symbols, and generated-like loops.
-- Baselines: raw, clean, PII redaction, exact dedup, Jaccard near dedup,
-  MinHash-LSH near dedup, rule quality, proxy perplexity filter, HDQS,
-  DQCS curriculum, full pipeline, full-pipeline ablations, and retention
-  matched baselines.
-- HDQS++ components: lexical diversity, character entropy, token entropy,
-  repetition, n-gram repetition, HTML/URL noise, PII density, symbol noise,
-  language consistency, length prior, optional LM surprisal, and
-  near-duplicate cluster penalty.
-- Statistics: mean, standard deviation, bootstrap confidence intervals, and
-  paired difference summaries when seeds align.
+- It does not claim a completed CCF-C paper.
+- It does not claim readiness for publication.
+- It does not claim significant LLM performance improvement.
+- It does not claim official university or MOOC coursework completion.
+- It does not claim private-grader access or private-grader success.
 
 ## Documentation
 
 See [METHOD](docs/METHOD.md), [EXPERIMENTS](docs/EXPERIMENTS.md),
-[DATASETS](docs/DATASETS.md), [RESEARCH_READINESS](docs/RESEARCH_READINESS.md),
-[LIMITATIONS](docs/LIMITATIONS.md), and [RESUME](docs/RESUME.md).
+[RESEARCH_READINESS](docs/RESEARCH_READINESS.md),
+[FINAL_AUDIT](docs/FINAL_AUDIT.md), [LIMITATIONS](docs/LIMITATIONS.md), and
+[RESUME](docs/RESUME.md).
 
 ## Supporting Implementations
 

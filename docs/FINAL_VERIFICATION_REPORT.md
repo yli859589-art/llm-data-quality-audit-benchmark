@@ -1,54 +1,43 @@
 # Final Verification Report
 
-Date: 2026-06-03
+Date: 2026-06-04
 
-Verified package target: `4.3.0`.
+Verified package target: `4.4.0`.
 
-This repository is a personal research prototype. It does not claim paper
-acceptance, official institutional coursework status, private-grader access, or
-competition results.
+This repository is a personal research and portfolio prototype. It does not
+claim paper acceptance, official institutional coursework status, private
+grader access, publication readiness, or competition results.
 
 ## Audit Result
 
-The v4.2.0 project was already a strong portfolio prototype, but it still
-needed clearer research evidence: quick results could be overread as a quality
-claim, paper-prototype mode needed real local small runs, optional remote
-dataset fallbacks needed explicit records, and the HDQS++ method needed better
-failure/configuration artifacts.
+The final pass hardened the v4.3.0 research prototype into a more mature
+GitHub/resume-facing AI project. It added final audit documentation, expanded
+method and experiment docs, created an independent `artifacts/research/`
+surface, strengthened generated table metadata, added stricter artifact
+validation, and kept all quick/paper-prototype result interpretation
+conservative.
 
-The v4.3.0 pass adds those missing pieces while keeping the claim boundary
-honest. It improves experimental instrumentation and research readiness; it is
-not presented as a completed paper.
+The project is now best described as:
 
-## Changes Completed
+```text
+A resume-ready and CCF-C-convertible AI research prototype for LLM data quality benchmarking.
+```
 
-- Reframed quick-mode results as workflow and instrumentation evidence only.
-- Added real paper-prototype small runs for `tiny_shakespeare`, `mixed_debug`,
-  `synthetic_web_noise`, and `local_wikitext_sample`.
-- Added fallback-only records for `wikitext2`, `openwebtext_sample`, and
-  `c4_sample` when local/network data are unavailable.
-- Added required per-dataset cards and fallback reports with source, license
-  note, fallback, raw/retained characters, retention rate, number of documents,
-  seed, token budget, variants, runtime, and command.
-- Added three-seed paper-prototype statistics, requested paired comparisons,
-  and multi-seed summary artifacts.
-- Added pseudo-real web-noise toggles, model-scaling artifacts, HDQS
-  best-config reporting, HDQS failure cases, HDQS sweep heatmap, and
-  privacy-retention Pareto figure.
-- Fixed resume-safe Chinese documentation and updated README, METHOD,
-  EXPERIMENTS, DATASETS, REPRODUCIBILITY, RESEARCH_READINESS, LIMITATIONS, and
-  internal audit docs.
+It is not a completed paper and not ready-for-publication evidence.
 
 ## Verified Commands
 
 | Command | Result |
 | --- | --- |
+| `python -m compileall -q src scripts tests all_course_projects.py` | Passed |
+| `python -m unittest discover -s tests -v` | Passed: `63` tests |
 | `python scripts/run_quick_experiment.py` | Passed |
 | `python scripts/tune_hdqs_quick.py` | Passed |
 | `python scripts/run_dataset_matrix.py --mode quick` | Passed |
+| `python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run` | Passed |
 | `python scripts/run_dataset_matrix.py --mode paper-prototype` | Passed |
 | `python scripts/run_multi_seed.py --mode paper-prototype` | Passed |
-| `python scripts/run_model_scaling.py` | Passed |
+| `python scripts/run_model_scaling.py --mode quick` | Passed |
 | `python scripts/make_tables.py` | Passed |
 | `python scripts/make_figures.py` | Passed |
 | `python scripts/statistical_analysis.py` | Passed |
@@ -57,22 +46,22 @@ not presented as a completed paper.
 | `python scripts/analyze_failures.py` | Passed |
 | `python scripts/make_project_report.py` | Passed |
 | `python scripts/check_artifacts.py` | Passed |
-| `python -m unittest discover -s tests -v` | Passed: `63` tests |
-| `ruff check .` | Passed |
-| `mypy src/course_project_suite/llm_benchmark` | Passed: `16` source files |
-| `python -m compileall -q src scripts tests all_course_projects.py` | Passed |
+| `python scripts/check_repo.py --clean` | Passed |
 | `python all_course_projects.py --self-check --json` | Passed: `6/6` supporting project families |
 | `python scripts/run_coverage.py` | Passed: `93%` total source coverage |
+| `ruff check .` | Passed |
+| `mypy src/course_project_suite/llm_benchmark` | Passed: `16` source files |
 | `black --check .` | Blocked locally by CPython `3.12.5` Black safety guard |
 
-The local sandbox blocks Python `TemporaryDirectory()` writes unless tests run
-with an approved writable temp context. Direct unittest and coverage runs were
-therefore verified with that environment issue removed.
+Local note: Windows sandboxed temp-directory behavior can block Python
+`TemporaryDirectory()` writes. Unit tests and coverage were verified with a
+writable temp context so the result reflects code behavior rather than that
+environment issue.
 
 ## Quick Evidence
 
-Quick mode is CPU-oriented, offline, and single-seed (`23`). It is
-reproducibility and systems evidence, not paper-level empirical evidence.
+Quick mode is a CPU-oriented single-seed smoke test. It validates
+reproducibility and instrumentation; it is not paper-level empirical evidence.
 
 | Item | Generated result |
 | --- | ---: |
@@ -81,15 +70,13 @@ reproducibility and systems evidence, not paper-level empirical evidence.
 | Full-pipeline retained documents | `58` |
 | Raw PII-like hits | `39` |
 | Full-pipeline PII-like hits | `0` |
-| Full-pipeline retention rate | `0.5660` |
 | Raw held-out perplexity | `581636.83` |
 | HDQS-only held-out perplexity | `604081.16` |
 | Full-pipeline held-out perplexity | `559217.60` |
 
 In this quick run, the full pipeline has lower perplexity than the raw noisy
-baseline, while HDQS-only is worse than raw. Because this is one compact
-short-training run, it is intentionally reported as instrumentation evidence,
-not as proof of a stable model-quality improvement.
+baseline, while HDQS-only is worse than raw. This is reported as compact
+diagnostic evidence only; it does not prove a stable model-quality improvement.
 
 ## Paper-Prototype Dataset Matrix
 
@@ -107,38 +94,48 @@ datasets:
 | `openwebtext_sample` | True | `fallback_recorded` |
 | `c4_sample` | True | `fallback_recorded` |
 
-Fallback rows do not claim remote-dataset training. They only document why the
-optional dataset was not loaded and which offline fallback was used.
+Fallback rows do not claim remote-dataset training. They document unavailable
+optional data and the offline fallback path.
 
 ## Multi-Seed Evidence
 
 `python scripts/run_multi_seed.py --mode paper-prototype` ran seeds `23`, `42`,
-and `3407` with raw, HDQS, HDQS curriculum, full-pipeline, and
-full-without-HDQS variants.
+and `3407`. It wrote seed-level results, aggregate rows, paired statistical
+tests, a multi-seed summary, and `seed_variance.svg`.
 
 The paired comparisons have favorable mean directions for the candidate
-variants, but the confidence intervals are wide and include non-improving
-regions. These results are useful for research-readiness evidence, not final
-paper claims.
+variants, but the confidence intervals are wide. These rows support
+research-readiness and experiment-wiring evidence, not final paper claims.
+
+## Artifact Surface
+
+Verified artifact groups:
+
+- `artifacts/quick_experiment/`
+- `artifacts/dataset_matrix/`
+- `artifacts/multi_seed/`
+- `artifacts/model_scaling/`
+- `artifacts/research/`
+
+Generated Markdown tables include mode, seed setting, training budget,
+interpretation, and limitation notes.
 
 ## Black Environment Note
 
 `black --check .` is configured in CI and pre-commit with Black `25.1.0`.
 The local machine uses CPython `3.12.5`; Black refuses to run on that
 interpreter because of its upstream AST safety warning. This verification
-records the block instead of claiming a pass.
+records the block instead of claiming a pass. Use Python `3.12.6+` or
+`3.12.4` locally to run Black.
 
 ## Remaining Work For Paper Conversion
 
-1. Run explicit-network or local WikiText-2, OpenWebText, and C4 samples after
-   reviewing dataset policies.
-2. Tune HDQS++ weights on a held-out development split, then freeze them.
-3. Run full-mode multi-seed training with longer budgets and at least two model
-   scales.
-4. Report confidence intervals, paired comparisons, and failure categories for
-   every trained baseline.
-5. Add deeper privacy and memorization evaluations before making privacy
-   claims beyond synthetic-canary redaction.
+1. Run approved WikiText-2, OpenWebText, and C4 experiments without fallback.
+2. Increase training budgets and model scale.
+3. Tune and freeze HDQS++ weights on a held-out development split.
+4. Add more seeds and stronger statistical evidence.
+5. Add stronger downstream and privacy/memorization evaluations.
+6. Write formal related work and paper-style experiment sections.
 
 ## Deliverable Scope
 

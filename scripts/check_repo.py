@@ -53,6 +53,7 @@ required = [
     "configs/models/bpe_small_gpt.yaml",
     "configs/models/optional_bpe_medium_gpt.yaml",
     "docs/INTERNAL_AUDIT.md",
+    "docs/FINAL_AUDIT.md",
     "docs/DATASETS.md",
     "docs/METHOD.md",
     "docs/EXPERIMENTS.md",

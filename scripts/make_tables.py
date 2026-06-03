@@ -10,11 +10,28 @@ parser.add_argument("--artifact-dir", default="artifacts/quick_experiment")
 args = parser.parse_args()
 output = root / args.artifact_dir
 payload = json.loads((output / "results.json").read_text(encoding="utf-8"))
+seed_setting = ",".join(str(seed) for seed in payload["configuration"]["seeds"])
+train_budget = payload["configuration"]["train_chars"]
+table_boundary = [
+    f"Mode: `{payload['mode']}`",
+    f"Seed setting: `{seed_setting}`",
+    f"Training budget: `{train_budget}` characters per compared variant.",
+    (
+        "Interpretation: this table is generated evidence for reproducibility "
+        "and instrumentation."
+    ),
+    (
+        "Limitation note: quick/small-run numbers are preliminary and not "
+        "paper-level model-quality conclusions."
+    ),
+]
 
 summary_lines = [
     "# Main Results Table",
     "",
     f"Generated from `{args.artifact_dir}/results.json` in `{payload['mode']}` mode.",
+    "",
+    *table_boundary,
     "",
     (
         "Quick mode is a CPU, single-seed smoke test. The table verifies "
@@ -41,6 +58,8 @@ for name, row in payload["model_summary"].items():
 ablation_lines = [
     "# Data Intervention Ablation Table",
     "",
+    *table_boundary,
+    "",
     "| Variant | Documents | Characters | Duplicate rate | PII-like hits | Mean HDQS |",
     "| --- | ---: | ---: | ---: | ---: | ---: |",
 ]
@@ -54,6 +73,8 @@ for name, row in payload["data_quality_ablation"].items():
 hdqs = payload.get("hdqs_sweep_report", {})
 note = [
     "# HDQS Interpretation Note",
+    "",
+    *table_boundary,
     "",
     hdqs.get(
         "interpretation",

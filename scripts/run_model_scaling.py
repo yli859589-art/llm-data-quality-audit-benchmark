@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import sys
 from pathlib import Path
@@ -11,6 +12,15 @@ if str(src) not in sys.path:
 
 from course_project_suite.llm_benchmark.config import load_yaml_config
 from course_project_suite.llm_benchmark.reporting import write_named_bar_chart
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--mode",
+    choices=["quick", "paper-prototype", "full"],
+    default="quick",
+    help="Label the generated scaling artifact; this script does not train models.",
+)
+args = parser.parse_args()
 
 output_dir = root / "artifacts" / "model_scaling"
 output_dir.mkdir(parents=True, exist_ok=True)
@@ -36,6 +46,7 @@ for path in sorted((root / "configs" / "models").glob("*.yaml")):
             "n_embd": n_embd,
             "estimated_parameter_count": estimated_params,
             "fixed_step_budget": "quick=6-8, paper-prototype=10, full=120+",
+            "artifact_mode": args.mode,
             "paper_prototype_command": (
                 "python scripts/run_multi_seed.py --mode paper-prototype"
                 if config["name"] in {"char_tiny_gpt", "char_small_gpt"}
@@ -54,6 +65,18 @@ with (output_dir / "model_scaling_summary.csv").open(
 
 lines = [
     "# Model Scaling Summary",
+    "",
+    f"Mode label: `{args.mode}`",
+    "Seed setting: not applicable; this is generated from model configs.",
+    "Training budget: config-level summary only.",
+    (
+        "Interpretation: this artifact compares configured character/BPE model "
+        "sizes and context lengths."
+    ),
+    (
+        "Limitation note: it is not a claim that every model has completed full "
+        "training."
+    ),
     "",
     "This table is generated from model configs. It is not a claim that every "
     "model has completed full training.",

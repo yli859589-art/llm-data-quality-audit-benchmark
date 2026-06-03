@@ -121,6 +121,18 @@ def _write_summary_tables(output: Path, summary: dict[str, dict[str, Any]]) -> N
     lines = [
         "# Model Results Summary",
         "",
+        "Mode: generated from the benchmark configuration in `results.json`.",
+        "Seed setting: see the `Seeds` column.",
+        "Training budget: see `results_summary.csv` and `token_budget_report.json`.",
+        (
+            "Interpretation: compact runs validate reproducibility and "
+            "instrumentation; they are not paper-level model-quality conclusions."
+        ),
+        (
+            "Limitation note: larger datasets, longer training, and fixed "
+            "method tuning are still required for paper claims."
+        ),
+        "",
         (
             "| Variant | Seeds | Validation loss mean +/- std | Perplexity mean +/- std | "
             "BPC | Next-char accuracy |"
@@ -261,6 +273,18 @@ def _build_hdqs_sweep_report(
 def _write_hdqs_sweep_table(path: Path, report: dict[str, Any]) -> None:
     lines = [
         "# HDQS++ Sweep Table",
+        "",
+        "Mode: generated from the benchmark configuration in `results.json`.",
+        "Seed setting: not a model-training table; see sibling `results.json`.",
+        "Training budget: data-selection diagnostic; see `token_budget_report.json`.",
+        (
+            "Interpretation: threshold and top-k rows evaluate deterministic "
+            "data-selection behavior."
+        ),
+        (
+            "Limitation note: this table does not prove HDQS++ improves model "
+            "quality without larger training runs."
+        ),
         "",
         "Threshold and top-k rows are deterministic data-selection diagnostics.",
         "",

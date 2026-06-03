@@ -1,5 +1,11 @@
 # Model Scaling Summary
 
+Mode: config-level model scaling summary.
+Seed setting: not applicable.
+Training budget: not a training run.
+Interpretation: generated from model config files.
+Limitation note: not all listed configs are trained in quick or CI.
+
 | model | tokenizer | vocab_size_assumption | estimated_parameter_count | block_size | status |
 | --- | --- | --- | --- | --- | --- |
 | bpe-mini-gpt | BPETokenizer from course_project_suite.cs336.tokenizer | 512 | 28672 | 32 | supported implementation; excluded from CPU quick matrix |

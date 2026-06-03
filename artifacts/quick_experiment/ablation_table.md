@@ -1,5 +1,11 @@
 # Data Intervention Ablation Table
 
+Mode: `quick`
+Seed setting: `23`
+Training budget: `18000` characters per compared variant.
+Interpretation: this table is generated evidence for reproducibility and instrumentation.
+Limitation note: quick/small-run numbers are preliminary and not paper-level model-quality conclusions.
+
 | Variant | Documents | Characters | Duplicate rate | PII-like hits | Mean HDQS |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | `raw_noisy_baseline` | 102 | 44360 | 0.275 | 39 | 0.808 |

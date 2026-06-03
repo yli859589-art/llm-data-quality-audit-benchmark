@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -24,15 +25,14 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
 
 
 artifact_dir = root / "artifacts" / "quick_experiment"
+research_dir = root / "artifacts" / "research"
+research_dir.mkdir(parents=True, exist_ok=True)
 payload = json.loads((artifact_dir / "results.json").read_text(encoding="utf-8"))
 
 pipeline_rows = payload.get("pipeline_order_report", {}).get("rows", [])
 write_named_bar_chart(
     artifact_dir / "pipeline_order_comparison.svg",
-    [
-        (str(row["pipeline_order"]), float(row["retained_documents"]))
-        for row in pipeline_rows
-    ],
+    [(str(row["pipeline_order"]), float(row["retained_documents"])) for row in pipeline_rows],
     "Pipeline order comparison",
     "Retained documents",
 )
@@ -46,44 +46,39 @@ write_named_bar_chart(
 hdqs_rows = payload.get("hdqs_sweep_report", {}).get("threshold_rows", [])
 write_named_bar_chart(
     artifact_dir / "hdqs_sweep_heatmap.svg",
-    [
-        (f"threshold={row['threshold']}", float(row["mean_hdqs_retained"]))
-        for row in hdqs_rows
-    ]
+    [(f"threshold={row['threshold']}", float(row["mean_hdqs_retained"])) for row in hdqs_rows]
     or [("not_run", 0.0)],
     "HDQS sweep diagnostic heatmap",
     "Mean retained HDQS",
 )
-dataset_rows = _read_csv(root / "artifacts" / "dataset_matrix" / "dataset_matrix_summary.csv")
+dataset_rows = _read_csv(root / "artifacts" / "dataset_matrix" / "paper_prototype_summary.csv")
 write_named_bar_chart(
     artifact_dir / "multi_dataset_perplexity.svg",
     [
         (
             row["dataset_key"],
             float(row["full_pipeline_perplexity"])
-            if row.get("full_pipeline_perplexity") not in {"", "None"}
+            if row.get("full_pipeline_perplexity") not in {"", "None", "N/A"}
             else 0.0,
         )
         for row in dataset_rows
     ]
     or [("not_run", 0.0)],
-    "Multi-dataset full-pipeline perplexity",
+    "Paper-prototype full-pipeline perplexity",
     "Perplexity",
 )
-seed_rows = _read_csv(artifact_dir / "aggregated_results.csv")
+seed_rows = _read_csv(root / "artifacts" / "multi_seed" / "aggregated_results.csv")
 write_named_bar_chart(
     artifact_dir / "seed_variance.svg",
-    [(row["variant"], float(row.get("std") or 0.0)) for row in seed_rows] or [("not_run", 0.0)],
+    [(row["variant"], float(row.get("std") or 0.0)) for row in seed_rows]
+    or [("not_run", 0.0)],
     "Seed variance",
     "Perplexity std",
 )
 model_rows = _read_csv(artifact_dir / "model_scaling_summary.csv")
 write_named_bar_chart(
     artifact_dir / "model_scaling_curve.svg",
-    [
-        (row["model"], float(row["estimated_parameter_count"]))
-        for row in model_rows
-    ]
+    [(row["model"], float(row["estimated_parameter_count"])) for row in model_rows]
     or [("not_run", 0.0)],
     "Configured model scaling",
     "Estimated parameters",
@@ -119,4 +114,15 @@ write_scatter_chart(
     "Retention ratio",
     "Residual PII-like hits",
 )
-print(f"Research figures regenerated in {artifact_dir}")
+for name in [
+    "ablation_heatmap.svg",
+    "multi_dataset_perplexity.svg",
+    "pipeline_order_comparison.svg",
+    "data_pipeline_summary.svg",
+    "hdqs_sweep_heatmap.svg",
+    "privacy_retention_pareto.svg",
+]:
+    source = artifact_dir / name
+    if source.exists():
+        shutil.copyfile(source, research_dir / name)
+print(f"Research figures regenerated in {artifact_dir} and {research_dir}")

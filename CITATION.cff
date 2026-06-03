@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Li"
     given-names: "YuHan"
-version: 4.3.0
+version: 4.4.0
 date-released: 2026-06-03
 license: MIT
 abstract: "Reproducible research prototype for data-quality interventions in small-scale language-model pretraining."
