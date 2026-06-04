@@ -1,0 +1,6 @@
+{
+  "protocol_name": "hdqspp_frozen_wikitext2",
+  "dataset_config": "configs/data/wikitext2_paper.yaml",
+  "status": "protocol_template_not_executed",
+  "requires": "Run scripts/freeze_hdqspp.py on real WikiText-2 data before claiming paper results."
+}

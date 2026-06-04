@@ -1,0 +1,9 @@
+{
+  "protocol": "HDQS++ global protocol",
+  "selection_boundary": "Tune on train/dev only; evaluate test once.",
+  "default_threshold": 0.58,
+  "default_target_keep_rate": 0.6,
+  "test_leakage_policy": "No test text or test metrics may affect thresholds, weights, or baseline selection.",
+  "paper_configs_require_real_data": true,
+  "paper_configs_allow_fallback": false
+}

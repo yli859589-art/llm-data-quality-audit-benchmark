@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llm-data-quality-attention-benchmark-suite"
-version = "4.4.0"
+version = "4.5.0"
 description = "Reproducible research prototype for data-quality interventions in small-scale language-model pretraining."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -34,4 +34,6 @@ extend-exclude = '''
 '''
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
+cache_dir = "test_tmp/pytest_cache"
+addopts = "-p no:cacheprovider"

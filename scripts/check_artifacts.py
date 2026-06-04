@@ -12,6 +12,17 @@ dataset_matrix = root / "artifacts" / "dataset_matrix"
 multi_seed = root / "artifacts" / "multi_seed"
 model_scaling = root / "artifacts" / "model_scaling"
 research = root / "artifacts" / "research"
+readiness_bases = [
+    root / "artifacts" / "data",
+    root / "artifacts" / "baselines",
+    root / "artifacts" / "runs",
+    root / "artifacts" / "frozen",
+    root / "artifacts" / "ablations",
+    root / "artifacts" / "stats",
+    root / "artifacts" / "tables",
+    root / "artifacts" / "figures",
+    root / "artifacts" / "model_cards",
+]
 
 
 def _load_json(path: Path) -> Any:
@@ -42,7 +53,7 @@ def _require_fields(payload: dict[str, Any], fields: list[str], label: str) -> N
 
 def _check_no_absolute_paths() -> None:
     absolute_path = re.compile(rf"(?:[A-Za-z]:(?:\\+|/(?!/))|/{'Users'}/|/{'home'}/[^/]+/)")
-    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research]:
+    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research, *readiness_bases]:
         if not base.exists():
             continue
         for path in base.rglob("*"):
@@ -60,7 +71,7 @@ def _check_no_absolute_paths() -> None:
 
 def _check_no_unlabeled_placeholders() -> None:
     forbidden = {"fake_result", "placeholder_without_label"}
-    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research]:
+    for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research, *readiness_bases]:
         if not base.exists():
             continue
         for path in base.rglob("*.json"):
@@ -271,6 +282,55 @@ research_required = [
 for name in research_required:
     _require(research / name, "research artifact")
 
+experiment_readiness_required = [
+    root / "artifacts" / "data_manifest.json",
+    root / "artifacts" / "data_manifest.csv",
+    root / "artifacts" / "data_manifest.md",
+    root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.json",
+    root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.csv",
+    root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.md",
+    root / "artifacts" / "baselines" / "wikitext2_smoke" / "raw" / "seed_13" / "metrics.json",
+    root
+    / "artifacts"
+    / "baselines"
+    / "wikitext2_smoke"
+    / "random_same_keep_rate"
+    / "seed_13"
+    / "metrics.json",
+    root / "artifacts" / "runs" / "run_registry.csv",
+    root / "artifacts" / "runs" / "run_registry.jsonl",
+    root / "artifacts" / "runs" / "run_summary.md",
+    root / "artifacts" / "frozen" / "hdqspp_frozen_wikitext2_smoke.json",
+    root / "artifacts" / "ablations" / "smoke" / "ablation_results.csv",
+    root / "artifacts" / "ablations" / "smoke" / "ablation_results.json",
+    root / "artifacts" / "stats" / "main_results.csv",
+    root / "artifacts" / "stats" / "main_results.tex",
+    root / "artifacts" / "stats" / "significance_tests.json",
+    root / "artifacts" / "stats" / "claim_safety_report.md",
+    root / "artifacts" / "tables" / "baseline_comparison.md",
+    root / "artifacts" / "tables" / "significance_summary.md",
+    root / "artifacts" / "figures" / "baseline_retention.svg",
+    root / "artifacts" / "figures" / "claim_support_boundary.svg",
+    root / "artifacts" / "model_cards" / "tiny.json",
+    root / "artifacts" / "model_cards" / "small.json",
+    root / "artifacts" / "model_cards" / "medium.json",
+    root / "artifacts" / "experiment_readiness_report.json",
+]
+for path in experiment_readiness_required:
+    _require(path, "experiment-readiness artifact")
+
+manifest = _load_json(root / "artifacts" / "data_manifest.json")
+if not manifest["used_fallback"]:
+    raise SystemExit("Smoke data manifest should explicitly label local fallback usage.")
+if manifest["required_real_data"]:
+    raise SystemExit("Smoke data manifest must not be labeled as required real data.")
+registry_rows = _load_csv(root / "artifacts" / "runs" / "run_registry.csv")
+if len(registry_rows) < 8:
+    raise SystemExit("Run registry has too few baseline rows.")
+readiness = _load_json(root / "artifacts" / "experiment_readiness_report.json")
+if readiness["readiness_level"] == "CCF_C_EXPERIMENT_READY":
+    raise SystemExit("Readiness report must not claim final CCF-C readiness.")
+
 for table_name in [
     "results_summary.md",
     "main_results_table.md",
@@ -306,6 +366,9 @@ for csv_path in [
     dataset_matrix / "paper_prototype_summary.csv",
     multi_seed / "aggregated_results.csv",
     model_scaling / "model_scaling_summary.csv",
+    root / "artifacts" / "runs" / "run_registry.csv",
+    root / "artifacts" / "stats" / "main_results.csv",
+    root / "artifacts" / "ablations" / "smoke" / "ablation_results.csv",
 ]:
     if not _load_csv(csv_path):
         raise SystemExit(f"CSV artifact has no rows: {csv_path.relative_to(root)}")

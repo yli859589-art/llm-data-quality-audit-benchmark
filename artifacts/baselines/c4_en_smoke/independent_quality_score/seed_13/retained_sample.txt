@@ -1,0 +1,9 @@
+Synthetic web pages often contain a mixture of useful article text and repeated interface fragments. The main paragraph may explain a topic clearly, while navigation bars, cookie notices, advertising blocks, and footer templates appear around it.
+
+<nav>Home | Archive | Trending | Subscribe</nav> This article discusses language model pretraining data and the importance of measuring quality under fixed token budgets. It includes real prose mixed with template text.
+
+The body text resumes with a careful explanation of deduplication, privacy redaction, and quality scoring. A reproducible benchmark should record which documents were retained, which were removed, and why each transformation happened.
+
+Malformed HTML <div><span> appears in crawled pages when extraction is imperfect. The benchmark should treat this as noise, not as useful linguistic evidence.
+
+Another page has multilingual fragments mixed together: bonjour mundo hello data calidad benchmark texto. This is useful for testing language consistency without claiming a real multilingual evaluation.

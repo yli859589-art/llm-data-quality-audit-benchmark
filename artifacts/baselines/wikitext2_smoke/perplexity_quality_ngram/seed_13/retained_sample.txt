@@ -1,0 +1,9 @@
+The history of language modeling includes statistical models, neural networks, and transformer architectures. A benchmark corpus should include coherent passages that allow a small model to learn short-range dependencies.
+
+Small language model experiments are useful when they are reproducible. Fixed token budgets, deterministic seeds, and generated artifacts make it possible to compare interventions without changing the training surface.
+
+Dataset cards record source, license notes, fallback status, document counts, retained characters, random seeds, runtime, and command lines. These fields make a compact repository easier to audit.
+
+The history of language modeling includes statistical models, neural networks, and transformer architectures. A benchmark corpus should include coherent passages that allow a small model to learn short-range dependencies.
+
+Small language model experiments are useful when they are reproducible. Fixed token budgets, deterministic seeds, and generated artifacts make it possible to compare interventions without changing the training surface.

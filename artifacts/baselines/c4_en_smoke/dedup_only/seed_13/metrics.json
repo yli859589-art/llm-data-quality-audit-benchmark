@@ -1,0 +1,14 @@
+{
+  "input_documents": 22,
+  "input_tokens": 716,
+  "name": "dedup_only",
+  "notes": "Exact duplicate removal only.",
+  "output_documents": 11,
+  "output_tokens": 358,
+  "pii_hits_after": 2,
+  "pii_hits_before": 4,
+  "removed_duplicates": 11,
+  "retention_rate": 0.5,
+  "skip_reason": "",
+  "skipped": false
+}

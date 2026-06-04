@@ -1,0 +1,9 @@
+Synthetic web pages often contain a mixture of useful article text and repeated interface fragments. The main paragraph may explain a topic clearly, while navigation bars, cookie notices, advertising blocks, and footer templates appear around it.
+
+An advertising section interrupts the page with SALE SALE SALE and repeated keywords about machine learning, artificial intelligence, data science, benchmark, benchmark, benchmark.
+
+The body text resumes with a careful explanation of deduplication, privacy redaction, and quality scoring. A reproducible benchmark should record which documents were retained, which were removed, and why each transformation happened.
+
+Another page has multilingual fragments mixed together: bonjour mundo hello data calidad benchmark texto. This is useful for testing language consistency without claiming a real multilingual evaluation.
+
+OCR corruption can turn the word learning into 1earning and the word model into rnodel. Encoding artifacts may show mojibake like caf脙漏 or symbols that should be downweighted.

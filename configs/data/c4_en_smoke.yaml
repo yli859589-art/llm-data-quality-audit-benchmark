@@ -1,0 +1,19 @@
+{
+  "dataset_key": "c4_en_smoke",
+  "dataset_name": "C4 English smoke fixture",
+  "provider": "huggingface",
+  "hf_dataset": "allenai/c4",
+  "hf_subset": "en",
+  "hf_split": "train",
+  "text_field": "text",
+  "fallback_fixture": "data/samples/synthetic_web_noise.txt",
+  "allow_fallback": true,
+  "prefer_fallback_when_smoke": true,
+  "required_real_data": false,
+  "is_smoke": true,
+  "streaming": true,
+  "max_documents": 32,
+  "max_tokens": 2500,
+  "seed": 19,
+  "license_note": "Smoke config; fallback fixture is synthetic noisy web text."
+}

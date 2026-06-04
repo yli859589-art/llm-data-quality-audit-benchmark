@@ -1,0 +1,47 @@
+[
+  {
+    "claim_boundary": "data-filter ablation only; no model-quality claim",
+    "input_documents": 15,
+    "input_tokens": 567,
+    "output_documents": 9,
+    "output_tokens": 336,
+    "retention_rate": 0.6,
+    "variant": "full_hdqspp"
+  },
+  {
+    "claim_boundary": "data-filter ablation only; no model-quality claim",
+    "input_documents": 15,
+    "input_tokens": 567,
+    "output_documents": 9,
+    "output_tokens": 336,
+    "retention_rate": 0.6,
+    "variant": "no_pii_penalty"
+  },
+  {
+    "claim_boundary": "data-filter ablation only; no model-quality claim",
+    "input_documents": 15,
+    "input_tokens": 567,
+    "output_documents": 9,
+    "output_tokens": 336,
+    "retention_rate": 0.6,
+    "variant": "no_ngram_repetition"
+  },
+  {
+    "claim_boundary": "data-filter ablation only; no model-quality claim",
+    "input_documents": 15,
+    "input_tokens": 567,
+    "output_documents": 9,
+    "output_tokens": 336,
+    "retention_rate": 0.6,
+    "variant": "no_length_prior"
+  },
+  {
+    "claim_boundary": "data-filter ablation only; no model-quality claim",
+    "input_documents": 15,
+    "input_tokens": 567,
+    "output_documents": 3,
+    "output_tokens": 112,
+    "retention_rate": 0.2,
+    "variant": "dedup_then_hdqspp"
+  }
+]

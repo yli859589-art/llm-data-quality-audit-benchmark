@@ -1,0 +1,23 @@
+{
+  "ccf_c_ready": false,
+  "checks": {
+    "ablation_artifact": true,
+    "baseline_registry_rows": 24,
+    "data_configs": true,
+    "experiment_configs": true,
+    "frozen_protocol_artifact": true,
+    "real_nonfallback_manifest": false,
+    "significance_artifact": true,
+    "smoke_manifest": true,
+    "tables_figures": true
+  },
+  "hard_missing": [],
+  "level_reason": "Smoke/dev infrastructure exists, but real paper-scale runs are incomplete.",
+  "readiness_level": "PROTOTYPE",
+  "remaining_to_ccf_c_ready": [
+    "Complete non-fallback WikiText-2/OpenWebText/C4 data preparation.",
+    "Run multi-seed model training with validation/perplexity metrics.",
+    "Run paper-scale ablations and statistical tests on held-out test splits.",
+    "Attach compute logs, environment hashes, and reviewer-facing failure analysis."
+  ]
+}

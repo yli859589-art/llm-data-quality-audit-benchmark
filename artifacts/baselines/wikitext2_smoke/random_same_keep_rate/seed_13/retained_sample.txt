@@ -1,0 +1,9 @@
+The history of language modeling includes statistical models, neural networks, and transformer architectures. A benchmark corpus should include coherent passages that allow a small model to learn short-range dependencies.
+
+A data quality pipeline can remove duplicates, redact synthetic personal identifiers, and rank documents by transparent quality scores. The goal is not to hide bad results but to expose tradeoffs among retention, privacy, noise removal, and utility.
+
+The history of language modeling includes statistical models, neural networks, and transformer architectures. A benchmark corpus should include coherent passages that allow a small model to learn short-range dependencies.
+
+A data quality pipeline can remove duplicates, redact synthetic personal identifiers, and rank documents by transparent quality scores. The goal is not to hide bad results but to expose tradeoffs among retention, privacy, noise removal, and utility.
+
+Small language model experiments are useful when they are reproducible. Fixed token budgets, deterministic seeds, and generated artifacts make it possible to compare interventions without changing the training surface.

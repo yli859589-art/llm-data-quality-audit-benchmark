@@ -1,0 +1,6 @@
+{
+  "protocol_name": "hdqspp_frozen_openwebtext",
+  "dataset_config": "configs/data/openwebtext_paper.yaml",
+  "status": "protocol_template_not_executed",
+  "requires": "Run scripts/freeze_hdqspp.py on real OpenWebText data before claiming paper results."
+}

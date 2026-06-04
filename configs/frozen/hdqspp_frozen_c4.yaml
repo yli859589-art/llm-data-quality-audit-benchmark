@@ -1,0 +1,6 @@
+{
+  "protocol_name": "hdqspp_frozen_c4",
+  "dataset_config": "configs/data/c4_en_paper.yaml",
+  "status": "protocol_template_not_executed",
+  "requires": "Run scripts/freeze_hdqspp.py on real C4 English data before claiming paper results."
+}

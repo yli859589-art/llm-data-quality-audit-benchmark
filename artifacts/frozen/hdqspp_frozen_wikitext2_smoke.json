@@ -1,0 +1,48 @@
+{
+  "config_sha256": "0dbe80ef3719330a8da8d0df415208c491336f4ad0098feee8c658727974145a",
+  "dataset_key": "wikitext2_smoke",
+  "frozen": true,
+  "no_test_leakage": true,
+  "protocol_name": "hdqspp_frozen_wikitext2_smoke",
+  "quality_weights": {
+    "char_entropy": 1.0,
+    "duplicate_cluster_penalty": 0.0,
+    "language_consistency": 0.7,
+    "length_prior": 0.8,
+    "lexical_diversity": 1.0,
+    "ngram_repetition_penalty": 1.0,
+    "non_linguistic_symbol_penalty": 1.0,
+    "optional_lm_surprisal": 0.0,
+    "pii_density_penalty": 1.2,
+    "repetition_penalty": 1.3,
+    "token_entropy": 0.8,
+    "url_html_noise_penalty": 1.0
+  },
+  "seed": 13,
+  "selection_rule": "Tune threshold on train/dev only; evaluate held-out test once.",
+  "split_hashes": {
+    "dev": [
+      "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac"
+    ],
+    "test": [
+      "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb",
+      "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb"
+    ],
+    "train": [
+      "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e",
+      "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac",
+      "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac",
+      "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb",
+      "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e",
+      "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e"
+    ]
+  },
+  "status": "smoke_frozen_protocol",
+  "threshold": 0.58
+}

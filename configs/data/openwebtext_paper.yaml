@@ -1,0 +1,17 @@
+{
+  "dataset_key": "openwebtext_paper",
+  "dataset_name": "OpenWebText",
+  "provider": "huggingface",
+  "hf_dataset": "openwebtext",
+  "hf_split": "train",
+  "text_field": "text",
+  "allow_fallback": false,
+  "required_real_data": true,
+  "is_smoke": false,
+  "streaming": true,
+  "cache_dir": ".cache/huggingface",
+  "max_documents": 100000,
+  "max_tokens": 10000000,
+  "seed": 17,
+  "license_note": "Use only after verifying upstream dataset terms and citation."
+}

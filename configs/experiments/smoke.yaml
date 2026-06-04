@@ -1,0 +1,26 @@
+{
+  "experiment_key": "smoke",
+  "mode": "smoke",
+  "dataset_config": "configs/data/wikitext2_smoke.yaml",
+  "dataset_configs": [
+    "configs/data/wikitext2_smoke.yaml",
+    "configs/data/openwebtext_smoke.yaml",
+    "configs/data/c4_en_smoke.yaml"
+  ],
+  "allow_fallback_in_data": true,
+  "required_real_data": false,
+  "target_keep_rate": 0.6,
+  "seeds": [13],
+  "baselines": [
+    "raw",
+    "random_same_keep_rate",
+    "length_filter",
+    "c4_gopher_heuristic",
+    "dedup_only",
+    "perplexity_quality_ngram",
+    "independent_quality_score",
+    "optional_external_wrapper"
+  ],
+  "model_config": "configs/models/tiny.yaml",
+  "training_budget_tokens": 2500
+}

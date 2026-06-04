@@ -1,0 +1,14 @@
+{
+  "input_documents": 22,
+  "input_tokens": 716,
+  "name": "length_filter",
+  "notes": "Keeps longest documents.",
+  "output_documents": 14,
+  "output_tokens": 488,
+  "pii_hits_after": 0,
+  "pii_hits_before": 4,
+  "removed_duplicates": 0,
+  "retention_rate": 0.6363636363636364,
+  "skip_reason": "",
+  "skipped": false
+}

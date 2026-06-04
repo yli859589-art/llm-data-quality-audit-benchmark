@@ -28,8 +28,8 @@
 
 ## One-Line Positioning
 
-A resume-ready and CCF-C-convertible AI research prototype for LLM data quality
-benchmarking.
+A resume-ready AI research prototype for LLM data-quality benchmarking, with
+CCF-C-style experiment-readiness infrastructure and explicit claim boundaries.
 
 ## Claim Boundary
 

@@ -1,0 +1,137 @@
+{
+  "artifact_paths": {
+    "csv": "artifacts/data/wikitext2_smoke/data_manifest.csv",
+    "json": "artifacts/data/wikitext2_smoke/data_manifest.json",
+    "markdown": "artifacts/data/wikitext2_smoke/data_manifest.md"
+  },
+  "byte_count": 3276,
+  "corpus_sha256": "0d19b65e899e5a09fba0d069096f4da80510abcbde8dbe2341b0b2db1d5e4e0e",
+  "dataset_key": "wikitext2_smoke",
+  "dataset_name": "WikiText-2 smoke fixture",
+  "document_count": 15,
+  "document_hashes": [
+    {
+      "bytes": 221,
+      "index": 0,
+      "sha256": "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac",
+      "tokens": 35
+    },
+    {
+      "bytes": 249,
+      "index": 1,
+      "sha256": "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "tokens": 44
+    },
+    {
+      "bytes": 218,
+      "index": 2,
+      "sha256": "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e",
+      "tokens": 33
+    },
+    {
+      "bytes": 208,
+      "index": 3,
+      "sha256": "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "tokens": 41
+    },
+    {
+      "bytes": 196,
+      "index": 4,
+      "sha256": "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb",
+      "tokens": 36
+    },
+    {
+      "bytes": 221,
+      "index": 5,
+      "sha256": "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac",
+      "tokens": 35
+    },
+    {
+      "bytes": 249,
+      "index": 6,
+      "sha256": "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "tokens": 44
+    },
+    {
+      "bytes": 218,
+      "index": 7,
+      "sha256": "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e",
+      "tokens": 33
+    },
+    {
+      "bytes": 208,
+      "index": 8,
+      "sha256": "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "tokens": 41
+    },
+    {
+      "bytes": 196,
+      "index": 9,
+      "sha256": "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb",
+      "tokens": 36
+    },
+    {
+      "bytes": 221,
+      "index": 10,
+      "sha256": "b7780c01d66bd13f630b04ba5ca38e47a54375d46dfbb635073ed8e5871446ac",
+      "tokens": 35
+    },
+    {
+      "bytes": 249,
+      "index": 11,
+      "sha256": "11ed8b1bbe63c3f3cd3685261819b8f91df9187f2dd80007f7d0ed93f1716a40",
+      "tokens": 44
+    },
+    {
+      "bytes": 218,
+      "index": 12,
+      "sha256": "372f3df551da649965bbe0ff6d1b8a4e3f95f91cc81ede2dc74ab2ce8c5d211e",
+      "tokens": 33
+    },
+    {
+      "bytes": 208,
+      "index": 13,
+      "sha256": "e55f99c65ed4eaef7be659bed5e1848330c02dd3b4489ad5032788b77dd72362",
+      "tokens": 41
+    },
+    {
+      "bytes": 196,
+      "index": 14,
+      "sha256": "95cc311872f4ecf7a78df73519d62e062ebcc2edcb99f5f5ea42ca0829d386cb",
+      "tokens": 36
+    }
+  ],
+  "fallback_reason": "smoke config intentionally uses the local fixture for offline speed",
+  "is_smoke": true,
+  "license_note": "WikiText-2 smoke config; fallback fixture is local sample only.",
+  "provider": "local_fallback_fixture",
+  "required_real_data": false,
+  "seed": 13,
+  "source": "data/samples/local_wikitext_sample.txt",
+  "split_summary": [
+    {
+      "bytes": 2663,
+      "documents": 12,
+      "sha256": "1fa769c92cfd5a463fdbbd46a52c9047dc57ec1ff1103db4a678eda084459707",
+      "split": "train",
+      "tokens": 460
+    },
+    {
+      "bytes": 221,
+      "documents": 1,
+      "sha256": "2898c68b4f111119d3c7c3f62949d11f1b612533efa020f3d6ff31ab54de7a5d",
+      "split": "dev",
+      "tokens": 35
+    },
+    {
+      "bytes": 392,
+      "documents": 2,
+      "sha256": "1169b2bf1928cf36116508be2c435190e2c82a819bd169a248d65978d8701da8",
+      "split": "test",
+      "tokens": 72
+    }
+  ],
+  "streaming": false,
+  "token_count": 567,
+  "used_fallback": true
+}

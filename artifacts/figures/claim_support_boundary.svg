@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="160">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="36" font-family="Arial" font-size="18">Claim support boundary</text>
+<rect x="24" y="60" width="180" height="32" fill="#f2cf5b"/>
+<text x="36" y="82" font-family="Arial" font-size="13">Engineering prototype</text>
+<rect x="230" y="60" width="180" height="32" fill="#bab0ac"/>
+<text x="242" y="82" font-family="Arial" font-size="13">Paper claims pending</text>
+<rect x="436" y="60" width="180" height="32" fill="#e45756"/>
+<text x="448" y="82" font-family="Arial" font-size="13">Not CCF-C ready</text>
+</svg>

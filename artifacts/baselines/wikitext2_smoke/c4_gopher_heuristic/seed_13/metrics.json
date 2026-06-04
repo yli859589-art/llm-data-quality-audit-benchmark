@@ -1,0 +1,14 @@
+{
+  "input_documents": 15,
+  "input_tokens": 567,
+  "name": "c4_gopher_heuristic",
+  "notes": "Small C4/Gopher-style proxy.",
+  "output_documents": 9,
+  "output_tokens": 336,
+  "pii_hits_after": 0,
+  "pii_hits_before": 0,
+  "removed_duplicates": 0,
+  "retention_rate": 0.6,
+  "skip_reason": "",
+  "skipped": false
+}

@@ -1,0 +1,21 @@
+{
+  "experiment_key": "paper_c4",
+  "mode": "paper",
+  "dataset_config": "configs/data/c4_en_paper.yaml",
+  "dataset_configs": ["configs/data/c4_en_paper.yaml"],
+  "allow_fallback_in_data": false,
+  "required_real_data": true,
+  "target_keep_rate": 0.6,
+  "seeds": [13, 17, 19, 23, 29],
+  "baselines": [
+    "raw",
+    "random_same_keep_rate",
+    "length_filter",
+    "c4_gopher_heuristic",
+    "dedup_only",
+    "perplexity_quality_ngram",
+    "independent_quality_score"
+  ],
+  "model_config": "configs/models/small.yaml",
+  "training_budget_tokens": 10000000
+}

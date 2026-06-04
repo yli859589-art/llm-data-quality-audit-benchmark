@@ -3,8 +3,9 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A resume-ready and CCF-C-convertible AI research prototype for studying
-data-quality interventions in small-scale language-model pretraining.
+A resume-ready AI research prototype with CCF-C-style experiment
+infrastructure scaffolding for studying data-quality interventions in
+small-scale language-model pretraining.
 
 ## What This Is
 
@@ -40,6 +41,8 @@ and privacy constraints?
 - Model-scaling artifacts for character and BPE configs
 - Auxiliary attention systems sanity check
 - Script-generated JSON, CSV, Markdown, and SVG research artifacts
+- Real-data manifest, baseline, frozen-protocol, ablation, significance, and
+  claim-safety scripts for the next paper-scale experiment phase
 
 ## Architecture
 
@@ -88,6 +91,16 @@ Full local validation also includes:
 ```bash
 python -m unittest discover -s tests -v
 python scripts/run_model_scaling.py --mode quick
+python scripts/prepare_real_data.py --config configs/data/wikitext2_smoke.yaml
+python scripts/run_baselines.py --config configs/experiments/smoke.yaml
+python scripts/freeze_hdqspp.py --config configs/experiments/dev.yaml --dry-run-or-smoke
+python scripts/run_ablation.py --config configs/experiments/smoke.yaml
+python scripts/analyze_significance.py --input artifacts/runs/run_registry.csv --output artifacts/stats
+python scripts/generate_tables.py
+python scripts/generate_figures.py
+python scripts/check_no_fallback_in_experiments.py
+python scripts/check_claims_supported.py
+python scripts/check_experiment_readiness.py
 python scripts/make_tables.py
 python scripts/make_figures.py
 python scripts/make_research_tables.py
@@ -113,6 +126,9 @@ refuse to run because of its upstream safety guard; see
   datasets when local/network data are unavailable.
 - `full`: future paper-conversion mode for approved external datasets, longer
   training budgets, more seeds, and larger model scales.
+- `smoke/dev/paper/full` experiment configs under `configs/experiments/`:
+  smoke/dev can use explicitly labeled local fallback fixtures; paper/full
+  configs require real data and disallow fallback.
 
 ## Current Verified Status
 
@@ -149,6 +165,9 @@ claims.
 - `artifacts/model_scaling/`: character/BPE model-scaling summaries and
   scaling curve
 - `artifacts/research/`: research tables and figures mirrored for GitHub review
+- `artifacts/data/`, `artifacts/baselines/`, `artifacts/runs/`,
+  `artifacts/ablations/`, `artifacts/stats/`, `artifacts/tables/`, and
+  `artifacts/figures/`: experiment-readiness infrastructure artifacts
 
 ## Resume Positioning
 
@@ -179,8 +198,11 @@ research artifacts, CI, tests, and coverage reporting.
 
 See [METHOD](docs/METHOD.md), [EXPERIMENTS](docs/EXPERIMENTS.md),
 [RESEARCH_READINESS](docs/RESEARCH_READINESS.md),
-[FINAL_AUDIT](docs/FINAL_AUDIT.md), [LIMITATIONS](docs/LIMITATIONS.md), and
-[RESUME](docs/RESUME.md).
+[FINAL_AUDIT](docs/FINAL_AUDIT.md),
+[CCF_C_EXPERIMENT_GAP_AUDIT](docs/CCF_C_EXPERIMENT_GAP_AUDIT.md),
+[EXPERIMENT_READINESS_REPORT](docs/EXPERIMENT_READINESS_REPORT.md),
+[CLAIM_ARTIFACT_MAP](docs/CLAIM_ARTIFACT_MAP.md),
+[LIMITATIONS](docs/LIMITATIONS.md), and [RESUME](docs/RESUME.md).
 
 ## Supporting Implementations
 

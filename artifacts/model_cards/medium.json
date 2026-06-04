@@ -1,0 +1,13 @@
+{
+  "architecture": "decoder_only_transformer_lm",
+  "attention_heads": 12,
+  "context_length": 1024,
+  "dropout": 0.1,
+  "estimated_parameters": 162557952,
+  "hidden_size": 768,
+  "intended_use": "full-scale target; not run in this repository artifact",
+  "layers": 12,
+  "model_key": "medium",
+  "parameter_count_note": "Approximate architecture-card estimate, not a trained checkpoint.",
+  "vocab_type": "bpe"
+}

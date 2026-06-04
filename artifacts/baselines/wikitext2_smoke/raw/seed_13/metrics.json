@@ -1,0 +1,14 @@
+{
+  "input_documents": 15,
+  "input_tokens": 567,
+  "name": "raw",
+  "notes": "No filtering baseline.",
+  "output_documents": 15,
+  "output_tokens": 567,
+  "pii_hits_after": 0,
+  "pii_hits_before": 0,
+  "removed_duplicates": 0,
+  "retention_rate": 1.0,
+  "skip_reason": "",
+  "skipped": false
+}

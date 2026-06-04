@@ -1,0 +1,11 @@
+{
+  "model_key": "tiny",
+  "architecture": "char_transformer_lm",
+  "vocab_type": "character_or_bpe_smoke",
+  "layers": 2,
+  "hidden_size": 64,
+  "attention_heads": 2,
+  "context_length": 64,
+  "dropout": 0.1,
+  "intended_use": "smoke/dev validation only"
+}

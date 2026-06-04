@@ -1,0 +1,20 @@
+{
+  "dataset_key": "wikitext2_smoke",
+  "dataset_name": "WikiText-2 smoke fixture",
+  "provider": "huggingface",
+  "hf_dataset": "Salesforce/wikitext",
+  "hf_subset": "wikitext-2-raw-v1",
+  "hf_split": "train",
+  "text_field": "text",
+  "fallback_fixture": "data/samples/local_wikitext_sample.txt",
+  "allow_fallback": true,
+  "prefer_fallback_when_smoke": true,
+  "required_real_data": false,
+  "is_smoke": true,
+  "streaming": false,
+  "max_documents": 32,
+  "max_tokens": 2500,
+  "max_bytes": 200000,
+  "seed": 13,
+  "license_note": "WikiText-2 smoke config; fallback fixture is local sample only."
+}

@@ -1,0 +1,14 @@
+{
+  "input_documents": 22,
+  "input_tokens": 716,
+  "name": "optional_external_wrapper",
+  "notes": "",
+  "output_documents": 0,
+  "output_tokens": 0,
+  "pii_hits_after": 0,
+  "pii_hits_before": 4,
+  "removed_duplicates": 0,
+  "retention_rate": 0.0,
+  "skip_reason": "No external wrapper command configured.",
+  "skipped": true
+}

@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.5.0 - 2026-06-04
+
+- Added CCF-C-style experiment-readiness infrastructure with explicit
+  smoke/dev/paper/full boundaries and no-fallback paper/full guards.
+- Added real-data loader scaffolding, deterministic split manifests, SHA-256
+  provenance, and smoke fixtures that are labeled as fallback rather than real
+  paper evidence.
+- Added baseline suite, frozen HDQS++ protocol generation, ablation runner,
+  run registry, significance/claim-safety analysis, generated tables, and SVG
+  figures.
+- Added readiness and claim checks plus reviewer-facing gap audit, attack
+  report, claim-artifact map, paper notes, related-work notes, and bibliography.
+- Tightened README and resume wording to avoid implying completed paper-level
+  or competition-level results.
+
 ## 4.4.0 - 2026-06-03
 
 - Added final audit documentation with explicit project positioning, remaining

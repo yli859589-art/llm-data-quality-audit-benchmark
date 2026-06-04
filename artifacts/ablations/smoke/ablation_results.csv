@@ -1,0 +1,6 @@
+variant,input_documents,output_documents,retention_rate,input_tokens,output_tokens,claim_boundary
+full_hdqspp,15,9,0.6,567,336,data-filter ablation only; no model-quality claim
+no_pii_penalty,15,9,0.6,567,336,data-filter ablation only; no model-quality claim
+no_ngram_repetition,15,9,0.6,567,336,data-filter ablation only; no model-quality claim
+no_length_prior,15,9,0.6,567,336,data-filter ablation only; no model-quality claim
+dedup_then_hdqspp,15,3,0.2,567,112,data-filter ablation only; no model-quality claim

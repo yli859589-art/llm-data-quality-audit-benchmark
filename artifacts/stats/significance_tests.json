@@ -1,0 +1,247 @@
+{
+  "hard_boundary": "Retention-rate summaries are not model-quality significance tests. Perplexity or validation-loss claims require completed multi-seed model runs.",
+  "input_registry": "artifacts/runs/run_registry.csv",
+  "rows": 24,
+  "tests": [
+    {
+      "baseline_name": "raw",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 1.0,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "random_same_keep_rate",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.6,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "length_filter",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.6,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "c4_gopher_heuristic",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.6,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "dedup_only",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.3333333333333333,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "perplexity_quality_ngram",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.6,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "independent_quality_score",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.6,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "optional_external_wrapper",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "wikitext2_smoke",
+      "mean": 0.0,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "raw",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 1.0,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "random_same_keep_rate",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "length_filter",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "c4_gopher_heuristic",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "dedup_only",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.5,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "perplexity_quality_ngram",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "independent_quality_score",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "optional_external_wrapper",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "openwebtext_smoke",
+      "mean": 0.0,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "raw",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 1.0,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "random_same_keep_rate",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "length_filter",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "c4_gopher_heuristic",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "dedup_only",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.5,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "perplexity_quality_ngram",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "independent_quality_score",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.6363636363636364,
+      "metric": "retention_rate",
+      "rows": 1
+    },
+    {
+      "baseline_name": "optional_external_wrapper",
+      "ci95_high": null,
+      "ci95_low": null,
+      "claim_status": "unsupported_seed_count",
+      "dataset_key": "c4_en_smoke",
+      "mean": 0.0,
+      "metric": "retention_rate",
+      "rows": 1
+    }
+  ]
+}

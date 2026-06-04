@@ -1,0 +1,14 @@
+{
+  "input_documents": 15,
+  "input_tokens": 567,
+  "name": "perplexity_quality_ngram",
+  "notes": "N-gram repetition/lexical proxy; not a neural LM perplexity score.",
+  "output_documents": 9,
+  "output_tokens": 312,
+  "pii_hits_after": 0,
+  "pii_hits_before": 0,
+  "removed_duplicates": 0,
+  "retention_rate": 0.6,
+  "skip_reason": "",
+  "skipped": false
+}

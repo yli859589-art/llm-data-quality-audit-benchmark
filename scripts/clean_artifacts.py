@@ -37,6 +37,7 @@ def clean_generated_paths(
             path.name in DEFAULT_CACHE_NAMES
             or "__pycache__" in path.parts
             or path.suffix == ".pyc"
+            or path.name.startswith("pytest-cache-files-")
         )
         is_temp_benchmark = include_temp_benchmarks and any(
             relative.startswith(prefix) for prefix in TEMP_BENCHMARK_PREFIXES

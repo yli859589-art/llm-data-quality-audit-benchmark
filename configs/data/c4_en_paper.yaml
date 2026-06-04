@@ -1,0 +1,18 @@
+{
+  "dataset_key": "c4_en_paper",
+  "dataset_name": "C4 English",
+  "provider": "huggingface",
+  "hf_dataset": "allenai/c4",
+  "hf_subset": "en",
+  "hf_split": "train",
+  "text_field": "text",
+  "allow_fallback": false,
+  "required_real_data": true,
+  "is_smoke": false,
+  "streaming": true,
+  "cache_dir": ".cache/huggingface",
+  "max_documents": 100000,
+  "max_tokens": 10000000,
+  "seed": 19,
+  "license_note": "Use only after verifying upstream dataset terms and citation."
+}
