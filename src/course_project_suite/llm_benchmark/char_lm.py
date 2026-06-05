@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import math
 import time
 from dataclasses import asdict, dataclass
@@ -44,6 +45,11 @@ class CharVocab:
     def __len__(self) -> int:
         return len(self.stoi)
 
+    @property
+    def fingerprint(self) -> str:
+        ordered = "".join(self.itos[index] for index in range(len(self.itos)))
+        return hashlib.sha256(ordered.encode("utf-8")).hexdigest()
+
 
 def _batch(
     data: torch.Tensor, config: TrainConfig, generator: torch.Generator
@@ -63,7 +69,7 @@ def _evaluate(
     data: torch.Tensor,
     config: TrainConfig,
     generator: torch.Generator,
-) -> tuple[float, float]:
+) -> tuple[float, float, int]:
     model.eval()
     losses = []
     correct = 0
@@ -75,7 +81,7 @@ def _evaluate(
         correct += int((logits.argmax(dim=-1) == y).sum())
         total += y.numel()
     model.train()
-    return sum(losses) / len(losses), correct / max(1, total)
+    return sum(losses) / len(losses), correct / max(1, total), total
 
 
 def train_character_lm(
@@ -102,15 +108,27 @@ def train_character_lm(
     started = time.perf_counter()
     for step in range(config.steps + 1):
         if step % config.eval_interval == 0 or step == config.steps:
-            train_loss, train_accuracy = _evaluate(model, train_ids, config, eval_generator)
-            val_loss, val_accuracy = _evaluate(model, val_ids, config, eval_generator)
+            train_loss, train_accuracy, train_eval_tokens = _evaluate(
+                model,
+                train_ids,
+                config,
+                eval_generator,
+            )
+            val_loss, val_accuracy, val_eval_tokens = _evaluate(
+                model,
+                val_ids,
+                config,
+                eval_generator,
+            )
             curve.append(
                 {
                     "step": step,
                     "train_loss": train_loss,
                     "train_next_char_accuracy": train_accuracy,
+                    "train_evaluated_tokens": train_eval_tokens,
                     "val_loss": val_loss,
                     "val_next_char_accuracy": val_accuracy,
+                    "val_evaluated_tokens": val_eval_tokens,
                 }
             )
         if step == config.steps:
@@ -146,11 +164,20 @@ def train_character_lm(
     return {
         "config": asdict(config),
         "tokenizer": "character",
+        "tokenizer_type": "character_shared",
+        "tokenizer_id": "shared_character_vocab_from_wikitext2_train",
+        "tokenizer_hash": vocab.fingerprint,
         "model": "decoder-only causal MiniGPT",
         "parameter_count": sum(parameter.numel() for parameter in model.parameters()),
         "vocab_size": len(vocab),
         "train_characters": len(train_ids),
         "validation_characters": len(val_ids),
+        "evaluated_validation_tokens": curve[-1]["val_evaluated_tokens"],
+        "eval_batches": config.eval_batches,
+        "eval_batch_size": config.batch_size,
+        "eval_block_size": config.block_size,
+        "eval_token_budget": config.eval_batches * config.batch_size * config.block_size,
+        "eval_coverage_ratio": curve[-1]["val_evaluated_tokens"] / max(1, len(val_ids)),
         "elapsed_seconds": elapsed,
         "tokens_per_second": config.steps
         * config.batch_size

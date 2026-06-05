@@ -1,0 +1,19 @@
+{
+  "method": "hdqspp_v2",
+  "dataset_key": "wikitext2_paper",
+  "selection_split": "dev",
+  "test_split_used_for_selection": false,
+  "retention_ratio": 0.85,
+  "base_quality_weight": 0.42,
+  "length_distribution_weight": 0.18,
+  "token_frequency_weight": 0.18,
+  "quality_diversity_weight": 0.14,
+  "repetition_weight": 0.08,
+  "distribution_preserving_selection": true,
+  "use_length_prior": true,
+  "use_token_frequency": true,
+  "use_repetition_penalty": true,
+  "use_quality_diversity_balance": true,
+  "selection_mode": "distribution_preserving",
+  "claim_boundary": "method candidate; full model claims require completed_training rows"
+}

@@ -1,0 +1,79 @@
+{
+  "baseline_name": "raw",
+  "command": "python scripts/run_experiment.py --config configs/experiments/dev.yaml --model configs/models/small.yaml",
+  "config_hash": "4ea0ea2c20fbb31f26ce4aa4ee573d449355765d04340406c16d1383645dd0a2",
+  "config_path": "configs/experiments/dev.yaml",
+  "dataset_key": "wikitext2_paper",
+  "dataset_scope": "official_split",
+  "dataset_status": "real_local_nonfallback",
+  "elapsed_seconds": 44.32505349998246,
+  "failure_reason": "",
+  "model_config_hash": "56f9fab3553d0e105c55d7db7e2d142ef99d0f7a65affd4691b07f6357064dc7",
+  "model_config_path": "configs/models/small.yaml",
+  "model_size": "small",
+  "retention_rate": 1.0,
+  "run_id": "train:wikitext2_paper:small:raw:13:completed_training:2026-06-04T07:47:19+00:00",
+  "run_status": "completed_training",
+  "seed": 13,
+  "test_tokens": 279769,
+  "train_corpus_tokens": 2229442,
+  "train_steps": 300,
+  "train_tokens": 1228800,
+  "training_result": {
+    "config": {
+      "batch_size": 16,
+      "block_size": 256,
+      "checkpoint_path": null,
+      "device": "cuda",
+      "eval_batches": 1,
+      "eval_interval": 150,
+      "gradient_clip_norm": 1.0,
+      "learning_rate": 0.0006,
+      "n_embd": 384,
+      "n_head": 6,
+      "n_layer": 6,
+      "seed": 13,
+      "steps": 300
+    },
+    "curve": [
+      {
+        "step": 0,
+        "train_loss": 247.5087890625,
+        "train_next_char_accuracy": 0.017822265625,
+        "val_loss": 248.5286102294922,
+        "val_next_char_accuracy": 0.0185546875
+      },
+      {
+        "step": 150,
+        "train_loss": 2.7736830711364746,
+        "train_next_char_accuracy": 0.2412109375,
+        "val_loss": 2.7159643173217773,
+        "val_next_char_accuracy": 0.253662109375
+      },
+      {
+        "step": 300,
+        "train_loss": 2.6258246898651123,
+        "train_next_char_accuracy": 0.261474609375,
+        "val_loss": 2.629035472869873,
+        "val_next_char_accuracy": 0.270751953125
+      }
+    ],
+    "elapsed_seconds": 34.13936170001398,
+    "final_train_loss": 2.6258246898651123,
+    "final_val_bits_per_character": 3.792896439030537,
+    "final_val_loss": 2.629035472869873,
+    "final_val_next_char_accuracy": 0.270751953125,
+    "final_val_perplexity": 13.860394726059182,
+    "model": "decoder-only causal MiniGPT",
+    "parameter_count": 10854528,
+    "peak_cuda_memory_bytes": 980702720,
+    "sample_generation": "= Homarus gammarus =\n\nHomarus gammarus , known as the European lobster or common lobster , is a species of <unk> lobster from the eastern Atlantic Ocean , Mediterranean Sea and parts of the Black Sea . It is closely related to the American lobster , H. ame ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane ane",
+    "sample_prompt": "= Homarus gammarus =\n\nHomarus gammarus , known as the European lobster or common lobster , is a species of <unk> lobster from the eastern Atlantic Ocean , Mediterranean Sea and parts of the Black Sea . It is closely related to the American lobster , H. ame",
+    "tokenizer": "character",
+    "tokens_per_second": 35993.64307972685,
+    "train_characters": 10730766,
+    "validation_characters": 1115131,
+    "vocab_size": 283
+  },
+  "validation_tokens": 244780
+}

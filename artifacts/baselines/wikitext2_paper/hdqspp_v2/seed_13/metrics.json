@@ -1,0 +1,14 @@
+{
+  "input_documents": 751,
+  "input_tokens": 2753991,
+  "name": "hdqspp_v2",
+  "notes": "HDQS++ v2 filtering with distribution-preserving selection.",
+  "output_documents": 639,
+  "output_tokens": 2296881,
+  "pii_hits_after": 1,
+  "pii_hits_before": 3,
+  "removed_duplicates": 0,
+  "retention_rate": 0.8508655126498003,
+  "skip_reason": "",
+  "skipped": false
+}

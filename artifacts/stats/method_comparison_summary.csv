@@ -1,0 +1,21 @@
+comparison,reference,candidate,paired_seeds,n_paired_seeds,mean_difference_reference_minus_candidate,mean_difference_reference_minus_v2,ci95_low,ci95_high,status,safe_claim_level
+hdqspp_v3_vs_raw,raw,hdqspp_v3,1 2 3,3,-0.6126174264954874,-0.6126174264954874,-2.204294875472197,1.1887735863456648,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v3_vs_random_same_keep_rate,random_same_keep_rate,hdqspp_v3,1 2 3,3,-0.5282441912949114,-0.5282441912949114,-1.41263866280927,-0.04103493987432394,negative_preliminary_trend,preliminary_trend_only_no_significance_claim
+hdqspp_v3_vs_dedup_only,dedup_only,hdqspp_v3,1 2 3,3,-0.5079837382247513,-0.5079837382247513,-1.4030996257823354,0.09697659057221308,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v3_vs_hdqspp,hdqspp,hdqspp_v3,1 2 3,3,0.03004611293161948,0.03004611293161948,-0.9561888305343782,1.164930022046848,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v3_vs_hdqspp_v2,hdqspp_v2,hdqspp_v3,1 2 3,3,0.9277345025394256,0.9277345025394256,-0.6031554211999204,3.1715796712589785,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_raw,raw,hdqspp_v2_no_token_frequency,1 2 3,3,-1.6438272196728,-1.6438272196728,-3.4344322666014886,0.6101286577072855,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_random_same_keep_rate,random_same_keep_rate,hdqspp_v2_no_token_frequency,1 2 3,3,-1.5594539844722242,-1.5594539844722242,-3.336986576344186,0.019820985257945622,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_dedup_only,dedup_only,hdqspp_v2_no_token_frequency,1 2 3,3,-1.539193531402064,-1.539193531402064,-3.5137798159339937,0.029360022284880216,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_hdqspp,hdqspp,hdqspp_v2_no_token_frequency,1 2 3,3,-1.0011636802456934,-1.0011636802456934,-2.1310216144230143,0.4762708175328374,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_hdqspp_v2,hdqspp_v2,hdqspp_v2_no_token_frequency,1 2 3,3,-0.10347529063788723,-0.10347529063788723,-3.8991070576697826,4.604039319326194,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_vs_raw,raw,hdqspp_v2,1 2 3,3,-1.540351929034913,-1.540351929034913,-3.9939106616189086,1.7919290075455852,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_vs_random_same_keep_rate,random_same_keep_rate,hdqspp_v2,1 2 3,3,-1.4559786938343369,-1.4559786938343369,-4.5842183340682485,0.5621204813255964,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_vs_dedup_only,dedup_only,hdqspp_v2,1 2 3,3,-1.4357182407641769,-1.4357182407641769,-4.574679297041314,0.3853272417357889,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_v2_vs_hdqspp,hdqspp,hdqspp_v2,1 2 3,3,-0.8976883896078061,-0.8976883896078061,-4.127768501793357,1.7680854432467683,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_vs_raw,raw,hdqspp,1 2 3,3,-0.6426635394271069,-0.6426635394271069,-2.0856920227545857,0.13385784017444813,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_vs_random_same_keep_rate,random_same_keep_rate,hdqspp,1 2 3,3,-0.5582903042265309,-0.5582903042265309,-1.2059649619211719,-0.01245611848352901,negative_preliminary_trend,preliminary_trend_only_no_significance_claim
+hdqspp_vs_dedup_only,dedup_only,hdqspp,1 2 3,3,-0.5380298511563707,-0.5380298511563707,-1.3827582015109794,0.21557944328982437,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+hdqspp_vs_hdqspp_v2,hdqspp_v2,hdqspp,1 2 3,3,0.8976883896078061,0.8976883896078061,-1.7680854432467683,4.127768501793357,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+random_same_keep_rate_vs_raw,raw,random_same_keep_rate,1 2 3,3,-0.084373235200576,,-2.0732359042710566,1.2298085262199887,trend_only_ci_crosses_zero,trend_only_no_significance_claim
+dedup_only_vs_raw,raw,dedup_only,1 2 3,3,-0.10463368827073616,,-2.30127146604441,1.4066017658097962,trend_only_ci_crosses_zero,trend_only_no_significance_claim

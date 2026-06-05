@@ -1,0 +1,69 @@
+{
+  "absolute_path_hits": [],
+  "cache_scan_status": "passed",
+  "checked_files": [
+    "README.md",
+    "Makefile",
+    "PROJECT_SUMMARY.md",
+    "PROJECT_ONE_PAGE.md",
+    "TECHNICAL_OVERVIEW.md",
+    "DEMO_GUIDE.md",
+    "RESUME_BULLETS.md",
+    "scripts/run_all_checks.py",
+    "scripts/run_release_checks.py",
+    "scripts/check_experiment_readiness.py",
+    "scripts/check_claim_hygiene.py",
+    "scripts/verify_fresh_unzip.py",
+    "scripts/generate_final_release_report.py",
+    "artifacts/tables/main_results.csv",
+    "artifacts/release/fresh_unzip_report.json",
+    "artifacts/release/fresh_unzip_report.md",
+    "artifacts/release/final_release_report.json",
+    "artifacts/release/final_release_report.md",
+    "docs/QUICKSTART.md",
+    "docs/README.md",
+    "docs/REPORTING_CONTRACT.md",
+    "docs/FIGURE_INDEX.md",
+    "docs/PROJECT_PRESENTATION_NOTES.md",
+    "docs/future_publication_notes/README.md"
+  ],
+  "heavy_check_reason": "skip-heavy flag was provided",
+  "heavy_check_status": "skipped_by_request",
+  "heavy_steps": [],
+  "lightweight_check_status": "passed",
+  "lightweight_steps": [
+    {
+      "command": "python scripts/check_experiment_readiness.py",
+      "name": "check_experiment_readiness",
+      "returncode": 0,
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_claim_hygiene.py",
+      "name": "check_claim_hygiene",
+      "returncode": 0,
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_release_checks.py --skip-core-checks --zip <local_user_path> --timeout 300",
+      "name": "run_release_checks_skip_core_zip",
+      "returncode": 0,
+      "status": "passed"
+    }
+  ],
+  "local_absolute_path_scan_status": "passed",
+  "missing_required_files": [],
+  "nested_zip_hits": [],
+  "nested_zip_scan_status": "passed",
+  "required_one_of": [
+    [
+      "requirements.txt",
+      "pyproject.toml"
+    ]
+  ],
+  "status": "passed",
+  "zip_cache_hits": [],
+  "zip_file_name": "llm_data_quality_audit_benchmark_release_candidate_v1.zip",
+  "zip_path": "<local_user_path>",
+  "zip_sha256": "70c3c1746485e3b3245984f5faa2a6c62ec3087a97f0630d129a7f9d4dc2f5d8"
+}

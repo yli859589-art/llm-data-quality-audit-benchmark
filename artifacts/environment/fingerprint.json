@@ -1,0 +1,11 @@
+{
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "cuda_device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "environment_fingerprint_hash": "12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099",
+  "platform_machine": "AMD64",
+  "platform_release": "11",
+  "platform_system": "Windows",
+  "python_version": "3.12.5",
+  "torch_version": "2.11.0+cu126"
+}

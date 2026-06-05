@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from _bootstrap import bootstrap
+
+bootstrap()
+
 import csv
 from pathlib import Path
 

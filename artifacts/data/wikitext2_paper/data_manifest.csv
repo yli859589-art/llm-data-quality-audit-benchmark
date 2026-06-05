@@ -1,0 +1,4 @@
+dataset,config_path,split,dataset_status,dataset_scope,documents,tokens,bytes,sha256,allow_fallback,required_real_data,failure_reason
+WikiText-2 raw,configs/data/wikitext2_paper.yaml,train,real_local_nonfallback,official_split,629,2229442,10723083,c21a2895df41af58d4144e2d1ada460598d8ffaf62a87b6c99b48f314163d0e0,False,True,
+WikiText-2 raw,configs/data/wikitext2_paper.yaml,dev,real_local_nonfallback,official_split,60,244780,1114101,11a28d6f330bd0a28aac202be7dba59fb5505355328c0706d244a5b82c638515,False,True,
+WikiText-2 raw,configs/data/wikitext2_paper.yaml,test,real_local_nonfallback,official_split,62,279769,1247671,5a6dc84aa7dbb9477ecb6552892bc76f02412a45c85051000c6a175d08301e51,False,True,

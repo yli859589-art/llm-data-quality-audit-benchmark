@@ -1,0 +1,32 @@
+{
+  "config": {
+    "base_quality_weight": 0.42,
+    "distribution_preserving_selection": true,
+    "length_distribution_weight": 0.18,
+    "quality_diversity_weight": 0.14,
+    "repetition_weight": 0.08,
+    "retention_ratio": 0.85,
+    "selection_mode": "distribution_preserving",
+    "token_frequency_weight": 0.18,
+    "use_length_prior": true,
+    "use_quality_diversity_balance": true,
+    "use_repetition_penalty": true,
+    "use_token_frequency": true
+  },
+  "dataset_key": "wikitext2_paper",
+  "method": "hdqspp_v2",
+  "selection_split": "dev",
+  "source_design_artifact": "artifacts/methods/hdqspp_v2_design.json",
+  "source_run_ids": [
+    "train:wikitext2_paper:small:raw:13:completed_training:2026-06-04T07:47:19+00:00",
+    "train:wikitext2_paper:small:hdqspp:13:completed_training:2026-06-04T07:48:11+00:00",
+    "train:wikitext2_paper:small:raw:1:completed_training:2026-06-04T08:30:31+00:00",
+    "train:wikitext2_paper:small:hdqspp:1:completed_training:2026-06-04T08:33:29+00:00",
+    "train:wikitext2_paper:small:raw:2:completed_training:2026-06-04T08:34:11+00:00",
+    "train:wikitext2_paper:small:hdqspp:2:completed_training:2026-06-04T08:36:50+00:00",
+    "train:wikitext2_paper:small:raw:3:completed_training:2026-06-04T08:37:19+00:00",
+    "train:wikitext2_paper:small:hdqspp:3:completed_training:2026-06-04T08:39:33+00:00",
+    "method_debug:wikitext2_paper:2026-06-04T11:48:01+00:00"
+  ],
+  "test_split_used_for_selection": false
+}

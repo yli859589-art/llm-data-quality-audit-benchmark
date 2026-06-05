@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="246">
+<desc>source=artifacts/methods/promising_variants.csv; generated_by_script=scripts/generate_method_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Promising variant selection</text>
+<rect x="24" y="57" width="18" height="18" fill="#e15759"/>
+<text x="52" y="72" font-family="Arial" font-size="12">ablation_v2_full</text>
+<text x="500" y="72" font-family="Arial" font-size="12">reject</text>
+<text x="760" y="72" font-family="Arial" font-size="12">PPL 16.6939758089</text>
+<rect x="24" y="91" width="18" height="18" fill="#f28e2b"/>
+<text x="52" y="106" font-family="Arial" font-size="12">ablation_v2_without_distribution_preservation</text>
+<text x="500" y="106" font-family="Arial" font-size="12">needs_more_diagnostics</text>
+<text x="760" y="106" font-family="Arial" font-size="12">PPL 12.1030523867</text>
+<rect x="24" y="125" width="18" height="18" fill="#f28e2b"/>
+<text x="52" y="140" font-family="Arial" font-size="12">ablation_v2_without_length_prior</text>
+<text x="500" y="140" font-family="Arial" font-size="12">needs_more_diagnostics</text>
+<text x="760" y="140" font-family="Arial" font-size="12">PPL 12.2336926491</text>
+<rect x="24" y="159" width="18" height="18" fill="#bab0ac"/>
+<text x="52" y="174" font-family="Arial" font-size="12">ablation_v2_without_repetition_penalty</text>
+<text x="500" y="174" font-family="Arial" font-size="12">keep_debug_only</text>
+<text x="760" y="174" font-family="Arial" font-size="12">PPL 12.7204214572</text>
+<rect x="24" y="193" width="18" height="18" fill="#59a14f"/>
+<text x="52" y="208" font-family="Arial" font-size="12">ablation_v2_without_token_frequency_preservation</text>
+<text x="500" y="208" font-family="Arial" font-size="12">promote_to_3seed</text>
+<text x="760" y="208" font-family="Arial" font-size="12">PPL 12.0899364895</text>
+</svg>

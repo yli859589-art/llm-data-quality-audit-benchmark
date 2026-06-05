@@ -1,216 +1,250 @@
-# LLM Data Quality Benchmark
+# LLM Data Quality Diagnostics and Risk Auditing Benchmark
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+## Project Overview
 
-A resume-ready AI research prototype with CCF-C-style experiment
-infrastructure scaffolding for studying data-quality interventions in
-small-scale language-model pretraining.
+This repository is a personal research and portfolio prototype for auditing LLM
+data-quality filtering risk. It provides a reproducible benchmark around real
+data, fair baselines, artifact lineage, failure diagnostics, and claim-safety
+checks.
 
-## What This Is
+It does **not** claim institutional affiliation, official coursework completion,
+private-grader access, publication acceptance, competition placement, or
+supported improvement over raw training data.
 
-This repository is a personal research and portfolio prototype: a personal AI
-research prototype and benchmark platform designed to make LLM data-quality
-experiments reproducible, auditable, and easy to inspect on GitHub. It is not a
-completed paper, not an official coursework submission, and not a competition
-result.
+Canonical reporting language is maintained in
+`docs/REPORTING_CONTRACT.md`.
 
-It does **not** claim institutional affiliation, official coursework
-completion, private-grader access, paper acceptance, publication readiness, or
-competition placement.
+## How To Review This Release
 
-## Research Question
+- 30 seconds: read `PROJECT_ONE_PAGE.md`.
+- 3 minutes: read `PROJECT_SUMMARY.md` and `docs/FIGURE_INDEX.md`.
+- 10 minutes: read `TECHNICAL_OVERVIEW.md`, `DEMO_GUIDE.md`, and
+  `docs/CROSS_DATASET_AUDIT.md`.
+- 1 hour: run the reproducibility commands, inspect
+  `artifacts/release/final_release_report.md`, and verify the fresh-unzip
+  report.
 
-How do data-quality interventions affect small-scale language-model
-pretraining under controlled noise, pseudo-real web noise, fixed token budgets,
-and privacy constraints?
+## Why Data Quality Filtering Needs Auditing
 
-## Core Capabilities
+Data-quality filters can look useful before training: they remove noisy pages,
+reduce repetition, preserve distribution shape, and keep high-scoring text. Under
+a fair tokenizer, model, and validation budget, however, the filtered corpus can
+still underperform raw data, seeded random retention, or exact deduplication.
 
-- Controlled and pseudo-real web-noise injection
-- Synthetic PII canaries and PII redaction
-- Exact deduplication, Jaccard near deduplication, and MinHash-LSH near deduplication
-- HDQS++ document-quality scoring
-- DQCS curriculum-selection diagnostics
-- Pipeline-order studies
-- Equal-token-budget ablations
-- Character-level Mini GPT training
-- Dataset matrix and paper-prototype small runs
-- Multi-seed statistics and paired comparisons
-- Privacy-utility and downstream proxy reports
-- Model-scaling artifacts for character and BPE configs
-- Auxiliary attention systems sanity check
-- Script-generated JSON, CSV, Markdown, and SVG research artifacts
-- Real-data manifest, baseline, frozen-protocol, ablation, significance, and
-  claim-safety scripts for the next paper-scale experiment phase
+The project value is therefore not a positive method-success claim. The value is
+a reproducible audit framework that can detect when heuristic filtering is
+fragile, overfilters, or shifts the training distribution.
 
-## Architecture
+## Key Findings
 
-```text
-raw/local corpus
-      |
-      v
-controlled + pseudo-real noise injection
-      |
-      v
-cleaning + PII redaction + exact/near dedup
-      |
-      v
-HDQS++ scoring -----> DQCS curriculum diagnostics
-      |
-      v
-equal-budget variant builder
-      |
-      +--> Mini GPT training + validation metrics
-      +--> privacy-utility reports
-      +--> downstream proxy reports
-      +--> attention sanity benchmark
-      |
-      v
-dataset matrix + multi-seed aggregation
-      |
-      v
-research tables, figures, audit reports, resume-safe docs
-```
+- The raw baseline is currently the strongest mean-PPL method on the WikiText-2
+  dev benchmark.
+- HDQS++ v3 improves over HDQS++ v2 trend-wise, but it does not outperform raw
+  under the current fair benchmark.
+- Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the
+  completed setting.
+- OpenWebText and C4 English evidence is based on real HuggingFace streaming
+  samples, not complete upstream dataset runs.
+- single-seed and diagnostic ablation signals are treated as diagnostic only,
+  never as stable method conclusions.
 
 ## Quick Start
+
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 python -m pip install -r requirements-dev.txt
 python -m pip install -e .
-python scripts/check_repo.py --clean
-python scripts/run_quick_experiment.py
-python scripts/run_dataset_matrix.py --mode paper-prototype
-python scripts/run_multi_seed.py --mode paper-prototype
-python scripts/check_artifacts.py
 ```
 
-Full local validation also includes:
+Run the local check suite:
 
 ```bash
-python -m unittest discover -s tests -v
-python scripts/run_model_scaling.py --mode quick
-python scripts/prepare_real_data.py --config configs/data/wikitext2_smoke.yaml
-python scripts/run_baselines.py --config configs/experiments/smoke.yaml
-python scripts/freeze_hdqspp.py --config configs/experiments/dev.yaml --dry-run-or-smoke
-python scripts/run_ablation.py --config configs/experiments/smoke.yaml
-python scripts/analyze_significance.py --input artifacts/runs/run_registry.csv --output artifacts/stats
-python scripts/generate_tables.py
-python scripts/generate_figures.py
-python scripts/check_no_fallback_in_experiments.py
-python scripts/check_claims_supported.py
-python scripts/check_experiment_readiness.py
-python scripts/make_tables.py
-python scripts/make_figures.py
-python scripts/make_research_tables.py
-python scripts/make_research_figures.py
-python scripts/analyze_failures.py
-python scripts/make_project_report.py
-python scripts/run_coverage.py
-ruff check .
-mypy src/course_project_suite/llm_benchmark
+python scripts/run_all_checks.py --timeout 300
 ```
 
-`black --check .` is configured for CI. On local CPython 3.12.5, Black may
-refuse to run because of its upstream safety guard; see
-[FINAL_VERIFICATION_REPORT](docs/FINAL_VERIFICATION_REPORT.md).
+Run claim hygiene directly:
 
-## Experiment Modes
+```bash
+python scripts/check_claim_hygiene.py
+```
 
-- `quick`: CPU-oriented single-seed smoke mode. It validates reproducibility,
-  instrumentation, artifact generation, and equal-budget wiring.
-- `paper-prototype`: real lightweight small runs for local datasets
-  (`tiny_shakespeare`, `mixed_debug`, `synthetic_web_noise`,
-  `local_wikitext_sample`) plus explicit fallback records for optional remote
-  datasets when local/network data are unavailable.
-- `full`: future paper-conversion mode for approved external datasets, longer
-  training budgets, more seeds, and larger model scales.
-- `smoke/dev/paper/full` experiment configs under `configs/experiments/`:
-  smoke/dev can use explicitly labeled local fallback fixtures; paper/full
-  configs require real data and disallow fallback.
+Regenerate dashboards:
 
-## Current Verified Status
+```bash
+python scripts/generate_project_dashboard.py
+```
 
-- Unit tests: `63` passing
-- Source coverage: `93%` total
-- LLM benchmark type check: `mypy` passes on `16` source files
-- Repository hygiene: `python scripts/check_repo.py --clean` passes
-- Artifact integrity: `python scripts/check_artifacts.py` passes
-- Supporting AI/ML family checks: `6/6` pass
-- Current local limitation: Black is blocked by local CPython `3.12.5`, not by
-  repository formatting evidence
+Run release checks:
 
-## Small-Run Interpretation
+```bash
+python scripts/run_release_checks.py --timeout 300
+```
 
-Quick and paper-prototype results are preliminary. They demonstrate that the
-experiment matrix is executable, deterministic, and instrumented. They do not
-prove that the full pipeline generally outperforms the raw noisy baseline, and
-they do not establish a paper-level performance conclusion.
+Verify a release zip from a clean extraction:
 
-The current multi-seed paper-prototype artifacts report paired comparisons, but
-confidence intervals remain wide. Larger datasets, longer training, frozen
-HDQS++ tuning, and more model scales are required before making publication
-claims.
+```bash
+python scripts/verify_fresh_unzip.py --zip path/to/release.zip --timeout 300 --skip-heavy
+```
 
-## Artifacts
+When GNU Make is available:
 
-- `artifacts/quick_experiment/`: quick results, token-budget report, privacy
-  report, attention benchmark, ablation tables, HDQS sweep, training curves,
-  failure cases, project report
-- `artifacts/dataset_matrix/`: dataset cards, paper-prototype summary,
-  fallback reports, per-dataset result records
-- `artifacts/multi_seed/`: seed-level results, aggregate results, paired
-  statistical tests, multi-seed summary, seed-variance figure
-- `artifacts/model_scaling/`: character/BPE model-scaling summaries and
-  scaling curve
-- `artifacts/research/`: research tables and figures mirrored for GitHub review
-- `artifacts/data/`, `artifacts/baselines/`, `artifacts/runs/`,
-  `artifacts/ablations/`, `artifacts/stats/`, `artifacts/tables/`, and
-  `artifacts/figures/`: experiment-readiness infrastructure artifacts
+```bash
+make check
+make release-check
+```
 
-## Resume Positioning
+On Windows systems that provide MinGW Make as `mingw32-make`:
 
-**LLM Data Quality Benchmark Platform | Python, PyTorch, NumPy**  
-Built a reproducible AI benchmark for studying data-quality interventions in
-small-scale language-model pretraining, with HDQS++ scoring, DQCS curriculum
-diagnostics, deduplication, privacy-utility analysis, multi-seed statistics,
-research artifacts, CI, tests, and coverage reporting.
+```bash
+mingw32-make check
+mingw32-make release-check
+```
+
+## Benchmark Protocol
+
+Primary WikiText-2 candidate evidence:
+
+- dataset: `wikitext2_paper`
+- dataset_status: `real_local_nonfallback`
+- dataset_scope: `official_split`
+- model size: `small`
+- seeds: `1 2 3`
+- train_tokens: `1228800`
+- evaluated_validation_tokens: `53248`
+
+Cross-dataset audit evidence:
+
+- `openwebtext_streaming`: `real_nonfallback`, `streaming_sample`
+- `c4_en_streaming`: `real_nonfallback`, `streaming_sample`
+
+Streaming-sample rows are audit evidence. They are not paper-scale claims and
+must not be described as complete upstream OpenWebText/C4 results.
+
+## Results Snapshot
+
+Lower mean PPL is better.
+
+| Dataset | Scope | Method | Mean PPL | Safe interpretation |
+|---|---|---|---:|---|
+| `wikitext2_paper` | `official_split` | `raw` | 12.6214 | strongest current WikiText-2 mean baseline |
+| `wikitext2_paper` | `official_split` | `random_same_keep_rate` | 12.7058 | close baseline |
+| `wikitext2_paper` | `official_split` | `dedup_only` | 12.7261 | close baseline |
+| `wikitext2_paper` | `official_split` | `hdqspp_v3` | 13.2341 | improves over v2 trend-wise, not raw |
+| `openwebtext_streaming` | `streaming_sample` | `raw` | 133.5411 | strongest current streaming-sample mean baseline |
+| `openwebtext_streaming` | `streaming_sample` | `hdqspp_v3` | 253.3836 | does not outperform raw on this streaming sample |
+| `c4_en_streaming` | `streaming_sample` | `raw` | 174.5871 | tied with dedup as strongest current streaming-sample mean baseline |
+| `c4_en_streaming` | `streaming_sample` | `hdqspp_v3` | 302.9781 | does not outperform raw on this streaming sample |
+
+The complete canonical result boundary is in `docs/REPORTING_CONTRACT.md`.
+
+## Cross-Dataset Audit
+
+3B extends the audit from WikiText-2 to OpenWebText and C4 English real
+streaming samples. The cross-dataset artifacts separate completed, failed,
+configured-only, and lightweight rows:
+
+- `artifacts/cross_dataset/cross_dataset_results.csv`
+- `artifacts/cross_dataset/dataset_status_matrix.csv`
+- `artifacts/cross_dataset/cross_dataset_summary.md`
+- `docs/CROSS_DATASET_AUDIT.md`
+
+The cross-dataset result is a risk-audit expansion, not a supported over-raw
+method claim.
+
+## Reproducibility
+
+Important verification commands:
+
+```bash
+python scripts/check_repo.py --clean
+python -m pytest -q
+python scripts/check_claim_hygiene.py
+python scripts/run_all_checks.py --timeout 300
+python scripts/run_release_checks.py --timeout 300
+python scripts/check_experiment_readiness.py
+```
+
+Rebuild the main WikiText-2 tables:
+
+```bash
+python scripts/analyze_significance.py --input artifacts/runs/run_registry.csv --output artifacts/stats
+python scripts/generate_tables.py
+python scripts/check_main_results_purity.py
+```
+
+Rebuild the cross-dataset audit:
+
+```bash
+python scripts/generate_cross_dataset_tables.py
+python scripts/analyze_cross_dataset_audit.py
+```
+
+## Artifact Lineage
+
+The append-oriented registry records training, filtering, data-preparation,
+failed, and superseded rows:
+
+- `artifacts/runs/run_registry.jsonl`
+- `artifacts/runs/run_registry.csv`
+- `artifacts/runs/migration_log.jsonl`
+
+Failed or superseded runs are retained for audit integrity rather than removed
+to make the project look cleaner.
+
+## Claim Boundary
+
+This release is a reproducible audit benchmark. It does not claim that HDQS++ v3
+outperforms raw data under the current fair benchmark.
+
+This is an experiment-candidate benchmark release, not a CCF-C-ready paper
+artifact.
+
+Do not claim:
+
+- supported HDQS++ improvement over raw
+- method-leadership or publication-ready method status
+- complete upstream OpenWebText/C4 benchmark completion
+- statistically supported improvement over raw
+- large-scale or web-scale corpus results
 
 ## Limitations
 
-- Current results are compact quick and paper-prototype runs.
-- Optional remote datasets are fallback records unless approved local/network
-  data are provided.
-- HDQS++ and DQCS are research-prototype methods, not validated final methods.
-- Synthetic canaries are not a formal privacy audit.
-- Attention timing is an auxiliary systems check and is hardware-dependent.
+- Current model scale is `small`.
+- The main protocol uses 3 seeds, so claims remain preliminary.
+- OpenWebText/C4 evidence is streaming-sample evidence only.
+- The tokenizer/model setting is limited.
+- Held-out test evaluation should only be used after method settings are frozen.
+- HDQS++ v1/v2/v3 do not have supported improvement over raw in current evidence.
 
-## What This Project Does Not Claim
+## Roadmap
 
-- It does not claim a completed CCF-C paper.
-- It does not claim readiness for publication.
-- It does not claim significant LLM performance improvement.
-- It does not claim official university or MOOC coursework completion.
-- It does not claim private-grader access or private-grader success.
+- 3C-1: freeze reporting contract and claim boundary.
+- 3C-2: clean public release structure and packaging.
+- 3C-3: prepare optional one-page summary, demo guide, and resume bullets under
+  the same reporting contract.
+- Future: run larger samples, larger model scales, and stronger seed budgets
+  before revisiting any method-success claim.
 
 ## Documentation
 
-See [METHOD](docs/METHOD.md), [EXPERIMENTS](docs/EXPERIMENTS.md),
-[RESEARCH_READINESS](docs/RESEARCH_READINESS.md),
-[FINAL_AUDIT](docs/FINAL_AUDIT.md),
-[CCF_C_EXPERIMENT_GAP_AUDIT](docs/CCF_C_EXPERIMENT_GAP_AUDIT.md),
-[EXPERIMENT_READINESS_REPORT](docs/EXPERIMENT_READINESS_REPORT.md),
-[CLAIM_ARTIFACT_MAP](docs/CLAIM_ARTIFACT_MAP.md),
-[LIMITATIONS](docs/LIMITATIONS.md), and [RESUME](docs/RESUME.md).
+Start here:
 
-## Supporting Implementations
-
-The broader `src/course_project_suite/` code contains educational search,
-reinforcement learning, classical ML, deep-learning layers, BPE, MiniGPT, DPO,
-and systems utilities. These are supporting foundations rather than the main
-research contribution.
-
-## License
-
-MIT License. See [LICENSE](LICENSE).
+- `PROJECT_ONE_PAGE.md`
+- `PROJECT_SUMMARY.md`
+- `TECHNICAL_OVERVIEW.md`
+- `DEMO_GUIDE.md`
+- `RESUME_BULLETS.md`
+- `docs/REPORTING_CONTRACT.md`
+- `docs/QUICKSTART.md`
+- `docs/BENCHMARK_PROTOCOL.md`
+- `docs/REPRODUCIBILITY.md`
+- `docs/ARTIFACT_INDEX.md`
+- `docs/PROJECT_EVIDENCE_MAP.md`
+- `docs/CROSS_DATASET_AUDIT.md`
+- `docs/FIGURE_INDEX.md`
+- `docs/LIMITATIONS.md`
+- `docs/METHOD_DASHBOARD.md`
+- `RELEASE_NOTES.md`
+- `artifacts/release/final_release_report.md`

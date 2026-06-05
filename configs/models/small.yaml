@@ -1,11 +1,11 @@
 {
   "model_key": "small",
   "architecture": "decoder_only_transformer_lm",
-  "vocab_type": "bpe",
+  "vocab_type": "character_shared",
   "layers": 6,
   "hidden_size": 384,
   "attention_heads": 6,
   "context_length": 512,
   "dropout": 0.1,
-  "intended_use": "paper-scale candidate; requires real data and compute"
+  "intended_use": "WikiText-2 dev candidate with a shared character vocabulary"
 }

@@ -1,18 +1,24 @@
 {
   "dataset_key": "wikitext2_paper",
   "dataset_name": "WikiText-2 raw",
-  "provider": "huggingface",
-  "hf_dataset": "Salesforce/wikitext",
-  "hf_subset": "wikitext-2-raw-v1",
-  "hf_split": "train",
+  "provider": "wikitext2_raw_urls",
+  "source": "WikiText-2 raw official split files mirrored by PyTorch examples",
+  "version": "wikitext-2-raw-v1",
+  "download_method": "urllib.request raw split download",
+  "split_urls": {
+    "train": "https://raw.githubusercontent.com/pytorch/examples/main/word_language_model/data/wikitext-2/train.txt",
+    "dev": "https://raw.githubusercontent.com/pytorch/examples/main/word_language_model/data/wikitext-2/valid.txt",
+    "test": "https://raw.githubusercontent.com/pytorch/examples/main/word_language_model/data/wikitext-2/test.txt"
+  },
   "text_field": "text",
   "allow_fallback": false,
   "required_real_data": true,
   "is_smoke": false,
   "streaming": false,
-  "cache_dir": ".cache/huggingface",
-  "max_documents": 50000,
-  "max_tokens": 2000000,
+  "cache_dir": "data/real/wikitext2_raw",
+  "max_documents": null,
+  "max_tokens": null,
   "seed": 13,
-  "license_note": "Use only after verifying upstream dataset terms and citation."
+  "license_note": "WikiText-2 by Merity et al.; verify upstream terms before release.",
+  "license_or_terms": "Research dataset; cite WikiText-2 and verify redistribution terms."
 }

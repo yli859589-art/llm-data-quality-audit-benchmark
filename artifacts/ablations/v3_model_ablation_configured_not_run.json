@@ -1,0 +1,17 @@
+[
+  {
+    "ablation_name": "ablation_v3_soft_weighting_only",
+    "reason": "Compute-limited Stage 2.6 run completed top 5 v3 ablations only.",
+    "run_status": "configured_not_run"
+  },
+  {
+    "ablation_name": "ablation_v3_without_length_guardrails",
+    "reason": "Compute-limited Stage 2.6 run completed top 5 v3 ablations only.",
+    "run_status": "configured_not_run"
+  },
+  {
+    "ablation_name": "ablation_v3_without_repetition_penalty",
+    "reason": "Compute-limited Stage 2.6 run completed top 5 v3 ablations only.",
+    "run_status": "configured_not_run"
+  }
+]

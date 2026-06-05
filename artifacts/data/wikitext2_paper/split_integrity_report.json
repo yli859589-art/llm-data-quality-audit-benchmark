@@ -1,0 +1,11 @@
+{
+  "checked_by": "scripts/check_split_integrity.py",
+  "dataset_scope": "official_split",
+  "errors": [],
+  "official_split_evidence": {
+    "dev": "data/real/wikitext2_raw/dev.txt",
+    "test": "data/real/wikitext2_raw/test.txt",
+    "train": "data/real/wikitext2_raw/train.txt"
+  },
+  "status": "passed"
+}

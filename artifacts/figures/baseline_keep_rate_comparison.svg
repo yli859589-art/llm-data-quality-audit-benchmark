@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="280">
+<desc>source=artifacts/diagnostics/hdqspp_failure_analysis.json</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Baseline keep-rate comparison</text>
+<text x="24" y="85" font-family="Arial" font-size="12">raw</text>
+<rect x="210" y="70" width="560.0" height="24" fill="#4c78a8"/>
+<text x="780.0" y="86" font-family="Arial" font-size="12">1.000</text>
+<text x="24" y="127" font-family="Arial" font-size="12">random_same_keep_rate</text>
+<rect x="210" y="112" width="336.0" height="24" fill="#4c78a8"/>
+<text x="556.0" y="128" font-family="Arial" font-size="12">0.600</text>
+<text x="24" y="169" font-family="Arial" font-size="12">hdqspp</text>
+<rect x="210" y="154" width="335.6" height="24" fill="#4c78a8"/>
+<text x="555.6" y="170" font-family="Arial" font-size="12">0.599</text>
+<text x="24" y="211" font-family="Arial" font-size="12">hdqspp_v2</text>
+<rect x="210" y="196" width="476.3" height="24" fill="#4c78a8"/>
+<text x="696.3" y="212" font-family="Arial" font-size="12">0.851</text>
+</svg>

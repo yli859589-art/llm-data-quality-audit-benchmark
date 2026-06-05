@@ -1,0 +1,17 @@
+[
+  {
+    "ablation_name": "ablation_v2_without_quality_diversity_balance",
+    "reason": "Compute-limited Stage 2.5 run completed top 5 ablations only.",
+    "run_status": "configured_not_run"
+  },
+  {
+    "ablation_name": "ablation_v2_hard_filtering",
+    "reason": "Compute-limited Stage 2.5 run completed top 5 ablations only.",
+    "run_status": "configured_not_run"
+  },
+  {
+    "ablation_name": "ablation_v2_soft_weighting_curriculum",
+    "reason": "Compute-limited Stage 2.5 run completed top 5 ablations only.",
+    "run_status": "configured_not_run"
+  }
+]

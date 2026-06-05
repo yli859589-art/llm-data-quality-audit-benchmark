@@ -1,0 +1,33 @@
+{
+  "experiment_key": "c4_en_dev",
+  "mode": "streaming_dev",
+  "dataset_config": "configs/data/c4_en_streaming.yaml",
+  "dataset_configs": ["configs/data/c4_en_streaming.yaml"],
+  "allow_fallback_in_data": false,
+  "required_real_data": true,
+  "target_keep_rate": 0.6,
+  "seeds": [1, 2, 3],
+  "baselines": ["raw", "random_same_keep_rate", "dedup_only", "hdqspp_v3"],
+  "filter_configs": {
+    "hdqspp_v2": "configs/filters/hdqspp_v2.yaml",
+    "hdqspp_v3": "configs/filters/hdqspp_v3.yaml"
+  },
+  "model_config": "configs/models/small.yaml",
+  "training_budget_tokens": 40960,
+  "training": {
+    "steps": 40,
+    "batch_size": 8,
+    "block_size": 128,
+    "eval_interval": 40,
+    "eval_batches": 2,
+    "learning_rate": 0.0006,
+    "device": "auto",
+    "timeout_seconds": 900
+  },
+  "completed_training_thresholds": {
+    "train_tokens": 40960,
+    "validation_tokens": 2000,
+    "evaluated_validation_tokens": 2048,
+    "train_steps": 40
+  }
+}

@@ -1,0 +1,8 @@
+comparison,effect_size_raw_minus_baseline_over_paired_std,mean_difference_raw_minus_baseline,paired_std,n_paired_seeds,safe_claim_level
+dedup_only_vs_raw,-0.053750876479477176,-0.10463368827073616,1.9466415270583866,3,trend_only_no_significance_claim
+hdqspp_vs_raw,-0.5137570858241184,-0.6426635394271069,1.2509093444350445,3,trend_only_no_significance_claim
+hdqspp_v2_vs_raw,-0.5149375347758326,-1.540351929034913,2.99133744388137,3,trend_only_no_significance_claim
+hdqspp_v2_no_token_frequency_vs_raw,-0.7973134097488244,-1.6438272196728,2.0617077294493904,3,trend_only_no_significance_claim
+hdqspp_v3_vs_raw,-0.35904785653751353,-0.6126174264954874,1.7062277781109128,3,trend_only_no_significance_claim
+length_filter_vs_raw,-1.7464467936305164,-2.5385584487709507,1.453556133533156,3,preliminary_trend_only_no_significance_claim
+random_same_keep_rate_vs_raw,-0.04816281041455137,-0.084373235200576,1.7518337172260283,3,trend_only_no_significance_claim

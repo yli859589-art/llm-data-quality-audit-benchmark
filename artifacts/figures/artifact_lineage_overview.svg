@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="280">
+<desc>source=artifacts/runs/run_registry.csv; generated_by_script=scripts/generate_project_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial" font-size="19">Artifact lineage overview by run status</text>
+<text x="24" y="87" font-family="Arial" font-size="12">completed_filtering_only</text>
+<rect x="280" y="72" width="237.6" height="22" fill="#bab0ac"/>
+<text x="527.6" y="87" font-family="Arial" font-size="11">42</text>
+<text x="24" y="121" font-family="Arial" font-size="12">completed_training</text>
+<rect x="280" y="106" width="560.0" height="22" fill="#4c78a8"/>
+<text x="850.0" y="121" font-family="Arial" font-size="11">99</text>
+<text x="24" y="155" font-family="Arial" font-size="12">configured_not_run</text>
+<rect x="280" y="140" width="33.9" height="22" fill="#bab0ac"/>
+<text x="323.9" y="155" font-family="Arial" font-size="11">6</text>
+<text x="24" y="189" font-family="Arial" font-size="12">failed_due_to_environment</text>
+<rect x="280" y="174" width="11.3" height="22" fill="#bab0ac"/>
+<text x="301.3" y="189" font-family="Arial" font-size="11">2</text>
+<text x="24" y="223" font-family="Arial" font-size="12">incomplete</text>
+<rect x="280" y="208" width="17.0" height="22" fill="#bab0ac"/>
+<text x="307.0" y="223" font-family="Arial" font-size="11">3</text>
+<text x="24" y="257" font-family="Arial" font-size="12">lightweight_dev</text>
+<rect x="280" y="242" width="5.7" height="22" fill="#bab0ac"/>
+<text x="295.7" y="257" font-family="Arial" font-size="11">1</text>
+</svg>

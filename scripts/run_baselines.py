@@ -1,64 +1,24 @@
 from __future__ import annotations
 
+from _bootstrap import bootstrap
+
+bootstrap()
+
 import argparse
-import csv
-import json
 from dataclasses import asdict
 
 from experiment_utils import load_json_yaml, rel, root
+from registry_utils import (
+    append_run,
+    config_hash,
+    environment_hash,
+    file_hash,
+    make_run_id,
+    now_utc,
+)
 
 from baselines.data_quality_baselines import run_baseline, write_baseline_artifacts
 from data.real_corpora import load_documents_from_config
-
-REGISTRY_FIELDS = [
-    "run_id",
-    "experiment_key",
-    "mode",
-    "dataset_key",
-    "baseline_name",
-    "seed",
-    "run_status",
-    "is_smoke",
-    "used_fallback",
-    "input_documents",
-    "output_documents",
-    "retention_rate",
-    "input_tokens",
-    "output_tokens",
-    "pii_hits_before",
-    "pii_hits_after",
-    "removed_duplicates",
-    "model_quality_metric",
-    "artifact_dir",
-]
-
-
-def _write_registry(rows: list[dict[str, object]]) -> None:
-    registry_csv = root / "artifacts" / "runs" / "run_registry.csv"
-    registry_jsonl = root / "artifacts" / "runs" / "run_registry.jsonl"
-    registry_md = root / "artifacts" / "runs" / "run_summary.md"
-    registry_csv.parent.mkdir(parents=True, exist_ok=True)
-    with registry_csv.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=REGISTRY_FIELDS)
-        writer.writeheader()
-        writer.writerows(rows)
-    registry_jsonl.write_text(
-        "\n".join(json.dumps(row, sort_keys=True) for row in rows) + "\n",
-        encoding="utf-8",
-    )
-    lines = [
-        "# Run Registry Summary",
-        "",
-        "| Dataset | Baseline | Seed | Status | Retention | Fallback |",
-        "|---|---|---:|---|---:|---|",
-    ]
-    for row in rows:
-        lines.append(
-            f"| {row['dataset_key']} | {row['baseline_name']} | {row['seed']} | "
-            f"{row['run_status']} | {float(row['retention_rate']):.3f} | "
-            f"{row['used_fallback']} |"
-        )
-    registry_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -91,35 +51,52 @@ def main() -> None:
                     result=result,
                 )
                 metrics = asdict(result)
-                status = "skipped" if result.skipped else "data_filter_only"
-                rows.append(
+                status = "incomplete" if result.skipped else "completed_filtering_only"
+                metrics_path = baseline_output / "metrics.json"
+                dataset_status = loaded.metadata.get("dataset_status") or (
+                    "fallback" if loaded.metadata.get("used_fallback") else "real_nonfallback"
+                )
+                dataset_scope = loaded.metadata.get("dataset_scope") or (
+                    "smoke_fixture" if loaded.metadata.get("is_smoke") else "official_split"
+                )
+                record = append_run(
                     {
-                        "run_id": (
-                            f"{config['experiment_key']}:{loaded.dataset_key}:"
-                            f"{baseline_name}:seed{seed}"
+                        "run_id": make_run_id(
+                            "filtering",
+                            loaded.dataset_key,
+                            baseline_name,
+                            seed,
+                            now_utc(),
                         ),
-                        "experiment_key": config["experiment_key"],
-                        "mode": config["mode"],
+                        "timestamp_utc": now_utc(),
+                        "command": f"python scripts/run_baselines.py --config {args.config}",
+                        "config_path": args.config,
+                        "config_hash": config_hash(args.config),
                         "dataset_key": loaded.dataset_key,
+                        "dataset_status": dataset_status,
+                        "dataset_scope": dataset_scope,
+                        "model_size": "none",
                         "baseline_name": baseline_name,
                         "seed": seed,
+                        "train_steps": 0,
+                        "train_tokens": metrics["input_tokens"],
+                        "validation_tokens": 0,
+                        "evaluated_validation_tokens": 0,
                         "run_status": status,
-                        "is_smoke": loaded.metadata.get("is_smoke", False),
-                        "used_fallback": loaded.metadata.get("used_fallback", False),
-                        "input_documents": metrics["input_documents"],
-                        "output_documents": metrics["output_documents"],
+                        "failure_reason": result.skip_reason,
+                        "artifact_path": rel(metrics_path),
+                        "artifact_hash": file_hash(metrics_path),
+                        "environment_fingerprint_hash": environment_hash(),
+                        "dataset_manifest_path": "",
+                        "metrics_path": rel(metrics_path),
                         "retention_rate": metrics["retention_rate"],
-                        "input_tokens": metrics["input_tokens"],
-                        "output_tokens": metrics["output_tokens"],
-                        "pii_hits_before": metrics["pii_hits_before"],
-                        "pii_hits_after": metrics["pii_hits_after"],
-                        "removed_duplicates": metrics["removed_duplicates"],
-                        "model_quality_metric": "NA",
-                        "artifact_dir": rel(baseline_output),
+                        "keep_rate": metrics["retention_rate"],
+                        "model_quality_metric": "filtering_only",
+                        "dedup_metric": metrics["removed_duplicates"],
                     }
                 )
-    _write_registry(rows)
-    print(f"Baseline registry rows: {len(rows)}")
+                rows.append(record)
+    print(f"Baseline filtering rows appended: {len(rows)}")
     print(f"Registry: {root / 'artifacts' / 'runs' / 'run_registry.csv'}")
 
 

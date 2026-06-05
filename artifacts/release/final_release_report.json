@@ -1,0 +1,149 @@
+{
+  "benchmark_scope_status": "multi_dataset_audit_candidate",
+  "ccf_c_ready": false,
+  "claim_hygiene_status": "passed",
+  "cross_dataset_status": [
+    {
+      "actual_documents": "751",
+      "actual_test_tokens": "279769",
+      "actual_train_tokens": "2229442",
+      "actual_validation_tokens": "244780",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/wikitext2_paper.yaml",
+      "content_hash": "eeb3be0dfe1cba4b75515f0415d08d681b5992f3eb77439fd7f76b20f0240880",
+      "dataset": "wikitext2_paper",
+      "dataset_scope": "official_split",
+      "dataset_status": "real_local_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "False",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/wikitext2_paper/data_manifest.json"
+    },
+    {
+      "actual_documents": "117",
+      "actual_test_tokens": "16433",
+      "actual_train_tokens": "128294",
+      "actual_validation_tokens": "9257",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/openwebtext_streaming.yaml",
+      "content_hash": "690ed5bdf15b6a48e3cdbc26ef82ced373a7bc770525187c4c16ba8fdb34ac77",
+      "dataset": "openwebtext_streaming",
+      "dataset_scope": "streaming_sample",
+      "dataset_status": "real_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "True",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/openwebtext_streaming/data_manifest.json"
+    },
+    {
+      "actual_documents": "399",
+      "actual_test_tokens": "16206",
+      "actual_train_tokens": "127236",
+      "actual_validation_tokens": "14830",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/c4_en_streaming.yaml",
+      "content_hash": "e13ceb6cc1b5eac9aeb555831cae3cc6b914f5f955f946e3c1964fb9d2ef342e",
+      "dataset": "c4_en_streaming",
+      "dataset_scope": "streaming_sample",
+      "dataset_status": "real_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "True",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/c4_en_streaming/data_manifest.json"
+    }
+  ],
+  "experiment_results_modified": false,
+  "fresh_unzip": {
+    "cache_scan_status": "passed",
+    "heavy_check_reason": "skip-heavy flag was provided",
+    "heavy_check_status": "skipped_by_request",
+    "lightweight_check_status": "passed",
+    "local_absolute_path_scan_status": "passed",
+    "nested_zip_scan_status": "passed",
+    "status": "passed"
+  },
+  "generated_at_utc": "2026-06-05T00:24:14+00:00",
+  "main_results_modified": false,
+  "method_status": "honest_audit_framework",
+  "protected_result_files": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": {
+      "actual_sha256": "8da3e015146193fcd5d1f5f47a9e0a5ed84f55a4182b4bb5932dc657b8daad4c",
+      "exists": true,
+      "expected_sha256": "8da3e015146193fcd5d1f5f47a9e0a5ed84f55a4182b4bb5932dc657b8daad4c",
+      "matches_expected": true
+    },
+    "artifacts/experiment_readiness_report.json": {
+      "actual_sha256": "9456f46adc79f21026439a5b6504f14c3029022afe977f3ca066d6c2c513f1e1",
+      "exists": true,
+      "expected_sha256": "9456f46adc79f21026439a5b6504f14c3029022afe977f3ca066d6c2c513f1e1",
+      "matches_expected": true
+    },
+    "artifacts/runs/run_registry.jsonl": {
+      "actual_sha256": "a05a06fca305cedf2c46dbead17ac222a5f09e73ab105538479a049df90a26ce",
+      "exists": true,
+      "expected_sha256": "a05a06fca305cedf2c46dbead17ac222a5f09e73ab105538479a049df90a26ce",
+      "matches_expected": true
+    },
+    "artifacts/stats/main_results.csv": {
+      "actual_sha256": "e40944bb6476d84e8c3fc65670b2dc5e7db62cf47ca7fc6d0051768458cd0e32",
+      "exists": true,
+      "expected_sha256": "e40944bb6476d84e8c3fc65670b2dc5e7db62cf47ca7fc6d0051768458cd0e32",
+      "matches_expected": true
+    },
+    "artifacts/tables/main_results.csv": {
+      "actual_sha256": "eab3478d19e04caf97e07fc31fcd3cc36089c19320a64e96f7bac9eb12d89921",
+      "exists": true,
+      "expected_sha256": "eab3478d19e04caf97e07fc31fcd3cc36089c19320a64e96f7bac9eb12d89921",
+      "matches_expected": true
+    }
+  },
+  "readiness": "EXPERIMENT-CANDIDATE",
+  "release_boundary": [
+    "Audit benchmark release candidate.",
+    "HDQS++ v3 does not outperform raw under the current fair benchmark.",
+    "OpenWebText/C4 evidence is streaming-sample evidence only.",
+    "No new 4A experiments are included in this release."
+  ],
+  "roadmap_4a_not_executed": [
+    "BPE tokenizer",
+    "medium model",
+    "larger OpenWebText/C4 streaming samples",
+    "stronger seed budget",
+    "held-out test evaluation after freezing",
+    "compute logs and larger-scale mechanism diagnostics"
+  ],
+  "secondary_method_finding": "hdqspp_v3_improves_over_v2_trend_but_not_raw",
+  "status": "release_candidate",
+  "validation": {
+    "check_experiment_readiness": "passed",
+    "check_repo_clean": "passed",
+    "claim_hygiene": "passed",
+    "make_check": "not_run_due_to_environment",
+    "make_release_check": "not_run_due_to_environment",
+    "mingw32_make_check": "passed",
+    "mingw32_make_release_check": "passed",
+    "pytest_69": "passed",
+    "run_all_checks_timeout_300": "passed",
+    "run_release_checks_timeout_300": "passed",
+    "verify_fresh_unzip_skip_heavy": "passed"
+  },
+  "version": "3C-3-release-candidate-v1",
+  "zip": {
+    "absolute_path_hits": [],
+    "cache_hits": [],
+    "entry_count": 833,
+    "nested_zip_hits": [],
+    "required_missing": [],
+    "size_bytes": 7294608,
+    "status": "passed",
+    "zip_file_name": "llm_data_quality_audit_benchmark_release_candidate_v1.zip",
+    "zip_path": "<local_user_path>",
+    "zip_sha256": "70c3c1746485e3b3245984f5faa2a6c62ec3087a97f0630d129a7f9d4dc2f5d8"
+  }
+}

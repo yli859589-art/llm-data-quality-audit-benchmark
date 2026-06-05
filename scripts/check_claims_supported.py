@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from _bootstrap import bootstrap
+
+bootstrap()
+
 from experiment_utils import root
 
 FORBIDDEN_CLAIMS = [
@@ -26,7 +30,6 @@ def main() -> None:
     scan_files = [
         root / "README.md",
         root / "docs" / "RESUME.md",
-        root / "docs" / "PAPER_DRAFT.md",
     ]
     errors = []
     for path in scan_files:

@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from _bootstrap import bootstrap
+
+bootstrap()
+
 import csv
 import json
 import re
@@ -52,7 +56,15 @@ def _require_fields(payload: dict[str, Any], fields: list[str], label: str) -> N
 
 
 def _check_no_absolute_paths() -> None:
-    absolute_path = re.compile(rf"(?:[A-Za-z]:(?:\\+|/(?!/))|/{'Users'}/|/{'home'}/[^/]+/)")
+    absolute_path = re.compile(
+        rf"(?:(?<![A-Za-z])[A-Za-z]:(?:\\+|/(?!/))|/{'Users'}/|/{'home'}/[^/]+/|/"
+        + "mnt"
+        + "/"
+        + "data"
+        + "/|/"
+        + "tmp"
+        + "/)"
+    )
     for base in [quick_dir, dataset_matrix, multi_seed, model_scaling, research, *readiness_bases]:
         if not base.exists():
             continue
@@ -289,6 +301,9 @@ experiment_readiness_required = [
     root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.json",
     root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.csv",
     root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.md",
+    root / "artifacts" / "data" / "wikitext2_paper" / "data_manifest.json",
+    root / "artifacts" / "data" / "wikitext2_paper" / "data_manifest.csv",
+    root / "artifacts" / "data" / "wikitext2_paper" / "data_manifest.md",
     root / "artifacts" / "baselines" / "wikitext2_smoke" / "raw" / "seed_13" / "metrics.json",
     root
     / "artifacts"
@@ -299,31 +314,107 @@ experiment_readiness_required = [
     / "metrics.json",
     root / "artifacts" / "runs" / "run_registry.csv",
     root / "artifacts" / "runs" / "run_registry.jsonl",
+    root / "artifacts" / "runs" / "migration_log.jsonl",
     root / "artifacts" / "runs" / "run_summary.md",
+    root / "artifacts" / "data" / "wikitext2_paper" / "split_integrity_report.json",
     root / "artifacts" / "frozen" / "hdqspp_frozen_wikitext2_smoke.json",
+    root / "artifacts" / "frozen" / "hdqspp_frozen_wikitext2.json",
+    root / "artifacts" / "frozen" / "hdqspp_freezing_report.md",
+    root / "artifacts" / "frozen" / "no_test_leakage_report.json",
+    root / "configs" / "frozen" / "hdqspp_frozen_wikitext2.yaml",
+    root / "configs" / "frozen" / "hdqspp_v2_frozen_wikitext2.yaml",
+    root / "configs" / "frozen" / "hdqspp_v3_frozen_wikitext2.yaml",
+    root / "artifacts" / "diagnostics" / "hdqspp_failure_analysis.csv",
+    root / "artifacts" / "diagnostics" / "hdqspp_failure_analysis.json",
+    root / "artifacts" / "diagnostics" / "hdqspp_failure_analysis.md",
+    root / "artifacts" / "diagnostics" / "method_error_cases.csv",
+    root / "artifacts" / "diagnostics" / "method_error_cases.md",
+    root / "artifacts" / "method_debug" / "method_debug_results.csv",
+    root / "artifacts" / "method_debug" / "method_debug_results.json",
+    root / "artifacts" / "method_debug" / "method_debug_summary.md",
+    root / "artifacts" / "methods" / "hdqspp_v2_design.json",
+    root / "artifacts" / "methods" / "hdqspp_v2_component_weights.json",
+    root / "artifacts" / "methods" / "hdqspp_v2_freezing_report.md",
+    root / "artifacts" / "methods" / "promising_variants.csv",
+    root / "artifacts" / "methods" / "promising_variants.json",
+    root / "artifacts" / "methods" / "promising_variants.md",
+    root / "artifacts" / "methods" / "hdqspp_v3_design.json",
+    root / "artifacts" / "methods" / "hdqspp_v3_freezing_report.md",
     root / "artifacts" / "ablations" / "smoke" / "ablation_results.csv",
     root / "artifacts" / "ablations" / "smoke" / "ablation_results.json",
+    root / "artifacts" / "ablations" / "ablation_results.csv",
+    root / "artifacts" / "ablations" / "ablation_results.json",
+    root / "artifacts" / "ablations" / "ablation_summary.md",
+    root / "artifacts" / "ablations" / "model_training_ablation_results.csv",
+    root / "artifacts" / "ablations" / "model_training_ablation_results.json",
+    root / "artifacts" / "ablations" / "model_training_ablation_summary.md",
+    root / "artifacts" / "ablations" / "model_training_ablation_configured_not_run.json",
+    root / "artifacts" / "ablations" / "v3_model_ablation_results.csv",
+    root / "artifacts" / "ablations" / "v3_model_ablation_results.json",
+    root / "artifacts" / "ablations" / "v3_model_ablation_summary.md",
+    root / "artifacts" / "ablations" / "v3_model_ablation_configured_not_run.json",
     root / "artifacts" / "stats" / "main_results.csv",
     root / "artifacts" / "stats" / "main_results.tex",
+    root / "artifacts" / "stats" / "significance_tests.csv",
     root / "artifacts" / "stats" / "significance_tests.json",
+    root / "artifacts" / "stats" / "bootstrap_ci.json",
+    root / "artifacts" / "stats" / "effect_sizes.csv",
+    root / "artifacts" / "stats" / "method_comparison_summary.csv",
+    root / "artifacts" / "stats" / "method_status_report.md",
     root / "artifacts" / "stats" / "claim_safety_report.md",
     root / "artifacts" / "tables" / "baseline_comparison.md",
     root / "artifacts" / "tables" / "significance_summary.md",
+    root / "artifacts" / "tables" / "main_results.csv",
+    root / "artifacts" / "tables" / "filtering_results.csv",
+    root / "artifacts" / "tables" / "smoke_results.csv",
+    root / "artifacts" / "tables" / "lightweight_dev_results.csv",
+    root / "artifacts" / "tables" / "model_training_results.csv",
+    root / "artifacts" / "tables" / "ablation_table.csv",
     root / "artifacts" / "figures" / "baseline_retention.svg",
     root / "artifacts" / "figures" / "claim_support_boundary.svg",
+    root / "artifacts" / "figures" / "seed_confidence_intervals.svg",
+    root / "artifacts" / "figures" / "privacy_utility_tradeoff.svg",
+    root / "artifacts" / "figures" / "ablation_effects.svg",
+    root / "artifacts" / "figures" / "model_scale_comparison.svg",
+    root / "artifacts" / "figures" / "hdqspp_score_distribution.svg",
+    root / "artifacts" / "figures" / "quality_vs_loss_proxy.svg",
+    root / "artifacts" / "figures" / "kept_vs_dropped_examples.svg",
+    root / "artifacts" / "figures" / "baseline_keep_rate_comparison.svg",
+    root / "artifacts" / "figures" / "method_component_correlation.svg",
+    root / "artifacts" / "figures" / "distribution_shift_after_filtering.svg",
+    root / "artifacts" / "figures" / "keep_rate_vs_validation_ppl.svg",
+    root / "artifacts" / "figures" / "model_ablation_effects.svg",
+    root / "artifacts" / "figures" / "v3_ablation_effects.svg",
+    root / "artifacts" / "figures" / "method_comparison_ci.svg",
+    root / "artifacts" / "figures" / "v3_vs_baselines.svg",
+    root / "artifacts" / "figures" / "keep_rate_vs_ppl.svg",
+    root / "artifacts" / "figures" / "component_effects_v3.svg",
+    root / "artifacts" / "figures" / "promising_variant_selection.svg",
+    root / "artifacts" / "figures" / "project_pipeline.svg",
+    root / "artifacts" / "figures" / "benchmark_protocol.svg",
+    root / "artifacts" / "figures" / "main_results_leaderboard.svg",
+    root / "artifacts" / "figures" / "failure_mode_summary.svg",
+    root / "artifacts" / "figures" / "artifact_lineage_overview.svg",
     root / "artifacts" / "model_cards" / "tiny.json",
     root / "artifacts" / "model_cards" / "small.json",
     root / "artifacts" / "model_cards" / "medium.json",
     root / "artifacts" / "experiment_readiness_report.json",
+    root / "docs" / "METHOD_DASHBOARD.md",
+    root / "docs" / "PROJECT_EVIDENCE_MAP.md",
 ]
 for path in experiment_readiness_required:
     _require(path, "experiment-readiness artifact")
 
-manifest = _load_json(root / "artifacts" / "data_manifest.json")
-if not manifest["used_fallback"]:
+smoke_manifest = _load_json(root / "artifacts" / "data" / "wikitext2_smoke" / "data_manifest.json")
+if not smoke_manifest["used_fallback"]:
     raise SystemExit("Smoke data manifest should explicitly label local fallback usage.")
-if manifest["required_real_data"]:
+if smoke_manifest["required_real_data"]:
     raise SystemExit("Smoke data manifest must not be labeled as required real data.")
+paper_manifest = _load_json(root / "artifacts" / "data" / "wikitext2_paper" / "data_manifest.json")
+if paper_manifest["used_fallback"]:
+    raise SystemExit("WikiText-2 paper manifest must not use fallback.")
+if paper_manifest["dataset_status"] not in {"real_nonfallback", "real_local_nonfallback"}:
+    raise SystemExit("WikiText-2 paper manifest must be real non-fallback data.")
 registry_rows = _load_csv(root / "artifacts" / "runs" / "run_registry.csv")
 if len(registry_rows) < 8:
     raise SystemExit("Run registry has too few baseline rows.")
@@ -368,7 +459,18 @@ for csv_path in [
     model_scaling / "model_scaling_summary.csv",
     root / "artifacts" / "runs" / "run_registry.csv",
     root / "artifacts" / "stats" / "main_results.csv",
+    root / "artifacts" / "stats" / "significance_tests.csv",
+    root / "artifacts" / "stats" / "effect_sizes.csv",
+    root / "artifacts" / "stats" / "method_comparison_summary.csv",
     root / "artifacts" / "ablations" / "smoke" / "ablation_results.csv",
+    root / "artifacts" / "ablations" / "ablation_results.csv",
+    root / "artifacts" / "ablations" / "model_training_ablation_results.csv",
+    root / "artifacts" / "ablations" / "v3_model_ablation_results.csv",
+    root / "artifacts" / "tables" / "ablation_table.csv",
+    root / "artifacts" / "diagnostics" / "hdqspp_failure_analysis.csv",
+    root / "artifacts" / "diagnostics" / "method_error_cases.csv",
+    root / "artifacts" / "method_debug" / "method_debug_results.csv",
+    root / "artifacts" / "methods" / "promising_variants.csv",
 ]:
     if not _load_csv(csv_path):
         raise SystemExit(f"CSV artifact has no rows: {csv_path.relative_to(root)}")

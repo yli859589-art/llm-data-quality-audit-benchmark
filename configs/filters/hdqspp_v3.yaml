@@ -1,0 +1,23 @@
+{
+  "method": "hdqspp_v3",
+  "dataset_key": "wikitext2_paper",
+  "selection_split": "dev",
+  "test_split_used_for_selection": false,
+  "retention_ratio": 0.85,
+  "base_quality_weight": 0.55,
+  "quality_diversity_weight": 0.23,
+  "repetition_weight": 0.14,
+  "weak_length_guardrail_weight": 0.08,
+  "token_frequency_weight": 0.0,
+  "use_token_frequency": false,
+  "use_quality_diversity_balance": true,
+  "use_repetition_penalty": true,
+  "use_length_guardrails": true,
+  "selection_mode": "calibrated_soft_curriculum",
+  "deterministic_top_fraction": 0.72,
+  "soft_sampling_temperature": 0.2,
+  "min_bin_retention_fraction": 0.45,
+  "curriculum_order": "score_interleave",
+  "seed": 0,
+  "claim_boundary": "method candidate frozen from dev evidence; not a supported improvement claim"
+}

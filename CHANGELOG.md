@@ -1,5 +1,31 @@
 # Changelog
 
+## 3C-3-release-candidate-v1 - 2026-06-05
+
+- Added public project display package files for GitHub review, demos,
+  presentation notes, figure interpretation, and resume-safe bullets.
+- Added final release report generation and required final release artifacts
+  under `artifacts/release/`.
+- Extended fresh-unzip verification and release checks to require the 3C-3
+  display package and final release evidence.
+- Preserved `main_results`, cross-dataset results, experiment readiness,
+  method status, and append-only registry history.
+- Kept 4A as a future roadmap only; no new BPE, medium-model, larger-sample, or
+  additional experiment results were added.
+
+## 3C-2-release-candidate - 2026-06-05
+
+- Archived paper, reviewer, submission, and CCF-C gap notes under
+  `docs/future_publication_notes/` so they no longer drive the GitHub release
+  narrative.
+- Added `docs/README.md`, `docs/FRESH_CLONE_TEST.md`, and
+  `scripts/verify_fresh_unzip.py`.
+- Updated MANIFEST, RELEASE_NOTES, RELEASE_CHECKLIST, and release checks for a
+  clean GitHub release-candidate structure.
+- Added fresh-unzip verification reports under `artifacts/release/`.
+- Preserved all experiment result artifacts, `main_results`, cross-dataset
+  results, and append-only registry history.
+
 ## 4.5.0 - 2026-06-04
 
 - Added CCF-C-style experiment-readiness infrastructure with explicit
@@ -105,3 +131,17 @@
 ## 2.1.0
 
 - Added supporting AI/ML implementation families, deterministic checks, and portfolio-safe documentation.
+# 3A-release-ready - 2026-06-05
+
+- Rewrote `README.md` as a GitHub-facing audit benchmark entry point.
+- Added quickstart, benchmark protocol, artifact index, failure cases, release
+  checklist, manifest, release notes, and version metadata.
+- Added release entry scripts: `run_all_checks.py`, `run_minimal_benchmark.py`,
+  `run_audit_benchmark.py`, `run_release_checks.py`,
+  `clean_project_artifacts.py`, and `generate_project_dashboard.py`.
+- Added `Makefile` targets for checks, tables, figures, dashboard, and release
+  validation.
+- Unified primary `method_status` wording to `honest_audit_framework` while
+  preserving `hdqspp_v3_improves_over_v2_trend_but_not_raw` as a secondary
+  finding.
+- No new OpenWebText, C4, medium-model, or HDQS++ v4/v5 experiments were added.

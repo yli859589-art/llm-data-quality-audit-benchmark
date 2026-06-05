@@ -1,0 +1,20 @@
+{
+  "dry_run": false,
+  "policy": "cache-only cleanup; registry, main results, diagnostics, stats, and audit artifacts are preserved",
+  "protected_artifacts": [
+    "artifacts/runs/run_registry.jsonl",
+    "artifacts/runs/run_registry.csv",
+    "artifacts/tables/main_results.csv",
+    "artifacts/stats/main_results.csv",
+    "artifacts/diagnostics",
+    "artifacts/stats",
+    "artifacts/figures"
+  ],
+  "removed_count": 3,
+  "removed_paths": [
+    "scripts/__pycache__/clean_artifacts.cpython-312.pyc",
+    "scripts/__pycache__/experiment_utils.cpython-312.pyc",
+    "scripts/__pycache__"
+  ],
+  "timestamp_utc": "2026-06-04T17:47:49+00:00"
+}

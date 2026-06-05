@@ -1,0 +1,63 @@
+{
+  "baseline_stability_statement": "raw and dedup_only are the closest baselines in the completed rows; random_same_keep_rate is more variable on streaming samples",
+  "completed_rows": 36,
+  "dataset_statuses": [
+    {
+      "actual_documents": "751",
+      "actual_test_tokens": "279769",
+      "actual_train_tokens": "2229442",
+      "actual_validation_tokens": "244780",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/wikitext2_paper.yaml",
+      "content_hash": "eeb3be0dfe1cba4b75515f0415d08d681b5992f3eb77439fd7f76b20f0240880",
+      "dataset": "wikitext2_paper",
+      "dataset_scope": "official_split",
+      "dataset_status": "real_local_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "False",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/wikitext2_paper/data_manifest.json"
+    },
+    {
+      "actual_documents": "117",
+      "actual_test_tokens": "16433",
+      "actual_train_tokens": "128294",
+      "actual_validation_tokens": "9257",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/openwebtext_streaming.yaml",
+      "content_hash": "690ed5bdf15b6a48e3cdbc26ef82ced373a7bc770525187c4c16ba8fdb34ac77",
+      "dataset": "openwebtext_streaming",
+      "dataset_scope": "streaming_sample",
+      "dataset_status": "real_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "True",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/openwebtext_streaming/data_manifest.json"
+    },
+    {
+      "actual_documents": "399",
+      "actual_test_tokens": "16206",
+      "actual_train_tokens": "127236",
+      "actual_validation_tokens": "14830",
+      "completed_training_rows": "12",
+      "config_path": "configs/data/c4_en_streaming.yaml",
+      "content_hash": "e13ceb6cc1b5eac9aeb555831cae3cc6b914f5f955f946e3c1964fb9d2ef342e",
+      "dataset": "c4_en_streaming",
+      "dataset_scope": "streaming_sample",
+      "dataset_status": "real_nonfallback",
+      "failed_rows": "0",
+      "failure_reason": "",
+      "is_full_dataset": "False",
+      "is_streaming_sample": "True",
+      "lightweight_dev_rows": "0",
+      "manifest_path": "artifacts/data/c4_en_streaming/data_manifest.json"
+    }
+  ],
+  "failure_rows": 0,
+  "hdqspp_v3_statement": "HDQS++ v3 does not outperform raw by mean PPL on the completed datasets: c4_en_streaming: hdqspp_v3 mean PPL 302.9781 is above raw (raw 174.5871); openwebtext_streaming: hdqspp_v3 mean PPL 253.3836 is above raw (raw 133.5411); wikitext2_paper: hdqspp_v3 mean PPL 13.2341 is above raw (raw 12.6214)",
+  "raw_statement": "raw has completed rows on 3 dataset(s)"
+}

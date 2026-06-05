@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520">
+<desc>source=artifacts/diagnostics/hdqspp_failure_analysis.json</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Kept vs dropped examples</text>
+<text x="24" y="66" font-family="Arial" font-size="14">Top dropped low proxy-loss examples</text>
+<text x="570" y="66" font-family="Arial" font-size="14">Top kept low HDQS++ score examples</text>
+<text x="24" y="96" font-family="Arial" font-size="11">= &lt;unk&gt; points , &lt;unk&gt; = &lt;unk&gt; points , &lt;unk&gt;</text>
+<text x="24" y="184" font-family="Arial" font-size="11">= Hope Highway = The Hope Highway , also known as the Hope Road &lt;unk&gt; , is a Forest Highway located in the Kenai Peninsula Borough , in the U.S. state of Alaska . The highway connects the city of Hope to the Seward Highw</text>
+<text x="24" y="272" font-family="Arial" font-size="11">= M @-@ 47 ( Michigan highway ) = M @-@ 47 is a north – south state trunkline highway in the US state of Michigan . It runs near Saginaw and Midland in the Tri @-@ Cities area of the Lower Peninsula . The highway runs th</text>
+<text x="24" y="360" font-family="Arial" font-size="11">= 2 / 4th Machine Gun Battalion ( Australia ) = The 2 / 4th Machine Gun Battalion was an Australian Army unit raised for service with the all volunteer Second Australian Imperial Force ( 2nd AIF ) during the Second World</text>
+<text x="570" y="96" font-family="Arial" font-size="11">= Midge ( Barbie ) = Midge &lt;unk&gt; is a fictional doll character in the Barbie line of toys by Mattel that was first released in 1963 . Midge was created , along with &lt;unk&gt; , to counteract criticism that claimed Barbie was</text>
+<text x="570" y="184" font-family="Arial" font-size="11">= Kakapo = The kakapo ( Māori : kākāpō or night parrot ) , &lt;unk&gt; &lt;unk&gt; ( Gray , 1845 ) , also called owl parrot , is a species of large , flightless , nocturnal , ground @-@ dwelling parrot of the super @-@ family &lt;unk&gt; </text>
+<text x="570" y="272" font-family="Arial" font-size="11">= Nicole Franklin = Nicole Franklin is a fictional character from the Australian Channel Seven soap opera Home and Away , played by Tessa James . She debuted on @-@ screen during the episode airing on 18 April 2008 . Nic</text>
+<text x="570" y="360" font-family="Arial" font-size="11">= WASP @-@ 13b = WASP @-@ 13b is an extrasolar planet that was discovered in 2008 in the orbit of the &lt;unk&gt; star WASP @-@ 13 . The planet has a mass of nearly half that of Jupiter , but a radius five @-@ &lt;unk&gt; the size o</text>
+</svg>

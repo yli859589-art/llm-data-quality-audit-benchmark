@@ -7,27 +7,10 @@ Interpretation: unsupported rows are claim-safety warnings
 
 | Dataset | Baseline | Rows | Claim status |
 |---|---|---:|---|
-| wikitext2_smoke | raw | 1 | unsupported_seed_count |
-| wikitext2_smoke | random_same_keep_rate | 1 | unsupported_seed_count |
-| wikitext2_smoke | length_filter | 1 | unsupported_seed_count |
-| wikitext2_smoke | c4_gopher_heuristic | 1 | unsupported_seed_count |
-| wikitext2_smoke | dedup_only | 1 | unsupported_seed_count |
-| wikitext2_smoke | perplexity_quality_ngram | 1 | unsupported_seed_count |
-| wikitext2_smoke | independent_quality_score | 1 | unsupported_seed_count |
-| wikitext2_smoke | optional_external_wrapper | 1 | unsupported_seed_count |
-| openwebtext_smoke | raw | 1 | unsupported_seed_count |
-| openwebtext_smoke | random_same_keep_rate | 1 | unsupported_seed_count |
-| openwebtext_smoke | length_filter | 1 | unsupported_seed_count |
-| openwebtext_smoke | c4_gopher_heuristic | 1 | unsupported_seed_count |
-| openwebtext_smoke | dedup_only | 1 | unsupported_seed_count |
-| openwebtext_smoke | perplexity_quality_ngram | 1 | unsupported_seed_count |
-| openwebtext_smoke | independent_quality_score | 1 | unsupported_seed_count |
-| openwebtext_smoke | optional_external_wrapper | 1 | unsupported_seed_count |
-| c4_en_smoke | raw | 1 | unsupported_seed_count |
-| c4_en_smoke | random_same_keep_rate | 1 | unsupported_seed_count |
-| c4_en_smoke | length_filter | 1 | unsupported_seed_count |
-| c4_en_smoke | c4_gopher_heuristic | 1 | unsupported_seed_count |
-| c4_en_smoke | dedup_only | 1 | unsupported_seed_count |
-| c4_en_smoke | perplexity_quality_ngram | 1 | unsupported_seed_count |
-| c4_en_smoke | independent_quality_score | 1 | unsupported_seed_count |
-| c4_en_smoke | optional_external_wrapper | 1 | unsupported_seed_count |
+| wikitext2_paper | dedup_only | 3 | trend_only_ci_crosses_zero |
+| wikitext2_paper | hdqspp | 3 | trend_only_ci_crosses_zero |
+| wikitext2_paper | hdqspp_v2 | 3 | trend_only_ci_crosses_zero |
+| wikitext2_paper | hdqspp_v2_no_token_frequency | 3 | trend_only_ci_crosses_zero |
+| wikitext2_paper | hdqspp_v3 | 3 | trend_only_ci_crosses_zero |
+| wikitext2_paper | length_filter | 3 | negative_preliminary_trend |
+| wikitext2_paper | random_same_keep_rate | 3 | trend_only_ci_crosses_zero |

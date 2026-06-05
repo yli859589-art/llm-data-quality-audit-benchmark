@@ -1,0 +1,29 @@
+{
+  "experiment_key": "method_debug",
+  "mode": "method_debug",
+  "dataset_config": "configs/data/wikitext2_paper.yaml",
+  "allow_fallback_in_data": false,
+  "required_real_data": true,
+  "target_keep_rate": 0.6,
+  "seeds": [13],
+  "candidate_methods": [
+    "hdqspp",
+    "hdqspp_v2",
+    "v2_without_length_prior",
+    "v2_without_distribution_preservation",
+    "v2_without_token_frequency_preservation",
+    "v2_without_repetition_penalty",
+    "v2_hard_filtering",
+    "v2_soft_weighting_curriculum",
+    "random_same_keep_rate",
+    "dedup_only"
+  ],
+  "filter_configs": {
+    "hdqspp_v2": "configs/filters/hdqspp_v2.yaml"
+  },
+  "method_debug": {
+    "status": "lightweight_dev",
+    "max_examples": 60,
+    "notes": "Proxy-only sandbox; never included in main_results."
+  }
+}

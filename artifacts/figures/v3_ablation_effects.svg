@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="390">
+<desc>source=artifacts/ablations/v3_model_ablation_results.csv; generated_by_script=scripts/run_v3_ablation.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">HDQS++ v3 model-training ablation PPL</text>
+<text x="24" y="79" font-family="Arial" font-size="11">ablation_v3_full</text>
+<rect x="330" y="64" width="537.9" height="20" fill="#4c78a8"/>
+<text x="877.9" y="78" font-family="Arial" font-size="11">13.522</text>
+<text x="24" y="111" font-family="Arial" font-size="11">ablation_v3_without_soft_weighting</text>
+<rect x="330" y="96" width="501.8" height="20" fill="#4c78a8"/>
+<text x="841.8" y="110" font-family="Arial" font-size="11">12.615</text>
+<text x="24" y="143" font-family="Arial" font-size="11">ablation_v3_without_keep_rate_calibration</text>
+<rect x="330" y="128" width="577.9" height="20" fill="#4c78a8"/>
+<text x="917.9" y="142" font-family="Arial" font-size="11">14.527</text>
+<text x="24" y="175" font-family="Arial" font-size="11">ablation_v3_without_quality_diversity_balance</text>
+<rect x="330" y="160" width="600.0" height="20" fill="#4c78a8"/>
+<text x="940.0" y="174" font-family="Arial" font-size="11">15.082</text>
+<text x="24" y="207" font-family="Arial" font-size="11">ablation_v3_hard_filtering_only</text>
+<rect x="330" y="192" width="542.8" height="20" fill="#4c78a8"/>
+<text x="882.8" y="206" font-family="Arial" font-size="11">13.645</text>
+<text x="24" y="239" font-family="Arial" font-size="11">raw</text>
+<rect x="330" y="224" width="505.2" height="20" fill="#bab0ac"/>
+<text x="845.2" y="238" font-family="Arial" font-size="11">12.700</text>
+<text x="24" y="271" font-family="Arial" font-size="11">random_same_keep_rate</text>
+<rect x="330" y="256" width="481.7" height="20" fill="#bab0ac"/>
+<text x="821.7" y="270" font-family="Arial" font-size="11">12.110</text>
+<text x="24" y="303" font-family="Arial" font-size="11">dedup_only</text>
+<rect x="330" y="288" width="482.1" height="20" fill="#bab0ac"/>
+<text x="822.1" y="302" font-family="Arial" font-size="11">12.119</text>
+<text x="24" y="335" font-family="Arial" font-size="11">hdqspp_v2_no_token_frequency</text>
+<rect x="330" y="320" width="481.0" height="20" fill="#bab0ac"/>
+<text x="821.0" y="334" font-family="Arial" font-size="11">12.090</text>
+</svg>

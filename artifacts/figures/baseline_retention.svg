@@ -1,67 +1,191 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="544">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1538">
+<desc>generated_by_script=scripts/generate_figures.py; source_artifact=artifacts/runs/run_registry.csv; source_artifact_hash=6628842f4dd0d615</desc>
 <rect width="100%" height="100%" fill="white"/>
-<text x="20" y="24" font-family="Arial" font-size="16">Baseline retention rates</text>
-<text x="20" y="66" font-family="Arial" font-size="11">wikitext2_smoke / raw</text>
-<rect x="250" y="52" width="500" height="16" fill="#4c78a8"/>
-<text x="758" y="65" font-family="Arial" font-size="11">1.00</text>
-<text x="20" y="90" font-family="Arial" font-size="11">wikitext2_smoke / random_same_keep_rate</text>
-<rect x="250" y="76" width="300" height="16" fill="#4c78a8"/>
-<text x="558" y="89" font-family="Arial" font-size="11">0.60</text>
-<text x="20" y="114" font-family="Arial" font-size="11">wikitext2_smoke / length_filter</text>
-<rect x="250" y="100" width="300" height="16" fill="#4c78a8"/>
-<text x="558" y="113" font-family="Arial" font-size="11">0.60</text>
-<text x="20" y="138" font-family="Arial" font-size="11">wikitext2_smoke / c4_gopher_heuristic</text>
-<rect x="250" y="124" width="300" height="16" fill="#4c78a8"/>
-<text x="558" y="137" font-family="Arial" font-size="11">0.60</text>
-<text x="20" y="162" font-family="Arial" font-size="11">wikitext2_smoke / dedup_only</text>
-<rect x="250" y="148" width="166" height="16" fill="#4c78a8"/>
-<text x="424" y="161" font-family="Arial" font-size="11">0.33</text>
-<text x="20" y="186" font-family="Arial" font-size="11">wikitext2_smoke / perplexity_quality_ngram</text>
-<rect x="250" y="172" width="300" height="16" fill="#4c78a8"/>
-<text x="558" y="185" font-family="Arial" font-size="11">0.60</text>
-<text x="20" y="210" font-family="Arial" font-size="11">wikitext2_smoke / independent_quality_score</text>
-<rect x="250" y="196" width="300" height="16" fill="#4c78a8"/>
-<text x="558" y="209" font-family="Arial" font-size="11">0.60</text>
-<text x="20" y="234" font-family="Arial" font-size="11">openwebtext_smoke / raw</text>
-<rect x="250" y="220" width="500" height="16" fill="#4c78a8"/>
-<text x="758" y="233" font-family="Arial" font-size="11">1.00</text>
-<text x="20" y="258" font-family="Arial" font-size="11">openwebtext_smoke / random_same_keep_rate</text>
-<rect x="250" y="244" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="257" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="282" font-family="Arial" font-size="11">openwebtext_smoke / length_filter</text>
-<rect x="250" y="268" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="281" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="306" font-family="Arial" font-size="11">openwebtext_smoke / c4_gopher_heuristic</text>
-<rect x="250" y="292" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="305" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="330" font-family="Arial" font-size="11">openwebtext_smoke / dedup_only</text>
-<rect x="250" y="316" width="250" height="16" fill="#4c78a8"/>
-<text x="508" y="329" font-family="Arial" font-size="11">0.50</text>
-<text x="20" y="354" font-family="Arial" font-size="11">openwebtext_smoke / perplexity_quality_ngram</text>
-<rect x="250" y="340" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="353" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="378" font-family="Arial" font-size="11">openwebtext_smoke / independent_quality_score</text>
-<rect x="250" y="364" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="377" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="402" font-family="Arial" font-size="11">c4_en_smoke / raw</text>
-<rect x="250" y="388" width="500" height="16" fill="#4c78a8"/>
-<text x="758" y="401" font-family="Arial" font-size="11">1.00</text>
-<text x="20" y="426" font-family="Arial" font-size="11">c4_en_smoke / random_same_keep_rate</text>
-<rect x="250" y="412" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="425" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="450" font-family="Arial" font-size="11">c4_en_smoke / length_filter</text>
-<rect x="250" y="436" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="449" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="474" font-family="Arial" font-size="11">c4_en_smoke / c4_gopher_heuristic</text>
-<rect x="250" y="460" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="473" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="498" font-family="Arial" font-size="11">c4_en_smoke / dedup_only</text>
-<rect x="250" y="484" width="250" height="16" fill="#4c78a8"/>
-<text x="508" y="497" font-family="Arial" font-size="11">0.50</text>
-<text x="20" y="522" font-family="Arial" font-size="11">c4_en_smoke / perplexity_quality_ngram</text>
-<rect x="250" y="508" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="521" font-family="Arial" font-size="11">0.64</text>
-<text x="20" y="546" font-family="Arial" font-size="11">c4_en_smoke / independent_quality_score</text>
-<rect x="250" y="532" width="318" height="16" fill="#4c78a8"/>
-<text x="576" y="545" font-family="Arial" font-size="11">0.64</text>
+<text x="24" y="32" font-family="Arial" font-size="18">Baseline retention rates</text>
+<text x="20" y="70" font-family="Arial" font-size="11">wikitext2_smoke / raw</text>
+<rect x="290" y="56" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="69" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="94" font-family="Arial" font-size="11">wikitext2_smoke / random_same_keep_rate</text>
+<rect x="290" y="80" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="93" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="118" font-family="Arial" font-size="11">wikitext2_smoke / length_filter</text>
+<rect x="290" y="104" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="117" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="142" font-family="Arial" font-size="11">wikitext2_smoke / c4_gopher_heuristic</text>
+<rect x="290" y="128" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="141" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="166" font-family="Arial" font-size="11">wikitext2_smoke / dedup_only</text>
+<rect x="290" y="152" width="166" height="16" fill="#4c78a8"/>
+<text x="464" y="165" font-family="Arial" font-size="11">0.33</text>
+<text x="20" y="190" font-family="Arial" font-size="11">wikitext2_smoke / perplexity_quality_ngram</text>
+<rect x="290" y="176" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="189" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="214" font-family="Arial" font-size="11">wikitext2_smoke / independent_quality_score</text>
+<rect x="290" y="200" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="213" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="238" font-family="Arial" font-size="11">wikitext2_smoke / optional_external_wrapper</text>
+<rect x="290" y="224" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="237" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="262" font-family="Arial" font-size="11">openwebtext_smoke / raw</text>
+<rect x="290" y="248" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="261" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="286" font-family="Arial" font-size="11">openwebtext_smoke / random_same_keep_rate</text>
+<rect x="290" y="272" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="285" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="310" font-family="Arial" font-size="11">openwebtext_smoke / length_filter</text>
+<rect x="290" y="296" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="309" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="334" font-family="Arial" font-size="11">openwebtext_smoke / c4_gopher_heuristic</text>
+<rect x="290" y="320" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="333" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="358" font-family="Arial" font-size="11">openwebtext_smoke / dedup_only</text>
+<rect x="290" y="344" width="250" height="16" fill="#4c78a8"/>
+<text x="548" y="357" font-family="Arial" font-size="11">0.50</text>
+<text x="20" y="382" font-family="Arial" font-size="11">openwebtext_smoke / perplexity_quality_ngram</text>
+<rect x="290" y="368" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="381" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="406" font-family="Arial" font-size="11">openwebtext_smoke / independent_quality_score</text>
+<rect x="290" y="392" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="405" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="430" font-family="Arial" font-size="11">openwebtext_smoke / optional_external_wrapper</text>
+<rect x="290" y="416" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="429" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="454" font-family="Arial" font-size="11">c4_en_smoke / raw</text>
+<rect x="290" y="440" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="453" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="478" font-family="Arial" font-size="11">c4_en_smoke / random_same_keep_rate</text>
+<rect x="290" y="464" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="477" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="502" font-family="Arial" font-size="11">c4_en_smoke / length_filter</text>
+<rect x="290" y="488" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="501" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="526" font-family="Arial" font-size="11">c4_en_smoke / c4_gopher_heuristic</text>
+<rect x="290" y="512" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="525" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="550" font-family="Arial" font-size="11">c4_en_smoke / dedup_only</text>
+<rect x="290" y="536" width="250" height="16" fill="#4c78a8"/>
+<text x="548" y="549" font-family="Arial" font-size="11">0.50</text>
+<text x="20" y="574" font-family="Arial" font-size="11">c4_en_smoke / perplexity_quality_ngram</text>
+<rect x="290" y="560" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="573" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="598" font-family="Arial" font-size="11">c4_en_smoke / independent_quality_score</text>
+<rect x="290" y="584" width="318" height="16" fill="#4c78a8"/>
+<text x="616" y="597" font-family="Arial" font-size="11">0.64</text>
+<text x="20" y="622" font-family="Arial" font-size="11">c4_en_smoke / optional_external_wrapper</text>
+<rect x="290" y="608" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="621" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="646" font-family="Arial" font-size="11">wikitext2_paper / data_prepare</text>
+<rect x="290" y="632" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="645" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="670" font-family="Arial" font-size="11">wikitext2_paper / raw</text>
+<rect x="290" y="656" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="669" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="694" font-family="Arial" font-size="11">wikitext2_paper / hdqspp</text>
+<rect x="290" y="680" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="693" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="718" font-family="Arial" font-size="11">wikitext2_paper / random_same_keep_rate</text>
+<rect x="290" y="704" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="717" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="742" font-family="Arial" font-size="11">wikitext2_paper / length_filter</text>
+<rect x="290" y="728" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="741" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="766" font-family="Arial" font-size="11">wikitext2_paper / dedup_only</text>
+<rect x="290" y="752" width="496" height="16" fill="#4c78a8"/>
+<text x="794" y="765" font-family="Arial" font-size="11">0.99</text>
+<text x="20" y="790" font-family="Arial" font-size="11">wikitext2_paper / method_debug</text>
+<rect x="290" y="776" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="789" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="814" font-family="Arial" font-size="11">wikitext2_paper / freeze_hdqspp_v2</text>
+<rect x="290" y="800" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="813" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="838" font-family="Arial" font-size="11">wikitext2_paper / hdqspp_v2</text>
+<rect x="290" y="824" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="837" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="862" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_full</text>
+<rect x="290" y="848" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="861" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="886" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_without_length_prior</text>
+<rect x="290" y="872" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="885" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="910" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_without_distribution_preservation</text>
+<rect x="290" y="896" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="909" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="934" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_without_token_frequency_preservation</text>
+<rect x="290" y="920" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="933" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="958" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_without_repetition_penalty</text>
+<rect x="290" y="944" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="957" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="982" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_without_quality_diversity_balance</text>
+<rect x="290" y="968" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="981" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1006" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_hard_filtering</text>
+<rect x="290" y="992" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1005" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1030" font-family="Arial" font-size="11">wikitext2_paper / ablation_v2_soft_weighting_curriculum</text>
+<rect x="290" y="1016" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1029" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1054" font-family="Arial" font-size="11">wikitext2_paper / freeze_hdqspp_v3</text>
+<rect x="290" y="1040" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1053" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1078" font-family="Arial" font-size="11">wikitext2_paper / hdqspp_v2_no_token_frequency</text>
+<rect x="290" y="1064" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="1077" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="1102" font-family="Arial" font-size="11">wikitext2_paper / hdqspp_v3</text>
+<rect x="290" y="1088" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="1101" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="1126" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_full</text>
+<rect x="290" y="1112" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="1125" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="1150" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_without_soft_weighting</text>
+<rect x="290" y="1136" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="1149" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="1174" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_without_keep_rate_calibration</text>
+<rect x="290" y="1160" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="1173" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="1198" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_without_quality_diversity_balance</text>
+<rect x="290" y="1184" width="425" height="16" fill="#4c78a8"/>
+<text x="723" y="1197" font-family="Arial" font-size="11">0.85</text>
+<text x="20" y="1222" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_hard_filtering_only</text>
+<rect x="290" y="1208" width="300" height="16" fill="#4c78a8"/>
+<text x="598" y="1221" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="1246" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_soft_weighting_only</text>
+<rect x="290" y="1232" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1245" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1270" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_without_length_guardrails</text>
+<rect x="290" y="1256" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1269" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1294" font-family="Arial" font-size="11">wikitext2_paper / ablation_v3_without_repetition_penalty</text>
+<rect x="290" y="1280" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1293" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1318" font-family="Arial" font-size="11">openwebtext_streaming / data_prepare</text>
+<rect x="290" y="1304" width="0" height="16" fill="#4c78a8"/>
+<text x="298" y="1317" font-family="Arial" font-size="11">0.00</text>
+<text x="20" y="1342" font-family="Arial" font-size="11">c4_en_streaming / data_prepare</text>
+<rect x="290" y="1328" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="1341" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="1366" font-family="Arial" font-size="11">openwebtext_streaming / raw</text>
+<rect x="290" y="1352" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="1365" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="1390" font-family="Arial" font-size="11">openwebtext_streaming / random_same_keep_rate</text>
+<rect x="290" y="1376" width="301" height="16" fill="#4c78a8"/>
+<text x="599" y="1389" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="1414" font-family="Arial" font-size="11">openwebtext_streaming / dedup_only</text>
+<rect x="290" y="1400" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="1413" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="1438" font-family="Arial" font-size="11">openwebtext_streaming / hdqspp_v3</text>
+<rect x="290" y="1424" width="430" height="16" fill="#4c78a8"/>
+<text x="728" y="1437" font-family="Arial" font-size="11">0.86</text>
+<text x="20" y="1462" font-family="Arial" font-size="11">c4_en_streaming / raw</text>
+<rect x="290" y="1448" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="1461" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="1486" font-family="Arial" font-size="11">c4_en_streaming / random_same_keep_rate</text>
+<rect x="290" y="1472" width="299" height="16" fill="#4c78a8"/>
+<text x="597" y="1485" font-family="Arial" font-size="11">0.60</text>
+<text x="20" y="1510" font-family="Arial" font-size="11">c4_en_streaming / dedup_only</text>
+<rect x="290" y="1496" width="500" height="16" fill="#4c78a8"/>
+<text x="798" y="1509" font-family="Arial" font-size="11">1.00</text>
+<text x="20" y="1534" font-family="Arial" font-size="11">c4_en_streaming / hdqspp_v3</text>
+<rect x="290" y="1520" width="426" height="16" fill="#4c78a8"/>
+<text x="724" y="1533" font-family="Arial" font-size="11">0.85</text>
 </svg>

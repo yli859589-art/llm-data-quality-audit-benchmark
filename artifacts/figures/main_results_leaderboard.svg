@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="308">
+<desc>source=artifacts/stats/main_results.csv; generated_by_script=scripts/generate_project_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial" font-size="19">Main results leaderboard: lower PPL is better</text>
+<text x="24" y="82" font-family="Arial" font-size="12">raw</text>
+<rect x="270" y="66" width="499.5" height="22" fill="#59a14f"/>
+<text x="779.5" y="81" font-family="Arial" font-size="11">12.6214</text>
+<text x="24" y="116" font-family="Arial" font-size="12">random_same_keep_rate</text>
+<rect x="270" y="100" width="502.9" height="22" fill="#bab0ac"/>
+<text x="782.9" y="115" font-family="Arial" font-size="11">12.7058</text>
+<text x="24" y="150" font-family="Arial" font-size="12">dedup_only</text>
+<rect x="270" y="134" width="503.7" height="22" fill="#bab0ac"/>
+<text x="783.7" y="149" font-family="Arial" font-size="11">12.7261</text>
+<text x="24" y="184" font-family="Arial" font-size="12">length_filter</text>
+<rect x="270" y="168" width="600.0" height="22" fill="#bab0ac"/>
+<text x="880.0" y="183" font-family="Arial" font-size="11">15.1600</text>
+<text x="24" y="218" font-family="Arial" font-size="12">hdqspp</text>
+<rect x="270" y="202" width="525.0" height="22" fill="#bab0ac"/>
+<text x="805.0" y="217" font-family="Arial" font-size="11">13.2641</text>
+<text x="24" y="252" font-family="Arial" font-size="12">hdqspp_v2</text>
+<rect x="270" y="236" width="560.5" height="22" fill="#bab0ac"/>
+<text x="840.5" y="251" font-family="Arial" font-size="11">14.1618</text>
+<text x="24" y="286" font-family="Arial" font-size="12">hdqspp_v3</text>
+<rect x="270" y="270" width="523.8" height="22" fill="#f28e2b"/>
+<text x="803.8" y="285" font-family="Arial" font-size="11">13.2341</text>
+</svg>

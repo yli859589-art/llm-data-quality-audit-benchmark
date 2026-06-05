@@ -10,8 +10,15 @@ from pathlib import Path
 from typing import Any
 
 from course_project_suite.llm_benchmark.dedup import exact_deduplicate
-from course_project_suite.llm_benchmark.quality import EMAIL_RE, ID_RE, PHONE_RE
+from course_project_suite.llm_benchmark.quality import (
+    EMAIL_RE,
+    ID_RE,
+    PHONE_RE,
+    filter_by_quality,
+)
 from data.token_counting import count_tokens
+from filters.hdqspp_v2 import select_hdqspp_v2
+from filters.hdqspp_v3 import select_hdqspp_v3
 
 URL_HTML_RE = re.compile(r"https?://\S+|<[^>]+>")
 
@@ -174,6 +181,50 @@ def run_baseline(
             documents,
             output,
             notes="Independent lexical/length/symbol score, separate from HDQS++ weights.",
+        )
+    if name == "hdqspp":
+        output, _ = filter_by_quality(documents, retention_ratio=target_keep_rate)
+        return output, _result(
+            name,
+            documents,
+            output,
+            notes="HDQS++ filtering baseline; training handled by run_experiment.py.",
+        )
+    if name == "hdqspp_v2":
+        output, _ = select_hdqspp_v2(
+            documents,
+            reference_documents=documents,
+        )
+        return output, _result(
+            name,
+            documents,
+            output,
+            notes="HDQS++ v2 filtering with distribution-preserving selection.",
+        )
+    if name == "hdqspp_v2_no_token_frequency":
+        output, _ = select_hdqspp_v2(
+            documents,
+            reference_documents=documents,
+            variant="v2_without_token_frequency_preservation",
+        )
+        return output, _result(
+            name,
+            documents,
+            output,
+            notes="HDQS++ v2 diagnostic variant with token-frequency preservation removed.",
+        )
+    if name == "hdqspp_v3":
+        output, _ = select_hdqspp_v3(
+            documents,
+            reference_documents=documents,
+            variant="hdqspp_v3",
+            seed=seed,
+        )
+        return output, _result(
+            name,
+            documents,
+            output,
+            notes="HDQS++ v3 calibrated soft-selection filtering candidate.",
         )
     if name == "optional_external_wrapper":
         empty_result = _result(

@@ -1,27 +1,21 @@
 # Limitations
 
-- Quick results are smoke-test evidence for reproducibility and
-  instrumentation, not paper-level model-quality evidence.
-- Paper-prototype results are lightweight small runs. They show that the
-  experiment matrix is executable, not that the method is proven at scale.
-- Tiny Shakespeare, `mixed_debug`, `synthetic_web_noise`, and
-  `local_wikitext_sample` are compact debugging or prototype corpora, not
-  production web crawls.
-- Optional public dataset entries are fallback records unless approved local
-  files or approved network access are provided.
-- Controlled and pseudo-real noise families are deterministic stress tests;
-  they do not estimate natural web-noise prevalence.
-- HDQS++ weights are not tuned and frozen on a held-out development split.
-- DQCS curriculum artifacts are diagnostics and do not yet prove stable
-  curriculum-training gains.
-- Current multi-seed comparisons have wide confidence intervals.
-- BPE and larger model configs are represented in model-scaling artifacts, but
-  not all listed configs are trained in quick or CI mode.
-- Synthetic-canary privacy checks are not formal privacy certification,
-  membership-inference testing, or a guarantee for real private data.
-- Downstream metrics are lightweight proxies and should be expanded before
-  paper submission.
-- CPU/CUDA attention timings are hardware-dependent and are auxiliary systems
-  checks.
-- The project is not official coursework, not a competition result, not a
-  submitted paper, and not an accepted paper.
+- These limitations follow `docs/REPORTING_CONTRACT.md`.
+- The primary `main_results` evidence remains WikiText-2 only; 3B
+  cross-dataset evidence is reported separately.
+- The completed candidate matrix uses the `small` model only.
+- The main benchmark uses 3 seeds, so model comparisons are preliminary.
+- OpenWebText and C4 English are completed only as real HuggingFace streaming
+  samples, not as complete upstream corpora.
+- Medium and larger model scales are not completed for the current candidate matrix.
+- HDQS++ v1/v2/v3 do not have supported improvement over raw.
+- The dev split is used for candidate comparison; held-out test evaluation should
+  only be run after method settings are frozen.
+- Synthetic privacy and quality diagnostics are useful checks, not formal
+  external audits.
+- Cross-dataset perplexity should be interpreted within dataset/tokenizer
+  boundaries unless tokenizer hash, vocabulary size, parameter count, and token
+  budget match.
+
+The project should be presented as an audit benchmark and reproducibility
+framework, not as a final method-improvement result.

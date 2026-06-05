@@ -1,0 +1,17 @@
+{
+  "component_weights": {
+    "base_quality_weight": 0.42,
+    "length_distribution_weight": 0.18,
+    "quality_diversity_weight": 0.14,
+    "repetition_weight": 0.08,
+    "token_frequency_weight": 0.18
+  },
+  "method": "hdqspp_v2",
+  "toggles": {
+    "distribution_preserving_selection": true,
+    "use_length_prior": true,
+    "use_quality_diversity_balance": true,
+    "use_repetition_penalty": true,
+    "use_token_frequency": true
+  }
+}

@@ -1,27 +1,13 @@
-\begin{tabular}{llrr}
-Dataset & Baseline & Rows & Mean retention \\
-wikitext2_smoke & raw & 1 & 1.000 \\
-wikitext2_smoke & random_same_keep_rate & 1 & 0.600 \\
-wikitext2_smoke & length_filter & 1 & 0.600 \\
-wikitext2_smoke & c4_gopher_heuristic & 1 & 0.600 \\
-wikitext2_smoke & dedup_only & 1 & 0.333 \\
-wikitext2_smoke & perplexity_quality_ngram & 1 & 0.600 \\
-wikitext2_smoke & independent_quality_score & 1 & 0.600 \\
-wikitext2_smoke & optional_external_wrapper & 1 & 0.000 \\
-openwebtext_smoke & raw & 1 & 1.000 \\
-openwebtext_smoke & random_same_keep_rate & 1 & 0.636 \\
-openwebtext_smoke & length_filter & 1 & 0.636 \\
-openwebtext_smoke & c4_gopher_heuristic & 1 & 0.636 \\
-openwebtext_smoke & dedup_only & 1 & 0.500 \\
-openwebtext_smoke & perplexity_quality_ngram & 1 & 0.636 \\
-openwebtext_smoke & independent_quality_score & 1 & 0.636 \\
-openwebtext_smoke & optional_external_wrapper & 1 & 0.000 \\
-c4_en_smoke & raw & 1 & 1.000 \\
-c4_en_smoke & random_same_keep_rate & 1 & 0.636 \\
-c4_en_smoke & length_filter & 1 & 0.636 \\
-c4_en_smoke & c4_gopher_heuristic & 1 & 0.636 \\
-c4_en_smoke & dedup_only & 1 & 0.500 \\
-c4_en_smoke & perplexity_quality_ngram & 1 & 0.636 \\
-c4_en_smoke & independent_quality_score & 1 & 0.636 \\
-c4_en_smoke & optional_external_wrapper & 1 & 0.000 \\
+% Auto-generated lightweight LaTeX table.
+\begin{tabular}{lrrrr}
+Baseline & Seeds & Mean PPL & CI Low & CI High\\
+\hline
+dedup_only & 3 & 12.7261 & 12.1193 & 13.6124\\
+hdqspp & 3 & 13.2641 & 12.5662 & 13.8293\\
+hdqspp_v2 & 3 & 14.1618 & 12.0612 & 16.6940\\
+hdqspp_v2_no_token_frequency & 3 & 14.2653 & 12.0899 & 15.9603\\
+hdqspp_v3 & 3 & 13.2341 & 12.6644 & 13.5224\\
+length_filter & 3 & 15.1600 & 13.6383 & 17.6301\\
+random_same_keep_rate & 3 & 12.7058 & 12.1098 & 13.3843\\
+raw & 3 & 12.6214 & 11.3111 & 13.8532\\
 \end{tabular}

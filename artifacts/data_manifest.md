@@ -1,14 +1,17 @@
-# Dataset Manifest: wikitext2_smoke
+# Dataset Manifest: wikitext2_paper
 
-- Provider: `local_fallback_fixture`
-- Source: `data/samples/local_wikitext_sample.txt`
-- Required real data: `False`
-- Smoke mode: `True`
-- Used fallback: `True`
-- Corpus SHA-256: `0d19b65e899e5a09fba0d069096f4da80510abcbde8dbe2341b0b2db1d5e4e0e`
+- Provider: `wikitext2_raw_urls`
+- Source: `WikiText-2 raw official split files mirrored by PyTorch examples`
+- Dataset status: `real_local_nonfallback`
+- Dataset scope: `official_split`
+- Required real data: `True`
+- Allow fallback: `False`
+- Smoke mode: `False`
+- Used fallback: `False`
+- Corpus SHA-256: `eeb3be0dfe1cba4b75515f0415d08d681b5992f3eb77439fd7f76b20f0240880`
 
 | Split | Documents | Tokens | Bytes | SHA-256 |
 |---|---:|---:|---:|---|
-| train | 12 | 460 | 2663 | `1fa769c92cfd5a463fdbbd46a52c9047dc57ec1ff1103db4a678eda084459707` |
-| dev | 1 | 35 | 221 | `2898c68b4f111119d3c7c3f62949d11f1b612533efa020f3d6ff31ab54de7a5d` |
-| test | 2 | 72 | 392 | `1169b2bf1928cf36116508be2c435190e2c82a819bd169a248d65978d8701da8` |
+| train | 629 | 2229442 | 10723083 | `c21a2895df41af58d4144e2d1ada460598d8ffaf62a87b6c99b48f314163d0e0` |
+| dev | 60 | 244780 | 1114101 | `11a28d6f330bd0a28aac202be7dba59fb5505355328c0706d244a5b82c638515` |
+| test | 62 | 279769 | 1247671 | `5a6dc84aa7dbb9477ecb6552892bc76f02412a45c85051000c6a175d08301e51` |

@@ -1,23 +1,35 @@
 {
+  "basic_missing": [],
+  "benchmark_scope_status": "multi_dataset_audit_candidate",
+  "candidate_missing": [],
   "ccf_c_ready": false,
   "checks": {
-    "ablation_artifact": true,
-    "baseline_registry_rows": 24,
+    "ablation_complete": true,
+    "baseline_registry_rows": 153,
+    "claim_map_traceable": true,
+    "completed_training_6x3_matrix": true,
     "data_configs": true,
     "experiment_configs": true,
-    "frozen_protocol_artifact": true,
-    "real_nonfallback_manifest": false,
-    "significance_artifact": true,
+    "fair_tokenizer_budget": true,
+    "frozen_real_dev_protocol": true,
+    "main_results_pure": true,
+    "manifest_split_hashes": true,
+    "method_artifacts_complete": true,
+    "migration_log": true,
+    "no_test_leakage": true,
+    "real_nonfallback_manifest": true,
+    "significance_complete": true,
     "smoke_manifest": true,
+    "split_integrity": true,
     "tables_figures": true
   },
-  "hard_missing": [],
-  "level_reason": "Smoke/dev infrastructure exists, but real paper-scale runs are incomplete.",
-  "readiness_level": "PROTOTYPE",
+  "level_reason": "WikiText-2 real non-fallback dev evidence includes a fair-tokenizer small-model baseline and candidate matrix, HDQS++ v2/v3 diagnostics, frozen protocols, ablation, statistics, tables, figures, and traceable claim map.",
+  "method_status": "honest_audit_framework",
+  "readiness_level": "EXPERIMENT-CANDIDATE",
   "remaining_to_ccf_c_ready": [
-    "Complete non-fallback WikiText-2/OpenWebText/C4 data preparation.",
-    "Run multi-seed model training with validation/perplexity metrics.",
-    "Run paper-scale ablations and statistical tests on held-out test splits.",
-    "Attach compute logs, environment hashes, and reviewer-facing failure analysis."
+    "Scale beyond bounded OpenWebText/C4 streaming samples before paper-scale claims.",
+    "Run larger model scales and a stronger seed budget before statistical claims.",
+    "Evaluate on held-out test splits only after freezing dev-selected settings.",
+    "Attach compute logs, environment hashes, reviewer-facing error analysis, and policy disclosure."
   ]
 }

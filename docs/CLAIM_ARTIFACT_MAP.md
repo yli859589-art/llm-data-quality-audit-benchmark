@@ -1,11 +1,23 @@
 # Claim Artifact Map
 
-| Claim | Artifact | Support level | Boundary |
-|---|---|---|---|
-| The benchmark pipeline is executable in smoke mode. | `artifacts/quick_experiment/REPORT.md`; `artifacts/data/wikitext2_smoke/data_manifest.json` | Supported | Smoke/local fixture scale only. |
-| Paper/full configs forbid fallback. | `configs/experiments/paper_*.yaml`; `configs/data/*_paper.yaml`; `scripts/check_no_fallback_in_experiments.py` | Supported | Config-level guard; real-data runs still pending. |
-| Baseline infrastructure exists. | `scripts/run_baselines.py`; `artifacts/runs/run_registry.csv`; `artifacts/baselines/` | Supported after generation | Data-filter metrics, not model-quality proof. |
-| HDQS++ can be frozen before test evaluation. | `scripts/freeze_hdqspp.py`; `artifacts/frozen/` | Supported after generation | Smoke split hashes are not paper-scale evidence. |
-| Ablations are available. | `scripts/run_ablation.py`; `artifacts/ablations/smoke/ablation_results.csv` | Supported after generation | Data-filter ablation unless model metrics are added. |
-| Multi-seed model improvement is statistically significant. | `artifacts/stats/claim_safety_report.md` | Unsupported | Needs real multi-seed validation/perplexity metrics. |
-| The project is ready for CCF-C submission. | `artifacts/experiment_readiness_report.json` | Unsupported | Readiness checker should remain below final level until full experiments finish. |
+Date: 2026-06-04
+
+This map is deliberately conservative. Support level is tied to concrete artifacts.
+
+## Supported Claims
+
+| Claim | Primary artifacts | Support level |
+|---|---|---|
+| WikiText-2 real local official splits are used with fallback disabled. | `artifacts/data/wikitext2_paper/data_manifest.json`; `artifacts/data/wikitext2_paper/split_integrity_report.json` | Dataset evidence supported |
+| Candidate training rows use shared tokenizer/vocab/parameter count and the same token budget. | `artifacts/tables/main_results.csv`; `scripts/check_main_results_purity.py` | Fair-comparison evidence supported |
+| Promising variants were selected from Stage 2.5 ablation evidence. | `artifacts/methods/promising_variants.csv`; `scripts/select_promising_variants.py` | Diagnostic selection evidence |
+| HDQS++ v3 was frozen from dev evidence without test-split tuning. | `artifacts/methods/hdqspp_v3_design.json`; `configs/frozen/hdqspp_v3_frozen_wikitext2.yaml` | Protocol evidence supported |
+| Method-quality claims are preliminary or unsupported depending on the generated status report. | `artifacts/stats/method_status_report.md`; `artifacts/stats/method_comparison_summary.csv` | No overclaim |
+
+## Unsupported Claims
+
+| Claim | Why unsupported |
+|---|---|
+| HDQS++ is statistically better than raw. | This phase uses 3 seeds and does not permit strong statistical claims. |
+| The project is ready for paper submission. | Broader datasets, scales, test evaluation after freezing, and external review artifacts remain incomplete. |
+| The project is an official university course or competition submission. | No rubric, policy, registration, or official evaluation record is included. |

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460">
+<desc>source=artifacts/runs/run_registry.csv</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Keep rate vs validation PPL</text>
+<line x1="80" y1="390" x2="820" y2="390" stroke="#333"/>
+<line x1="80" y1="70" x2="80" y2="390" stroke="#333"/>
+<circle cx="820.0" cy="260.9" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="827.0" y="264.9" font-family="Arial" font-size="10">raw</text>
+<circle cx="524.0" cy="276.9" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="531.0" y="280.9" font-family="Arial" font-size="10">hdqspp</text>
+<circle cx="820.0" cy="319.7" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="827.0" y="323.7" font-family="Arial" font-size="10">raw</text>
+<circle cx="523.5" cy="349.6" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="353.6" font-family="Arial" font-size="10">random_same_keep_rate</text>
+<circle cx="523.5" cy="272.1" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="276.1" font-family="Arial" font-size="10">length_filter</text>
+<circle cx="814.1" cy="349.1" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="821.1" y="353.1" font-family="Arial" font-size="10">dedup_only</text>
+<circle cx="524.7" cy="326.4" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="531.7" y="330.4" font-family="Arial" font-size="10">hdqspp</text>
+<circle cx="820.0" cy="390.0" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="827.0" y="394.0" font-family="Arial" font-size="10">raw</text>
+<circle cx="523.5" cy="285.0" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="289.0" font-family="Arial" font-size="10">random_same_keep_rate</text>
+<circle cx="523.5" cy="243.1" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="247.1" font-family="Arial" font-size="10">length_filter</text>
+<circle cx="814.1" cy="273.5" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="821.1" y="277.5" font-family="Arial" font-size="10">dedup_only</text>
+<circle cx="524.7" cy="284.4" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="531.7" y="288.4" font-family="Arial" font-size="10">hdqspp</text>
+<circle cx="820.0" cy="261.3" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="827.0" y="265.3" font-family="Arial" font-size="10">raw</text>
+<circle cx="523.5" cy="323.5" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="327.5" font-family="Arial" font-size="10">random_same_keep_rate</text>
+<circle cx="523.5" cy="70.0" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="530.5" y="74.0" font-family="Arial" font-size="10">length_filter</text>
+<circle cx="814.1" cy="332.5" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="821.1" y="336.5" font-family="Arial" font-size="10">dedup_only</text>
+<circle cx="524.7" cy="262.5" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="531.7" y="266.5" font-family="Arial" font-size="10">hdqspp</text>
+<circle cx="709.4" cy="117.4" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="716.4" y="121.4" font-family="Arial" font-size="10">hdqspp_v2</text>
+<circle cx="709.4" cy="267.5" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="716.4" y="271.5" font-family="Arial" font-size="10">hdqspp_v2</text>
+<circle cx="709.4" cy="352.0" r="5" fill="#4c78a8" opacity="0.65"/>
+<text x="716.4" y="356.0" font-family="Arial" font-size="10">hdqspp_v2</text>
+</svg>

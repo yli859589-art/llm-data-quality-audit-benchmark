@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="250">
+<desc>source=artifacts/data/wikitext2_paper/data_manifest.json; generated_by_script=scripts/generate_project_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial" font-size="19">Project pipeline</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect x="24" y="92" width="150" height="62" fill="#e8f0fe" stroke="#555"/>
+<text x="36" y="120" font-family="Arial" font-size="13">WikiText-2 real split</text>
+<line x1="174" y1="123" x2="209" y2="123" stroke="#555" marker-end="url(#arrow)"/>
+<rect x="209" y="92" width="150" height="62" fill="#e8f0fe" stroke="#555"/>
+<text x="221" y="120" font-family="Arial" font-size="13">fair tokenizer/model</text>
+<line x1="359" y1="123" x2="394" y2="123" stroke="#555" marker-end="url(#arrow)"/>
+<rect x="394" y="92" width="150" height="62" fill="#e8f0fe" stroke="#555"/>
+<text x="406" y="120" font-family="Arial" font-size="13">completed training</text>
+<line x1="544" y1="123" x2="579" y2="123" stroke="#555" marker-end="url(#arrow)"/>
+<rect x="579" y="92" width="150" height="62" fill="#e8f0fe" stroke="#555"/>
+<text x="591" y="120" font-family="Arial" font-size="13">registry + lineage</text>
+<line x1="729" y1="123" x2="764" y2="123" stroke="#555" marker-end="url(#arrow)"/>
+<rect x="764" y="92" width="150" height="62" fill="#e8f0fe" stroke="#555"/>
+<text x="776" y="120" font-family="Arial" font-size="13">stats + dashboard</text>
+</svg>

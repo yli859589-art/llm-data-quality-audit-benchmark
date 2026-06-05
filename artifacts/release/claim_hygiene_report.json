@@ -1,0 +1,584 @@
+{
+  "allowed_exceptions": [
+    {
+      "classification": "allowed_negative_context",
+      "context": "- `artifacts/runs/migration_log.jsonl`  Failed or superseded runs are retained for audit integrity rather than removed to make the project look cleaner.  ## Claim Boundary  This release is a reproducible audit benchmark. It does not claim that HDQS++ v3 outperforms raw data under the current fair benchmark.  This is an experiment-candidate benchmark release, not a CCF-C-ready paper artifact.  Do not claim: ",
+      "file": "README.md",
+      "line": 201,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
+      "file": "docs/BENCHMARK_PROTOCOL.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Experiment Dashboard  - Readiness: `EXPERIMENT-CANDIDATE` - Benchmark scope status: `multi_dataset_audit_candidate` - Method status: `honest_audit_framework` - Secondary method finding: `hdqspp_v3_improves_over_v2_trend_but_not_raw` - CCF-C ready: `false` - Reporting contract: `docs/REPORTING_CONTRACT.md`  ## Main Results Snapshot ",
+      "file": "docs/EXPERIMENT_DASHBOARD.md",
+      "line": 7,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- `main_results_pure`: `True` - `tables_figures`: `True` - `claim_map_traceable`: `True` - `migration_log`: `True` - `method_artifacts_complete`: `True`  ## Candidate Missing  - None for WikiText-2 dev candidate scope.  ## Remaining Work To CCF-C Ready  - Scale beyond bounded OpenWebText/C4 streaming samples before paper-scale claims. - Run larger model scales and a stronger seed budget before statistical claims. - Evaluate on held-out test splits only after freezing dev-selected settings.",
+      "file": "docs/EXPERIMENT_READINESS_REPORT.md",
+      "line": 34,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Figure Index  All figures follow `docs/REPORTING_CONTRACT.md`. Do not claim from any figure that HDQS++ v3 outperforms raw under the current fair benchmark.  | Figure | Source artifact | Generating script | What it shows | Safe interpretation | What not to claim | Scope/status | |---|---|---|---|---|---|---| | `artifacts/figures/project_pipeline.svg` | `artifacts/data/wikitext2_paper/data_manifest.json` | `scripts/generate_project_dashboard.py` | End-to-end audit pipeline | Shows reproducibility structure | Not a method win | release/dashboard artifact |",
+      "file": "docs/FIGURE_INDEX.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
+      "file": "docs/FRESH_CLONE_TEST.md",
+      "line": 8,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "archival_context",
+      "context": "# Future Publication Notes  These files are archival research notes and are not part of the current benchmark release claim. The current release is an audit benchmark, not a CCF-C-ready paper artifact.  Files in this directory may discuss reviewer concerns, submission gaps, future paper structure, or stronger experiment requirements. They must be interpreted as future-publication planning material rather than as current release claims.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 5,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "archival_context",
+      "context": "Archived files:  - `PAPER_DRAFT.md` - `PAPER_NOTES.md` - `REVIEWER_ATTACK_REPORT.md` - `SUBMISSION_READINESS_CHECKLIST.md` - `CCF_C_EXPERIMENT_GAP_AUDIT.md`  If an archived note mentions a dangerous phrase, it must be read in archival, gap-analysis, non-claim, or forbidden-claim context. The current benchmark release does not claim that HDQS++ v3 outperforms raw under the fair benchmark.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 27,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
+      "file": "docs/PROJECT_PRESENTATION_NOTES.md",
+      "line": 44,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
+      "file": "docs/PROJECT_PRESENTATION_NOTES.md",
+      "line": 44,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "archival_context",
+      "context": " ## Future Research Notes  Publication drafts, reviewer notes, submission checklists, and CCF-C gap audits are archived under:  - `future_publication_notes/`  These future research notes are not part of the current benchmark release claim. Do not treat them as the GitHub home-page narrative or as evidence that the current project is paper-ready.",
+      "file": "docs/README.md",
+      "line": 66,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Release Checklist  This checklist follows `docs/REPORTING_CONTRACT.md`. The release is an audit benchmark and does not claim that HDQS++ v3 outperforms raw under the current fair benchmark.  ## Core Checks ",
+      "file": "docs/RELEASE_CHECKLIST.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## 2. Current Release Status  - readiness = `EXPERIMENT-CANDIDATE` - method_status = `honest_audit_framework` - ccf_c_ready = `false` - benchmark_scope_status = `multi_dataset_audit_candidate`  The status means the repository is a credible experiment-candidate audit benchmark with real data, fair baselines, artifact lineage, and claim-safety checks. It is not a final CCF-C-ready paper artifact.  ## 3. Canonical Claim Boundary  Allowed claims:",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 26,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Allowed claims:  - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 40,
+      "phrase": "HDQS++ beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 41,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 42,
+      "phrase": "HDQS++ improves LLM pretraining",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 43,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 44,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI. ",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 45,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.  ## 4. Canonical Results",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 46,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.  ## 4. Canonical Results  Lower mean PPL is better. These rows are current canonical release evidence and",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 48,
+      "phrase": "significant improvement over raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "baseline in the completed settings. HDQS++ v3 has not outperformed raw under the fair benchmark.  ## 5. Dataset Scope Rules  - `official_split`: official or locally materialized official split used for the main candidate matrix. - `streaming_sample`: bounded streaming sample from a real upstream dataset. - `local_real_subset`: local real-data subset that is not the full upstream corpus. - `full_dataset`: complete upstream dataset run; this label must not be used unless the complete upstream dataset was actually processed.  A `streaming_sample` must not be described as a `full_dataset`, web-scale result, or complete OpenWebText/C4 benchmark.  ## 6. Method Status Rules ",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 81,
+      "phrase": "web-scale result",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "HDQS++ v3 improves over v2 trend-wise but not over raw.  Do not rewrite this status as `method_supported_over_raw`, `supported_over_raw`, or any positive method-success claim.  ## 7. Known Limitations  - The current model scale is `small`. - The current tokenizer/model setting is limited and should not be generalized as a broad LLM pretraining result. - OpenWebText/C4 evidence is based on real streaming samples, not complete upstream corpora. - The release does not make a CCF-C-ready claim. - Method improvement over raw is unsupported in the current evidence. - Held-out test evaluation should only be used after method settings are frozen. - Failed and superseded runs remain part of the audit trail and must not be deleted to beautify results.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 102,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 39,
+      "phrase": "developed a state-of-the-art filter",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 39,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 40,
+      "phrase": "improved LLM pretraining perplexity",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 41,
+      "phrase": "beat raw baseline",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 42,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 42,
+      "phrase": "CCF-C-ready project",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Technical Overview  This document summarizes the implementation architecture for the audit benchmark. It follows `docs/REPORTING_CONTRACT.md`; it does not claim that HDQS++ v3 outperforms raw.  ## Data Pipeline  Data configs produce explicit manifests with dataset status, dataset scope,",
+      "file": "TECHNICAL_OVERVIEW.md",
+      "line": 5,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    }
+  ],
+  "flagged_phrases": [
+    {
+      "classification": "allowed_negative_context",
+      "context": "- `artifacts/runs/migration_log.jsonl`  Failed or superseded runs are retained for audit integrity rather than removed to make the project look cleaner.  ## Claim Boundary  This release is a reproducible audit benchmark. It does not claim that HDQS++ v3 outperforms raw data under the current fair benchmark.  This is an experiment-candidate benchmark release, not a CCF-C-ready paper artifact.  Do not claim: ",
+      "file": "README.md",
+      "line": 201,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
+      "file": "docs/BENCHMARK_PROTOCOL.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Experiment Dashboard  - Readiness: `EXPERIMENT-CANDIDATE` - Benchmark scope status: `multi_dataset_audit_candidate` - Method status: `honest_audit_framework` - Secondary method finding: `hdqspp_v3_improves_over_v2_trend_but_not_raw` - CCF-C ready: `false` - Reporting contract: `docs/REPORTING_CONTRACT.md`  ## Main Results Snapshot ",
+      "file": "docs/EXPERIMENT_DASHBOARD.md",
+      "line": 7,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- `main_results_pure`: `True` - `tables_figures`: `True` - `claim_map_traceable`: `True` - `migration_log`: `True` - `method_artifacts_complete`: `True`  ## Candidate Missing  - None for WikiText-2 dev candidate scope.  ## Remaining Work To CCF-C Ready  - Scale beyond bounded OpenWebText/C4 streaming samples before paper-scale claims. - Run larger model scales and a stronger seed budget before statistical claims. - Evaluate on held-out test splits only after freezing dev-selected settings.",
+      "file": "docs/EXPERIMENT_READINESS_REPORT.md",
+      "line": 34,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Figure Index  All figures follow `docs/REPORTING_CONTRACT.md`. Do not claim from any figure that HDQS++ v3 outperforms raw under the current fair benchmark.  | Figure | Source artifact | Generating script | What it shows | Safe interpretation | What not to claim | Scope/status | |---|---|---|---|---|---|---| | `artifacts/figures/project_pipeline.svg` | `artifacts/data/wikitext2_paper/data_manifest.json` | `scripts/generate_project_dashboard.py` | End-to-end audit pipeline | Shows reproducibility structure | Not a method win | release/dashboard artifact |",
+      "file": "docs/FIGURE_INDEX.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
+      "file": "docs/FRESH_CLONE_TEST.md",
+      "line": 8,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "archival_context",
+      "context": "# Future Publication Notes  These files are archival research notes and are not part of the current benchmark release claim. The current release is an audit benchmark, not a CCF-C-ready paper artifact.  Files in this directory may discuss reviewer concerns, submission gaps, future paper structure, or stronger experiment requirements. They must be interpreted as future-publication planning material rather than as current release claims.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 5,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "archival_context",
+      "context": "Archived files:  - `PAPER_DRAFT.md` - `PAPER_NOTES.md` - `REVIEWER_ATTACK_REPORT.md` - `SUBMISSION_READINESS_CHECKLIST.md` - `CCF_C_EXPERIMENT_GAP_AUDIT.md`  If an archived note mentions a dangerous phrase, it must be read in archival, gap-analysis, non-claim, or forbidden-claim context. The current benchmark release does not claim that HDQS++ v3 outperforms raw under the fair benchmark.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 27,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
+      "file": "docs/PROJECT_PRESENTATION_NOTES.md",
+      "line": 44,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
+      "file": "docs/PROJECT_PRESENTATION_NOTES.md",
+      "line": 44,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "archival_context",
+      "context": " ## Future Research Notes  Publication drafts, reviewer notes, submission checklists, and CCF-C gap audits are archived under:  - `future_publication_notes/`  These future research notes are not part of the current benchmark release claim. Do not treat them as the GitHub home-page narrative or as evidence that the current project is paper-ready.",
+      "file": "docs/README.md",
+      "line": 66,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Release Checklist  This checklist follows `docs/REPORTING_CONTRACT.md`. The release is an audit benchmark and does not claim that HDQS++ v3 outperforms raw under the current fair benchmark.  ## Core Checks ",
+      "file": "docs/RELEASE_CHECKLIST.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## 2. Current Release Status  - readiness = `EXPERIMENT-CANDIDATE` - method_status = `honest_audit_framework` - ccf_c_ready = `false` - benchmark_scope_status = `multi_dataset_audit_candidate`  The status means the repository is a credible experiment-candidate audit benchmark with real data, fair baselines, artifact lineage, and claim-safety checks. It is not a final CCF-C-ready paper artifact.  ## 3. Canonical Claim Boundary  Allowed claims:",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 26,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Allowed claims:  - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 40,
+      "phrase": "HDQS++ beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 41,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 42,
+      "phrase": "HDQS++ improves LLM pretraining",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 43,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 44,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI. ",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 45,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.  ## 4. Canonical Results",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 46,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark. - Full C4 benchmark. - Large-scale web corpus result, unless truly large-scale. - Statistically significant improvement over raw, unless supported by valid seed count and CI.  ## 4. Canonical Results  Lower mean PPL is better. These rows are current canonical release evidence and",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 48,
+      "phrase": "significant improvement over raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "baseline in the completed settings. HDQS++ v3 has not outperformed raw under the fair benchmark.  ## 5. Dataset Scope Rules  - `official_split`: official or locally materialized official split used for the main candidate matrix. - `streaming_sample`: bounded streaming sample from a real upstream dataset. - `local_real_subset`: local real-data subset that is not the full upstream corpus. - `full_dataset`: complete upstream dataset run; this label must not be used unless the complete upstream dataset was actually processed.  A `streaming_sample` must not be described as a `full_dataset`, web-scale result, or complete OpenWebText/C4 benchmark.  ## 6. Method Status Rules ",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 81,
+      "phrase": "web-scale result",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "HDQS++ v3 improves over v2 trend-wise but not over raw.  Do not rewrite this status as `method_supported_over_raw`, `supported_over_raw`, or any positive method-success claim.  ## 7. Known Limitations  - The current model scale is `small`. - The current tokenizer/model setting is limited and should not be generalized as a broad LLM pretraining result. - OpenWebText/C4 evidence is based on real streaming samples, not complete upstream corpora. - The release does not make a CCF-C-ready claim. - Method improvement over raw is unsupported in the current evidence. - Held-out test evaluation should only be used after method settings are frozen. - Failed and superseded runs remain part of the audit trail and must not be deleted to beautify results.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 102,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 39,
+      "phrase": "developed a state-of-the-art filter",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 39,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 40,
+      "phrase": "improved LLM pretraining perplexity",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 41,
+      "phrase": "beat raw baseline",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 42,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
+      "file": "RESUME_BULLETS.md",
+      "line": 42,
+      "phrase": "CCF-C-ready project",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Technical Overview  This document summarizes the implementation architecture for the audit benchmark. It follows `docs/REPORTING_CONTRACT.md`; it does not claim that HDQS++ v3 outperforms raw.  ## Data Pipeline  Data configs produce explicit manifests with dataset status, dataset scope,",
+      "file": "TECHNICAL_OVERVIEW.md",
+      "line": 5,
+      "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    }
+  ],
+  "optional_files_not_present": [],
+  "scanned_files": [
+    "README.md",
+    "docs/ARTIFACT_INDEX.md",
+    "docs/BENCHMARK_CARD.md",
+    "docs/BENCHMARK_PROTOCOL.md",
+    "docs/CLAIM_ARTIFACT_MAP.md",
+    "docs/CROSS_DATASET_AUDIT.md",
+    "docs/DATA_AND_GRADER_LIMITATIONS.md",
+    "docs/DATASETS.md",
+    "docs/ENGINEERING_EVIDENCE.md",
+    "docs/ETHICS.md",
+    "docs/EXPERIMENT_DASHBOARD.md",
+    "docs/EXPERIMENT_READINESS_REPORT.md",
+    "docs/EXPERIMENT_REPORT.md",
+    "docs/EXPERIMENTS.md",
+    "docs/FAILURE_CASES.md",
+    "docs/FIGURE_INDEX.md",
+    "docs/FINAL_AUDIT.md",
+    "docs/FINAL_VERIFICATION_REPORT.md",
+    "docs/FRESH_CLONE_TEST.md",
+    "docs/future_publication_notes/CCF_C_EXPERIMENT_GAP_AUDIT.md",
+    "docs/future_publication_notes/PAPER_DRAFT.md",
+    "docs/future_publication_notes/PAPER_NOTES.md",
+    "docs/future_publication_notes/README.md",
+    "docs/future_publication_notes/REVIEWER_ATTACK_REPORT.md",
+    "docs/future_publication_notes/SUBMISSION_READINESS_CHECKLIST.md",
+    "docs/INTERNAL_AUDIT.md",
+    "docs/LIMITATIONS.md",
+    "docs/METHOD.md",
+    "docs/METHOD_DASHBOARD.md",
+    "docs/METHOD_DIAGNOSTICS.md",
+    "docs/PORTFOLIO_SUMMARY.md",
+    "docs/PROJECT_EVIDENCE_MAP.md",
+    "docs/PROJECT_INDEX.md",
+    "docs/PROJECT_PRESENTATION_NOTES.md",
+    "docs/PROJECT_REPOSITIONING.md",
+    "docs/PROJECT_STATUS.md",
+    "docs/PROVENANCE_AND_ASSISTANCE.md",
+    "docs/PUBLIC_THEME_ALIGNMENT_MATRIX.md",
+    "docs/QUICKSTART.md",
+    "docs/README.md",
+    "docs/REFERENCES.md",
+    "docs/RELATED_WORK_NOTES.md",
+    "docs/RELEASE_CHECKLIST.md",
+    "docs/REPORTING_CONTRACT.md",
+    "docs/REPRODUCIBILITY.md",
+    "docs/RESEARCH_READINESS.md",
+    "docs/RESUME.md",
+    "docs/RESUME_BULLETS.md",
+    "docs/VERIFICATION_REPORT.md",
+    "PROJECT_SUMMARY.md",
+    "PROJECT_ONE_PAGE.md",
+    "RESUME_BULLETS.md",
+    "TECHNICAL_OVERVIEW.md",
+    "DEMO_GUIDE.md"
+  ],
+  "status": "passed",
+  "summary": {
+    "allowed_exception_count": 32,
+    "flagged_phrase_count": 32,
+    "optional_not_present_count": 0,
+    "scanned_file_count": 54,
+    "unsafe_claim_count": 0
+  },
+  "unsafe_claims": []
+}

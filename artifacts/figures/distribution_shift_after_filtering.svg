@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280">
+<desc>source=artifacts/diagnostics/hdqspp_failure_analysis.json</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Distribution shift after filtering</text>
+<text x="24" y="85" font-family="Arial" font-size="12">v1 token JS vs raw</text>
+<rect x="250" y="70" width="560.0" height="24" fill="#4c78a8"/>
+<text x="820.0" y="86" font-family="Arial" font-size="12">0.036954</text>
+<text x="24" y="127" font-family="Arial" font-size="12">v2 token JS vs raw</text>
+<rect x="250" y="112" width="153.2" height="24" fill="#4c78a8"/>
+<text x="413.2" y="128" font-family="Arial" font-size="12">0.010112</text>
+<text x="24" y="169" font-family="Arial" font-size="12">v1 length JS vs raw</text>
+<rect x="250" y="154" width="527.7" height="24" fill="#4c78a8"/>
+<text x="787.7" y="170" font-family="Arial" font-size="12">0.034820</text>
+<text x="24" y="211" font-family="Arial" font-size="12">v2 length JS vs raw</text>
+<rect x="250" y="196" width="54.6" height="24" fill="#4c78a8"/>
+<text x="314.6" y="212" font-family="Arial" font-size="12">0.003600</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="278">
+<desc>source=artifacts/stats/main_results.csv; generated_by_script=scripts/generate_project_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial" font-size="19">Failure mode summary vs raw</text>
+<text x="24" y="56" font-family="Arial" font-size="12">Positive delta means worse PPL than raw.</text>
+<text x="24" y="97" font-family="Arial" font-size="12">length_filter</text>
+<rect x="280" y="82" width="558.5" height="22" fill="#e15759"/>
+<text x="848.5" y="97" font-family="Arial" font-size="11">+2.5386</text>
+<text x="24" y="131" font-family="Arial" font-size="12">hdqspp</text>
+<rect x="280" y="116" width="141.4" height="22" fill="#e15759"/>
+<text x="431.4" y="131" font-family="Arial" font-size="11">+0.6427</text>
+<text x="24" y="165" font-family="Arial" font-size="12">hdqspp_v2</text>
+<rect x="280" y="150" width="338.9" height="22" fill="#e15759"/>
+<text x="628.9" y="165" font-family="Arial" font-size="11">+1.5404</text>
+<text x="24" y="199" font-family="Arial" font-size="12">hdqspp_v3</text>
+<rect x="280" y="184" width="134.8" height="22" fill="#e15759"/>
+<text x="424.8" y="199" font-family="Arial" font-size="11">+0.6126</text>
+<text x="24" y="233" font-family="Arial" font-size="12">random_same_keep_rate</text>
+<rect x="280" y="218" width="18.6" height="22" fill="#e15759"/>
+<text x="308.6" y="233" font-family="Arial" font-size="11">+0.0844</text>
+<text x="24" y="267" font-family="Arial" font-size="12">dedup_only</text>
+<rect x="280" y="252" width="23.0" height="22" fill="#e15759"/>
+<text x="313.0" y="267" font-family="Arial" font-size="11">+0.1046</text>
+</svg>

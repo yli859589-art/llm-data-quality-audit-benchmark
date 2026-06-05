@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="290">
+<desc>source=configs/experiments/dev.yaml; generated_by_script=scripts/generate_project_dashboard.py</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial" font-size="19">Benchmark protocol</text>
+<rect x="40" y="78" width="250" height="58" fill="#d6f5d6" stroke="#555"/>
+<text x="52" y="106" font-family="Arial" font-size="13">dataset_status=real_nonfallback</text>
+<rect x="340" y="78" width="250" height="58" fill="#d6f5d6" stroke="#555"/>
+<text x="352" y="106" font-family="Arial" font-size="13">dataset_scope=official_split</text>
+<rect x="640" y="78" width="250" height="58" fill="#e8f0fe" stroke="#555"/>
+<text x="652" y="106" font-family="Arial" font-size="13">same tokenizer/vocab/params</text>
+<rect x="40" y="170" width="250" height="58" fill="#e8f0fe" stroke="#555"/>
+<text x="52" y="198" font-family="Arial" font-size="13">train_tokens=1228800</text>
+<rect x="340" y="170" width="250" height="58" fill="#e8f0fe" stroke="#555"/>
+<text x="352" y="198" font-family="Arial" font-size="13">evaluated_validation_tokens=53248</text>
+<rect x="640" y="170" width="250" height="58" fill="#fff2cc" stroke="#555"/>
+<text x="652" y="198" font-family="Arial" font-size="13">3 seeds, trend-only claims</text>
+</svg>

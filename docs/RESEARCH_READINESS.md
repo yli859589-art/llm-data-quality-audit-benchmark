@@ -107,7 +107,7 @@ paper experiment if stronger data, training, tuning, and writing are added.
 
 - [ ] Review dataset licenses and usage policies.
 - [ ] Provide local or approved network data for WikiText-2, OpenWebText, and C4.
-- [ ] Run full dataset matrix without fallback rows.
+- [ ] Run a larger externally reviewed dataset matrix without fallback rows.
 - [ ] Increase training steps and model sizes.
 - [ ] Tune HDQS++ on a development split and freeze it.
 - [ ] Run more seeds and report paired intervals.

@@ -1,0 +1,14 @@
+{
+  "input_documents": 751,
+  "input_tokens": 2753991,
+  "name": "hdqspp",
+  "notes": "HDQS++ filtering baseline; training handled by run_experiment.py.",
+  "output_documents": 451,
+  "output_tokens": 1117369,
+  "pii_hits_after": 0,
+  "pii_hits_before": 3,
+  "removed_duplicates": 0,
+  "retention_rate": 0.6005326231691078,
+  "skip_reason": "",
+  "skipped": false
+}

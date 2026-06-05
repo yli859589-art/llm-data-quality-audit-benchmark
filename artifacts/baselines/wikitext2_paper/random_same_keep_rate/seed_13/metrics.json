@@ -1,0 +1,14 @@
+{
+  "input_documents": 751,
+  "input_tokens": 2753991,
+  "name": "random_same_keep_rate",
+  "notes": "Seeded random retention.",
+  "output_documents": 451,
+  "output_tokens": 1595780,
+  "pii_hits_after": 1,
+  "pii_hits_before": 3,
+  "removed_duplicates": 0,
+  "retention_rate": 0.6005326231691078,
+  "skip_reason": "",
+  "skipped": false
+}

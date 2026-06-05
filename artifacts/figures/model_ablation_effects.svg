@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360">
+<desc>source=artifacts/ablations/model_training_ablation_results.csv</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="18">Model-training ablation PPL</text>
+<text x="24" y="80" font-family="Arial" font-size="11">ablation_v2_full</text>
+<rect x="310" y="64" width="620.0" height="22" fill="#4c78a8"/>
+<text x="940.0" y="79" font-family="Arial" font-size="11">16.694</text>
+<text x="24" y="114" font-family="Arial" font-size="11">ablation_v2_without_length_prior</text>
+<rect x="310" y="98" width="454.3" height="22" fill="#4c78a8"/>
+<text x="774.3" y="113" font-family="Arial" font-size="11">12.234</text>
+<text x="24" y="148" font-family="Arial" font-size="11">ablation_v2_without_distribution_preservation</text>
+<rect x="310" y="132" width="449.5" height="22" fill="#4c78a8"/>
+<text x="769.5" y="147" font-family="Arial" font-size="11">12.103</text>
+<text x="24" y="182" font-family="Arial" font-size="11">ablation_v2_without_token_frequency_preservation</text>
+<rect x="310" y="166" width="449.0" height="22" fill="#4c78a8"/>
+<text x="769.0" y="181" font-family="Arial" font-size="11">12.090</text>
+<text x="24" y="216" font-family="Arial" font-size="11">ablation_v2_without_repetition_penalty</text>
+<rect x="310" y="200" width="472.4" height="22" fill="#4c78a8"/>
+<text x="792.4" y="215" font-family="Arial" font-size="11">12.720</text>
+<text x="24" y="250" font-family="Arial" font-size="11">random_same_keep_rate</text>
+<rect x="310" y="234" width="449.7" height="22" fill="#4c78a8"/>
+<text x="769.7" y="249" font-family="Arial" font-size="11">12.110</text>
+<text x="24" y="284" font-family="Arial" font-size="11">dedup_only</text>
+<rect x="310" y="268" width="450.1" height="22" fill="#4c78a8"/>
+<text x="770.1" y="283" font-family="Arial" font-size="11">12.119</text>
+</svg>

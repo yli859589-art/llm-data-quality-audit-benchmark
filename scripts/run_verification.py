@@ -1,14 +1,15 @@
 from __future__ import annotations
 
-import os
+from _bootstrap import bootstrap, build_subprocess_env
+
+bootstrap()
+
 import subprocess
 import sys
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-env = os.environ.copy()
-src = str(root / "src")
-env["PYTHONPATH"] = src + os.pathsep + env.get("PYTHONPATH", "")
+env = build_subprocess_env()
 
 
 def run(*args: str) -> None:
