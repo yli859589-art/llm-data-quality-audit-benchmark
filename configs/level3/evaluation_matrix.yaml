@@ -1,0 +1,28 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "metrics": [
+    "lm_validation_loss",
+    "lm_validation_ppl",
+    "token_normalized_utility",
+    "budget_normalized_utility",
+    "downstream",
+    "risk",
+    "diversity",
+    "cost",
+    "stability",
+    "pareto",
+    "statistics"
+  ],
+  "downstream_benchmarks": [
+    {"benchmark_id": "lambada", "required": true, "status": "protocol_only"},
+    {"benchmark_id": "piqa", "required": true, "status": "protocol_only"},
+    {"benchmark_id": "hellaswag", "required": true, "status": "protocol_only"},
+    {"benchmark_id": "arc_easy", "required": true, "status": "protocol_only"},
+    {"benchmark_id": "boolq_or_winogrande", "required": false, "status": "protocol_only"}
+  ],
+  "minimum_downstream_benchmarks": 3,
+  "official_downstream_completed_in_step10A": false,
+  "tiny_local_smoke_label": "smoke_only"
+}

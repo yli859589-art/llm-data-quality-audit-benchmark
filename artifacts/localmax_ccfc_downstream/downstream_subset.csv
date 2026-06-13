@@ -1,0 +1,11 @@
+dataset_id,method_name,seed,benchmark,status,examples_scored,mean_cloze_nll,mean_cloze_log_ppl,official_full_downstream,claim_allowed
+openwebtext_v2_100m,raw,42,local_lambada_style_cloze,completed,200,8.734571723937988,8.734571723937988,False,False
+openwebtext_v2_100m,length_filter,42,local_lambada_style_cloze,completed,200,8.636825108528138,8.636825108528138,False,False
+openwebtext_v2_100m,c4_quality_filter,42,local_lambada_style_cloze,completed,200,8.6875199508667,8.6875199508667,False,False
+openwebtext_v2_100m,urd_fixed,42,local_lambada_style_cloze,completed,200,8.718212416172028,8.718212416172028,False,False
+c4_en_v2_100m,raw,42,local_lambada_style_cloze,completed,200,9.365322382450104,9.365322382450104,False,False
+c4_en_v2_100m,length_filter,42,local_lambada_style_cloze,completed,200,9.296982631683349,9.296982631683349,False,False
+c4_en_v2_100m,c4_quality_filter,42,local_lambada_style_cloze,completed,200,9.845496394634246,9.845496394634246,False,False
+c4_en_v2_100m,urd_fixed,42,local_lambada_style_cloze,completed,200,9.365881876945496,9.365881876945496,False,False
+all,all,42,piqa_subset,not_run_official_harness_required,0,,,False,False
+all,all,42,arc_easy_subset,not_run_official_harness_required,0,,,False,False

@@ -1,0 +1,9 @@
+filter_name: perplexity_proxy
+filter_type: perplexity_proxy
+scope: smoke
+allow_proxy: true
+proxy_used: true
+neural_lm_perplexity: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Lightweight unigram proxy; not a neural LM perplexity baseline."

@@ -1,0 +1,74 @@
+{
+  "best_method_by_valid_nll": {
+    "c4_en_v2_100m": "perplexity_proxy_filter",
+    "openwebtext_v2_100m": "urd_fixed"
+  },
+  "blocking_failures": [],
+  "ccf_b_ready_claimed": false,
+  "ccf_c_paper_claimed": false,
+  "ccfc_candidate_ready": true,
+  "completed": true,
+  "completed_training_runs": 42,
+  "created_at": "2026-06-13T11:42:04+00:00",
+  "current_readiness": "TOP_TIER_CCFC_PROJECT_CANDIDATE",
+  "expected_training_runs": 42,
+  "filter_methods": [
+    "c4_quality_filter",
+    "exact_dedup",
+    "length_filter",
+    "perplexity_proxy_filter",
+    "random_same_keep_rate",
+    "raw",
+    "urd_fixed"
+  ],
+  "gates": [
+    {
+      "blocking_failures": [],
+      "current_readiness": "CCFC_FILTER_MATRIX_COMPLETED",
+      "gate": "filter_matrix",
+      "passed": true,
+      "report": "artifacts/reports/localmax_ccfc_filter_report.json",
+      "status": "completed"
+    },
+    {
+      "blocking_failures": [],
+      "current_readiness": "CCFC_TRAINING_COMPLETED",
+      "gate": "five_m_training_matrix",
+      "passed": true,
+      "report": "artifacts/reports/localmax_ccfc_training_report.json",
+      "status": "completed"
+    },
+    {
+      "blocking_failures": [],
+      "current_readiness": "CCFC_EVALUATION_COMPLETED",
+      "gate": "evaluation_matrix",
+      "passed": true,
+      "report": "artifacts/reports/localmax_ccfc_evaluation_report.json",
+      "status": "completed"
+    },
+    {
+      "blocking_failures": [],
+      "current_readiness": "CCFC_DOWNSTREAM_LOCAL_PROBE_COMPLETED",
+      "gate": "local_downstream_probe",
+      "passed": true,
+      "report": "artifacts/reports/localmax_ccfc_downstream_report.json",
+      "status": "completed"
+    }
+  ],
+  "historical_results_modified": false,
+  "level3_completed_artifact": false,
+  "local_cloze_probe_rows": 8,
+  "main_results_modified": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "recommended_next_step": "write_submission_style_paper",
+  "sota_claimed": false,
+  "stage": "ccfc_readiness",
+  "status": "completed",
+  "step": "localmax_ccfc_strengthening",
+  "target_tokens_seen_per_run": 5000000
+}

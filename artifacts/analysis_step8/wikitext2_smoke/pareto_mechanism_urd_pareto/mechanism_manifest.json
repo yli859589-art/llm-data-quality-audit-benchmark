@@ -1,0 +1,53 @@
+{
+  "analysis_name": "pareto_mechanism_urd_pareto",
+  "analysis_type": "pareto_mechanism",
+  "claim_allowed": false,
+  "completed": true,
+  "created_at": "2026-06-11T09:18:53+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "7679eed83148011df407aa0d5a255528e20ccf42e2a2e806895a06c47f238fba",
+  "diagnostic_report_path": "artifacts/analysis_step8/wikitext2_smoke/pareto_mechanism_urd_pareto/pareto_mechanism_report.md",
+  "diagnostic_table_hash": "810022331dec0e750d7cfa7b3d44f92232a12e6a6c87b81f48ba503f5f6f2297",
+  "diagnostic_table_path": "artifacts/analysis_step8/wikitext2_smoke/pareto_mechanism_urd_pareto/pareto_mechanism_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {
+    "artifacts/evaluation_step7/wikitext2_smoke/pareto_urd_pareto/evaluation_manifest.json": "2874a355cf8f40f1b41d7e2a2ecbc16a48ca1154f18ecbf4ae6cdb4babf14443"
+  },
+  "evaluation_manifest_paths": [
+    "artifacts/evaluation_step7/wikitext2_smoke/pareto_urd_pareto/evaluation_manifest.json"
+  ],
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/wikitext2_smoke/pareto_mechanism_urd_pareto/pareto_mechanism_summary.json": "b6b269b2fe9c683e9a49b3656ec3aba88e5e7e54797930c72ffcef7ecccecaf2"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/wikitext2_smoke/pareto_mechanism_urd_pareto/pareto_mechanism_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_pareto/filter_manifest.json": "da2515242b3f6087cbfdbf5eb4d94c1ffc51fb96bebed101ddfb06b1f50dad4c"
+  },
+  "filter_manifest_paths": [
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_pareto/filter_manifest.json"
+  ],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "urd_pareto"
+  ],
+  "notes": "Pareto mechanism smoke diagnostic only.",
+  "protocol_only": false,
+  "scope": "smoke",
+  "smoke_only": true,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

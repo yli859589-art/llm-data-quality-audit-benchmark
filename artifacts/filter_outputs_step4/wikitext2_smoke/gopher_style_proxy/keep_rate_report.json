@@ -1,0 +1,18 @@
+{
+  "document_keep_rate": 1.0,
+  "filter_name": "gopher_style_proxy",
+  "filter_type": "gopher_style_proxy",
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 3,
+  "kept_estimated_tokens": 32,
+  "notes": "Document keep-rate and token keep-rate are both reported for later fairness checks.",
+  "status": "passed",
+  "target_keep_rate": null,
+  "target_keep_rate_check": {
+    "reason": "no target_keep_rate supplied",
+    "status": "not_applicable"
+  },
+  "token_counter_type": "whitespace",
+  "token_keep_rate": 1.0
+}

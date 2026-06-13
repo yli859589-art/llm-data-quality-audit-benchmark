@@ -1,0 +1,12 @@
+dataset: wikitext2
+split: train
+scope: smoke
+source_kind: fixture
+token_budget: 10K
+sampling_seed: 42
+shuffle: false
+allow_fallback: true
+smoke_only: true
+output_path: artifacts/data_step2/wikitext2_smoke/train.jsonl
+manifest_path: artifacts/data_step2/wikitext2_smoke/data_manifest.json
+status: smoke_protocol

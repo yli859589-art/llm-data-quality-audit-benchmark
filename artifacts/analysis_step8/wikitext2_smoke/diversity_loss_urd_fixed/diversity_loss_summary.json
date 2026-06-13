@@ -1,0 +1,8 @@
+{
+  "claim_allowed": false,
+  "diversity_score_mean": 0.9647159235248783,
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "sample_size": 3,
+  "semantic_embedding_unavailable": true,
+  "source_domain_unavailable": true
+}

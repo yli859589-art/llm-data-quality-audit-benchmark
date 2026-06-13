@@ -1,0 +1,2 @@
+model_scale,completed,parameter_count,tokens_seen_per_run_floor,true_medium_completed,large_lite_completed
+small,True,20542752,1000000,False,False

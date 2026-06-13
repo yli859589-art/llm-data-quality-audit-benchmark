@@ -1,0 +1,22 @@
+{
+  "document_keep_rate": 1.0,
+  "filter_name": "embedding_diversity_proxy",
+  "filter_type": "embedding_diversity_proxy",
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 3,
+  "kept_estimated_tokens": 32,
+  "notes": "Document keep-rate and token keep-rate are both reported for later fairness checks.",
+  "status": "passed",
+  "target_keep_rate": 0.67,
+  "target_keep_rate_check": {
+    "actual": 1.0,
+    "difference": 0.32999999999999996,
+    "reason": "integer document counts may prevent exact keep-rate matching",
+    "status": "warning",
+    "target": 0.67,
+    "tolerance": 0.25
+  },
+  "token_counter_type": "whitespace",
+  "token_keep_rate": 1.0
+}

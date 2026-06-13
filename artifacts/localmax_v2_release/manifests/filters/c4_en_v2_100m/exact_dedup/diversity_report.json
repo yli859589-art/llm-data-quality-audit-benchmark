@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-06-12T16:19:14+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "mean_diversity": 0.6485499497068204,
+  "method_name": "exact_dedup"
+}

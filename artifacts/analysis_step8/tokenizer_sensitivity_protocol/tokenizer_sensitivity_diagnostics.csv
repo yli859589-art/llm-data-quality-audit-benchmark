@@ -1,0 +1,2 @@
+method_name,char_manifest_status,lightweight_bpe_smoke_status,formal_bpe16k_status,formal_bpe32k_status,token_budget_mismatch_warning,selection_overlap_available,tokenizer_sensitivity_completed,insufficient_evidence,notes
+protocol_only,unavailable,available,future_required,future_required,future_matrix_required,False,False,True,Protocol-only tokenizer sensitivity plan; smoke tokenizer is not a formal tokenizer matrix.

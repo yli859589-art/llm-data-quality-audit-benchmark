@@ -1,0 +1,7 @@
+{
+  "step": "step10B_localmax_v2",
+  "scope": "localmax_v2_evaluation",
+  "minimum_core_runs": 24,
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "bootstrap_samples": 1000
+}

@@ -1,0 +1,19 @@
+{
+  "matrix": "level2_mechanism_matrix",
+  "scope": "level2_protocol",
+  "protocol_only": true,
+  "completed_evidence": false,
+  "required_analyses": [
+    "proxy_utility",
+    "overfiltering",
+    "diversity_loss",
+    "domain_shift",
+    "rank_stability",
+    "tokenizer_sensitivity",
+    "scale_trend",
+    "failure_taxonomy",
+    "pareto_mechanism"
+  ],
+  "claim_allowed": false
+}
+

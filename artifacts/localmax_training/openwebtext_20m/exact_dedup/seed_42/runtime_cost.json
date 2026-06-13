@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-06-11T18:41:26+00:00",
+  "dataset_id": "openwebtext_20m",
+  "device": "cuda",
+  "elapsed_seconds": 0.4094478999977582,
+  "estimated_gpu_memory_gb": 0.0,
+  "method_name": "exact_dedup",
+  "seed": 42,
+  "tokens_seen": 128
+}

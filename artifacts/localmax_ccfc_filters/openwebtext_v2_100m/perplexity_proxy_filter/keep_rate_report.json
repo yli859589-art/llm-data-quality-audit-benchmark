@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-12T19:56:30+00:00",
+  "dataset_id": "openwebtext_v2_100m",
+  "document_keep_rate": 0.7499940599234918,
+  "input_documents": 84174,
+  "kept_documents": 63130,
+  "method_name": "perplexity_proxy_filter",
+  "selected_gpt2_tokens": 44488224,
+  "source_data_tokens": 95000111,
+  "token_keep_rate": 0.46829654756929706
+}

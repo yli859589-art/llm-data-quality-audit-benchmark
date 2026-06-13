@@ -1,0 +1,19 @@
+{
+  "step": "step10B_localmax_v2",
+  "models": {
+    "small_20m": {
+      "model_name": "localmax_v2_small_20m",
+      "model_family": "decoder_lm",
+      "vocab_size": 50257,
+      "context_length": 256,
+      "num_layers": 6,
+      "hidden_size": 288,
+      "num_heads": 8,
+      "dropout": 0.0,
+      "tie_embeddings": true,
+      "scale_class": "small",
+      "notes": "20M-class small decoder LM for LocalMax V2. Not medium, not large-lite."
+    }
+  },
+  "core_model": "small_20m"
+}

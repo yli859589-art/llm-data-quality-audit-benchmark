@@ -1,0 +1,45 @@
+{
+  "analysis_name": "tokenizer_sensitivity_protocol",
+  "analysis_type": "tokenizer_sensitivity",
+  "claim_allowed": false,
+  "completed": false,
+  "created_at": "2026-06-11T07:51:45+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "25b6b5f9abcfd51b08a3b5aac1579710dfbf9593e989eac731532d3d464751fb",
+  "diagnostic_report_path": "artifacts/analysis_step8/tokenizer_sensitivity_protocol/tokenizer_sensitivity_report.md",
+  "diagnostic_table_hash": "88f79a6b209bc1867c4efd9eb56944011af9dfb78695b95723129fd8dac54d73",
+  "diagnostic_table_path": "artifacts/analysis_step8/tokenizer_sensitivity_protocol/tokenizer_sensitivity_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {},
+  "evaluation_manifest_paths": [],
+  "evidence_sufficiency": "protocol_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/tokenizer_sensitivity_protocol/tokenizer_sensitivity_summary.json": "274131408b1ff7df89e0925a5ba39f7e44b9dfa745513ce0129b51b77dd67fdd"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/tokenizer_sensitivity_protocol/tokenizer_sensitivity_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {},
+  "filter_manifest_paths": [],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "protocol_only"
+  ],
+  "notes": "Tokenizer sensitivity protocol only.",
+  "protocol_only": true,
+  "scope": "main_protocol",
+  "smoke_only": false,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

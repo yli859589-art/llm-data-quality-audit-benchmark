@@ -1,0 +1,8 @@
+{
+  "length_mean": 10.666666666666666,
+  "length_std": 1.247219128924647,
+  "lexical_diversity": 0.875,
+  "notes": "Step 4 lightweight diversity summary; not a final Step 7 diversity evaluation.",
+  "source_count": 1,
+  "unique_token_ratio": 0.875
+}

@@ -1,0 +1,15 @@
+{
+  "coverage_proxy": "hash_vector_and_cluster_proxy",
+  "diversity_score_mean": 0.9647159235248783,
+  "diversity_score_std": 0.025069726346338937,
+  "effectiveness_claim_allowed": false,
+  "entropy": "proxy_available_in_component_scores",
+  "length_mean": 10,
+  "length_std": 1.0,
+  "lexical_diversity": 0.95,
+  "main_evidence": false,
+  "neural_embedding_unavailable": true,
+  "proxy_metric": true,
+  "source_count": 1,
+  "unique_token_ratio": 0.95
+}

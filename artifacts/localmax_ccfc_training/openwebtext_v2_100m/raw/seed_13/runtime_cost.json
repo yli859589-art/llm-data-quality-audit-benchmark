@@ -1,0 +1,10 @@
+{
+  "additional_tokens_seen": 3999744,
+  "created_at": "2026-06-12T20:07:30+00:00",
+  "device": "cuda",
+  "disk_free_gb_after_run": 67.79,
+  "duration_seconds": 159.23964709999564,
+  "oom": false,
+  "tokens_per_second": 25117.764783090315,
+  "tokens_seen": 5001216
+}

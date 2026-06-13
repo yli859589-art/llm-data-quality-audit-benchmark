@@ -1,0 +1,45 @@
+{
+  "analysis_name": "scale_trend_protocol",
+  "analysis_type": "scale_trend",
+  "claim_allowed": false,
+  "completed": false,
+  "created_at": "2026-06-11T07:51:44+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "966ec735d1ae7b9271af2d3de96dd3a14bd4c87ca6ff7ec55e194ca9003f3cb7",
+  "diagnostic_report_path": "artifacts/analysis_step8/scale_trend_protocol/scale_trend_report.md",
+  "diagnostic_table_hash": "ce8eb4ed1222d916d421089672f39a83f1873348aa7893bec75467ef18803056",
+  "diagnostic_table_path": "artifacts/analysis_step8/scale_trend_protocol/scale_trend_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {},
+  "evaluation_manifest_paths": [],
+  "evidence_sufficiency": "protocol_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/scale_trend_protocol/scale_trend_summary.json": "9e468d71ca14e1c63d24bafaf6c7e694019191981beb2ddbb4b6e881c1b09718"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/scale_trend_protocol/scale_trend_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {},
+  "filter_manifest_paths": [],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "protocol_only"
+  ],
+  "notes": "Scale trend protocol only.",
+  "protocol_only": true,
+  "scope": "main_protocol",
+  "smoke_only": false,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

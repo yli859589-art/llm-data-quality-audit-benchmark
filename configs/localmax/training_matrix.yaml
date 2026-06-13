@@ -1,0 +1,10 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_training",
+  "small_minimum": {"datasets": 2, "methods": 6, "seeds": 3},
+  "medium_lite_policy": "selected_runs_only_if_resources_allow",
+  "requires_training_manifest": true,
+  "requires_checkpoint_manifest": true,
+  "requires_cost_metadata": true
+}
+

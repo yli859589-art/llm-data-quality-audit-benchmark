@@ -1,0 +1,3 @@
+{"doc_id": "wikitext2-smoke-train-0", "keep": true, "reason": "urd_fixed_weight", "score": 0.4417420172975569}
+{"doc_id": "wikitext2-smoke-train-1", "keep": true, "reason": "urd_fixed_weight", "score": 0.44189419617808073}
+{"doc_id": "wikitext2-smoke-train-2", "keep": false, "reason": "urd_fixed_weight", "score": 0.4142428804664598}

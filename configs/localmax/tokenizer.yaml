@@ -1,0 +1,8 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_tokenizer",
+  "mainline_tokenizer": "gpt2",
+  "tokenizer_type": "gpt2_bpe",
+  "forbidden_mainlines": ["char_level", "lightweight_bpe_smoke"]
+}
+

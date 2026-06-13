@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-06-12T19:59:07+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "max_risk": 1.0,
+  "mean_risk": 0.0039010034634661865,
+  "method_name": "length_filter"
+}

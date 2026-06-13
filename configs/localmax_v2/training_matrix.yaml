@@ -1,0 +1,24 @@
+{
+  "step": "step10B_localmax_v2",
+  "scope": "localmax_v2_training",
+  "datasets": ["openwebtext_v2_100m", "c4_en_v2_100m"],
+  "methods": ["raw", "exact_dedup", "length_filter", "urd_fixed"],
+  "seeds": [13, 42, 101],
+  "model_config": "configs/localmax_v2/model_matrix.yaml",
+  "training": {
+    "selected_tier": "Tier B",
+    "context_length": 256,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_tokens": 2048,
+    "min_tokens_seen_per_run": 1000000,
+    "target_tokens_seen_per_run": 1000000,
+    "training_token_sample_cap": 1200000,
+    "validation_token_sample_cap": 131072,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "mixed_precision": true,
+    "checkpoint_policy": "state_fingerprint_and_manifest_only"
+  }
+}

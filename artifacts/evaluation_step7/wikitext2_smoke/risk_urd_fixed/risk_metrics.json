@@ -1,0 +1,15 @@
+{
+  "boilerplate_ratio": "proxy_available_in_component_scores",
+  "digit_ratio": 0.0072992700729927005,
+  "effectiveness_claim_allowed": false,
+  "estimated_pii_hits": 0,
+  "html_ratio": 0.0,
+  "main_evidence": false,
+  "proxy_metric": true,
+  "repetition_ratio": 0,
+  "risk_score_mean": 0.007444952520553183,
+  "risk_score_std": 0.0035469967780814783,
+  "symbol_ratio": 0.014598540145985401,
+  "toxicity_classifier": "unavailable",
+  "url_ratio": 0.0
+}

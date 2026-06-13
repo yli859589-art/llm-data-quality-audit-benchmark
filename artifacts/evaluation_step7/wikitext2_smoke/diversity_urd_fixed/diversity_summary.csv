@@ -1,0 +1,2 @@
+method_name,unique_token_ratio,lexical_diversity,entropy,length_mean,length_std,source_count,coverage_proxy,diversity_score_mean,diversity_score_std,neural_embedding_unavailable,proxy_metric,main_evidence,effectiveness_claim_allowed
+urd_fixed,0.95,0.95,proxy_available_in_component_scores,10,1.0,1,hash_vector_and_cluster_proxy,0.9647159235248783,0.025069726346338937,True,True,False,False

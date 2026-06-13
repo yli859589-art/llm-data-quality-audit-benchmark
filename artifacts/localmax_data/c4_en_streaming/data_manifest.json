@@ -1,0 +1,44 @@
+{
+  "completed": true,
+  "created_at": "2026-06-11T17:29:45+00:00",
+  "data_sha256": "952F7F00AB820F39EFCA3A156B838B723C696996273FBC69EF33ACBCCC7397C1",
+  "dataset_id": "c4_en_streaming",
+  "dataset_name": "C4 English streaming sample",
+  "fallback_used": false,
+  "gpt2_bpe_tokens": 175015,
+  "level3_completed": false,
+  "localmax_completed": false,
+  "main_results_modified": false,
+  "meets_localmax_20m_floor": false,
+  "meets_recommended_50m_budget": false,
+  "minimum_localmax_dataset_tokens": 20000000,
+  "recommended_token_budget_per_dataset": 50000000,
+  "scope": "localmax_data",
+  "smoke_only": false,
+  "source_dataset_status": "real_nonfallback",
+  "source_manifest_path": "artifacts/data/c4_en_streaming/data_manifest.json",
+  "split_byte_counts": {
+    "test": 81153,
+    "train": 666089,
+    "validation": 77379
+  },
+  "split_gpt2_bpe_tokens": {
+    "test": 17884,
+    "train": 140667,
+    "validation": 16464
+  },
+  "split_paths": {
+    "test": "artifacts/data/c4_en_streaming/splits/test.jsonl",
+    "train": "artifacts/data/c4_en_streaming/splits/train.jsonl",
+    "validation": "artifacts/data/c4_en_streaming/splits/dev.jsonl"
+  },
+  "split_record_counts": {
+    "test": 41,
+    "train": 319,
+    "validation": 39
+  },
+  "stage": "data_manifest",
+  "step": "step10B_localmax_execution",
+  "streaming_sample": true,
+  "token_counter_type": "gpt2_bpe_transformers"
+}

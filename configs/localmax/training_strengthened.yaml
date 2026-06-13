@@ -1,0 +1,36 @@
+{
+  "step": "step10B_localmax_training_strengthen",
+  "scope": "localmax_training_strengthened",
+  "datasets": ["openwebtext_20m", "c4_en_20m"],
+  "methods": ["raw", "exact_dedup", "length_filter", "urd_fixed"],
+  "seeds": [13, 42, 101],
+  "model": {
+    "model_name": "localmax_small_20m_strengthened",
+    "model_family": "decoder_lm",
+    "vocab_size": 50257,
+    "context_length": 128,
+    "num_layers": 6,
+    "hidden_size": 288,
+    "num_heads": 8,
+    "dropout": 0.0,
+    "tie_embeddings": true,
+    "scale_class": "small",
+    "notes": "Small 20M-class LocalMax strengthened model; not medium, not large-lite."
+  },
+  "training": {
+    "max_steps": 100,
+    "context_length": 128,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "training_token_sample_cap": 131072,
+    "validation_token_sample_cap": 32768,
+    "min_tokens_seen_per_run": 25000,
+    "target_tokens_seen_per_run": 50000,
+    "mixed_precision": true,
+    "checkpoint_policy": "metadata_only_due_repository_large_file_policy"
+  }
+}
+

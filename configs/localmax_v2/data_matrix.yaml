@@ -1,0 +1,34 @@
+{
+  "step": "step10B_localmax_v2",
+  "scope": "localmax_v2_data",
+  "target_gpt2_tokens_per_dataset": 100000000,
+  "split_token_targets": {
+    "train": 95000000,
+    "valid": 2500000,
+    "test": 2500000
+  },
+  "minimum_datasets_meeting_floor": 2,
+  "disk_reserve_gb": 25,
+  "max_new_artifacts_gb": 20,
+  "tokenizer_name": "gpt2",
+  "sources": [
+    {
+      "dataset_id": "openwebtext_v2_100m",
+      "dataset_name": "OpenWebText LocalMax V2 100M GPT-2-token sample",
+      "hf_dataset": "Skylion007/openwebtext",
+      "hf_config": "",
+      "source_version": "huggingface_streaming_current",
+      "text_field": "text",
+      "license_scope_note": "OpenWebText-style public web text sample accessed through HuggingFace streaming for LocalMax V2 local evidence."
+    },
+    {
+      "dataset_id": "c4_en_v2_100m",
+      "dataset_name": "C4 English LocalMax V2 100M GPT-2-token sample",
+      "hf_dataset": "allenai/c4",
+      "hf_config": "en",
+      "source_version": "huggingface_streaming_current",
+      "text_field": "text",
+      "license_scope_note": "C4 English public research dataset accessed through HuggingFace streaming for LocalMax V2 local evidence."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "bootstrap_ci": {
+    "ci95_high": null,
+    "ci95_low": null,
+    "warning": "insufficient_sample_size_for_bootstrap"
+  },
+  "dataset_sensitivity": "protocol_only",
+  "effectiveness_claim_allowed": false,
+  "insufficient_evidence": true,
+  "method_ranking_stability": "insufficient_evidence",
+  "rank_correlation": {
+    "spearman_proxy": null,
+    "warning": "insufficient_sample_size_for_rank_correlation"
+  },
+  "ranking_stability_claim_allowed": false,
+  "seed_metric_summary": {
+    "insufficient_sample_warning": true,
+    "mean": null,
+    "n": 0,
+    "standard_error": null,
+    "std": null
+  },
+  "tokenizer_sensitivity": "protocol_only"
+}

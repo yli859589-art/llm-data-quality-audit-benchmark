@@ -1,0 +1,3 @@
+{"component_scores": {"seeded_random_keep": 1.0}, "doc_id": "wikitext2-smoke-train-0", "metadata": {"component_scores": {"seeded_random_keep": 1.0}, "seed": 42}, "score": 1.0}
+{"component_scores": {"seeded_random_keep": 1.0}, "doc_id": "wikitext2-smoke-train-1", "metadata": {"component_scores": {"seeded_random_keep": 1.0}, "seed": 42}, "score": 1.0}
+{"component_scores": {"seeded_random_keep": 0.0}, "doc_id": "wikitext2-smoke-train-2", "metadata": {"component_scores": {"seeded_random_keep": 0.0}, "seed": 42}, "score": 0.0}

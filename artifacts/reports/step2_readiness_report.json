@@ -1,0 +1,29 @@
+{
+  "step": "step2_dataset_pipeline_upgrade",
+  "status": "completed",
+  "tests_passed": true,
+  "run_all_checks_passed": true,
+  "dataset_manifest_checks_passed": true,
+  "main_results_modified": false,
+  "new_experiments_added": false,
+  "new_training_results_added": false,
+  "data_source_interface_added": true,
+  "prepare_data_v2_added": true,
+  "token_budget_sampler_added": true,
+  "no_fallback_validation_added": true,
+  "wikitext2_smoke_verified": true,
+  "openwebtext_protocol_added": true,
+  "c4_protocol_added": true,
+  "fineweb_protocol_added": true,
+  "dolma_protocol_added": true,
+  "pile_protocol_added": true,
+  "full_100m_or_500m_data_prepared": false,
+  "optional_or_protocol_only_notes": {
+    "fineweb": "protocol implemented; no real 100M/500M data prepared in Step 2",
+    "dolma": "optional_remote protocol implemented; no real 100M/500M data prepared in Step 2",
+    "pile": "optional protocol implemented; no real Pile subset data prepared in Step 2",
+    "openwebtext": "existing bounded streaming-sample cache supported; no full upstream preparation",
+    "c4": "existing bounded streaming-sample cache supported; no full upstream preparation"
+  },
+  "recommended_next_step": "step3_tokenizer_pipeline_upgrade"
+}

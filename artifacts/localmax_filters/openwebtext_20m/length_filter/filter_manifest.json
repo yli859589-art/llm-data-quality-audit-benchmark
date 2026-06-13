@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "created_at": "2026-06-11T18:38:12+00:00",
+  "dataset_id": "openwebtext_20m",
+  "dataset_manifest": "artifacts/localmax_data/openwebtext_20m/dataset_manifest.json",
+  "document_keep_rate": 0.8895555972248266,
+  "input_documents": 15999,
+  "input_gpt2_tokens": 18002180,
+  "kept_documents": 14232,
+  "kept_gpt2_tokens": 10685750,
+  "level3_filter": false,
+  "method_name": "length_filter",
+  "protocol_only": false,
+  "scope": "localmax_minimal",
+  "scores_or_decisions_path": "artifacts/localmax_filters/openwebtext_20m/length_filter/scores_or_decisions.jsonl",
+  "selected_doc_ids_path": "artifacts/localmax_filters/openwebtext_20m/length_filter/selected_doc_ids.jsonl",
+  "smoke_only": false,
+  "step": "step10B_localmax_execution_fix",
+  "token_keep_rate": 0.5935808885368328,
+  "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json"
+}

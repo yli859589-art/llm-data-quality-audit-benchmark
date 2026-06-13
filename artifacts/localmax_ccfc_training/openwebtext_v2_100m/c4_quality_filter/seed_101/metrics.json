@@ -1,0 +1,88 @@
+{
+  "additional_steps_completed": 2442,
+  "additional_tokens_seen": 5001216,
+  "completed": true,
+  "context_length": 256,
+  "created_at": "2026-06-13T02:52:19+00:00",
+  "dataset_id": "openwebtext_v2_100m",
+  "effective_batch_tokens": 2048,
+  "evaluated_validation_batches": 256,
+  "failed": false,
+  "failure_type": "",
+  "gradient_accumulation_steps": 4,
+  "loss_curve": [
+    {
+      "step": 1,
+      "tokens_seen": 2048,
+      "train_loss": 188.45034790039062
+    },
+    {
+      "step": 250,
+      "tokens_seen": 512000,
+      "train_loss": 25.418038368225098
+    },
+    {
+      "step": 500,
+      "tokens_seen": 1024000,
+      "train_loss": 18.705852508544922
+    },
+    {
+      "step": 750,
+      "tokens_seen": 1536000,
+      "train_loss": 13.811402797698975
+    },
+    {
+      "step": 1000,
+      "tokens_seen": 2048000,
+      "train_loss": 12.060739755630493
+    },
+    {
+      "step": 1250,
+      "tokens_seen": 2560000,
+      "train_loss": 11.656631231307983
+    },
+    {
+      "step": 1500,
+      "tokens_seen": 3072000,
+      "train_loss": 10.724353313446045
+    },
+    {
+      "step": 1750,
+      "tokens_seen": 3584000,
+      "train_loss": 10.74466848373413
+    },
+    {
+      "step": 2000,
+      "tokens_seen": 4096000,
+      "train_loss": 9.867658615112305
+    },
+    {
+      "step": 2250,
+      "tokens_seen": 4608000,
+      "train_loss": 9.553839206695557
+    },
+    {
+      "step": 2442,
+      "tokens_seen": 5001216,
+      "train_loss": 9.223679304122925
+    }
+  ],
+  "method_name": "c4_quality_filter",
+  "metric_audit_passed": true,
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "micro_batch_size": 2,
+  "model_scale": "small",
+  "parameter_count": 20542752,
+  "ppl_clipped": false,
+  "ppl_comparable": true,
+  "ppl_overflow": false,
+  "seed": 101,
+  "steps_completed": 2442,
+  "tokens_seen": 5001216,
+  "train_loss_final": 9.223679304122925,
+  "valid_log_ppl": 9.479291470721364,
+  "valid_loss": 9.479291470721364,
+  "valid_nll_nats_per_token": 9.479291470721364,
+  "valid_ppl": 13085.911477326339,
+  "warm_start_tokens_seen": 0
+}

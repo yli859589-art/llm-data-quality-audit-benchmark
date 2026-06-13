@@ -1,0 +1,29 @@
+{
+  "blocking_failures": [
+    "GPU memory 8.0GB is below the minimum 16GB policy.",
+    "Disk free space 72.3GB is below the conservative 1500GB Level 3 estimate.",
+    "Internet/HuggingFace access check failed."
+  ],
+  "completed": false,
+  "created_at": "2026-06-12T18:08:33+00:00",
+  "evidence_level": "level3_filter_blocked",
+  "fallbacks_used": [],
+  "heavy_execution_completed": false,
+  "historical_results_modified": false,
+  "level3_completed_artifact": false,
+  "level3_filters_ready": false,
+  "main_results_modified": false,
+  "new_level3_main_results_added": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "protocol_only": false,
+  "scope": "blocked_before_heavy_execution",
+  "smoke_only": false,
+  "stage": "filter",
+  "status": "blocked",
+  "step": "step10B_level3_heavy_execution"
+}

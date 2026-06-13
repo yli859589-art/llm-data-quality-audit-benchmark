@@ -1,0 +1,14 @@
+{
+  "evaluation_name": "combined_smoke",
+  "evaluation_type": "combined_smoke",
+  "scope": "smoke",
+  "method_name": "urd_fixed",
+  "dataset_name": "wikitext2_smoke",
+  "smoke_only": true,
+  "protocol_only": false,
+  "runner_status": "config_only",
+  "runner_implemented": false,
+  "completed_evidence": false,
+  "components": ["lm", "risk", "diversity", "cost", "pareto"],
+  "notes": "Combined smoke protocol config; not a combined main result."
+}

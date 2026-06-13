@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-06-11T19:27:15+00:00",
+  "cuda_available": true,
+  "device": "cuda",
+  "duration_seconds": 2.8314866999935475,
+  "early_stopped": false,
+  "gpu_memory_gb": 8.0,
+  "oom": false,
+  "tokens_seen": 25600
+}

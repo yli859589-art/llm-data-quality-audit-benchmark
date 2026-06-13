@@ -1,0 +1,2 @@
+method_name,filter_runtime_seconds,training_runtime_seconds,tokens_seen,input_docs,kept_docs,document_keep_rate,token_keep_rate,estimated_operations,external_dependency_used,cost_normalized_loss_diagnostic,compute_cost_proxy,real_flops_available,main_evidence,effectiveness_claim_allowed
+urd_fixed,0.0005574999959208071,,,3,2,0.6666666666666666,0.625,3,False,,True,False,False,False

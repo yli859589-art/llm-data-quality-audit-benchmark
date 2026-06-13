@@ -1,0 +1,14 @@
+{
+  "checkpoint_hash": "",
+  "checkpoint_materialized": false,
+  "checkpoint_path": "",
+  "completed_training_run": true,
+  "created_at": "2026-06-11T18:42:26+00:00",
+  "dataset_id": "openwebtext_20m",
+  "manifest_version": "localmax.checkpoint_manifest.v1",
+  "method_name": "urd_fixed",
+  "model_state_fingerprint": "05D1955C3AB6729DAE7C6AC176550FC927538351CF84F23D00C5E0A220E24E94",
+  "not_a_fake_checkpoint": true,
+  "omission_reason": "Repository hygiene disallows many >5MiB binary checkpoints; this manifest records the trained-state fingerprint and storage policy instead of a resumable checkpoint file.",
+  "seed": 101
+}

@@ -1,0 +1,12 @@
+{
+  "evaluation_name": "cost_urd_fixed",
+  "evaluation_type": "cost",
+  "scope": "smoke",
+  "method_name": "urd_fixed",
+  "dataset_name": "wikitext2_smoke",
+  "filter_manifest_path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_fixed/filter_manifest.json",
+  "smoke_only": true,
+  "protocol_only": false,
+  "completed_evidence": false,
+  "notes": "Cost smoke diagnostics only; no real FLOPs claim."
+}

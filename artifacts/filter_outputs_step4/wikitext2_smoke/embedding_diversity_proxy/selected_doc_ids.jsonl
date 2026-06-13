@@ -1,0 +1,3 @@
+{"doc_id": "wikitext2-smoke-train-0", "keep": true, "reason": "embedding_diversity_proxy", "score": 0.9473684210526316}
+{"doc_id": "wikitext2-smoke-train-1", "keep": true, "reason": "embedding_diversity_proxy", "score": 0.9}
+{"doc_id": "wikitext2-smoke-train-2", "keep": true, "reason": "embedding_diversity_proxy", "score": 0.9}

@@ -1,0 +1,46 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "sources": [
+    {
+      "dataset_id": "openwebtext",
+      "source_type": "public_corpus",
+      "license_scope_note_required": true,
+      "download_in_step10A": false,
+      "manifest_required_in_step10B": true
+    },
+    {
+      "dataset_id": "c4_en",
+      "source_type": "public_corpus",
+      "license_scope_note_required": true,
+      "download_in_step10A": false,
+      "manifest_required_in_step10B": true
+    },
+    {
+      "dataset_id": "fineweb",
+      "source_type": "public_corpus",
+      "license_scope_note_required": true,
+      "download_in_step10A": false,
+      "manifest_required_in_step10B": true
+    },
+    {
+      "dataset_id": "dolma_or_pile",
+      "source_type": "public_corpus_choice",
+      "license_scope_note_required": true,
+      "download_in_step10A": false,
+      "manifest_required_in_step10B": true
+    }
+  ],
+  "required_manifest_fields_step10B": [
+    "dataset_id",
+    "source",
+    "license_scope_note",
+    "split_hashes",
+    "tokenizer_id",
+    "bpe_token_count",
+    "document_count",
+    "no_fallback",
+    "split_integrity_status"
+  ]
+}

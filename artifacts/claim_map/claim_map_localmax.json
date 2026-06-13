@@ -1,0 +1,44 @@
+{
+  "allowed_claims": [
+    "LocalMax minimal training evidence has been released.",
+    "Two local 20M GPT-2-token datasets are included.",
+    "GPT-2 BPE is the LocalMax tokenizer.",
+    "Four filtering methods and 24 strengthened small-model runs are recorded.",
+    "Evaluation is registry-backed and uses valid_loss.",
+    "PPL is clipped and not comparable.",
+    "URD evidence is mixed.",
+    "Level 3 protocol exists, but Level 3 execution is not complete."
+  ],
+  "bundle_scope": "standalone_metadata_bundle",
+  "canonical_encoding": "UTF-8",
+  "canonical_newline": "LF",
+  "ccf_b_ready_claimed": false,
+  "current_status": "LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED",
+  "disallowed_claims": [
+    "Completed Level 3 benchmark.",
+    "Conference-tier readiness claim.",
+    "URD-fixed proven superior to raw.",
+    "PPL-based improvement.",
+    "Official downstream evaluation completed.",
+    "True medium completed.",
+    "Selected large-lite completed.",
+    "500M or 1B token benchmark completed."
+  ],
+  "evidence_links": {
+    "claim_boundary": "docs/LOCALMAX_CLAIM_BOUNDARY.md",
+    "limitations": "docs/LOCALMAX_LIMITATIONS.md",
+    "main_release_table": "artifacts/localmax_release/tables/localmax_main_results_release.csv",
+    "statistical_summary": "artifacts/localmax_release/tables/localmax_statistical_summary_release.csv",
+    "step10c_report": "artifacts/reports/step10C_localmax_release_report.json"
+  },
+  "large_lite_completed": false,
+  "level3_completed_artifact": false,
+  "official_downstream_completed": false,
+  "ppl_improvement_claim_allowed": false,
+  "release_hotfix_version": "step10C_hotfix_v1",
+  "standalone_bundle": true,
+  "step": "step10C_localmax_release_freeze",
+  "true_medium_completed": false,
+  "urd_beats_raw_claim_allowed": false,
+  "weak_ccf_a_claimed": false
+}

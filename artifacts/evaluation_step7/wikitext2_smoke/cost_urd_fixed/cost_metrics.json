@@ -1,0 +1,16 @@
+{
+  "compute_cost_proxy": true,
+  "cost_normalized_loss_diagnostic": null,
+  "document_keep_rate": 0.6666666666666666,
+  "effectiveness_claim_allowed": false,
+  "estimated_operations": 3,
+  "external_dependency_used": false,
+  "filter_runtime_seconds": 0.0005574999959208071,
+  "input_docs": 3,
+  "kept_docs": 2,
+  "main_evidence": false,
+  "real_flops_available": false,
+  "token_keep_rate": 0.625,
+  "tokens_seen": null,
+  "training_runtime_seconds": null
+}

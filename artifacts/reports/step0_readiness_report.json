@@ -1,0 +1,14 @@
+{
+  "step": "step0_repo_audit",
+  "status": "completed",
+  "tests_passed": true,
+  "pip_install_editable_passed": true,
+  "run_all_checks_passed": true,
+  "num_existing_tests": 69,
+  "existing_main_results_found": true,
+  "fallback_risk_found": true,
+  "fallback_risk_note": "No fallback was found in current main/cross-dataset evidence and no-fallback checks passed; legacy/smoke/fallback-capable paths still exist and should be isolated before Level 3.",
+  "manual_results_risk_found": true,
+  "manual_results_risk_note": "main_results.csv is protected by purity and release checks, but as a committed CSV artifact it should be further locked to registry regeneration before Level 3.",
+  "recommended_next_step": "step1_research_positioning_and_claim_boundary"
+}

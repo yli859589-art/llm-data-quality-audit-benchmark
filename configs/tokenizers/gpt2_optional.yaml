@@ -1,0 +1,18 @@
+tokenizer_name: gpt2_optional
+tokenizer_type: gpt2_optional
+scope: implemented_but_not_run
+level3_mainline: false
+vocab_size_requested: 50257
+training_data_path: ""
+training_scope: implemented_but_not_run
+seed: 42
+normalization: gpt2_default
+model_path: ""
+vocab_path: ""
+manifest_path: artifacts/tokenizers_step3/gpt2_optional/tokenizer_manifest.json
+optional_dependency: tiktoken_or_transformers
+fallback_allowed: false
+smoke_only: false
+implemented_but_not_run: true
+status: optional_dependency
+notes: GPT-2 wrapper is optional and must not download in tests

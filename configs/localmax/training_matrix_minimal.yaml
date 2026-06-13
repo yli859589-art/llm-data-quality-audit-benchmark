@@ -1,0 +1,34 @@
+{
+  "step": "step10B_localmax_execution_fix",
+  "scope": "localmax_minimal_training",
+  "datasets_required": 2,
+  "methods": ["raw", "exact_dedup", "length_filter", "urd_fixed"],
+  "seeds": [13, 42, 101],
+  "allow_two_seed_partial": true,
+  "model": {
+    "model_name": "localmax_small_20m",
+    "model_family": "decoder_lm",
+    "vocab_size": 50257,
+    "context_length": 64,
+    "num_layers": 6,
+    "hidden_size": 288,
+    "num_heads": 8,
+    "dropout": 0.0,
+    "tie_embeddings": true,
+    "scale_class": "small",
+    "notes": "Small 20M-class LocalMax minimal model; not medium, not large-lite."
+  },
+  "training": {
+    "max_steps": 2,
+    "batch_size": 1,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "eval_batches": 2,
+    "training_token_sample_cap": 8192,
+    "validation_token_sample_cap": 4096,
+    "precision": "mixed_if_cuda",
+    "checkpoint_materialization": "metadata_only_due_repository_large_file_policy"
+  }
+}
+

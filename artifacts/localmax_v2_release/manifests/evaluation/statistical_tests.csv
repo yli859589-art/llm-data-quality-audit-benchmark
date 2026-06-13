@@ -1,0 +1,7 @@
+dataset_id,comparison,test_name,n_seeds,mean_paired_nll_improvement,ci_low,ci_high,ci_crosses_zero,improvement_claim_allowed,metric_for_comparison
+c4_en_v2_100m,exact_dedup_vs_raw,paired_seed_difference_on_valid_nll,3,0.0,0.0,0.0,True,False,valid_nll_nats_per_token
+c4_en_v2_100m,length_filter_vs_raw,paired_seed_difference_on_valid_nll,3,0.008441490431626638,-0.07207242399454117,0.12437610328197479,True,False,valid_nll_nats_per_token
+c4_en_v2_100m,urd_fixed_vs_raw,paired_seed_difference_on_valid_nll,3,0.0009607486426830292,-0.03162563964724541,0.06519117951393127,True,False,valid_nll_nats_per_token
+openwebtext_v2_100m,exact_dedup_vs_raw,paired_seed_difference_on_valid_nll,3,0.0,0.0,0.0,True,False,valid_nll_nats_per_token
+openwebtext_v2_100m,length_filter_vs_raw,paired_seed_difference_on_valid_nll,3,0.0668296068906784,0.03938039019703865,0.09092921391129494,False,True,valid_nll_nats_per_token
+openwebtext_v2_100m,urd_fixed_vs_raw,paired_seed_difference_on_valid_nll,3,-0.022342214981714886,-0.039995547384023666,0.011391814798116684,True,False,valid_nll_nats_per_token

@@ -1,0 +1,9 @@
+filter_name: embedding_diversity_proxy
+filter_type: embedding_diversity_proxy
+scope: smoke
+allow_proxy: true
+proxy_used: true
+neural_embedding_model_used: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Token-set diversity proxy; not a neural embedding diversity baseline."

@@ -27,9 +27,16 @@
     "docs/PROJECT_PRESENTATION_NOTES.md",
     "docs/future_publication_notes/README.md"
   ],
-  "heavy_check_reason": "skip-heavy flag was provided",
-  "heavy_check_status": "skipped_by_request",
-  "heavy_steps": [],
+  "heavy_check_reason": "run_all_checks completed",
+  "heavy_check_status": "passed",
+  "heavy_steps": [
+    {
+      "command": "python scripts/run_all_checks.py --timeout 300",
+      "name": "run_all_checks",
+      "returncode": 0,
+      "status": "passed"
+    }
+  ],
   "lightweight_check_status": "passed",
   "lightweight_steps": [
     {
@@ -63,7 +70,7 @@
   ],
   "status": "passed",
   "zip_cache_hits": [],
-  "zip_file_name": "llm_data_quality_audit_benchmark_release_candidate_v1.zip",
+  "zip_file_name": "llm_data_quality_audit_benchmark_step9_level3_pipeline_ready_20260611.zip",
   "zip_path": "<local_user_path>",
-  "zip_sha256": "70c3c1746485e3b3245984f5faa2a6c62ec3087a97f0630d129a7f9d4dc2f5d8"
+  "zip_sha256": "201946a3764813c66233b8c5728cc6785868708241cae256d77c084baff7140b"
 }

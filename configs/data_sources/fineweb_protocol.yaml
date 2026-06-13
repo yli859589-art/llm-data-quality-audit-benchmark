@@ -1,0 +1,12 @@
+dataset: fineweb
+split: train
+scope: implemented_but_not_run
+source_kind: optional_remote
+token_budget: 100M
+sampling_seed: 42
+shuffle: true
+allow_fallback: false
+output_path: artifacts/data_step2/fineweb_100m/train.jsonl
+manifest_path: artifacts/data_step2/fineweb_100m/data_manifest.json
+status: protocol_only
+note: FineWeb real 100M data is not prepared in Step 2

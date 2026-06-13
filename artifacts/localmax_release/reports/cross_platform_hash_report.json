@@ -1,0 +1,15 @@
+{
+  "canonical_newline": "LF",
+  "claim_checker_idempotent": true,
+  "cross_platform_rewrite_detected": false,
+  "encoding": "UTF-8",
+  "errors": [],
+  "global_registry_hash_check_passed": true,
+  "linux_style_paths_affect_hash": false,
+  "localmax_registry_hash_check_passed": true,
+  "release_finalizer_idempotent": true,
+  "status": "passed",
+  "timestamp_causes_frozen_hash_drift": false,
+  "tracked_file_count": 58,
+  "windows_style_paths_affect_hash": false
+}

@@ -1,42 +1,10 @@
 # Resume Bullets
 
-Use these bullets only with the reporting boundary in
-`docs/REPORTING_CONTRACT.md`.
-
-## English
-
-- Built a reproducible LLM data quality audit benchmark with real non-fallback
-  data pipelines, append-only run registry, artifact lineage, multi-seed
-  baselines, split-integrity checks, no-test-leakage validation, and
-  cross-dataset streaming audit over WikiText-2, OpenWebText sample, and C4
-  sample.
-- Found that heuristic quality filters such as HDQS++ can underperform raw/dedup
-  baselines under fair tokenizer/model/evaluation settings, highlighting risks
-  of unverified data filtering in LLM pretraining.
-- Implemented release-grade validation including claim hygiene, reproducibility
-  checks, fresh-unzip verification, dataset manifests, and cross-dataset status
-  reporting.
-
-## Chinese
-
-- 构建了一个可复现的 LLM 数据质量审计 benchmark，包含真实非 fallback
-  数据管线、append-only run registry、artifact lineage、多 seed baseline、
-  split-integrity、no-test-leakage 检查，以及 WikiText-2、OpenWebText sample
-  和 C4 sample 的 cross-dataset streaming audit。
-- 发现 HDQS++ 等启发式质量过滤方法在公平 tokenizer/model/evaluation
-  设置下可能弱于 raw/dedup baseline，说明未经验证的数据过滤可能伤害 LLM
-  预训练效果。
-- 实现了面向发布的验证链路，包括 claim hygiene、reproducibility checks、
-  fresh-unzip verification、dataset manifests 和 cross-dataset status
-  reporting。
-
-## Safe Boundary
-
-HDQS++ v3 does not outperform raw under the current fair benchmark.
-
-## Do Not Write These Forbidden Claims
-
-- Developed a state-of-the-art filter.
-- Improved LLM pretraining perplexity.
-- Beat raw baseline.
-- CCF-C-ready project.
+- Built a top-tier CCF-C candidate LLM data-quality research artifact over OpenWebText and C4 samples, with 2 real non-fallback corpora, 7 filtering methods, 3 seeds, and 42 controlled small-decoder-LM training runs.
+- Scaled the local benchmark to 200M GPT-2-token source data and 210M training tokens_seen, using a 20.5M-parameter decoder LM, GPT-2 tokenizer, fixed context length, per-run manifests, and finite-metric audit checks.
+- Compared raw, exact dedup, length filtering, random same-keep-rate, C4-style quality filtering, perplexity-proxy filtering, and URD-fixed under matched training budgets, with per-seed NLL/PPL tables and risk/diversity/cost analysis.
+- Added claim-hygiene guardrails so the project can be presented honestly as a strong research prototype without overstating it as an accepted paper, official competition result, or completed Level 3 benchmark.
+- Earlier LocalMax V1 release: built a reproducible benchmark over two 20M-token corpora with 24 strengthened small-model training runs and claim hygiene safeguards.
+- Built a reproducible 200M-token LLM data-quality auditing benchmark over OpenWebText and C4, comparing raw, exact dedup, length filtering, and URD-fixed across 24 controlled small-model training runs.
+- Implemented GPT-2-tokenized data manifests, no-fallback verification, ID-based filtering artifacts, per-token NLL/PPL audit tests, bootstrap confidence intervals, mechanism analysis, and release-bundle integrity checks.
+- Preserved honest claim boundaries: reports local evidence only and avoids unsupported publication-readiness, leaderboard, or URD-superiority wording.

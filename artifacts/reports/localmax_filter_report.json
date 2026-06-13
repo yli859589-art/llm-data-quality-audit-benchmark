@@ -1,0 +1,127 @@
+{
+  "blocking_failures": [],
+  "completed": true,
+  "created_at": "2026-06-12T18:09:45+00:00",
+  "datasets_completed": [
+    "c4_en_20m",
+    "openwebtext_20m"
+  ],
+  "filter_results": [
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_20m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_filters/openwebtext_20m/raw/filter_manifest.json",
+      "kept_documents": 15999,
+      "kept_gpt2_tokens": 18002180,
+      "method_name": "raw",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_20m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_filters/openwebtext_20m/exact_dedup/filter_manifest.json",
+      "kept_documents": 15999,
+      "kept_gpt2_tokens": 18002180,
+      "method_name": "exact_dedup",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_20m",
+      "document_keep_rate": 0.8895555972248266,
+      "filter_manifest_path": "artifacts/localmax_filters/openwebtext_20m/length_filter/filter_manifest.json",
+      "kept_documents": 14232,
+      "kept_gpt2_tokens": 10685750,
+      "method_name": "length_filter",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 0.5935808885368328
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_20m",
+      "document_keep_rate": 0.8999937496093506,
+      "filter_manifest_path": "artifacts/localmax_filters/openwebtext_20m/urd_fixed/filter_manifest.json",
+      "kept_documents": 14399,
+      "kept_gpt2_tokens": 16953088,
+      "method_name": "urd_fixed",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 0.941724168961759
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_20m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_filters/c4_en_20m/raw/filter_manifest.json",
+      "kept_documents": 38190,
+      "kept_gpt2_tokens": 18000295,
+      "method_name": "raw",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_20m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_filters/c4_en_20m/exact_dedup/filter_manifest.json",
+      "kept_documents": 38190,
+      "kept_gpt2_tokens": 18000295,
+      "method_name": "exact_dedup",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_20m",
+      "document_keep_rate": 0.8808588635768526,
+      "filter_manifest_path": "artifacts/localmax_filters/c4_en_20m/length_filter/filter_manifest.json",
+      "kept_documents": 33640,
+      "kept_gpt2_tokens": 13764601,
+      "method_name": "length_filter",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 0.7646875231767035
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_20m",
+      "document_keep_rate": 0.9,
+      "filter_manifest_path": "artifacts/localmax_filters/c4_en_20m/urd_fixed/filter_manifest.json",
+      "kept_documents": 34371,
+      "kept_gpt2_tokens": 17763252,
+      "method_name": "urd_fixed",
+      "reused_existing_artifact": true,
+      "token_keep_rate": 0.9868311602670956
+    }
+  ],
+  "historical_results_modified": false,
+  "large_lite_completed": false,
+  "level3_completed": false,
+  "level3_completed_artifact": false,
+  "level3_filter": false,
+  "localmax_completed": false,
+  "localmax_filters_ready": true,
+  "main_results_modified": false,
+  "methods_completed": [
+    "exact_dedup",
+    "length_filter",
+    "raw",
+    "urd_fixed"
+  ],
+  "minimum_matrix": "2 datasets x 4 methods",
+  "official_downstream_completed": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "recommended_next_step": "run_localmax_minimal_training",
+  "stage": "filter",
+  "statistical_significance_claim_allowed": false,
+  "status": "completed",
+  "step": "step10B_localmax_execution_fix",
+  "true_medium_completed": false
+}

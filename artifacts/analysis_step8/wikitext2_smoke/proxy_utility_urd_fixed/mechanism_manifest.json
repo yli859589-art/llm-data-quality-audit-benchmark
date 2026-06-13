@@ -1,0 +1,53 @@
+{
+  "analysis_name": "proxy_utility_urd_fixed",
+  "analysis_type": "proxy_utility",
+  "claim_allowed": false,
+  "completed": true,
+  "created_at": "2026-06-11T09:18:52+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "c70d069adb1f3e2f0d812b7a167332b0ea0ec78a3b4989a4288eb1626706142b",
+  "diagnostic_report_path": "artifacts/analysis_step8/wikitext2_smoke/proxy_utility_urd_fixed/proxy_utility_report.md",
+  "diagnostic_table_hash": "fcb92f0ccb74c952c3dfe35485e7f91395433f6f680fb3022f830d933852881f",
+  "diagnostic_table_path": "artifacts/analysis_step8/wikitext2_smoke/proxy_utility_urd_fixed/proxy_utility_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {
+    "artifacts/evaluation_step7/wikitext2_smoke/lm_bpe_tiny/evaluation_manifest.json": "6d7cd314e4aba39b8fe34c1add7f003a4097f98f27402e6c4ade0db5549c74c1"
+  },
+  "evaluation_manifest_paths": [
+    "artifacts/evaluation_step7/wikitext2_smoke/lm_bpe_tiny/evaluation_manifest.json"
+  ],
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/wikitext2_smoke/proxy_utility_urd_fixed/proxy_utility_summary.json": "a2f53ca80737d13ff45fb557df1cb2798612eaa051e3c926b24aec0f0a9e41c2"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/wikitext2_smoke/proxy_utility_urd_fixed/proxy_utility_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_fixed/filter_manifest.json": "de5e1e9762eb40cb2842bf22b78e33f10cd9c24b8175e77ba5ff713479125a76"
+  },
+  "filter_manifest_paths": [
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_fixed/filter_manifest.json"
+  ],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "urd_fixed"
+  ],
+  "notes": "Proxy-utility smoke diagnostic only.",
+  "protocol_only": false,
+  "scope": "smoke",
+  "smoke_only": true,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

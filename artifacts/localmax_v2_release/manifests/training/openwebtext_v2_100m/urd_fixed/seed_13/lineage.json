@@ -1,0 +1,9 @@
+{
+  "checkpoint_manifest_path": "artifacts/localmax_v2_training/openwebtext_v2_100m/urd_fixed/seed_13/checkpoint_manifest.json",
+  "created_at": "2026-06-12T16:48:02+00:00",
+  "dataset_manifest": "artifacts/localmax_v2_data/openwebtext_v2_100m/dataset_manifest.json",
+  "filter_manifest": "artifacts/localmax_v2_filters/openwebtext_v2_100m/urd_fixed/filter_manifest.json",
+  "metric_audit_report": "artifacts/reports/localmax_v2_metric_audit.json",
+  "metrics_path": "artifacts/localmax_v2_training/openwebtext_v2_100m/urd_fixed/seed_13/metrics.json",
+  "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json"
+}

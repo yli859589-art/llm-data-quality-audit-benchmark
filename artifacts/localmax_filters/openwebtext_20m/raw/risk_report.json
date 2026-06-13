@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-06-11T18:37:48+00:00",
+  "dataset_id": "openwebtext_20m",
+  "max_risk": 1.0,
+  "mean_risk": 0.014164010250640666,
+  "method_name": "raw"
+}

@@ -1,0 +1,3 @@
+dataset_id,failure_type,reason,comparison
+c4_en_v2_100m,urd_claim_not_supported,CI crosses zero or mean paired improvement is not strictly supported.,urd_fixed_vs_raw
+openwebtext_v2_100m,urd_claim_not_supported,CI crosses zero or mean paired improvement is not strictly supported.,urd_fixed_vs_raw

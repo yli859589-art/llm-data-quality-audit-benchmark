@@ -1,0 +1,54 @@
+{
+  "completed": true,
+  "context_length": 256,
+  "created_at": "2026-06-12T17:14:13+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "effective_batch_tokens": 2048,
+  "evaluated_validation_batches": 256,
+  "failed": false,
+  "failure_type": "",
+  "gradient_accumulation_steps": 4,
+  "loss_curve": [
+    {
+      "step": 1,
+      "train_loss": 190.4354248046875
+    },
+    {
+      "step": 100,
+      "train_loss": 27.361428260803223
+    },
+    {
+      "step": 200,
+      "train_loss": 18.299683570861816
+    },
+    {
+      "step": 300,
+      "train_loss": 14.891854286193848
+    },
+    {
+      "step": 400,
+      "train_loss": 12.175606966018677
+    },
+    {
+      "step": 489,
+      "train_loss": 11.507008075714111
+    }
+  ],
+  "method_name": "urd_fixed",
+  "metric_audit_passed": true,
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "micro_batch_size": 2,
+  "model_scale": "small",
+  "parameter_count": 20542752,
+  "ppl_clipped": false,
+  "ppl_comparable": true,
+  "ppl_overflow": false,
+  "seed": 13,
+  "steps_completed": 489,
+  "tokens_seen": 1001472,
+  "train_loss_final": 11.507008075714111,
+  "valid_log_ppl": 11.219223845750093,
+  "valid_loss": 11.219223845750093,
+  "valid_nll_nats_per_token": 11.219223845750093,
+  "valid_ppl": 74549.89008037097
+}

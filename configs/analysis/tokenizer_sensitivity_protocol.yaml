@@ -1,0 +1,12 @@
+{
+  "analysis": "tokenizer_sensitivity",
+  "scope": "main_protocol",
+  "dataset_name": "wikitext2_smoke",
+  "method_name": "protocol_only",
+  "smoke_only": false,
+  "protocol_only": true,
+  "insufficient_evidence_expected": true,
+  "required_future_artifacts": ["char_bpe_overlap", "bpe16k_manifest", "bpe32k_manifest"],
+  "claim_allowed": false
+}
+

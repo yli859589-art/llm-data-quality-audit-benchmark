@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-11T18:39:01+00:00",
+  "dataset_id": "c4_en_20m",
+  "document_keep_rate": 0.8808588635768526,
+  "input_documents": 38190,
+  "input_gpt2_tokens": 18000295,
+  "kept_documents": 33640,
+  "kept_gpt2_tokens": 13764601,
+  "method_name": "length_filter",
+  "token_keep_rate": 0.7646875231767035
+}

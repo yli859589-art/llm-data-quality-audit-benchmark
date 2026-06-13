@@ -1,0 +1,30 @@
+matrix_status: protocol_only
+level3_completed: false
+ccf_b_ready: false
+full_100m_or_500m_data_prepared: false
+next_step: step3_tokenizer_pipeline_upgrade
+datasets:
+  - dataset: wikitext2
+    scope: sample
+    status: available_from_existing_official_split
+    allow_fallback: false
+  - dataset: openwebtext
+    scope: sample
+    status: available_from_existing_streaming_sample_cache
+    allow_fallback: false
+  - dataset: c4
+    scope: sample
+    status: available_from_existing_streaming_sample_cache
+    allow_fallback: false
+  - dataset: fineweb
+    scope: implemented_but_not_run
+    status: protocol_only
+    allow_fallback: false
+  - dataset: dolma
+    scope: implemented_but_not_run
+    status: protocol_only
+    allow_fallback: false
+  - dataset: pile
+    scope: implemented_but_not_run
+    status: protocol_only
+    allow_fallback: false

@@ -1,0 +1,2 @@
+method_name,length_shift_proxy,token_distribution_shift_proxy,vocab_coverage_shift_proxy,source_shift_proxy,source_domain_shift_unavailable,distribution_shift_warning,insufficient_evidence,notes
+urd_fixed,0.09259259259259262,0.630952380952381,0.630952380952381,0.0,True,smoke_sample_too_small_for_shift_conclusion,True,Input-relative shift proxy only; no formal domain-shift conclusion.

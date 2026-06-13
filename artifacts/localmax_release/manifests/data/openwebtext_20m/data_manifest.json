@@ -1,0 +1,40 @@
+{
+  "actual_gpt2_tokens": 20002346,
+  "blocking_failures": [],
+  "completed": true,
+  "created_at": "2026-06-11T18:32:45+00:00",
+  "data_hashes_path": "artifacts/localmax_data/openwebtext_20m/data_hashes.json",
+  "dataset_id": "openwebtext_20m",
+  "dataset_name": "OpenWebText 20M GPT-2-token sample",
+  "evidence_level": "localmax_data_minimal",
+  "fallback_used": false,
+  "level3_data": false,
+  "license_scope_note_path": "artifacts/localmax_data/openwebtext_20m/license_scope_note.md",
+  "no_fallback_report_path": "artifacts/localmax_data/openwebtext_20m/no_fallback_report.json",
+  "no_fallback_verified": true,
+  "protocol_only": false,
+  "smoke_only": false,
+  "source": "Skylion007/openwebtext",
+  "source_config": "",
+  "source_version": "huggingface_streaming_current",
+  "split_document_counts": {
+    "test": 880,
+    "train": 15999,
+    "valid": 826
+  },
+  "split_gpt2_tokens": {
+    "test": 1000095,
+    "train": 18002180,
+    "valid": 1000071
+  },
+  "split_manifest_path": "artifacts/localmax_data/openwebtext_20m/split_manifest.json",
+  "split_paths": {
+    "test": "artifacts/localmax_data/openwebtext_20m/test.jsonl",
+    "train": "artifacts/localmax_data/openwebtext_20m/train.jsonl",
+    "valid": "artifacts/localmax_data/openwebtext_20m/valid.jsonl"
+  },
+  "target_gpt2_tokens": 20000000,
+  "token_budget_report_path": "artifacts/localmax_data/openwebtext_20m/token_budget_report.json",
+  "token_counter_type": "gpt2_bpe",
+  "tokenizer_name": "gpt2"
+}

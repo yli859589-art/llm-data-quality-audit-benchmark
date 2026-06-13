@@ -1,0 +1,29 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "minimum_requirements": {
+    "small_completed_on_primary_datasets_and_major_methods": true,
+    "medium_completed": true,
+    "selected_large_lite_completed": true,
+    "default_seeds": [13, 42, 101],
+    "large_lite_seed_range": [1, 2],
+    "training_manifest_required": true,
+    "checkpoint_manifest_required": true,
+    "tokens_seen_required": true,
+    "lineage_required": true,
+    "runtime_cost_metadata_required": true
+  },
+  "matrix": [
+    {"dataset_id": "openwebtext", "tokens": 500000000, "models": ["small", "medium"], "methods": "all_major", "seeds": 3},
+    {"dataset_id": "c4_en", "tokens": 500000000, "models": ["small", "medium"], "methods": "all_major", "seeds": 3},
+    {"dataset_id": "fineweb", "tokens": 500000000, "models": ["small", "medium"], "methods": "all_major", "seeds": 3},
+    {"dataset_id": "dolma_or_pile", "tokens": 500000000, "models": ["small", "selected_medium"], "methods": "selected", "seeds": 3},
+    {"dataset_id": "best_subset", "tokens": 1000000000, "models": ["large_lite"], "methods": ["raw", "exact_dedup", "best_baseline", "urd_fixed", "urd_pareto"], "seeds": "1_to_2_exploratory"}
+  ],
+  "forbidden_in_step10A": [
+    "train_model",
+    "create_completed_training_manifest",
+    "write_ppl_result"
+  ]
+}

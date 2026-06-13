@@ -1,0 +1,14 @@
+{
+  "model_name": "small_20m_bpe_protocol",
+  "model_family": "decoder_lm",
+  "vocab_size": 16000,
+  "context_length": 512,
+  "num_layers": 8,
+  "hidden_size": 384,
+  "num_heads": 8,
+  "dropout": 0.1,
+  "tie_embeddings": true,
+  "parameter_count": 20537088,
+  "scale_class": "small",
+  "notes": "Small BPE model protocol only. Step 5 does not complete this as main evidence."
+}

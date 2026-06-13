@@ -1,0 +1,12 @@
+{
+  "step": "localmax_ccfc_strengthening",
+  "scope": "ccfc_mechanism_analysis",
+  "questions": [
+    "why_length_filter_wins_or_fails",
+    "proxy_utility_mismatch",
+    "random_keep_rate_control",
+    "domain_shift_between_openwebtext_and_c4",
+    "urd_failure_taxonomy"
+  ],
+  "claim_boundary": "CCF-C candidate project evidence only; no CCF-C acceptance or CCF-B readiness claim."
+}

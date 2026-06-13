@@ -1,0 +1,54 @@
+{
+  "completed": true,
+  "context_length": 256,
+  "created_at": "2026-06-12T16:45:42+00:00",
+  "dataset_id": "openwebtext_v2_100m",
+  "effective_batch_tokens": 2048,
+  "evaluated_validation_batches": 256,
+  "failed": false,
+  "failure_type": "",
+  "gradient_accumulation_steps": 4,
+  "loss_curve": [
+    {
+      "step": 1,
+      "train_loss": 186.04443359375
+    },
+    {
+      "step": 100,
+      "train_loss": 25.019036769866943
+    },
+    {
+      "step": 200,
+      "train_loss": 19.165441513061523
+    },
+    {
+      "step": 300,
+      "train_loss": 13.570569038391113
+    },
+    {
+      "step": 400,
+      "train_loss": 11.193785667419434
+    },
+    {
+      "step": 489,
+      "train_loss": 12.582648038864136
+    }
+  ],
+  "method_name": "length_filter",
+  "metric_audit_passed": true,
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "micro_batch_size": 2,
+  "model_scale": "small",
+  "parameter_count": 20542752,
+  "ppl_clipped": false,
+  "ppl_comparable": true,
+  "ppl_overflow": false,
+  "seed": 101,
+  "steps_completed": 489,
+  "tokens_seen": 1001472,
+  "train_loss_final": 12.582648038864136,
+  "valid_log_ppl": 11.006970919668674,
+  "valid_loss": 11.006970919668674,
+  "valid_nll_nats_per_token": 11.006970919668674,
+  "valid_ppl": 60292.97768721779
+}

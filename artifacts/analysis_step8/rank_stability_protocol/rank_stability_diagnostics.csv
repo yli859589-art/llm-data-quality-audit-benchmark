@@ -1,0 +1,2 @@
+method_name,methods_available,seeds_available,bootstrap_rank_uncertainty,rank_correlation,ranking_stability_status,insufficient_evidence,notes
+protocol_only,1,0,future_required,unavailable,insufficient_evidence,True,Protocol-only rank stability plan; no stability claim.

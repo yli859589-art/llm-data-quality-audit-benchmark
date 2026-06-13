@@ -1,0 +1,73 @@
+{
+  "downstream_protocol_matrix": [
+    {
+      "artifact_available": false,
+      "benchmark": "LAMBADA",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "PIQA",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "HellaSwag",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "ARC-Easy",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "BoolQ",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "Winogrande",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "tiny_local_classification_smoke",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    },
+    {
+      "artifact_available": false,
+      "benchmark": "tiny_local_language_understanding_smoke",
+      "completed": false,
+      "download_attempted": false,
+      "notes": "No external benchmark is downloaded in Step 7.",
+      "protocol_only": true
+    }
+  ],
+  "effectiveness_claim_allowed": false,
+  "main_evidence": false,
+  "official_downstream_completed": false,
+  "protocol_only": true,
+  "tiny_local_smoke_completed": false
+}

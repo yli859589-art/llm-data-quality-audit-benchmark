@@ -1,0 +1,9 @@
+dataset_id,rank,method_name,mean_valid_nll_nats_per_token,ci_low,ci_high,metric_for_comparison
+c4_en_v2_100m,1,length_filter,11.24193063005805,11.189011845737696,11.276167068630457,valid_nll_nats_per_token
+c4_en_v2_100m,2,urd_fixed,11.249411371846994,11.183996681123972,11.345013588666916,valid_nll_nats_per_token
+c4_en_v2_100m,3,exact_dedup,11.250372120489677,11.188540551811457,11.31338794901967,valid_nll_nats_per_token
+c4_en_v2_100m,4,raw,11.250372120489677,11.188540551811457,11.31338794901967,valid_nll_nats_per_token
+openwebtext_v2_100m,1,length_filter,11.086258672177792,11.006970919668674,11.135894998908043,valid_nll_nats_per_token
+openwebtext_v2_100m,2,exact_dedup,11.15308827906847,11.09790013357997,11.206074215471745,valid_nll_nats_per_token
+openwebtext_v2_100m,3,raw,11.15308827906847,11.09790013357997,11.206074215471745,valid_nll_nats_per_token
+openwebtext_v2_100m,4,urd_fixed,11.175430494050184,11.137895680963993,11.244497127830982,valid_nll_nats_per_token

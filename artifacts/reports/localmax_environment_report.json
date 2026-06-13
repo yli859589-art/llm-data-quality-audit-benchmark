@@ -1,0 +1,76 @@
+{
+  "blocking_failures": [],
+  "cpu_cores": 32,
+  "created_at": "2026-06-12T18:08:56+00:00",
+  "cuda_available": true,
+  "disk_free_gb": 72.3,
+  "gpu_memory_gb": 8.0,
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "historical_results_modified": false,
+  "large_lite_completed": false,
+  "level3_completed": false,
+  "level3_completed_possible_on_this_machine": false,
+  "localmax_completed": false,
+  "localmax_feasible": true,
+  "main_results_modified": false,
+  "max_attempt_token_budget_per_dataset": 100000000,
+  "minimum_localmax_dataset_tokens": 20000000,
+  "notes": [
+    "This environment can support bounded LocalMax bookkeeping and tokenizer/data audits.",
+    "It is not treated as sufficient for completed Level 3 heavy execution."
+  ],
+  "platform": "win32",
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "python_executable_name": "python.exe",
+  "python_version": "3.12.5",
+  "ram_gb": 31.8,
+  "recommended_main_model": "small_25m_40m",
+  "recommended_token_budget_per_dataset": 50000000,
+  "required_modules": {
+    "datasets": {
+      "available": true,
+      "error": "",
+      "version": "4.8.4"
+    },
+    "numpy": {
+      "available": true,
+      "error": "",
+      "version": "2.4.1"
+    },
+    "pandas": {
+      "available": true,
+      "error": "",
+      "version": "3.0.2"
+    },
+    "psutil": {
+      "available": true,
+      "error": "",
+      "version": "7.2.2"
+    },
+    "tokenizers": {
+      "available": true,
+      "error": "",
+      "version": "0.22.2"
+    },
+    "torch": {
+      "available": true,
+      "error": "",
+      "version": "2.11.0+cu126"
+    },
+    "transformers": {
+      "available": true,
+      "error": "",
+      "version": "5.5.4"
+    }
+  },
+  "selected_model": "medium_lite_60m_80m",
+  "stage": "environment",
+  "status": "completed",
+  "step": "step10B_localmax_execution",
+  "true_medium_completed": false
+}

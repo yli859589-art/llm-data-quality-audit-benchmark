@@ -1,0 +1,9 @@
+{
+  "claim_allowed": false,
+  "component_score_rows": 3,
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "frontier_rows": 3,
+  "multi_method_full_comparison_available": false,
+  "pareto_improvement_claim_allowed": false,
+  "selected_rows": 2
+}

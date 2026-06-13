@@ -2,10 +2,10 @@
   "allowed_exceptions": [
     {
       "classification": "allowed_negative_context",
-      "context": "- `artifacts/runs/migration_log.jsonl`  Failed or superseded runs are retained for audit integrity rather than removed to make the project look cleaner.  ## Claim Boundary  This release is a reproducible audit benchmark. It does not claim that HDQS++ v3 outperforms raw data under the current fair benchmark.  This is an experiment-candidate benchmark release, not a CCF-C-ready paper artifact.  Do not claim: ",
-      "file": "README.md",
-      "line": 201,
-      "phrase": "CCF-C ready",
+      "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
+      "file": "docs/BENCHMARK_PROTOCOL.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -13,7 +13,223 @@
       "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
       "file": "docs/BENCHMARK_PROTOCOL.md",
       "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - an experiment-candidate audit benchmark for LLM data-quality filtering; - real non-fallback WikiText-2 official-split evidence; - bounded streaming-sample audit evidence for OpenWebText/C4; - raw, random same keep-rate, dedup, length, and HDQS++ comparisons inside the recorded dataset scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims ",
+      "file": "docs/claim_boundary.md",
+      "line": 32,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - an experiment-candidate audit benchmark for LLM data-quality filtering; - real non-fallback WikiText-2 official-split evidence; - bounded streaming-sample audit evidence for OpenWebText/C4; - raw, random same keep-rate, dedup, length, and HDQS++ comparisons inside the recorded dataset scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims ",
+      "file": "docs/claim_boundary.md",
+      "line": 32,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion;",
+      "file": "docs/claim_boundary.md",
+      "line": 40,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion;",
+      "file": "docs/claim_boundary.md",
+      "line": 41,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 42,
+      "phrase": "HDQS++ beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 42,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 43,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 43,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified;",
+      "file": "docs/claim_boundary.md",
+      "line": 44,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 45,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 46,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 47,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence;",
+      "file": "docs/claim_boundary.md",
+      "line": 48,
+      "phrase": "URD-Selector verified",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed. ",
+      "file": "docs/claim_boundary.md",
+      "line": 50,
+      "phrase": "large-scale LLM pretraining completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed.  These phrases may appear in forbidden-claim or roadmap contexts only. They must not appear as achievements.",
+      "file": "docs/claim_boundary.md",
+      "line": 52,
+      "phrase": "large-lite completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed.  These phrases may appear in forbidden-claim or roadmap contexts only. They must not appear as achievements. ",
+      "file": "docs/claim_boundary.md",
+      "line": 53,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Future Claims Allowed Only After Evidence  The following claims are allowed only after completed implementation, registered runs, reproduced artifacts, and claim-hygiene review:  - URD-Selector implemented and evaluated; - BPE mainline completed; - medium-scale replicated evidence completed; - downstream evaluation completed; - Level 3 pipeline ready; - future-only claim: Level 3 completed artifact; - full upstream dataset result; - stronger baseline matrix completed.  ## Result Boundary",
+      "file": "docs/claim_boundary.md",
+      "line": 68,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 92,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 0 through Step 10A infrastructure exists. - Step 10A freezes the Level 3 heavy protocol and preflight checks. - URD-Selector is implemented as a smoke-verified selector pipeline. - Evaluation and mechanism analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 19,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Evaluation and mechanism analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 22,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 26,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 27,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed. ",
+      "file": "docs/claim_map_level3.md",
+      "line": 28,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Why This Is Not Full Level 3 Data Completed  Step 2 adds the data pipeline interface and smoke verification. It does not prepare the full heavy datasets, does not validate BPE token budgets, does not run model-scale training, and does not complete the Level 3 data matrix.  Therefore the project remains:  - `ccf_b_ready: false` - `level3_pipeline_ready: false` - `level3_completed_artifact: false`  ## Next Step  Next step: `step3_tokenizer_pipeline_upgrade`.",
+      "file": "docs/dataset_pipeline_step2.md",
+      "line": 176,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -42,10 +258,34 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "# Figure Index  All figures follow `docs/REPORTING_CONTRACT.md`. Do not claim from any figure that HDQS++ v3 outperforms raw under the current fair benchmark.  | Figure | Source artifact | Generating script | What it shows | Safe interpretation | What not to claim | Scope/status | |---|---|---|---|---|---|---| | `artifacts/figures/project_pipeline.svg` | `artifacts/data/wikitext2_paper/data_manifest.json` | `scripts/generate_project_dashboard.py` | End-to-end audit pipeline | Shows reproducibility structure | Not a method win | release/dashboard artifact |",
+      "file": "docs/FIGURE_INDEX.md",
+      "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "All Step 4 smoke outputs are under:  `artifacts/filter_outputs_step4/wikitext2_smoke/`  They are smoke verification artifacts only.  ## What Step 4 Did Not Run  Step 4 did not run model training, PPL evaluation, downstream evaluation, URD-Selector, neural perplexity filtering, trained classifier filtering, neural embedding filtering, and it is not full C4, Gopher, or CCNet reproduction evidence.  Step 4 did not modify: ",
+      "file": "docs/filter_pipeline_step4.md",
+      "line": 170,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
       "file": "docs/FRESH_CLONE_TEST.md",
       "line": 8,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
+      "file": "docs/FRESH_CLONE_TEST.md",
+      "line": 8,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -65,6 +305,182 @@
       "reason": "Phrase appears in archival or future-publication context."
     },
     {
+      "classification": "archival_context",
+      "context": "Archived files:  - `PAPER_DRAFT.md` - `PAPER_NOTES.md` - `REVIEWER_ATTACK_REPORT.md` - `SUBMISSION_READINESS_CHECKLIST.md` - `CCF_C_EXPERIMENT_GAP_AUDIT.md`  If an archived note mentions a dangerous phrase, it must be read in archival, gap-analysis, non-claim, or forbidden-claim context. The current benchmark release does not claim that HDQS++ v3 outperforms raw under the fair benchmark.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 27,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 0 through Step 10A infrastructure exists. - Step 10A freezes the Level 3 heavy protocol and preflight checks. - URD-Selector is implemented as a smoke-verified selector pipeline. - Evaluation and mechanism-analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under the current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 18,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Evaluation and mechanism-analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under the current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 21,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 25,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 26,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed. ",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 27,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.  ## Future-Only Claims  The following claims are future-only and require Step 10B/10C evidence:  - Level 3 completed artifact. - Strong CCF-B-style project prototype. - Weak CCF-A-style research flavor. - Full-scale URD effectiveness evidence. - Full baseline matrix evidence.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 36,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "evidence or if unsafe claims pass.  Step 10A-hotfix adds reproducibility checks around the gate artifacts. The artifact scanner must classify paths relative to the repository root, so a parent directory name containing `step1` or `step10a` cannot change gate or registry classification.  ## State Boundary  `LEVEL3_PIPELINE_READY` is the maximum current state. `LEVEL3_COMPLETED_ARTIFACT` is forbidden until Step 10B/10C real heavy execution is complete.  Registry finalization must occur after report generation. If the final registry hash check fails, the readiness report must not be treated as a clean completed",
+      "file": "docs/level3_readiness_gates.md",
+      "line": 29,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "heavy experiments and does not complete the Level 3 artifact.  ## Current State  Current readiness after Step 10A-hotfix is at most `LEVEL3_PIPELINE_READY`.  That means the repository has the pipeline, interfaces, manifests, checkers, claim boundaries, registry scaffolding, and release gates needed before heavy execution. It does not mean the heavy evidence exists.  Current forbidden claim: Level 3 completed.  ## Route  Step 10A freezes the Level 3 heavy protocol.",
+      "file": "docs/level3_route.md",
+      "line": 15,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "without marking heavy execution complete.  ## Remaining After Step 9  - Real 500M-token or larger BPE datasets are not prepared. - Mainline GPT-2/BPE32k tokenizer matrix is not completed. - Full strong baseline/filter matrix is not completed on heavy data. - Medium and selected large-lite training are not completed. - Official downstream benchmark execution is not completed. - Full-scale mechanism analysis is not completed. - Paper-ready figures remain a Step 10C requirement.  Step 10B remains the first heavy execution step. Step 10A-hotfix does not prepare heavy data, train models, or add official downstream/PPL evidence.",
+      "file": "docs/level3_technical_debt.md",
+      "line": 37,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Step 1: Research Positioning and Claim Boundary  Goal: define the honest research identity, claim boundary, roadmap, legacy scope, and reporting contract.  Allowed changes: README, docs, claim-boundary docs, Level 3 roadmap, legacy scope docs, reporting contract docs, claim hygiene phrase list, readiness JSON.  Forbidden items: new experiments, result edits, URD-Selector code, new loaders, new tokenizers, new baselines, and claims that the project is CCF-B ready.  Expected artifacts: `docs/research_positioning.md`, `docs/research_questions.md`, `docs/claim_boundary.md`, `docs/level3_upgrade_roadmap.md`, `docs/legacy_scope.md`,",
+      "file": "docs/level3_upgrade_roadmap.md",
+      "line": 39,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "warning_context",
+      "context": "Expected artifacts: frozen protocol, final registry, final result tables, final release zip, reproducibility report.  Acceptance criteria: all protected checks pass and claims are supported by artifacts.  Failure downgrade strategy: release as `EXPERIMENT-CANDIDATE` or `LEVEL3-PILOT` instead of claiming completion.  Permission to proceed: only a completed Step 10 can support a future `level3_completed_artifact: true` status.",
+      "file": "docs/level3_upgrade_roadmap.md",
+      "line": 302,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in future/planned context and should be reviewed before public release."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - The repository contains a CCF-C-oriented strengthening line built on LocalMax V2. - The strengthening line adds stronger data-filter baselines: random same-keep-rate, C4-style quality filtering, and perplexity-proxy filtering. - The project may report completed gates only when their machine-readable readiness reports pass.  Forbidden current claims:  - Do not claim CCF-C acceptance. - Do not claim CCF-B readiness. - Do not claim Level 3 completion. - Do not claim URD beats raw, length filtering, or stronger baselines unless the CCF-C statistical table allows it. - Do not claim official downstream benchmark completion from local cloze probes.",
+      "file": "docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md",
+      "line": 14,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## What Would Make This Top-Tier CCF-C Complete  1. Finish all 42 strengthened training runs at >=5M tokens_seen/run. 2. Generate evaluation/statistical tables from the full matrix. 3. Complete local cloze probes for representative methods. 4. Write the final submission-style paper around the honest audit/negative-result finding.  ## Claim Hygiene  This report does not claim CCF-C acceptance, CCF-B readiness, Level 3 completion, SOTA, or unsupported URD superiority.",
+      "file": "docs/LOCALMAX_CCFC_PROJECT_REPORT.md",
+      "line": 46,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - `c4_en_20m`: mean paired valid_loss delta `-0.04633625348409017`, CI [`-0.2861620783805847`, `0.19348957141240436`], crosses zero `True` - `openwebtext_20m`: mean paired valid_loss delta `0.3360164016485214`, CI [`-0.07903489470481873`, `0.7510676980018616`], crosses zero `True`  URD-fixed evidence is mixed in this LocalMax release.  On OpenWebText 20M, URD-fixed has a lower mean valid_loss than raw in this local run, but the confidence interval crosses zero. On C4 English 20M, URD-fixed does not improve over raw by valid_loss.  ## Claim Boundary Statement  The current LocalMax evidence does not support a claim that URD-fixed outperforms raw.",
+      "file": "docs/LOCALMAX_RESULTS.md",
+      "line": 34,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " Allowed:  - LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 12,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Allowed:  - LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 13,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 15,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 16,
+      "phrase": "large-lite completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 17,
+      "phrase": "downstream completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 18,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 8 produces smoke/protocol diagnostic artifacts. - Step 8 records insufficient-evidence warnings where evidence is not enough. - Step 8 preserves historical negative results.  Unsafe wording:  - forbidden claim: URD effectiveness is established - forbidden claim: URD improves PPL or downstream metrics - forbidden claim: a full-scale mechanism advantage is established - forbidden claim: tokenizer sensitivity or scale trend is completed - forbidden claim: the project is CCF-B ready - forbidden claim: Level 3 is completed",
+      "file": "docs/mechanism_analysis_step8.md",
+      "line": 161,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
       "classification": "allowed_negative_context",
       "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
       "file": "docs/PROJECT_PRESENTATION_NOTES.md",
@@ -82,6 +498,46 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": " ## Machine-Readable Status Fields  - historical_release_readiness: `EXPERIMENT-CANDIDATE` - current_readiness: `LEVEL3_PIPELINE_READY` - method_status: `honest_audit_framework` - benchmark_scope_status: `multi_dataset_audit_candidate` - ccf_c_ready: `false` - ccf_b_ready: `false` - level3_pipeline_ready: `true` - level3_completed_artifact: `false` - step2_data_source_interface: `implemented` - step2_smoke_sample_protocol: `available` - full_100m_or_500m_data_prepared: `false` - step3_tokenizer_interface: `implemented`",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 14,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "publication-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- validating the Step 5 training-interface contract with a tiny BPE smoke run; - validating the Step 6 URD selector-interface contract with smoke filter outputs; - validating the Step 7 evaluation-interface contract with smoke/protocol outputs; - validating the Step 8 mechanism-analysis contract with smoke/protocol outputs; - validating Step 9 artifact registry, readiness gates, claim map, and smoke/protocol separation checks; - preserving negative evidence and artifact lineage.  Current evidence is not sufficient for:  - a method-success claim over raw; - not full OpenWebText/C4 claims; - large-scale LLM pretraining conclusions; - completed downstream evaluation claims; - completed URD-Selector claims; - established URD effectiveness claims;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 102,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
       "file": "docs/README.md",
       "line": 5,
@@ -94,6 +550,14 @@
       "file": "docs/README.md",
       "line": 5,
       "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -114,6 +578,14 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "# Release Checklist  This checklist follows `docs/REPORTING_CONTRACT.md`. The release is an audit benchmark and does not claim that HDQS++ v3 outperforms raw under the current fair benchmark.  ## Core Checks ",
+      "file": "docs/RELEASE_CHECKLIST.md",
+      "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": " ## 2. Current Release Status  - readiness = `EXPERIMENT-CANDIDATE` - method_status = `honest_audit_framework` - ccf_c_ready = `false` - benchmark_scope_status = `multi_dataset_audit_candidate`  The status means the repository is a credible experiment-candidate audit benchmark with real data, fair baselines, artifact lineage, and claim-safety checks. It is not a final CCF-C-ready paper artifact.  ## 3. Canonical Claim Boundary  Allowed claims:",
       "file": "docs/REPORTING_CONTRACT.md",
       "line": 26,
@@ -130,10 +602,26 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "Allowed claims:  - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 40,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
       "file": "docs/REPORTING_CONTRACT.md",
       "line": 41,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 41,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -202,68 +690,52 @@
     },
     {
       "classification": "allowed_negative_context",
-      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 39,
-      "phrase": "developed a state-of-the-art filter",
+      "context": " ## Cross-Dataset Sample Results  Cross-dataset sample results include bounded real streaming-sample runs such as current OpenWebText and C4 English samples.  Required label: `streaming_sample` or another explicit bounded-scope label.  Allowed claim: the project has bounded streaming-sample audit evidence.  Forbidden claim: full OpenWebText or full C4 completion unless the complete upstream dataset was actually processed and recorded.  ## Full Level 3 Results ",
+      "file": "docs/reporting_contract_level3.md",
+      "line": 58,
+      "phrase": "full OpenWebText",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 39,
-      "phrase": "state-of-the-art",
+      "context": " ## Cross-Dataset Sample Results  Cross-dataset sample results include bounded real streaming-sample runs such as current OpenWebText and C4 English samples.  Required label: `streaming_sample` or another explicit bounded-scope label.  Allowed claim: the project has bounded streaming-sample audit evidence.  Forbidden claim: full OpenWebText or full C4 completion unless the complete upstream dataset was actually processed and recorded.  ## Full Level 3 Results ",
+      "file": "docs/reporting_contract_level3.md",
+      "line": 58,
+      "phrase": "full C4",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 40,
-      "phrase": "improved LLM pretraining perplexity",
+      "context": "- bounded streaming-sample OpenWebText/C4 audit evidence; - raw/random/dedup/length/HDQS++ comparisons inside recorded scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage and claim-hygiene discipline.  Current evidence does not support:  - CCF-B readiness; - completed Level 3 status; - full OpenWebText/C4 results; - large-scale LLM pretraining conclusions; - completed downstream evaluation; - verified URD-Selector performance. ",
+      "file": "docs/research_positioning.md",
+      "line": 106,
+      "phrase": "full OpenWebText",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 41,
-      "phrase": "beat raw baseline",
+      "context": " The smoke tokenizer proves the pipeline and manifest path. It does not prove a modern tokenizer mainline, does not train a large BPE vocabulary, and does not produce model results. It must not be used as completed Level 3 tokenizer evidence.  Current status remains:  - `ccf_b_ready: false` - `level3_pipeline_ready: false` - `level3_completed_artifact: false`  ## Next Step  Next step: `step4_strong_baseline_filter_interface_upgrade`.",
+      "file": "docs/tokenizer_pipeline_step3.md",
+      "line": 147,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 42,
-      "phrase": "CCF-C ready",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 42,
-      "phrase": "CCF-C-ready project",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": "# Technical Overview  This document summarizes the implementation architecture for the audit benchmark. It follows `docs/REPORTING_CONTRACT.md`; it does not claim that HDQS++ v3 outperforms raw.  ## Data Pipeline  Data configs produce explicit manifests with dataset status, dataset scope,",
-      "file": "TECHNICAL_OVERVIEW.md",
+      "context": "# Project Summary  LocalMax V2 upgrades the earlier LocalMax release from 40M-token minimal evidence to a 200M-token local evidence benchmark.  It includes two 100M-token real dataset samples, four filtering methods, three seeds, and 24 registry-backed small-model training runs. The result is stronger local evidence, not a Level 3 or CCF-B-ready claim.",
+      "file": "PROJECT_SUMMARY.md",
       "line": 5,
-      "phrase": "HDQS++ outperforms raw",
+      "phrase": "CCF-B ready",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     }
   ],
   "flagged_phrases": [
     {
       "classification": "allowed_negative_context",
-      "context": "- `artifacts/runs/migration_log.jsonl`  Failed or superseded runs are retained for audit integrity rather than removed to make the project look cleaner.  ## Claim Boundary  This release is a reproducible audit benchmark. It does not claim that HDQS++ v3 outperforms raw data under the current fair benchmark.  This is an experiment-candidate benchmark release, not a CCF-C-ready paper artifact.  Do not claim: ",
-      "file": "README.md",
-      "line": 201,
-      "phrase": "CCF-C ready",
+      "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
+      "file": "docs/BENCHMARK_PROTOCOL.md",
+      "line": 4,
+      "phrase": "HDQS++ outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -271,7 +743,223 @@
       "context": "# Benchmark Protocol  This protocol follows `docs/REPORTING_CONTRACT.md`: the release is an audit benchmark, not a claim that HDQS++ v3 outperforms raw.  ## Dataset State  The primary candidate evidence uses WikiText-2 real local split files with",
       "file": "docs/BENCHMARK_PROTOCOL.md",
       "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - an experiment-candidate audit benchmark for LLM data-quality filtering; - real non-fallback WikiText-2 official-split evidence; - bounded streaming-sample audit evidence for OpenWebText/C4; - raw, random same keep-rate, dedup, length, and HDQS++ comparisons inside the recorded dataset scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims ",
+      "file": "docs/claim_boundary.md",
+      "line": 32,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - an experiment-candidate audit benchmark for LLM data-quality filtering; - real non-fallback WikiText-2 official-split evidence; - bounded streaming-sample audit evidence for OpenWebText/C4; - raw, random same keep-rate, dedup, length, and HDQS++ comparisons inside the recorded dataset scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims ",
+      "file": "docs/claim_boundary.md",
+      "line": 32,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- artifact lineage, run registry, main-result purity checks, and claim hygiene; - Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion;",
+      "file": "docs/claim_boundary.md",
+      "line": 40,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Level 3 readiness gates, claim map, and artifact registry v2; - not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion;",
+      "file": "docs/claim_boundary.md",
+      "line": 41,
+      "phrase": "state-of-the-art",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 42,
+      "phrase": "HDQS++ beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- not CCF-C ready and not CCF-B ready; - a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 42,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 43,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- a research-artifact upgrade candidate, not a completed CCF-B project.  ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready;",
+      "file": "docs/claim_boundary.md",
+      "line": 43,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified;",
+      "file": "docs/claim_boundary.md",
+      "line": 44,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Forbidden Current Claims  The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 45,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 46,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "The following are forbidden current claims unless later evidence explicitly supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed;",
+      "file": "docs/claim_boundary.md",
+      "line": 47,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "supports them:  - forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence;",
+      "file": "docs/claim_boundary.md",
+      "line": 48,
+      "phrase": "URD-Selector verified",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: SOTA data filtering; - forbidden current claim: state-of-the-art data filtering; - forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed. ",
+      "file": "docs/claim_boundary.md",
+      "line": 50,
+      "phrase": "large-scale LLM pretraining completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: HDQS++ beats raw; - forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed.  These phrases may appear in forbidden-claim or roadmap contexts only. They must not appear as achievements.",
+      "file": "docs/claim_boundary.md",
+      "line": 52,
+      "phrase": "large-lite completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden current claim: HDQS++ outperforms raw; - forbidden current claim: full OpenWebText benchmark completion; - forbidden current claim: full C4 benchmark completion; - forbidden current claim: CCF-B ready; - forbidden current claim: CCF-A ready; - forbidden current claim: URD-Selector verified; - forbidden current claim: downstream evaluation completed; - forbidden current claim: large-scale LLM pretraining completed; - forbidden current claim: BPE mainline completed; - forbidden current claim: medium or large-lite completed evidence; - forbidden current claim: full Level 3 completed.  These phrases may appear in forbidden-claim or roadmap contexts only. They must not appear as achievements. ",
+      "file": "docs/claim_boundary.md",
+      "line": 53,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Future Claims Allowed Only After Evidence  The following claims are allowed only after completed implementation, registered runs, reproduced artifacts, and claim-hygiene review:  - URD-Selector implemented and evaluated; - BPE mainline completed; - medium-scale replicated evidence completed; - downstream evaluation completed; - Level 3 pipeline ready; - future-only claim: Level 3 completed artifact; - full upstream dataset result; - stronger baseline matrix completed.  ## Result Boundary",
+      "file": "docs/claim_boundary.md",
+      "line": 68,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Resume and Portfolio Boundary  Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 91,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " Safe resume wording:  > Built a reproducible LLM data-quality audit benchmark with real WikiText-2 > official-split evidence, bounded OpenWebText/C4 streaming-sample audits, > artifact lineage, claim hygiene checks, and negative-result analysis.  Unsafe resume wording:  > Forbidden claim example: built a verified SOTA filter that beats raw data across full OpenWebText/C4 and > is CCF-B ready.  The unsafe sentence is included only as a forbidden-claim example.",
+      "file": "docs/claim_boundary.md",
+      "line": 92,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 0 through Step 10A infrastructure exists. - Step 10A freezes the Level 3 heavy protocol and preflight checks. - URD-Selector is implemented as a smoke-verified selector pipeline. - Evaluation and mechanism analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 19,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Evaluation and mechanism analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 22,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 26,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.",
+      "file": "docs/claim_map_level3.md",
+      "line": 27,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed. ",
+      "file": "docs/claim_map_level3.md",
+      "line": 28,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Why This Is Not Full Level 3 Data Completed  Step 2 adds the data pipeline interface and smoke verification. It does not prepare the full heavy datasets, does not validate BPE token budgets, does not run model-scale training, and does not complete the Level 3 data matrix.  Therefore the project remains:  - `ccf_b_ready: false` - `level3_pipeline_ready: false` - `level3_completed_artifact: false`  ## Next Step  Next step: `step3_tokenizer_pipeline_upgrade`.",
+      "file": "docs/dataset_pipeline_step2.md",
+      "line": 176,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -300,10 +988,34 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "# Figure Index  All figures follow `docs/REPORTING_CONTRACT.md`. Do not claim from any figure that HDQS++ v3 outperforms raw under the current fair benchmark.  | Figure | Source artifact | Generating script | What it shows | Safe interpretation | What not to claim | Scope/status | |---|---|---|---|---|---|---| | `artifacts/figures/project_pipeline.svg` | `artifacts/data/wikitext2_paper/data_manifest.json` | `scripts/generate_project_dashboard.py` | End-to-end audit pipeline | Shows reproducibility structure | Not a method win | release/dashboard artifact |",
+      "file": "docs/FIGURE_INDEX.md",
+      "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "All Step 4 smoke outputs are under:  `artifacts/filter_outputs_step4/wikitext2_smoke/`  They are smoke verification artifacts only.  ## What Step 4 Did Not Run  Step 4 did not run model training, PPL evaluation, downstream evaluation, URD-Selector, neural perplexity filtering, trained classifier filtering, neural embedding filtering, and it is not full C4, Gopher, or CCNet reproduction evidence.  Step 4 did not modify: ",
+      "file": "docs/filter_pipeline_step4.md",
+      "line": 170,
+      "phrase": "full C4",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
       "file": "docs/FRESH_CLONE_TEST.md",
       "line": 8,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Fresh Clone / Clean Copy Test  Use this guide to validate the release from a fresh clone or clean copy. If no remote repository is available, unzip the release package into a clean directory and run the same commands there.  The current release is an audit benchmark. These commands do not prove that HDQS++ v3 outperforms raw; they validate reproducibility, claim hygiene, and release structure.  ## Linux / macOS ",
+      "file": "docs/FRESH_CLONE_TEST.md",
+      "line": 8,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -323,6 +1035,182 @@
       "reason": "Phrase appears in archival or future-publication context."
     },
     {
+      "classification": "archival_context",
+      "context": "Archived files:  - `PAPER_DRAFT.md` - `PAPER_NOTES.md` - `REVIEWER_ATTACK_REPORT.md` - `SUBMISSION_READINESS_CHECKLIST.md` - `CCF_C_EXPERIMENT_GAP_AUDIT.md`  If an archived note mentions a dangerous phrase, it must be read in archival, gap-analysis, non-claim, or forbidden-claim context. The current benchmark release does not claim that HDQS++ v3 outperforms raw under the fair benchmark.",
+      "file": "docs/future_publication_notes/README.md",
+      "line": 27,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in archival or future-publication context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 0 through Step 10A infrastructure exists. - Step 10A freezes the Level 3 heavy protocol and preflight checks. - URD-Selector is implemented as a smoke-verified selector pipeline. - Evaluation and mechanism-analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under the current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 18,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Evaluation and mechanism-analysis frameworks exist. - Historical evidence shows HDQS++ v3 did not outperform raw under the current historical small-setting evidence. - Current readiness after Step 10A is at most `LEVEL3_PIPELINE_READY`.  ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 21,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 25,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "## Disallowed Current Claims  - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 26,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - forbidden claim: URD beats raw. - forbidden claim: URD improves PPL. - forbidden claim: URD improves downstream. - forbidden claim: URD is SOTA. - forbidden claim: C4/Gopher/CCNet official reproduction completed. - forbidden claim: medium/large-lite evidence completed. - forbidden claim: 500M-token or 1B-token data completed. - forbidden claim: Level 3 completed. - forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed. ",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 27,
+      "phrase": "CCF-A ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- forbidden claim: CCF-B ready. - forbidden claim: CCF-A ready. - forbidden claim: full-scale mechanism conclusion proved. - forbidden claim: downstream official benchmarks completed. - forbidden claim: Step 10B heavy execution completed.  ## Future-Only Claims  The following claims are future-only and require Step 10B/10C evidence:  - Level 3 completed artifact. - Strong CCF-B-style project prototype. - Weak CCF-A-style research flavor. - Full-scale URD effectiveness evidence. - Full baseline matrix evidence.",
+      "file": "docs/level3_claim_boundary.md",
+      "line": 36,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "evidence or if unsafe claims pass.  Step 10A-hotfix adds reproducibility checks around the gate artifacts. The artifact scanner must classify paths relative to the repository root, so a parent directory name containing `step1` or `step10a` cannot change gate or registry classification.  ## State Boundary  `LEVEL3_PIPELINE_READY` is the maximum current state. `LEVEL3_COMPLETED_ARTIFACT` is forbidden until Step 10B/10C real heavy execution is complete.  Registry finalization must occur after report generation. If the final registry hash check fails, the readiness report must not be treated as a clean completed",
+      "file": "docs/level3_readiness_gates.md",
+      "line": 29,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "heavy experiments and does not complete the Level 3 artifact.  ## Current State  Current readiness after Step 10A-hotfix is at most `LEVEL3_PIPELINE_READY`.  That means the repository has the pipeline, interfaces, manifests, checkers, claim boundaries, registry scaffolding, and release gates needed before heavy execution. It does not mean the heavy evidence exists.  Current forbidden claim: Level 3 completed.  ## Route  Step 10A freezes the Level 3 heavy protocol.",
+      "file": "docs/level3_route.md",
+      "line": 15,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "without marking heavy execution complete.  ## Remaining After Step 9  - Real 500M-token or larger BPE datasets are not prepared. - Mainline GPT-2/BPE32k tokenizer matrix is not completed. - Full strong baseline/filter matrix is not completed on heavy data. - Medium and selected large-lite training are not completed. - Official downstream benchmark execution is not completed. - Full-scale mechanism analysis is not completed. - Paper-ready figures remain a Step 10C requirement.  Step 10B remains the first heavy execution step. Step 10A-hotfix does not prepare heavy data, train models, or add official downstream/PPL evidence.",
+      "file": "docs/level3_technical_debt.md",
+      "line": 37,
+      "phrase": "paper-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## Step 1: Research Positioning and Claim Boundary  Goal: define the honest research identity, claim boundary, roadmap, legacy scope, and reporting contract.  Allowed changes: README, docs, claim-boundary docs, Level 3 roadmap, legacy scope docs, reporting contract docs, claim hygiene phrase list, readiness JSON.  Forbidden items: new experiments, result edits, URD-Selector code, new loaders, new tokenizers, new baselines, and claims that the project is CCF-B ready.  Expected artifacts: `docs/research_positioning.md`, `docs/research_questions.md`, `docs/claim_boundary.md`, `docs/level3_upgrade_roadmap.md`, `docs/legacy_scope.md`,",
+      "file": "docs/level3_upgrade_roadmap.md",
+      "line": 39,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "warning_context",
+      "context": "Expected artifacts: frozen protocol, final registry, final result tables, final release zip, reproducibility report.  Acceptance criteria: all protected checks pass and claims are supported by artifacts.  Failure downgrade strategy: release as `EXPERIMENT-CANDIDATE` or `LEVEL3-PILOT` instead of claiming completion.  Permission to proceed: only a completed Step 10 can support a future `level3_completed_artifact: true` status.",
+      "file": "docs/level3_upgrade_roadmap.md",
+      "line": 302,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in future/planned context and should be reviewed before public release."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - The repository contains a CCF-C-oriented strengthening line built on LocalMax V2. - The strengthening line adds stronger data-filter baselines: random same-keep-rate, C4-style quality filtering, and perplexity-proxy filtering. - The project may report completed gates only when their machine-readable readiness reports pass.  Forbidden current claims:  - Do not claim CCF-C acceptance. - Do not claim CCF-B readiness. - Do not claim Level 3 completion. - Do not claim URD beats raw, length filtering, or stronger baselines unless the CCF-C statistical table allows it. - Do not claim official downstream benchmark completion from local cloze probes.",
+      "file": "docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md",
+      "line": 14,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " ## What Would Make This Top-Tier CCF-C Complete  1. Finish all 42 strengthened training runs at >=5M tokens_seen/run. 2. Generate evaluation/statistical tables from the full matrix. 3. Complete local cloze probes for representative methods. 4. Write the final submission-style paper around the honest audit/negative-result finding.  ## Claim Hygiene  This report does not claim CCF-C acceptance, CCF-B readiness, Level 3 completion, SOTA, or unsupported URD superiority.",
+      "file": "docs/LOCALMAX_CCFC_PROJECT_REPORT.md",
+      "line": 46,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - `c4_en_20m`: mean paired valid_loss delta `-0.04633625348409017`, CI [`-0.2861620783805847`, `0.19348957141240436`], crosses zero `True` - `openwebtext_20m`: mean paired valid_loss delta `0.3360164016485214`, CI [`-0.07903489470481873`, `0.7510676980018616`], crosses zero `True`  URD-fixed evidence is mixed in this LocalMax release.  On OpenWebText 20M, URD-fixed has a lower mean valid_loss than raw in this local run, but the confidence interval crosses zero. On C4 English 20M, URD-fixed does not improve over raw by valid_loss.  ## Claim Boundary Statement  The current LocalMax evidence does not support a claim that URD-fixed outperforms raw.",
+      "file": "docs/LOCALMAX_RESULTS.md",
+      "line": 34,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " Allowed:  - LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 12,
+      "phrase": "Level 3 completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "Allowed:  - LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 13,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- LocalMax V2 strong local evidence released. - 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 15,
+      "phrase": "SOTA",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- 2 x 100M GPT-2-token non-fallback dataset samples. - 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 16,
+      "phrase": "large-lite completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- 24 small-model runs with >=1M tokens_seen/run. - Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 17,
+      "phrase": "downstream completed",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Valid NLL/log-PPL/PPL metric audit passed.  Forbidden current claims:  - Forbidden current claim: Level 3 completed is not allowed. - Forbidden current claim: CCF-B ready is not allowed. - Forbidden current claim: weak CCF-A achieved is not allowed. - Forbidden current claim: SOTA is not allowed. - Forbidden current claim: true medium or large-lite completed is not allowed. - Forbidden current claim: official downstream completed is not allowed. - Forbidden current claim: URD beats raw unless the statistical table explicitly permits the claim; the current V2 tables do not permit it.",
+      "file": "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+      "line": 18,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- Step 8 produces smoke/protocol diagnostic artifacts. - Step 8 records insufficient-evidence warnings where evidence is not enough. - Step 8 preserves historical negative results.  Unsafe wording:  - forbidden claim: URD effectiveness is established - forbidden claim: URD improves PPL or downstream metrics - forbidden claim: a full-scale mechanism advantage is established - forbidden claim: tokenizer sensitivity or scale trend is completed - forbidden claim: the project is CCF-B ready - forbidden claim: Level 3 is completed",
+      "file": "docs/mechanism_analysis_step8.md",
+      "line": 161,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
       "classification": "allowed_negative_context",
       "context": " **Are OpenWebText/C4 full benchmarks?** No. They are real streaming samples.  **Why is a negative result useful?** Because it prevents unverified filters from being treated as improvements.  ## Closing  The project is ready as a GitHub release candidate and portfolio benchmark. It is not a paper-ready or CCF-C-ready artifact.",
       "file": "docs/PROJECT_PRESENTATION_NOTES.md",
@@ -340,6 +1228,46 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": " ## Machine-Readable Status Fields  - historical_release_readiness: `EXPERIMENT-CANDIDATE` - current_readiness: `LEVEL3_PIPELINE_READY` - method_status: `honest_audit_framework` - benchmark_scope_status: `multi_dataset_audit_candidate` - ccf_c_ready: `false` - ccf_b_ready: `false` - level3_pipeline_ready: `true` - level3_completed_artifact: `false` - step2_data_source_interface: `implemented` - step2_smoke_sample_protocol: `available` - full_100m_or_500m_data_prepared: `false` - step3_tokenizer_interface: `implemented`",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 14,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "CCF-B ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- raw mean PPL: `12.6214` - selected v2 no-token-frequency mean PPL: `14.2653` - HDQS++ v3 mean PPL: `13.2341`  The interpretation follows the generated method status report and does not claim supported improvement over raw.  OpenWebText and C4 English evidence uses real HuggingFace streaming samples. These are explicitly bounded streaming samples, not complete upstream corpora. Their evidence is reported in `artifacts/cross_dataset/` and `docs/CROSS_DATASET_AUDIT.md`.  ## Current Readiness Interpretation  The repository is an experiment-candidate audit benchmark with Step 9 Level 3 pipeline hygiene in place. It is not CCF-B ready, not CCF-C ready, not publication-ready, and not a completed Level 3 artifact.  Current evidence is useful for:  - WikiText-2 official-split small-model audit comparisons;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 85,
+      "phrase": "publication-ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "- validating the Step 5 training-interface contract with a tiny BPE smoke run; - validating the Step 6 URD selector-interface contract with smoke filter outputs; - validating the Step 7 evaluation-interface contract with smoke/protocol outputs; - validating the Step 8 mechanism-analysis contract with smoke/protocol outputs; - validating Step 9 artifact registry, readiness gates, claim map, and smoke/protocol separation checks; - preserving negative evidence and artifact lineage.  Current evidence is not sufficient for:  - a method-success claim over raw; - not full OpenWebText/C4 claims; - large-scale LLM pretraining conclusions; - completed downstream evaluation claims; - completed URD-Selector claims; - established URD effectiveness claims;",
+      "file": "docs/PROJECT_STATUS.md",
+      "line": 102,
+      "phrase": "full OpenWebText",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
       "file": "docs/README.md",
       "line": 5,
@@ -352,6 +1280,14 @@
       "file": "docs/README.md",
       "line": 5,
       "phrase": "CCF-C ready",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": "# Documentation Index  This directory separates current release documentation from future research notes. The current release is an LLM data-quality audit benchmark. It is not a CCF-C-ready paper artifact and does not claim that HDQS++ v3 outperforms raw under the fair benchmark.  ## Start Here ",
+      "file": "docs/README.md",
+      "line": 5,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -372,6 +1308,14 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "# Release Checklist  This checklist follows `docs/REPORTING_CONTRACT.md`. The release is an audit benchmark and does not claim that HDQS++ v3 outperforms raw under the current fair benchmark.  ## Core Checks ",
+      "file": "docs/RELEASE_CHECKLIST.md",
+      "line": 4,
+      "phrase": "outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": " ## 2. Current Release Status  - readiness = `EXPERIMENT-CANDIDATE` - method_status = `honest_audit_framework` - ccf_c_ready = `false` - benchmark_scope_status = `multi_dataset_audit_candidate`  The status means the repository is a credible experiment-candidate audit benchmark with real data, fair baselines, artifact lineage, and claim-safety checks. It is not a final CCF-C-ready paper artifact.  ## 3. Canonical Claim Boundary  Allowed claims:",
       "file": "docs/REPORTING_CONTRACT.md",
       "line": 26,
@@ -388,10 +1332,26 @@
     },
     {
       "classification": "allowed_negative_context",
+      "context": "Allowed claims:  - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 40,
+      "phrase": "beats raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
       "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
       "file": "docs/REPORTING_CONTRACT.md",
       "line": 41,
       "phrase": "HDQS++ outperforms raw",
+      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
+    },
+    {
+      "classification": "allowed_negative_context",
+      "context": " - This project provides a reproducible audit benchmark for LLM data quality filtering. - HDQS++ v3 improves over HDQS++ v2 trend-wise but does not outperform raw under the current fair benchmark. - Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the current setting. - The project shows that heuristic data quality filtering can harm validation perplexity under fair tokenizer/model/evaluation settings. - OpenWebText/C4 results, if present, are real streaming-sample audits, not full-dataset results.  Forbidden claims:  - HDQS++ beats raw. - HDQS++ outperforms raw. - HDQS++ improves LLM pretraining. - HDQS++ is state-of-the-art. - CCF-C ready. - Full OpenWebText benchmark.",
+      "file": "docs/REPORTING_CONTRACT.md",
+      "line": 41,
+      "phrase": "outperforms raw",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
@@ -460,58 +1420,42 @@
     },
     {
       "classification": "allowed_negative_context",
-      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 39,
-      "phrase": "developed a state-of-the-art filter",
+      "context": " ## Cross-Dataset Sample Results  Cross-dataset sample results include bounded real streaming-sample runs such as current OpenWebText and C4 English samples.  Required label: `streaming_sample` or another explicit bounded-scope label.  Allowed claim: the project has bounded streaming-sample audit evidence.  Forbidden claim: full OpenWebText or full C4 completion unless the complete upstream dataset was actually processed and recorded.  ## Full Level 3 Results ",
+      "file": "docs/reporting_contract_level3.md",
+      "line": 58,
+      "phrase": "full OpenWebText",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "- \u5b9e\u73b0\u4e86\u9762\u5411\u53d1\u5e03\u7684\u9a8c\u8bc1\u94fe\u8def\uff0c\u5305\u62ec claim hygiene\u3001reproducibility checks\u3001 fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 39,
-      "phrase": "state-of-the-art",
+      "context": " ## Cross-Dataset Sample Results  Cross-dataset sample results include bounded real streaming-sample runs such as current OpenWebText and C4 English samples.  Required label: `streaming_sample` or another explicit bounded-scope label.  Allowed claim: the project has bounded streaming-sample audit evidence.  Forbidden claim: full OpenWebText or full C4 completion unless the complete upstream dataset was actually processed and recorded.  ## Full Level 3 Results ",
+      "file": "docs/reporting_contract_level3.md",
+      "line": 58,
+      "phrase": "full C4",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "fresh-unzip verification\u3001dataset manifests \u548c cross-dataset status reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 40,
-      "phrase": "improved LLM pretraining perplexity",
+      "context": "- bounded streaming-sample OpenWebText/C4 audit evidence; - raw/random/dedup/length/HDQS++ comparisons inside recorded scopes; - negative evidence that HDQS++ v3 does not outperform raw in the current fair WikiText-2 setting; - artifact lineage and claim-hygiene discipline.  Current evidence does not support:  - CCF-B readiness; - completed Level 3 status; - full OpenWebText/C4 results; - large-scale LLM pretraining conclusions; - completed downstream evaluation; - verified URD-Selector performance. ",
+      "file": "docs/research_positioning.md",
+      "line": 106,
+      "phrase": "full OpenWebText",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": "reporting\u3002  ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 41,
-      "phrase": "beat raw baseline",
+      "context": " The smoke tokenizer proves the pipeline and manifest path. It does not prove a modern tokenizer mainline, does not train a large BPE vocabulary, and does not produce model results. It must not be used as completed Level 3 tokenizer evidence.  Current status remains:  - `ccf_b_ready: false` - `level3_pipeline_ready: false` - `level3_completed_artifact: false`  ## Next Step  Next step: `step4_strong_baseline_filter_interface_upgrade`.",
+      "file": "docs/tokenizer_pipeline_step3.md",
+      "line": 147,
+      "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     },
     {
       "classification": "allowed_negative_context",
-      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 42,
-      "phrase": "CCF-C ready",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": " ## Safe Boundary  HDQS++ v3 does not outperform raw under the current fair benchmark.  ## Do Not Write These Forbidden Claims  - Developed a state-of-the-art filter. - Improved LLM pretraining perplexity. - Beat raw baseline. - CCF-C-ready project.",
-      "file": "RESUME_BULLETS.md",
-      "line": 42,
-      "phrase": "CCF-C-ready project",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": "# Technical Overview  This document summarizes the implementation architecture for the audit benchmark. It follows `docs/REPORTING_CONTRACT.md`; it does not claim that HDQS++ v3 outperforms raw.  ## Data Pipeline  Data configs produce explicit manifests with dataset status, dataset scope,",
-      "file": "TECHNICAL_OVERVIEW.md",
+      "context": "# Project Summary  LocalMax V2 upgrades the earlier LocalMax release from 40M-token minimal evidence to a 200M-token local evidence benchmark.  It includes two 100M-token real dataset samples, four filtering methods, three seeds, and 24 registry-backed small-model training runs. The result is stronger local evidence, not a Level 3 or CCF-B-ready claim.",
+      "file": "PROJECT_SUMMARY.md",
       "line": 5,
-      "phrase": "HDQS++ outperforms raw",
+      "phrase": "CCF-B ready",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     }
   ],
@@ -522,17 +1466,22 @@
     "docs/BENCHMARK_CARD.md",
     "docs/BENCHMARK_PROTOCOL.md",
     "docs/CLAIM_ARTIFACT_MAP.md",
+    "docs/claim_boundary.md",
+    "docs/claim_map_level3.md",
     "docs/CROSS_DATASET_AUDIT.md",
     "docs/DATA_AND_GRADER_LIMITATIONS.md",
+    "docs/dataset_pipeline_step2.md",
     "docs/DATASETS.md",
     "docs/ENGINEERING_EVIDENCE.md",
     "docs/ETHICS.md",
+    "docs/evaluation_pipeline_step7.md",
     "docs/EXPERIMENT_DASHBOARD.md",
     "docs/EXPERIMENT_READINESS_REPORT.md",
     "docs/EXPERIMENT_REPORT.md",
     "docs/EXPERIMENTS.md",
     "docs/FAILURE_CASES.md",
     "docs/FIGURE_INDEX.md",
+    "docs/filter_pipeline_step4.md",
     "docs/FINAL_AUDIT.md",
     "docs/FINAL_VERIFICATION_REPORT.md",
     "docs/FRESH_CLONE_TEST.md",
@@ -543,10 +1492,48 @@
     "docs/future_publication_notes/REVIEWER_ATTACK_REPORT.md",
     "docs/future_publication_notes/SUBMISSION_READINESS_CHECKLIST.md",
     "docs/INTERNAL_AUDIT.md",
+    "docs/legacy_scope.md",
+    "docs/level3_artifact_path_spec_step10A.md",
+    "docs/level3_claim_boundary.md",
+    "docs/level3_compute_and_fallback_policy_step10A.md",
+    "docs/level3_data_protocol_step10A.md",
+    "docs/level3_evaluation_protocol_step10A.md",
+    "docs/level3_filter_baseline_protocol_step10A.md",
+    "docs/level3_heavy_protocol_step10A.md",
+    "docs/level3_heavy_requirements.md",
+    "docs/level3_mechanism_protocol_step10A.md",
+    "docs/level3_readiness_gates.md",
+    "docs/level3_route.md",
+    "docs/level3_statistics_protocol_step10A.md",
+    "docs/level3_technical_debt.md",
+    "docs/level3_tokenizer_protocol_step10A.md",
+    "docs/level3_training_protocol_step10A.md",
+    "docs/level3_upgrade_roadmap.md",
     "docs/LIMITATIONS.md",
+    "docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md",
+    "docs/LOCALMAX_CCFC_PROJECT_REPORT.md",
+    "docs/LOCALMAX_CLAIM_BOUNDARY.md",
+    "docs/LOCALMAX_DATA_CARD.md",
+    "docs/LOCALMAX_FAILURE_ANALYSIS.md",
+    "docs/LOCALMAX_FUTURE_CLOUD_LEVEL3.md",
+    "docs/LOCALMAX_LIMITATIONS.md",
+    "docs/LOCALMAX_MODEL_CARD.md",
+    "docs/LOCALMAX_RELEASE.md",
+    "docs/LOCALMAX_REPRODUCIBILITY.md",
+    "docs/LOCALMAX_RESULTS.md",
+    "docs/LOCALMAX_V2_CLAIM_BOUNDARY.md",
+    "docs/LOCALMAX_V2_DATA_CARD.md",
+    "docs/LOCALMAX_V2_FAILURE_ANALYSIS.md",
+    "docs/LOCALMAX_V2_FUTURE_CLOUD_LEVEL3.md",
+    "docs/LOCALMAX_V2_LIMITATIONS.md",
+    "docs/LOCALMAX_V2_MODEL_CARD.md",
+    "docs/LOCALMAX_V2_REPRODUCIBILITY.md",
+    "docs/LOCALMAX_V2_RESULTS.md",
+    "docs/mechanism_analysis_step8.md",
     "docs/METHOD.md",
     "docs/METHOD_DASHBOARD.md",
     "docs/METHOD_DIAGNOSTICS.md",
+    "docs/model_training_pipeline_step5.md",
     "docs/PORTFOLIO_SUMMARY.md",
     "docs/PROJECT_EVIDENCE_MAP.md",
     "docs/PROJECT_INDEX.md",
@@ -560,11 +1547,17 @@
     "docs/REFERENCES.md",
     "docs/RELATED_WORK_NOTES.md",
     "docs/RELEASE_CHECKLIST.md",
+    "docs/repo_audit_before_level3.md",
     "docs/REPORTING_CONTRACT.md",
+    "docs/reporting_contract_level3.md",
     "docs/REPRODUCIBILITY.md",
+    "docs/research_positioning.md",
+    "docs/research_questions.md",
     "docs/RESEARCH_READINESS.md",
     "docs/RESUME.md",
     "docs/RESUME_BULLETS.md",
+    "docs/tokenizer_pipeline_step3.md",
+    "docs/urd_selector_step6.md",
     "docs/VERIFICATION_REPORT.md",
     "PROJECT_SUMMARY.md",
     "PROJECT_ONE_PAGE.md",
@@ -574,10 +1567,10 @@
   ],
   "status": "passed",
   "summary": {
-    "allowed_exception_count": 32,
-    "flagged_phrase_count": 32,
+    "allowed_exception_count": 91,
+    "flagged_phrase_count": 91,
     "optional_not_present_count": 0,
-    "scanned_file_count": 54,
+    "scanned_file_count": 103,
     "unsafe_claim_count": 0
   },
   "unsafe_claims": []

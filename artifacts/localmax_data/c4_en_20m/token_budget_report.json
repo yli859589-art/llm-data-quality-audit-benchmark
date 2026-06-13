@@ -1,0 +1,9 @@
+{
+  "actual_gpt2_tokens": 20005050,
+  "created_at": "2026-06-11T18:36:45+00:00",
+  "dataset_id": "c4_en_20m",
+  "meets_20m_floor": true,
+  "target_gpt2_tokens": 20000000,
+  "token_counter_type": "gpt2_bpe",
+  "tokenizer_name": "gpt2"
+}

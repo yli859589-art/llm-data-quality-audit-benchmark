@@ -1,0 +1,12 @@
+{
+  "component_score_rows": 3,
+  "effectiveness_claim_allowed": false,
+  "main_evidence": false,
+  "method_level_pareto_protocol": true,
+  "multi_objective_frontier_rows": 2,
+  "pareto_improvement_claim_allowed": false,
+  "selected_docs": 2,
+  "utility_cost_frontier_rows": 3,
+  "utility_diversity_frontier_rows": 3,
+  "utility_risk_frontier_rows": 3
+}

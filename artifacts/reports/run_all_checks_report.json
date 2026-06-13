@@ -1,0 +1,106 @@
+{
+  "duration_seconds": 1.1069355000072392,
+  "failed_groups": [],
+  "finished_at": "2026-06-13T11:42:04+00:00",
+  "groups": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_localmax_ccfc_strengthening.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_localmax_ccfc_strengthening.py",
+            "-q"
+          ],
+          "duration_seconds": 0.8630224999942584,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "....                                                                     [100%]\n4 passed in 0.09s\n"
+        }
+      ],
+      "duration_seconds": 0.8652499999880092,
+      "name": "localmax_ccfc_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.09s\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/localmax_ccfc/finalize_ccfc_project.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/localmax_ccfc/check_ccfc_artifacts.py"
+          ],
+          "duration_seconds": 0.11543809999420773,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"blocking_failures\": [], \"ccfc_artifact_check_passed\": true, \"expected_training_runs\": 42}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax_ccfc/finalize_ccfc_project.py"
+          ],
+          "duration_seconds": 0.12205429999448825,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"ccfc_candidate_ready\": true, \"current_readiness\": \"TOP_TIER_CCFC_PROJECT_CANDIDATE\"}\n"
+        }
+      ],
+      "duration_seconds": 0.24161379999713972,
+      "name": "localmax_ccfc_artifact_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "{\"blocking_failures\": [], \"ccfc_artifact_check_passed\": true, \"expected_training_runs\": 42}\n{\"ccfc_candidate_ready\": true, \"current_readiness\": \"TOP_TIER_CCFC_PROJECT_CANDIDATE\"}\n"
+    }
+  ],
+  "overall_passed": true,
+  "skipped_groups": [
+    "legacy_core_tests",
+    "step2_data_tests",
+    "step3_tokenizer_tests",
+    "step4_filter_tests",
+    "step5_training_tests",
+    "step6_urd_tests",
+    "step7_evaluation_tests",
+    "step8_mechanism_tests",
+    "step9_readiness_tests",
+    "step10A_protocol_tests",
+    "step10B_execution_tests",
+    "step10B_localmax_tests",
+    "step10C_localmax_release_tests",
+    "localmax_v2_tests",
+    "manifest_checks",
+    "artifact_checks",
+    "claim_checks",
+    "level3_gate_checks",
+    "level3_execution_checks",
+    "localmax_execution_checks",
+    "localmax_release_checks",
+    "localmax_v2_execution_checks",
+    "localmax_v2_release_checks",
+    "registry_finalization_checks"
+  ],
+  "started_at": "2026-06-13T11:42:03+00:00",
+  "status": "passed",
+  "timeout_groups": []
+}

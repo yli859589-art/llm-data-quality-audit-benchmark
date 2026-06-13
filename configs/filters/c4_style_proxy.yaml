@@ -1,0 +1,9 @@
+filter_name: c4_style_proxy
+filter_type: c4_style_proxy
+scope: smoke
+allow_proxy: true
+proxy_used: true
+official_c4_reproduction: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Transparent C4-style heuristic proxy; not official C4 reproduction."

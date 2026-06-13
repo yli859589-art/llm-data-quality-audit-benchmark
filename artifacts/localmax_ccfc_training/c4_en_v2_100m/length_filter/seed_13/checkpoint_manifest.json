@@ -1,0 +1,11 @@
+{
+  "checkpoint_materialized": true,
+  "checkpoint_path": "artifacts/localmax_ccfc_training/c4_en_v2_100m/length_filter/seed_13/final_checkpoint.pt",
+  "checkpoint_policy": "final_checkpoint_fp16_plus_state_fingerprint",
+  "checkpoint_sha256": "60442F0D3B1FAB19BCFEB7250708ED27596DFCCAED181ED5F9A76AA7A8F2DEAD",
+  "created_at": "2026-06-13T03:12:18+00:00",
+  "manifest_version": "localmax_ccfc.checkpoint_manifest.v1",
+  "model_state_fingerprint": "2DFAEC8A9E294CD5FF905C57EE9545F78B4DBCAFBDEBE57F98D1F83638E9AB25",
+  "not_a_fake_checkpoint": true,
+  "warm_start_checkpoint": "artifacts/localmax_v2_training/c4_en_v2_100m/length_filter/seed_13/final_checkpoint.pt"
+}

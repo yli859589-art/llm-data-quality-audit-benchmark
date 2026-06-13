@@ -1,0 +1,10 @@
+{
+  "data_path": "artifacts/data_step2/wikitext2_smoke/train.jsonl",
+  "data_token_counter_type": "whitespace_proxy",
+  "proxy_vs_tokenizer_warning": "Step 2 whitespace counts are proxy counts. Step 3 tokenizer counts are tokenizer-specific and must not be mixed as equal training budgets.",
+  "status": "passed",
+  "tokenizer_hash": "6a4e0895a9bffc16245b323befe44f76706418f75a24243c35c32c94fa5c96c0",
+  "tokenizer_name": "bpe_smoke_512",
+  "tokenizer_specific_token_count": 32,
+  "tokenizer_type": "lightweight_bpe_smoke"
+}

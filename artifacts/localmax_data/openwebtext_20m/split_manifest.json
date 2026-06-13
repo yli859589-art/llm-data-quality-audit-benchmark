@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-11T18:32:45+00:00",
+  "dataset_id": "openwebtext_20m",
+  "split_document_counts": {
+    "test": 880,
+    "train": 15999,
+    "valid": 826
+  },
+  "split_gpt2_tokens": {
+    "test": 1000095,
+    "train": 18002180,
+    "valid": 1000071
+  },
+  "split_paths": {
+    "test": "artifacts/localmax_data/openwebtext_20m/test.jsonl",
+    "train": "artifacts/localmax_data/openwebtext_20m/train.jsonl",
+    "valid": "artifacts/localmax_data/openwebtext_20m/valid.jsonl"
+  },
+  "split_sha256": {
+    "test": "40367CCBA812998B36AA1BE1C7E9C39912B7A16BD45341A1C2B3E09A0D4A72F3",
+    "train": "2F9349B19233E4934AE943C1CFE5A6A41B3CCAA5ED4F53A8FE0F0D5521C19CD2",
+    "valid": "6D0AC1C4463815B3F0F10923E8133DFC9BC3D1A696B6353369481A48E159A75E"
+  }
+}

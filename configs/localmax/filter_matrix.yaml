@@ -1,0 +1,21 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_filters",
+  "methods": [
+    "raw",
+    "random_same_keep_rate",
+    "exact_dedup",
+    "length_filter",
+    "c4_style_proxy",
+    "gopher_style_proxy",
+    "perplexity_proxy",
+    "embedding_diversity_proxy",
+    "urd_fixed",
+    "urd_pareto",
+    "urd_ablation_no_risk",
+    "urd_ablation_no_diversity"
+  ],
+  "proxy_methods_must_be_labeled": true,
+  "keep_rate_fairness_required": true
+}
+

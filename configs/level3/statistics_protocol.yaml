@@ -1,0 +1,24 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "required_statistics": [
+    "mean",
+    "std",
+    "confidence_intervals",
+    "bootstrap_ci",
+    "paired_differences",
+    "rank_correlation",
+    "seed_variance",
+    "multiple_seed_reporting",
+    "insufficient_sample_warning",
+    "method_ranking_stability"
+  ],
+  "rules": {
+    "n_equals_1_significance_claim_allowed": false,
+    "large_lite_seed1_label": "exploratory",
+    "ranking_must_include_uncertainty": true,
+    "ci_crosses_zero_blocks_improvement_claim": true,
+    "no_p_value_for_invalid_sample_size": true
+  }
+}

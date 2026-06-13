@@ -1,0 +1,15 @@
+{
+  "matrix": "level3_mechanism_matrix",
+  "scope": "level3_heavy_protocol",
+  "protocol_only": true,
+  "completed_evidence": false,
+  "required_future_artifacts": [
+    "multi_dataset_completed_runs",
+    "multi_scale_completed_runs",
+    "multi_seed_completed_runs",
+    "downstream_completed_runs",
+    "formal_pareto_mechanism_report"
+  ],
+  "claim_allowed": false
+}
+

@@ -1,0 +1,11 @@
+{
+  "checkpoint_materialized": true,
+  "checkpoint_path": "artifacts/localmax_ccfc_training/openwebtext_v2_100m/perplexity_proxy_filter/seed_42/final_checkpoint.pt",
+  "checkpoint_policy": "final_checkpoint_fp16_plus_state_fingerprint",
+  "checkpoint_sha256": "8D6DA1C0AF4AEA2F6CAECF226971596DAA67D07D136AE0B9AABAEDE393B63B8E",
+  "created_at": "2026-06-13T02:56:09+00:00",
+  "manifest_version": "localmax_ccfc.checkpoint_manifest.v1",
+  "model_state_fingerprint": "CF390600BE072AFEA0B7904B1DAAA65CE5B8E1432FBE092DA65A4ACB1B7805EF",
+  "not_a_fake_checkpoint": true,
+  "warm_start_checkpoint": ""
+}

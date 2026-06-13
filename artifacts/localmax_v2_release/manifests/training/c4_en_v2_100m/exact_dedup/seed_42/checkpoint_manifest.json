@@ -1,0 +1,10 @@
+{
+  "checkpoint_materialized": true,
+  "checkpoint_path": "artifacts/localmax_v2_training/c4_en_v2_100m/exact_dedup/seed_42/final_checkpoint.pt",
+  "checkpoint_policy": "final_checkpoint_fp16_plus_state_fingerprint",
+  "checkpoint_sha256": "3BB3A7807A58658A38E07185715AA4CA089D408D628FA4B926C79952ABC7CF94",
+  "created_at": "2026-06-12T17:03:19+00:00",
+  "manifest_version": "localmax_v2.checkpoint_manifest.v1",
+  "model_state_fingerprint": "D2876902171D753A8B136D7E991E185F41893E765D00699D028DCF207A2AA0D3",
+  "not_a_fake_checkpoint": true
+}

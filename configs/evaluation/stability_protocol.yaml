@@ -1,0 +1,12 @@
+{
+  "evaluation_name": "stability_protocol",
+  "evaluation_type": "stability",
+  "scope": "main_protocol",
+  "method_name": "protocol_only",
+  "dataset_name": "wikitext2_smoke",
+  "smoke_only": false,
+  "protocol_only": true,
+  "completed_evidence": false,
+  "insufficient_evidence_expected": true,
+  "notes": "Protocol-only stability config; no ranking-stability claim."
+}

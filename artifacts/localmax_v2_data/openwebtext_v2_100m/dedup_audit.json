@@ -1,0 +1,9 @@
+{
+  "dataset_id": "openwebtext_v2_100m",
+  "dedup_scope": "exact_content_sha256_within_written_localmax_v2_sample",
+  "document_count": 88600,
+  "duplicate_documents": 0,
+  "duplicate_rate": 0.0,
+  "resume_note": "Retry/resume skipped existing shard hashes; this is separate from output duplicate rate.",
+  "resume_skipped_existing_documents": 0
+}

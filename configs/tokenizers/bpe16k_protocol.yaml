@@ -1,0 +1,18 @@
+tokenizer_name: bpe16k_protocol
+tokenizer_type: sentencepiece_bpe_or_hf_bpe
+scope: main_protocol
+level3_mainline: false
+vocab_size_requested: 16000
+training_data_path: ""
+training_scope: main_protocol
+seed: 42
+normalization: identity
+model_path: ""
+vocab_path: ""
+manifest_path: artifacts/tokenizers_step3/bpe16k_protocol/tokenizer_manifest.json
+optional_dependency: sentencepiece_or_tokenizers
+fallback_allowed: false
+smoke_only: false
+implemented_but_not_run: true
+status: protocol_only
+notes: BPE16k mainline tokenizer is not trained in Step 3

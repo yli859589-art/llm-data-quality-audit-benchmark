@@ -1,0 +1,9 @@
+{
+  "digit_ratio": 0.0048543689320388345,
+  "duplicate_hint_rate": 0.0,
+  "estimated_pii_hits": 0,
+  "html_ratio": 0.0,
+  "notes": "Step 4 lightweight risk summary for smoke verification; not a final evaluation metric.",
+  "symbol_ratio": 0.014563106796116505,
+  "url_ratio": 0.0
+}

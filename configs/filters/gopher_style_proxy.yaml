@@ -1,0 +1,9 @@
+filter_name: gopher_style_proxy
+filter_type: gopher_style_proxy
+scope: smoke
+allow_proxy: true
+proxy_used: true
+official_gopher_reproduction: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Transparent Gopher-style heuristic proxy; not official Gopher reproduction."

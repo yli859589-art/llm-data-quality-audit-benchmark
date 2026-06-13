@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-11T18:36:45+00:00",
+  "dataset_id": "c4_en_20m",
+  "split_document_counts": {
+    "test": 2052,
+    "train": 38190,
+    "valid": 2215
+  },
+  "split_gpt2_tokens": {
+    "test": 1004656,
+    "train": 18000295,
+    "valid": 1000099
+  },
+  "split_paths": {
+    "test": "artifacts/localmax_data/c4_en_20m/test.jsonl",
+    "train": "artifacts/localmax_data/c4_en_20m/train.jsonl",
+    "valid": "artifacts/localmax_data/c4_en_20m/valid.jsonl"
+  },
+  "split_sha256": {
+    "test": "88E38C0A978A605B368633702C45074CC87FE8942F0C48C63AE0DE8D641E1C62",
+    "train": "764A1FC5386D95D15909D103983EA202DF07A402F25FBA526841415DFB0B4444",
+    "valid": "B59B64ADAD8D025B52158942C9B005C471F920CC286E7BB9D4607A991A2F3743"
+  }
+}

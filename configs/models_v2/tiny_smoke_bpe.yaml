@@ -1,0 +1,14 @@
+{
+  "model_name": "tiny_smoke_bpe",
+  "model_family": "decoder_lm",
+  "vocab_size": 64,
+  "context_length": 8,
+  "num_layers": 1,
+  "hidden_size": 16,
+  "num_heads": 2,
+  "dropout": 0.0,
+  "tie_embeddings": true,
+  "parameter_count": 4464,
+  "scale_class": "tiny_smoke",
+  "notes": "CPU smoke model for Step 5 BPE tokenizer-aware training verification only."
+}

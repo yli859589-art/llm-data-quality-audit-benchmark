@@ -1,0 +1,7 @@
+{
+  "dataset_id": "c4_en_v2_100m",
+  "document_count": 5117,
+  "gpt2_tokens": 2501456,
+  "path": "artifacts/localmax_v2_data/c4_en_v2_100m/shards/valid-0000.jsonl.gz",
+  "split": "valid"
+}

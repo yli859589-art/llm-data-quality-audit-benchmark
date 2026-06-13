@@ -1,0 +1,31 @@
+{
+  "blocking_failures": [],
+  "ccf_b_ready_claimed": false,
+  "ccf_c_paper_claimed": false,
+  "claim_allowed": false,
+  "completed": true,
+  "completed_rows": 8,
+  "created_at": "2026-06-13T11:26:46+00:00",
+  "current_readiness": "CCFC_DOWNSTREAM_LOCAL_PROBE_COMPLETED",
+  "downstream_completed": true,
+  "downstream_rows": 10,
+  "historical_results_modified": false,
+  "level3_completed_artifact": false,
+  "local_downstream_subset": true,
+  "main_results_modified": false,
+  "notes": [
+    "Local cloze probes are diagnostic only.",
+    "No official downstream completion claim is made."
+  ],
+  "official_full_downstream": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "sota_claimed": false,
+  "stage": "downstream",
+  "status": "completed",
+  "step": "localmax_ccfc_strengthening"
+}

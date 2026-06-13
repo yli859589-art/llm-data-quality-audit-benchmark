@@ -1,0 +1,7 @@
+dataset_id,comparison,test_name,n_seeds,mean_paired_loss_improvement,ci_low,ci_high,ci_crosses_zero,improvement_claim_allowed,metric_for_comparison
+c4_en_20m,exact_dedup_vs_raw,paired_seed_difference_on_valid_loss,3,0.0,0.0,0.0,True,False,valid_loss
+c4_en_20m,length_filter_vs_raw,paired_seed_difference_on_valid_loss,3,-0.34486646950244904,-0.5287674218416214,-0.16096551716327667,False,False,valid_loss
+c4_en_20m,urd_fixed_vs_raw,paired_seed_difference_on_valid_loss,3,-0.04633625348409017,-0.2861620783805847,0.19348957141240436,True,False,valid_loss
+openwebtext_20m,exact_dedup_vs_raw,paired_seed_difference_on_valid_loss,3,0.0,0.0,0.0,True,False,valid_loss
+openwebtext_20m,length_filter_vs_raw,paired_seed_difference_on_valid_loss,3,0.11666009823481242,-0.7043533325195312,0.937673528989156,True,False,valid_loss
+openwebtext_20m,urd_fixed_vs_raw,paired_seed_difference_on_valid_loss,3,0.3360164016485214,-0.07903489470481873,0.7510676980018616,True,False,valid_loss

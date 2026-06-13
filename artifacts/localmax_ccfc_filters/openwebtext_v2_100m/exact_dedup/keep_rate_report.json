@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-12T19:53:51+00:00",
+  "dataset_id": "openwebtext_v2_100m",
+  "document_keep_rate": 1.0,
+  "input_documents": 84174,
+  "kept_documents": 84174,
+  "method_name": "exact_dedup",
+  "selected_gpt2_tokens": 95000111,
+  "source_data_tokens": 95000111,
+  "token_keep_rate": 1.0
+}

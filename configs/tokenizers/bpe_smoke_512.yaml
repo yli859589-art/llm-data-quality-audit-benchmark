@@ -1,0 +1,17 @@
+tokenizer_name: bpe_smoke_512
+tokenizer_type: lightweight_bpe_smoke
+scope: smoke
+level3_mainline: false
+vocab_size_requested: 512
+training_data_path: artifacts/data_step2/wikitext2_smoke/train.jsonl
+training_scope: smoke
+seed: 42
+normalization: identity
+model_path: artifacts/tokenizers_step3/bpe_smoke/tokenizer.json
+vocab_path: artifacts/tokenizers_step3/bpe_smoke/vocab.json
+manifest_path: artifacts/tokenizers_step3/bpe_smoke/tokenizer_manifest.json
+optional_dependency: sentencepiece_or_tokenizers
+fallback_allowed: true
+smoke_only: true
+status: smoke_verified_after_step3
+notes: smoke tokenizer only; not BPE16k/BPE32k mainline evidence

@@ -1,0 +1,18 @@
+{
+  "datasets": {
+    "c4_en_20m": {
+      "ci_high": "0.19348957141240436",
+      "ci_low": "-0.2861620783805847",
+      "improvement_claim_allowed": false,
+      "mean_paired_loss_improvement": "-0.04633625348409017"
+    },
+    "openwebtext_20m": {
+      "ci_high": "0.7510676980018616",
+      "ci_low": "-0.07903489470481873",
+      "improvement_claim_allowed": false,
+      "mean_paired_loss_improvement": "0.3360164016485214"
+    }
+  },
+  "full_mechanism_claim_allowed": false,
+  "insufficient_evidence": true
+}

@@ -1,12 +1,12 @@
 # Fresh-Unzip Verification Report
 
 - Status: `passed`
-- Zip file name: `llm_data_quality_audit_benchmark_release_candidate_v1.zip`
+- Zip file name: `llm_data_quality_audit_benchmark_step9_level3_pipeline_ready_20260611.zip`
 - Zip path: `<local_user_path>`
-- Zip SHA-256: `70c3c1746485e3b3245984f5faa2a6c62ec3087a97f0630d129a7f9d4dc2f5d8`
+- Zip SHA-256: `201946a3764813c66233b8c5728cc6785868708241cae256d77c084baff7140b`
 - lightweight_check_status: `passed`
-- heavy_check_status: `skipped_by_request`
-- heavy_check_reason: skip-heavy flag was provided
+- heavy_check_status: `passed`
+- heavy_check_reason: run_all_checks completed
 
 ## Structure Checks
 
@@ -57,4 +57,4 @@
 
 | Step | Status | Return code |
 |---|---|---:|
-| `run_all_checks` | `skipped_by_request` |  |
+| `run_all_checks` | `passed` | 0 |

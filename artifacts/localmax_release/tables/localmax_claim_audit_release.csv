@@ -1,0 +1,6 @@
+claim_id,allowed,evidence_link,reason
+localmax_minimal_training_evidence_released,True,artifacts/localmax_release/tables/localmax_main_results_release.csv,24 registry-backed strengthened small-model runs are present.
+urd_fixed_wins_over_raw,False,artifacts/localmax_release/tables/localmax_statistical_summary_release.csv,URD evidence is mixed and confidence intervals do not support an improvement claim.
+ppl_improvement,False,artifacts/localmax_release/tables/localmax_main_results_release.csv,PPL is clipped in the current run and is not comparable.
+level3_completed,False,docs/LOCALMAX_LIMITATIONS.md,"Cloud-scale data, true medium runs, selected large-lite runs, and official downstream evaluation are absent."
+ccf_b_level_readiness,False,docs/LOCALMAX_FUTURE_CLOUD_LEVEL3.md,"This release is a local minimal training-evidence artifact, not a completed conference-level benchmark."

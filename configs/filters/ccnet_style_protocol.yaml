@@ -1,0 +1,11 @@
+filter_name: ccnet_style_protocol
+filter_type: ccnet_style_proxy
+scope: main_protocol
+allow_proxy: true
+proxy_used: true
+external_dependency: fastText_language_id_or_CCNet_pipeline
+external_dependency_available: false
+official_ccnet_reproduction: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "CCNet-style protocol/proxy only; full CCNet baseline remains future work."

@@ -1,0 +1,12 @@
+{
+  "checkpoint_hash": "",
+  "checkpoint_materialized": false,
+  "checkpoint_path": "",
+  "checkpoint_policy": "metadata_only_due_repository_large_file_policy",
+  "completed_training_run": true,
+  "created_at": "2026-06-11T19:26:20+00:00",
+  "manifest_version": "localmax.strengthened.checkpoint_manifest.v1",
+  "model_state_fingerprint": "53C6B15914A86765F15AB355C1E77C771AD5FDDAA497093AF3D87BA6029846D5",
+  "not_a_fake_checkpoint": true,
+  "omission_reason": "Repository hygiene disallows many large binary checkpoints; strengthened evidence records metrics, lineage, and trained-state fingerprint."
+}

@@ -1,0 +1,28 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "artifact_roots": {
+    "data": "artifacts/level3_data/",
+    "tokenizers": "artifacts/level3_tokenizers/",
+    "filters": "artifacts/level3_filters/",
+    "training": "artifacts/level3_training/",
+    "evaluation": "artifacts/level3_evaluation/",
+    "analysis": "artifacts/level3_analysis/",
+    "tables": "artifacts/level3_tables/",
+    "figures": "artifacts/level3_figures/",
+    "reports": "artifacts/level3_reports/",
+    "release": "artifacts/level3_release/"
+  },
+  "named_outputs": {
+    "main_table": "artifacts/level3_tables/main_results_level3.csv",
+    "baseline_report": "artifacts/level3_reports/baseline_matrix_report.md",
+    "urd_report": "artifacts/level3_reports/urd_selector_report.md",
+    "downstream_report": "artifacts/level3_reports/downstream_report.md",
+    "mechanism_report": "artifacts/level3_reports/mechanism_report.md",
+    "limitations_report": "artifacts/level3_reports/limitations.md",
+    "reproducibility_report": "artifacts/level3_reports/reproducibility.md",
+    "claim_map": "artifacts/claim_map/claim_map_level3.json",
+    "final_release_zip": "artifacts/level3_release/level3_release_candidate.zip"
+  }
+}

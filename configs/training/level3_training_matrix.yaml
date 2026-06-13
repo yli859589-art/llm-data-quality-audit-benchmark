@@ -1,0 +1,15 @@
+{
+  "matrix_name": "level3_training_matrix_protocol",
+  "scope": "level3_heavy_protocol",
+  "level3_training_completed": false,
+  "bpe16k_or_bpe32k_mainline_training_completed": false,
+  "medium_or_large_lite_completed": false,
+  "entries": [
+    "smoke_bpe_tiny",
+    "smoke_char_tiny",
+    "small_bpe_protocol",
+    "medium_bpe_protocol",
+    "large_lite_bpe_protocol"
+  ],
+  "notes": "Protocol matrix only. Step 5 verifies the training pipeline with tiny smoke training, not full Level 3 training."
+}

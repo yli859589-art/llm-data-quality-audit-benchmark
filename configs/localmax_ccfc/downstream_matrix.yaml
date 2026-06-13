@@ -1,0 +1,11 @@
+{
+  "step": "localmax_ccfc_strengthening",
+  "scope": "ccfc_downstream",
+  "local_downstream_subset": true,
+  "official_full_downstream": false,
+  "examples_per_benchmark": 200,
+  "benchmarks": ["lambada_openai_subset", "piqa_subset", "arc_easy_subset"],
+  "methods_for_downstream": ["raw", "length_filter", "c4_quality_filter", "urd_fixed"],
+  "seed_for_downstream": 42,
+  "claim_allowed": false
+}

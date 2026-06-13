@@ -1,0 +1,9 @@
+{
+  "analysis_type": "proxy_utility",
+  "claim_allowed": false,
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "insufficient_evidence": true,
+  "lm_smoke_metric_available": true,
+  "per_document_utility_target_available": false,
+  "sample_size": 3
+}

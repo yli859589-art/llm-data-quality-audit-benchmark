@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "created_at": "2026-06-11T18:38:34+00:00",
+  "dataset_id": "c4_en_20m",
+  "dataset_manifest": "artifacts/localmax_data/c4_en_20m/dataset_manifest.json",
+  "document_keep_rate": 1.0,
+  "input_documents": 38190,
+  "input_gpt2_tokens": 18000295,
+  "kept_documents": 38190,
+  "kept_gpt2_tokens": 18000295,
+  "level3_filter": false,
+  "method_name": "raw",
+  "protocol_only": false,
+  "scope": "localmax_minimal",
+  "scores_or_decisions_path": "artifacts/localmax_filters/c4_en_20m/raw/scores_or_decisions.jsonl",
+  "selected_doc_ids_path": "artifacts/localmax_filters/c4_en_20m/raw/selected_doc_ids.jsonl",
+  "smoke_only": false,
+  "step": "step10B_localmax_execution_fix",
+  "token_keep_rate": 1.0,
+  "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json"
+}

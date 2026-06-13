@@ -1,0 +1,33 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "keep_rate_policy": "matched_keep_rate_per_dataset_tokenizer_and_method_family",
+  "methods": [
+    {"method_id": "raw", "family": "baseline", "required": true},
+    {"method_id": "random_same_keep_rate", "family": "baseline", "required": true},
+    {"method_id": "exact_dedup", "family": "dedup", "required": true},
+    {"method_id": "minhash_near_dedup", "family": "dedup", "required": true},
+    {"method_id": "length_filter", "family": "heuristic", "required": true},
+    {"method_id": "c4_style_heuristic_proxy", "family": "heuristic_proxy", "required": true, "official_reproduction": false},
+    {"method_id": "gopher_style_heuristic_proxy", "family": "heuristic_proxy", "required": true, "official_reproduction": false},
+    {"method_id": "ccnet_style_proxy", "family": "heuristic_proxy", "required": true, "official_reproduction": false},
+    {"method_id": "perplexity_filter", "family": "model_proxy", "required": true},
+    {"method_id": "classifier_quality_proxy", "family": "classifier_proxy", "required": true},
+    {"method_id": "embedding_diversity_selector", "family": "diversity", "required": true},
+    {"method_id": "hdqspp_historical", "family": "historical_failure_analysis", "required": true},
+    {"method_id": "urd_fixed", "family": "urd_candidate", "required": true, "effectiveness_verified": false},
+    {"method_id": "urd_pareto", "family": "urd_candidate", "required": true, "effectiveness_verified": false},
+    {"method_id": "urd_ablation_no_utility", "family": "urd_ablation", "required": true},
+    {"method_id": "urd_ablation_no_risk", "family": "urd_ablation", "required": true},
+    {"method_id": "urd_ablation_no_diversity", "family": "urd_ablation", "required": true},
+    {"method_id": "urd_ablation_no_shift", "family": "urd_ablation", "required": true},
+    {"method_id": "urd_ablation_no_cost", "family": "urd_ablation", "required": true}
+  ],
+  "disallowed_claims_step10A": [
+    "official_c4_gopher_ccnet_reproduction_completed",
+    "urd_effectiveness_verified",
+    "urd_beats_raw",
+    "pareto_frontier_improved"
+  ]
+}

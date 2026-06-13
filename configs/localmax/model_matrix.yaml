@@ -1,0 +1,9 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_models",
+  "small_mainline": {"name": "small_25m_40m", "role": "localmax_main_training_target"},
+  "medium_lite_selected": {"name": "medium_lite_60m_80m", "role": "selected_local_probe_not_true_medium"},
+  "true_medium_completed": false,
+  "large_lite_completed": false
+}
+

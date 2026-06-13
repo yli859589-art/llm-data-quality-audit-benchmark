@@ -1,0 +1,7 @@
+{
+  "cost_proxy": "documents_scored",
+  "created_at": "2026-06-11T18:38:34+00:00",
+  "dataset_id": "c4_en_20m",
+  "filter_cost_units": 38190,
+  "method_name": "raw"
+}

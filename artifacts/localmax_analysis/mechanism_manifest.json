@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "diversity_loss_report_path": "artifacts/localmax_analysis/diversity_loss_report.json",
+  "full_scale_mechanism_claim_allowed": false,
+  "level3_mechanism": false,
+  "negative_result_analysis_path": "artifacts/localmax_analysis/negative_result_analysis.md",
+  "overfiltering_report_path": "artifacts/localmax_analysis/overfiltering_report.json",
+  "proxy_utility_mismatch_path": "artifacts/localmax_analysis/proxy_utility_mismatch.csv",
+  "rank_stability_report_path": "artifacts/localmax_analysis/rank_stability_report.json",
+  "scope": "localmax_minimal_mechanism",
+  "step": "step10B_localmax_execution_fix"
+}

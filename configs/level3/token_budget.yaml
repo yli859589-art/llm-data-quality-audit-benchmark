@@ -1,0 +1,20 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "counter_type": "tokenizer_specific_bpe_tokens",
+  "minimum": {
+    "tokens_per_dataset": 500000000,
+    "datasets_required": 3,
+    "total_floor_tokens": 1500000000
+  },
+  "strong_target": {
+    "tokens_per_dataset": 1000000000,
+    "datasets_target": 4
+  },
+  "disallowed_counters": [
+    "whitespace_proxy",
+    "character_count_proxy"
+  ],
+  "fallback_policy_ref": "configs/level3/compute_budget.yaml"
+}

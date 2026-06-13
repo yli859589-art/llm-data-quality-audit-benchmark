@@ -1,0 +1,12 @@
+{
+  "analysis": "rank_stability",
+  "scope": "main_protocol",
+  "dataset_name": "wikitext2_smoke",
+  "method_name": "protocol_only",
+  "smoke_only": false,
+  "protocol_only": true,
+  "insufficient_evidence_expected": true,
+  "required_future_artifacts": ["multi_seed_runs", "method_metric_matrix", "bootstrap_rank_table"],
+  "claim_allowed": false
+}
+

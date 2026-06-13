@@ -1,0 +1,47 @@
+{
+  "step": "step10B_localmax_execution_fix",
+  "scope": "localmax_minimal_data",
+  "target_gpt2_tokens": 20000000,
+  "split_token_targets": {"train": 18000000, "valid": 1000000, "test": 1000000},
+  "minimum_datasets_meeting_floor": 2,
+  "tokenizer_name": "gpt2",
+  "sources": [
+    {
+      "dataset_id": "openwebtext_20m",
+      "dataset_name": "OpenWebText 20M GPT-2-token sample",
+      "hf_dataset": "Skylion007/openwebtext",
+      "hf_config": "",
+      "source_version": "huggingface_streaming_current",
+      "text_field": "text",
+      "license_scope_note": "OpenWebText-style public web text sample accessed through HuggingFace streaming; used only as LocalMax minimal evidence, not Level 3 data."
+    },
+    {
+      "dataset_id": "c4_en_20m",
+      "dataset_name": "C4 English 20M GPT-2-token sample",
+      "hf_dataset": "allenai/c4",
+      "hf_config": "en",
+      "source_version": "huggingface_streaming_current",
+      "text_field": "text",
+      "license_scope_note": "C4 English public research dataset accessed through HuggingFace streaming; used only as LocalMax minimal evidence, not Level 3 data."
+    },
+    {
+      "dataset_id": "fineweb_edu_20m",
+      "dataset_name": "FineWeb-Edu 20M GPT-2-token fallback candidate",
+      "hf_dataset": "HuggingFaceFW/fineweb-edu",
+      "hf_config": "sample-10BT",
+      "source_version": "huggingface_streaming_current",
+      "text_field": "text",
+      "license_scope_note": "FineWeb-Edu public web sample candidate; used only if primary sources fail, not Level 3 data."
+    },
+    {
+      "dataset_id": "wikitext103_20m",
+      "dataset_name": "WikiText-103 20M GPT-2-token fallback candidate",
+      "hf_dataset": "wikitext",
+      "hf_config": "wikitext-103-raw-v1",
+      "source_version": "huggingface_dataset_current",
+      "text_field": "text",
+      "license_scope_note": "WikiText-103 public benchmark corpus; fallback LocalMax open corpus, not Level 3 data."
+    }
+  ]
+}
+

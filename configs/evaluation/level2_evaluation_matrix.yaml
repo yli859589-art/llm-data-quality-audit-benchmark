@@ -1,0 +1,9 @@
+{
+  "matrix_name": "level2_evaluation_matrix_protocol",
+  "scope": "level2_protocol",
+  "protocol_only": true,
+  "completed": false,
+  "official_downstream_completed": false,
+  "evaluation_families": ["lm", "risk", "diversity", "cost", "stability", "pareto", "downstream_protocol"],
+  "notes": "Level 2 evaluation matrix protocol only; no completed evidence is claimed."
+}

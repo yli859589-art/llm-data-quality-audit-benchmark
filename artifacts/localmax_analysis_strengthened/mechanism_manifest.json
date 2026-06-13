@@ -1,0 +1,14 @@
+{
+  "completed": true,
+  "diversity_loss_report_path": "artifacts/localmax_analysis_strengthened/diversity_loss_report.json",
+  "full_mechanism_claim_allowed": false,
+  "insufficient_evidence": true,
+  "level3_mechanism": false,
+  "negative_result_analysis_path": "artifacts/localmax_analysis_strengthened/negative_result_analysis.md",
+  "overfiltering_report_path": "artifacts/localmax_analysis_strengthened/overfiltering_report.json",
+  "proxy_utility_mismatch_path": "artifacts/localmax_analysis_strengthened/proxy_utility_mismatch.csv",
+  "rank_stability_report_path": "artifacts/localmax_analysis_strengthened/rank_stability_report.json",
+  "scope": "localmax_mechanism_strengthened",
+  "step": "step10B_localmax_training_strengthen",
+  "urd_vs_raw_analysis_path": "artifacts/localmax_analysis_strengthened/urd_vs_raw_analysis.json"
+}

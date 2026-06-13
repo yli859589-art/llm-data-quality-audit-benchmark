@@ -1,0 +1,124 @@
+{
+  "blocking_failures": [],
+  "ccf_b_ready_claimed": false,
+  "completed": true,
+  "created_at": "2026-06-12T17:36:02+00:00",
+  "current_readiness": "LOCAL_MAX_V2_FILTERS_COMPLETED",
+  "datasets_completed": [
+    "c4_en_v2_100m",
+    "openwebtext_v2_100m"
+  ],
+  "filter_results": [
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_v2_100m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/openwebtext_v2_100m/raw/filter_manifest.json",
+      "method_name": "raw",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 95000111,
+      "source_data_tokens": 95000111,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_v2_100m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/openwebtext_v2_100m/exact_dedup/filter_manifest.json",
+      "method_name": "exact_dedup",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 95000111,
+      "source_data_tokens": 95000111,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_v2_100m",
+      "document_keep_rate": 0.8915698434195832,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/openwebtext_v2_100m/length_filter/filter_manifest.json",
+      "method_name": "length_filter",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 56484472,
+      "source_data_tokens": 95000111,
+      "token_keep_rate": 0.5945726947624304
+    },
+    {
+      "completed": true,
+      "dataset_id": "openwebtext_v2_100m",
+      "document_keep_rate": 0.8999928719081902,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/openwebtext_v2_100m/urd_fixed/filter_manifest.json",
+      "method_name": "urd_fixed",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 90810349,
+      "source_data_tokens": 95000111,
+      "token_keep_rate": 0.9558972936357938
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_v2_100m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/c4_en_v2_100m/raw/filter_manifest.json",
+      "method_name": "raw",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 95001313,
+      "source_data_tokens": 95001313,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_v2_100m",
+      "document_keep_rate": 1.0,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/c4_en_v2_100m/exact_dedup/filter_manifest.json",
+      "method_name": "exact_dedup",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 95001313,
+      "source_data_tokens": 95001313,
+      "token_keep_rate": 1.0
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_v2_100m",
+      "document_keep_rate": 0.9594606804742638,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/c4_en_v2_100m/length_filter/filter_manifest.json",
+      "method_name": "length_filter",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 72578216,
+      "source_data_tokens": 95001313,
+      "token_keep_rate": 0.7639706621739006
+    },
+    {
+      "completed": true,
+      "dataset_id": "c4_en_v2_100m",
+      "document_keep_rate": 0.8999969881634825,
+      "filter_manifest_path": "artifacts/localmax_v2_filters/c4_en_v2_100m/urd_fixed/filter_manifest.json",
+      "method_name": "urd_fixed",
+      "reused_existing_artifact": true,
+      "selected_gpt2_tokens": 93575624,
+      "source_data_tokens": 95001313,
+      "token_keep_rate": 0.9849929547815829
+    }
+  ],
+  "historical_results_modified": false,
+  "level3_completed_artifact": false,
+  "localmax_v2_filters_ready": true,
+  "main_results_modified": false,
+  "methods_completed": [
+    "exact_dedup",
+    "length_filter",
+    "raw",
+    "urd_fixed"
+  ],
+  "minimum_matrix": "2 datasets x 4 methods",
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "recommended_next_step": "benchmark_training_throughput",
+  "sota_claimed": false,
+  "stage": "filters",
+  "status": "completed",
+  "step": "step10B_localmax_v2",
+  "weak_ccf_a_claimed": false
+}

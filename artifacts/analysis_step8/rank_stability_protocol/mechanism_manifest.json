@@ -1,0 +1,45 @@
+{
+  "analysis_name": "rank_stability_protocol",
+  "analysis_type": "rank_stability",
+  "claim_allowed": false,
+  "completed": false,
+  "created_at": "2026-06-11T07:51:44+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "959f7487d4ee7f0126422c26d0b7e441f5f30eaec71a093e9909381af72a70b1",
+  "diagnostic_report_path": "artifacts/analysis_step8/rank_stability_protocol/rank_stability_report.md",
+  "diagnostic_table_hash": "9a84972b5378734551186ccd0f8d394c79b2e77080c88280fa2dcf3a10c03079",
+  "diagnostic_table_path": "artifacts/analysis_step8/rank_stability_protocol/rank_stability_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {},
+  "evaluation_manifest_paths": [],
+  "evidence_sufficiency": "protocol_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/rank_stability_protocol/rank_stability_summary.json": "2335cc5ae9908dba3bb868556e0d4df8293cd190b21474a6a6d9821ce1397422"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/rank_stability_protocol/rank_stability_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {},
+  "filter_manifest_paths": [],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "protocol_only"
+  ],
+  "notes": "Rank stability protocol only.",
+  "protocol_only": true,
+  "scope": "main_protocol",
+  "smoke_only": false,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

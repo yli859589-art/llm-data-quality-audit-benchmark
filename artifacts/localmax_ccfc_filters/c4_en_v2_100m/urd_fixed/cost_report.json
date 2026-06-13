@@ -1,0 +1,7 @@
+{
+  "cost_proxy": "documents_scored",
+  "created_at": "2026-06-12T20:02:05+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "filter_cost_units": 199214,
+  "method_name": "urd_fixed"
+}

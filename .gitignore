@@ -18,3 +18,14 @@ htmlcov/
 artifacts/llm_benchmark_ci/
 artifacts/llm_benchmark_quick/
 artifacts/llm_benchmark_long_probe/
+
+# Large local-only data/checkpoint artifacts.
+# These are preserved in the Desktop release bundle, but GitHub should carry
+# code, configs, manifests, reports, tables, and lightweight metrics rather than
+# raw corpora or binary model checkpoints.
+artifacts/localmax_data/**/*.jsonl
+artifacts/localmax_v2_data/**/shards/*.jsonl.gz
+artifacts/localmax_training/**/*.pt
+artifacts/localmax_training_strengthened/**/*.pt
+artifacts/localmax_v2_training/**/*.pt
+artifacts/localmax_ccfc_training/**/*.pt

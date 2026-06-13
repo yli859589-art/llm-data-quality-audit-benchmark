@@ -1,0 +1,9 @@
+{
+  "claim_allowed": false,
+  "completed": false,
+  "downstream_subset": "artifacts/localmax_v2_downstream/downstream_subset.csv",
+  "local_downstream_subset": true,
+  "official_full_downstream": false,
+  "scope": "localmax_v2_downstream",
+  "step": "step10B_localmax_v2"
+}

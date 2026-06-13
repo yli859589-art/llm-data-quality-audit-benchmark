@@ -1,0 +1,9 @@
+{
+  "claim_allowed": false,
+  "completed": true,
+  "downstream_subset": "artifacts/localmax_ccfc_downstream/downstream_subset.csv",
+  "local_downstream_subset": true,
+  "official_full_downstream": false,
+  "scope": "ccfc_downstream",
+  "step": "localmax_ccfc_strengthening"
+}

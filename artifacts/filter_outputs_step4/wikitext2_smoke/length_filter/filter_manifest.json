@@ -1,0 +1,61 @@
+{
+  "actual_document_keep_rate": 1.0,
+  "actual_token_keep_rate": 1.0,
+  "allow_proxy": false,
+  "created_at": "2026-06-10T16:58:33+00:00",
+  "dataset_manifest_hash": "0944998c7ef0460fbfa00eba35c98d9b59a3966d283f63b368d2ff20f84fd3c9",
+  "dataset_manifest_path": "artifacts/data_step2/wikitext2_smoke/data_manifest.json",
+  "dataset_name": "WikiText-2",
+  "external_dependency": "",
+  "external_dependency_available": false,
+  "filter_name": "length_filter",
+  "filter_type": "length_filter",
+  "historical_baseline": false,
+  "implemented_but_not_run": false,
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 3,
+  "kept_estimated_tokens": 32,
+  "manifest_version": "step4.filter_manifest.v1",
+  "notes": "Step 4 filter interface smoke output; not main experiment evidence.",
+  "official_reproduction": false,
+  "output_dir": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter",
+  "output_hashes": {
+    "cost_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/cost_report.json",
+      "sha256": "f772b3484729e9b568c4708ee4aaf80d48e857a7b5cb92a74e1b151e89e19434"
+    },
+    "decisions.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/decisions.jsonl",
+      "sha256": "87508f5808682f59126c4c93029c585d21038679b8106a01019fbbe37aff5178"
+    },
+    "diversity_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/diversity_report.json",
+      "sha256": "d4b4439ec5a5d635429cdd5cc0c285eba11b35640b1da7541439a383fdade266"
+    },
+    "keep_rate_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/keep_rate_report.json",
+      "sha256": "9af7b589579c4c9abce27f426e28b1a78e98378943afd330d9c53b2078b6e344"
+    },
+    "risk_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/risk_report.json",
+      "sha256": "a68d748ed71f4c5713bdae6f1ef6193f5098125bae73ca11242b73a8ebf40002"
+    },
+    "scores.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/scores.jsonl",
+      "sha256": "74dd4381254b8e9a83488e67ce9ed091de3e8a2920f77aecb4f67accbbc7b086"
+    },
+    "selected_doc_ids.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/length_filter/selected_doc_ids.jsonl",
+      "sha256": "c47715e7d852a068127248a780734bf55bb04cea8ffbeb94f615bb9a3af660a9"
+    }
+  },
+  "proxy_used": false,
+  "scope": "smoke",
+  "seed": 42,
+  "smoke_only": true,
+  "target_keep_rate": null,
+  "token_counter_type": "whitespace",
+  "tokenizer_manifest_hash": "ccbf31a1223fe4b8252327fafb50bd424faf9e0887a7ab9ba0b08b1139adf9cf",
+  "tokenizer_manifest_path": "artifacts/tokenizers_step3/bpe_smoke/tokenizer_manifest.json"
+}

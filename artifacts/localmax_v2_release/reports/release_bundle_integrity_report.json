@@ -1,0 +1,10 @@
+{
+  "binary_checkpoints_included": false,
+  "bundle_scope": "standalone_metadata_bundle",
+  "errors": [],
+  "figure_count": 10,
+  "metadata_file_count": 238,
+  "raw_data_included": false,
+  "release_bundle_links_valid": true,
+  "status": "passed"
+}

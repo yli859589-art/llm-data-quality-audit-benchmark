@@ -1,0 +1,45 @@
+{
+  "analysis_name": "failure_taxonomy",
+  "analysis_type": "failure_taxonomy",
+  "claim_allowed": false,
+  "completed": true,
+  "created_at": "2026-06-11T07:51:09+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "bea650bf4f3d81890ab993f0723858e5d01457dc0bc15d62ebac5c887cd14e1b",
+  "diagnostic_report_path": "artifacts/analysis_step8/failure_taxonomy/failure_taxonomy.md",
+  "diagnostic_table_hash": "5d29a12f915b39314f647860194b4507d9fddfe1019185659dd220c55179a0e7",
+  "diagnostic_table_path": "artifacts/analysis_step8/failure_taxonomy/failure_taxonomy_table.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {},
+  "evaluation_manifest_paths": [],
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/failure_taxonomy/failure_taxonomy.json": "21a4ee81a7c5d0402189fa0296a2b5b6d7dd63ef04f813bbb536172d37c81827"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/failure_taxonomy/failure_taxonomy.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {},
+  "filter_manifest_paths": [],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "all_methods"
+  ],
+  "notes": "Failure taxonomy smoke artifact with negative-result preservation.",
+  "protocol_only": false,
+  "scope": "smoke",
+  "smoke_only": true,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

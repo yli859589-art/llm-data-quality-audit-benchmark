@@ -1,0 +1,2 @@
+method_name,url_ratio,html_ratio,symbol_ratio,digit_ratio,repetition_ratio,estimated_pii_hits,boilerplate_ratio,risk_score_mean,risk_score_std,toxicity_classifier,proxy_metric,main_evidence,effectiveness_claim_allowed
+urd_fixed,0.0,0.0,0.014598540145985401,0.0072992700729927005,0,0,proxy_available_in_component_scores,0.007444952520553183,0.0035469967780814783,unavailable,True,False,False

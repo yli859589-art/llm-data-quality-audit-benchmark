@@ -1,0 +1,20 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "expected_resources": {
+    "storage": "multi-TB expected for full 500M/1B corpus and checkpoints",
+    "training_time": "multi-day GPU runs expected depending on scale",
+    "gpu": "medium and large-lite require dedicated GPU resources",
+    "cpu": "data preparation and filtering require high-throughput CPU workers"
+  },
+  "fallbacks": [
+    {"from": "1B_tokens", "to": "500M_tokens", "readiness_impact": "may_remain_level3_if_all_minimum_thresholds_hold"},
+    {"from": "500M_tokens", "to": "100M_tokens", "readiness_impact": "downgrade_to_level2_or_incomplete"},
+    {"from": "4_datasets", "to": "3_datasets", "readiness_impact": "may_remain_level3_minimum"},
+    {"from": "full_large_lite", "to": "selected_large_lite", "readiness_impact": "acceptable_only_if_labeled_selected_exploratory"},
+    {"from": "official_ccnet", "to": "ccnet_proxy", "readiness_impact": "proxy_only_no_official_reproduction_claim"},
+    {"from": "official_downstream", "to": "subset_downstream", "readiness_impact": "no_level3_completed_without_minimum_official_downstream"}
+  ],
+  "fallback_cannot_preserve_completed_artifact_unless_minimum_thresholds_hold": true
+}

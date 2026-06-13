@@ -1,0 +1,34 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "model_scales": [
+    {
+      "scale_id": "tiny_smoke",
+      "parameter_range_millions": [1, 10],
+      "level3_evidence": false,
+      "purpose": "pipeline_only"
+    },
+    {
+      "scale_id": "small",
+      "parameter_range_millions": [50, 80],
+      "level3_required": true
+    },
+    {
+      "scale_id": "medium",
+      "parameter_range_millions": [100, 250],
+      "level3_required": true
+    },
+    {
+      "scale_id": "large_lite",
+      "parameter_range_millions": [250, 750],
+      "level3_required": true,
+      "selected_runs_allowed": true
+    }
+  ],
+  "completion_rules": {
+    "small_only_is_not_level3_completed": true,
+    "medium_required_for_level3": true,
+    "selected_large_lite_required_for_strong_level3": true
+  }
+}

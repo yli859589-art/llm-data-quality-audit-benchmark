@@ -1,0 +1,12 @@
+{
+  "analysis": "scale_trend",
+  "scope": "main_protocol",
+  "dataset_name": "wikitext2_smoke",
+  "method_name": "protocol_only",
+  "smoke_only": false,
+  "protocol_only": true,
+  "insufficient_evidence_expected": true,
+  "required_future_artifacts": ["small_bpe_runs", "medium_runs", "large_lite_runs"],
+  "claim_allowed": false
+}
+

@@ -1,0 +1,23 @@
+{
+  "binary_checkpoints_included": false,
+  "bundle_scope": "standalone_metadata_bundle",
+  "bundle_size_bytes": 1600808,
+  "copied_dataset_manifest_count": 4,
+  "copied_filter_manifest_count": 8,
+  "copied_metrics_count": 24,
+  "copied_training_manifest_count": 24,
+  "dangling_links": [],
+  "errors": [],
+  "global_registry_hash_check_passed": true,
+  "localmax_registry_hash_check_passed": true,
+  "manifest_scope_ok": true,
+  "metadata_and_metrics_included": true,
+  "outside_bundle_links": [],
+  "raw_data_included": false,
+  "registry_hash_validation_scope": "deferred_to_release_and_global_registry_checks",
+  "release_bundle_links_valid": true,
+  "standalone_bundle": true,
+  "status": "passed",
+  "step": "step10C_localmax_hotfix",
+  "warnings": []
+}

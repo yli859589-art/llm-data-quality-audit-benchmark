@@ -1,0 +1,14 @@
+failure_type,evidence_status,description,negative_result_preserved,insufficient_evidence
+proxy_utility_mismatch,hypothesized,Filter proxy may not track actual training utility.,False,True
+overfiltering,hypothesized,Aggressive retention can remove useful tokens.,False,True
+diversity_collapse,hypothesized,Filtering can reduce lexical or semantic coverage.,False,True
+domain_shift,hypothesized,Selection can move data away from the validation distribution.,False,True
+tokenizer_budget_mismatch,protocol_only,Whitespace/char/BPE budgets can disagree.,False,True
+weak_baseline_illusion,protocol_only,Method gains are unsafe without raw/random/dedup/length controls.,False,True
+small_model_artifact,protocol_only,Tiny/small behavior may not transfer to larger scales.,False,True
+seed_instability,insufficient_evidence,Multi-seed evidence is not yet complete.,False,True
+smoke_main_leakage_risk,observed_risk_controlled,Checks keep smoke/protocol artifacts out of main tables.,False,False
+protocol_completed_confusion,observed_risk_controlled,Manifests separate protocol_only from completed outputs.,False,False
+negative_result_preservation,observed,Historical negative results are retained as audit evidence.,True,False
+hdqspp_historical_failure,observed,HDQS++ v3 did not outperform raw in the current historical fair benchmark evidence.,True,False
+insufficient_evidence_categories,observed,Step 8 explicitly marks smoke/protocol findings as insufficient.,False,False

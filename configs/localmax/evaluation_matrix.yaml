@@ -1,0 +1,9 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_evaluation",
+  "metrics": ["validation_loss", "ppl", "risk", "diversity", "cost", "pareto"],
+  "downstream_subset_only": true,
+  "official_full_downstream_completed": false,
+  "statistical_claim_requires_multi_seed_ci": true
+}
+

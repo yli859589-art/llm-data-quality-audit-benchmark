@@ -1,0 +1,78 @@
+{
+  "additional_steps_completed": 1953,
+  "additional_tokens_seen": 3999744,
+  "completed": true,
+  "context_length": 256,
+  "created_at": "2026-06-13T02:28:17+00:00",
+  "dataset_id": "openwebtext_v2_100m",
+  "effective_batch_tokens": 2048,
+  "evaluated_validation_batches": 256,
+  "failed": false,
+  "failure_type": "",
+  "gradient_accumulation_steps": 4,
+  "loss_curve": [
+    {
+      "step": 490,
+      "tokens_seen": 1003520,
+      "train_loss": 11.028615474700928
+    },
+    {
+      "step": 739,
+      "tokens_seen": 1513472,
+      "train_loss": 9.898056507110596
+    },
+    {
+      "step": 989,
+      "tokens_seen": 2025472,
+      "train_loss": 10.295501470565796
+    },
+    {
+      "step": 1239,
+      "tokens_seen": 2537472,
+      "train_loss": 9.172515869140625
+    },
+    {
+      "step": 1489,
+      "tokens_seen": 3049472,
+      "train_loss": 9.266405582427979
+    },
+    {
+      "step": 1739,
+      "tokens_seen": 3561472,
+      "train_loss": 9.026733875274658
+    },
+    {
+      "step": 1989,
+      "tokens_seen": 4073472,
+      "train_loss": 8.934225797653198
+    },
+    {
+      "step": 2239,
+      "tokens_seen": 4585472,
+      "train_loss": 8.445846796035767
+    },
+    {
+      "step": 2442,
+      "tokens_seen": 5001216,
+      "train_loss": 8.875416278839111
+    }
+  ],
+  "method_name": "exact_dedup",
+  "metric_audit_passed": true,
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "micro_batch_size": 2,
+  "model_scale": "small",
+  "parameter_count": 20542752,
+  "ppl_clipped": false,
+  "ppl_comparable": true,
+  "ppl_overflow": false,
+  "seed": 101,
+  "steps_completed": 2442,
+  "tokens_seen": 5001216,
+  "train_loss_final": 8.875416278839111,
+  "valid_log_ppl": 8.989501055330038,
+  "valid_loss": 8.989501055330038,
+  "valid_nll_nats_per_token": 8.989501055330038,
+  "valid_ppl": 8018.455131655981,
+  "warm_start_tokens_seen": 1001472
+}

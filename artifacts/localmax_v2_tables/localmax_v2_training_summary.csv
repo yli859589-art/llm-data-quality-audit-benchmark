@@ -1,0 +1,9 @@
+dataset_id,method_name,completed_runs,model_scale,parameter_count,min_steps_completed,min_tokens_seen,total_tokens_seen,context_length,metric_audit_passed,evidence_level
+c4_en_v2_100m,exact_dedup,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+c4_en_v2_100m,length_filter,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+c4_en_v2_100m,raw,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+c4_en_v2_100m,urd_fixed,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+openwebtext_v2_100m,exact_dedup,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+openwebtext_v2_100m,length_filter,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+openwebtext_v2_100m,raw,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens
+openwebtext_v2_100m,urd_fixed,3,small,20542752,489,1001472,3004416,256,True,localmax_v2_training_1m_tokens

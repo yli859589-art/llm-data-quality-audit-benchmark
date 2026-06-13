@@ -1,0 +1,232 @@
+{
+  "blocking_failures": [],
+  "canonical_newline": "LF",
+  "encoding": "UTF-8",
+  "figure_readability_hardened": true,
+  "figures": [
+    {
+      "figure_name": "claim_boundary_summary.png",
+      "figure_path": "artifacts/localmax_release/figures/claim_boundary_summary.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "release_metadata",
+      "source_columns": [
+        "claim_id",
+        "allowed"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_claim_audit_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "not_applicable",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "method_ranking_by_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/method_ranking_by_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "dataset",
+        "method",
+        "mean_valid_loss",
+        "std_valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "artifacts/localmax_release/figures/superseded/method_ranking_by_valid_loss.png",
+      "tie_handling": "ties_marked",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "method_ranking_c4_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/method_ranking_c4_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "method",
+        "mean_valid_loss",
+        "std_valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "ties_marked",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "method_ranking_openwebtext_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/method_ranking_openwebtext_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "method",
+        "mean_valid_loss",
+        "std_valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "ties_marked",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "risk_diversity_cost_tradeoff.png",
+      "figure_path": "artifacts/localmax_release/figures/risk_diversity_cost_tradeoff.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "dataset",
+        "method",
+        "risk",
+        "diversity",
+        "cost"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "artifacts/localmax_release/figures/superseded/risk_diversity_cost_tradeoff.png",
+      "tie_handling": "offset_annotations",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "seed_stability_c4_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/seed_stability_c4_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "method",
+        "seed",
+        "valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_main_results_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "dataset_split",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "seed_stability_openwebtext_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/seed_stability_openwebtext_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "method",
+        "seed",
+        "valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_main_results_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "dataset_split",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "seed_stability_valid_loss.png",
+      "figure_path": "artifacts/localmax_release/figures/seed_stability_valid_loss.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "dataset",
+        "method",
+        "seed",
+        "valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_main_results_release.csv",
+      "superseded_figure_path": "artifacts/localmax_release/figures/superseded/seed_stability_valid_loss.png",
+      "tie_handling": "dataset_split_compat_openwebtext",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "training_strength_summary.png",
+      "figure_path": "artifacts/localmax_release/figures/training_strength_summary.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "release_metadata",
+      "source_columns": [
+        "min_tokens_seen",
+        "min_steps_completed"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_training_summary_release.csv",
+      "superseded_figure_path": "artifacts/localmax_release/figures/superseded/training_strength_summary.png",
+      "tie_handling": "normalized_completion_ratio",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "urd_vs_raw_valid_loss_difference.png",
+      "figure_path": "artifacts/localmax_release/figures/urd_vs_raw_valid_loss_difference.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "dataset",
+        "mean_paired_loss_improvement"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_statistical_summary_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "not_applicable",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "valid_loss_by_dataset_method.png",
+      "figure_path": "artifacts/localmax_release/figures/valid_loss_by_dataset_method.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "dataset",
+        "method",
+        "mean_valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "not_applicable",
+      "width_height_policy": ">=7in wide with compact labels"
+    },
+    {
+      "figure_name": "valid_loss_by_method.png",
+      "figure_path": "artifacts/localmax_release/figures/valid_loss_by_method.png",
+      "forbidden_claims_found": false,
+      "generated_successfully": true,
+      "labels_overlap_check": "manual_layout_hardened_offsets_or_dataset_split",
+      "long_axis_label_count": 0,
+      "metric_used": "valid_loss",
+      "source_columns": [
+        "method",
+        "mean_valid_loss"
+      ],
+      "source_table": "artifacts/localmax_release/tables/localmax_method_summary_release.csv",
+      "superseded_figure_path": "",
+      "tie_handling": "not_applicable",
+      "width_height_policy": ">=7in wide with compact labels"
+    }
+  ],
+  "status": "completed",
+  "step": "step10C_localmax_hotfix",
+  "superseded_figures": [
+    "artifacts/localmax_release/figures/superseded/method_ranking_by_valid_loss.png",
+    "artifacts/localmax_release/figures/superseded/risk_diversity_cost_tradeoff.png",
+    "artifacts/localmax_release/figures/superseded/seed_stability_valid_loss.png",
+    "artifacts/localmax_release/figures/superseded/training_strength_summary.png"
+  ]
+}

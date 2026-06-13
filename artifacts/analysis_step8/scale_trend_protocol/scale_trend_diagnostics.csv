@@ -1,0 +1,5 @@
+scale,status,main_evidence,notes
+tiny_smoke,available,False,Smoke engineering run only.
+small,future_required,False,Formal BPE evidence not completed.
+medium,future_required,False,Protocol only.
+large_lite,future_required,False,Protocol only.

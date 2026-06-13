@@ -1,0 +1,56 @@
+{
+  "blocking_failures": [
+    "GPU memory 8.0GB is below the minimum 16GB policy.",
+    "Disk free space 72.3GB is below the conservative 1500GB Level 3 estimate.",
+    "Internet/HuggingFace access check failed."
+  ],
+  "checked_at": "2026-06-12T18:08:31+00:00",
+  "completed": false,
+  "cpu_cores": 32,
+  "cuda_available": true,
+  "dataset_cache_directory": "default_huggingface_cache",
+  "datasets": {
+    "available": true,
+    "error": "",
+    "version": "4.8.4"
+  },
+  "disk_free_gb": 72.3,
+  "expected_runtime_estimate": "multi-day GPU execution for full 500M-token data and medium/large-lite training",
+  "expected_storage_estimate_gb": 1500,
+  "fallback_recommendation": "continue_step10B_only_after_gpu_storage_and_dataset_access_are_confirmed",
+  "gpu_memory_gb": 8.0,
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "heavy_execution_completed": false,
+  "heavy_execution_feasible": false,
+  "internet_dataset_access_available": false,
+  "level3_completed_artifact": false,
+  "main_results_modified": false,
+  "platform": "win32",
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "python_executable_name": "python.exe",
+  "python_version": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+  "ram_gb": 31.8,
+  "stage": "environment",
+  "status": "completed_with_failures",
+  "step": "step10B_level3_heavy_execution",
+  "tokenizers": {
+    "available": true,
+    "error": "",
+    "version": "0.22.2"
+  },
+  "torch": {
+    "available": true,
+    "error": "",
+    "version": "2.11.0+cu126"
+  },
+  "transformers": {
+    "available": true,
+    "error": "",
+    "version": "5.5.4"
+  }
+}

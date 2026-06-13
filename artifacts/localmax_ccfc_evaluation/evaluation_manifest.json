@@ -1,0 +1,10 @@
+{
+  "claim_allowed": true,
+  "completed": true,
+  "lm_metrics": "artifacts/localmax_ccfc_evaluation/lm_metrics.csv",
+  "method_summary": "artifacts/localmax_ccfc_evaluation/method_summary.csv",
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "scope": "ccfc_evaluation",
+  "statistical_tests": "artifacts/localmax_ccfc_evaluation/statistical_tests.csv",
+  "step": "localmax_ccfc_strengthening"
+}

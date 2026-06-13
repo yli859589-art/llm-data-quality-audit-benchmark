@@ -1,0 +1,8 @@
+{
+  "estimated_operations": 3,
+  "external_dependency_used": false,
+  "filter_runtime_seconds": 4.050000279676169e-05,
+  "input_docs": 3,
+  "kept_docs": 2,
+  "notes": "Step 4 lightweight runtime/cost summary; not a final systems benchmark."
+}

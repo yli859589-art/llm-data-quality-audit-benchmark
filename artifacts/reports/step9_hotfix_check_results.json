@@ -1,0 +1,241 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/",
+        "-q"
+      ],
+      "duration_seconds": 58.762787200001185,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "........................................................................ [ 38%]\n........................................................................ [ 77%]\n.........................................                                [100%]\n185 passed in 55.75s\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_all_checks.py",
+        "--timeout",
+        "300",
+        "--json-out",
+        "artifacts/reports/run_all_checks_report.json",
+        "--md-out",
+        "artifacts/reports/run_all_checks_report.md"
+      ],
+      "duration_seconds": 80.13754509999853,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".py -q\n.............                                                            [100%]\n13 passed in 0.57s\nOK python -m pytest tests/test_filters_v2_step4.py tests/test_filter_manifests_step4.py tests/test_run_filter_v2_step4.py tests/test_keep_rate_step4.py tests/test_proxy_filter_boundaries_step4.py -q\nRUN python -m pytest tests/test_models_v2_step5.py tests/test_training_config_step5.py tests/test_training_data_adapter_step5.py tests/test_train_model_v2_step5.py tests/test_training_manifests_step5.py tests/test_training_no_main_results_pollution_step5.py -q\n.............                                                            [100%]\n13 passed in 12.82s\nOK python -m pytest tests/test_models_v2_step5.py tests/test_training_config_step5.py tests/test_training_data_adapter_step5.py tests/test_train_model_v2_step5.py tests/test_training_manifests_step5.py tests/test_training_no_main_results_pollution_step5.py -q\nRUN python -m pytest tests/test_urd_components_step6.py tests/test_urd_selector_step6.py tests/test_urd_pareto_step6.py tests/test_urd_ablation_step6.py tests/test_urd_manifest_step6.py tests/test_urd_no_main_results_pollution_step6.py -q\n........                                                                 [100%]\n8 passed in 5.37s\nOK python -m pytest tests/test_urd_components_step6.py tests/test_urd_selector_step6.py tests/test_urd_pareto_step6.py tests/test_urd_ablation_step6.py tests/test_urd_manifest_step6.py tests/test_urd_no_main_results_pollution_step6.py -q\nRUN python -m pytest tests/test_evaluation_schema_step7.py tests/test_lm_metrics_step7.py tests/test_downstream_protocol_step7.py tests/test_risk_eval_step7.py tests/test_diversity_eval_step7.py tests/test_cost_eval_step7.py tests/test_stability_step7.py tests/test_pareto_eval_step7.py tests/test_evaluation_manifests_step7.py tests/test_evaluation_no_main_results_pollution_step7.py -q\n.............                                                            [100%]\n13 passed in 0.97s\nOK python -m pytest tests/test_evaluation_schema_step7.py tests/test_lm_metrics_step7.py tests/test_downstream_protocol_step7.py tests/test_risk_eval_step7.py tests/test_diversity_eval_step7.py tests/test_cost_eval_step7.py tests/test_stability_step7.py tests/test_pareto_eval_step7.py tests/test_evaluation_manifests_step7.py tests/test_evaluation_no_main_results_pollution_step7.py -q\nRUN python -m pytest tests/test_mechanism_schema_step8.py tests/test_proxy_utility_step8.py tests/test_overfiltering_step8.py tests/test_diversity_loss_step8.py tests/test_domain_shift_step8.py tests/test_rank_stability_step8.py tests/test_tokenizer_sensitivity_step8.py tests/test_scale_trend_step8.py tests/test_failure_taxonomy_step8.py tests/test_pareto_mechanism_step8.py tests/test_mechanism_manifests_step8.py tests/test_mechanism_no_main_results_pollution_step8.py -q\n..............                                                           [100%]\n14 passed in 1.19s\nOK python -m pytest tests/test_mechanism_schema_step8.py tests/test_proxy_utility_step8.py tests/test_overfiltering_step8.py tests/test_diversity_loss_step8.py tests/test_domain_shift_step8.py tests/test_rank_stability_step8.py tests/test_tokenizer_sensitivity_step8.py tests/test_scale_trend_step8.py tests/test_failure_taxonomy_step8.py tests/test_pareto_mechanism_step8.py tests/test_mechanism_manifests_step8.py tests/test_mechanism_no_main_results_pollution_step8.py -q\nRUN python -m pytest tests/test_readiness_v2_step9.py tests/test_level3_gates_step9.py tests/test_artifact_registry_v2_step9.py tests/test_claim_map_step9.py tests/test_no_smoke_in_main_step9.py tests/test_no_protocol_as_completed_step9.py tests/test_no_level2_as_level3_step9.py tests/test_run_all_checks_step9.py tests/test_registry_to_tables_step9.py tests/test_step9_technical_debt_fixes.py tests/test_step9_level3_artifact_hygiene.py -q\n................................                                         [100%]\n32 passed in 6.62s\nOK python -m pytest tests/test_readiness_v2_step9.py tests/test_level3_gates_step9.py tests/test_artifact_registry_v2_step9.py tests/test_claim_map_step9.py tests/test_no_smoke_in_main_step9.py tests/test_no_protocol_as_completed_step9.py tests/test_no_level2_as_level3_step9.py tests/test_run_all_checks_step9.py tests/test_registry_to_tables_step9.py tests/test_step9_technical_debt_fixes.py tests/test_step9_level3_artifact_hygiene.py -q\nRUN python scripts/check_filter_manifests.py --include-step4\nFilter manifest check: ok (8 manifests)\nOK python scripts/check_filter_manifests.py --include-step4\nRUN python scripts/check_training_manifests.py --include-step5\nTraining manifest check: ok (1 manifests)\nOK python scripts/check_training_manifests.py --include-step5\nRUN python scripts/check_urd_manifests.py --include-step6\nURD manifest check: ok (3 manifests)\nOK python scripts/check_urd_manifests.py --include-step6\nRUN python scripts/check_evaluation_manifests.py --include-step7\nEvaluation manifest check: ok (7 manifests)\nOK python scripts/check_evaluation_manifests.py --include-step7\nRUN python scripts/check_mechanism_manifests.py --include-step8\nMechanism manifest check: ok (9 manifests)\nOK python scripts/check_mechanism_manifests.py --include-step8\nRUN python scripts/check_repo.py --clean\nArtifact check: ok\nRepository cleanup removed 291 generated cache/temp paths.\nRepository hygiene check: ok\nOK python scripts/check_repo.py --clean\nRUN python scripts/capture_environment.py\nEnvironment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099\nArtifact: artifacts\\environment\\fingerprint.json\nOK python scripts/capture_environment.py\nRUN python scripts/check_registry_schema.py\nRegistry schema check: ok (153 rows)\nOK python scripts/check_registry_schema.py\nRUN python scripts/check_artifact_lineage.py\nArtifact lineage check: ok (153 rows, 42 superseded)\nOK python scripts/check_artifact_lineage.py\nRUN python scripts/check_main_results_purity.py\nMain results purity check: ok (24 rows)\nOK python scripts/check_main_results_purity.py\nRUN python scripts/generate_artifact_registry_v2.py\nArtifact registry v2 records: 143\nRegistry: artifacts/registry_v2/artifact_registry.jsonl\nSummary: artifacts/registry_v2/artifact_registry_summary.json\nReport: artifacts/reports/artifact_registry_v2_report.md\nOK python scripts/generate_artifact_registry_v2.py\nRUN python scripts/check_artifact_registry_v2.py\nArtifact registry v2 check: ok (143 records)\nOK python scripts/check_artifact_registry_v2.py\nRUN python scripts/check_registry_to_tables.py\nRegistry-to-table consistency check: ok (3 main table records)\nOK python scripts/check_registry_to_tables.py\nRUN python scripts/check_main_results_from_registry.py\nMain-results-from-registry check: ok\nOK python scripts/check_main_results_from_registry.py\nRUN python scripts/check_claims_supported.py\nClaim support check: ok\nOK python scripts/check_claims_supported.py\nRUN python scripts/check_claim_hygiene.py\nClaim hygiene: passed\nReport: artifacts/release/claim_hygiene_report.json\nOK python scripts/check_claim_hygiene.py\nRUN python scripts/check_claim_map.py\nClaim map check: ok\nOK python scripts/check_claim_map.py\nRUN python scripts/check_no_forbidden_claims.py\nForbidden claim check: ok\nOK python scripts/check_no_forbidden_claims.py\nRUN python scripts/check_no_smoke_in_main.py\nNo-smoke-in-main check: ok\nOK python scripts/check_no_smoke_in_main.py\nRUN python scripts/check_no_protocol_as_completed.py\nNo-protocol-as-completed check: ok\nOK python scripts/check_no_protocol_as_completed.py\nRUN python scripts/check_no_level2_as_level3.py\nNo-Level2-as-Level3 check: ok\nOK python scripts/check_no_level2_as_level3.py\nRUN python scripts/check_level3_gates.py\nLevel 3 gates checked:\n- data_gate: not_ready\n- tokenizer_gate: partial\n- filter_gate: partial\n- model_scale_gate: partial\n- evaluation_gate: partial\n- mechanism_gate: partial\n- claim_gate: pass\nOverall readiness: LEVEL3_PIPELINE_READY\nOK python scripts/check_level3_gates.py\nAll checks passed.\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_main_results_purity.py"
+      ],
+      "duration_seconds": 0.09350480000284733,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Main results purity check: ok (24 rows)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_claim_hygiene.py"
+      ],
+      "duration_seconds": 0.6433828000008361,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Claim hygiene: passed\nReport: artifacts/release/claim_hygiene_report.json\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_claim_map.py"
+      ],
+      "duration_seconds": 0.09969839999394026,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Claim map check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_no_forbidden_claims.py"
+      ],
+      "duration_seconds": 0.19444859999930486,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Forbidden claim check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_no_smoke_in_main.py"
+      ],
+      "duration_seconds": 0.10170690000086324,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "No-smoke-in-main check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_no_protocol_as_completed.py"
+      ],
+      "duration_seconds": 0.2674760999943828,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "No-protocol-as-completed check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_no_level2_as_level3.py"
+      ],
+      "duration_seconds": 0.6787716000035289,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "No-Level2-as-Level3 check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_level3_gates.py"
+      ],
+      "duration_seconds": 0.6058687000040663,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Level 3 gates checked:\n- data_gate: not_ready\n- tokenizer_gate: partial\n- filter_gate: partial\n- model_scale_gate: partial\n- evaluation_gate: partial\n- mechanism_gate: partial\n- claim_gate: pass\nOverall readiness: LEVEL3_PIPELINE_READY\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_registry_to_tables.py"
+      ],
+      "duration_seconds": 0.13071769999805838,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Registry-to-table consistency check: ok (3 main table records)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_main_results_from_registry.py"
+      ],
+      "duration_seconds": 0.12473350000072969,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Main-results-from-registry check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_artifact_registry_v2.py"
+      ],
+      "duration_seconds": 0.23532349999732105,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Artifact registry v2 check: ok (143 records)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_filter_manifests.py",
+        "--include-step4"
+      ],
+      "duration_seconds": 0.304555499998969,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Filter manifest check: ok (8 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_training_manifests.py",
+        "--include-step5"
+      ],
+      "duration_seconds": 2.6195799999986775,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Training manifest check: ok (1 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_urd_manifests.py",
+        "--include-step6"
+      ],
+      "duration_seconds": 2.473079700001108,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "URD manifest check: ok (3 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_evaluation_manifests.py",
+        "--include-step7"
+      ],
+      "duration_seconds": 0.1842181000029086,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Evaluation manifest check: ok (7 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_mechanism_manifests.py",
+        "--include-step8"
+      ],
+      "duration_seconds": 0.21225979999871925,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Mechanism manifest check: ok (9 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/write_step9_readiness_report.py"
+      ],
+      "duration_seconds": 0.5672995999993873,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Step 9 readiness report: completed\nReport: artifacts/reports/step9_readiness_report.json\n"
+    }
+  ],
+  "duration_seconds": 148.6576303000038,
+  "failed_commands": [],
+  "finished_at": "2026-06-11T12:16:49+00:00",
+  "overall_passed": true,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "started_at": "2026-06-11T12:14:20+00:00",
+  "status": "passed",
+  "step": "step9_hotfix",
+  "timeout_commands": []
+}

@@ -1,0 +1,21 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "analyses": [
+    "proxy_utility_mismatch",
+    "overfiltering",
+    "diversity_loss",
+    "domain_shift",
+    "tokenizer_sensitivity",
+    "scale_trend",
+    "rank_stability",
+    "seed_instability",
+    "urd_ablation_mechanism",
+    "pareto_mechanism",
+    "failure_taxonomy",
+    "negative_result_analysis"
+  ],
+  "artifact_link_required": true,
+  "full_scale_claim_allowed_in_step10A": false
+}

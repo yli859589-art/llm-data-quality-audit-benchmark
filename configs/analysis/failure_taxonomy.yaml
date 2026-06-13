@@ -1,0 +1,12 @@
+{
+  "analysis": "failure_taxonomy",
+  "scope": "smoke",
+  "dataset_name": "wikitext2_smoke",
+  "method_name": "all_methods",
+  "smoke_only": true,
+  "protocol_only": false,
+  "negative_result_preservation_required": true,
+  "hdqspp_historical_failure_required": true,
+  "claim_allowed": false
+}
+

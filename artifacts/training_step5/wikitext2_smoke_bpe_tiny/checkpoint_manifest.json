@@ -1,0 +1,10 @@
+{
+  "checkpoint_hash": "d4425171bc3628a6f21df05ba6f72015e1177311406f8ca98e2406320638042a",
+  "checkpoint_path": "artifacts/training_step5/wikitext2_smoke_bpe_tiny/checkpoint.pt",
+  "manifest_version": "step5.checkpoint_manifest.v1",
+  "model_name": "tiny_smoke_bpe",
+  "notes": "Step 5 checkpoint manifest; smoke checkpoints are not main evidence.",
+  "parameter_count": 4464,
+  "scope": "smoke",
+  "smoke_only": true
+}

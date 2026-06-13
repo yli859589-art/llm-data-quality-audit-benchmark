@@ -1,0 +1,9 @@
+dataset_id,method_name,token_keep_rate,mean_valid_nll_nats_per_token,overfiltering_risk
+c4_en_v2_100m,exact_dedup,1.0,11.250372120489677,False
+c4_en_v2_100m,length_filter,0.7639706621739006,11.24193063005805,False
+c4_en_v2_100m,raw,1.0,11.250372120489677,False
+c4_en_v2_100m,urd_fixed,0.9849929547815829,11.249411371846994,False
+openwebtext_v2_100m,exact_dedup,1.0,11.15308827906847,False
+openwebtext_v2_100m,length_filter,0.5945726947624304,11.086258672177792,True
+openwebtext_v2_100m,raw,1.0,11.15308827906847,False
+openwebtext_v2_100m,urd_fixed,0.9558972936357938,11.175430494050184,False

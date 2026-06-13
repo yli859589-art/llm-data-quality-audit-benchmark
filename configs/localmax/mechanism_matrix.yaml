@@ -1,0 +1,17 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_mechanism",
+  "analyses": [
+    "proxy_utility",
+    "overfiltering",
+    "diversity_loss",
+    "domain_shift",
+    "pareto_mechanism",
+    "rank_stability",
+    "tokenizer_sensitivity",
+    "scale_trend",
+    "failure_taxonomy"
+  ],
+  "full_scale_mechanism_claim_allowed": false
+}
+

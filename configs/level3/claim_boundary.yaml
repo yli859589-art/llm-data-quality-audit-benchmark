@@ -1,0 +1,24 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "current_readiness": "LEVEL3_PIPELINE_READY",
+  "level3_completed_artifact": false,
+  "allowed_current_claims": [
+    "Level 3 heavy protocol is frozen.",
+    "Level 3 data, tokenizer, filter, training, evaluation, and mechanism matrices are specified.",
+    "Project remains LEVEL3_PIPELINE_READY.",
+    "Heavy execution has not yet completed."
+  ],
+  "disallowed_current_claims": [
+    "Level 3 completed.",
+    "CCF-B ready.",
+    "weak CCF-A achieved.",
+    "URD beats raw.",
+    "PPL improved.",
+    "downstream improved.",
+    "500M or 1B data completed.",
+    "medium or large-lite completed.",
+    "full-scale mechanism proved."
+  ]
+}

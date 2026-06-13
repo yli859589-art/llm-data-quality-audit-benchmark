@@ -1,0 +1,31 @@
+{
+  "step": "localmax_ccfc_strengthening",
+  "scope": "ccfc_filter_matrix",
+  "source_data_report": "artifacts/reports/localmax_v2_data_report.json",
+  "required_methods": [
+    "raw",
+    "exact_dedup",
+    "length_filter",
+    "random_same_keep_rate",
+    "c4_quality_filter",
+    "perplexity_proxy_filter",
+    "urd_fixed"
+  ],
+  "minimum_methods": 7,
+  "minimum_datasets": 2,
+  "length_filter": {"min_gpt2_tokens": 32, "max_gpt2_tokens": 2048},
+  "random_same_keep_rate": {"reference_method": "length_filter", "seed": 20260613},
+  "c4_quality_filter": {
+    "min_gpt2_tokens": 24,
+    "max_gpt2_tokens": 4096,
+    "max_symbol_fraction": 0.35,
+    "min_alpha_fraction": 0.45,
+    "blocked_terms": ["porn", "casino", "viagra", "torrent"]
+  },
+  "perplexity_proxy_filter": {
+    "target_keep_rate": 0.75,
+    "low_surprisal_quantile": 0.05,
+    "high_surprisal_quantile": 0.95
+  },
+  "urd_fixed": {"target_keep_rate": 0.9}
+}

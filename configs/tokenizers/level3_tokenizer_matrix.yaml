@@ -1,0 +1,31 @@
+matrix_status: protocol_only
+level3_completed: false
+ccf_b_ready: false
+bpe16k_or_bpe32k_mainline_trained: false
+next_step: step4_strong_baseline_filter_interface_upgrade
+tokenizers:
+  - tokenizer_name: char_legacy
+    tokenizer_type: char
+    scope: legacy_current
+    level3_mainline: false
+    status: historical_current_evidence
+  - tokenizer_name: bpe_smoke_512
+    tokenizer_type: lightweight_bpe_smoke
+    scope: smoke
+    level3_mainline: false
+    status: smoke_verified
+  - tokenizer_name: bpe16k_protocol
+    tokenizer_type: sentencepiece_bpe_or_hf_bpe
+    scope: main_protocol
+    level3_mainline: false
+    status: protocol_only
+  - tokenizer_name: bpe32k_protocol
+    tokenizer_type: sentencepiece_bpe_or_hf_bpe
+    scope: main_protocol
+    level3_mainline: false
+    status: protocol_only
+  - tokenizer_name: gpt2_optional
+    tokenizer_type: gpt2_optional
+    scope: implemented_but_not_run
+    level3_mainline: false
+    status: optional_dependency

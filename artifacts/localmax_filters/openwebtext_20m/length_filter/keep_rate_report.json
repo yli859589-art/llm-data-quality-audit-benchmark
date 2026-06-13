@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-11T18:38:12+00:00",
+  "dataset_id": "openwebtext_20m",
+  "document_keep_rate": 0.8895555972248266,
+  "input_documents": 15999,
+  "input_gpt2_tokens": 18002180,
+  "kept_documents": 14232,
+  "kept_gpt2_tokens": 10685750,
+  "method_name": "length_filter",
+  "token_keep_rate": 0.5935808885368328
+}

@@ -1,0 +1,9 @@
+dataset,method,n_seeds,mean_valid_loss,std_valid_loss,rank_by_valid_loss,raw_minus_method_valid_loss,risk,diversity,cost,metric_for_comparison,ppl_comparable,improvement_claim_allowed,evidence_level
+c4_en_20m,exact_dedup,3,27.892710690697033,0.5296957241926407,2,0.0,0.004086410054988217,0.6485306178343995,38190,valid_loss,False,False,localmax_minimal_training_evidence
+c4_en_20m,length_filter,3,28.237577160199482,0.4159437811401861,4,-0.34486646950244904,0.003561831153388823,0.6353863430405915,38190,valid_loss,False,False,localmax_minimal_training_evidence
+c4_en_20m,raw,3,27.892710690697033,0.5296957241926407,1,0.0,0.004086410054988217,0.6485306178343995,38190,valid_loss,False,False,localmax_minimal_training_evidence
+c4_en_20m,urd_fixed,3,27.939046944181126,0.629895233358622,3,-0.04633625348409254,0.003948095778417853,0.629846420865883,38190,valid_loss,False,False,localmax_minimal_training_evidence
+openwebtext_20m,exact_dedup,3,28.03769465784232,0.6176195536424495,4,0.0,0.014164010250640666,0.5544323346814154,15999,valid_loss,False,False,localmax_minimal_training_evidence
+openwebtext_20m,length_filter,3,27.921034559607506,0.44332796044119455,2,0.1166600982348136,0.009740022484541878,0.5741182485788605,15999,valid_loss,False,False,localmax_minimal_training_evidence
+openwebtext_20m,raw,3,28.03769465784232,0.6176195536424495,3,0.0,0.014164010250640666,0.5544323346814154,15999,valid_loss,False,False,localmax_minimal_training_evidence
+openwebtext_20m,urd_fixed,3,27.701678256193798,0.34402195027971755,1,0.3360164016485214,0.011038266546287936,0.5444960951896028,15999,valid_loss,False,False,localmax_minimal_training_evidence

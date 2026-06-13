@@ -1,0 +1,9 @@
+dataset_id,method_name,proxy_utility,observed_utility,mismatch_note
+c4_en_v2_100m,exact_dedup,0.6445107757531826,-11.250372120489677,local diagnostic; lower NLL is better
+c4_en_v2_100m,length_filter,0.6502638456976946,-11.24193063005805,local diagnostic; lower NLL is better
+c4_en_v2_100m,raw,0.6445107757531826,-11.250372120489677,local diagnostic; lower NLL is better
+c4_en_v2_100m,urd_fixed,0.6268762580108316,-11.249411371846994,local diagnostic; lower NLL is better
+openwebtext_v2_100m,exact_dedup,0.5395675276014024,-11.15308827906847,local diagnostic; lower NLL is better
+openwebtext_v2_100m,length_filter,0.5635254763889264,-11.086258672177792,local diagnostic; lower NLL is better
+openwebtext_v2_100m,raw,0.5395675276014024,-11.15308827906847,local diagnostic; lower NLL is better
+openwebtext_v2_100m,urd_fixed,0.5316791298159876,-11.175430494050184,local diagnostic; lower NLL is better

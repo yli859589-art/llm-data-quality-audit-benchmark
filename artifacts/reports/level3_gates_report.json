@@ -1,0 +1,291 @@
+{
+  "current_readiness": "LEVEL3_PIPELINE_READY",
+  "gates": {
+    "claim_gate": {
+      "name": "ClaimGate",
+      "passed": true,
+      "requirements": [],
+      "status": "pass",
+      "summary": "Forbidden promotional claims are absent or appear only in boundary/negative contexts.",
+      "warnings": []
+    },
+    "data_gate": {
+      "name": "DataGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "at_least_three_real_large_datasets",
+          "notes": "Requires >=3 real datasets.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "each_dataset_min_500m_bpe_tokens",
+          "notes": "Requires tokenizer-specific BPE counts.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "no_fallback",
+          "notes": "Fallback must be false.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "split_integrity",
+          "notes": "Split integrity must be recorded for heavy data.",
+          "present": false,
+          "required": true
+        }
+      ],
+      "status": "not_ready",
+      "summary": "No verified 500M-token Level 3 data matrix is present.",
+      "warnings": [
+        "Smoke/sample/protocol data cannot satisfy Level 3 data readiness."
+      ]
+    },
+    "evaluation_gate": {
+      "name": "EvaluationGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "lm_metrics",
+          "notes": "LM metrics interface must exist.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "official_downstream_completed",
+          "notes": "Requires 3-5 real downstream benchmark completions.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "risk_diversity_cost",
+          "notes": "Risk/diversity/cost evaluators must exist.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "pareto",
+          "notes": "Pareto evaluator must exist.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "statistics_stability_completed",
+          "notes": "Stability is currently protocol/smoke only.",
+          "present": false,
+          "required": true
+        }
+      ],
+      "status": "partial",
+      "summary": "Evaluation infrastructure exists; official downstream and full matrix are not completed.",
+      "warnings": [
+        "Protocol-only downstream cannot be reported as completed."
+      ]
+    },
+    "filter_gate": {
+      "name": "FilterGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "c4_style",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "ccnet_style",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "embedding",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "exact_dedup",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "gopher_style",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "length_filter",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "perplexity",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "random_same_keep_rate",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "raw",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "urd_fixed",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "urd_pareto",
+          "notes": "Required Level 3 filter/baseline family.",
+          "present": true,
+          "required": true
+        }
+      ],
+      "status": "partial",
+      "summary": "Filter interface artifacts exist, but the full Level 3 matrix has not run on heavy data.",
+      "warnings": [
+        "Proxy filters and smoke outputs do not satisfy full baseline authenticity."
+      ]
+    },
+    "mechanism_gate": {
+      "name": "MechanismGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "diversity_loss",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "domain_shift",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "failure_taxonomy",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "overfiltering",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "pareto_mechanism",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "proxy_utility",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "rank_stability",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "scale_trend",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        },
+        {
+          "name": "tokenizer_sensitivity",
+          "notes": "Mechanism analysis family present.",
+          "present": true,
+          "required": true
+        }
+      ],
+      "status": "partial",
+      "summary": "Mechanism infrastructure exists, but full-scale mechanism evidence is not completed.",
+      "warnings": [
+        "Smoke/protocol mechanism diagnostics cannot be reported as full-scale conclusions."
+      ]
+    },
+    "model_scale_gate": {
+      "name": "ModelScaleGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "small_completed",
+          "notes": "Small model training must be real completed evidence.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "medium_completed",
+          "notes": "Medium model training is required.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "selected_large_lite_completed",
+          "notes": "Selected large-lite runs are required.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "tiny_smoke_available",
+          "notes": "Tiny smoke is not Level 3 evidence.",
+          "present": true,
+          "required": false
+        }
+      ],
+      "status": "partial",
+      "summary": "Only smoke/prototype training evidence is available.",
+      "warnings": [
+        "Tiny/smoke training cannot satisfy Level 3 model-scale readiness."
+      ]
+    },
+    "tokenizer_gate": {
+      "name": "TokenizerGate",
+      "passed": false,
+      "requirements": [
+        {
+          "name": "bpe_or_gpt2_mainline",
+          "notes": "GPT-2 or BPE16k/BPE32k mainline tokenizer required.",
+          "present": false,
+          "required": true
+        },
+        {
+          "name": "lightweight_bpe_smoke_available",
+          "notes": "Smoke BPE is useful but not Level 3 mainline.",
+          "present": true,
+          "required": false
+        }
+      ],
+      "status": "partial",
+      "summary": "Only smoke/prototype tokenizer evidence is available.",
+      "warnings": [
+        "Char or lightweight BPE smoke tokenization cannot satisfy Level 3 tokenizer readiness."
+      ]
+    }
+  },
+  "heavy_execution_completed": false,
+  "level3_completed_artifact": false
+}

@@ -1,0 +1,18 @@
+{
+  "filter_name": "urd_pareto",
+  "filter_type": "urd_selector",
+  "selection_mode": "pareto",
+  "target_keep_rate": 0.5,
+  "seed": 42,
+  "normalization": "component_minmax_proxy",
+  "proxy_policy": "all_components_are_lightweight_proxies",
+  "alpha": 0.35,
+  "beta": 0.25,
+  "gamma": 0.20,
+  "lambda_shift": 0.10,
+  "mu_cost": 0.10,
+  "level3_main_method_candidate": true,
+  "verified_effectiveness": false,
+  "smoke_only": true,
+  "notes": "Step 6 Pareto-style URD smoke selector config; not full Pareto evaluation."
+}

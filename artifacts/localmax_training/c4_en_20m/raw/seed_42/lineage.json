@@ -1,0 +1,9 @@
+{
+  "checkpoint_manifest_path": "artifacts/localmax_training/c4_en_20m/raw/seed_42/checkpoint_manifest.json",
+  "created_at": "2026-06-11T18:42:45+00:00",
+  "dataset_manifest": "artifacts/localmax_data/c4_en_20m/dataset_manifest.json",
+  "filter_manifest": "artifacts/localmax_filters/c4_en_20m/raw/filter_manifest.json",
+  "metrics_path": "artifacts/localmax_training/c4_en_20m/raw/seed_42/metrics.json",
+  "runtime_cost_path": "artifacts/localmax_training/c4_en_20m/raw/seed_42/runtime_cost.json",
+  "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json"
+}

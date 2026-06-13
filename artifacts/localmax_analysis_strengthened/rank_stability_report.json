@@ -1,0 +1,7 @@
+{
+  "completed": true,
+  "finding": "rank stability is local and bounded to strengthened minimal runs",
+  "full_mechanism_claim_allowed": false,
+  "insufficient_evidence": true,
+  "rows_analyzed": 8
+}

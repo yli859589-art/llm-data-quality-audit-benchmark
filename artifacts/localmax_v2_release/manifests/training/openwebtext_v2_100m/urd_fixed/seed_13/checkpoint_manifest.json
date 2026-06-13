@@ -1,0 +1,10 @@
+{
+  "checkpoint_materialized": true,
+  "checkpoint_path": "artifacts/localmax_v2_training/openwebtext_v2_100m/urd_fixed/seed_13/final_checkpoint.pt",
+  "checkpoint_policy": "final_checkpoint_fp16_plus_state_fingerprint",
+  "checkpoint_sha256": "8DD48EA8C72DF94DEA65EA4BF9C340BC6372F1BF20A1F3BB0C34709E63608EED",
+  "created_at": "2026-06-12T16:48:02+00:00",
+  "manifest_version": "localmax_v2.checkpoint_manifest.v1",
+  "model_state_fingerprint": "AF571C547E1F283D2858B1F6F54A5B5814A7BCD0614F6CA3064CF7B607C6D2FF",
+  "not_a_fake_checkpoint": true
+}

@@ -1,0 +1,123 @@
+{
+  "allowed_current_claims": [
+    "The repository implements a reproducible audit pipeline.",
+    "Step 0 through Step 10A infrastructure exists.",
+    "Step 10A freezes the Level 3 heavy protocol and preflight checks.",
+    "URD-Selector is implemented as a smoke-verified selector pipeline.",
+    "Evaluation and mechanism-analysis frameworks exist.",
+    "Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence.",
+    "Current readiness after Step 10A is at most LEVEL3_PIPELINE_READY."
+  ],
+  "baseline_claims": {
+    "allowed": [
+      "Raw, random_same_keep_rate, exact_dedup, length, HDQS++ historical, and proxy baselines are tracked in current artifacts."
+    ],
+    "disallowed": [
+      "C4/Gopher/CCNet official reproduction completed."
+    ]
+  },
+  "ccf_level_claims": {
+    "allowed_current": [
+      "The route targets a future Level 3 artifact."
+    ],
+    "disallowed_current": [
+      "CCF-B ready.",
+      "CCF-A ready.",
+      "Level 3 completed."
+    ],
+    "future_only": [
+      "Strong CCF-B-style project prototype.",
+      "Weak CCF-A-style research flavor."
+    ]
+  },
+  "claim_ids": {
+    "CLAIM_ALLOWED_PIPELINE": "Step 0-10A infrastructure exists.",
+    "CLAIM_ALLOWED_STEP10A_PROTOCOL": "Step 10A freezes the Level 3 heavy protocol and preflight checks.",
+    "CLAIM_NEGATIVE_HDQS": "HDQS++ v3 did not outperform raw under current historical small-setting evidence.",
+    "CLAIM_DISALLOWED_URD_RAW": "URD beats raw is disallowed.",
+    "CLAIM_FUTURE_LEVEL3": "Level 3 completed artifact is future-only."
+  },
+  "current_readiness": "LEVEL3_PIPELINE_READY",
+  "dataset_scale_claims": {
+    "allowed_current": [
+      "Current data evidence includes smoke/sample/historical scopes."
+    ],
+    "disallowed_current": [
+      "500M-token data completed.",
+      "1B-token data completed."
+    ]
+  },
+  "disallowed_current_claims": [
+    "URD beats raw.",
+    "URD improves PPL.",
+    "URD improves downstream.",
+    "URD is SOTA.",
+    "C4/Gopher/CCNet official reproduction completed.",
+    "Medium/large-lite evidence completed.",
+    "500M-token or 1B-token data completed.",
+    "Level 3 completed.",
+    "CCF-B ready.",
+    "CCF-A ready.",
+    "Full-scale mechanism conclusion proved.",
+    "Downstream official benchmarks completed.",
+    "Step 10B heavy execution completed."
+  ],
+  "evaluation_claims": {
+    "allowed_current": [
+      "Evaluation framework and smoke/protocol outputs exist."
+    ],
+    "disallowed_current": [
+      "Official downstream benchmarks completed."
+    ]
+  },
+  "future_level3_claims": [
+    "Level 3 completed artifact.",
+    "Strong CCF-B-style project prototype.",
+    "Weak CCF-A-style research flavor.",
+    "Full-scale URD effectiveness evidence.",
+    "Full baseline matrix evidence.",
+    "Full downstream evidence.",
+    "Full mechanism evidence."
+  ],
+  "historical_result_claims": [
+    "Historical small-setting evidence is preserved as historical evidence, not Level 3 evidence."
+  ],
+  "level3_completed_artifact": false,
+  "level3_heavy_protocol_frozen": true,
+  "step10A_heavy_execution_completed": false,
+  "step10A_protocol_only": true,
+  "mechanism_claims": {
+    "allowed_current": [
+      "Mechanism-analysis framework and smoke/protocol outputs exist."
+    ],
+    "disallowed_current": [
+      "Full-scale mechanism conclusion proved."
+    ]
+  },
+  "model_scale_claims": {
+    "allowed_current": [
+      "Tiny smoke training exists as engineering evidence."
+    ],
+    "disallowed_current": [
+      "Medium model completed.",
+      "Large-lite completed."
+    ]
+  },
+  "negative_result_claims": [
+    "Historical evidence shows HDQS++ v3 did not outperform raw under current historical small-setting evidence."
+  ],
+  "protocol_only_claims": [
+    "Rank stability, tokenizer sensitivity, scale trend, and downstream protocol artifacts are protocol-only unless future completed evidence exists."
+  ],
+  "urd_claims": {
+    "allowed_current": [
+      "URD-Selector is implemented as a smoke-verified selector pipeline."
+    ],
+    "disallowed_current": [
+      "URD beats raw.",
+      "URD improves PPL.",
+      "URD improves downstream.",
+      "URD is SOTA."
+    ]
+  }
+}

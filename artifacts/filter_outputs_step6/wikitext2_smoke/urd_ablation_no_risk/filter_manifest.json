@@ -1,0 +1,94 @@
+{
+  "actual_document_keep_rate": 0.6666666666666666,
+  "actual_token_keep_rate": 0.625,
+  "allow_proxy": true,
+  "created_at": "2026-06-10T18:57:49+00:00",
+  "dataset_manifest_hash": "0944998c7ef0460fbfa00eba35c98d9b59a3966d283f63b368d2ff20f84fd3c9",
+  "dataset_manifest_path": "artifacts/data_step2/wikitext2_smoke/data_manifest.json",
+  "dataset_name": "WikiText-2",
+  "disabled_components": [
+    "risk"
+  ],
+  "external_dependency": "",
+  "external_dependency_available": false,
+  "filter_name": "urd_ablation_no_risk",
+  "filter_type": "urd_selector",
+  "historical_baseline": false,
+  "implemented_but_not_run": false,
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 2,
+  "kept_estimated_tokens": 20,
+  "level3_main_method_candidate": true,
+  "manifest_version": "step4.filter_manifest.v1",
+  "urd_extension_version": "step6.urd_manifest.v1",
+  "ablation_evaluation_scope": "single_component_ablation_smoke_only",
+  "method_family": "URD-Selector",
+  "no_model_training_run": true,
+  "no_ppl_or_downstream_result_added": true,
+  "notes": "Step 6 smoke selector output; effectiveness must be evaluated in later steps.",
+  "official_reproduction": false,
+  "output_dir": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk",
+  "output_hashes": {
+    "component_scores.jsonl": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/component_scores.jsonl",
+      "sha256": "3e9e22483084f6ce056e974b599b4ac6c10af9e6eda5dcc607ca0cb245bb0792"
+    },
+    "cost_report.json": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/cost_report.json",
+      "sha256": "475f2c9a0d6c82605add2c1c45a4638b2df74ec99ccc7e4c0d7ac09c16001449"
+    },
+    "decisions.jsonl": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/decisions.jsonl",
+      "sha256": "62d3db4ff549623197908e4a17c13f8a020ebb6cab0e18c382ddf9ba2be918e9"
+    },
+    "diversity_report.json": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/diversity_report.json",
+      "sha256": "fb71978334ca85a5ea970dfd056b833d3a954f5e5c0a42408da06d3cae02d01f"
+    },
+    "keep_rate_report.json": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/keep_rate_report.json",
+      "sha256": "40e31782d1b48396798874037ad589ff16cb7ce6ecf7db0cf1af2257e2e5e081"
+    },
+    "risk_report.json": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/risk_report.json",
+      "sha256": "3d5172e8e01f187c16147f0adffb5f90e1d047f501fe19ff0885dbebe8fb4dae"
+    },
+    "scores.jsonl": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/scores.jsonl",
+      "sha256": "a7a77efabcafdc851023994e1582229c6fdc327d79a8a902951faeaa21064639"
+    },
+    "selected_doc_ids.jsonl": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/selected_doc_ids.jsonl",
+      "sha256": "e1b2a7d029a08ae746c911fd5bd19f9b6478ef22fe95261199011bbc6dfd7350"
+    },
+    "urd_summary.json": {
+      "path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_ablation_no_risk/urd_summary.json",
+      "sha256": "427c753676e0d2b5b4d67342c6ec84aa7bf89c2742bb2f22f37566850b2f50c8"
+    }
+  },
+  "proxy_components": [
+    "utility",
+    "risk",
+    "diversity",
+    "shift",
+    "cost"
+  ],
+  "proxy_used": true,
+  "scope": "smoke",
+  "seed": 42,
+  "selection_mode": "fixed_weight",
+  "smoke_only": true,
+  "target_keep_rate": 0.5,
+  "token_counter_type": "whitespace",
+  "tokenizer_manifest_hash": "ccbf31a1223fe4b8252327fafb50bd424faf9e0887a7ab9ba0b08b1139adf9cf",
+  "tokenizer_manifest_path": "artifacts/tokenizers_step3/bpe_smoke/tokenizer_manifest.json",
+  "verified_effectiveness": false,
+  "weights": {
+    "alpha": 0.35,
+    "beta": 0.25,
+    "gamma": 0.0,
+    "lambda_shift": 0.1,
+    "mu_cost": 0.1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "analysis": "combined_smoke",
+  "scope": "smoke",
+  "dataset_name": "wikitext2_smoke",
+  "methods": ["urd_fixed", "urd_pareto"],
+  "smoke_only": true,
+  "protocol_only": false,
+  "insufficient_evidence_expected": true,
+  "claim_allowed": false
+}
+

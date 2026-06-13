@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-06-11T18:39:01+00:00",
+  "dataset_id": "c4_en_20m",
+  "mean_diversity": 0.6353863430405915,
+  "method_name": "length_filter"
+}

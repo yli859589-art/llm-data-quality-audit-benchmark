@@ -1,0 +1,18 @@
+matrix_name: level3_filter_matrix_protocol
+scope: main_protocol
+full_baseline_matrix_completed: false
+main_evidence_completed: false
+filters:
+  - raw
+  - random_same_keep_rate
+  - exact_dedup
+  - minhash_near_dedup_proxy
+  - length_filter
+  - hdqspp_historical
+  - c4_style_proxy
+  - gopher_style_proxy
+  - ccnet_style_protocol
+  - perplexity_proxy
+  - classifier_proxy_protocol
+  - embedding_diversity_proxy
+notes: "Protocol matrix only. Step 4 verifies interface/smoke outputs, not full model evidence."

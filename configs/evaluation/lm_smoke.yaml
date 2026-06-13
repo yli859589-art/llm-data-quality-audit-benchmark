@@ -1,0 +1,12 @@
+{
+  "evaluation_name": "lm_bpe_tiny",
+  "evaluation_type": "lm",
+  "scope": "smoke",
+  "method_name": "bpe_tiny_smoke",
+  "dataset_name": "wikitext2_smoke",
+  "training_manifest_path": "artifacts/training_step5/wikitext2_smoke_bpe_tiny/training_manifest.json",
+  "smoke_only": true,
+  "protocol_only": false,
+  "completed_evidence": false,
+  "notes": "LM smoke wrapper only; Step 5 smoke PPL is not main evidence."
+}

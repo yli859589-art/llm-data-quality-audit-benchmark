@@ -1,0 +1,17 @@
+{
+  "bootstrap_confidence_intervals": "artifacts/localmax_v2_evaluation/bootstrap_confidence_intervals.csv",
+  "completed": true,
+  "level3_evaluation": false,
+  "lm_metrics": "artifacts/localmax_v2_evaluation/lm_metrics.csv",
+  "method_ranking": "artifacts/localmax_v2_evaluation/method_ranking.csv",
+  "method_summary": "artifacts/localmax_v2_evaluation/method_summary.csv",
+  "metric_for_comparison": "valid_nll_nats_per_token",
+  "official_downstream_completed": false,
+  "paired_differences": "artifacts/localmax_v2_evaluation/paired_differences.csv",
+  "pareto_results": "artifacts/localmax_v2_evaluation/pareto_results.csv",
+  "risk_diversity_cost": "artifacts/localmax_v2_evaluation/risk_diversity_cost.csv",
+  "scope": "localmax_v2_evaluation",
+  "stability_results": "artifacts/localmax_v2_evaluation/stability_results.csv",
+  "statistical_tests": "artifacts/localmax_v2_evaluation/statistical_tests.csv",
+  "step": "step10B_localmax_v2"
+}

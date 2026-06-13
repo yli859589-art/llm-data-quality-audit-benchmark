@@ -1,0 +1,3 @@
+{"doc_id": "wikitext2-smoke-train-0", "metadata": {"fixture": "step2_wikitext2_smoke", "smoke_only": true}, "source": "wikitext2", "split": "train", "text": "Step 2 WikiText smoke document about reproducible data manifests."}
+{"doc_id": "wikitext2-smoke-train-1", "metadata": {"fixture": "step2_wikitext2_smoke", "smoke_only": true}, "source": "wikitext2", "split": "train", "text": "A second tiny fixture keeps offline tests deterministic and smoke only."}
+{"doc_id": "wikitext2-smoke-train-2", "metadata": {"fixture": "step2_wikitext2_smoke", "smoke_only": true}, "source": "wikitext2", "split": "train", "text": "The smoke corpus is not main evidence and never enters main results."}

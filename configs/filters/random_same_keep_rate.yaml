@@ -1,0 +1,9 @@
+filter_name: random_same_keep_rate
+filter_type: random_same_keep_rate
+scope: smoke
+target_keep_rate: 0.5
+seed: 42
+proxy_used: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Seeded random retention at a target keep-rate."

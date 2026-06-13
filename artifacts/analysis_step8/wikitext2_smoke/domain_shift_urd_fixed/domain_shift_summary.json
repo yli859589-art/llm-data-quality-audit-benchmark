@@ -1,0 +1,8 @@
+{
+  "claim_allowed": false,
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "length_shift_proxy": 0.09259259259259262,
+  "sample_size": 3,
+  "source_domain_shift_unavailable": true,
+  "token_distribution_shift_proxy": 0.630952380952381
+}

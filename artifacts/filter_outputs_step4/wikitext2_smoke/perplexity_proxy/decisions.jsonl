@@ -1,0 +1,3 @@
+{"doc_id": "wikitext2-smoke-train-0", "keep": true, "metadata": {"component_scores": {"unigram_inverse_surprisal": 0.23125766323452485}, "proxy_note": "unigram proxy only, not neural LM perplexity"}, "reason": "perplexity_proxy", "score": 0.23125766323452485}
+{"doc_id": "wikitext2-smoke-train-1", "keep": true, "metadata": {"component_scores": {"unigram_inverse_surprisal": 0.23248658031480673}, "proxy_note": "unigram proxy only, not neural LM perplexity"}, "reason": "perplexity_proxy", "score": 0.23248658031480673}
+{"doc_id": "wikitext2-smoke-train-2", "keep": true, "metadata": {"component_scores": {"unigram_inverse_surprisal": 0.23573403398541168}, "proxy_note": "unigram proxy only, not neural LM perplexity"}, "reason": "perplexity_proxy", "score": 0.23573403398541168}

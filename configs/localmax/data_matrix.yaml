@@ -1,0 +1,15 @@
+{
+  "step": "step10B_localmax_execution",
+  "scope": "localmax_data",
+  "token_count_type": "gpt2_bpe_transformers",
+  "recommended_token_budget_per_dataset": 50000000,
+  "max_attempt_token_budget_per_dataset": 100000000,
+  "minimum_localmax_dataset_tokens": 20000000,
+  "minimum_pass_line": "at_least_two_nonfallback_datasets_each_with_20m_or_more_gpt2_bpe_tokens",
+  "datasets": [
+    {"dataset_id": "wikitext2_paper", "source_manifest_path": "artifacts/data/wikitext2_paper/data_manifest.json"},
+    {"dataset_id": "openwebtext_streaming", "source_manifest_path": "artifacts/data/openwebtext_streaming/data_manifest.json"},
+    {"dataset_id": "c4_en_streaming", "source_manifest_path": "artifacts/data/c4_en_streaming/data_manifest.json"}
+  ]
+}
+

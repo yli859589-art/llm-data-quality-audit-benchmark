@@ -1,0 +1,10 @@
+{
+  "dataset_id": "openwebtext_v2_100m",
+  "document_count": 84174,
+  "gpt2_tokens": 95000111,
+  "paths": [
+    "artifacts/localmax_v2_data/openwebtext_v2_100m/shards/train-0000.jsonl.gz",
+    "artifacts/localmax_v2_data/openwebtext_v2_100m/shards/train-0001.jsonl.gz"
+  ],
+  "split": "train"
+}

@@ -1,0 +1,28 @@
+{
+  "step": "step3_tokenizer_pipeline_upgrade",
+  "status": "completed",
+  "tests_passed": true,
+  "num_tests": 92,
+  "new_step3_tests_added": 10,
+  "run_all_checks_passed": true,
+  "tokenizer_manifest_checks_passed": true,
+  "tokenizer_budget_check_passed": true,
+  "main_results_modified": false,
+  "protected_result_hashes_unchanged": true,
+  "new_experiments_added": false,
+  "new_training_results_added": false,
+  "tokenizer_interface_added": true,
+  "char_tokenizer_wrapped": true,
+  "bpe_smoke_verified": true,
+  "smoke_tokenizer_manifest": "artifacts/tokenizers_step3/bpe_smoke/tokenizer_manifest.json",
+  "smoke_token_budget_report": "artifacts/tokenizers_step3/bpe_smoke/token_budget_report.json",
+  "gpt2_optional_wrapper_added": true,
+  "token_budget_fairness_check_added": true,
+  "bpe16k_or_bpe32k_mainline_trained": false,
+  "level3_tokenizer_matrix_completed": false,
+  "optional_dependency_notes": {
+    "gpt2_optional": "wrapper added; no network download required; unavailable dependencies are reported as optional/implemented-but-not-run",
+    "sentencepiece_or_hf_tokenizers": "not required for smoke verification; lightweight_bpe_smoke fallback is explicitly labeled smoke-only"
+  },
+  "recommended_next_step": "step4_strong_baseline_filter_interface_upgrade"
+}

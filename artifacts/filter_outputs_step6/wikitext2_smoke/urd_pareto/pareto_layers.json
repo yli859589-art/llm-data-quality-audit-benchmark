@@ -1,0 +1,24 @@
+{
+  "layers": [
+    [
+      "wikitext2-smoke-train-0",
+      "wikitext2-smoke-train-1"
+    ],
+    [
+      "wikitext2-smoke-train-2"
+    ]
+  ],
+  "notes": "Transparent non-dominated sorting for Step 6 smoke selection.",
+  "objectives": [
+    "maximize utility_score",
+    "maximize diversity_score",
+    "minimize risk_score",
+    "minimize shift_penalty",
+    "minimize cost_score"
+  ],
+  "ranks": {
+    "wikitext2-smoke-train-0": 0,
+    "wikitext2-smoke-train-1": 0,
+    "wikitext2-smoke-train-2": 1
+  }
+}

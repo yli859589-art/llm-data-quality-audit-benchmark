@@ -1,0 +1,30 @@
+{
+  "ablation_configs_added": true,
+  "ccf_b_ready": false,
+  "cost_component_added": true,
+  "diversity_component_added": true,
+  "fixed_weight_urd_smoke_verified": true,
+  "main_results_modified": false,
+  "new_main_experiments_added": false,
+  "new_ppl_results_added": false,
+  "new_training_results_added": false,
+  "pareto_urd_smoke_verified": true,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "recommended_next_step": "step7_evaluation_metric_expansion",
+  "risk_component_added": true,
+  "run_all_checks_passed": true,
+  "shift_component_added": true,
+  "status": "completed",
+  "step": "step6_urd_selector_implementation",
+  "tests_passed": true,
+  "urd_beats_raw_claimed": false,
+  "urd_effectiveness_verified": false,
+  "urd_manifest_checks_passed": true,
+  "urd_selector_added": true,
+  "utility_component_added": true
+}

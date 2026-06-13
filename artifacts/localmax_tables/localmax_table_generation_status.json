@@ -1,0 +1,80 @@
+{
+  "completed": true,
+  "created_at": "2026-06-12T18:10:23+00:00",
+  "level3_completed": false,
+  "localmax_completed": false,
+  "localmax_minimal_real_evidence_completed": true,
+  "localmax_training_strengthened_completed": true,
+  "main_results_modified": false,
+  "no_fake_metric_values_written": true,
+  "result_rows_written": 64,
+  "stage": "localmax_table_generation",
+  "status": "completed",
+  "step": "step10B_localmax_execution_fix",
+  "tables": [
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_main_results.csv",
+      "rows": 24,
+      "sha256": "9AFDAEE20EAA64A037CEA0B8C97A99E33184A0CA763E9881E4EFD05B6C6517BD",
+      "table_name": "localmax_main_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_baseline_results.csv",
+      "rows": 6,
+      "sha256": "4592D160DD7255FC5C808850A1FCB8CB4429A47B3353F498D045DA9538D98547",
+      "table_name": "localmax_baseline_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_urd_ablation_results.csv",
+      "rows": 6,
+      "sha256": "745AE218B2C94A2415338D6CCC551D31AFD6A33284F41D96EB77A4DF9B4C79C5",
+      "table_name": "localmax_urd_ablation_results.csv"
+    },
+    {
+      "empty_reason": "downstream_subset_not_run",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_downstream_subset_results.csv",
+      "rows": 0,
+      "sha256": "E28DBF28D3554128F3573F9814C4C3167636AD3498216A0F967476CD5A518CE9",
+      "table_name": "localmax_downstream_subset_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_risk_diversity_cost_results.csv",
+      "rows": 8,
+      "sha256": "71D6C9F8E429F4232DADE73446AB99AB6CA04D37E1D74D771FAA0043A732313A",
+      "table_name": "localmax_risk_diversity_cost_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_pareto_results.csv",
+      "rows": 8,
+      "sha256": "19909C66ED33B79BC3DA13B58E9B4DDF489F7754926767917C5162C0235CBB54",
+      "table_name": "localmax_pareto_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_mechanism_results.csv",
+      "rows": 6,
+      "sha256": "02DFCB8D47CB84476F585D7AAA7BB86E87497412A054B1F366E0A9E097FAD832",
+      "table_name": "localmax_mechanism_results.csv"
+    },
+    {
+      "empty_reason": "",
+      "generated_from_manifests": true,
+      "path": "artifacts/localmax_tables/localmax_statistical_tests.csv",
+      "rows": 6,
+      "sha256": "E2E58C631C38F4FA9E93F22CE55A016C12FA636A13BAB300E97E3D0F06EE3E44",
+      "table_name": "localmax_statistical_tests.csv"
+    }
+  ]
+}

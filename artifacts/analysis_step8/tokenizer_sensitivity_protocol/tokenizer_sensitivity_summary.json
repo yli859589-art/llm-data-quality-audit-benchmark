@@ -1,0 +1,7 @@
+{
+  "bpe_smoke_manifest_available": true,
+  "char_manifest_available": false,
+  "claim_allowed": false,
+  "evidence_sufficiency": "protocol_only",
+  "formal_tokenizer_matrix_completed": false
+}

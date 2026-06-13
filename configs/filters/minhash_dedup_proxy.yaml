@@ -1,0 +1,9 @@
+filter_name: minhash_near_dedup
+filter_type: minhash_near_dedup_proxy
+scope: smoke
+allow_proxy: true
+proxy_used: true
+implemented_but_not_run: false
+official_minhash_reproduction: false
+main_evidence_completed: false
+notes: "Lightweight token-set near-dedup proxy; not a full MinHash implementation claim."

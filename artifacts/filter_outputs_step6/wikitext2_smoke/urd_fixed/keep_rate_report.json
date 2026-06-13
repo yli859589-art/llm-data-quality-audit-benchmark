@@ -1,0 +1,22 @@
+{
+  "document_keep_rate": 0.6666666666666666,
+  "filter_name": "urd_fixed",
+  "filter_type": "urd_selector",
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 2,
+  "kept_estimated_tokens": 20,
+  "notes": "Step 6 URD keep-rate report; smoke selection only.",
+  "status": "passed",
+  "target_keep_rate": 0.5,
+  "target_keep_rate_check": {
+    "actual": 0.6666666666666666,
+    "difference": 0.16666666666666663,
+    "reason": "integer document counts may prevent exact keep-rate matching",
+    "status": "passed",
+    "target": 0.5,
+    "tolerance": 0.25
+  },
+  "token_counter_type": "whitespace",
+  "token_keep_rate": 0.625
+}

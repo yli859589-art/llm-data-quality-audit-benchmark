@@ -1,0 +1,103 @@
+{
+  "failures": [
+    {
+      "description": "Filter proxy may not track actual training utility.",
+      "evidence_status": "hypothesized",
+      "failure_type": "proxy_utility_mismatch",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Aggressive retention can remove useful tokens.",
+      "evidence_status": "hypothesized",
+      "failure_type": "overfiltering",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Filtering can reduce lexical or semantic coverage.",
+      "evidence_status": "hypothesized",
+      "failure_type": "diversity_collapse",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Selection can move data away from the validation distribution.",
+      "evidence_status": "hypothesized",
+      "failure_type": "domain_shift",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Whitespace/char/BPE budgets can disagree.",
+      "evidence_status": "protocol_only",
+      "failure_type": "tokenizer_budget_mismatch",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Method gains are unsafe without raw/random/dedup/length controls.",
+      "evidence_status": "protocol_only",
+      "failure_type": "weak_baseline_illusion",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Tiny/small behavior may not transfer to larger scales.",
+      "evidence_status": "protocol_only",
+      "failure_type": "small_model_artifact",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Multi-seed evidence is not yet complete.",
+      "evidence_status": "insufficient_evidence",
+      "failure_type": "seed_instability",
+      "insufficient_evidence": true,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Checks keep smoke/protocol artifacts out of main tables.",
+      "evidence_status": "observed_risk_controlled",
+      "failure_type": "smoke_main_leakage_risk",
+      "insufficient_evidence": false,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Manifests separate protocol_only from completed outputs.",
+      "evidence_status": "observed_risk_controlled",
+      "failure_type": "protocol_completed_confusion",
+      "insufficient_evidence": false,
+      "negative_result_preserved": false
+    },
+    {
+      "description": "Historical negative results are retained as audit evidence.",
+      "evidence_status": "observed",
+      "failure_type": "negative_result_preservation",
+      "insufficient_evidence": false,
+      "negative_result_preserved": true
+    },
+    {
+      "description": "HDQS++ v3 did not outperform raw in the current historical fair benchmark evidence.",
+      "evidence_status": "observed",
+      "failure_type": "hdqspp_historical_failure",
+      "insufficient_evidence": false,
+      "negative_result_preserved": true
+    },
+    {
+      "description": "Step 8 explicitly marks smoke/protocol findings as insufficient.",
+      "evidence_status": "observed",
+      "failure_type": "insufficient_evidence_categories",
+      "insufficient_evidence": false,
+      "negative_result_preserved": false
+    }
+  ],
+  "summary": {
+    "claim_allowed": false,
+    "evidence_sufficiency": "smoke_diagnostic_only",
+    "failure_categories": 13,
+    "hdqspp_historical_failure_recorded": true,
+    "negative_result_preservation_recorded": true,
+    "observed_categories": 5
+  }
+}

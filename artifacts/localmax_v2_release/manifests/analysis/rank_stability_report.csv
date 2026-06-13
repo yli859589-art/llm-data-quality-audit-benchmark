@@ -1,0 +1,5 @@
+method_name,mean_rank,rank_range,rank_stability_note
+exact_dedup,2.5,1,lower rank is better; local two-dataset diagnostic
+length_filter,1,0,lower rank is better; local two-dataset diagnostic
+raw,3.5,1,lower rank is better; local two-dataset diagnostic
+urd_fixed,3,2,lower rank is better; local two-dataset diagnostic

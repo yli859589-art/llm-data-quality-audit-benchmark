@@ -1,0 +1,61 @@
+{
+  "actual_document_keep_rate": 0.6666666666666666,
+  "actual_token_keep_rate": 0.625,
+  "allow_proxy": false,
+  "created_at": "2026-06-10T16:57:40+00:00",
+  "dataset_manifest_hash": "0944998c7ef0460fbfa00eba35c98d9b59a3966d283f63b368d2ff20f84fd3c9",
+  "dataset_manifest_path": "artifacts/data_step2/wikitext2_smoke/data_manifest.json",
+  "dataset_name": "WikiText-2",
+  "external_dependency": "",
+  "external_dependency_available": false,
+  "filter_name": "random_same_keep_rate",
+  "filter_type": "random_same_keep_rate",
+  "historical_baseline": false,
+  "implemented_but_not_run": false,
+  "input_docs": 3,
+  "input_estimated_tokens": 32,
+  "kept_docs": 2,
+  "kept_estimated_tokens": 20,
+  "manifest_version": "step4.filter_manifest.v1",
+  "notes": "Step 4 filter interface smoke output; not main experiment evidence.",
+  "official_reproduction": false,
+  "output_dir": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate",
+  "output_hashes": {
+    "cost_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/cost_report.json",
+      "sha256": "7b486435b21e25066cda8021cecb4803008ac42e89136ea947337b5b64be71a4"
+    },
+    "decisions.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/decisions.jsonl",
+      "sha256": "41e848e5787696f27b64c08ec368765993db1c313e3c6894e96145098dfe2f44"
+    },
+    "diversity_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/diversity_report.json",
+      "sha256": "fb71978334ca85a5ea970dfd056b833d3a954f5e5c0a42408da06d3cae02d01f"
+    },
+    "keep_rate_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/keep_rate_report.json",
+      "sha256": "0e145d80e034f526143d63db62f60e3f7f07e63ad511b8787e4dac9ffce67a81"
+    },
+    "risk_report.json": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/risk_report.json",
+      "sha256": "3d5172e8e01f187c16147f0adffb5f90e1d047f501fe19ff0885dbebe8fb4dae"
+    },
+    "scores.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/scores.jsonl",
+      "sha256": "181a09c4d030250a713b188b714292490c859257bfc63ec42a0b0e1f1bd6ccb4"
+    },
+    "selected_doc_ids.jsonl": {
+      "path": "artifacts/filter_outputs_step4/wikitext2_smoke/random_same_keep_rate/selected_doc_ids.jsonl",
+      "sha256": "dce527cbbd3cda23978e667ab9ac7fe18e78475431f46809d9f4844fcc321e80"
+    }
+  },
+  "proxy_used": false,
+  "scope": "smoke",
+  "seed": 42,
+  "smoke_only": true,
+  "target_keep_rate": 0.5,
+  "token_counter_type": "whitespace",
+  "tokenizer_manifest_hash": "ccbf31a1223fe4b8252327fafb50bd424faf9e0887a7ab9ba0b08b1139adf9cf",
+  "tokenizer_manifest_path": "artifacts/tokenizers_step3/bpe_smoke/tokenizer_manifest.json"
+}

@@ -1,0 +1,5 @@
+benchmark,requested_examples,local_downstream_subset,official_full_downstream,status,reason,score,claim_allowed
+lambada_subset,500,True,False,unavailable,Current local decoder-LM artifacts do not include a calibrated downstream harness/checkpoint interface for this benchmark.,,False
+piqa_subset,500,True,False,unavailable,Current local decoder-LM artifacts do not include a calibrated downstream harness/checkpoint interface for this benchmark.,,False
+arc_easy_subset,500,True,False,unavailable,Current local decoder-LM artifacts do not include a calibrated downstream harness/checkpoint interface for this benchmark.,,False
+boolq_subset,500,True,False,unavailable,Current local decoder-LM artifacts do not include a calibrated downstream harness/checkpoint interface for this benchmark.,,False

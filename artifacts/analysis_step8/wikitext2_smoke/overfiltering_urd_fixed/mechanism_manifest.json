@@ -1,0 +1,49 @@
+{
+  "analysis_name": "overfiltering_urd_fixed",
+  "analysis_type": "overfiltering",
+  "claim_allowed": false,
+  "completed": true,
+  "created_at": "2026-06-11T09:18:51+00:00",
+  "dataset_name": "wikitext2_smoke",
+  "diagnostic_report_hash": "60a680566745175efd73176c0085bca83a85b07e28aa6bf7f8f16ed6730e9542",
+  "diagnostic_report_path": "artifacts/analysis_step8/wikitext2_smoke/overfiltering_urd_fixed/overfiltering_report.md",
+  "diagnostic_table_hash": "f6253a2f1c5d612adbb61f37bdfbd43759ede8c35dd5b315391850c95e16cc66",
+  "diagnostic_table_path": "artifacts/analysis_step8/wikitext2_smoke/overfiltering_urd_fixed/overfiltering_diagnostics.csv",
+  "effectiveness_claim_allowed": false,
+  "evaluation_manifest_hashes": {},
+  "evaluation_manifest_paths": [],
+  "evidence_sufficiency": "smoke_diagnostic_only",
+  "extra_output_hashes": {
+    "artifacts/analysis_step8/wikitext2_smoke/overfiltering_urd_fixed/overfiltering_summary.json": "676f7bee19f2ac4410866be0221ac49fc8aa4a6e989fe667d6235e4f8436ab94"
+  },
+  "extra_output_paths": [
+    "artifacts/analysis_step8/wikitext2_smoke/overfiltering_urd_fixed/overfiltering_summary.json"
+  ],
+  "figure_hashes": {},
+  "figure_paths": [],
+  "filter_manifest_hashes": {
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_fixed/filter_manifest.json": "de5e1e9762eb40cb2842bf22b78e33f10cd9c24b8175e77ba5ff713479125a76"
+  },
+  "filter_manifest_paths": [
+    "artifacts/filter_outputs_step6/wikitext2_smoke/urd_fixed/filter_manifest.json"
+  ],
+  "full_scale_mechanism_conclusion_allowed": false,
+  "input_artifact_hashes": {},
+  "input_artifact_paths": [],
+  "input_manifest_hashes": {},
+  "input_manifest_paths": [],
+  "insufficient_evidence": true,
+  "main_results_modified": false,
+  "manifest_version": "step8.mechanism_manifest.v1",
+  "methods": [
+    "urd_fixed"
+  ],
+  "notes": "Overfiltering smoke diagnostic only.",
+  "protocol_only": false,
+  "scope": "smoke",
+  "smoke_only": true,
+  "tokenizer_manifest_hashes": {},
+  "tokenizer_manifest_paths": [],
+  "training_manifest_hashes": {},
+  "training_manifest_paths": []
+}

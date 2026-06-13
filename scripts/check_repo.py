@@ -217,7 +217,30 @@ for path in root.rglob("*"):
     if path.name in cache_names or "__pycache__" in path.parts or path.suffix == ".pyc":
         cache_paths.append(path.relative_to(root).as_posix())
     relative = path.relative_to(root).as_posix()
-    is_allowed_real_data = relative.startswith("data/real/wikitext2_raw/")
+    is_allowed_localmax_v2_large_artifact = (
+        (
+            relative.startswith("artifacts/localmax_v2_data/")
+            or relative.startswith("artifacts/localmax_v2_filters/")
+        )
+        and relative.endswith(".jsonl.gz")
+    ) or (
+        relative.startswith("artifacts/localmax_v2_training/")
+        and relative.endswith("/final_checkpoint.pt")
+    )
+    is_allowed_localmax_ccfc_large_artifact = (
+        relative.startswith("artifacts/localmax_ccfc_filters/")
+        and relative.endswith(".jsonl.gz")
+    ) or (
+        relative.startswith("artifacts/localmax_ccfc_training/")
+        and relative.endswith("/final_checkpoint.pt")
+    )
+    is_allowed_real_data = (
+        relative.startswith("data/real/wikitext2_raw/")
+        or relative.startswith("artifacts/localmax_data/")
+        or relative.startswith("artifacts/localmax_filters/")
+        or is_allowed_localmax_v2_large_artifact
+        or is_allowed_localmax_ccfc_large_artifact
+    )
     if path.is_file() and path.stat().st_size > 5 * 1024 * 1024 and not is_allowed_real_data:
         large_files.append(path.relative_to(root).as_posix())
 if cache_paths:

@@ -1,0 +1,54 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "mainline_recommended": "gpt2_or_bpe32k",
+  "tokenizers": [
+    {
+      "tokenizer_id": "gpt2",
+      "tokenizer_type": "gpt2",
+      "mainline_allowed": true,
+      "manifest_required": true,
+      "vocab_hash_required": true,
+      "training_data_hash_required": false,
+      "token_budget_counter_type": "gpt2_bpe_tokens"
+    },
+    {
+      "tokenizer_id": "bpe16k",
+      "tokenizer_type": "bpe",
+      "vocab_size": 16000,
+      "mainline_allowed": true,
+      "manifest_required": true,
+      "vocab_hash_required": true,
+      "training_data_hash_required": true,
+      "token_budget_counter_type": "trained_bpe_tokens"
+    },
+    {
+      "tokenizer_id": "bpe32k",
+      "tokenizer_type": "bpe",
+      "vocab_size": 32000,
+      "mainline_allowed": true,
+      "manifest_required": true,
+      "vocab_hash_required": true,
+      "training_data_hash_required": true,
+      "token_budget_counter_type": "trained_bpe_tokens"
+    },
+    {
+      "tokenizer_id": "char_legacy",
+      "tokenizer_type": "char",
+      "mainline_allowed": false,
+      "status": "historical_or_smoke_only"
+    },
+    {
+      "tokenizer_id": "lightweight_bpe_smoke",
+      "tokenizer_type": "bpe_smoke",
+      "mainline_allowed": false,
+      "status": "smoke_only_not_level3_mainline"
+    }
+  ],
+  "sensitivity_matrix": [
+    "gpt2_vs_bpe32k",
+    "bpe16k_vs_bpe32k",
+    "legacy_char_as_negative_control"
+  ]
+}

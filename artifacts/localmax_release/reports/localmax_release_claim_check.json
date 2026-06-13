@@ -1,0 +1,25 @@
+{
+  "checked_files": [
+    "docs/LOCALMAX_RELEASE.md",
+    "docs/LOCALMAX_RESULTS.md",
+    "docs/LOCALMAX_LIMITATIONS.md",
+    "docs/LOCALMAX_REPRODUCIBILITY.md",
+    "docs/LOCALMAX_CLAIM_BOUNDARY.md",
+    "docs/LOCALMAX_MODEL_CARD.md",
+    "docs/LOCALMAX_DATA_CARD.md",
+    "docs/LOCALMAX_FAILURE_ANALYSIS.md",
+    "docs/LOCALMAX_FUTURE_CLOUD_LEVEL3.md",
+    "README.md",
+    "PROJECT_SUMMARY.md",
+    "PROJECT_ONE_PAGE.md",
+    "TECHNICAL_OVERVIEW.md",
+    "RESUME_BULLETS.md",
+    "DEMO_GUIDE.md",
+    "RELEASE_NOTES.md",
+    "MANIFEST.md",
+    "CHANGELOG.md"
+  ],
+  "errors": [],
+  "localmax_release_claims_passed": true,
+  "status": "passed"
+}

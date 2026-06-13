@@ -1,0 +1,47 @@
+{
+  "actual_gpt2_tokens": 100002807,
+  "blocking_failures": [],
+  "completed": true,
+  "compressed_bytes": 201441256,
+  "created_at": "2026-06-12T15:52:48+00:00",
+  "data_hashes": "artifacts/localmax_v2_data/c4_en_v2_100m/data_hashes.json",
+  "dataset_id": "c4_en_v2_100m",
+  "dataset_name": "C4 English LocalMax V2 100M GPT-2-token sample",
+  "dedup_audit": "artifacts/localmax_v2_data/c4_en_v2_100m/dedup_audit.json",
+  "dedup_scope": "exact_content_sha256_within_written_localmax_v2_sample",
+  "document_count": 209481,
+  "duplicate_rate": 0.0,
+  "evidence_level": "localmax_v2_data",
+  "fallback_used": false,
+  "level3_data": false,
+  "license_scope_note": "artifacts/localmax_v2_data/c4_en_v2_100m/license_scope_note.md",
+  "no_fallback_report": "artifacts/localmax_v2_data/c4_en_v2_100m/no_fallback_report.json",
+  "no_fallback_verified": true,
+  "output_duplicate_documents": 0,
+  "raw_bytes": 454482210,
+  "resume_skipped_existing_documents": 0,
+  "source": "allenai/c4",
+  "source_config": "en",
+  "source_version": "huggingface_streaming_current",
+  "split_document_counts": {
+    "test": 5150,
+    "train": 199214,
+    "valid": 5117
+  },
+  "split_gpt2_tokens": {
+    "test": 2500038,
+    "train": 95001313,
+    "valid": 2501456
+  },
+  "split_integrity_passed": true,
+  "split_manifest": "artifacts/localmax_v2_data/c4_en_v2_100m/split_manifest.json",
+  "split_paths": {
+    "test": "artifacts/localmax_v2_data/c4_en_v2_100m/shards/test-0000.jsonl.gz",
+    "train": "artifacts/localmax_v2_data/c4_en_v2_100m/shards/train-0000.jsonl.gz",
+    "valid": "artifacts/localmax_v2_data/c4_en_v2_100m/shards/valid-0000.jsonl.gz"
+  },
+  "target_gpt2_tokens": 100000000,
+  "token_budget_report": "artifacts/localmax_v2_data/c4_en_v2_100m/token_budget_report.json",
+  "token_counter_type": "gpt2_bpe",
+  "tokenizer_name": "gpt2"
+}

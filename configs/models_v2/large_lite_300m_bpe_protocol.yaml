@@ -1,0 +1,14 @@
+{
+  "model_name": "large_lite_300m_bpe_protocol",
+  "model_family": "decoder_lm",
+  "vocab_size": 32000,
+  "context_length": 1024,
+  "num_layers": 20,
+  "hidden_size": 1024,
+  "num_heads": 16,
+  "dropout": 0.1,
+  "tie_embeddings": true,
+  "parameter_count": 285743104,
+  "scale_class": "large_lite_protocol",
+  "notes": "Large-lite BPE protocol only. No completed large-lite evidence is claimed."
+}

@@ -1,0 +1,10 @@
+filter_name: classifier_proxy_protocol
+filter_type: classifier_quality_proxy
+scope: main_protocol
+allow_proxy: true
+proxy_used: true
+trained_classifier_artifact: ""
+learned_classifier_baseline_completed: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Deterministic quality proxy/protocol; no trained classifier artifact is claimed."

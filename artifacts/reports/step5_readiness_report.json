@@ -1,0 +1,31 @@
+{
+  "bpe_smoke_training_completed": true,
+  "bpe16k_or_bpe32k_mainline_training_completed": false,
+  "ccf_b_ready": false,
+  "changed_protected_result_files": false,
+  "checkpoint_manifest_found": true,
+  "claim_hygiene_passed": true,
+  "level3_completed": false,
+  "main_results_purity_passed": true,
+  "medium_or_large_lite_completed": false,
+  "new_experiments_added_to_main_results": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "protected_main_results_hashes_verified": true,
+  "recommended_next_step": "step6_urd_selector_implementation",
+  "resume_supported": false,
+  "run_all_checks_passed": true,
+  "eval_split_supported": false,
+  "independent_eval_split_supported": false,
+  "smoke_metrics_found": true,
+  "smoke_only": true,
+  "status": "completed",
+  "step": "step5_model_training_pipeline_upgrade",
+  "tests_passed": true,
+  "training_manifest_check_passed": true,
+  "urd_selector_added": false
+}

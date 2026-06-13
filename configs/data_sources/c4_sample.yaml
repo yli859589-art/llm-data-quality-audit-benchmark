@@ -1,0 +1,13 @@
+dataset: c4
+split: train
+scope: sample
+source_kind: local
+token_budget: 1M
+sampling_seed: 42
+shuffle: true
+allow_fallback: false
+cache_dir: artifacts/data/c4_en_streaming/splits
+output_path: artifacts/data_step2/c4_sample/train.jsonl
+manifest_path: artifacts/data_step2/c4_sample/data_manifest.json
+status: sample_protocol_from_existing_streaming_cache
+note: bounded streaming-sample audit evidence, not full upstream C4

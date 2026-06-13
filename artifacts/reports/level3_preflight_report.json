@@ -1,0 +1,35 @@
+{
+  "blocking_items_for_completed_level3": [
+    "prepare at least three 500M-token no-fallback BPE-counted datasets",
+    "train or lock GPT-2/BPE16k/BPE32k mainline tokenizers with manifests",
+    "run full baseline/filter matrix under matched keep-rate",
+    "run small and medium models with multi-seed protocol",
+    "run selected large-lite evidence with explicit exploratory label",
+    "complete official downstream and mechanism-analysis evidence"
+  ],
+  "checked_at": "2026-06-12T18:07:58+00:00",
+  "claim_boundary_ready": true,
+  "completed": false,
+  "current_readiness": "LEVEL3_PIPELINE_READY",
+  "data_ready": false,
+  "evaluation_ready": false,
+  "filter_matrix_ready": false,
+  "heavy_execution_completed": false,
+  "heavy_execution_ready": false,
+  "level3_completed_artifact": false,
+  "mechanism_ready": false,
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "protocol_errors": [],
+  "protocol_only": true,
+  "protocol_report_status": "passed",
+  "safe_to_start_step10B_only_after_resource_confirmation": true,
+  "status": "passed",
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "tokenizer_mainline_ready": false,
+  "training_ready": false
+}

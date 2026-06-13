@@ -1,0 +1,37 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "wikitext2_paper",
+      "dataset_name": "WikiText-2 official split local mirror",
+      "fallback_used": false,
+      "gpt2_bpe_tokens": 3002918,
+      "manifest_path": "artifacts/localmax_data/wikitext2_paper/data_manifest.json",
+      "meets_localmax_20m_floor": false,
+      "meets_recommended_50m_budget": false,
+      "source_manifest_path": "artifacts/data/wikitext2_paper/data_manifest.json",
+      "streaming_sample": false
+    },
+    {
+      "dataset_id": "openwebtext_streaming",
+      "dataset_name": "OpenWebText streaming sample",
+      "fallback_used": false,
+      "gpt2_bpe_tokens": 174617,
+      "manifest_path": "artifacts/localmax_data/openwebtext_streaming/data_manifest.json",
+      "meets_localmax_20m_floor": false,
+      "meets_recommended_50m_budget": false,
+      "source_manifest_path": "artifacts/data/openwebtext_streaming/data_manifest.json",
+      "streaming_sample": true
+    },
+    {
+      "dataset_id": "c4_en_streaming",
+      "dataset_name": "C4 English streaming sample",
+      "fallback_used": false,
+      "gpt2_bpe_tokens": 175015,
+      "manifest_path": "artifacts/localmax_data/c4_en_streaming/data_manifest.json",
+      "meets_localmax_20m_floor": false,
+      "meets_recommended_50m_budget": false,
+      "source_manifest_path": "artifacts/data/c4_en_streaming/data_manifest.json",
+      "streaming_sample": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "batch_size": 2,
+  "context_length": 8,
+  "data_summary": {
+    "context_length": 8,
+    "data_hash": "634775d6a783a9a3ec39145cf1e9d3027cafd1dbec209279f71cf761a7e935f8",
+    "dataset_manifest_hash": "0944998c7ef0460fbfa00eba35c98d9b59a3966d283f63b368d2ff20f84fd3c9",
+    "dataset_token_counter_type": "whitespace",
+    "encoded_tokens": 32,
+    "num_blocks": 24,
+    "num_documents": 3,
+    "token_budget_note": "Tokenizer-specific counts are used here; Step 2 whitespace proxy counts are not treated as BPE training tokens.",
+    "tokenizer_hash": "6a4e0895a9bffc16245b323befe44f76706418f75a24243c35c32c94fa5c96c0",
+    "tokenizer_type": "lightweight_bpe_smoke"
+  },
+  "elapsed_seconds": 0.05503309999767225,
+  "experiment_name": "wikitext2_smoke_bpe_tiny",
+  "loss_curve": [
+    {
+      "step": 1,
+      "train_loss": 11.050779342651367,
+      "validation_loss": 11.851239442825317,
+      "validation_ppl": 140258.08135933202
+    },
+    {
+      "step": 2,
+      "train_loss": 11.524309158325195,
+      "validation_loss": 11.80229926109314,
+      "validation_ppl": 133559.08739238582
+    }
+  ],
+  "max_steps": 2,
+  "model_name": "tiny_smoke_bpe",
+  "notes": "Step 5 smoke metrics are not main evidence and must not enter main_results.",
+  "scale_class": "tiny_smoke",
+  "scope": "smoke",
+  "seed": 42,
+  "smoke_only": true,
+  "status": "completed",
+  "tokenizer_hash": "6a4e0895a9bffc16245b323befe44f76706418f75a24243c35c32c94fa5c96c0",
+  "tokenizer_type": "lightweight_bpe_smoke",
+  "tokens_per_second": 581.4682436815937,
+  "tokens_seen": 32,
+  "train_loss_final": 11.524309158325195,
+  "validation_loss": 11.80229926109314,
+  "validation_ppl": 133559.08739238582
+}

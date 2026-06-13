@@ -1,0 +1,7 @@
+{
+  "dataset_id": "c4_en_v2_100m",
+  "document_count": 199214,
+  "gpt2_tokens": 95001313,
+  "path": "artifacts/localmax_v2_data/c4_en_v2_100m/shards/train-0000.jsonl.gz",
+  "split": "train"
+}

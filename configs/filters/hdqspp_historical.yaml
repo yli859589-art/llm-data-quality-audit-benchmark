@@ -1,0 +1,10 @@
+filter_name: hdqspp_historical
+filter_type: hdqspp_historical
+scope: main_protocol
+historical_baseline: true
+failure_analysis_object: true
+proxy_used: false
+implemented_but_not_run: false
+method_success_claim: false
+main_evidence_completed: false
+notes: "HDQS++ is preserved as a historical baseline and failure-analysis object."

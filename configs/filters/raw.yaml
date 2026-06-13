@@ -1,0 +1,8 @@
+filter_name: raw
+filter_type: raw
+scope: smoke
+target_keep_rate: 1.0
+proxy_used: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Keep-all baseline interface smoke config; not a new model-training result."

@@ -1,0 +1,57 @@
+{
+  "duration_seconds": 2.300553100001707,
+  "failed_groups": [],
+  "finished_at": "2026-06-11T11:59:50+00:00",
+  "groups": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_step9_level3_artifact_hygiene.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_step9_level3_artifact_hygiene.py",
+            "-q"
+          ],
+          "duration_seconds": 2.2984645000033197,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "........                                                                 [100%]\n8 passed in 1.47s\n"
+        }
+      ],
+      "duration_seconds": 2.3005010999986553,
+      "name": "step9_readiness_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "........                                                                 [100%]\n8 passed in 1.47s\n"
+    }
+  ],
+  "overall_passed": true,
+  "skipped_groups": [
+    "legacy_core_tests",
+    "step2_data_tests",
+    "step3_tokenizer_tests",
+    "step4_filter_tests",
+    "step5_training_tests",
+    "step6_urd_tests",
+    "step7_evaluation_tests",
+    "step8_mechanism_tests",
+    "manifest_checks",
+    "artifact_checks",
+    "claim_checks",
+    "level3_gate_checks"
+  ],
+  "started_at": "2026-06-11T11:59:48+00:00",
+  "status": "passed",
+  "timeout_groups": []
+}

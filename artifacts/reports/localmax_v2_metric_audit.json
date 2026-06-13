@@ -1,0 +1,70 @@
+{
+  "blocking_failures": [],
+  "canary_tests": {
+    "padding_loss": 10.824905395507812,
+    "padding_non_padding_tokens": 5,
+    "passed": true,
+    "perfect_non_padding_tokens": 3,
+    "perfect_prediction_loss": 0.0,
+    "perfect_prediction_ppl": 1.0,
+    "shift_input": [
+      [
+        10,
+        11,
+        12
+      ]
+    ],
+    "shift_labels": [
+      [
+        11,
+        12,
+        13
+      ]
+    ],
+    "uniform_logits_abs_error": 2.7580573203067615e-07,
+    "uniform_logits_expected_log_vocab": 10.82490511970208,
+    "uniform_logits_loss": 10.824905395507812,
+    "uniform_non_padding_tokens": 5,
+    "vocab_size": 50257
+  },
+  "ccf_b_ready_claimed": false,
+  "checks": {
+    "causal_lm_logits_labels_shift_checked": true,
+    "comparison_metric": true,
+    "dropout_disabled_during_eval": true,
+    "ignore_index_correct": true,
+    "label_range_checked": true,
+    "loss_is_mean_over_non_padding_tokens": true,
+    "loss_is_not_sum": true,
+    "model_eval_required": true,
+    "padding_excluded": true,
+    "ppl_not_clipped": true,
+    "same_tokenizer_required": true,
+    "split_leakage_check_required": true,
+    "vocabulary_size_correct": true
+  },
+  "completed": true,
+  "created_at": "2026-06-12T18:11:42+00:00",
+  "current_readiness": "LOCAL_MAX_V2_METRIC_AUDIT_PASSED",
+  "historical_results_modified": false,
+  "level3_completed_artifact": false,
+  "main_results_modified": false,
+  "metric_audit_passed": true,
+  "ppl_policy": {
+    "clipping_allowed_for_ranking": false,
+    "overflow_policy": "valid_ppl=null and ppl_overflow=true",
+    "ranking_metric": "valid_nll_nats_per_token",
+    "valid_ppl": "exp(valid_nll_nats_per_token) when finite"
+  },
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "sota_claimed": false,
+  "stage": "metric_audit",
+  "status": "completed",
+  "step": "step10B_localmax_v2",
+  "weak_ccf_a_claimed": false
+}

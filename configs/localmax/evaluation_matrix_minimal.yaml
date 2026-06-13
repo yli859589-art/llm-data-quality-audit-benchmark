@@ -1,0 +1,19 @@
+{
+  "step": "step10B_localmax_execution_fix",
+  "scope": "localmax_minimal_evaluation",
+  "metrics": [
+    "mean_valid_loss",
+    "mean_valid_ppl",
+    "std_valid_loss",
+    "seed_variance",
+    "paired_difference_vs_raw",
+    "bootstrap_ci_where_valid",
+    "risk",
+    "diversity",
+    "cost"
+  ],
+  "local_downstream_subset_ready": false,
+  "official_downstream_completed": false,
+  "improvement_claim_requires_ci_excluding_zero": true
+}
+

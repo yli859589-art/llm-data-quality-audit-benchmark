@@ -1,0 +1,10 @@
+{
+  "step": "step10B_level3_heavy_execution",
+  "stage": "rehearsal",
+  "target_bpe_tokens": 50000000,
+  "evidence_level": "rehearsal",
+  "level3_main_evidence": false,
+  "write_to_level3_main_table": false,
+  "requires_heavy_environment_feasible": true
+}
+

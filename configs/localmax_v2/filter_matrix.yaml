@@ -1,0 +1,9 @@
+{
+  "step": "step10B_localmax_v2",
+  "scope": "localmax_v2_filters",
+  "required_methods": ["raw", "exact_dedup", "length_filter", "urd_fixed"],
+  "minimum_methods": 4,
+  "minimum_datasets": 2,
+  "length_filter": {"min_gpt2_tokens": 32, "max_gpt2_tokens": 2048},
+  "urd_fixed": {"target_keep_rate": 0.9}
+}

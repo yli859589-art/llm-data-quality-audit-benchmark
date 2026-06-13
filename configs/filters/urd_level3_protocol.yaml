@@ -1,0 +1,20 @@
+{
+  "filter_name": "urd_level3_protocol",
+  "filter_type": "urd_selector",
+  "selection_mode": "fixed_weight_and_pareto_protocol",
+  "target_keep_rate": 0.5,
+  "seed": 42,
+  "normalization": "to_be_frozen_after_step7_metric_protocol",
+  "proxy_policy": "proxy_components_must_be_replaced_or_bounded_before_main_claims",
+  "alpha": 0.35,
+  "beta": 0.25,
+  "gamma": 0.20,
+  "lambda_shift": 0.10,
+  "mu_cost": 0.10,
+  "level3_main_method_candidate": true,
+  "completed": false,
+  "implemented_but_not_run": true,
+  "verified_effectiveness": false,
+  "smoke_only": false,
+  "notes": "Future Level 3 protocol config only; no completed evidence is claimed."
+}

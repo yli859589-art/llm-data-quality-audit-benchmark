@@ -1,0 +1,12 @@
+{
+  "evaluation_name": "pareto_urd_pareto",
+  "evaluation_type": "pareto",
+  "scope": "smoke",
+  "method_name": "urd_pareto",
+  "dataset_name": "wikitext2_smoke",
+  "filter_manifest_path": "artifacts/filter_outputs_step6/wikitext2_smoke/urd_pareto/filter_manifest.json",
+  "smoke_only": true,
+  "protocol_only": false,
+  "completed_evidence": false,
+  "notes": "Pareto smoke diagnostics only; no frontier-improvement claim."
+}

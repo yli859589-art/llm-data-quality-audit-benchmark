@@ -1,0 +1,17 @@
+{
+  "analysis_files": {
+    "diversity_loss": "artifacts/localmax_v2_analysis/diversity_loss_report.csv",
+    "domain_shift": "artifacts/localmax_v2_analysis/domain_shift_report.csv",
+    "failure_taxonomy": "artifacts/localmax_v2_analysis/failure_taxonomy.csv",
+    "keep_rate_fairness": "artifacts/localmax_v2_analysis/keep_rate_fairness.csv",
+    "overfiltering": "artifacts/localmax_v2_analysis/overfiltering_report.csv",
+    "proxy_utility_mismatch": "artifacts/localmax_v2_analysis/proxy_utility_mismatch.csv",
+    "rank_stability": "artifacts/localmax_v2_analysis/rank_stability_report.csv",
+    "scale_trend": "artifacts/localmax_v2_analysis/scale_trend_protocol.csv",
+    "urd_comparison": "artifacts/localmax_v2_analysis/urd_comparison_report.csv"
+  },
+  "completed": true,
+  "full_scale_causal_conclusion": false,
+  "scope": "localmax_v2_mechanism",
+  "step": "step10B_localmax_v2"
+}

@@ -1,0 +1,5 @@
+dataset_id,comparison,raw_mean_nll,urd_mean_nll,mean_paired_nll_improvement,ci_low,ci_high,improvement_claim_allowed
+c4_en_v2_100m,urd_fixed_vs_raw,11.250372120489677,11.249411371846994,0.0009607486426830292,-0.03162563964724541,0.06519117951393127,False
+c4_en_v2_100m,urd_fixed_vs_exact_dedup,11.250372120489677,11.249411371846994,,,,False
+openwebtext_v2_100m,urd_fixed_vs_raw,11.15308827906847,11.175430494050184,-0.022342214981714886,-0.039995547384023666,0.011391814798116684,False
+openwebtext_v2_100m,urd_fixed_vs_exact_dedup,11.15308827906847,11.175430494050184,,,,False

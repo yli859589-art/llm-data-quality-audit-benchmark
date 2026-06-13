@@ -1,0 +1,17 @@
+tokenizer_name: char_legacy
+tokenizer_type: char
+scope: legacy_current
+level3_mainline: false
+vocab_size_requested: 0
+training_data_path: artifacts/data_step2/wikitext2_smoke/train.jsonl
+training_scope: legacy_current
+seed: 42
+normalization: identity
+model_path: artifacts/tokenizers_step3/char_legacy/char_tokenizer.json
+vocab_path: artifacts/tokenizers_step3/char_legacy/char_vocab.json
+manifest_path: artifacts/tokenizers_step3/char_legacy/tokenizer_manifest.json
+optional_dependency: ""
+fallback_allowed: false
+smoke_only: false
+status: legacy_current_protocol
+notes: char-level tokenizer is historical/current evidence, not Level 3 modern mainline

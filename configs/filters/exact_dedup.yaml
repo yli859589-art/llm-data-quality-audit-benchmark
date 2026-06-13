@@ -1,0 +1,7 @@
+filter_name: exact_dedup
+filter_type: exact_dedup
+scope: smoke
+proxy_used: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Exact normalized-text deduplication interface smoke config."

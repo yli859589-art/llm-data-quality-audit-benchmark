@@ -1,0 +1,27 @@
+{
+  "disabled_components": [
+    "risk"
+  ],
+  "level3_main_method_candidate": true,
+  "method_family": "URD-Selector",
+  "no_model_training_run": true,
+  "no_ppl_or_downstream_result_added": true,
+  "notes": "Step 6 smoke selector output; effectiveness must be evaluated in later steps.",
+  "proxy_components": [
+    "utility",
+    "risk",
+    "diversity",
+    "shift",
+    "cost"
+  ],
+  "selection_mode": "fixed_weight",
+  "smoke_only": true,
+  "verified_effectiveness": false,
+  "weights": {
+    "alpha": 0.35,
+    "beta": 0.25,
+    "gamma": 0.0,
+    "lambda_shift": 0.1,
+    "mu_cost": 0.1
+  }
+}

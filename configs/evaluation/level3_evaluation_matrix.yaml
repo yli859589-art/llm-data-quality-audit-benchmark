@@ -1,0 +1,9 @@
+{
+  "matrix_name": "level3_evaluation_matrix_protocol",
+  "scope": "level3_heavy_protocol",
+  "protocol_only": true,
+  "completed": false,
+  "official_downstream_completed": false,
+  "evaluation_families": ["lm", "downstream", "risk", "diversity", "cost", "stability", "pareto", "statistics"],
+  "notes": "Level 3 evaluation matrix protocol only; full evaluation is future work."
+}

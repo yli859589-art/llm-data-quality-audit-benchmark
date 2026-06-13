@@ -1,0 +1,19 @@
+{
+  "step": "step10B_localmax_v2",
+  "scope": "localmax_v2_mechanism",
+  "analyses": [
+    "proxy_utility_mismatch",
+    "overfiltering",
+    "diversity_loss",
+    "domain_shift",
+    "keep_rate_fairness",
+    "seed_instability",
+    "rank_stability",
+    "urd_vs_raw",
+    "urd_vs_dedup",
+    "dataset_dependent_effects",
+    "scale_trend",
+    "failure_taxonomy",
+    "negative_result_analysis"
+  ]
+}

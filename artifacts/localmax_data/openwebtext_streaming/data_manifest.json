@@ -1,0 +1,44 @@
+{
+  "completed": true,
+  "created_at": "2026-06-11T17:29:45+00:00",
+  "data_sha256": "6AFF11CF400442B834BE2149090E06FEFE2399E629F25C01523FACA0C1A740A3",
+  "dataset_id": "openwebtext_streaming",
+  "dataset_name": "OpenWebText streaming sample",
+  "fallback_used": false,
+  "gpt2_bpe_tokens": 174617,
+  "level3_completed": false,
+  "localmax_completed": false,
+  "main_results_modified": false,
+  "meets_localmax_20m_floor": false,
+  "meets_recommended_50m_budget": false,
+  "minimum_localmax_dataset_tokens": 20000000,
+  "recommended_token_budget_per_dataset": 50000000,
+  "scope": "localmax_data",
+  "smoke_only": false,
+  "source_dataset_status": "real_nonfallback",
+  "source_manifest_path": "artifacts/data/openwebtext_streaming/data_manifest.json",
+  "split_byte_counts": {
+    "test": 85055,
+    "train": 626553,
+    "validation": 48494
+  },
+  "split_gpt2_bpe_tokens": {
+    "test": 18971,
+    "train": 145507,
+    "validation": 10139
+  },
+  "split_paths": {
+    "test": "artifacts/data/openwebtext_streaming/splits/test.jsonl",
+    "train": "artifacts/data/openwebtext_streaming/splits/train.jsonl",
+    "validation": "artifacts/data/openwebtext_streaming/splits/dev.jsonl"
+  },
+  "split_record_counts": {
+    "test": 13,
+    "train": 93,
+    "validation": 11
+  },
+  "stage": "data_manifest",
+  "step": "step10B_localmax_execution",
+  "streaming_sample": true,
+  "token_counter_type": "gpt2_bpe_transformers"
+}

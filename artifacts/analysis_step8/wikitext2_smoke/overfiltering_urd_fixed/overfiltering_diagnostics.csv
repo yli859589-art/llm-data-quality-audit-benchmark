@@ -1,0 +1,2 @@
+method_name,document_keep_rate,token_keep_rate,input_docs,kept_docs,input_tokens,kept_tokens,risk_delta_proxy,diversity_delta_proxy,cost_delta_proxy,risk_proxy_snapshot,diversity_proxy_snapshot,overfiltering_warning,insufficient_evidence,notes
+urd_fixed,0.6666666666666666,0.625,3,2,32,20,unavailable_no_raw_pair,unavailable_no_raw_pair,0.0005574999959208071,0.014598540145985401,0.95,potential_smoke_only_overfiltering_diagnostic,True,Smoke-only keep-rate diagnostic; not a formal overfiltering conclusion.

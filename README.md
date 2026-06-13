@@ -1,250 +1,70 @@
-# LLM Data Quality Diagnostics and Risk Auditing Benchmark
+# LLM Data Quality Audit Benchmark
 
-## Project Overview
+Current status: `TOP_TIER_CCFC_PROJECT_CANDIDATE`
 
-This repository is a personal research and portfolio prototype for auditing LLM
-data-quality filtering risk. It provides a reproducible benchmark around real
-data, fair baselines, artifact lineage, failure diagnostics, and claim-safety
-checks.
+LocalMax V2 status: `LOCAL_MAX_V2_STRONG_EVIDENCE_RELEASED`
 
-It does **not** claim institutional affiliation, official coursework completion,
-private-grader access, publication acceptance, competition placement, or
-supported improvement over raw training data.
+Level 3 status: `not completed`
 
-Canonical reporting language is maintained in
-`docs/REPORTING_CONTRACT.md`.
+Bundle scope: `standalone_metadata_bundle`
 
-## How To Review This Release
+This repository is a reproducible research artifact for auditing language-model pretraining data filters under controlled token budgets.
 
-- 30 seconds: read `PROJECT_ONE_PAGE.md`.
-- 3 minutes: read `PROJECT_SUMMARY.md` and `docs/FIGURE_INDEX.md`.
-- 10 minutes: read `TECHNICAL_OVERVIEW.md`, `DEMO_GUIDE.md`, and
-  `docs/CROSS_DATASET_AUDIT.md`.
-- 1 hour: run the reproducibility commands, inspect
-  `artifacts/release/final_release_report.md`, and verify the fresh-unzip
-  report.
+The project does **not** claim a completed Level 3 benchmark, publication-tier readiness, institutional affiliation, competition placement, official downstream completion, or a supported method win over raw training data.
 
-## Why Data Quality Filtering Needs Auditing
+The original LocalMax V1 release remains available as the minimal training evidence baseline. V1 uses valid_loss as the comparison metric; its PPL values are clipped and not comparable.
 
-Data-quality filters can look useful before training: they remove noisy pages,
-reduce repetition, preserve distribution shape, and keep high-scoring text. Under
-a fair tokenizer, model, and validation budget, however, the filtered corpus can
-still underperform raw data, seeded random retention, or exact deduplication.
+## CCF-C Candidate Evidence
 
-The project value is therefore not a positive method-success claim. The value is
-a reproducible audit framework that can detect when heuristic filtering is
-fragile, overfilters, or shifts the training distribution.
+The current strongest evidence line is `LocalMax CCFC`, an expanded local research artifact built on the LocalMax V2 data pipeline rather than a separate rewritten project.
 
-## Key Findings
+- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
+- Methods: raw, exact_dedup, length_filter, random_same_keep_rate, c4_quality_filter, perplexity_proxy_filter, urd_fixed.
+- Training: 42 small-model runs across 2 datasets x 7 methods x 3 seeds.
+- Budget: each completed run sees `5001216` training tokens; total CCF-C candidate training tokens_seen is `210051072`.
+- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
+- Evaluation: per-seed language-model metrics, risk/diversity/cost tables, bootstrap-style summaries, dataset-level method rankings, and a local cloze-style downstream probe.
+- Safe interpretation: the evidence is strong enough to describe as a top-tier CCF-C prototype candidate, but it is not an accepted paper, not an official competition result, and not a completed Level 3 / CCF-B artifact.
 
-- The raw baseline is currently the strongest mean-PPL method on the WikiText-2
-  dev benchmark.
-- HDQS++ v3 improves over HDQS++ v2 trend-wise, but it does not outperform raw
-  under the current fair benchmark.
-- Raw, `random_same_keep_rate`, and `dedup_only` remain strong baselines in the
-  completed setting.
-- OpenWebText and C4 English evidence is based on real HuggingFace streaming
-  samples, not complete upstream dataset runs.
-- single-seed and diagnostic ablation signals are treated as diagnostic only,
-  never as stable method conclusions.
+See `docs/LOCALMAX_CCFC_PROJECT_REPORT.md`, `docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md`, and `artifacts/localmax_ccfc_tables/`.
+
+## LocalMax V2 Summary
+
+- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
+- Methods: raw, exact_dedup, length_filter, urd_fixed.
+- Training: 24 small-model runs, each >=1M tokens_seen.
+- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
+- Main comparison metric: `valid_nll_nats_per_token`.
+- PPL is computed without clipping; no PPL-improvement claim is made unless supported by the tables.
+- Level 3 remains unfinished.
+- CCF-B readiness is not claimed.
+- The release bundle excludes raw data and large binary checkpoints.
 
 ## Quick Start
 
-Install dependencies:
-
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -r requirements-dev.txt
-python -m pip install -e .
+python scripts/localmax_v2/finalize_localmax_v2_release.py
+python scripts/localmax_v2/audit_lm_metric_correctness.py
+python scripts/localmax_ccfc/check_ccfc_artifacts.py
+python -m pytest tests/ -q
 ```
 
-Run the local check suite:
+For the full grouped validation wrapper:
 
 ```bash
-python scripts/run_all_checks.py --timeout 300
+python scripts/run_all_checks.py --timeout 600
 ```
 
-Run claim hygiene directly:
+## Reproducibility Notes
 
-```bash
-python scripts/check_claim_hygiene.py
-```
+The release directory contains metadata, metrics, tables, figures, reports, and copied manifests needed for review. It does not contain raw data text or full binary checkpoints.
 
-Regenerate dashboards:
+Historical single-seed and smoke artifacts are retained for lineage, but they are not the LocalMax V2 main evidence.
 
-```bash
-python scripts/generate_project_dashboard.py
-```
+URD-Selector is implemented as a smoke-verified selector pipeline, but it is not yet effectiveness-verified or current main evidence.
 
-Run release checks:
+## Usage Note
 
-```bash
-python scripts/run_release_checks.py --timeout 300
-```
+This can be discussed as a personal research and portfolio prototype only if the wording keeps the evidence boundary above. Do not present it as official coursework, a competition result, or a completed publication-level benchmark.
 
-Verify a release zip from a clean extraction:
-
-```bash
-python scripts/verify_fresh_unzip.py --zip path/to/release.zip --timeout 300 --skip-heavy
-```
-
-When GNU Make is available:
-
-```bash
-make check
-make release-check
-```
-
-On Windows systems that provide MinGW Make as `mingw32-make`:
-
-```bash
-mingw32-make check
-mingw32-make release-check
-```
-
-## Benchmark Protocol
-
-Primary WikiText-2 candidate evidence:
-
-- dataset: `wikitext2_paper`
-- dataset_status: `real_local_nonfallback`
-- dataset_scope: `official_split`
-- model size: `small`
-- seeds: `1 2 3`
-- train_tokens: `1228800`
-- evaluated_validation_tokens: `53248`
-
-Cross-dataset audit evidence:
-
-- `openwebtext_streaming`: `real_nonfallback`, `streaming_sample`
-- `c4_en_streaming`: `real_nonfallback`, `streaming_sample`
-
-Streaming-sample rows are audit evidence. They are not paper-scale claims and
-must not be described as complete upstream OpenWebText/C4 results.
-
-## Results Snapshot
-
-Lower mean PPL is better.
-
-| Dataset | Scope | Method | Mean PPL | Safe interpretation |
-|---|---|---|---:|---|
-| `wikitext2_paper` | `official_split` | `raw` | 12.6214 | strongest current WikiText-2 mean baseline |
-| `wikitext2_paper` | `official_split` | `random_same_keep_rate` | 12.7058 | close baseline |
-| `wikitext2_paper` | `official_split` | `dedup_only` | 12.7261 | close baseline |
-| `wikitext2_paper` | `official_split` | `hdqspp_v3` | 13.2341 | improves over v2 trend-wise, not raw |
-| `openwebtext_streaming` | `streaming_sample` | `raw` | 133.5411 | strongest current streaming-sample mean baseline |
-| `openwebtext_streaming` | `streaming_sample` | `hdqspp_v3` | 253.3836 | does not outperform raw on this streaming sample |
-| `c4_en_streaming` | `streaming_sample` | `raw` | 174.5871 | tied with dedup as strongest current streaming-sample mean baseline |
-| `c4_en_streaming` | `streaming_sample` | `hdqspp_v3` | 302.9781 | does not outperform raw on this streaming sample |
-
-The complete canonical result boundary is in `docs/REPORTING_CONTRACT.md`.
-
-## Cross-Dataset Audit
-
-3B extends the audit from WikiText-2 to OpenWebText and C4 English real
-streaming samples. The cross-dataset artifacts separate completed, failed,
-configured-only, and lightweight rows:
-
-- `artifacts/cross_dataset/cross_dataset_results.csv`
-- `artifacts/cross_dataset/dataset_status_matrix.csv`
-- `artifacts/cross_dataset/cross_dataset_summary.md`
-- `docs/CROSS_DATASET_AUDIT.md`
-
-The cross-dataset result is a risk-audit expansion, not a supported over-raw
-method claim.
-
-## Reproducibility
-
-Important verification commands:
-
-```bash
-python scripts/check_repo.py --clean
-python -m pytest -q
-python scripts/check_claim_hygiene.py
-python scripts/run_all_checks.py --timeout 300
-python scripts/run_release_checks.py --timeout 300
-python scripts/check_experiment_readiness.py
-```
-
-Rebuild the main WikiText-2 tables:
-
-```bash
-python scripts/analyze_significance.py --input artifacts/runs/run_registry.csv --output artifacts/stats
-python scripts/generate_tables.py
-python scripts/check_main_results_purity.py
-```
-
-Rebuild the cross-dataset audit:
-
-```bash
-python scripts/generate_cross_dataset_tables.py
-python scripts/analyze_cross_dataset_audit.py
-```
-
-## Artifact Lineage
-
-The append-oriented registry records training, filtering, data-preparation,
-failed, and superseded rows:
-
-- `artifacts/runs/run_registry.jsonl`
-- `artifacts/runs/run_registry.csv`
-- `artifacts/runs/migration_log.jsonl`
-
-Failed or superseded runs are retained for audit integrity rather than removed
-to make the project look cleaner.
-
-## Claim Boundary
-
-This release is a reproducible audit benchmark. It does not claim that HDQS++ v3
-outperforms raw data under the current fair benchmark.
-
-This is an experiment-candidate benchmark release, not a CCF-C-ready paper
-artifact.
-
-Do not claim:
-
-- supported HDQS++ improvement over raw
-- method-leadership or publication-ready method status
-- complete upstream OpenWebText/C4 benchmark completion
-- statistically supported improvement over raw
-- large-scale or web-scale corpus results
-
-## Limitations
-
-- Current model scale is `small`.
-- The main protocol uses 3 seeds, so claims remain preliminary.
-- OpenWebText/C4 evidence is streaming-sample evidence only.
-- The tokenizer/model setting is limited.
-- Held-out test evaluation should only be used after method settings are frozen.
-- HDQS++ v1/v2/v3 do not have supported improvement over raw in current evidence.
-
-## Roadmap
-
-- 3C-1: freeze reporting contract and claim boundary.
-- 3C-2: clean public release structure and packaging.
-- 3C-3: prepare optional one-page summary, demo guide, and resume bullets under
-  the same reporting contract.
-- Future: run larger samples, larger model scales, and stronger seed budgets
-  before revisiting any method-success claim.
-
-## Documentation
-
-Start here:
-
-- `PROJECT_ONE_PAGE.md`
-- `PROJECT_SUMMARY.md`
-- `TECHNICAL_OVERVIEW.md`
-- `DEMO_GUIDE.md`
-- `RESUME_BULLETS.md`
-- `docs/REPORTING_CONTRACT.md`
-- `docs/QUICKSTART.md`
-- `docs/BENCHMARK_PROTOCOL.md`
-- `docs/REPRODUCIBILITY.md`
-- `docs/ARTIFACT_INDEX.md`
-- `docs/PROJECT_EVIDENCE_MAP.md`
-- `docs/CROSS_DATASET_AUDIT.md`
-- `docs/FIGURE_INDEX.md`
-- `docs/LIMITATIONS.md`
-- `docs/METHOD_DASHBOARD.md`
-- `RELEASE_NOTES.md`
-- `artifacts/release/final_release_report.md`
+See `docs/LOCALMAX_V2_RESULTS.md` and `artifacts/localmax_v2_release/`.

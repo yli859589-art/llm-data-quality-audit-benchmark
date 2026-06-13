@@ -1,0 +1,9 @@
+filter_name: length_filter
+filter_type: length_filter
+scope: smoke
+min_estimated_tokens: 1
+max_estimated_tokens: 1000000
+proxy_used: false
+implemented_but_not_run: false
+main_evidence_completed: false
+notes: "Length-based baseline interface smoke config."

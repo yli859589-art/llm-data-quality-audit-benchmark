@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-12T20:01:26+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "document_keep_rate": 0.7499974901362354,
+  "input_documents": 199214,
+  "kept_documents": 149410,
+  "method_name": "perplexity_proxy_filter",
+  "selected_gpt2_tokens": 41363365,
+  "source_data_tokens": 95001313,
+  "token_keep_rate": 0.43539782444901576
+}

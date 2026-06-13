@@ -1,0 +1,12 @@
+{
+  "analysis": "pareto_mechanism",
+  "scope": "smoke",
+  "dataset_name": "wikitext2_smoke",
+  "method_name": "urd_pareto",
+  "smoke_only": true,
+  "protocol_only": false,
+  "insufficient_evidence_expected": true,
+  "pareto_improvement_claim_allowed": false,
+  "claim_allowed": false
+}
+

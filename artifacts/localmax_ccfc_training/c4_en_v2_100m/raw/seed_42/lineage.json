@@ -1,0 +1,10 @@
+{
+  "checkpoint_manifest_path": "artifacts/localmax_ccfc_training/c4_en_v2_100m/raw/seed_42/checkpoint_manifest.json",
+  "created_at": "2026-06-13T02:59:19+00:00",
+  "dataset_manifest": "artifacts/localmax_v2_data/c4_en_v2_100m/dataset_manifest.json",
+  "filter_manifest": "artifacts/localmax_ccfc_filters/c4_en_v2_100m/raw/filter_manifest.json",
+  "metric_audit_report": "artifacts/reports/localmax_v2_metric_audit.json",
+  "metrics_path": "artifacts/localmax_ccfc_training/c4_en_v2_100m/raw/seed_42/metrics.json",
+  "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json",
+  "warm_start_checkpoint": "artifacts/localmax_v2_training/c4_en_v2_100m/raw/seed_42/final_checkpoint.pt"
+}

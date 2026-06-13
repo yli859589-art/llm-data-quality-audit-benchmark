@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "level3_evaluation": false,
+  "lm_metrics_path": "artifacts/localmax_evaluation/lm_metrics.csv",
+  "local_downstream_subset_ready": false,
+  "official_downstream_completed": false,
+  "paired_differences_path": "artifacts/localmax_evaluation/paired_differences.csv",
+  "risk_diversity_cost_path": "artifacts/localmax_evaluation/risk_diversity_cost.csv",
+  "scope": "localmax_minimal_evaluation",
+  "stability_results_path": "artifacts/localmax_evaluation/stability_results.csv",
+  "statistical_tests_path": "artifacts/localmax_evaluation/statistical_tests.csv",
+  "step": "step10B_localmax_execution_fix"
+}

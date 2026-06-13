@@ -1,0 +1,3 @@
+dataset_id,dataset_name,actual_gpt2_tokens,raw_bytes,compressed_bytes,document_count,fallback_used,no_fallback_verified,duplicate_rate,data_manifest,evidence_level
+openwebtext_v2_100m,OpenWebText LocalMax V2 100M GPT-2-token sample,100004093,440169057,178190855,88600,False,True,0.0,artifacts/localmax_v2_data/openwebtext_v2_100m/data_manifest.json,localmax_v2_data
+c4_en_v2_100m,C4 English LocalMax V2 100M GPT-2-token sample,100002807,454482210,201441256,209481,False,True,0.0,artifacts/localmax_v2_data/c4_en_v2_100m/data_manifest.json,localmax_v2_data

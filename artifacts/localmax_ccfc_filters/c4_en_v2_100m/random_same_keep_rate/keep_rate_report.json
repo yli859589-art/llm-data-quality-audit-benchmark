@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-06-12T19:59:47+00:00",
+  "dataset_id": "c4_en_v2_100m",
+  "document_keep_rate": 0.9594606804742638,
+  "input_documents": 199214,
+  "kept_documents": 191138,
+  "method_name": "random_same_keep_rate",
+  "selected_gpt2_tokens": 91001416,
+  "source_data_tokens": 95001313,
+  "token_keep_rate": 0.9578964029686621
+}

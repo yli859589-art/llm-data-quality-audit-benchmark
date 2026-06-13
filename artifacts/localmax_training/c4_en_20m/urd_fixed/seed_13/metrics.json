@@ -1,0 +1,39 @@
+{
+  "batch_size": 1,
+  "completed": true,
+  "context_length": 64,
+  "created_at": "2026-06-11T18:43:58+00:00",
+  "dataset_id": "c4_en_20m",
+  "device": "cuda",
+  "elapsed_seconds": 0.22052990000520367,
+  "failure_type": "",
+  "loss_curve": [
+    {
+      "step": 1,
+      "train_loss": 194.779296875,
+      "valid_loss": 179.13591766357422,
+      "valid_ppl": 485165195.4097903
+    },
+    {
+      "step": 2,
+      "train_loss": 173.93359375,
+      "valid_loss": 152.69827270507812,
+      "valid_ppl": 485165195.4097903
+    }
+  ],
+  "max_steps": 2,
+  "method_name": "urd_fixed",
+  "mixed_precision_used": true,
+  "model_scale": "small",
+  "parameter_count": 20487456,
+  "seed": 13,
+  "status": "completed",
+  "steps_completed": 2,
+  "tokens_per_second": 580.4201606992053,
+  "tokens_seen": 128,
+  "train_loss_final": 173.93359375,
+  "training_token_sample_cap": 8192,
+  "valid_loss": 152.69827270507812,
+  "valid_ppl": 485165195.4097903,
+  "validation_token_sample_cap": 4096
+}

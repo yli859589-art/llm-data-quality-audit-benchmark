@@ -1,0 +1,54 @@
+{
+  "blocking_failures": [],
+  "completed": true,
+  "current_readiness": "LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED",
+  "figure_hashes": {
+    "artifacts/localmax_release/figures/claim_boundary_summary.png": "C4CAED4CE8274414BCA44E14580A5785DA9B46B0DF1FAEFFBCD313F4DC4A4301",
+    "artifacts/localmax_release/figures/method_ranking_by_valid_loss.png": "9045300190CDFE04DA92811748D553D24CC19CFB535151E2634065E921818B70",
+    "artifacts/localmax_release/figures/method_ranking_c4_valid_loss.png": "9045300190CDFE04DA92811748D553D24CC19CFB535151E2634065E921818B70",
+    "artifacts/localmax_release/figures/method_ranking_openwebtext_valid_loss.png": "416554D8D3E8DB843D3CF0D85A839DCC9013BE167BC536723745DE3C094730E3",
+    "artifacts/localmax_release/figures/risk_diversity_cost_tradeoff.png": "CA3CFC024EAB9968003786147C817E9251556FC4023CFE61C5518861B04A7C2A",
+    "artifacts/localmax_release/figures/seed_stability_c4_valid_loss.png": "427624EDA8CA580CCB094CA4D92B7420D01C6D5DCF3013CF79B80D600F7C0424",
+    "artifacts/localmax_release/figures/seed_stability_openwebtext_valid_loss.png": "91FE7FEB4DEE54186A43423805A4F32CDCFDC51C9EA7530DD6B3EE292FCCAEC2",
+    "artifacts/localmax_release/figures/seed_stability_valid_loss.png": "91FE7FEB4DEE54186A43423805A4F32CDCFDC51C9EA7530DD6B3EE292FCCAEC2",
+    "artifacts/localmax_release/figures/training_strength_summary.png": "AE57BC92D16ED9B974DCC2FD0EC1F40DD378357A45958AD68498B11540B69FF9",
+    "artifacts/localmax_release/figures/urd_vs_raw_valid_loss_difference.png": "5F3A2C4B4CEA63D06024947324FDB4F3083737BD5D6642E91620209B597EA27C",
+    "artifacts/localmax_release/figures/valid_loss_by_dataset_method.png": "C5D4A9A734D0889EAB5C9C4AF9C1CA8332F5ADBD13AEBA1F69798C0B8A7C9C27",
+    "artifacts/localmax_release/figures/valid_loss_by_method.png": "6263C11643C9DA395F65916AB68F65C935B0A29598423B4574A041763B47B4CC"
+  },
+  "figures_regenerated_for_readability": true,
+  "frozen_release_timestamp": "LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED",
+  "generated_at_runtime": false,
+  "generated_figures": [
+    "artifacts/localmax_release/figures/claim_boundary_summary.png",
+    "artifacts/localmax_release/figures/method_ranking_by_valid_loss.png",
+    "artifacts/localmax_release/figures/method_ranking_c4_valid_loss.png",
+    "artifacts/localmax_release/figures/method_ranking_openwebtext_valid_loss.png",
+    "artifacts/localmax_release/figures/risk_diversity_cost_tradeoff.png",
+    "artifacts/localmax_release/figures/seed_stability_c4_valid_loss.png",
+    "artifacts/localmax_release/figures/seed_stability_openwebtext_valid_loss.png",
+    "artifacts/localmax_release/figures/seed_stability_valid_loss.png",
+    "artifacts/localmax_release/figures/training_strength_summary.png",
+    "artifacts/localmax_release/figures/urd_vs_raw_valid_loss_difference.png",
+    "artifacts/localmax_release/figures/valid_loss_by_dataset_method.png",
+    "artifacts/localmax_release/figures/valid_loss_by_method.png"
+  ],
+  "historical_results_modified": false,
+  "ppl_used_for_method_comparison": false,
+  "primary_metric": "valid_loss",
+  "protected_hashes": {
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921"
+  },
+  "stage": "release_figures",
+  "status": "completed",
+  "step": "step10C_localmax_release_freeze",
+  "superseded_figures": [
+    "artifacts/localmax_release/figures/superseded/method_ranking_by_valid_loss.png",
+    "artifacts/localmax_release/figures/superseded/risk_diversity_cost_tradeoff.png",
+    "artifacts/localmax_release/figures/superseded/seed_stability_valid_loss.png",
+    "artifacts/localmax_release/figures/superseded/training_strength_summary.png"
+  ]
+}

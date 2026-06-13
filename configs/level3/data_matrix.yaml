@@ -1,0 +1,68 @@
+{
+  "step": "step10A_level3_heavy_protocol_freeze",
+  "protocol_only": true,
+  "completed": false,
+  "token_count_type": "tokenizer_specific_bpe_tokens",
+  "minimum_level3_threshold": {
+    "min_datasets": 3,
+    "min_tokens_per_dataset": 500000000,
+    "fallback_floor_tokens": 500000000,
+    "below_floor_downgrade": "level2_or_incomplete"
+  },
+  "strong_target": {
+    "tokens_per_dataset": 1000000000,
+    "description": "optional strong Level 3 target, not completed in Step 10A"
+  },
+  "datasets": [
+    {
+      "dataset_id": "openwebtext",
+      "target_bpe_tokens": 500000000,
+      "strong_target_bpe_tokens": 1000000000,
+      "required": true,
+      "no_fallback_required": true,
+      "split_integrity_required": true,
+      "hash_required": true,
+      "license_scope_note_required": true,
+      "status": "protocol_only_not_prepared"
+    },
+    {
+      "dataset_id": "c4_en",
+      "target_bpe_tokens": 500000000,
+      "strong_target_bpe_tokens": 1000000000,
+      "required": true,
+      "no_fallback_required": true,
+      "split_integrity_required": true,
+      "hash_required": true,
+      "license_scope_note_required": true,
+      "status": "protocol_only_not_prepared"
+    },
+    {
+      "dataset_id": "fineweb",
+      "target_bpe_tokens": 500000000,
+      "strong_target_bpe_tokens": 1000000000,
+      "required": true,
+      "no_fallback_required": true,
+      "split_integrity_required": true,
+      "hash_required": true,
+      "license_scope_note_required": true,
+      "status": "protocol_only_not_prepared"
+    },
+    {
+      "dataset_id": "dolma_or_pile",
+      "target_bpe_tokens": 500000000,
+      "strong_target_bpe_tokens": 1000000000,
+      "required": false,
+      "no_fallback_required": true,
+      "split_integrity_required": true,
+      "hash_required": true,
+      "license_scope_note_required": true,
+      "status": "protocol_only_not_prepared"
+    }
+  ],
+  "forbidden_in_step10A": [
+    "download_heavy_data",
+    "prepare_500m_or_1b_data",
+    "mark_dataset_completed",
+    "use_whitespace_proxy_as_bpe_count"
+  ]
+}

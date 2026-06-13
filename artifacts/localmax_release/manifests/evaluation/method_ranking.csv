@@ -1,0 +1,9 @@
+dataset_id,rank,method_name,mean_valid_loss,metric_for_comparison
+c4_en_20m,1,exact_dedup,27.892710690697033,valid_loss
+c4_en_20m,2,raw,27.892710690697033,valid_loss
+c4_en_20m,3,urd_fixed,27.939046944181126,valid_loss
+c4_en_20m,4,length_filter,28.237577160199482,valid_loss
+openwebtext_20m,1,urd_fixed,27.701678256193798,valid_loss
+openwebtext_20m,2,length_filter,27.921034559607506,valid_loss
+openwebtext_20m,3,exact_dedup,28.03769465784232,valid_loss
+openwebtext_20m,4,raw,28.03769465784232,valid_loss

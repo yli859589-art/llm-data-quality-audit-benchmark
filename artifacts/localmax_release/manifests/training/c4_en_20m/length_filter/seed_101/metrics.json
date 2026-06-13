@@ -1,0 +1,49 @@
+{
+  "batch_size": 2,
+  "completed": true,
+  "context_length": 128,
+  "created_at": "2026-06-11T19:26:59+00:00",
+  "dataset_id": "c4_en_20m",
+  "failed": false,
+  "failure_type": "",
+  "gradient_accumulation_steps": 1,
+  "loss_curve": [
+    {
+      "step": 1,
+      "train_loss": 189.6318359375
+    },
+    {
+      "step": 25,
+      "train_loss": 42.028221130371094
+    },
+    {
+      "step": 50,
+      "train_loss": 32.74346923828125
+    },
+    {
+      "step": 75,
+      "train_loss": 31.991905212402344
+    },
+    {
+      "step": 100,
+      "train_loss": 31.02890396118164
+    }
+  ],
+  "max_steps": 100,
+  "method_name": "length_filter",
+  "metric_for_comparison": "valid_loss",
+  "min_training_strength_met": true,
+  "model_scale": "small",
+  "parameter_count": 20505888,
+  "ppl_clipped": true,
+  "ppl_comparable": false,
+  "seed": 101,
+  "steps_completed": 100,
+  "tokens_seen": 25600,
+  "train_loss_final": 31.02890396118164,
+  "training_token_sample_cap": 131072,
+  "valid_loss": 28.577119767665863,
+  "valid_ppl_clipped": 485165195.4097903,
+  "valid_ppl_raw": null,
+  "validation_token_sample_cap": 32768
+}
