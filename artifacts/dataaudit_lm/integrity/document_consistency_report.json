@@ -1,0 +1,27 @@
+{
+  "checked_documents": [
+    "README.md",
+    "docs/PROJECT_OVERVIEW.md",
+    "docs/RESULTS.md",
+    "docs/EVIDENCE_SCOPE.md",
+    "docs/RESUME_PROJECT.md"
+  ],
+  "document_consistency_verified": true,
+  "evidence": {
+    "completed_runs": 42,
+    "dataset_count": 2,
+    "downstream_rows": 8,
+    "final_gate_passed": false,
+    "method_count": 7,
+    "model_parameters": 20542752,
+    "seed_count": 3,
+    "source_tokens": 200006900,
+    "status": "MULTI_SEED_TRAINING_COMPLETED",
+    "target_runs": 80,
+    "tokens_per_run": 5001216,
+    "total_tokens_seen": 210051072
+  },
+  "forbidden_readme_terms": [],
+  "missing_readme_numbers": [],
+  "status": "DOCUMENT_CONSISTENCY_VERIFIED"
+}

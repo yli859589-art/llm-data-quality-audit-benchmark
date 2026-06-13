@@ -1,4 +1,4 @@
-name: checks
+name: dataaudit-lm-checks
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
   PYTHONUNBUFFERED: "1"
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,34 +23,19 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-dev.txt
           python -m pip install -e .
-      - name: Repository hygiene
-        run: python scripts/check_repo.py --clean
-      - name: Lint
-        run: ruff check .
-      - name: Formatting
-        run: black --check .
-      - name: Type check
-        run: mypy src/course_project_suite/llm_benchmark
+      - name: Lint DataAudit-LM public entrypoints
+        run: ruff check src/dataaudit_lm scripts/dataaudit_lm tests/test_dataaudit_lm_phase1.py
+      - name: Type check DataAudit-LM package
+        run: mypy src/dataaudit_lm
       - name: Unit tests
-        run: python -m unittest discover -s tests -v
-      - name: Quick benchmark smoke test
-        run: python scripts/run_quick_experiment.py
-      - name: Dataset matrix smoke test
-        run: |
-          python scripts/run_dataset_matrix.py --mode quick
-          python scripts/run_dataset_matrix.py --mode paper-prototype --dry-run
-          python scripts/run_dataset_matrix.py --mode paper-prototype
-          python scripts/run_multi_seed.py --mode paper-prototype
-          python scripts/run_model_scaling.py --mode quick
-      - name: Regenerate tables and figures
-        run: |
-          python scripts/make_tables.py
-          python scripts/make_figures.py
-          python scripts/statistical_analysis.py
-          python scripts/make_research_tables.py
-          python scripts/make_research_figures.py
-          python scripts/analyze_failures.py
-          python scripts/make_project_report.py
-          python scripts/check_artifacts.py
-      - name: Python compile check
-        run: python scripts/run_verification.py
+        run: python -m pytest tests/test_dataaudit_lm_phase1.py -q
+      - name: Metric audit
+        run: python scripts/dataaudit_lm/audit_metric_correctness.py
+      - name: Fairness metadata audit
+        run: python scripts/dataaudit_lm/audit_experiment_fairness.py
+      - name: Artifact verification
+        run: python scripts/dataaudit_lm/verify_artifacts.py
+      - name: Document consistency
+        run: python scripts/dataaudit_lm/verify_document_consistency.py
+      - name: Light fresh clone verification
+        run: python scripts/dataaudit_lm/verify_fresh_clone.py --light

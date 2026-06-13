@@ -1,0 +1,96 @@
+{
+  "artifact_summary": {
+    "artifacts/localmax_ccfc_filters": {
+      "exists": true,
+      "files": 98,
+      "size_mb": 92.585
+    },
+    "artifacts/localmax_ccfc_tables": {
+      "exists": true,
+      "files": 5,
+      "size_mb": 0.019
+    },
+    "artifacts/localmax_ccfc_training": {
+      "exists": true,
+      "files": 294,
+      "size_mb": 2837.899
+    },
+    "artifacts/localmax_v2_data": {
+      "exists": true,
+      "files": 31,
+      "size_mb": 362.061
+    },
+    "artifacts/localmax_v2_training": {
+      "exists": true,
+      "files": 168,
+      "size_mb": 1621.634
+    },
+    "artifacts/reports": {
+      "exists": true,
+      "files": 119,
+      "size_mb": 0.234
+    }
+  },
+  "backup_branch": "backup/pre-dataaudit-refactor",
+  "backup_bundle": "C:\\Users\\18104\\Desktop\\backup_pre_dataaudit_refactor_20260613.bundle",
+  "baseline_commit_sha": "16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+  "baseline_test_results": {
+    "black": {
+      "returncode": 1,
+      "summary": "Black refused due Python 3.12.5 AST safety warning; requires Python 3.12.6+ or 3.12.4."
+    },
+    "mypy_src_dataaudit_lm": {
+      "returncode": 1,
+      "summary": "src/dataaudit_lm does not exist yet."
+    },
+    "pytest": {
+      "returncode": 1,
+      "summary": "285 passed, 2 failed; failures are old LocalMax README/status consistency tests."
+    },
+    "ruff": {
+      "returncode": 1,
+      "summary": "1551 lint errors in current public tree."
+    }
+  },
+  "blocking_findings": [
+    "Public repository currently contains rating/submission-oriented naming and content that the new prompt forbids.",
+    "Current package layout is not src/dataaudit_lm.",
+    "Current tests encode old LocalMax/Level naming and will be incompatible with the requested neutral public release.",
+    "Current evidence is 2 datasets x 7 methods x 3 seeds = 42 runs, not the requested 2 x 8 x 5 = 80 run matrix.",
+    "Current downstream evidence is local cloze probe only, not official cloze/PIQA/ARC-Easy.",
+    "Current reference-LM filter is not yet verified as a true frozen reference-LM NLL filter under the requested spec.",
+    "Current raw ingestion likely needs an audit for pre-dedup behavior before any exact-dedup claim is kept."
+  ],
+  "can_mark_final_release": false,
+  "created_at": "2026-06-13T12:59:39+00:00",
+  "current_evidence_snapshot": {
+    "completed_training_runs": 42,
+    "expected_training_runs": 42,
+    "filter_methods": [
+      "c4_quality_filter",
+      "exact_dedup",
+      "length_filter",
+      "perplexity_proxy_filter",
+      "random_same_keep_rate",
+      "raw",
+      "urd_fixed"
+    ],
+    "min_tokens_seen_per_completed_run": 5001216,
+    "target_tokens_seen_per_run": 5000000,
+    "total_training_tokens_seen": 210051072
+  },
+  "current_status_before_report": " M PROJECT_ONE_PAGE.md\n M PROJECT_SUMMARY.md\n M README.md\n M RESUME_BULLETS.md\n M TECHNICAL_OVERVIEW.md\n M artifacts/localmax_release/localmax_artifact_registry.jsonl\n M artifacts/localmax_release/localmax_hashes.json\n M artifacts/localmax_release/localmax_release_manifest.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_data_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_downstream_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_environment_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_evaluation_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_filter_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_mechanism_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_readiness_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_throughput_report.json\n M artifacts/localmax_release/manifests/reports/localmax_v2_training_report.json\n M artifacts/localmax_release/reports/localmax_release_claim_check.json\n M artifacts/localmax_release/reports/localmax_release_claim_check.md\n M artifacts/reports/level3_preflight_report.json\n M artifacts/reports/level3_protocol_check_report.json\n M artifacts/reports/step10A_readiness_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_artifact_check_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_downstream_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_evaluation_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_filter_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_readiness_report.json\n?? artifacts/localmax_release/manifests/reports/localmax_ccfc_training_report.json\n",
+  "forbidden_term_scan": {
+    "count": 588,
+    "pattern": "CCF/CCFC/TOP_TIER/PAPER_READY/PUBLICATION_READY/COMPETITION_READY/LEVEL_3/LEVEL3/SUBMISSION_READY/REVIEWER_READY",
+    "result": "nonzero_matches_found",
+    "returncode": 0
+  },
+  "git_log_oneline_10": "16b33e8 Upgrade benchmark to LocalMax CCFC candidate\nf192da0 Prepare 3C-3 release candidate v1\n52f7ae0 Add CCF-C experiment readiness infrastructure\ne1cd71d Finalize LLM benchmark audit and research artifacts v4.4.0\na733f36 Upgrade LLM benchmark research prototype to v4.3.0\nf821358 feat: add paper-prototype research system hardening\ne2470ea chore: refresh v4.1.0 benchmark artifacts\n2dddc29 feat: strengthen data quality benchmark prototype\nae740fe chore: refresh verified quick experiment artifacts\n4a126ab feat: upgrade data quality research prototype\n",
+  "git_status_short_after_audit_file": "dirty_expected_after_report_generation",
+  "reason_not_final": "The requested final acceptance gates require 80 fair runs, neutral naming zero-hit scan, src/dataaudit_lm package, official downstream tasks, and clean CI; baseline does not meet these yet.",
+  "recommended_next_phase": "phase1_clean_dataaudit_lm_branch",
+  "status": "completed_with_blockers",
+  "step": "phase0_audit_and_backup",
+  "tracked_file_count": 3066
+}

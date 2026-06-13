@@ -1,0 +1,18 @@
+{
+  "artifact_integrity_verified": true,
+  "hashes": {
+    "CITATION.cff": "A03ED1D1F15B80AD6A169F75D9C4D31CF6451470A9FFF76CFC95BC2639DFE283",
+    "LICENSE": "9B8349F72D364B1C758B0F8D7D0C1340335CEEF5936E576BC6FA75FCFA041BA9",
+    "README.md": "C75C8831CF3D9E6A8D68C2FD2EC031538796E7E7B2C5AEC1B7232BC8215ECDB1",
+    "artifacts/localmax_ccfc_tables/ccfc_main_results.csv": "6AB466565019AA67591338C008F7806BF19BA6458573469075F74121DD72B035",
+    "artifacts/reports/localmax_ccfc_readiness_report.json": "41BD583D97262CA4A1A3B6F5793F9D1E8DB7540C7C63846A15BF4010D4C56C8D",
+    "pyproject.toml": "EC3EE03D0C688FAD98736ED0023FEB41856D1AF0896BA3F29DF468899923213A",
+    "scripts/dataaudit_lm/audit_metric_correctness.py": "1F560468A2D72F92EB70EBB6115786CD256C887E1F6CB8ECF7006F338C6D48DB"
+  },
+  "large_local_files_over_95mb": [
+    "C:/Users/18104/Documents/New project/resume_ready_ai_ml_project_suite_audit/resume_ready_course_project_suite/artifacts/localmax_v2_data/c4_en_v2_100m/shards/train-0000.jsonl.gz",
+    "C:/Users/18104/Documents/New project/resume_ready_ai_ml_project_suite_audit/resume_ready_course_project_suite/artifacts/localmax_v2_data/openwebtext_v2_100m/shards/train-0000.jsonl.gz"
+  ],
+  "missing_required_files": [],
+  "status": "ARTIFACT_INTEGRITY_VERIFIED"
+}

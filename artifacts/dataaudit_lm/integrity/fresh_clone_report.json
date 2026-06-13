@@ -1,0 +1,26 @@
+{
+  "fresh_clone_light": true,
+  "fresh_clone_verified": true,
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\18104\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/dataaudit_lm/audit_metric_correctness.py"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\"metric_audit_passed\": true, \"status\": \"METRIC_AUDIT_PASSED\"}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\18104\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/dataaudit_lm/verify_artifacts.py"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\"artifact_integrity_verified\": true, \"missing\": []}\n"
+    }
+  ],
+  "scratch_removed": true,
+  "status": "FRESH_CLONE_LIGHT_VERIFIED"
+}

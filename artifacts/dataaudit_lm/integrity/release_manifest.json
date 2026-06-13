@@ -1,0 +1,23 @@
+{
+  "evidence": {
+    "completed_runs": 42,
+    "dataset_count": 2,
+    "downstream_rows": 8,
+    "final_gate_passed": false,
+    "method_count": 7,
+    "model_parameters": 20542752,
+    "seed_count": 3,
+    "source_tokens": 200006900,
+    "status": "MULTI_SEED_TRAINING_COMPLETED",
+    "target_runs": 80,
+    "tokens_per_run": 5001216,
+    "total_tokens_seen": 210051072
+  },
+  "final_release_gate_passed": false,
+  "status": "MULTI_SEED_TRAINING_COMPLETED",
+  "unfinished_items": [
+    "Run matrix has not reached 2 datasets x 8 methods x 5 seeds.",
+    "Official downstream task suite is not complete.",
+    "Clean public naming migration is not complete."
+  ]
+}

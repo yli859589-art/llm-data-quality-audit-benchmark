@@ -3,15 +3,18 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "llm-data-quality-attention-benchmark-suite"
+name = "dataaudit-lm"
 version = "4.5.0"
-description = "Reproducible research prototype for data-quality interventions in small-scale language-model pretraining."
+description = "Reproducible multi-dataset benchmark for LLM pretraining-data filtering."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [{name = "YuHan Li"}]
 dependencies = ["numpy>=1.23", "torch>=2.0"]
-keywords = ["machine-learning", "language-modeling", "data-quality", "attention", "benchmark", "nlp"]
+keywords = ["machine-learning", "language-modeling", "data-quality", "benchmark", "nlp"]
+
+[project.optional-dependencies]
+dev = ["black==25.1.0", "coverage>=7.0", "mypy>=1.10", "pre-commit>=4.0", "pytest>=8.0", "ruff>=0.11"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

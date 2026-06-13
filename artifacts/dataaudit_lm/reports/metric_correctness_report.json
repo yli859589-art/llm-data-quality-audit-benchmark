@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "causal_shift_checked": true,
+    "padding_mask_checked": true,
+    "perfect_prediction_near_zero": true,
+    "ppl_identity_checked": true,
+    "ppl_not_clipped": true,
+    "uniform_logits_match_log_vocab": true
+  },
+  "metric_audit_passed": true,
+  "status": "METRIC_AUDIT_PASSED"
+}

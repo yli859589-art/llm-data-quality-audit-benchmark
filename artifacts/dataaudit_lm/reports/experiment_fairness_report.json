@@ -1,0 +1,21 @@
+{
+  "evidence": {
+    "completed_runs": 42,
+    "dataset_count": 2,
+    "downstream_rows": 8,
+    "final_gate_passed": false,
+    "method_count": 7,
+    "model_parameters": 20542752,
+    "seed_count": 3,
+    "source_tokens": 200006900,
+    "status": "MULTI_SEED_TRAINING_COMPLETED",
+    "target_runs": 80,
+    "tokens_per_run": 5001216,
+    "total_tokens_seen": 210051072
+  },
+  "fairness_metadata_checked": true,
+  "final_matrix_complete": false,
+  "known_gap": "Current reusable evidence has fewer than 80 final-gate runs; this script verifies metadata and does not promote it to a final matrix.",
+  "run_failures": [],
+  "status": "FAIRNESS_METADATA_VERIFIED"
+}

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this prototype, please cite the repository."
-title: "LLM Data Quality Benchmark"
+message: "If you use this benchmark, please cite the repository."
+title: "DataAudit-LM: A Reproducible Multi-Dataset Benchmark for LLM Pretraining Data Filtering"
 type: software
 authors:
   - family-names: "Li"
@@ -8,4 +8,4 @@ authors:
 version: 4.5.0
 date-released: 2026-06-04
 license: MIT
-abstract: "Reproducible research prototype for data-quality interventions in small-scale language-model pretraining."
+abstract: "Reproducible multi-dataset benchmark for auditing LLM pretraining-data filters under controlled training budgets."

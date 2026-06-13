@@ -1,70 +1,134 @@
-# LLM Data Quality Audit Benchmark
+# DataAudit-LM
 
-Current status: `TOP_TIER_CCFC_PROJECT_CANDIDATE`
+**A reproducible multi-dataset benchmark for auditing LLM pretraining-data filters under controlled training budgets.**
 
-LocalMax V2 status: `LOCAL_MAX_V2_STRONG_EVIDENCE_RELEASED`
+DataAudit-LM evaluates independent filtering strategies on 100M-token samples
+from OpenWebText and C4 using controlled multi-seed decoder-language-model
+training. The repository includes deterministic data manifests, filter
+decisions, training lineage, per-token language-model evaluation, statistical
+comparisons, downstream probes, checkpoint integrity checks, and reproducible
+release tooling.
 
-Level 3 status: `not completed`
+## Research Question
 
-Bundle scope: `standalone_metadata_bundle`
+Do pretraining-data filters improve language-model utility under matched token
+budgets, and when do simple baselines behave more reliably than compound
+quality selectors?
 
-This repository is a reproducible research artifact for auditing language-model pretraining data filters under controlled token budgets.
+## Core Features
 
-The project does **not** claim a completed Level 3 benchmark, publication-tier readiness, institutional affiliation, competition placement, official downstream completion, or a supported method win over raw training data.
+- Real non-fallback OpenWebText and C4 samples.
+- Deterministic filter outputs and per-run training lineage.
+- Controlled small decoder-language-model training with GPT-2 tokenization.
+- Per-token NLL, log-PPL, and PPL audit checks without clipping.
+- Risk, diversity, cost, stability, and local downstream probe artifacts.
+- Explicit evidence boundaries for incomplete or mixed findings.
 
-The original LocalMax V1 release remains available as the minimal training evidence baseline. V1 uses valid_loss as the comparison metric; its PPL values are clipped and not comparable.
+## Evidence Summary
 
-## CCF-C Candidate Evidence
+| Item | Current value |
+|---|---:|
+| Source datasets | 2 |
+| Source GPT-2 tokens | 200006900 |
+| Filtering methods | 7 |
+| Seeds | 3 |
+| Completed training runs | 42 |
+| Target training runs for the frozen expanded matrix | 80 |
+| Tokens per completed run | 5001216 |
+| Aggregate tokens seen | 210051072 |
+| Model parameters | 20542752 |
+| Local downstream probe rows | 8 |
 
-The current strongest evidence line is `LocalMax CCFC`, an expanded local research artifact built on the LocalMax V2 data pipeline rather than a separate rewritten project.
+The current reusable evidence is a completed 42-run controlled matrix. It is
+not described as the frozen expanded 80-run matrix because that larger gate has
+not been executed.
 
-- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
-- Methods: raw, exact_dedup, length_filter, random_same_keep_rate, c4_quality_filter, perplexity_proxy_filter, urd_fixed.
-- Training: 42 small-model runs across 2 datasets x 7 methods x 3 seeds.
-- Budget: each completed run sees `5001216` training tokens; total CCF-C candidate training tokens_seen is `210051072`.
-- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
-- Evaluation: per-seed language-model metrics, risk/diversity/cost tables, bootstrap-style summaries, dataset-level method rankings, and a local cloze-style downstream probe.
-- Safe interpretation: the evidence is strong enough to describe as a top-tier CCF-C prototype candidate, but it is not an accepted paper, not an official competition result, and not a completed Level 3 / CCF-B artifact.
+## Main Findings
 
-See `docs/LOCALMAX_CCFC_PROJECT_REPORT.md`, `docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md`, and `artifacts/localmax_ccfc_tables/`.
+Filtering effects are dataset-dependent. No method is described as universally
+superior unless it is supported across datasets, seeds, corrected statistical
+tests, and downstream evaluations. Current evidence should be read as an audit
+of filtering behavior under local compute constraints, with mixed and negative
+findings preserved.
 
-## LocalMax V2 Summary
+## Benchmark Design
 
-- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
-- Methods: raw, exact_dedup, length_filter, urd_fixed.
-- Training: 24 small-model runs, each >=1M tokens_seen.
-- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
-- Main comparison metric: `valid_nll_nats_per_token`.
-- PPL is computed without clipping; no PPL-improvement claim is made unless supported by the tables.
-- Level 3 remains unfinished.
-- CCF-B readiness is not claimed.
-- The release bundle excludes raw data and large binary checkpoints.
+DataAudit-LM separates data ingestion, filtering, training, evaluation,
+statistics, and release integrity checks. Large raw shards and model
+checkpoints are kept out of ordinary Git history; manifests, hashes, metrics,
+tables, and lightweight reports remain in the repository.
 
-## Quick Start
+## Repository Structure
 
-```bash
-python scripts/localmax_v2/finalize_localmax_v2_release.py
-python scripts/localmax_v2/audit_lm_metric_correctness.py
-python scripts/localmax_ccfc/check_ccfc_artifacts.py
-python -m pytest tests/ -q
+```text
+src/dataaudit_lm/          Public package namespace
+scripts/dataaudit_lm/      Verification and release entrypoints
+configs/                   Experiment and protocol configuration
+docs/                      Project documentation
+artifacts/dataaudit_lm/    Public release reports, tables, and integrity files
+tests/                     Automated tests
 ```
 
-For the full grouped validation wrapper:
+## Installation
 
 ```bash
-python scripts/run_all_checks.py --timeout 600
+python -m pip install -e .
+python -m pip install -r requirements-dev.txt
 ```
 
-## Reproducibility Notes
+## Quick Verification
 
-The release directory contains metadata, metrics, tables, figures, reports, and copied manifests needed for review. It does not contain raw data text or full binary checkpoints.
+```bash
+python scripts/dataaudit_lm/audit_metric_correctness.py
+python scripts/dataaudit_lm/audit_experiment_fairness.py
+python scripts/dataaudit_lm/verify_artifacts.py
+python scripts/dataaudit_lm/finalize_release.py
+python -m pytest tests/test_dataaudit_lm_phase1.py -q
+```
 
-Historical single-seed and smoke artifacts are retained for lineage, but they are not the LocalMax V2 main evidence.
+## Full Experiment Reproduction
 
-URD-Selector is implemented as a smoke-verified selector pipeline, but it is not yet effectiveness-verified or current main evidence.
+The repository keeps executable pipelines for data preparation, filtering,
+training, evaluation, and statistical analysis. Full retraining is intentionally
+separate from quick verification because it requires GPU time and large local
+artifacts.
 
-## Usage Note
+## Results
 
-This can be discussed as a personal research and portfolio prototype only if the wording keeps the evidence boundary above. Do not present it as official coursework, a competition result, or a completed publication-level benchmark.
+Canonical public summaries are generated from machine-readable artifacts by:
 
-See `docs/LOCALMAX_V2_RESULTS.md` and `artifacts/localmax_v2_release/`.
+```bash
+python scripts/dataaudit_lm/finalize_release.py
+```
+
+The generated report is:
+
+```text
+artifacts/dataaudit_lm/reports/final_release_report.json
+```
+
+## Data Provenance
+
+The current data evidence uses OpenWebText and C4 English samples with GPT-2
+token accounting. Large source shards are not committed to ordinary Git
+history. Use the local release bundle or rerun the data preparation scripts to
+recreate large artifacts.
+
+## Limitations
+
+- The current reusable matrix has 42 completed runs, not 80.
+- The local downstream probe is diagnostic and is not a replacement for a full
+  external task suite.
+- Some legacy directories remain during the migration and are not part of the
+  cleaned public package namespace.
+- The reference-model filtering path and raw duplicate-retention policy require
+  another audit before stronger method conclusions are made.
+
+## Citation
+
+If you use this repository, cite it as the DataAudit-LM reproducible benchmark
+for LLM pretraining-data filtering.
+
+## License
+
+This project is released under the license in `LICENSE`.
