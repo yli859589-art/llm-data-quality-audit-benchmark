@@ -1,4 +1,4 @@
-black==25.1.0
+black==24.4.2
 coverage>=7.0
 mypy>=1.10
 pre-commit>=4.0

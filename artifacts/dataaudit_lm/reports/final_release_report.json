@@ -9,14 +9,25 @@
     "seed_count": 3,
     "source_tokens": 200006900,
     "status": "MULTI_SEED_TRAINING_COMPLETED",
-    "target_runs": 80,
+    "target_max_methods": 8,
+    "target_min_methods": 6,
+    "target_min_seeds": 5,
+    "target_runs": 60,
     "tokens_per_run": 5001216,
     "total_tokens_seen": 210051072
   },
   "final_release_gate_passed": false,
+  "forbidden_naming_hits": [],
+  "gates": {
+    "matrix_complete": false,
+    "new_scope_forbidden_naming_clean": true,
+    "required_artifacts_present": true
+  },
+  "missing_artifacts": [],
+  "mode": "release",
   "status": "MULTI_SEED_TRAINING_COMPLETED",
   "unfinished_items": [
-    "Run matrix has not reached 2 datasets x 8 methods x 5 seeds.",
+    "Run matrix has not reached 2 datasets x 6-8 independent methods x at least 5 seeds.",
     "Official downstream task suite is not complete.",
     "Clean public naming migration is not complete."
   ]

@@ -1,0 +1,287 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "1094D9F917B20BE4C41D3974D048B28D3FF347708EE845215BA25D8365D6C005",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "d_003"
+      ],
+      "representative_id": "d_003",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "12E0DD855220B3E44D8632FEA016B67941E739D18D1FC58F1D9B5EC3D6DD6DDB",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "f_005"
+      ],
+      "representative_id": "f_005",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "20E6E732F0B0AA639CC851EE7ABB4ADF1206BDEE6DA64A5E0E8F64D68B836530",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "f_023"
+      ],
+      "representative_id": "f_023",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "2CF6A89C58FEEC03F66F78E763F9530C6B83D1766271114EF6A8CA20BAD2BC38",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "b_013"
+      ],
+      "representative_id": "b_013",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "2E963D512BD28BEA171EB08D0B3588B78092D65B678C96DFB9F1E268FA68EDA7",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "d_021"
+      ],
+      "representative_id": "d_021",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "42118220F681C0D08B00297F789F30CE865C6F3DDF04A96A785ED69C672FECBE",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "b_001"
+      ],
+      "representative_id": "b_001",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "464AD1B37AAAA1EF3D7B0468C5D4CFFD14E70F4D7C0863C1CE05A2FF90D7F4A4",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "c_002"
+      ],
+      "representative_id": "c_002",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "501FA9AFBEF3D699D84795BECA4A9E849CAF759B7D638381C08E396C8731538B",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "c_020"
+      ],
+      "representative_id": "c_020",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "550FE603635224FA5D02C44CABE8103C519DD99533DD65482795E94EDB17D9BA",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "d_009"
+      ],
+      "representative_id": "d_009",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "630DC9007B72E91BB46388550A37AC0154C9AC50A538770DCF808525026F3C82",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "e_022"
+      ],
+      "representative_id": "e_022",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "901043FE552B4AB0CE1B75990B54130A9896A0DF5A8FF83F65C75585DCFB5C2D",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "e_004"
+      ],
+      "representative_id": "e_004",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "93DEE5628223CB75FD76FBBD2BCBE1EAD8EA077C920BF1C400D119546FE5D030",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "c_014"
+      ],
+      "representative_id": "c_014",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "96FF2F45B64A5737528D107EB6991C15738A1FA50E81ECACCA61FD9D53B534A4",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "c_008"
+      ],
+      "representative_id": "c_008",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "986A362AB8C6218BF08DF5DA228B64AD719D16AAC1CEE1CA321B32DC666B5CDE",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "a_012"
+      ],
+      "representative_id": "a_012",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "9E2A77B7EB91F08873B4961AC60B95F1018D337FA01969D6E4FFF0F4E25EA108",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "e_010"
+      ],
+      "representative_id": "e_010",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "AAAB8747B62F42F9F7974A2C4622744D987DFB130C432830AEDB32A8A1F3671D",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "a_006"
+      ],
+      "representative_id": "a_006",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "AF77CDB049D45EDB5FFDCD89D1AE05690F20B91365D6C84C95408825E61D0966",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "b_007"
+      ],
+      "representative_id": "b_007",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "B7ECBC76FAD093ADF13048612AA5A46875B079EE490E83BA0DA029A6EE437B47",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "d_015"
+      ],
+      "representative_id": "d_015",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "D466CA21D1E3A837D40C171FAE0A6F155C5CFC3B08BD0A22493696F62D909740",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "b_019"
+      ],
+      "representative_id": "b_019",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "DABDAA0B4A61A856AFB4E6C049A9D7D726AF56295A07EDC22AECEDE396C0E112",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "f_011"
+      ],
+      "representative_id": "f_011",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "DCCD59FF0814333B9E86956367E67835EC47C4804EA4612C91AAF7C7D1FA4569",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "a_000"
+      ],
+      "representative_id": "a_000",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "E7D8311CBA75AD85FAC86B085D908F4F74756652C1B978B2D6C7CC024D13DD75",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "f_017"
+      ],
+      "representative_id": "f_017",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "F34097A99A30F23BF49F5D2AAD06E055F6F79F47A4DC60EF5093232D59A79D32",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "a_018"
+      ],
+      "representative_id": "a_018",
+      "token_reduction": 0
+    },
+    {
+      "cluster_id": "FA198A76E1653B8808C180059E4100E5BD109AB9D253E255A0AB15BA436ED27B",
+      "cluster_size": 1,
+      "duplicate_count": 0,
+      "member_ids": [
+        "e_016"
+      ],
+      "representative_id": "e_016",
+      "token_reduction": 0
+    }
+  ],
+  "decision_hash": "32516D4B06F13D6B663B3561FD74551EC5360CBE5A405D90EC11DE3019424102",
+  "duplicate_count": 0,
+  "input_count": 24,
+  "input_tokens": 168,
+  "kept_count": 24,
+  "kept_tokens": 168,
+  "manifest_hash": "C30AC0FE654CEE00619508FD8C10664D5F2F4A5D45E7A123CF0DADD8CF12A0E2",
+  "manifest_version": "dataaudit_lm_filter_manifest_v1",
+  "method_name": "exact_dedup",
+  "method_role": "NULL_EFFECT_CONTROL",
+  "notes": "NULL_EFFECT_CONTROL if duplicate_count is zero.",
+  "parameters": {
+    "representative_rule": "lexicographically_smallest_record_id"
+  },
+  "rejected_count": 0,
+  "rejected_ids": [],
+  "selected_ids": [
+    "a_000",
+    "a_006",
+    "a_012",
+    "a_018",
+    "b_001",
+    "b_007",
+    "b_013",
+    "b_019",
+    "c_002",
+    "c_008",
+    "c_014",
+    "c_020",
+    "d_003",
+    "d_009",
+    "d_015",
+    "d_021",
+    "e_004",
+    "e_010",
+    "e_016",
+    "e_022",
+    "f_005",
+    "f_011",
+    "f_017",
+    "f_023"
+  ],
+  "token_reduction": 0
+}

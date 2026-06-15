@@ -5,12 +5,12 @@
   "completed": true,
   "computed_steps_per_run_for_1m": 489,
   "context_length": 256,
-  "created_at": "2026-06-12T17:36:23+00:00",
+  "created_at": "2026-06-12T18:12:39+00:00",
   "current_readiness": "LOCAL_MAX_V2_THROUGHPUT_BENCHMARKED",
   "device": "cuda",
   "effective_batch_tokens": 2048,
-  "estimated_24_run_hours": 0.2805349283399679,
-  "estimated_seconds_per_run": 42.080239250995184,
+  "estimated_24_run_hours": 0.8371932698900015,
+  "estimated_seconds_per_run": 125.57899048350022,
   "gradient_accumulation_steps": 4,
   "historical_results_modified": false,
   "level3_completed_artifact": false,
@@ -29,6 +29,6 @@
   "stage": "throughput",
   "status": "completed",
   "step": "step10B_localmax_v2",
-  "tokens_per_second": 23799.104231003523,
+  "tokens_per_second": 7974.837161408644,
   "weak_ccf_a_claimed": false
 }

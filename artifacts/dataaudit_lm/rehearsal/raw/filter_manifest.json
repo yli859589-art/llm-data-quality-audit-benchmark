@@ -1,0 +1,42 @@
+{
+  "decision_hash": "3D8F2DCD537F7257DC6CA7828920028AE60316DE6ECE45D27717BE271BD439EE",
+  "input_count": 24,
+  "input_tokens": 168,
+  "kept_count": 24,
+  "kept_tokens": 168,
+  "manifest_hash": "5CDA72A1888EA9273CD68876B628840C3724E62D8559FE9D6DE628B38AE31605",
+  "manifest_version": "dataaudit_lm_filter_manifest_v1",
+  "method_name": "raw",
+  "notes": "",
+  "parameters": {
+    "raw_ingestion_policy": "retain_all_upstream_records_no_content_dedup"
+  },
+  "rejected_count": 0,
+  "rejected_ids": [],
+  "selected_ids": [
+    "a_000",
+    "a_006",
+    "a_012",
+    "a_018",
+    "b_001",
+    "b_007",
+    "b_013",
+    "b_019",
+    "c_002",
+    "c_008",
+    "c_014",
+    "c_020",
+    "d_003",
+    "d_009",
+    "d_015",
+    "d_021",
+    "e_004",
+    "e_010",
+    "e_016",
+    "e_022",
+    "f_005",
+    "f_011",
+    "f_017",
+    "f_023"
+  ]
+}

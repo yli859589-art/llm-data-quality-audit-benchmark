@@ -1,7 +1,7 @@
 {
   "binary_checkpoints_included": false,
   "bundle_scope": "standalone_metadata_bundle",
-  "bundle_size_bytes": 1600808,
+  "bundle_size_bytes": 1651953,
   "copied_dataset_manifest_count": 4,
   "copied_filter_manifest_count": 8,
   "copied_metrics_count": 24,

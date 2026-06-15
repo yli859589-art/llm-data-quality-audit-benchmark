@@ -24,6 +24,13 @@ bootstrap()
 
 TAIL_LINES = 120
 TAIL_CHARS = 8000
+HEAVY_GROUPS = {
+    "level3_execution_checks",
+    "localmax_execution_checks",
+    "localmax_v2_execution_checks",
+    "localmax_v2_release_checks",
+    "localmax_ccfc_artifact_checks",
+}
 
 
 @dataclass(frozen=True)
@@ -417,6 +424,20 @@ def _check_groups(skip_tests: bool) -> dict[str, CheckGroup]:
                 ],
             ),
             CheckGroup(
+                "dataaudit_lm_checks",
+                [
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/audit_metric_correctness.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/audit_experiment_fairness.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/verify_artifacts.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/write_migration_and_protocol_reports.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/run_rehearsal.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/finalize_release.py", "--audit-only"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/verify_document_consistency.py"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/verify_fresh_clone.py", "--light"]),
+                    CheckCommand([sys.executable, "scripts/dataaudit_lm/generate_naming_inventory.py"]),
+                ],
+            ),
+            CheckGroup(
                 "level3_execution_checks",
                 [
                     CheckCommand([sys.executable, "scripts/level3/check_heavy_environment.py"]),
@@ -622,6 +643,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout", type=int, default=180, help="Timeout in seconds for each group command.")
     parser.add_argument("--overall-timeout", type=int, default=0, help="Reserved for compatibility; groups still report individually.")
     parser.add_argument("--group", action="append", default=[], help="Run one or more named groups.")
+    parser.add_argument("--include-heavy", action="store_true", help="Include heavy execution groups that may rerun training/data preparation.")
     parser.add_argument("--list-groups", action="store_true")
     parser.add_argument("--json-out", default="artifacts/reports/run_all_checks_report.json")
     parser.add_argument("--md-out", default="artifacts/reports/run_all_checks_report.md")
@@ -635,7 +657,12 @@ def main() -> None:
         for name in groups:
             print(name)
         return
-    selected_names = args.group or list(groups)
+    if args.group:
+        selected_names = args.group
+    elif args.include_heavy:
+        selected_names = list(groups)
+    else:
+        selected_names = [name for name in groups if name not in HEAVY_GROUPS]
     unknown = [name for name in selected_names if name not in groups]
     if unknown:
         raise SystemExit("Unknown check group(s): " + ", ".join(unknown))

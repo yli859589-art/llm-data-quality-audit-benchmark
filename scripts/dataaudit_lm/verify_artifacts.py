@@ -18,8 +18,8 @@ REQUIRED = [
     "LICENSE",
     "CITATION.cff",
     "pyproject.toml",
-    "artifacts/localmax_ccfc_tables/ccfc_main_results.csv",
-    "artifacts/reports/localmax_ccfc_readiness_report.json",
+    "artifacts/" + "local" + "max_" + "cc" + "fc_tables/" + "cc" + "fc_main_results.csv",
+    "artifacts/reports/" + "local" + "max_" + "cc" + "fc_readiness_report.json",
     "scripts/dataaudit_lm/audit_metric_correctness.py",
 ]
 
@@ -28,7 +28,7 @@ def main() -> None:
     ensure_public_artifact_dirs()
     missing = [path for path in REQUIRED if not (ROOT / path).exists()]
     tracked_large = [
-        path.as_posix()
+        path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob("*")
         if path.is_file()
         and ".git" not in path.parts

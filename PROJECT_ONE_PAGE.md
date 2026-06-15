@@ -1,7 +1,18 @@
-# One Page Overview
+# Project One Page
 
-LocalMax V2 evaluates data filtering for language-model pretraining under a fixed local budget: 2 datasets x 4 methods x 3 seeds, with 1M tokens_seen per run.
+## What It Is
 
-Best methods by valid NLL: `{'c4_en_v2_100m': 'length_filter', 'openwebtext_v2_100m': 'length_filter'}`.
+A local-scale research artifact for testing whether data filters help small language-model training under fixed budgets.
 
-URD-fixed evidence is reported honestly: `{'c4_en_v2_100m': {'ci_crosses_zero': True, 'improvement_claim_allowed': False, 'mean_paired_nll_improvement': 0.0009607486426830292, 'urd_mean_lower_than_raw': True}, 'openwebtext_v2_100m': {'ci_crosses_zero': True, 'improvement_claim_allowed': False, 'mean_paired_nll_improvement': -0.022342214981714886, 'urd_mean_lower_than_raw': False}}`.
+## What Was Released
+
+- 2 datasets around 20M GPT-2 tokens each.
+- 4 filtering methods.
+- 3 seeds.
+- 24 strengthened small-model training runs.
+- valid_loss evaluation with PPL clipping disclosed.
+- Release manifest, claim map, tables, figures, and reproducibility notes.
+
+## What It Does Not Claim
+
+It does not claim a completed Level 3 benchmark, a raw-baseline win, official downstream completion, or conference-level readiness.

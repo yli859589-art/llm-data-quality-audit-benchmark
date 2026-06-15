@@ -23,18 +23,30 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-dev.txt
           python -m pip install -e .
-      - name: Lint DataAudit-LM public entrypoints
-        run: ruff check src/dataaudit_lm scripts/dataaudit_lm tests/test_dataaudit_lm_phase1.py
+      - name: Repository hygiene
+        run: python scripts/check_repo.py --clean
+      - name: Ruff
+        run: ruff check .
+      - name: Black
+        run: black --check .
+      - name: Black DataAudit-LM active scope
+        run: black --check src/dataaudit_lm scripts/dataaudit_lm tests/test_dataaudit_*.py
       - name: Type check DataAudit-LM package
         run: mypy src/dataaudit_lm
-      - name: Unit tests
-        run: python -m pytest tests/test_dataaudit_lm_phase1.py -q
+      - name: Full test suite
+        run: python -m pytest -q
       - name: Metric audit
         run: python scripts/dataaudit_lm/audit_metric_correctness.py
       - name: Fairness metadata audit
         run: python scripts/dataaudit_lm/audit_experiment_fairness.py
       - name: Artifact verification
         run: python scripts/dataaudit_lm/verify_artifacts.py
+      - name: Migration and protocol reports
+        run: python scripts/dataaudit_lm/write_migration_and_protocol_reports.py
+      - name: DataAudit-LM rehearsal
+        run: python scripts/dataaudit_lm/run_rehearsal.py
+      - name: Audit-only release report
+        run: python scripts/dataaudit_lm/finalize_release.py --audit-only
       - name: Document consistency
         run: python scripts/dataaudit_lm/verify_document_consistency.py
       - name: Light fresh clone verification

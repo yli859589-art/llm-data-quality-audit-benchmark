@@ -1,0 +1,372 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "a_000",
+      "cluster_size": 8,
+      "member_ids": [
+        "a_000",
+        "a_006",
+        "a_012",
+        "a_018",
+        "b_001",
+        "b_007",
+        "b_013",
+        "b_019"
+      ],
+      "representative_id": "a_000"
+    },
+    {
+      "cluster_id": "c_002",
+      "cluster_size": 4,
+      "member_ids": [
+        "c_002",
+        "c_008",
+        "c_014",
+        "c_020"
+      ],
+      "representative_id": "c_002"
+    },
+    {
+      "cluster_id": "d_003",
+      "cluster_size": 4,
+      "member_ids": [
+        "d_003",
+        "d_009",
+        "d_015",
+        "d_021"
+      ],
+      "representative_id": "d_003"
+    },
+    {
+      "cluster_id": "e_004",
+      "cluster_size": 4,
+      "member_ids": [
+        "e_004",
+        "e_010",
+        "e_016",
+        "e_022"
+      ],
+      "representative_id": "e_004"
+    },
+    {
+      "cluster_id": "f_005",
+      "cluster_size": 4,
+      "member_ids": [
+        "f_005",
+        "f_011",
+        "f_017",
+        "f_023"
+      ],
+      "representative_id": "f_005"
+    }
+  ],
+  "decision_hash": "F9F24B6083DFE034DC66CE80366BB191326114F2A3C061F72277042F288C2EAF",
+  "input_count": 24,
+  "input_tokens": 168,
+  "kept_count": 5,
+  "kept_tokens": 35,
+  "manifest_hash": "7404E1585EC69D58DCD41A2ACA309968D27CE4342AFF89FDABB2C9F30BA11F84",
+  "manifest_version": "dataaudit_lm_filter_manifest_v1",
+  "method_name": "minhash_near_dedup",
+  "notes": "",
+  "pair_scores": [
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "a_006"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "a_012"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "a_018"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "b_001"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "b_007"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_000",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "a_012"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "a_018"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "b_001"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "b_007"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_006",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_012",
+      "right": "a_018"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_012",
+      "right": "b_001"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_012",
+      "right": "b_007"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_012",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_012",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_018",
+      "right": "b_001"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_018",
+      "right": "b_007"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_018",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "a_018",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_001",
+      "right": "b_007"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_001",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_001",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_007",
+      "right": "b_013"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_007",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "b_013",
+      "right": "b_019"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_002",
+      "right": "c_008"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_002",
+      "right": "c_014"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_002",
+      "right": "c_020"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_008",
+      "right": "c_014"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_008",
+      "right": "c_020"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "c_014",
+      "right": "c_020"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_003",
+      "right": "d_009"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_003",
+      "right": "d_015"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_003",
+      "right": "d_021"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_009",
+      "right": "d_015"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_009",
+      "right": "d_021"
+    },
+    {
+      "jaccard_estimate": 0.8,
+      "left": "d_015",
+      "right": "d_021"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_004",
+      "right": "e_010"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_004",
+      "right": "e_016"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_004",
+      "right": "e_022"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_010",
+      "right": "e_016"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_010",
+      "right": "e_022"
+    },
+    {
+      "jaccard_estimate": 0.75,
+      "left": "e_016",
+      "right": "e_022"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_005",
+      "right": "f_011"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_005",
+      "right": "f_017"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_005",
+      "right": "f_023"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_011",
+      "right": "f_017"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_011",
+      "right": "f_023"
+    },
+    {
+      "jaccard_estimate": 0.7142857142857143,
+      "left": "f_017",
+      "right": "f_023"
+    }
+  ],
+  "parameters": {
+    "cluster_resolution": "union_find",
+    "lsh_threshold": 0.5,
+    "ngram_size": 2,
+    "ngram_type": "word",
+    "normalization": "lowercase_alnum_whitespace",
+    "num_perm": 64,
+    "representative_rule": "lexicographically_smallest_record_id"
+  },
+  "rejected_count": 19,
+  "rejected_ids": [
+    "a_006",
+    "a_012",
+    "a_018",
+    "b_001",
+    "b_007",
+    "b_013",
+    "b_019",
+    "c_008",
+    "c_014",
+    "c_020",
+    "d_009",
+    "d_015",
+    "d_021",
+    "e_010",
+    "e_016",
+    "e_022",
+    "f_011",
+    "f_017",
+    "f_023"
+  ],
+  "selected_ids": [
+    "a_000",
+    "c_002",
+    "d_003",
+    "e_004",
+    "f_005"
+  ]
+}

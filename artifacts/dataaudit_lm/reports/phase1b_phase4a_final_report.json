@@ -1,0 +1,91 @@
+{
+  "report_version": "phase1b_phase4a_final_v1",
+  "created_at": "2026-06-16",
+  "branch": "codex/dataaudit-lm-refactor",
+  "start_commit": "cdab17f095e35496ebbad7b10a96cb8d2d2d81ff",
+  "scope": "Phase 1B through Phase 4A migration rehearsal and release-gate semantics",
+  "status": "completed_with_release_gate_not_ready",
+  "ready_to_run_final_multi_seed_matrix": false,
+  "readiness_label": "NOT_READY_FOR_FINAL_MATRIX",
+  "final_release_gate_passed": false,
+  "release_gate_semantics": {
+    "audit_only_exit_code": 0,
+    "audit_only_message": "AUDIT_COMPLETED_RELEASE_NOT_READY",
+    "release_exit_code": 1,
+    "release_message": "RELEASE_GATE_FAILED",
+    "interpretation": "Audit completion is not final release approval."
+  },
+  "major_work_completed": [
+    "DataAudit-LM data records, source loading, deterministic sampling, cluster-aware splitting, sharding, and manifest utilities added.",
+    "Raw duplicate retention, exact dedup, minhash near-dedup, length filtering, random token-matched filtering, C4-inspired quality rules, reference-LM scoring, and DataAudit selector scaffolding added.",
+    "Decoder LM config/model, cold-start initialization, corpus-wide sampling, checkpoint lineage, and rehearsal training runner added.",
+    "Token-weighted language-model metrics, target-only downstream masking, bootstrap, paired test, multiple-testing, and effect-size utilities added.",
+    "Backup bundle restore verification, migration map generation, naming inventory, protocol freeze manifest, and rehearsal reports added.",
+    "Release gate semantics split into audit-only and release modes so false final gates cannot be reported as successful releases.",
+    "run_all_checks default now excludes heavy execution groups while recording skipped groups; heavy groups remain opt-in.",
+    "CI configuration restored to full pytest, ruff, black, mypy, repository hygiene, DataAudit verification, rehearsal, and release-gate checks."
+  ],
+  "preserved_boundaries": {
+    "no_full_matrix_claim": true,
+    "no_final_release_claim": true,
+    "no_publication_ready_claim": true,
+    "old_results_not_renamed_as_new_fair_results": true,
+    "legacy_assets_preserved": true,
+    "protected_result_files_unchanged": true
+  },
+  "protected_hashes": {
+    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921",
+    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
+    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
+    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE"
+  },
+  "validation_summary": {
+    "python_m_pytest_q": "307 passed in 178.66s",
+    "run_all_checks_timeout_300": "passed; heavy execution groups skipped by default and recorded",
+    "ruff_check_dot": "passed",
+    "black_check_dot": "passed with project transitional force-exclude",
+    "black_check_dataaudit_scope": "passed for src/dataaudit_lm, scripts/dataaudit_lm, and DataAudit tests",
+    "mypy_src_dataaudit_lm": "passed; 43 source files",
+    "check_repo_clean": "passed",
+    "backup_restore": "passed; restorable main SHA 16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+    "naming_inventory": "new mainline scope hit count 0; full repository legacy hit count 2399"
+  },
+  "run_all_checks": {
+    "status": "passed",
+    "overall_passed": true,
+    "default_skipped_heavy_groups": [
+      "level3_execution_checks",
+      "localmax_execution_checks",
+      "localmax_v2_execution_checks",
+      "localmax_v2_release_checks",
+      "localmax_ccfc_artifact_checks"
+    ],
+    "reason": "Default checks must be stable in CI/local wrapper; long-running execution groups remain explicit opt-in."
+  },
+  "backup_restore": {
+    "verified": true,
+    "restored_head": "16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+    "temporary_restore_dir_cleaned": true
+  },
+  "naming_migration": {
+    "new_mainline_scope_hit_count": 0,
+    "full_repository_legacy_hit_count": 2399,
+    "interpretation": "New DataAudit-LM mainline scope is clean; legacy artifacts and documentation remain preserved and classified."
+  },
+  "rehearsal": {
+    "status": "completed",
+    "comparison_scope": "NOT_FOR_METHOD_COMPARISON",
+    "dataset_count": 1,
+    "all_warm_start_false": true,
+    "all_nll_finite": true,
+    "interpretation": "The rehearsal proves wiring, lineage, and fairness checks only; it is not a main experimental result."
+  },
+  "remaining_blockers_before_final_matrix": [
+    "Remote GitHub Actions run for this pushed branch still needs to be observed after push.",
+    "Full final matrix has not been executed under the frozen protocol.",
+    "Tokenizer path is not yet fully migrated into the new DataAudit-LM mainline.",
+    "Registry still contains adapter-only legacy evidence and needs replacement by new mainline artifacts during later phases.",
+    "Final release gate remains false by design."
+  ],
+  "recommended_next_step": "Push branch, inspect remote CI, then continue with tokenizer/mainline registry migration before any final multi-seed matrix."
+}

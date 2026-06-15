@@ -1,0 +1,90 @@
+{
+  "baseline_commands": {
+    "black_check_initial": {
+      "status": "blocked",
+      "summary": "Black 25.1.0 refused to run on local Python 3.12.5 safety guard"
+    },
+    "git_status_short": {
+      "status": "dirty",
+      "summary": "dirty worktree with root docs and LocalMax generated artifacts modified before this round"
+    },
+    "mypy_src_dataaudit_lm_initial": {
+      "status": "passed",
+      "summary": "Success: no issues found in 13 source files"
+    },
+    "python_m_pytest_q_initial": {
+      "status": "failed",
+      "summary": "4 failed, 286 passed in 165.89s"
+    },
+    "python_m_pytest_q_tb_long_after_state_refresh": {
+      "status": "passed",
+      "summary": "290 passed in 154.35s"
+    },
+    "python_m_pytest_q_x": {
+      "first_failure": "tests/test_localmax_release_idempotency_step10C_hotfix.py::test_claim_checker_repeated_run_is_idempotent",
+      "root_cause": "tracked LocalMax claim-check report was stale and changed on first checker run",
+      "status": "failed",
+      "summary": "1 failed, 138 passed in 71.47s"
+    },
+    "ruff_check_initial": {
+      "status": "failed",
+      "summary": "1551 legacy lint findings before transitional config cleanup"
+    }
+  },
+  "baseline_parent_main": "16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+  "branch": "codex/dataaudit-lm-refactor",
+  "ci_baseline_problem": "CI only checked DataAudit-LM phase1 test and did not run full pytest/ruff/black/mypy plus verification scripts.",
+  "created_at": "2026-06-15T18:06:37+00:00",
+  "forbidden_naming_baseline": {
+    "main_sources": [
+      "scripts/dataaudit_lm",
+      "src/dataaudit_lm/registry/metadata.py"
+    ],
+    "new_scope_hits_before_cleanup": 17,
+    "status_after_cleanup": "0 hits in new mainline scope"
+  },
+  "initial_failed_tests": [
+    {
+      "fix_direction": "move LocalMax assertions to docs/LOCALMAX_RELEASE.md and keep README as DataAudit-LM.",
+      "introduced_by_refactor": true,
+      "root_cause": "README role conflict: LocalMax legacy status was expected in root README while DataAudit-LM needs the root README identity.",
+      "test": "tests/test_localmax_readme_resume_step10C.py::test_readme_reports_localmax_release_without_overclaiming"
+    },
+    {
+      "fix_direction": "check docs/LOCALMAX_RELEASE.md and docs/LOCALMAX_REPRODUCIBILITY.md.",
+      "introduced_by_refactor": true,
+      "root_cause": "same README role conflict; bundle scope belongs to LocalMax release docs, not DataAudit-LM README.",
+      "test": "tests/test_localmax_release_bundle_scope_step10C_hotfix.py::test_docs_and_readme_disclose_bundle_scope"
+    },
+    {
+      "fix_direction": "rerun canonical LocalMax claim checker and keep generated output stable.",
+      "introduced_by_refactor": false,
+      "root_cause": "generated claim-check artifacts were stale and/or rewritten with different canonical bytes.",
+      "test": "tests/test_localmax_release_cross_platform_hashes_step10C_hotfix.py::test_generated_text_artifacts_use_lf_newlines"
+    },
+    {
+      "fix_direction": "remove README dependency from LocalMax claim checker and commit stable claim-check outputs.",
+      "introduced_by_refactor": true,
+      "root_cause": "first checker run changed tracked report from failed/stale to ok, so before/middle hash differed.",
+      "test": "tests/test_localmax_release_idempotency_step10C_hotfix.py::test_claim_checker_repeated_run_is_idempotent"
+    }
+  ],
+  "old_new_dependency_state": {
+    "adapter_only_rule": "legacy artifact readers are ADAPTER_ONLY unless replaced by tested new implementation",
+    "legacy_artifact_dependency": "registry metadata read legacy LocalMax CCFC artifacts as adapter evidence",
+    "new_package": "src/dataaudit_lm existed but many modules were empty at start of this round"
+  },
+  "report_version": "phase1b_baseline_v1",
+  "research_protocol_blockers_at_baseline": [
+    "final release gate false but finalize_release.py exited success without mode distinction",
+    "raw ingestion / exact dedup behavior not implemented in new package",
+    "cluster-aware split not implemented in new package",
+    "reference-LM scoring not implemented in new package",
+    "training initialization and corpus-wide sampling not implemented in new package",
+    "token-weighted NLL and target-only downstream scoring not implemented in new package",
+    "backup bundle existed but had not been restore-verified in this round",
+    "run_all_checks default included heavy execution groups unsuitable for CI default"
+  ],
+  "start_commit": "cdab17f095e35496ebbad7b10a96cb8d2d2d81ff",
+  "status": "completed_with_failures_recorded"
+}

@@ -1,134 +1,105 @@
 # DataAudit-LM
 
-**A reproducible multi-dataset benchmark for auditing LLM pretraining-data filters under controlled training budgets.**
+DataAudit-LM is a reproducible research artifact for auditing
+language-model pretraining data filters under controlled token budgets.
 
-DataAudit-LM evaluates independent filtering strategies on 100M-token samples
-from OpenWebText and C4 using controlled multi-seed decoder-language-model
-training. The repository includes deterministic data manifests, filter
-decisions, training lineage, per-token language-model evaluation, statistical
-comparisons, downstream probes, checkpoint integrity checks, and reproducible
-release tooling.
+It studies a deliberately narrow question: when data source, tokenizer,
+model shape, seed, optimizer, and token budget are controlled, do filtering
+methods actually improve small decoder-LM utility, or do they mostly expose
+tradeoffs such as proxy-utility mismatch, over-filtering, and domain shift?
 
-## Research Question
+The project does **not** claim a completed publication benchmark, competition
+placement, institutional coursework, or a universal method win over raw data.
 
-Do pretraining-data filters improve language-model utility under matched token
-budgets, and when do simple baselines behave more reliably than compound
-quality selectors?
+## Current Evidence
 
-## Core Features
+The current evidence is retained as legacy controlled evidence while the
+DataAudit-LM mainline is being migrated into a cleaner implementation path.
 
-- Real non-fallback OpenWebText and C4 samples.
-- Deterministic filter outputs and per-run training lineage.
-- Controlled small decoder-language-model training with GPT-2 tokenization.
-- Per-token NLL, log-PPL, and PPL audit checks without clipping.
-- Risk, diversity, cost, stability, and local downstream probe artifacts.
-- Explicit evidence boundaries for incomplete or mixed findings.
+- Datasets: `2`
+- Source scale: `200006900` GPT-2-token source corpus evidence
+- Filtering methods represented in legacy evidence: `7`
+- Seeds represented in legacy evidence: `3`
+- Historical controlled training runs: `42`
+- Tokens per completed historical run: `5001216`
+- Aggregate tokens seen: `210051072`
+- Small decoder model parameters: `20542752`
 
-## Evidence Summary
+The 42 historical controlled runs are useful audit evidence, but they do not
+automatically satisfy the new fair DataAudit-LM protocol. They must remain
+separated from future frozen-protocol main results.
 
-| Item | Current value |
-|---|---:|
-| Source datasets | 2 |
-| Source GPT-2 tokens | 200006900 |
-| Filtering methods | 7 |
-| Seeds | 3 |
-| Completed training runs | 42 |
-| Target training runs for the frozen expanded matrix | 80 |
-| Tokens per completed run | 5001216 |
-| Aggregate tokens seen | 210051072 |
-| Model parameters | 20542752 |
-| Local downstream probe rows | 8 |
+## Planned Protocol
 
-The current reusable evidence is a completed 42-run controlled matrix. It is
-not described as the frozen expanded 80-run matrix because that larger gate has
-not been executed.
-
-## Main Findings
-
-Filtering effects are dataset-dependent. No method is described as universally
-superior unless it is supported across datasets, seeds, corrected statistical
-tests, and downstream evaluations. Current evidence should be read as an audit
-of filtering behavior under local compute constraints, with mixed and negative
-findings preserved.
-
-## Benchmark Design
-
-DataAudit-LM separates data ingestion, filtering, training, evaluation,
-statistics, and release integrity checks. Large raw shards and model
-checkpoints are kept out of ordinary Git history; manifests, hashes, metrics,
-tables, and lightweight reports remain in the repository.
-
-## Repository Structure
+Planned final matrix:
 
 ```text
-src/dataaudit_lm/          Public package namespace
-scripts/dataaudit_lm/      Verification and release entrypoints
-configs/                   Experiment and protocol configuration
-docs/                      Project documentation
-artifacts/dataaudit_lm/    Public release reports, tables, and integrity files
-tests/                     Automated tests
+2 datasets x 6-8 independent methods x at least 5 seeds
 ```
 
-## Installation
+The final method count depends on whether each method is independently
+implemented, non-redundant, and produces a complete decision manifest. A
+null-effect control is not counted as an independent effective method, and the
+project will not add redundant methods merely to hit a round number.
+
+## What Is Being Migrated
+
+The active package is `src/dataaudit_lm/`. It is replacing wrapper-only access
+to old artifacts with tested modules for:
+
+- raw ingestion that retains true duplicate records;
+- cluster-aware deterministic splitting;
+- exact and near duplicate filtering;
+- token-matched random controls;
+- reference-LM document scoring;
+- selector experiments with documented hypotheses;
+- seed-shared initialization and corpus-wide training sampling;
+- token-weighted language-model metrics;
+- target-only local downstream scoring;
+- bootstrap, paired comparison, multiple-testing, and effect-size utilities.
+
+Legacy artifacts remain available for lineage and auditability. They are not
+renamed into new final results.
+
+URD-Selector is implemented as a smoke-verified selector pipeline in legacy
+artifacts, but it is not yet effectiveness-verified or current main evidence.
+
+## Quick Start
 
 ```bash
-python -m pip install -e .
-python -m pip install -r requirements-dev.txt
-```
-
-## Quick Verification
-
-```bash
-python scripts/dataaudit_lm/audit_metric_correctness.py
-python scripts/dataaudit_lm/audit_experiment_fairness.py
+python -m pytest -q
+python scripts/dataaudit_lm/finalize_release.py --audit-only
 python scripts/dataaudit_lm/verify_artifacts.py
-python scripts/dataaudit_lm/finalize_release.py
-python -m pytest tests/test_dataaudit_lm_phase1.py -q
+python scripts/dataaudit_lm/verify_document_consistency.py
 ```
 
-## Full Experiment Reproduction
-
-The repository keeps executable pipelines for data preparation, filtering,
-training, evaluation, and statistical analysis. Full retraining is intentionally
-separate from quick verification because it requires GPU time and large local
-artifacts.
-
-## Results
-
-Canonical public summaries are generated from machine-readable artifacts by:
+The grouped wrapper can be run with:
 
 ```bash
-python scripts/dataaudit_lm/finalize_release.py
+python scripts/run_all_checks.py --timeout 300
 ```
 
-The generated report is:
+## Release Boundary
 
-```text
-artifacts/dataaudit_lm/reports/final_release_report.json
-```
+`python scripts/dataaudit_lm/finalize_release.py --audit-only` writes the
+current audit report and may return success while
+`final_release_gate_passed=false`.
 
-## Data Provenance
+`python scripts/dataaudit_lm/finalize_release.py --release` is stricter. It
+must return a non-zero exit code unless every release gate is satisfied.
 
-The current data evidence uses OpenWebText and C4 English samples with GPT-2
-token accounting. Large source shards are not committed to ordinary Git
-history. Use the local release bundle or rerun the data preparation scripts to
-recreate large artifacts.
+## Documentation
 
-## Limitations
+- `docs/PROJECT_OVERVIEW.md`: current DataAudit-LM overview
+- `docs/EVIDENCE_SCOPE.md`: current evidence scope and boundaries
+- `docs/RESULTS.md`: artifact-referenced result summary
+- `docs/MIGRATION_MAP.md`: old-to-new implementation migration status
+- `docs/STATISTICAL_PROTOCOL.md`: frozen statistical analysis plan
+- `docs/DATAAUDIT_SELECTOR_HYPOTHESIS.md`: selector hypothesis and failure modes
 
-- The current reusable matrix has 42 completed runs, not 80.
-- The local downstream probe is diagnostic and is not a replacement for a full
-  external task suite.
-- Some legacy directories remain during the migration and are not part of the
-  cleaned public package namespace.
-- The reference-model filtering path and raw duplicate-retention policy require
-  another audit before stronger method conclusions are made.
+## Usage Note
 
-## Citation
-
-If you use this repository, cite it as the DataAudit-LM reproducible benchmark
-for LLM pretraining-data filtering.
-
-## License
-
-This project is released under the license in `LICENSE`.
+This repository can be discussed as a personal research engineering project,
+provided the evidence boundary above is preserved. Do not present it as an
+official course submission, a competition result, or a completed full-scale
+publication benchmark.

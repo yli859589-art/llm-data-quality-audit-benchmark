@@ -1,0 +1,22 @@
+protocol_version: dataaudit_lm_statistical_protocol_v1
+minimum_seeds: 5
+comparison_reference: raw
+paired_seed_differences: true
+bootstrap:
+  enabled: true
+  samples: 10000
+  confidence_level: 0.95
+tests:
+  paired_t_test: true
+  wilcoxon_signed_rank: true
+multiple_testing:
+  method: holm
+reporting:
+  include_mean: true
+  include_median: true
+  include_effect_size: true
+  include_win_tie_loss: true
+  retain_negative_results: true
+single_seed_rehearsal_label:
+  - ENGINEERING_VALIDATION_ONLY
+  - NOT_FOR_METHOD_COMPARISON

@@ -6,8 +6,8 @@ from pathlib import Path
 ROOT = Path.cwd()
 
 
-def test_readme_reports_localmax_release_without_overclaiming() -> None:
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+def test_localmax_release_docs_report_legacy_state_without_overclaiming() -> None:
+    text = (ROOT / "docs/LOCALMAX_RELEASE.md").read_text(encoding="utf-8")
 
     assert "Current status: `LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED`" in text
     assert "Level 3 status: `not completed`" in text
@@ -19,6 +19,15 @@ def test_readme_reports_localmax_release_without_overclaiming() -> None:
     assert "SOTA" not in text
 
 
+def test_readme_now_uses_dataaudit_lm_identity() -> None:
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+
+    assert "DataAudit-LM" in text
+    assert "reproducible research artifact" in text
+    assert "Planned final matrix" in text
+    assert "LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED" not in text
+
+
 def test_resume_bullets_are_honest_and_specific() -> None:
     text = (ROOT / "RESUME_BULLETS.md").read_text(encoding="utf-8")
 
@@ -28,4 +37,3 @@ def test_resume_bullets_are_honest_and_specific() -> None:
     forbidden = ["SOTA", "CCF-B ready", "weak CCF-A achieved", "Proved URD outperforms raw"]
     for phrase in forbidden:
         assert phrase not in text
-

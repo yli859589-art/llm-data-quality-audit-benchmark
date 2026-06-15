@@ -1,29 +1,29 @@
 {
   "artifact_type_counts": {
-    "checkpoint_manifest": 121,
+    "checkpoint_manifest": 163,
     "claim_map": 2,
-    "dataset_manifest": 25,
-    "evaluation_manifest": 12,
+    "dataset_manifest": 26,
+    "evaluation_manifest": 13,
     "figure": 47,
-    "filter_manifest": 43,
+    "filter_manifest": 65,
     "main_table": 3,
     "mechanism_manifest": 14,
     "protocol_output": 108,
-    "readiness_report": 15,
-    "report": 179,
+    "readiness_report": 17,
+    "report": 199,
     "tokenizer_manifest": 4,
-    "training_manifest": 121
+    "training_manifest": 171
   },
   "evidence_level_counts": {
     "historical_main_only": 3,
-    "pipeline_hygiene": 13,
-    "protocol_only": 16,
-    "sample_partial": 634,
+    "pipeline_hygiene": 15,
+    "protocol_only": 17,
+    "sample_partial": 769,
     "smoke_only": 28
   },
   "level3_evidence_records": 0,
   "main_evidence_records": 3,
-  "record_count": 694,
+  "record_count": 832,
   "warnings": [
     "Legacy main tables are marked historical_legacy=true rather than reconstructed with fake lineage.",
     "Smoke/protocol artifacts are registered but not treated as main evidence."

@@ -1,5 +1,5 @@
 # Project Summary
 
-LocalMax V2 upgrades the earlier LocalMax release from 40M-token minimal evidence to a 200M-token local evidence benchmark.
+This project is a reproducible LLM data-quality audit benchmark. The frozen LocalMax release provides two 20M-token local datasets, GPT-2 token budgeting, four filtering methods, 24 strengthened small-model runs, valid_loss-based evaluation, release tables, figures, manifests, and claim hygiene safeguards.
 
-It includes two 100M-token real dataset samples, four filtering methods, three seeds, and 24 registry-backed small-model training runs. The result is stronger local evidence, not a Level 3 or CCF-B-ready claim.
+Current status: `LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED`. Level 3 status: `not completed`.

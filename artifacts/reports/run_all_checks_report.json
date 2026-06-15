@@ -1,8 +1,732 @@
 {
-  "duration_seconds": 1.1069355000072392,
+  "duration_seconds": 289.77018359999965,
   "failed_groups": [],
-  "finished_at": "2026-06-13T11:42:04+00:00",
+  "finished_at": "2026-06-15T18:15:11+00:00",
   "groups": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_algorithm_edges.py",
+        "tests/test_clean_artifacts.py",
+        "tests/test_data_quality_research.py",
+        "tests/test_dataaudit_backup_restore_metadata.py",
+        "tests/test_dataaudit_cluster_split.py",
+        "tests/test_dataaudit_downstream_target_mask.py",
+        "tests/test_dataaudit_exact_dedup.py",
+        "tests/test_dataaudit_lm_metrics.py",
+        "tests/test_dataaudit_lm_phase1.py",
+        "tests/test_dataaudit_minhash_dedup.py",
+        "tests/test_dataaudit_naming_scope.py",
+        "tests/test_dataaudit_random_token_matched.py",
+        "tests/test_dataaudit_raw_duplicate_retention.py",
+        "tests/test_dataaudit_reference_lm_scoring.py",
+        "tests/test_dataaudit_rehearsal.py",
+        "tests/test_dataaudit_release_gate.py",
+        "tests/test_dataaudit_training_initialization.py",
+        "tests/test_dataaudit_training_sampling.py",
+        "tests/test_dataset_matrix.py",
+        "tests/test_datasets.py",
+        "tests/test_experiment_infrastructure.py",
+        "tests/test_hdqs_scoring.py",
+        "tests/test_llm_benchmark.py",
+        "tests/test_near_dedup.py",
+        "tests/test_research_artifacts.py",
+        "tests/test_smoke.py",
+        "tests/test_statistics.py",
+        "tests/test_supporting_edges.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_algorithm_edges.py",
+            "tests/test_clean_artifacts.py",
+            "tests/test_data_quality_research.py",
+            "tests/test_dataaudit_backup_restore_metadata.py",
+            "tests/test_dataaudit_cluster_split.py",
+            "tests/test_dataaudit_downstream_target_mask.py",
+            "tests/test_dataaudit_exact_dedup.py",
+            "tests/test_dataaudit_lm_metrics.py",
+            "tests/test_dataaudit_lm_phase1.py",
+            "tests/test_dataaudit_minhash_dedup.py",
+            "tests/test_dataaudit_naming_scope.py",
+            "tests/test_dataaudit_random_token_matched.py",
+            "tests/test_dataaudit_raw_duplicate_retention.py",
+            "tests/test_dataaudit_reference_lm_scoring.py",
+            "tests/test_dataaudit_rehearsal.py",
+            "tests/test_dataaudit_release_gate.py",
+            "tests/test_dataaudit_training_initialization.py",
+            "tests/test_dataaudit_training_sampling.py",
+            "tests/test_dataset_matrix.py",
+            "tests/test_datasets.py",
+            "tests/test_experiment_infrastructure.py",
+            "tests/test_hdqs_scoring.py",
+            "tests/test_llm_benchmark.py",
+            "tests/test_near_dedup.py",
+            "tests/test_research_artifacts.py",
+            "tests/test_smoke.py",
+            "tests/test_statistics.py",
+            "tests/test_supporting_edges.py",
+            "-q"
+          ],
+          "duration_seconds": 37.23907610000015,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 34.45s\n"
+        }
+      ],
+      "duration_seconds": 37.24509390000003,
+      "name": "legacy_core_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 34.45s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_data_sources_step2.py",
+        "tests/test_dataset_manifest_step2.py",
+        "tests/test_token_budget_step2.py",
+        "tests/test_prepare_data_v2_step2.py",
+        "tests/test_no_fallback_step2.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_data_sources_step2.py",
+            "tests/test_dataset_manifest_step2.py",
+            "tests/test_token_budget_step2.py",
+            "tests/test_prepare_data_v2_step2.py",
+            "tests/test_no_fallback_step2.py",
+            "-q"
+          ],
+          "duration_seconds": 6.813672400000087,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 4.61s\n"
+        }
+      ],
+      "duration_seconds": 6.826199000000088,
+      "name": "step2_data_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 4.61s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_tokenization_step3.py",
+        "tests/test_tokenizer_manifest_step3.py",
+        "tests/test_tokenizer_budget_step3.py",
+        "tests/test_train_tokenizer_v2_step3.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_tokenization_step3.py",
+            "tests/test_tokenizer_manifest_step3.py",
+            "tests/test_tokenizer_budget_step3.py",
+            "tests/test_train_tokenizer_v2_step3.py",
+            "-q"
+          ],
+          "duration_seconds": 7.158587500000067,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "..........                                                               [100%]\n10 passed in 4.36s\n"
+        }
+      ],
+      "duration_seconds": 7.173158999999941,
+      "name": "step3_tokenizer_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "..........                                                               [100%]\n10 passed in 4.36s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_filters_v2_step4.py",
+        "tests/test_filter_manifests_step4.py",
+        "tests/test_run_filter_v2_step4.py",
+        "tests/test_keep_rate_step4.py",
+        "tests/test_proxy_filter_boundaries_step4.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_filters_v2_step4.py",
+            "tests/test_filter_manifests_step4.py",
+            "tests/test_run_filter_v2_step4.py",
+            "tests/test_keep_rate_step4.py",
+            "tests/test_proxy_filter_boundaries_step4.py",
+            "-q"
+          ],
+          "duration_seconds": 1.6256622000000789,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.76s\n"
+        }
+      ],
+      "duration_seconds": 1.6385879999997996,
+      "name": "step4_filter_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.76s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_models_v2_step5.py",
+        "tests/test_training_config_step5.py",
+        "tests/test_training_data_adapter_step5.py",
+        "tests/test_train_model_v2_step5.py",
+        "tests/test_training_manifests_step5.py",
+        "tests/test_training_no_main_results_pollution_step5.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_models_v2_step5.py",
+            "tests/test_training_config_step5.py",
+            "tests/test_training_data_adapter_step5.py",
+            "tests/test_train_model_v2_step5.py",
+            "tests/test_training_manifests_step5.py",
+            "tests/test_training_no_main_results_pollution_step5.py",
+            "-q"
+          ],
+          "duration_seconds": 15.97733819999985,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 13.07s\n"
+        }
+      ],
+      "duration_seconds": 15.99025789999996,
+      "name": "step5_training_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 13.07s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_urd_components_step6.py",
+        "tests/test_urd_selector_step6.py",
+        "tests/test_urd_pareto_step6.py",
+        "tests/test_urd_ablation_step6.py",
+        "tests/test_urd_manifest_step6.py",
+        "tests/test_urd_no_main_results_pollution_step6.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_urd_components_step6.py",
+            "tests/test_urd_selector_step6.py",
+            "tests/test_urd_pareto_step6.py",
+            "tests/test_urd_ablation_step6.py",
+            "tests/test_urd_manifest_step6.py",
+            "tests/test_urd_no_main_results_pollution_step6.py",
+            "-q"
+          ],
+          "duration_seconds": 8.535719399999834,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "........                                                                 [100%]\n8 passed in 6.21s\n"
+        }
+      ],
+      "duration_seconds": 8.54689959999996,
+      "name": "step6_urd_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "........                                                                 [100%]\n8 passed in 6.21s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_evaluation_schema_step7.py",
+        "tests/test_lm_metrics_step7.py",
+        "tests/test_downstream_protocol_step7.py",
+        "tests/test_risk_eval_step7.py",
+        "tests/test_diversity_eval_step7.py",
+        "tests/test_cost_eval_step7.py",
+        "tests/test_stability_step7.py",
+        "tests/test_pareto_eval_step7.py",
+        "tests/test_evaluation_manifests_step7.py",
+        "tests/test_evaluation_no_main_results_pollution_step7.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_evaluation_schema_step7.py",
+            "tests/test_lm_metrics_step7.py",
+            "tests/test_downstream_protocol_step7.py",
+            "tests/test_risk_eval_step7.py",
+            "tests/test_diversity_eval_step7.py",
+            "tests/test_cost_eval_step7.py",
+            "tests/test_stability_step7.py",
+            "tests/test_pareto_eval_step7.py",
+            "tests/test_evaluation_manifests_step7.py",
+            "tests/test_evaluation_no_main_results_pollution_step7.py",
+            "-q"
+          ],
+          "duration_seconds": 12.84706580000011,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 10.64s\n"
+        }
+      ],
+      "duration_seconds": 12.859340900000007,
+      "name": "step7_evaluation_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 10.64s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_mechanism_schema_step8.py",
+        "tests/test_proxy_utility_step8.py",
+        "tests/test_overfiltering_step8.py",
+        "tests/test_diversity_loss_step8.py",
+        "tests/test_domain_shift_step8.py",
+        "tests/test_rank_stability_step8.py",
+        "tests/test_tokenizer_sensitivity_step8.py",
+        "tests/test_scale_trend_step8.py",
+        "tests/test_failure_taxonomy_step8.py",
+        "tests/test_pareto_mechanism_step8.py",
+        "tests/test_mechanism_manifests_step8.py",
+        "tests/test_mechanism_no_main_results_pollution_step8.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_mechanism_schema_step8.py",
+            "tests/test_proxy_utility_step8.py",
+            "tests/test_overfiltering_step8.py",
+            "tests/test_diversity_loss_step8.py",
+            "tests/test_domain_shift_step8.py",
+            "tests/test_rank_stability_step8.py",
+            "tests/test_tokenizer_sensitivity_step8.py",
+            "tests/test_scale_trend_step8.py",
+            "tests/test_failure_taxonomy_step8.py",
+            "tests/test_pareto_mechanism_step8.py",
+            "tests/test_mechanism_manifests_step8.py",
+            "tests/test_mechanism_no_main_results_pollution_step8.py",
+            "-q"
+          ],
+          "duration_seconds": 2.1557716000002074,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "..............                                                           [100%]\n14 passed in 1.39s\n"
+        }
+      ],
+      "duration_seconds": 2.172325699999874,
+      "name": "step8_mechanism_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "..............                                                           [100%]\n14 passed in 1.39s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_readiness_v2_step9.py",
+        "tests/test_level3_gates_step9.py",
+        "tests/test_artifact_registry_v2_step9.py",
+        "tests/test_claim_map_step9.py",
+        "tests/test_no_smoke_in_main_step9.py",
+        "tests/test_no_protocol_as_completed_step9.py",
+        "tests/test_no_level2_as_level3_step9.py",
+        "tests/test_run_all_checks_step9.py",
+        "tests/test_registry_to_tables_step9.py",
+        "tests/test_step9_technical_debt_fixes.py",
+        "tests/test_step9_level3_artifact_hygiene.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_readiness_v2_step9.py",
+            "tests/test_level3_gates_step9.py",
+            "tests/test_artifact_registry_v2_step9.py",
+            "tests/test_claim_map_step9.py",
+            "tests/test_no_smoke_in_main_step9.py",
+            "tests/test_no_protocol_as_completed_step9.py",
+            "tests/test_no_level2_as_level3_step9.py",
+            "tests/test_run_all_checks_step9.py",
+            "tests/test_registry_to_tables_step9.py",
+            "tests/test_step9_technical_debt_fixes.py",
+            "tests/test_step9_level3_artifact_hygiene.py",
+            "-q"
+          ],
+          "duration_seconds": 69.50337020000006,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "................................                                         [100%]\n32 passed in 68.47s (0:01:08)\n"
+        }
+      ],
+      "duration_seconds": 69.51488139999992,
+      "name": "step9_readiness_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "................................                                         [100%]\n32 passed in 68.47s (0:01:08)\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_level3_protocol_step10A.py",
+        "tests/test_level3_preflight_step10A.py",
+        "tests/test_level3_artifact_paths_step10A.py",
+        "tests/test_level3_claim_boundary_step10A.py",
+        "tests/test_level3_dryrun_scripts_step10A.py",
+        "tests/test_step10A_no_execution_pollution.py",
+        "tests/test_artifact_scanner_path_independence_step10A.py",
+        "tests/test_artifact_registry_finalization_step10A.py",
+        "tests/test_step10A_hotfix_no_execution_pollution.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_level3_protocol_step10A.py",
+            "tests/test_level3_preflight_step10A.py",
+            "tests/test_level3_artifact_paths_step10A.py",
+            "tests/test_level3_claim_boundary_step10A.py",
+            "tests/test_level3_dryrun_scripts_step10A.py",
+            "tests/test_step10A_no_execution_pollution.py",
+            "tests/test_artifact_scanner_path_independence_step10A.py",
+            "tests/test_artifact_registry_finalization_step10A.py",
+            "tests/test_step10A_hotfix_no_execution_pollution.py",
+            "-q"
+          ],
+          "duration_seconds": 15.343850299999758,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "......................                                                   [100%]\n22 passed in 14.28s\n"
+        }
+      ],
+      "duration_seconds": 15.356670099999974,
+      "name": "step10A_protocol_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "......................                                                   [100%]\n22 passed in 14.28s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_step10B_environment.py",
+        "tests/test_step10B_data_execution.py",
+        "tests/test_step10B_tokenizer_execution.py",
+        "tests/test_step10B_filter_execution.py",
+        "tests/test_step10B_training_execution.py",
+        "tests/test_step10B_evaluation_execution.py",
+        "tests/test_step10B_mechanism_execution.py",
+        "tests/test_step10B_registry_tables.py",
+        "tests/test_step10B_readiness.py",
+        "tests/test_step10B_no_false_level3_claims.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_step10B_environment.py",
+            "tests/test_step10B_data_execution.py",
+            "tests/test_step10B_tokenizer_execution.py",
+            "tests/test_step10B_filter_execution.py",
+            "tests/test_step10B_training_execution.py",
+            "tests/test_step10B_evaluation_execution.py",
+            "tests/test_step10B_mechanism_execution.py",
+            "tests/test_step10B_registry_tables.py",
+            "tests/test_step10B_readiness.py",
+            "tests/test_step10B_no_false_level3_claims.py",
+            "-q"
+          ],
+          "duration_seconds": 1.418417099999715,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "............                                                             [100%]\n12 passed in 0.66s\n"
+        }
+      ],
+      "duration_seconds": 1.4332336000002215,
+      "name": "step10B_execution_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "............                                                             [100%]\n12 passed in 0.66s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_localmax_execution_fix_step10B.py",
+        "tests/test_localmax_minimal_data_threshold_step10B.py",
+        "tests/test_localmax_minimal_training_outputs_step10B.py",
+        "tests/test_localmax_nonempty_tables_step10B.py",
+        "tests/test_localmax_no_fake_completion_step10B.py",
+        "tests/test_localmax_training_strengthen_step10B.py",
+        "tests/test_localmax_ppl_clipping_step10B.py",
+        "tests/test_localmax_strengthened_tables_step10B.py",
+        "tests/test_localmax_strengthened_readiness_step10B.py",
+        "tests/test_localmax_strengthened_no_false_claims_step10B.py",
+        "tests/test_localmax_environment_step10B.py",
+        "tests/test_localmax_data_step10B.py",
+        "tests/test_localmax_tokenizer_step10B.py",
+        "tests/test_localmax_filters_step10B.py",
+        "tests/test_localmax_training_step10B.py",
+        "tests/test_localmax_evaluation_step10B.py",
+        "tests/test_localmax_mechanism_step10B.py",
+        "tests/test_localmax_registry_tables_step10B.py",
+        "tests/test_localmax_readiness_step10B.py",
+        "tests/test_localmax_no_false_level3_claims_step10B.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_localmax_execution_fix_step10B.py",
+            "tests/test_localmax_minimal_data_threshold_step10B.py",
+            "tests/test_localmax_minimal_training_outputs_step10B.py",
+            "tests/test_localmax_nonempty_tables_step10B.py",
+            "tests/test_localmax_no_fake_completion_step10B.py",
+            "tests/test_localmax_training_strengthen_step10B.py",
+            "tests/test_localmax_ppl_clipping_step10B.py",
+            "tests/test_localmax_strengthened_tables_step10B.py",
+            "tests/test_localmax_strengthened_readiness_step10B.py",
+            "tests/test_localmax_strengthened_no_false_claims_step10B.py",
+            "tests/test_localmax_environment_step10B.py",
+            "tests/test_localmax_data_step10B.py",
+            "tests/test_localmax_tokenizer_step10B.py",
+            "tests/test_localmax_filters_step10B.py",
+            "tests/test_localmax_training_step10B.py",
+            "tests/test_localmax_evaluation_step10B.py",
+            "tests/test_localmax_mechanism_step10B.py",
+            "tests/test_localmax_registry_tables_step10B.py",
+            "tests/test_localmax_readiness_step10B.py",
+            "tests/test_localmax_no_false_level3_claims_step10B.py",
+            "-q"
+          ],
+          "duration_seconds": 1.942544800000178,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".........................                                                [100%]\n25 passed in 1.22s\n"
+        }
+      ],
+      "duration_seconds": 1.9564522999999099,
+      "name": "step10B_localmax_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".........................                                                [100%]\n25 passed in 1.22s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_localmax_release_step10C.py",
+        "tests/test_localmax_claim_boundary_step10C.py",
+        "tests/test_localmax_release_registry_step10C.py",
+        "tests/test_localmax_readme_resume_step10C.py",
+        "tests/test_localmax_no_false_level3_claims_step10C.py",
+        "tests/test_localmax_release_figures_step10C.py",
+        "tests/test_localmax_release_figure_readability_step10C_hotfix.py",
+        "tests/test_localmax_release_cross_platform_hashes_step10C_hotfix.py",
+        "tests/test_localmax_release_idempotency_step10C_hotfix.py",
+        "tests/test_localmax_release_canonical_io_step10C_hotfix.py",
+        "tests/test_localmax_release_bundle_scope_step10C_hotfix.py",
+        "tests/test_localmax_release_bundle_links_step10C_hotfix.py",
+        "tests/test_localmax_release_no_result_modification_step10C_hotfix.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_localmax_release_step10C.py",
+            "tests/test_localmax_claim_boundary_step10C.py",
+            "tests/test_localmax_release_registry_step10C.py",
+            "tests/test_localmax_readme_resume_step10C.py",
+            "tests/test_localmax_no_false_level3_claims_step10C.py",
+            "tests/test_localmax_release_figures_step10C.py",
+            "tests/test_localmax_release_figure_readability_step10C_hotfix.py",
+            "tests/test_localmax_release_cross_platform_hashes_step10C_hotfix.py",
+            "tests/test_localmax_release_idempotency_step10C_hotfix.py",
+            "tests/test_localmax_release_canonical_io_step10C_hotfix.py",
+            "tests/test_localmax_release_bundle_scope_step10C_hotfix.py",
+            "tests/test_localmax_release_bundle_links_step10C_hotfix.py",
+            "tests/test_localmax_release_no_result_modification_step10C_hotfix.py",
+            "-q"
+          ],
+          "duration_seconds": 23.426815499999975,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "...........................                                              [100%]\n27 passed in 22.42s\n"
+        }
+      ],
+      "duration_seconds": 23.443995300000097,
+      "name": "step10C_localmax_release_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "...........................                                              [100%]\n27 passed in 22.42s\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_localmax_v2_metric_audit.py",
+        "tests/test_localmax_v2_data_scale.py",
+        "tests/test_localmax_v2_filter_execution.py",
+        "tests/test_localmax_v2_training_budget.py",
+        "tests/test_localmax_v2_evaluation.py",
+        "tests/test_localmax_v2_statistics.py",
+        "tests/test_localmax_v2_mechanism.py",
+        "tests/test_localmax_v2_tables.py",
+        "tests/test_localmax_v2_readiness.py",
+        "tests/test_localmax_v2_claim_boundary.py",
+        "tests/test_localmax_v2_registry_truthfulness.py",
+        "tests/test_localmax_v2_bundle_integrity.py",
+        "tests/test_localmax_v2_no_historical_pollution.py",
+        "-q"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "pytest",
+            "tests/test_localmax_v2_metric_audit.py",
+            "tests/test_localmax_v2_data_scale.py",
+            "tests/test_localmax_v2_filter_execution.py",
+            "tests/test_localmax_v2_training_budget.py",
+            "tests/test_localmax_v2_evaluation.py",
+            "tests/test_localmax_v2_statistics.py",
+            "tests/test_localmax_v2_mechanism.py",
+            "tests/test_localmax_v2_tables.py",
+            "tests/test_localmax_v2_readiness.py",
+            "tests/test_localmax_v2_claim_boundary.py",
+            "tests/test_localmax_v2_registry_truthfulness.py",
+            "tests/test_localmax_v2_bundle_integrity.py",
+            "tests/test_localmax_v2_no_historical_pollution.py",
+            "-q"
+          ],
+          "duration_seconds": 1.6796097999999802,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.93s\n"
+        }
+      ],
+      "duration_seconds": 1.6917044000001624,
+      "name": "localmax_v2_tests",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.93s\n"
+    },
     {
       "command": [
         "python",
@@ -20,14 +744,14 @@
             "tests/test_localmax_ccfc_strengthening.py",
             "-q"
           ],
-          "duration_seconds": 0.8630224999942584,
+          "duration_seconds": 0.8466078000001289,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "....                                                                     [100%]\n4 passed in 0.09s\n"
         }
       ],
-      "duration_seconds": 0.8652499999880092,
+      "duration_seconds": 0.8607375000001412,
       "name": "localmax_ccfc_tests",
       "required": true,
       "returncode": 0,
@@ -38,69 +762,578 @@
     {
       "command": [
         "python",
-        "scripts/localmax_ccfc/finalize_ccfc_project.py"
+        "scripts/check_mechanism_manifests.py",
+        "--include-step8"
       ],
       "commands": [
         {
           "command": [
             "python",
-            "scripts/localmax_ccfc/check_ccfc_artifacts.py"
+            "scripts/check_filter_manifests.py",
+            "--include-step4"
           ],
-          "duration_seconds": 0.11543809999420773,
+          "duration_seconds": 0.22038949999978286,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "{\"blocking_failures\": [], \"ccfc_artifact_check_passed\": true, \"expected_training_runs\": 42}\n"
+          "stdout_tail": "Filter manifest check: ok (8 manifests)\n"
         },
         {
           "command": [
             "python",
-            "scripts/localmax_ccfc/finalize_ccfc_project.py"
+            "scripts/check_training_manifests.py",
+            "--include-step5"
           ],
-          "duration_seconds": 0.12205429999448825,
+          "duration_seconds": 2.005604200000107,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "{\"ccfc_candidate_ready\": true, \"current_readiness\": \"TOP_TIER_CCFC_PROJECT_CANDIDATE\"}\n"
+          "stdout_tail": "Training manifest check: ok (1 manifests)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_urd_manifests.py",
+            "--include-step6"
+          ],
+          "duration_seconds": 2.290656399999989,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "URD manifest check: ok (3 manifests)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_evaluation_manifests.py",
+            "--include-step7"
+          ],
+          "duration_seconds": 0.14486440000018774,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Evaluation manifest check: ok (7 manifests)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_mechanism_manifests.py",
+            "--include-step8"
+          ],
+          "duration_seconds": 0.17077530000005936,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Mechanism manifest check: ok (9 manifests)\n"
         }
       ],
-      "duration_seconds": 0.24161379999713972,
-      "name": "localmax_ccfc_artifact_checks",
+      "duration_seconds": 4.894391899999846,
+      "name": "manifest_checks",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "{\"blocking_failures\": [], \"ccfc_artifact_check_passed\": true, \"expected_training_runs\": 42}\n{\"ccfc_candidate_ready\": true, \"current_readiness\": \"TOP_TIER_CCFC_PROJECT_CANDIDATE\"}\n"
+      "stdout_tail": "Filter manifest check: ok (8 manifests)\nTraining manifest check: ok (1 manifests)\nURD manifest check: ok (3 manifests)\nEvaluation manifest check: ok (7 manifests)\nMechanism manifest check: ok (9 manifests)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_main_results_purity.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/check_repo.py",
+            "--clean"
+          ],
+          "duration_seconds": 3.131651199999851,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Artifact check: ok\nRepository cleanup removed 0 generated cache/temp paths.\nRepository hygiene check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/capture_environment.py"
+          ],
+          "duration_seconds": 2.06526840000015,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Environment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099\nArtifact: artifacts\\environment\\fingerprint.json\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_registry_schema.py"
+          ],
+          "duration_seconds": 0.1347381000000496,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Registry schema check: ok (153 rows)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_artifact_lineage.py"
+          ],
+          "duration_seconds": 0.16608429999996588,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Artifact lineage check: ok (153 rows, 42 superseded)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_main_results_purity.py"
+          ],
+          "duration_seconds": 0.0813665000000583,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Main results purity check: ok (24 rows)\n"
+        }
+      ],
+      "duration_seconds": 5.646811200000229,
+      "name": "artifact_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Artifact check: ok\nRepository cleanup removed 0 generated cache/temp paths.\nRepository hygiene check: ok\nEnvironment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099\nArtifact: artifacts\\environment\\fingerprint.json\nRegistry schema check: ok (153 rows)\nArtifact lineage check: ok (153 rows, 42 superseded)\nMain results purity check: ok (24 rows)\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_no_level2_as_level3.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/check_claims_supported.py"
+          ],
+          "duration_seconds": 0.08295520000001488,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Claim support check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_claim_hygiene.py"
+          ],
+          "duration_seconds": 0.628801399999702,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Claim hygiene: passed\nReport: artifacts/release/claim_hygiene_report.json\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_claim_map.py"
+          ],
+          "duration_seconds": 0.0995957999998609,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Claim map check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_no_forbidden_claims.py"
+          ],
+          "duration_seconds": 0.18263470000010784,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Forbidden claim check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_no_smoke_in_main.py"
+          ],
+          "duration_seconds": 0.0872137000001203,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "No-smoke-in-main check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_no_protocol_as_completed.py"
+          ],
+          "duration_seconds": 0.5131230000001779,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "No-protocol-as-completed check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_no_level2_as_level3.py"
+          ],
+          "duration_seconds": 1.09031479999976,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "No-Level2-as-Level3 check: ok\n"
+        }
+      ],
+      "duration_seconds": 2.767941499999779,
+      "name": "claim_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Claim support check: ok\nClaim hygiene: passed\nReport: artifacts/release/claim_hygiene_report.json\nClaim map check: ok\nForbidden claim check: ok\nNo-smoke-in-main check: ok\nNo-protocol-as-completed check: ok\nNo-Level2-as-Level3 check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/write_step10A_readiness_report.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/check_level3_gates.py"
+          ],
+          "duration_seconds": 1.074644900000294,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Level 3 gates checked:\n- data_gate: not_ready\n- tokenizer_gate: partial\n- filter_gate: partial\n- model_scale_gate: partial\n- evaluation_gate: partial\n- mechanism_gate: partial\n- claim_gate: pass\nOverall readiness: LEVEL3_PIPELINE_READY\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_level3_protocol.py"
+          ],
+          "duration_seconds": 0.10744710000017221,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Level 3 protocol check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_level3_preflight.py"
+          ],
+          "duration_seconds": 0.1311417000001711,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Level 3 preflight check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/write_step10A_readiness_report.py"
+          ],
+          "duration_seconds": 0.11454600000024584,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Step 10A readiness report: completed\nReport: artifacts/reports/step10A_readiness_report.json\n"
+        }
+      ],
+      "duration_seconds": 1.4814259999998285,
+      "name": "level3_gate_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Level 3 gates checked:\n- data_gate: not_ready\n- tokenizer_gate: partial\n- filter_gate: partial\n- model_scale_gate: partial\n- evaluation_gate: partial\n- mechanism_gate: partial\n- claim_gate: pass\nOverall readiness: LEVEL3_PIPELINE_READY\nLevel 3 protocol check: ok\nLevel 3 preflight check: ok\nStep 10A readiness report: completed\nReport: artifacts/reports/step10A_readiness_report.json\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/dataaudit_lm/generate_naming_inventory.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/audit_metric_correctness.py"
+          ],
+          "duration_seconds": 2.0251995000003262,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"metric_audit_passed\": true, \"status\": \"METRIC_AUDIT_PASSED\"}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/audit_experiment_fairness.py"
+          ],
+          "duration_seconds": 0.12475810000023557,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"fairness_metadata_checked\": true, \"final_matrix_complete\": false}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/verify_artifacts.py"
+          ],
+          "duration_seconds": 1.0951678999999785,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"artifact_integrity_verified\": true, \"missing\": []}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/write_migration_and_protocol_reports.py"
+          ],
+          "duration_seconds": 0.09121400000003632,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"migration_rows\": 14, \"freeze_status\": \"frozen_for_rehearsal_only\"}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/run_rehearsal.py"
+          ],
+          "duration_seconds": 4.715516799999932,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"rehearsal_passed\": true, \"methods\": 8}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/finalize_release.py",
+            "--audit-only"
+          ],
+          "duration_seconds": 0.1263357999996515,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"status\": \"MULTI_SEED_TRAINING_COMPLETED\", \"mode\": \"audit-only\", \"final_release_gate_passed\": false, \"message\": \"AUDIT_COMPLETED_RELEASE_NOT_READY\"}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/verify_document_consistency.py"
+          ],
+          "duration_seconds": 0.12795850000020437,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"document_consistency_verified\": true, \"forbidden_terms\": [], \"missing_numbers\": []}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/verify_fresh_clone.py",
+            "--light"
+          ],
+          "duration_seconds": 3.301749199999904,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"fresh_clone_verified\": true, \"light\": true}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/dataaudit_lm/generate_naming_inventory.py"
+          ],
+          "duration_seconds": 1.5814080000000104,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2399}\n"
+        }
+      ],
+      "duration_seconds": 13.299222699999973,
+      "name": "dataaudit_lm_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "{\"metric_audit_passed\": true, \"status\": \"METRIC_AUDIT_PASSED\"}\n{\"fairness_metadata_checked\": true, \"final_matrix_complete\": false}\n{\"artifact_integrity_verified\": true, \"missing\": []}\n{\"migration_rows\": 14, \"freeze_status\": \"frozen_for_rehearsal_only\"}\n{\"rehearsal_passed\": true, \"methods\": 8}\n{\"status\": \"MULTI_SEED_TRAINING_COMPLETED\", \"mode\": \"audit-only\", \"final_release_gate_passed\": false, \"message\": \"AUDIT_COMPLETED_RELEASE_NOT_READY\"}\n{\"document_consistency_verified\": true, \"forbidden_terms\": [], \"missing_numbers\": []}\n{\"fresh_clone_verified\": true, \"light\": true}\n{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2399}\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/localmax/check_localmax_release_bundle.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/localmax/make_localmax_release_tables.py"
+          ],
+          "duration_seconds": 2.4493212999996103,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"localmax_release_tables_ready\": true, \"main_release_rows\": 24}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/make_localmax_release_figures.py"
+          ],
+          "duration_seconds": 4.689511699999457,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"localmax_release_figures_ready\": true, \"figures\": 12}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/check_localmax_release_claims.py"
+          ],
+          "duration_seconds": 2.028738699999849,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "LocalMax release claim check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/check_localmax_release_bundle.py"
+          ],
+          "duration_seconds": 2.177517400000397,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "LocalMax release bundle check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/check_localmax_release_idempotency.py"
+          ],
+          "duration_seconds": 26.50044919999982,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "LocalMax release claim check: ok\nLocalMax release claim check: ok\n{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\n{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\nLocalMax release idempotency check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/finalize_localmax_release.py"
+          ],
+          "duration_seconds": 9.361323600000105,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/check_localmax_release_claims.py"
+          ],
+          "duration_seconds": 2.013035399999353,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "LocalMax release claim check: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/localmax/check_localmax_release_bundle.py"
+          ],
+          "duration_seconds": 2.062442000000374,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "LocalMax release bundle check: ok\n"
+        }
+      ],
+      "duration_seconds": 51.38707549999981,
+      "name": "localmax_release_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "{\"localmax_release_tables_ready\": true, \"main_release_rows\": 24}\n{\"localmax_release_figures_ready\": true, \"figures\": 12}\nLocalMax release claim check: ok\nLocalMax release bundle check: ok\nLocalMax release claim check: ok\nLocalMax release claim check: ok\n{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\n{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\nLocalMax release idempotency check: ok\n{\"blocking_failures\": [], \"current_readiness\": \"LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED\", \"release_manifest\": \"artifacts/localmax_release/localmax_release_manifest.json\", \"release_registry\": \"artifacts/localmax_release/localmax_artifact_registry.jsonl\", \"status\": \"completed\", \"step10C_localmax_release_ready\": true, \"step_report\": \"artifacts/reports/step10C_localmax_release_report.json\"}\nLocalMax release claim check: ok\nLocalMax release bundle check: ok\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_main_results_from_registry.py"
+      ],
+      "commands": [
+        {
+          "command": [
+            "python",
+            "scripts/finalize_artifact_registry_v2.py"
+          ],
+          "duration_seconds": 3.268685899999582,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Artifact registry v2 finalized: 832 records\nArtifact registry hash check after finalization: ok\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_registry_to_tables.py"
+          ],
+          "duration_seconds": 0.12811400000009598,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Registry-to-table consistency check: ok (3 main table records)\n"
+        },
+        {
+          "command": [
+            "python",
+            "scripts/check_main_results_from_registry.py"
+          ],
+          "duration_seconds": 0.13828040000043984,
+          "returncode": 0,
+          "status": "passed",
+          "stderr_tail": "",
+          "stdout_tail": "Main-results-from-registry check: ok\n"
+        }
+      ],
+      "duration_seconds": 3.582268200000726,
+      "name": "registry_finalization_checks",
+      "required": true,
+      "returncode": 0,
+      "status": "passed",
+      "stderr_tail": "",
+      "stdout_tail": "Artifact registry v2 finalized: 832 records\nArtifact registry hash check after finalization: ok\nRegistry-to-table consistency check: ok (3 main table records)\nMain-results-from-registry check: ok\n"
     }
   ],
   "overall_passed": true,
   "skipped_groups": [
-    "legacy_core_tests",
-    "step2_data_tests",
-    "step3_tokenizer_tests",
-    "step4_filter_tests",
-    "step5_training_tests",
-    "step6_urd_tests",
-    "step7_evaluation_tests",
-    "step8_mechanism_tests",
-    "step9_readiness_tests",
-    "step10A_protocol_tests",
-    "step10B_execution_tests",
-    "step10B_localmax_tests",
-    "step10C_localmax_release_tests",
-    "localmax_v2_tests",
-    "manifest_checks",
-    "artifact_checks",
-    "claim_checks",
-    "level3_gate_checks",
     "level3_execution_checks",
     "localmax_execution_checks",
-    "localmax_release_checks",
     "localmax_v2_execution_checks",
     "localmax_v2_release_checks",
-    "registry_finalization_checks"
+    "localmax_ccfc_artifact_checks"
   ],
-  "started_at": "2026-06-13T11:42:03+00:00",
+  "started_at": "2026-06-15T18:10:21+00:00",
   "status": "passed",
   "timeout_groups": []
 }

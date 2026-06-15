@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-06-12T18:13:41+00:00",
+  "checked_at": "2026-06-15T18:15:11+00:00",
   "errors": [],
   "finalized_after_reports": true,
   "hash_check_passed_after_finalization": true,
-  "record_count": 694,
+  "record_count": 832,
   "registry_path": "artifacts/registry_v2/artifact_registry.jsonl",
   "report_path": "artifacts/reports/artifact_registry_v2_report.md",
   "status": "passed",

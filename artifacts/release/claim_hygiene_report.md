@@ -1,9 +1,9 @@
 # Claim Hygiene Report
 
 - Status: `passed`
-- Scanned files: `103`
+- Scanned files: `111`
 - Optional files not present: `0`
-- Flagged phrases: `91`
+- Flagged phrases: `90`
 - Unsafe claims: `0`
 
 ## Optional Files Not Present
@@ -104,7 +104,6 @@
 | `docs/reporting_contract_level3.md` | 58 | `full C4` | `allowed_negative_context` | Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context. |
 | `docs/research_positioning.md` | 106 | `full OpenWebText` | `allowed_negative_context` | Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context. |
 | `docs/tokenizer_pipeline_step3.md` | 147 | `LEVEL3_COMPLETED_ARTIFACT` | `allowed_negative_context` | Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context. |
-| `PROJECT_SUMMARY.md` | 5 | `CCF-B ready` | `allowed_negative_context` | Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context. |
 
 ## Pass/Fail Rule
 

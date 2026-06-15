@@ -1,0 +1,11 @@
+{
+  "checkpoint_path": "artifacts/dataaudit_lm/rehearsal/raw/training/final_checkpoint.pt",
+  "checkpoint_sha256": "BE3B170CC377F0CB98595D210C90A068FF38A86398D0EA943A700145969B3FDC",
+  "initialization_fingerprint": "BB5C95A3E37DB6382ADD1590E9C7970714B30BDBB7D6D264ED4D8BD697E621B0",
+  "manifest_version": "dataaudit_lm_training_manifest_v1",
+  "metrics_path": "artifacts/dataaudit_lm/rehearsal/raw/training/metrics.json",
+  "seed": 13,
+  "steps_completed": 2,
+  "tokens_seen": 32,
+  "warm_start": false
+}

@@ -6,7 +6,7 @@
 - Links valid: `True`
 - Raw data included: `False`
 - Binary checkpoints included: `False`
-- Bundle size bytes: `1600808`
+- Bundle size bytes: `1651953`
 
 ## Errors
 

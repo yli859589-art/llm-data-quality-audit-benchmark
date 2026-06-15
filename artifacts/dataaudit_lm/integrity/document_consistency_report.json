@@ -17,7 +17,10 @@
     "seed_count": 3,
     "source_tokens": 200006900,
     "status": "MULTI_SEED_TRAINING_COMPLETED",
-    "target_runs": 80,
+    "target_max_methods": 8,
+    "target_min_methods": 6,
+    "target_min_seeds": 5,
+    "target_runs": 60,
     "tokens_per_run": 5001216,
     "total_tokens_seen": 210051072
   },

@@ -1,0 +1,10 @@
+{
+  "checkpoint_path": "artifacts/dataaudit_lm/rehearsal/minhash_near_dedup/training/final_checkpoint.pt",
+  "checkpoint_sha256": "CE33CC62CE4E73AD9F94192C4E4E114DBD2F6D78921AC4AB29C888AE2ED51840",
+  "initialization_fingerprint": "BB5C95A3E37DB6382ADD1590E9C7970714B30BDBB7D6D264ED4D8BD697E621B0",
+  "steps_completed": 2,
+  "tokens_seen": 32,
+  "train_loss_final": 4.95730447769165,
+  "valid_nll_nats_per_token": 4.918826580047607,
+  "warm_start": false
+}

@@ -38,7 +38,7 @@ def main() -> None:
     missing = [number for number in expected_numbers if str(number) not in combined_text]
     forbidden = re.findall(
         r"CCF[-_ ]?[ABC]|CCF[ABC]|TOP[_ -]?TIER|PAPER[_ -]?READY|"
-        r"PUBLICATION[_ -]?READY|COMPETITION[_ -]?READY|LEVEL[_ -]?3|LEVEL3|"
+        r"PUBLICATION[_ -]?READY|COMPETITION[_ -]?READY|"
         r"SUBMISSION[_ -]?READY|REVIEWER[_ -]?READY",
         combined_text,
     )

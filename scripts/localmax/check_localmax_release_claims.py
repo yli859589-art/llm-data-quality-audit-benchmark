@@ -30,7 +30,6 @@ LOCALMAX_DOCS = [
     "docs/LOCALMAX_FUTURE_CLOUD_LEVEL3.md",
 ]
 ROOT_DOCS = [
-    "README.md",
     "PROJECT_SUMMARY.md",
     "PROJECT_ONE_PAGE.md",
     "TECHNICAL_OVERVIEW.md",
@@ -195,11 +194,15 @@ def check_release() -> dict[str, Any]:
         if step_report.get(key) is not False:
             errors.append(f"Step 10C report must keep {key}=false")
 
-    readme = (ROOT / "README.md").read_text(encoding="utf-8", errors="ignore") if (ROOT / "README.md").exists() else ""
-    if f"Current status: `{CURRENT_READINESS}`" not in readme:
-        errors.append("README missing LocalMax current status")
-    if "Level 3 status: `not completed`" not in readme:
-        errors.append("README missing Level 3 status boundary")
+    localmax_release = (
+        (ROOT / "docs/LOCALMAX_RELEASE.md").read_text(encoding="utf-8", errors="ignore")
+        if (ROOT / "docs/LOCALMAX_RELEASE.md").exists()
+        else ""
+    )
+    if f"Current status: `{CURRENT_READINESS}`" not in localmax_release:
+        errors.append("LOCALMAX_RELEASE missing LocalMax current status")
+    if "Level 3 status: `not completed`" not in localmax_release:
+        errors.append("LOCALMAX_RELEASE missing Level 3 status boundary")
 
     scanned = [ROOT / rel for rel in LOCALMAX_DOCS + ROOT_DOCS if (ROOT / rel).exists()]
     errors.extend(_scan_claim_text(scanned))

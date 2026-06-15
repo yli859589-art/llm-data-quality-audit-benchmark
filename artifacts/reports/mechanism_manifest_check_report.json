@@ -1,6 +1,6 @@
 {
-  "checked_manifests": 1,
+  "checked_manifests": 9,
   "errors": [],
-  "include_step8": false,
+  "include_step8": true,
   "status": "passed"
 }

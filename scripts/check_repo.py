@@ -283,10 +283,10 @@ for path in root.rglob("*"):
 
 readme = (root / "README.md").read_text(encoding="utf-8")
 for phrase in [
-    "personal research and portfolio prototype",
+    "reproducible research artifact",
     "does **not** claim",
     "Quick Start",
-    "single-seed",
+    "legacy controlled evidence",
 ]:
     if phrase not in readme:
         raise SystemExit(f"README missing required boundary phrase: {phrase}")

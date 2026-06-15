@@ -20,6 +20,7 @@ The `artifacts/localmax_release/` directory is a standalone metadata bundle for 
 - Model scale: `small`; parameter count `20505888`.
 - Tokenizer: GPT-2 BPE tokenizer.
 - Primary comparison metric: `valid_loss`.
+- PPL is clipped and not comparable for improvement claims.
 
 ## Why This Is Not Level 3
 

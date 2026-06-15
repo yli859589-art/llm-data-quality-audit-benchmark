@@ -2,7 +2,7 @@
   "blocking_failures": [],
   "ccf_b_ready_claimed": false,
   "completed": true,
-  "created_at": "2026-06-12T17:36:02+00:00",
+  "created_at": "2026-06-12T18:11:44+00:00",
   "current_readiness": "LOCAL_MAX_V2_FILTERS_COMPLETED",
   "datasets_completed": [
     "c4_en_v2_100m",

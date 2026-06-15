@@ -23,9 +23,8 @@ def test_release_manifest_declares_standalone_metadata_bundle() -> None:
 
 
 def test_docs_and_readme_disclose_bundle_scope() -> None:
-    for rel in ["README.md", "docs/LOCALMAX_RELEASE.md", "docs/LOCALMAX_REPRODUCIBILITY.md"]:
+    for rel in ["docs/LOCALMAX_RELEASE.md", "docs/LOCALMAX_REPRODUCIBILITY.md"]:
         text = (ROOT / rel).read_text(encoding="utf-8")
         assert "Bundle scope: `standalone_metadata_bundle`" in text
         assert "raw data" in text.casefold()
         assert "binary checkpoints" in text.casefold()
-

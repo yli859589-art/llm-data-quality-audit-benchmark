@@ -16,7 +16,7 @@ Completed evidence:
 
 Known gaps:
 
-- The frozen expanded matrix target is 80 runs.
+- The planned final matrix is 2 datasets x 6-8 independent methods x at least 5 seeds.
 - The current downstream probe is local and diagnostic.
 - The reference-model filtering path needs a separate implementation audit.
 - The raw duplicate-retention policy needs a dedicated ingestion audit before

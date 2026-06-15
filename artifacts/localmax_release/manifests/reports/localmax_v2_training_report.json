@@ -4,7 +4,7 @@
   "completed": true,
   "completed_core_runs": 24,
   "context_length": 256,
-  "created_at": "2026-06-12T17:36:35+00:00",
+  "created_at": "2026-06-12T18:13:19+00:00",
   "current_readiness": "LOCAL_MAX_V2_TRAINING_COMPLETED",
   "expected_core_runs": 24,
   "historical_results_modified": false,

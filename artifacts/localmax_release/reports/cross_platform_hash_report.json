@@ -10,6 +10,6 @@
   "release_finalizer_idempotent": true,
   "status": "passed",
   "timestamp_causes_frozen_hash_drift": false,
-  "tracked_file_count": 58,
+  "tracked_file_count": 60,
   "windows_style_paths_affect_hash": false
 }

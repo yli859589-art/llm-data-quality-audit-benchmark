@@ -2,7 +2,7 @@
   "blocking_failures": [],
   "ccf_b_ready_claimed": false,
   "completed": true,
-  "created_at": "2026-06-12T17:36:02+00:00",
+  "created_at": "2026-06-12T18:11:44+00:00",
   "current_readiness": "LOCAL_MAX_V2_DATA_COMPLETED",
   "datasets": [
     {
@@ -37,7 +37,7 @@
     }
   ],
   "datasets_meeting_100m_floor": 2,
-  "disk_free_gb_after_data": 69.66,
+  "disk_free_gb_after_data": 72.3,
   "fallbacks_used": [],
   "historical_results_modified": false,
   "level3_completed_artifact": false,

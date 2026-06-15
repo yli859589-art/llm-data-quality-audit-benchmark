@@ -1,0 +1,153 @@
+{
+  "allowed_statuses": [
+    "NOT_STARTED",
+    "ADAPTER_ONLY",
+    "MIGRATED",
+    "VALIDATED",
+    "LEGACY_REMOVABLE"
+  ],
+  "migration_map_hash": "90DE1A06356B781E8D68F05525693675B8A2D59BAF32B3E5747DF48C81BD3CA2",
+  "migration_map_version": "dataaudit_lm_migration_map_v1",
+  "rows": [
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/data",
+      "legacy_path": "legacy local-scale scripts",
+      "migration_status": "VALIDATED",
+      "module": "data_loading",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "future src/dataaudit_lm/tokenization",
+      "legacy_path": "src/tokenization",
+      "migration_status": "ADAPTER_ONLY",
+      "module": "tokenizer",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "legacy/artifact adapter",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/data/manifests.py",
+      "legacy_path": "src/data_sources/manifest.py",
+      "migration_status": "MIGRATED",
+      "module": "dataset_manifest",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/filters",
+      "legacy_path": "src/filters_v2",
+      "migration_status": "VALIDATED",
+      "module": "filtering_methods",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/models",
+      "legacy_path": "src/models_v2",
+      "migration_status": "MIGRATED",
+      "module": "model_definition",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/training",
+      "legacy_path": "src/training_v2",
+      "migration_status": "MIGRATED",
+      "module": "training_loop",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/training/checkpoints.py",
+      "legacy_path": "legacy local-scale artifacts",
+      "migration_status": "MIGRATED",
+      "module": "checkpoint",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/evaluation/lm_metrics.py",
+      "legacy_path": "src/evaluation_v2/lm_metrics.py",
+      "migration_status": "VALIDATED",
+      "module": "lm_evaluation",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/evaluation/downstream.py",
+      "legacy_path": "src/evaluation_v2/downstream.py",
+      "migration_status": "MIGRATED",
+      "module": "downstream",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/statistics",
+      "legacy_path": "src/evaluation_v2/statistics.py",
+      "migration_status": "MIGRATED",
+      "module": "statistics",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/registry",
+      "legacy_path": "artifacts_v2",
+      "migration_status": "ADAPTER_ONLY",
+      "module": "registry",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "legacy/artifact adapter",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "src/dataaudit_lm/integrity",
+      "legacy_path": "mixed scripts",
+      "migration_status": "VALIDATED",
+      "module": "hash_integrity",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "future src/dataaudit_lm/reporting",
+      "legacy_path": "legacy figure scripts",
+      "migration_status": "NOT_STARTED",
+      "module": "figure_table_generation",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "legacy/artifact adapter",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    },
+    {
+      "artifact_dependency": "legacy evidence retained until frozen final matrix",
+      "canonical_new_path": "scripts/dataaudit_lm/finalize_release.py",
+      "legacy_path": "legacy release scripts",
+      "migration_status": "MIGRATED",
+      "module": "release_tooling",
+      "planned_removal_stage": "after frozen protocol and parity audit",
+      "runtime_dependency": "new package",
+      "tests_covering_it": "tests/test_dataaudit_*.py"
+    }
+  ]
+}

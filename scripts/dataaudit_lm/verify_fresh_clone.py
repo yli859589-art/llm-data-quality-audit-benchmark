@@ -31,7 +31,7 @@ def main() -> None:
             proc = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
             results.append(
                 {
-                    "command": command,
+                    "command": ["python", *command[1:]],
                     "returncode": proc.returncode,
                     "stdout_tail": proc.stdout[-2000:],
                     "stderr_tail": proc.stderr[-2000:],

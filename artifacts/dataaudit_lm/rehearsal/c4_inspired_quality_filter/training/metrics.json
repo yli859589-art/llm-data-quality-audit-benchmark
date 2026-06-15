@@ -1,0 +1,10 @@
+{
+  "checkpoint_path": "artifacts/dataaudit_lm/rehearsal/c4_inspired_quality_filter/training/final_checkpoint.pt",
+  "checkpoint_sha256": "BE3B170CC377F0CB98595D210C90A068FF38A86398D0EA943A700145969B3FDC",
+  "initialization_fingerprint": "BB5C95A3E37DB6382ADD1590E9C7970714B30BDBB7D6D264ED4D8BD697E621B0",
+  "steps_completed": 2,
+  "tokens_seen": 32,
+  "train_loss_final": 4.906588554382324,
+  "valid_nll_nats_per_token": 4.870553493499756,
+  "warm_start": false
+}

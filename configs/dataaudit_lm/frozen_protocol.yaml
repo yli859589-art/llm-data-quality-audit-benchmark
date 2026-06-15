@@ -1,0 +1,31 @@
+protocol_version: dataaudit_lm_rehearsal_protocol_v1
+status: frozen_for_rehearsal_only
+formal_matrix_status: not_started
+planned_final_matrix:
+  datasets: 2
+  independent_methods_min: 6
+  independent_methods_max: 8
+  seeds_min: 5
+data:
+  split_algorithm: cluster_aware_deterministic_hash_split_v1
+  train_ratio: 0.95
+  valid_ratio: 0.025
+  test_ratio: 0.025
+filters:
+  - raw
+  - exact_dedup_or_null_control
+  - minhash_near_dedup
+  - length_filter
+  - random_token_matched
+  - c4_inspired_quality_filter
+  - reference_lm_perplexity_filter
+  - dataaudit_selector
+training:
+  warm_start: false
+  same_seed_same_initialization: true
+  sampling: corpus_wide_hash_ranked_token_sample_v1
+evaluation:
+  lm_metric: token_weighted_nll
+  downstream_scoring: target_only
+statistics:
+  config: configs/dataaudit_lm/statistical_analysis.yaml

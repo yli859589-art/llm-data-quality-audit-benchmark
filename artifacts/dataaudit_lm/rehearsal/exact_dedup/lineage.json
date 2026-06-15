@@ -1,0 +1,16 @@
+{
+  "data_manifest_hash": "B484D0041376118B38D4C2BDFFA8F33DD39BA4EAE20D5CB56713DFBB30E77227",
+  "filter_manifest_hash": "C30AC0FE654CEE00619508FD8C10664D5F2F4A5D45E7A123CF0DADD8CF12A0E2",
+  "initialization_fingerprint": "BB5C95A3E37DB6382ADD1590E9C7970714B30BDBB7D6D264ED4D8BD697E621B0",
+  "lineage_hash": "7EAC51D6162911548FF26616AF8384BA5E9E8C764CEC7665C9F765A0DE3C0787",
+  "sample_manifest_hash": "53A13ACD85D42DEF207CAA22686AADED23F3B9CCBAE596B58539A4B99831D8C3",
+  "training_config": {
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "seed": 13,
+    "steps": 2,
+    "token_budget": 256,
+    "warm_start": false
+  },
+  "warm_start": false
+}

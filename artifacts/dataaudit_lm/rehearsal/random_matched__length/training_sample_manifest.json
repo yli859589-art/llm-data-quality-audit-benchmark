@@ -1,0 +1,33 @@
+{
+  "sample_manifest_hash": "53A13ACD85D42DEF207CAA22686AADED23F3B9CCBAE596B58539A4B99831D8C3",
+  "sampled_token_count": 168,
+  "sampling_algorithm": "corpus_wide_hash_ranked_token_sample_v1",
+  "sampling_seed": 13,
+  "selected_corpus_hash": "95FB1C4AC7D2FB7219FC983423095E4620750E45E7DE9EB728EFDE94FFEACCD9",
+  "selected_document_ids": [
+    "b_013",
+    "d_009",
+    "a_006",
+    "b_007",
+    "c_008",
+    "f_023",
+    "d_015",
+    "b_001",
+    "c_014",
+    "e_022",
+    "f_005",
+    "d_021",
+    "a_018",
+    "e_010",
+    "e_016",
+    "c_020",
+    "f_017",
+    "c_002",
+    "d_003",
+    "e_004",
+    "f_011",
+    "a_012",
+    "b_019",
+    "a_000"
+  ]
+}

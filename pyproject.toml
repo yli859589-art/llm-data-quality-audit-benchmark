@@ -14,7 +14,7 @@ dependencies = ["numpy>=1.23", "torch>=2.0"]
 keywords = ["machine-learning", "language-modeling", "data-quality", "benchmark", "nlp"]
 
 [project.optional-dependencies]
-dev = ["black==25.1.0", "coverage>=7.0", "mypy>=1.10", "pre-commit>=4.0", "pytest>=8.0", "ruff>=0.11"]
+dev = ["black==24.4.2", "coverage>=7.0", "mypy>=1.10", "pre-commit>=4.0", "pytest>=8.0", "ruff>=0.11"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -22,11 +22,19 @@ where = ["src"]
 [tool.black]
 line-length = 100
 target-version = ["py310"]
+force-exclude = '''
+.*[\\/]scripts[\\/](?!dataaudit_lm[\\/]).*
+|.*[\\/]src[\\/](?!dataaudit_lm[\\/]).*
+|.*[\\/]tests[\\/](?!test_dataaudit_).*
+'''
 extend-exclude = '''
 /(
   artifacts
   | data
   | projects
+  | scripts/(?!dataaudit_lm)
+  | src/(?!dataaudit_lm)
+  | tests/(?!test_dataaudit_)
   | src/course_project_suite/(cs188|cs224n|cs229|cs231n|cs336)
   | src/course_project_suite/common.py
   | src/course_project_suite/run_all.py

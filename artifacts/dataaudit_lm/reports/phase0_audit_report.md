@@ -3,7 +3,7 @@
 - Status: `completed_with_blockers`
 - Baseline commit: `16b33e8e6fc97be1c0f3475abb23ea8ced9571c8`
 - Backup branch: `backup/pre-dataaudit-refactor`
-- Backup bundle: `C:\Users\18104\Desktop\backup_pre_dataaudit_refactor_20260613.bundle`
+- Backup bundle: `Desktop/backup_pre_dataaudit_refactor_20260613.bundle`
 - Tracked files: `3066`
 - Forbidden-term matches: `588`
 

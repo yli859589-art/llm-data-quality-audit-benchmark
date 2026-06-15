@@ -1,0 +1,51 @@
+{
+  "decision_hash": "2BF6C9569943499E9B6E23383EBFEA72ACA78E9C410493C55F8D1DE14C8675DD",
+  "input_count": 24,
+  "input_tokens": 168,
+  "kept_count": 12,
+  "kept_tokens": 84,
+  "manifest_hash": "0AE46F316D86E3E13D50E30753993193CBC74837ADAF7F31DAB2F15C5219FAF9",
+  "manifest_version": "dataaudit_lm_filter_manifest_v1",
+  "method_name": "dataaudit_selector",
+  "notes": "Selector hypothesis is documented separately; single-seed rehearsal is engineering validation only.",
+  "parameters": {
+    "keep_fraction": 0.5,
+    "target_tokens": 128,
+    "weight_freeze_policy": "development_subset_only_not_test_tuned",
+    "weights": {
+      "duplicate_penalty": -0.1,
+      "length_balance": 0.2,
+      "quality": 0.35,
+      "reference_nll": -0.35
+    }
+  },
+  "rejected_count": 12,
+  "rejected_ids": [
+    "d_003",
+    "d_009",
+    "d_015",
+    "d_021",
+    "e_004",
+    "e_010",
+    "e_016",
+    "e_022",
+    "f_005",
+    "f_011",
+    "f_017",
+    "f_023"
+  ],
+  "selected_ids": [
+    "a_000",
+    "a_006",
+    "a_012",
+    "a_018",
+    "b_001",
+    "b_007",
+    "b_013",
+    "b_019",
+    "c_002",
+    "c_008",
+    "c_014",
+    "c_020"
+  ]
+}

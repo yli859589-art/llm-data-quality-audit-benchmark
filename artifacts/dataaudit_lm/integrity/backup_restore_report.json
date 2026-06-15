@@ -1,0 +1,26 @@
+{
+  "branches": [
+    "* main",
+    "remotes/origin/HEAD -> origin/main",
+    "remotes/origin/backup/pre-dataaudit-refactor",
+    "remotes/origin/main"
+  ],
+  "bundle_exists": true,
+  "bundle_path": "Desktop/backup_pre_dataaudit_refactor_20260613.bundle",
+  "bundle_verify_returncode": 0,
+  "bundle_verify_stderr": "<desktop-bundle> is okay\n",
+  "bundle_verify_stdout": "The bundle contains these 11 refs:\n16b33e8e6fc97be1c0f3475abb23ea8ced9571c8 refs/heads/backup/pre-dataaudit-refactor\n16b33e8e6fc97be1c0f3475abb23ea8ced9571c8 refs/heads/main\n16b33e8e6fc97be1c0f3475abb23ea8ced9571c8 refs/remotes/origin/main\nf0611182b79b674a57d9eef94bcfd82f9544b645 refs/tags/v3.0.0\nae740fe653a5295e3c9c2ba52576e8053dafe1ac refs/tags/v4.0.0\ne2470eaca46d0e4390258063f2f774e17d352414 refs/tags/v4.1.0\nf821358c3c531a47e0267f5efa817dea352881ae refs/tags/v4.2.0\na733f36e68fb7a9ecf79cfaf406d8fef81902493 refs/tags/v4.3.0\ne1cd71df9664f1178227d1669889b9ab9665367a refs/tags/v4.4.0\n9db926e12513f347b922510e4e9c11bc1d6baacc refs/tags/v4.5.0\n16b33e8e6fc97be1c0f3475abb23ea8ced9571c8 HEAD\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1\n",
+  "clone_returncode": 0,
+  "expected_restorable_sha": "16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+  "expected_sha_restorable": true,
+  "log_oneline_5": [
+    "16b33e8 Upgrade benchmark to LocalMax CCFC candidate",
+    "f192da0 Prepare 3C-3 release candidate v1",
+    "52f7ae0 Add CCF-C experiment readiness infrastructure",
+    "e1cd71d Finalize LLM benchmark audit and research artifacts v4.4.0",
+    "a733f36 Upgrade LLM benchmark research prototype to v4.3.0"
+  ],
+  "restore_successful": true,
+  "restored_head": "16b33e8e6fc97be1c0f3475abb23ea8ced9571c8",
+  "temporary_restore_dir_cleaned": true
+}

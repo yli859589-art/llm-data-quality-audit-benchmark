@@ -117,6 +117,7 @@ The `artifacts/localmax_release/` directory is a standalone metadata bundle for 
 - Model scale: `small`; parameter count `{facts['training_report'].get('parameter_count')}`.
 - Tokenizer: GPT-2 BPE tokenizer.
 - Primary comparison metric: `valid_loss`.
+- PPL is clipped and not comparable for improvement claims.
 
 ## Why This Is Not Level 3
 
@@ -432,7 +433,7 @@ The important engineering point is not that a filter won. The important point is
 
 ## Recommended Demo Flow
 
-1. Open `README.md` for the current LocalMax status.
+1. Open `docs/LOCALMAX_RELEASE.md` for the current LocalMax status.
 2. Show `artifacts/localmax_release/tables/localmax_main_results_release.csv`.
 3. Show `artifacts/localmax_release/figures/valid_loss_by_dataset_method.png`.
 4. Show `docs/LOCALMAX_CLAIM_BOUNDARY.md`.
@@ -479,11 +480,10 @@ Key LocalMax release paths:
 - Released LocalMax minimal training evidence as `{CURRENT_READINESS}`.
 - Added release tables, figures, docs, manifest, hashes, registry, claim map, and tests.
 - Hardened Step 10C release quality with readable figures, canonical UTF-8/LF I/O, idempotent release checks, and standalone metadata bundle clarity.
-- Updated README and resume-facing materials with bounded language.
+- Updated LocalMax release and resume-facing materials with bounded language.
 - Preserved historical result files without modification.
 """
     files = {
-        "README.md": readme,
         "PROJECT_SUMMARY.md": project_summary,
         "PROJECT_ONE_PAGE.md": one_page,
         "TECHNICAL_OVERVIEW.md": technical,
@@ -594,7 +594,6 @@ def _collect_paths() -> list[Path]:
         "artifacts/claim_map/claim_map_localmax.json",
         "artifacts/reports/step10C_localmax_release_report.json",
         "artifacts/reports/step10C_localmax_release_report.md",
-        "README.md",
         "PROJECT_SUMMARY.md",
         "PROJECT_ONE_PAGE.md",
         "TECHNICAL_OVERVIEW.md",

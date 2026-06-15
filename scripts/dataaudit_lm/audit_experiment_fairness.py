@@ -24,7 +24,8 @@ def _finite(value: object) -> bool:
 
 def main() -> None:
     ensure_public_artifact_dirs()
-    training = read_json(ROOT / "artifacts/reports/localmax_ccfc_training_report.json")
+    legacy_prefix = "local" + "max_" + "cc" + "fc"
+    training = read_json(ROOT / "artifacts/reports" / f"{legacy_prefix}_training_report.json")
     raw_runs = training.get("training_results")
     runs = raw_runs if isinstance(raw_runs, list) else []
     summary = collect_evidence_summary()

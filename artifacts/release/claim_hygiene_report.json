@@ -719,14 +719,6 @@
       "line": 147,
       "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": "# Project Summary  LocalMax V2 upgrades the earlier LocalMax release from 40M-token minimal evidence to a 200M-token local evidence benchmark.  It includes two 100M-token real dataset samples, four filtering methods, three seeds, and 24 registry-backed small-model training runs. The result is stronger local evidence, not a Level 3 or CCF-B-ready claim.",
-      "file": "PROJECT_SUMMARY.md",
-      "line": 5,
-      "phrase": "CCF-B ready",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     }
   ],
   "flagged_phrases": [
@@ -1449,14 +1441,6 @@
       "line": 147,
       "phrase": "LEVEL3_COMPLETED_ARTIFACT",
       "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
-    },
-    {
-      "classification": "allowed_negative_context",
-      "context": "# Project Summary  LocalMax V2 upgrades the earlier LocalMax release from 40M-token minimal evidence to a 200M-token local evidence benchmark.  It includes two 100M-token real dataset samples, four filtering methods, three seeds, and 24 registry-backed small-model training runs. The result is stronger local evidence, not a Level 3 or CCF-B-ready claim.",
-      "file": "PROJECT_SUMMARY.md",
-      "line": 5,
-      "phrase": "CCF-B ready",
-      "reason": "Phrase appears in a non-claim, forbidden-claim, limitation, or claim-boundary context."
     }
   ],
   "optional_files_not_present": [],
@@ -1470,11 +1454,13 @@
     "docs/claim_map_level3.md",
     "docs/CROSS_DATASET_AUDIT.md",
     "docs/DATA_AND_GRADER_LIMITATIONS.md",
+    "docs/DATAAUDIT_SELECTOR_HYPOTHESIS.md",
     "docs/dataset_pipeline_step2.md",
     "docs/DATASETS.md",
     "docs/ENGINEERING_EVIDENCE.md",
     "docs/ETHICS.md",
     "docs/evaluation_pipeline_step7.md",
+    "docs/EVIDENCE_SCOPE.md",
     "docs/EXPERIMENT_DASHBOARD.md",
     "docs/EXPERIMENT_READINESS_REPORT.md",
     "docs/EXPERIMENT_REPORT.md",
@@ -1533,10 +1519,13 @@
     "docs/METHOD.md",
     "docs/METHOD_DASHBOARD.md",
     "docs/METHOD_DIAGNOSTICS.md",
+    "docs/MIGRATION_MAP.md",
     "docs/model_training_pipeline_step5.md",
+    "docs/NAMING_MIGRATION.md",
     "docs/PORTFOLIO_SUMMARY.md",
     "docs/PROJECT_EVIDENCE_MAP.md",
     "docs/PROJECT_INDEX.md",
+    "docs/PROJECT_OVERVIEW.md",
     "docs/PROJECT_PRESENTATION_NOTES.md",
     "docs/PROJECT_REPOSITIONING.md",
     "docs/PROJECT_STATUS.md",
@@ -1554,8 +1543,11 @@
     "docs/research_positioning.md",
     "docs/research_questions.md",
     "docs/RESEARCH_READINESS.md",
+    "docs/RESULTS.md",
     "docs/RESUME.md",
     "docs/RESUME_BULLETS.md",
+    "docs/RESUME_PROJECT.md",
+    "docs/STATISTICAL_PROTOCOL.md",
     "docs/tokenizer_pipeline_step3.md",
     "docs/urd_selector_step6.md",
     "docs/VERIFICATION_REPORT.md",
@@ -1567,10 +1559,10 @@
   ],
   "status": "passed",
   "summary": {
-    "allowed_exception_count": 91,
-    "flagged_phrase_count": 91,
+    "allowed_exception_count": 90,
+    "flagged_phrase_count": 90,
     "optional_not_present_count": 0,
-    "scanned_file_count": 103,
+    "scanned_file_count": 111,
     "unsafe_claim_count": 0
   },
   "unsafe_claims": []

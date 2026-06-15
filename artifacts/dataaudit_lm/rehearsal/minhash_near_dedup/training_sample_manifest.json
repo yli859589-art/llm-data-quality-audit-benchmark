@@ -1,0 +1,14 @@
+{
+  "sample_manifest_hash": "EAF50F51DB9CD95270F43ACD00339439B0985E5E88481135CF2536B8B5E12A43",
+  "sampled_token_count": 35,
+  "sampling_algorithm": "corpus_wide_hash_ranked_token_sample_v1",
+  "sampling_seed": 13,
+  "selected_corpus_hash": "77B11B8813979F6C22F2CF806857AC4BA381EBDC2A18E857E5A91197D4238B6D",
+  "selected_document_ids": [
+    "f_005",
+    "c_002",
+    "d_003",
+    "e_004",
+    "a_000"
+  ]
+}

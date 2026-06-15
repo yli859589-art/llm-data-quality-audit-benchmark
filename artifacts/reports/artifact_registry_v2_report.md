@@ -1,6 +1,6 @@
 # Artifact Registry V2 Report
 
-- Records: `694`
+- Records: `832`
 - Main evidence records: `3`
 - Level 3 evidence records: `0`
 
@@ -8,19 +8,19 @@
 
 | Type | Count |
 |---|---:|
-| `checkpoint_manifest` | 121 |
+| `checkpoint_manifest` | 163 |
 | `claim_map` | 2 |
-| `dataset_manifest` | 25 |
-| `evaluation_manifest` | 12 |
+| `dataset_manifest` | 26 |
+| `evaluation_manifest` | 13 |
 | `figure` | 47 |
-| `filter_manifest` | 43 |
+| `filter_manifest` | 65 |
 | `main_table` | 3 |
 | `mechanism_manifest` | 14 |
 | `protocol_output` | 108 |
-| `readiness_report` | 15 |
-| `report` | 179 |
+| `readiness_report` | 17 |
+| `report` | 199 |
 | `tokenizer_manifest` | 4 |
-| `training_manifest` | 121 |
+| `training_manifest` | 171 |
 
 ## Warnings
 

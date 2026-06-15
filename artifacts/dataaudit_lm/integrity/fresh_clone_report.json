@@ -4,7 +4,7 @@
   "results": [
     {
       "command": [
-        "C:\\Users\\18104\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "python",
         "scripts/dataaudit_lm/audit_metric_correctness.py"
       ],
       "returncode": 0,
@@ -13,7 +13,7 @@
     },
     {
       "command": [
-        "C:\\Users\\18104\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "python",
         "scripts/dataaudit_lm/verify_artifacts.py"
       ],
       "returncode": 0,
