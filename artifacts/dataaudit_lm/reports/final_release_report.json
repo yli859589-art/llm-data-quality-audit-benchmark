@@ -24,7 +24,7 @@
     "required_artifacts_present": true
   },
   "missing_artifacts": [],
-  "mode": "release",
+  "mode": "audit-only",
   "status": "MULTI_SEED_TRAINING_COMPLETED",
   "unfinished_items": [
     "Run matrix has not reached 2 datasets x 6-8 independent methods x at least 5 seeds.",

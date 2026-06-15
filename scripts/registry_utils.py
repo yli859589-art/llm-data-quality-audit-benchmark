@@ -111,7 +111,14 @@ def file_hash(path: str | Path) -> str:
     file_path = Path(path)
     if not file_path.exists() or not file_path.is_file():
         return ""
-    return hashlib.sha256(file_path.read_bytes()).hexdigest()
+    data = file_path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        canonical = data
+    else:
+        canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
 
 
 def config_hash(config_path: str | Path) -> str:

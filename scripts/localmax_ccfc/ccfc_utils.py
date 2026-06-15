@@ -90,12 +90,18 @@ def iter_jsonl_any(path: Path) -> Iterator[dict[str, Any]]:
                 yield json.loads(line)
 
 
+def _canonical_file_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n")
+    return normalized.encode("utf-8")
+
+
 def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest().upper()
+    return hashlib.sha256(_canonical_file_bytes(path)).hexdigest().upper()
 
 
 def protected_hashes() -> dict[str, str]:

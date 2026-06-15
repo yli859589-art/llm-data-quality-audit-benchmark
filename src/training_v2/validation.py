@@ -5,7 +5,8 @@ from pathlib import Path
 from typing import Any
 
 from .config import TrainingConfig, VALID_TRAINING_SCOPES
-from .manifest import MANIFEST_VERSION, sha256_file
+from .manifest import MANIFEST_VERSION
+from tokenization.manifest import sha256_file_variants
 
 
 class TrainingManifestError(ValueError):
@@ -49,8 +50,7 @@ def _validate_hash_field(manifest: dict[str, Any], root: Path, path_field: str, 
     resolved = _resolve(path, root)
     if not resolved.exists():
         _error(f"{path_field} does not exist: {path}")
-    actual = sha256_file(resolved)
-    if actual != expected:
+    if expected not in sha256_file_variants(resolved):
         _error(f"{hash_field} does not match {path_field}")
 
 

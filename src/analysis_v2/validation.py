@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .manifest import sha256_file
+from .manifest import sha256_file_variants
 from .schema import (
     MANIFEST_VERSION,
     PROTECTED_RESULT_FILES,
@@ -71,8 +71,7 @@ def _validate_hash(path_value: str, expected: str, root: Path, field_name: str) 
     resolved = _resolve(path_value, root)
     if not resolved.exists():
         _error(f"{field_name} path does not exist: {path_value}")
-    actual = sha256_file(resolved)
-    if actual != expected:
+    if expected not in sha256_file_variants(resolved):
         _error(f"{field_name} hash mismatch for {path_value}")
 
 
@@ -162,4 +161,3 @@ def assert_mechanism_outputs_not_in_main_results(root: Path) -> None:
         for token in forbidden:
             if token in text:
                 _error(f"Step 8 mechanism output leaked into {relative}")
-

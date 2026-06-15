@@ -2,7 +2,7 @@
   "category_counts": {
     "ACTIVE_LEGACY_DEPENDENCY": 74,
     "CONTENT_ONLY": 173,
-    "LEGACY_ARTIFACT": 1959,
+    "LEGACY_ARTIFACT": 1963,
     "LEGACY_DOCUMENTATION": 193
   },
   "findings": [
@@ -2665,6 +2665,26 @@
       "category": "LEGACY_ARTIFACT",
       "path": "artifacts/dataaudit_lm/reports/phase1b_baseline_report.md",
       "term": "LOCALMAX"
+    },
+    {
+      "category": "LEGACY_ARTIFACT",
+      "path": "artifacts/dataaudit_lm/reports/phase1b_phase4a_final_report.json",
+      "term": "LOCALMAX"
+    },
+    {
+      "category": "LEGACY_ARTIFACT",
+      "path": "artifacts/dataaudit_lm/reports/phase1b_phase4a_final_report.json",
+      "term": "CCFC"
+    },
+    {
+      "category": "LEGACY_ARTIFACT",
+      "path": "artifacts/dataaudit_lm/reports/phase1b_phase4a_final_report.md",
+      "term": "LOCALMAX"
+    },
+    {
+      "category": "LEGACY_ARTIFACT",
+      "path": "artifacts/dataaudit_lm/reports/phase1b_phase4a_final_report.md",
+      "term": "CCFC"
     },
     {
       "category": "LEGACY_ARTIFACT",
@@ -12002,7 +12022,7 @@
       "term": "LLM_BENCHMARK"
     }
   ],
-  "full_repo_hit_count": 2399,
+  "full_repo_hit_count": 2403,
   "full_repo_zero_hit_required_this_round": false,
   "inventory_version": "dataaudit_lm_naming_inventory_v1",
   "legacy_terms": [

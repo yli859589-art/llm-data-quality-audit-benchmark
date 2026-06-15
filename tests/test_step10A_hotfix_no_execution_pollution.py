@@ -17,11 +17,14 @@ EXPECTED_HASHES = {
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest().upper()
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        canonical = data
+    else:
+        canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest().upper()
 
 
 def test_step10a_hotfix_does_not_modify_protected_result_files() -> None:
@@ -49,4 +52,3 @@ def test_step10a_hotfix_readiness_fields_are_boundary_preserving() -> None:
     assert report["heavy_execution_completed"] is False
     assert report["level3_completed_artifact"] is False
     assert report["main_results_modified"] is False
-

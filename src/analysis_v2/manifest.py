@@ -11,12 +11,31 @@ from .io import project_relative, resolve_path
 from .schema import MANIFEST_VERSION
 
 
+def _canonical_file_bytes(path: str | Path) -> bytes:
+    data = Path(path).read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n")
+    return normalized.encode("utf-8")
+
+
 def sha256_file(path: str | Path) -> str:
-    digest = hashlib.sha256()
-    with Path(path).open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return hashlib.sha256(_canonical_file_bytes(path)).hexdigest()
+
+
+def sha256_file_variants(path: str | Path) -> set[str]:
+    data = Path(path).read_bytes()
+    variants = {hashlib.sha256(data).hexdigest()}
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return variants
+    normalized_lf = text.replace("\r\n", "\n").replace("\r", "\n")
+    variants.add(hashlib.sha256(normalized_lf.encode("utf-8")).hexdigest())
+    variants.add(hashlib.sha256(normalized_lf.replace("\n", "\r\n").encode("utf-8")).hexdigest())
+    return variants
 
 
 def _existing_relative_paths(paths: list[str], root: Path) -> list[str]:
@@ -96,4 +115,3 @@ def create_mechanism_manifest(
 def write_manifest(path: Path, manifest: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
-

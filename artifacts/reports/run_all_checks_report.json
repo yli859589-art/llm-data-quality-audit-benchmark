@@ -1,7 +1,7 @@
 {
-  "duration_seconds": 289.77018359999965,
+  "duration_seconds": 162.84704190000048,
   "failed_groups": [],
-  "finished_at": "2026-06-15T18:15:11+00:00",
+  "finished_at": "2026-06-15T23:30:33+00:00",
   "groups": [
     {
       "command": [
@@ -74,20 +74,20 @@
             "tests/test_supporting_edges.py",
             "-q"
           ],
-          "duration_seconds": 37.23907610000015,
+          "duration_seconds": 15.277489799998875,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 34.45s\n"
+          "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 13.82s\n"
         }
       ],
-      "duration_seconds": 37.24509390000003,
+      "duration_seconds": 15.27954630000022,
       "name": "legacy_core_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 34.45s\n"
+      "stdout_tail": "........................................................................ [ 81%]\n................                                                         [100%]\n88 passed in 13.82s\n"
     },
     {
       "command": [
@@ -114,20 +114,20 @@
             "tests/test_no_fallback_step2.py",
             "-q"
           ],
-          "duration_seconds": 6.813672400000087,
+          "duration_seconds": 5.798691300002247,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".............                                                            [100%]\n13 passed in 4.61s\n"
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 4.49s\n"
         }
       ],
-      "duration_seconds": 6.826199000000088,
+      "duration_seconds": 5.800800799999706,
       "name": "step2_data_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".............                                                            [100%]\n13 passed in 4.61s\n"
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 4.49s\n"
     },
     {
       "command": [
@@ -152,20 +152,20 @@
             "tests/test_train_tokenizer_v2_step3.py",
             "-q"
           ],
-          "duration_seconds": 7.158587500000067,
+          "duration_seconds": 5.729681900000287,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "..........                                                               [100%]\n10 passed in 4.36s\n"
+          "stdout_tail": "..........                                                               [100%]\n10 passed in 4.46s\n"
         }
       ],
-      "duration_seconds": 7.173158999999941,
+      "duration_seconds": 5.7316418000009435,
       "name": "step3_tokenizer_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "..........                                                               [100%]\n10 passed in 4.36s\n"
+      "stdout_tail": "..........                                                               [100%]\n10 passed in 4.46s\n"
     },
     {
       "command": [
@@ -192,20 +192,20 @@
             "tests/test_proxy_filter_boundaries_step4.py",
             "-q"
           ],
-          "duration_seconds": 1.6256622000000789,
+          "duration_seconds": 1.646315299996786,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.76s\n"
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.75s\n"
         }
       ],
-      "duration_seconds": 1.6385879999997996,
+      "duration_seconds": 1.6483101999983774,
       "name": "step4_filter_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.76s\n"
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.75s\n"
     },
     {
       "command": [
@@ -234,20 +234,20 @@
             "tests/test_training_no_main_results_pollution_step5.py",
             "-q"
           ],
-          "duration_seconds": 15.97733819999985,
+          "duration_seconds": 9.53397860000041,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".............                                                            [100%]\n13 passed in 13.07s\n"
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 8.11s\n"
         }
       ],
-      "duration_seconds": 15.99025789999996,
+      "duration_seconds": 9.536221599999408,
       "name": "step5_training_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".............                                                            [100%]\n13 passed in 13.07s\n"
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 8.11s\n"
     },
     {
       "command": [
@@ -276,20 +276,20 @@
             "tests/test_urd_no_main_results_pollution_step6.py",
             "-q"
           ],
-          "duration_seconds": 8.535719399999834,
+          "duration_seconds": 6.1394071000031545,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "........                                                                 [100%]\n8 passed in 6.21s\n"
+          "stdout_tail": "........                                                                 [100%]\n8 passed in 4.97s\n"
         }
       ],
-      "duration_seconds": 8.54689959999996,
+      "duration_seconds": 6.141702599998098,
       "name": "step6_urd_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "........                                                                 [100%]\n8 passed in 6.21s\n"
+      "stdout_tail": "........                                                                 [100%]\n8 passed in 4.97s\n"
     },
     {
       "command": [
@@ -326,20 +326,20 @@
             "tests/test_evaluation_no_main_results_pollution_step7.py",
             "-q"
           ],
-          "duration_seconds": 12.84706580000011,
+          "duration_seconds": 10.177706700000272,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".............                                                            [100%]\n13 passed in 10.64s\n"
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 9.01s\n"
         }
       ],
-      "duration_seconds": 12.859340900000007,
+      "duration_seconds": 10.179852400000527,
       "name": "step7_evaluation_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".............                                                            [100%]\n13 passed in 10.64s\n"
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 9.01s\n"
     },
     {
       "command": [
@@ -380,20 +380,20 @@
             "tests/test_mechanism_no_main_results_pollution_step8.py",
             "-q"
           ],
-          "duration_seconds": 2.1557716000002074,
+          "duration_seconds": 2.2607682999987446,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "..............                                                           [100%]\n14 passed in 1.39s\n"
+          "stdout_tail": "..............                                                           [100%]\n14 passed in 1.45s\n"
         }
       ],
-      "duration_seconds": 2.172325699999874,
+      "duration_seconds": 2.2629515000007814,
       "name": "step8_mechanism_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "..............                                                           [100%]\n14 passed in 1.39s\n"
+      "stdout_tail": "..............                                                           [100%]\n14 passed in 1.45s\n"
     },
     {
       "command": [
@@ -432,20 +432,20 @@
             "tests/test_step9_level3_artifact_hygiene.py",
             "-q"
           ],
-          "duration_seconds": 69.50337020000006,
+          "duration_seconds": 15.919015899999067,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "................................                                         [100%]\n32 passed in 68.47s (0:01:08)\n"
+          "stdout_tail": "................................                                         [100%]\n32 passed in 15.07s\n"
         }
       ],
-      "duration_seconds": 69.51488139999992,
+      "duration_seconds": 15.92122290000043,
       "name": "step9_readiness_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "................................                                         [100%]\n32 passed in 68.47s (0:01:08)\n"
+      "stdout_tail": "................................                                         [100%]\n32 passed in 15.07s\n"
     },
     {
       "command": [
@@ -480,20 +480,20 @@
             "tests/test_step10A_hotfix_no_execution_pollution.py",
             "-q"
           ],
-          "duration_seconds": 15.343850299999758,
+          "duration_seconds": 4.9609689000026265,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "......................                                                   [100%]\n22 passed in 14.28s\n"
+          "stdout_tail": "......................                                                   [100%]\n22 passed in 4.15s\n"
         }
       ],
-      "duration_seconds": 15.356670099999974,
+      "duration_seconds": 4.9632629000007,
       "name": "step10A_protocol_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "......................                                                   [100%]\n22 passed in 14.28s\n"
+      "stdout_tail": "......................                                                   [100%]\n22 passed in 4.15s\n"
     },
     {
       "command": [
@@ -530,20 +530,20 @@
             "tests/test_step10B_no_false_level3_claims.py",
             "-q"
           ],
-          "duration_seconds": 1.418417099999715,
+          "duration_seconds": 1.5145112999998673,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "............                                                             [100%]\n12 passed in 0.66s\n"
+          "stdout_tail": "............                                                             [100%]\n12 passed in 0.68s\n"
         }
       ],
-      "duration_seconds": 1.4332336000002215,
+      "duration_seconds": 1.5166286999992735,
       "name": "step10B_execution_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "............                                                             [100%]\n12 passed in 0.66s\n"
+      "stdout_tail": "............                                                             [100%]\n12 passed in 0.68s\n"
     },
     {
       "command": [
@@ -600,20 +600,20 @@
             "tests/test_localmax_no_false_level3_claims_step10B.py",
             "-q"
           ],
-          "duration_seconds": 1.942544800000178,
+          "duration_seconds": 2.0891301999981806,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".........................                                                [100%]\n25 passed in 1.22s\n"
+          "stdout_tail": ".........................                                                [100%]\n25 passed in 1.30s\n"
         }
       ],
-      "duration_seconds": 1.9564522999999099,
+      "duration_seconds": 2.091550900000584,
       "name": "step10B_localmax_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".........................                                                [100%]\n25 passed in 1.22s\n"
+      "stdout_tail": ".........................                                                [100%]\n25 passed in 1.30s\n"
     },
     {
       "command": [
@@ -656,20 +656,20 @@
             "tests/test_localmax_release_no_result_modification_step10C_hotfix.py",
             "-q"
           ],
-          "duration_seconds": 23.426815499999975,
+          "duration_seconds": 14.577379999998811,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "...........................                                              [100%]\n27 passed in 22.42s\n"
+          "stdout_tail": "...........................                                              [100%]\n27 passed in 13.79s\n"
         }
       ],
-      "duration_seconds": 23.443995300000097,
+      "duration_seconds": 14.579513099997712,
       "name": "step10C_localmax_release_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "...........................                                              [100%]\n27 passed in 22.42s\n"
+      "stdout_tail": "...........................                                              [100%]\n27 passed in 13.79s\n"
     },
     {
       "command": [
@@ -712,20 +712,20 @@
             "tests/test_localmax_v2_no_historical_pollution.py",
             "-q"
           ],
-          "duration_seconds": 1.6796097999999802,
+          "duration_seconds": 1.78171939999811,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.93s\n"
+          "stdout_tail": ".............                                                            [100%]\n13 passed in 0.99s\n"
         }
       ],
-      "duration_seconds": 1.6917044000001624,
+      "duration_seconds": 1.7844928999984404,
       "name": "localmax_v2_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.93s\n"
+      "stdout_tail": ".............                                                            [100%]\n13 passed in 0.99s\n"
     },
     {
       "command": [
@@ -744,20 +744,20 @@
             "tests/test_localmax_ccfc_strengthening.py",
             "-q"
           ],
-          "duration_seconds": 0.8466078000001289,
+          "duration_seconds": 0.841381399997772,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "....                                                                     [100%]\n4 passed in 0.09s\n"
+          "stdout_tail": "....                                                                     [100%]\n4 passed in 0.10s\n"
         }
       ],
-      "duration_seconds": 0.8607375000001412,
+      "duration_seconds": 0.8436025000009977,
       "name": "localmax_ccfc_tests",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.09s\n"
+      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.10s\n"
     },
     {
       "command": [
@@ -772,7 +772,7 @@
             "scripts/check_filter_manifests.py",
             "--include-step4"
           ],
-          "duration_seconds": 0.22038949999978286,
+          "duration_seconds": 0.1625843999972858,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -784,7 +784,7 @@
             "scripts/check_training_manifests.py",
             "--include-step5"
           ],
-          "duration_seconds": 2.005604200000107,
+          "duration_seconds": 2.12238939999952,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -796,7 +796,7 @@
             "scripts/check_urd_manifests.py",
             "--include-step6"
           ],
-          "duration_seconds": 2.290656399999989,
+          "duration_seconds": 2.2380302000019583,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -808,7 +808,7 @@
             "scripts/check_evaluation_manifests.py",
             "--include-step7"
           ],
-          "duration_seconds": 0.14486440000018774,
+          "duration_seconds": 0.1870643000002019,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -820,14 +820,14 @@
             "scripts/check_mechanism_manifests.py",
             "--include-step8"
           ],
-          "duration_seconds": 0.17077530000005936,
+          "duration_seconds": 0.14825779999955557,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "Mechanism manifest check: ok (9 manifests)\n"
         }
       ],
-      "duration_seconds": 4.894391899999846,
+      "duration_seconds": 4.869384400000854,
       "name": "manifest_checks",
       "required": true,
       "returncode": 0,
@@ -847,18 +847,18 @@
             "scripts/check_repo.py",
             "--clean"
           ],
-          "duration_seconds": 3.131651199999851,
+          "duration_seconds": 3.9625861999993504,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "Artifact check: ok\nRepository cleanup removed 0 generated cache/temp paths.\nRepository hygiene check: ok\n"
+          "stdout_tail": "Artifact check: ok\nRepository cleanup removed 425 generated cache/temp paths.\nRepository hygiene check: ok\n"
         },
         {
           "command": [
             "python",
             "scripts/capture_environment.py"
           ],
-          "duration_seconds": 2.06526840000015,
+          "duration_seconds": 2.086017100002209,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -869,7 +869,7 @@
             "python",
             "scripts/check_registry_schema.py"
           ],
-          "duration_seconds": 0.1347381000000496,
+          "duration_seconds": 0.1338288000006287,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -880,7 +880,7 @@
             "python",
             "scripts/check_artifact_lineage.py"
           ],
-          "duration_seconds": 0.16608429999996588,
+          "duration_seconds": 0.14836449999711476,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -891,20 +891,20 @@
             "python",
             "scripts/check_main_results_purity.py"
           ],
-          "duration_seconds": 0.0813665000000583,
+          "duration_seconds": 0.07214329999987967,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "Main results purity check: ok (24 rows)\n"
         }
       ],
-      "duration_seconds": 5.646811200000229,
+      "duration_seconds": 6.413890600000741,
       "name": "artifact_checks",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "Artifact check: ok\nRepository cleanup removed 0 generated cache/temp paths.\nRepository hygiene check: ok\nEnvironment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099\nArtifact: artifacts\\environment\\fingerprint.json\nRegistry schema check: ok (153 rows)\nArtifact lineage check: ok (153 rows, 42 superseded)\nMain results purity check: ok (24 rows)\n"
+      "stdout_tail": "Artifact check: ok\nRepository cleanup removed 425 generated cache/temp paths.\nRepository hygiene check: ok\nEnvironment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099\nArtifact: artifacts\\environment\\fingerprint.json\nRegistry schema check: ok (153 rows)\nArtifact lineage check: ok (153 rows, 42 superseded)\nMain results purity check: ok (24 rows)\n"
     },
     {
       "command": [
@@ -917,7 +917,7 @@
             "python",
             "scripts/check_claims_supported.py"
           ],
-          "duration_seconds": 0.08295520000001488,
+          "duration_seconds": 0.07082230000014533,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -928,7 +928,7 @@
             "python",
             "scripts/check_claim_hygiene.py"
           ],
-          "duration_seconds": 0.628801399999702,
+          "duration_seconds": 0.602949100000842,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -939,7 +939,7 @@
             "python",
             "scripts/check_claim_map.py"
           ],
-          "duration_seconds": 0.0995957999998609,
+          "duration_seconds": 0.08436100000108127,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -950,7 +950,7 @@
             "python",
             "scripts/check_no_forbidden_claims.py"
           ],
-          "duration_seconds": 0.18263470000010784,
+          "duration_seconds": 0.17702400000052876,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -961,7 +961,7 @@
             "python",
             "scripts/check_no_smoke_in_main.py"
           ],
-          "duration_seconds": 0.0872137000001203,
+          "duration_seconds": 0.07348519999868586,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -972,7 +972,7 @@
             "python",
             "scripts/check_no_protocol_as_completed.py"
           ],
-          "duration_seconds": 0.5131230000001779,
+          "duration_seconds": 0.49414380000234814,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -983,14 +983,14 @@
             "python",
             "scripts/check_no_level2_as_level3.py"
           ],
-          "duration_seconds": 1.09031479999976,
+          "duration_seconds": 1.0812731999976677,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "No-Level2-as-Level3 check: ok\n"
         }
       ],
-      "duration_seconds": 2.767941499999779,
+      "duration_seconds": 2.598655800000415,
       "name": "claim_checks",
       "required": true,
       "returncode": 0,
@@ -1009,7 +1009,7 @@
             "python",
             "scripts/check_level3_gates.py"
           ],
-          "duration_seconds": 1.074644900000294,
+          "duration_seconds": 1.1572697000010521,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1020,7 +1020,7 @@
             "python",
             "scripts/check_level3_protocol.py"
           ],
-          "duration_seconds": 0.10744710000017221,
+          "duration_seconds": 0.10044199999902048,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1031,7 +1031,7 @@
             "python",
             "scripts/check_level3_preflight.py"
           ],
-          "duration_seconds": 0.1311417000001711,
+          "duration_seconds": 0.1021906999994826,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1042,14 +1042,14 @@
             "python",
             "scripts/write_step10A_readiness_report.py"
           ],
-          "duration_seconds": 0.11454600000024584,
+          "duration_seconds": 0.09946960000161198,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "Step 10A readiness report: completed\nReport: artifacts/reports/step10A_readiness_report.json\n"
         }
       ],
-      "duration_seconds": 1.4814259999998285,
+      "duration_seconds": 1.4677726000008988,
       "name": "level3_gate_checks",
       "required": true,
       "returncode": 0,
@@ -1068,7 +1068,7 @@
             "python",
             "scripts/dataaudit_lm/audit_metric_correctness.py"
           ],
-          "duration_seconds": 2.0251995000003262,
+          "duration_seconds": 2.1029603999995743,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1079,7 +1079,7 @@
             "python",
             "scripts/dataaudit_lm/audit_experiment_fairness.py"
           ],
-          "duration_seconds": 0.12475810000023557,
+          "duration_seconds": 0.09858680000252207,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1090,7 +1090,7 @@
             "python",
             "scripts/dataaudit_lm/verify_artifacts.py"
           ],
-          "duration_seconds": 1.0951678999999785,
+          "duration_seconds": 1.2004855999985011,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1101,7 +1101,7 @@
             "python",
             "scripts/dataaudit_lm/write_migration_and_protocol_reports.py"
           ],
-          "duration_seconds": 0.09121400000003632,
+          "duration_seconds": 0.08766130000003614,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1112,7 +1112,7 @@
             "python",
             "scripts/dataaudit_lm/run_rehearsal.py"
           ],
-          "duration_seconds": 4.715516799999932,
+          "duration_seconds": 3.7581519999985176,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1124,7 +1124,7 @@
             "scripts/dataaudit_lm/finalize_release.py",
             "--audit-only"
           ],
-          "duration_seconds": 0.1263357999996515,
+          "duration_seconds": 0.14072719999967376,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1135,7 +1135,7 @@
             "python",
             "scripts/dataaudit_lm/verify_document_consistency.py"
           ],
-          "duration_seconds": 0.12795850000020437,
+          "duration_seconds": 0.10155209999720682,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1147,7 +1147,7 @@
             "scripts/dataaudit_lm/verify_fresh_clone.py",
             "--light"
           ],
-          "duration_seconds": 3.301749199999904,
+          "duration_seconds": 3.4101817999980995,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1158,20 +1158,20 @@
             "python",
             "scripts/dataaudit_lm/generate_naming_inventory.py"
           ],
-          "duration_seconds": 1.5814080000000104,
+          "duration_seconds": 1.6478606999990006,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
-          "stdout_tail": "{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2399}\n"
+          "stdout_tail": "{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2403}\n"
         }
       ],
-      "duration_seconds": 13.299222699999973,
+      "duration_seconds": 12.567725299999438,
       "name": "dataaudit_lm_checks",
       "required": true,
       "returncode": 0,
       "status": "passed",
       "stderr_tail": "",
-      "stdout_tail": "{\"metric_audit_passed\": true, \"status\": \"METRIC_AUDIT_PASSED\"}\n{\"fairness_metadata_checked\": true, \"final_matrix_complete\": false}\n{\"artifact_integrity_verified\": true, \"missing\": []}\n{\"migration_rows\": 14, \"freeze_status\": \"frozen_for_rehearsal_only\"}\n{\"rehearsal_passed\": true, \"methods\": 8}\n{\"status\": \"MULTI_SEED_TRAINING_COMPLETED\", \"mode\": \"audit-only\", \"final_release_gate_passed\": false, \"message\": \"AUDIT_COMPLETED_RELEASE_NOT_READY\"}\n{\"document_consistency_verified\": true, \"forbidden_terms\": [], \"missing_numbers\": []}\n{\"fresh_clone_verified\": true, \"light\": true}\n{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2399}\n"
+      "stdout_tail": "{\"metric_audit_passed\": true, \"status\": \"METRIC_AUDIT_PASSED\"}\n{\"fairness_metadata_checked\": true, \"final_matrix_complete\": false}\n{\"artifact_integrity_verified\": true, \"missing\": []}\n{\"migration_rows\": 14, \"freeze_status\": \"frozen_for_rehearsal_only\"}\n{\"rehearsal_passed\": true, \"methods\": 8}\n{\"status\": \"MULTI_SEED_TRAINING_COMPLETED\", \"mode\": \"audit-only\", \"final_release_gate_passed\": false, \"message\": \"AUDIT_COMPLETED_RELEASE_NOT_READY\"}\n{\"document_consistency_verified\": true, \"forbidden_terms\": [], \"missing_numbers\": []}\n{\"fresh_clone_verified\": true, \"light\": true}\n{\"new_scope_hit_count\": 0, \"full_repo_hit_count\": 2403}\n"
     },
     {
       "command": [
@@ -1184,7 +1184,7 @@
             "python",
             "scripts/localmax/make_localmax_release_tables.py"
           ],
-          "duration_seconds": 2.4493212999996103,
+          "duration_seconds": 2.389432100000704,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1195,7 +1195,7 @@
             "python",
             "scripts/localmax/make_localmax_release_figures.py"
           ],
-          "duration_seconds": 4.689511699999457,
+          "duration_seconds": 3.529607100001158,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1206,7 +1206,7 @@
             "python",
             "scripts/localmax/check_localmax_release_claims.py"
           ],
-          "duration_seconds": 2.028738699999849,
+          "duration_seconds": 2.21343060000072,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1217,7 +1217,7 @@
             "python",
             "scripts/localmax/check_localmax_release_bundle.py"
           ],
-          "duration_seconds": 2.177517400000397,
+          "duration_seconds": 2.271731999997428,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1228,7 +1228,7 @@
             "python",
             "scripts/localmax/check_localmax_release_idempotency.py"
           ],
-          "duration_seconds": 26.50044919999982,
+          "duration_seconds": 14.669865700001537,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1239,7 +1239,7 @@
             "python",
             "scripts/localmax/finalize_localmax_release.py"
           ],
-          "duration_seconds": 9.361323600000105,
+          "duration_seconds": 4.135343500001909,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1250,7 +1250,7 @@
             "python",
             "scripts/localmax/check_localmax_release_claims.py"
           ],
-          "duration_seconds": 2.013035399999353,
+          "duration_seconds": 2.220356099998753,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1261,14 +1261,14 @@
             "python",
             "scripts/localmax/check_localmax_release_bundle.py"
           ],
-          "duration_seconds": 2.062442000000374,
+          "duration_seconds": 2.3729539000014483,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "LocalMax release bundle check: ok\n"
         }
       ],
-      "duration_seconds": 51.38707549999981,
+      "duration_seconds": 33.82048610000129,
       "name": "localmax_release_checks",
       "required": true,
       "returncode": 0,
@@ -1287,7 +1287,7 @@
             "python",
             "scripts/finalize_artifact_registry_v2.py"
           ],
-          "duration_seconds": 3.268685899999582,
+          "duration_seconds": 2.5913430000000517,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1298,7 +1298,7 @@
             "python",
             "scripts/check_registry_to_tables.py"
           ],
-          "duration_seconds": 0.12811400000009598,
+          "duration_seconds": 0.1161748999984411,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
@@ -1309,14 +1309,14 @@
             "python",
             "scripts/check_main_results_from_registry.py"
           ],
-          "duration_seconds": 0.13828040000043984,
+          "duration_seconds": 0.11293610000211629,
           "returncode": 0,
           "status": "passed",
           "stderr_tail": "",
           "stdout_tail": "Main-results-from-registry check: ok\n"
         }
       ],
-      "duration_seconds": 3.582268200000726,
+      "duration_seconds": 2.8273990000016056,
       "name": "registry_finalization_checks",
       "required": true,
       "returncode": 0,
@@ -1333,7 +1333,7 @@
     "localmax_v2_release_checks",
     "localmax_ccfc_artifact_checks"
   ],
-  "started_at": "2026-06-15T18:10:21+00:00",
+  "started_at": "2026-06-15T23:27:50+00:00",
   "status": "passed",
   "timeout_groups": []
 }

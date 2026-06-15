@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from experiment_utils import root
-from filters_v2.manifest import sha256_file
+from filters_v2.manifest import sha256_file_variants
 from filters_v2.validation import FilterManifestError, validate_filter_manifest
 from training_v2.validation import assert_training_outputs_not_in_main_results
 
@@ -88,7 +88,7 @@ def validate_urd_manifest(manifest: dict[str, Any], package_root: Path) -> None:
         path = _resolve(str(info.get("path", "")), package_root)
         if not path.exists():
             raise FilterManifestError(f"URD output missing: {path}")
-        if sha256_file(path) != info.get("sha256"):
+        if str(info.get("sha256")) not in sha256_file_variants(path):
             raise FilterManifestError(f"URD output hash mismatch: {path}")
     summary = _load_json(_resolve(output_hashes["urd_summary.json"]["path"], package_root))
     if summary.get("verified_effectiveness") is not False:

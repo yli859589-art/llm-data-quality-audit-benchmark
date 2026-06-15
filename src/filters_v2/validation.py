@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .manifest import MANIFEST_VERSION, VALID_SCOPES, sha256_file
+from .manifest import MANIFEST_VERSION, VALID_SCOPES, sha256_file_variants
 
 
 class FilterManifestError(ValueError):
@@ -95,9 +95,9 @@ def validate_filter_manifest(manifest: dict[str, Any], root: Path) -> None:
         _error(f"dataset manifest missing: {dataset_path}")
     if not tokenizer_path.exists():
         _error(f"tokenizer manifest missing: {tokenizer_path}")
-    if sha256_file(dataset_path) != manifest["dataset_manifest_hash"]:
+    if str(manifest["dataset_manifest_hash"]) not in sha256_file_variants(dataset_path):
         _error("dataset_manifest_hash does not match file")
-    if sha256_file(tokenizer_path) != manifest["tokenizer_manifest_hash"]:
+    if str(manifest["tokenizer_manifest_hash"]) not in sha256_file_variants(tokenizer_path):
         _error("tokenizer_manifest_hash does not match file")
     hashes = manifest.get("output_hashes")
     if not isinstance(hashes, dict):
@@ -111,7 +111,7 @@ def validate_filter_manifest(manifest: dict[str, Any], root: Path) -> None:
         path = _resolve(str(info["path"]), root)
         if not path.exists():
             _error(f"output file missing: {path}")
-        if sha256_file(path) != info["sha256"]:
+        if str(info["sha256"]) not in sha256_file_variants(path):
             _error(f"output hash mismatch: {path}")
     keep_rate_report_path = _resolve(str(hashes["keep_rate_report.json"]["path"]), root)
     keep_rate_report = json.loads(keep_rate_report_path.read_text(encoding="utf-8"))

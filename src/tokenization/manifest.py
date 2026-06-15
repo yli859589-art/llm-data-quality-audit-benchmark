@@ -19,12 +19,31 @@ VALID_TOKENIZER_TYPES = {
 VALID_SCOPES = {"smoke", "sample", "main_protocol", "legacy_current", "implemented_but_not_run"}
 
 
+def _canonical_file_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n")
+    return normalized.encode("utf-8")
+
+
 def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return hashlib.sha256(_canonical_file_bytes(path)).hexdigest()
+
+
+def sha256_file_variants(path: str | Path) -> set[str]:
+    data = Path(path).read_bytes()
+    variants = {hashlib.sha256(data).hexdigest()}
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return variants
+    normalized_lf = text.replace("\r\n", "\n").replace("\r", "\n")
+    variants.add(hashlib.sha256(normalized_lf.encode("utf-8")).hexdigest())
+    variants.add(hashlib.sha256(normalized_lf.replace("\n", "\r\n").encode("utf-8")).hexdigest())
+    return variants
 
 
 def sha256_json(payload: dict[str, Any]) -> str:

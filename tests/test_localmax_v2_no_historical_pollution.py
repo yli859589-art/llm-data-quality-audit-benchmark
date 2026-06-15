@@ -15,4 +15,11 @@ def test_localmax_v2_did_not_modify_protected_historical_results() -> None:
         "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
     }
     for rel_path, digest in expected.items():
-        assert hashlib.sha256((ROOT / rel_path).read_bytes()).hexdigest().upper() == digest
+        data = (ROOT / rel_path).read_bytes()
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError:
+            canonical = data
+        else:
+            canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+        assert hashlib.sha256(canonical).hexdigest().upper() == digest

@@ -2,7 +2,7 @@
 
 - Status: `MULTI_SEED_TRAINING_COMPLETED`
 - Final release gate passed: `False`
-- Mode: `release`
+- Mode: `audit-only`
 - Datasets: `2`
 - Methods: `7`
 - Seeds: `3`

@@ -15,7 +15,14 @@ PROTECTED = {
 
 
 def _sha(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        canonical = data
+    else:
+        canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest().upper()
 
 
 def test_protected_historical_results_are_unchanged() -> None:
@@ -47,4 +54,3 @@ def test_localmax_release_values_match_source_table() -> None:
             assert release_row[field] == source_row[field]
         assert release_row["training_manifest"].startswith("artifacts/localmax_release/")
         assert release_row["evaluation_manifest"].startswith("artifacts/localmax_release/")
-

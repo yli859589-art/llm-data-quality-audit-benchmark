@@ -1,11 +1,11 @@
 {
   "formal_training_started": false,
-  "freeze_manifest_hash": "BCEE2B6A3E4DFC7FC01E5F65F865AC241CEFB65E0FE0C9EEFD30471603C3A4AB",
+  "freeze_manifest_hash": "20A10A3A8B8129D49EED50B0E7D4AAC76E04A6F486671213247C964D7009A566",
   "planned_final_matrix": "2 datasets x 6-8 independent methods x at least 5 seeds",
   "protocol_freeze_version": "dataaudit_lm_rehearsal_freeze_v1",
   "protocol_path": "configs/dataaudit_lm/frozen_protocol.yaml",
-  "protocol_sha256": "CEBA3DEA71818620E96415742948B337AE33345F6BED7C3A39311468C1DEF034",
+  "protocol_sha256": "16E7B87901BAC9421C102DB8A0F26FC2C0E3AAD7B71B07AE3F22633AE3953502",
   "statistical_protocol_path": "configs/dataaudit_lm/statistical_analysis.yaml",
-  "statistical_protocol_sha256": "79E66F377DF41466D30164679F0FE8A7FA48D1F7AC2A5C99479945946A045902",
+  "statistical_protocol_sha256": "F25770A892AE14A9A886288B80898309A9D90CA3EFB5874DCD90EE2A834440FD",
   "status": "frozen_for_rehearsal_only"
 }

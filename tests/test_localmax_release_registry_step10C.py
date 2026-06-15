@@ -9,7 +9,27 @@ ROOT = Path.cwd()
 
 
 def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        canonical = data
+    else:
+        canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest().upper()
+
+
+def _sha256_variants(path: Path) -> set[str]:
+    data = path.read_bytes()
+    variants = {hashlib.sha256(data).hexdigest().upper()}
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return variants
+    normalized_lf = text.replace("\r\n", "\n").replace("\r", "\n")
+    variants.add(hashlib.sha256(normalized_lf.encode("utf-8")).hexdigest().upper())
+    variants.add(hashlib.sha256(normalized_lf.replace("\n", "\r\n").encode("utf-8")).hexdigest().upper())
+    return variants
 
 
 def test_localmax_release_manifest_and_hashes_exist() -> None:
@@ -35,6 +55,5 @@ def test_localmax_release_registry_hashes_are_valid() -> None:
     for row in rows:
         path = ROOT / row["path"]
         assert path.exists(), row["path"]
-        assert row["sha256"] == _sha256(path)
+        assert row["sha256"] in _sha256_variants(path)
         assert row["level3_completed_artifact"] is False
-

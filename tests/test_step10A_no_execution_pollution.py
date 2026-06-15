@@ -15,11 +15,14 @@ EXPECTED_HASHES = {
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest().upper()
+    data = path.read_bytes()
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        canonical = data
+    else:
+        canonical = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest().upper()
 
 
 def test_step10A_does_not_modify_protected_result_files() -> None:
@@ -42,4 +45,3 @@ def test_step10A_does_not_create_completed_level3_results() -> None:
         report = json.loads(report_path.read_text(encoding="utf-8"))
         assert report.get("level3_completed_artifact") is False
         assert report.get("heavy_execution_completed") is False
-

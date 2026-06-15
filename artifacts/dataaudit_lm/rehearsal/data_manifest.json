@@ -1,5 +1,5 @@
 {
-  "acquisition_date": "2026-06-15T18:14:08+00:00",
+  "acquisition_date": "2026-06-15T23:29:49+00:00",
   "config": "local_static",
   "content_hashes": [
     "1094D9F917B20BE4C41D3974D048B28D3FF347708EE845215BA25D8365D6C005",
@@ -29,7 +29,7 @@
   ],
   "dataset_repository": "dataaudit_rehearsal_toy",
   "license_note": "recorded for audit; verify upstream license before redistribution",
-  "manifest_hash": "B484D0041376118B38D4C2BDFFA8F33DD39BA4EAE20D5CB56713DFBB30E77227",
+  "manifest_hash": "F473BC60D425529F77FAF9BF097AD1D6516EFB7626EC5074DBD584DF452B4654",
   "manifest_version": "dataaudit_lm_dataset_manifest_v1",
   "python_version": "3.12.5",
   "raw_ingestion_policy": "retain_all_upstream_records_no_content_dedup",

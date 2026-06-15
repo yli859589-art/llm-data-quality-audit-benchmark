@@ -2,37 +2,37 @@
 
 - Status: `passed`
 - Overall passed: `True`
-- Started at: `2026-06-15T18:10:21+00:00`
-- Finished at: `2026-06-15T18:15:11+00:00`
-- Duration seconds: `289.770`
+- Started at: `2026-06-15T23:27:50+00:00`
+- Finished at: `2026-06-15T23:30:33+00:00`
+- Duration seconds: `162.847`
 - Failed groups: `none`
 - Timeout groups: `none`
 - Skipped groups: `level3_execution_checks, localmax_execution_checks, localmax_v2_execution_checks, localmax_v2_release_checks, localmax_ccfc_artifact_checks`
 
 | Group | Required | Status | Return Code | Duration Seconds |
 |---|---:|---|---:|---:|
-| `legacy_core_tests` | `True` | `passed` | 0 | 37.245 |
-| `step2_data_tests` | `True` | `passed` | 0 | 6.826 |
-| `step3_tokenizer_tests` | `True` | `passed` | 0 | 7.173 |
-| `step4_filter_tests` | `True` | `passed` | 0 | 1.639 |
-| `step5_training_tests` | `True` | `passed` | 0 | 15.990 |
-| `step6_urd_tests` | `True` | `passed` | 0 | 8.547 |
-| `step7_evaluation_tests` | `True` | `passed` | 0 | 12.859 |
-| `step8_mechanism_tests` | `True` | `passed` | 0 | 2.172 |
-| `step9_readiness_tests` | `True` | `passed` | 0 | 69.515 |
-| `step10A_protocol_tests` | `True` | `passed` | 0 | 15.357 |
-| `step10B_execution_tests` | `True` | `passed` | 0 | 1.433 |
-| `step10B_localmax_tests` | `True` | `passed` | 0 | 1.956 |
-| `step10C_localmax_release_tests` | `True` | `passed` | 0 | 23.444 |
-| `localmax_v2_tests` | `True` | `passed` | 0 | 1.692 |
-| `localmax_ccfc_tests` | `True` | `passed` | 0 | 0.861 |
-| `manifest_checks` | `True` | `passed` | 0 | 4.894 |
-| `artifact_checks` | `True` | `passed` | 0 | 5.647 |
-| `claim_checks` | `True` | `passed` | 0 | 2.768 |
-| `level3_gate_checks` | `True` | `passed` | 0 | 1.481 |
-| `dataaudit_lm_checks` | `True` | `passed` | 0 | 13.299 |
-| `localmax_release_checks` | `True` | `passed` | 0 | 51.387 |
-| `registry_finalization_checks` | `True` | `passed` | 0 | 3.582 |
+| `legacy_core_tests` | `True` | `passed` | 0 | 15.280 |
+| `step2_data_tests` | `True` | `passed` | 0 | 5.801 |
+| `step3_tokenizer_tests` | `True` | `passed` | 0 | 5.732 |
+| `step4_filter_tests` | `True` | `passed` | 0 | 1.648 |
+| `step5_training_tests` | `True` | `passed` | 0 | 9.536 |
+| `step6_urd_tests` | `True` | `passed` | 0 | 6.142 |
+| `step7_evaluation_tests` | `True` | `passed` | 0 | 10.180 |
+| `step8_mechanism_tests` | `True` | `passed` | 0 | 2.263 |
+| `step9_readiness_tests` | `True` | `passed` | 0 | 15.921 |
+| `step10A_protocol_tests` | `True` | `passed` | 0 | 4.963 |
+| `step10B_execution_tests` | `True` | `passed` | 0 | 1.517 |
+| `step10B_localmax_tests` | `True` | `passed` | 0 | 2.092 |
+| `step10C_localmax_release_tests` | `True` | `passed` | 0 | 14.580 |
+| `localmax_v2_tests` | `True` | `passed` | 0 | 1.784 |
+| `localmax_ccfc_tests` | `True` | `passed` | 0 | 0.844 |
+| `manifest_checks` | `True` | `passed` | 0 | 4.869 |
+| `artifact_checks` | `True` | `passed` | 0 | 6.414 |
+| `claim_checks` | `True` | `passed` | 0 | 2.599 |
+| `level3_gate_checks` | `True` | `passed` | 0 | 1.468 |
+| `dataaudit_lm_checks` | `True` | `passed` | 0 | 12.568 |
+| `localmax_release_checks` | `True` | `passed` | 0 | 33.820 |
+| `registry_finalization_checks` | `True` | `passed` | 0 | 2.827 |
 
 ## Command Tails
 
@@ -44,7 +44,7 @@
 ```text
 ........................................................................ [ 81%]
 ................                                                         [100%]
-88 passed in 34.45s
+88 passed in 13.82s
 ```
 
 ### step2_data_tests
@@ -54,7 +54,7 @@
 
 ```text
 .............                                                            [100%]
-13 passed in 4.61s
+13 passed in 4.49s
 ```
 
 ### step3_tokenizer_tests
@@ -64,7 +64,7 @@
 
 ```text
 ..........                                                               [100%]
-10 passed in 4.36s
+10 passed in 4.46s
 ```
 
 ### step4_filter_tests
@@ -74,7 +74,7 @@
 
 ```text
 .............                                                            [100%]
-13 passed in 0.76s
+13 passed in 0.75s
 ```
 
 ### step5_training_tests
@@ -84,7 +84,7 @@
 
 ```text
 .............                                                            [100%]
-13 passed in 13.07s
+13 passed in 8.11s
 ```
 
 ### step6_urd_tests
@@ -94,7 +94,7 @@
 
 ```text
 ........                                                                 [100%]
-8 passed in 6.21s
+8 passed in 4.97s
 ```
 
 ### step7_evaluation_tests
@@ -104,7 +104,7 @@
 
 ```text
 .............                                                            [100%]
-13 passed in 10.64s
+13 passed in 9.01s
 ```
 
 ### step8_mechanism_tests
@@ -114,7 +114,7 @@
 
 ```text
 ..............                                                           [100%]
-14 passed in 1.39s
+14 passed in 1.45s
 ```
 
 ### step9_readiness_tests
@@ -124,7 +124,7 @@
 
 ```text
 ................................                                         [100%]
-32 passed in 68.47s (0:01:08)
+32 passed in 15.07s
 ```
 
 ### step10A_protocol_tests
@@ -134,7 +134,7 @@
 
 ```text
 ......................                                                   [100%]
-22 passed in 14.28s
+22 passed in 4.15s
 ```
 
 ### step10B_execution_tests
@@ -144,7 +144,7 @@
 
 ```text
 ............                                                             [100%]
-12 passed in 0.66s
+12 passed in 0.68s
 ```
 
 ### step10B_localmax_tests
@@ -154,7 +154,7 @@
 
 ```text
 .........................                                                [100%]
-25 passed in 1.22s
+25 passed in 1.30s
 ```
 
 ### step10C_localmax_release_tests
@@ -164,7 +164,7 @@
 
 ```text
 ...........................                                              [100%]
-27 passed in 22.42s
+27 passed in 13.79s
 ```
 
 ### localmax_v2_tests
@@ -174,7 +174,7 @@
 
 ```text
 .............                                                            [100%]
-13 passed in 0.93s
+13 passed in 0.99s
 ```
 
 ### localmax_ccfc_tests
@@ -184,7 +184,7 @@
 
 ```text
 ....                                                                     [100%]
-4 passed in 0.09s
+4 passed in 0.10s
 ```
 
 ### manifest_checks
@@ -207,7 +207,7 @@ Mechanism manifest check: ok (9 manifests)
 
 ```text
 Artifact check: ok
-Repository cleanup removed 0 generated cache/temp paths.
+Repository cleanup removed 425 generated cache/temp paths.
 Repository hygiene check: ok
 Environment fingerprint: 12251c423367c2d5f70fbc2023dc58a04172a3d94c11598c289660d18176d099
 Artifact: artifacts\environment\fingerprint.json
@@ -267,7 +267,7 @@ Report: artifacts/reports/step10A_readiness_report.json
 {"status": "MULTI_SEED_TRAINING_COMPLETED", "mode": "audit-only", "final_release_gate_passed": false, "message": "AUDIT_COMPLETED_RELEASE_NOT_READY"}
 {"document_consistency_verified": true, "forbidden_terms": [], "missing_numbers": []}
 {"fresh_clone_verified": true, "light": true}
-{"new_scope_hit_count": 0, "full_repo_hit_count": 2399}
+{"new_scope_hit_count": 0, "full_repo_hit_count": 2403}
 ```
 
 ### localmax_release_checks

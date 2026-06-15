@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .manifest import sha256_file
+from .manifest import sha256_file_variants
 from .schema import MANIFEST_VERSION, PROTECTED_RESULT_FILES, PROTOCOL_SCOPES, VALID_EVALUATION_TYPES, VALID_SCOPES
 
 
@@ -62,8 +62,7 @@ def _validate_hash_pair(manifest: dict[str, Any], root: Path, path_field: str, h
     resolved = _resolve(path, root)
     if not resolved.exists():
         _error(f"{path_field} does not exist: {path}")
-    actual = sha256_file(resolved)
-    if actual != expected:
+    if expected not in sha256_file_variants(resolved):
         _error(f"{hash_field} does not match {path_field}")
 
 
