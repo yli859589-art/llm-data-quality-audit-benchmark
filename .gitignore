@@ -18,6 +18,29 @@ htmlcov/
 artifacts/llm_benchmark_ci/
 artifacts/llm_benchmark_quick/
 artifacts/llm_benchmark_long_probe/
+artifacts/upgrade_reports/
+artifacts/p2_01_system/
+
+# Public-source release exclusions. These paths may exist in local research
+# workspaces, but must never be added to the GitHub source release.
+data/
+artifacts/data/
+artifacts/data_step2/
+artifacts/filter_outputs_step4/
+artifacts/filter_outputs_step6/
+artifacts/localmax_ccfc_filters/
+artifacts/localmax_filters/
+artifacts/localmax_v2_filters/
+artifacts/localmax_data/
+artifacts/localmax_v2_data/
+artifacts/localmax_training/
+artifacts/localmax_training_strengthened/
+artifacts/localmax_v2_training/
+artifacts/localmax_ccfc_training/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
 
 # Large local-only data/checkpoint artifacts.
 # These are preserved in the Desktop release bundle, but GitHub should carry

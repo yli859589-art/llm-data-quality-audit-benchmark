@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -18,10 +19,10 @@ LEVEL3_TABLES = ROOT / "artifacts" / "level3_tables"
 LEVEL3_REPORTS = ROOT / "artifacts" / "level3_reports"
 
 PROTECTED_RESULT_FILES = {
-    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921",
-    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
-    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
-    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/tables/main_results.csv": "D8E593744EEB95CECB422C600CEC89C70279B28E09FCD3DE96AA8D1C9F2A7C3F",
+    "artifacts/stats/main_results.csv": "38AA59CE82B2511FBF711D4B696E7B47C7C89F94D2ABCA0835D75AC0F14057B4",
+    "artifacts/cross_dataset/cross_dataset_results.csv": "5003F1534231EEDAEE6B501D6F9769C45CEF749CFE37921E8AB10CCE12C73A86",
+    "artifacts/runs/run_registry.jsonl": "D9EF6C857EC44CEF1659F1444752C6B4FC2C86C443F27665621CEA39B45086D8",
 }
 
 
@@ -49,8 +50,6 @@ def load_config(path: str | Path) -> dict[str, Any]:
 
 
 def sha256_file(path: Path) -> str:
-    import hashlib
-
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
@@ -58,12 +57,23 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest().upper()
 
 
+def canonical_sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest().upper()
+
+
 def protected_hashes() -> dict[str, str]:
-    return {name: sha256_file(ROOT / name) for name in PROTECTED_RESULT_FILES if (ROOT / name).exists()}
+    return {
+        name: canonical_sha256_file(ROOT / name)
+        for name in PROTECTED_RESULT_FILES
+        if (ROOT / name).exists()
+    }
 
 
 def protected_hashes_unchanged() -> bool:
-    return all(protected_hashes().get(name) == expected for name, expected in PROTECTED_RESULT_FILES.items())
+    return all(
+        protected_hashes().get(name) == expected
+        for name, expected in PROTECTED_RESULT_FILES.items()
+    )
 
 
 def _import_status(module_name: str) -> dict[str, Any]:
@@ -71,7 +81,11 @@ def _import_status(module_name: str) -> dict[str, Any]:
         module = __import__(module_name)
     except Exception as exc:
         return {"available": False, "version": None, "error": str(exc)}
-    return {"available": True, "version": str(getattr(module, "__version__", "unknown")), "error": ""}
+    return {
+        "available": True,
+        "version": str(getattr(module, "__version__", "unknown")),
+        "error": "",
+    }
 
 
 def _ram_gb() -> float | None:
@@ -120,11 +134,17 @@ def collect_environment() -> dict[str, Any]:
     if not torch_status["available"]:
         blocking.append("PyTorch is unavailable.")
     if not cuda_available:
-        blocking.append("CUDA GPU is unavailable; medium/large-lite training cannot be executed honestly.")
+        blocking.append(
+            "CUDA GPU is unavailable; medium/large-lite training cannot be executed honestly."
+        )
     if gpu_memory_gb and gpu_memory_gb < minimum_gpu_memory_gb:
-        blocking.append(f"GPU memory {gpu_memory_gb}GB is below the minimum {minimum_gpu_memory_gb}GB policy.")
+        blocking.append(
+            f"GPU memory {gpu_memory_gb}GB is below the minimum {minimum_gpu_memory_gb}GB policy."
+        )
     if disk_free_gb < storage_estimate_gb:
-        blocking.append(f"Disk free space {disk_free_gb}GB is below the conservative {storage_estimate_gb}GB Level 3 estimate.")
+        blocking.append(
+            f"Disk free space {disk_free_gb}GB is below the conservative {storage_estimate_gb}GB Level 3 estimate."
+        )
     if not datasets_status["available"]:
         blocking.append("HuggingFace datasets package is unavailable.")
     if not tokenizers_status["available"] and not transformers_status["available"]:
@@ -132,7 +152,11 @@ def collect_environment() -> dict[str, Any]:
     internet = _internet_available()
     if not internet:
         blocking.append("Internet/HuggingFace access check failed.")
-    cache_source = "HF_DATASETS_CACHE" if os.environ.get("HF_DATASETS_CACHE") else "HF_HOME" if os.environ.get("HF_HOME") else "default_huggingface_cache"
+    cache_source = (
+        "HF_DATASETS_CACHE"
+        if os.environ.get("HF_DATASETS_CACHE")
+        else "HF_HOME" if os.environ.get("HF_HOME") else "default_huggingface_cache"
+    )
     feasible = not blocking
     return {
         "step": "step10B_level3_heavy_execution",
@@ -157,9 +181,11 @@ def collect_environment() -> dict[str, Any]:
         "expected_storage_estimate_gb": storage_estimate_gb,
         "expected_runtime_estimate": "multi-day GPU execution for full 500M-token data and medium/large-lite training",
         "heavy_execution_feasible": feasible,
-        "fallback_recommendation": "continue_step10B_only_after_gpu_storage_and_dataset_access_are_confirmed"
-        if not feasible
-        else "run_rehearsal_before_heavy_execution",
+        "fallback_recommendation": (
+            "continue_step10B_only_after_gpu_storage_and_dataset_access_are_confirmed"
+            if not feasible
+            else "run_rehearsal_before_heavy_execution"
+        ),
         "blocking_failures": blocking,
         "completed": False,
         "level3_completed_artifact": False,
@@ -205,7 +231,9 @@ def rehearsal_report() -> dict[str, Any]:
     return load_json(REPORTS / "step10B_rehearsal_report.json")
 
 
-def blocked_stage_report(stage: str, blocking: list[str], extra: dict[str, Any] | None = None) -> dict[str, Any]:
+def blocked_stage_report(
+    stage: str, blocking: list[str], extra: dict[str, Any] | None = None
+) -> dict[str, Any]:
     payload: dict[str, Any] = {
         "step": "step10B_level3_heavy_execution",
         "stage": stage,
@@ -231,7 +259,9 @@ def stage_blocking_from_environment() -> list[str]:
     if not env:
         return ["Step 10B environment report is missing."]
     if env.get("heavy_execution_feasible") is not True:
-        return list(env.get("blocking_failures") or ["Heavy execution environment is not feasible."])
+        return list(
+            env.get("blocking_failures") or ["Heavy execution environment is not feasible."]
+        )
     return []
 
 
@@ -244,7 +274,9 @@ def stage_blocking_from_rehearsal() -> list[str]:
     return []
 
 
-def run_blocked_execution_stage(stage: str, report_name: str, title: str, readiness_key: str) -> dict[str, Any]:
+def run_blocked_execution_stage(
+    stage: str, report_name: str, title: str, readiness_key: str
+) -> dict[str, Any]:
     blocking = stage_blocking_from_environment() or stage_blocking_from_rehearsal()
     payload = blocked_stage_report(
         stage,

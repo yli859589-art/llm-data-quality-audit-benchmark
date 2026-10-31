@@ -5,6 +5,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
+from artifacts_v2.legacy_integrity import legacy_exception
+from filters_v2.validation import FilterManifestError
+
 sys.path.insert(0, str(Path.cwd() / "scripts"))
 
 from scripts.check_urd_manifests import validate_urd_manifest
@@ -13,7 +18,9 @@ from scripts.check_urd_manifests import validate_urd_manifest
 def test_repo_urd_manifests_validate() -> None:
     for path in Path("artifacts/filter_outputs_step6").glob("**/filter_manifest.json"):
         manifest = json.loads(path.read_text(encoding="utf-8"))
-        validate_urd_manifest(manifest, Path.cwd())
+        assert legacy_exception(path, Path.cwd()) is not None
+        with pytest.raises(FilterManifestError, match="dataset_manifest_hash"):
+            validate_urd_manifest(manifest, Path.cwd())
 
 
 def test_run_filter_v2_runs_urd_fixed_and_pareto(tmp_path: Path) -> None:

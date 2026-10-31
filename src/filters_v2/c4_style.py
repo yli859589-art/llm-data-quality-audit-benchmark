@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from .base import BaseFilter, FilterDecision, FilterInput
-from .heuristics import HTML_RE, URL_RE, clamp01, language_text_ratio, punctuation_ratio, repeated_line_ratio, symbol_ratio, tokens
+from .heuristics import HTML_RE, URL_RE, clamp01, language_text_ratio, punctuation_ratio, repeated_line_ratio, symbol_ratio, text_quality_profile, tokens
 
 
 class C4StyleProxyFilter(BaseFilter):
@@ -10,6 +10,7 @@ class C4StyleProxyFilter(BaseFilter):
 
     def score(self, record: FilterInput) -> FilterDecision:
         word_count = len(tokens(record.text))
+        profile = text_quality_profile(record.text)
         min_word_score = min(1.0, word_count / 5)
         symbol_score = 1.0 - min(1.0, 4 * symbol_ratio(record.text))
         punctuation_score = 1.0 - min(1.0, 3 * punctuation_ratio(record.text))
@@ -26,7 +27,7 @@ class C4StyleProxyFilter(BaseFilter):
         )
         return FilterDecision(
             doc_id=record.doc_id,
-            keep=score >= 0.25,
+            keep=bool(profile["language"]["is_readable"]) and score >= float(self.config.params.get("min_quality_score", 0.25)),
             score=score,
             reason="c4_style_proxy",
             metadata={
@@ -37,6 +38,7 @@ class C4StyleProxyFilter(BaseFilter):
                     "url_html_noise_score": noise_score,
                     "repeated_line_score": repeated_score,
                     "language_text_score": language_score,
+                    "quality_profile": profile,
                 },
                 "proxy_note": "transparent C4-style heuristic proxy, not official C4 reproduction",
             },

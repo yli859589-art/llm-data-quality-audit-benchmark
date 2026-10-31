@@ -1,0 +1,26 @@
+{
+  "audit_status": "PASS_WITH_LIMITATIONS",
+  "core_software": "PASS_WITH_LIMITATIONS",
+  "real_corpus_experiments": "BLOCKED",
+  "full_pytest": {
+    "status": "FAIL",
+    "passed": 313,
+    "failed": 3,
+    "isolated_worktree": true,
+    "duration_seconds": 294.58
+  },
+  "protected_historical_files": {
+    "status": "PASS",
+    "count": 2204
+  },
+  "legacy_manifest_integrity": {
+    "status": "PASS_WITH_LIMITATIONS",
+    "documented_exceptions": 20
+  },
+  "real_data_shards": {
+    "c4_present_declared": "0/3",
+    "openwebtext_present_declared": "0/6",
+    "status": "BLOCKED"
+  },
+  "open_defect_ids": ["AUD-006", "AUD-007"]
+}

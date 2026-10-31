@@ -21,6 +21,7 @@ FILTER_REGISTRY = {
     "dedup_only": ExactDedupFilter,
     "minhash_near_dedup": MinHashNearDedupProxyFilter,
     "minhash_dedup_proxy": MinHashNearDedupProxyFilter,
+    "minhash_lsh_near_dedup": MinHashNearDedupProxyFilter,
     "length_filter": LengthFilter,
     "hdqspp_historical": HDQSppHistoricalFilter,
     "hdqspp": HDQSppHistoricalFilter,

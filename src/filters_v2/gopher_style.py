@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from .base import BaseFilter, FilterDecision, FilterInput
-from .heuristics import clamp01, language_text_ratio, repeated_line_ratio, stopword_ratio, symbol_ratio, tokens, unique_word_ratio
+from .heuristics import clamp01, language_text_ratio, repeated_line_ratio, stopword_ratio, symbol_ratio, text_quality_profile, tokens, unique_word_ratio
 
 
 class GopherStyleProxyFilter(BaseFilter):
@@ -10,6 +10,7 @@ class GopherStyleProxyFilter(BaseFilter):
 
     def score(self, record: FilterInput) -> FilterDecision:
         length_score = min(1.0, len(tokens(record.text)) / 8)
+        profile = text_quality_profile(record.text)
         repetition_score = 1.0 - repeated_line_ratio(record.text)
         stopword_score = min(1.0, 3.0 * stopword_ratio(record.text))
         symbol_score = 1.0 - min(1.0, 4 * symbol_ratio(record.text))
@@ -36,6 +37,7 @@ class GopherStyleProxyFilter(BaseFilter):
                     "symbol_score": symbol_score,
                     "unique_word_score": unique_score,
                     "language_score": language_score,
+                    "quality_profile": profile,
                 },
                 "proxy_note": "transparent Gopher-style heuristic proxy, not official Gopher reproduction",
             },

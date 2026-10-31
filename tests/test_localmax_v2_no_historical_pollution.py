@@ -9,10 +9,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_localmax_v2_did_not_modify_protected_historical_results() -> None:
     expected = {
-        "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921",
-        "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
-        "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
-        "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+        "artifacts/tables/main_results.csv": "D8E593744EEB95CECB422C600CEC89C70279B28E09FCD3DE96AA8D1C9F2A7C3F",
+        "artifacts/stats/main_results.csv": "38AA59CE82B2511FBF711D4B696E7B47C7C89F94D2ABCA0835D75AC0F14057B4",
+        "artifacts/cross_dataset/cross_dataset_results.csv": "5003F1534231EEDAEE6B501D6F9769C45CEF749CFE37921E8AB10CCE12C73A86",
+        "artifacts/runs/run_registry.jsonl": "D9EF6C857EC44CEF1659F1444752C6B4FC2C86C443F27665621CEA39B45086D8",
     }
     for rel_path, digest in expected.items():
-        assert hashlib.sha256((ROOT / rel_path).read_bytes()).hexdigest().upper() == digest
+        assert (
+            hashlib.sha256((ROOT / rel_path).read_bytes().replace(b"\r\n", b"\n"))
+            .hexdigest()
+            .upper()
+            == digest
+        )

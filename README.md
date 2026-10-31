@@ -1,70 +1,69 @@
-# LLM Data Quality Audit Benchmark
+# LLM Data Quality Evaluation and Intelligent Filtering System
 
-Current status: `TOP_TIER_CCFC_PROJECT_CANDIDATE`
+> Audited source release of a research prototype for language-model data-quality diagnosis, filtering, scalable processing, and reproducible training checks.
 
-LocalMax V2 status: `LOCAL_MAX_V2_STRONG_EVIDENCE_RELEASED`
+## Scope
 
-Level 3 status: `not completed`
+This repository publishes the final audited source snapshot from `audit/final-independent-verification` (source commit `c491337`, a descendant of audit fix `fe97f5f`). It includes the P0-1, P0-2, P1-1, P1-2, P2-1 and P2-2 upgrades, plus the independent-audit documentation.
 
-Bundle scope: `standalone_metadata_bundle`
+Included components:
 
-This repository is a reproducible research artifact for auditing language-model pretraining data filters under controlled token budgets.
+- Unified `quality_system` service and command-line interface.
+- Streamlit UI at `apps/quality_system_app.py`.
+- Scalable JSONL/GZIP pipeline with resumable state and shard-level processing.
+- Persistent MinHash/LSH deduplication with exact Jaccard confirmation.
+- Deterministic checkpoint/resume utilities for the training path.
+- Tests, configuration, CI configuration, installation material, and final audit records.
 
-The project does **not** claim a completed Level 3 benchmark, publication-tier readiness, institutional affiliation, competition placement, official downstream completion, or a supported method win over raw training data.
+This is a source-and-documentation release. It intentionally excludes raw C4/OpenWebText corpora, large filter outputs, model checkpoints, caches, and ZIP deliverables. See [docs/GITHUB_PUBLICATION_NOTES.md](docs/GITHUB_PUBLICATION_NOTES.md) for the exact boundary.
 
-The original LocalMax V1 release remains available as the minimal training evidence baseline. V1 uses valid_loss as the comparison metric; its PPL values are clipped and not comparable.
+## Installation
 
-## CCF-C Candidate Evidence
+Python 3.10 or later is required.
 
-The current strongest evidence line is `LocalMax CCFC`, an expanded local research artifact built on the LocalMax V2 data pipeline rather than a separate rewritten project.
-
-- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
-- Methods: raw, exact_dedup, length_filter, random_same_keep_rate, c4_quality_filter, perplexity_proxy_filter, urd_fixed.
-- Training: 42 small-model runs across 2 datasets x 7 methods x 3 seeds.
-- Budget: each completed run sees `5001216` training tokens; total CCF-C candidate training tokens_seen is `210051072`.
-- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
-- Evaluation: per-seed language-model metrics, risk/diversity/cost tables, bootstrap-style summaries, dataset-level method rankings, and a local cloze-style downstream probe.
-- Safe interpretation: the evidence is strong enough to describe as a top-tier CCF-C prototype candidate, but it is not an accepted paper, not an official competition result, and not a completed Level 3 / CCF-B artifact.
-
-See `docs/LOCALMAX_CCFC_PROJECT_REPORT.md`, `docs/LOCALMAX_CCFC_CLAIM_BOUNDARY.md`, and `artifacts/localmax_ccfc_tables/`.
-
-## LocalMax V2 Summary
-
-- Data: 2 real non-fallback datasets, `200006900` GPT-2 tokens total.
-- Methods: raw, exact_dedup, length_filter, urd_fixed.
-- Training: 24 small-model runs, each >=1M tokens_seen.
-- Model: small decoder LM, about 20.5M parameters, GPT-2 tokenizer, context length 256.
-- Main comparison metric: `valid_nll_nats_per_token`.
-- PPL is computed without clipping; no PPL-improvement claim is made unless supported by the tables.
-- Level 3 remains unfinished.
-- CCF-B readiness is not claimed.
-- The release bundle excludes raw data and large binary checkpoints.
-
-## Quick Start
-
-```bash
-python scripts/localmax_v2/finalize_localmax_v2_release.py
-python scripts/localmax_v2/audit_lm_metric_correctness.py
-python scripts/localmax_ccfc/check_ccfc_artifacts.py
-python -m pytest tests/ -q
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[data,tokenizers,ui,dev]"
 ```
 
-For the full grouped validation wrapper:
+For a minimal non-UI install, use `python -m pip install -e ".[data,tokenizers]"`.
 
-```bash
-python scripts/run_all_checks.py --timeout 600
+## Run the system
+
+```powershell
+python scripts/quality_system.py --help
+python scripts/quality_system.py check C:\data\sample.jsonl
+python scripts/quality_system.py import demo C:\data\sample.jsonl --source local
+python scripts/quality_system.py analyze demo --sample-limit 10000
+python scripts/quality_system.py run demo raw --task-id demo-raw
+python scripts/quality_system.py status demo-raw
+python scripts/quality_system.py export demo-raw
+streamlit run apps/quality_system_app.py --server.address 127.0.0.1
 ```
 
-## Reproducibility Notes
+Additional examples are in [docs/FINAL_INSTALLATION_GUIDE.md](docs/FINAL_INSTALLATION_GUIDE.md) and [docs/P2_01_SYSTEM.md](docs/P2_01_SYSTEM.md).
 
-The release directory contains metadata, metrics, tables, figures, reports, and copied manifests needed for review. It does not contain raw data text or full binary checkpoints.
+## Validation status and limitations
 
-Historical single-seed and smoke artifacts are retained for lineage, but they are not the LocalMax V2 main evidence.
+- The independently audited P0-P2 software paths passed their targeted checks.
+- The isolated full historical suite was **313 passed, 3 failed**. This release does **not** claim that all `pytest` tests pass; the three failures are confined to an older frozen LocalMax release-regeneration subsystem.
+- None of the declared official corpus shards are present: C4 is **0/3** and OpenWebText is **0/6**. Full real-corpus experiments, real PPL, and formal effectiveness claims are therefore **blocked** and incomplete.
+- Twenty historical manifest/hash anomalies remain documented as strict legacy integrity exceptions; they are not silently reclassified as successes.
+- The CLI/service fixture integration path is tested. A fresh complete manual click-through of all six Streamlit pages was not rerun in the final independent audit, so it must not be inferred from backend checks.
 
-URD-Selector is implemented as a smoke-verified selector pipeline, but it is not yet effectiveness-verified or current main evidence.
+Read [docs/FINAL_INDEPENDENT_AUDIT.md](docs/FINAL_INDEPENDENT_AUDIT.md), [docs/FINAL_DEFECT_REGISTER.md](docs/FINAL_DEFECT_REGISTER.md), and [docs/FINAL_RELEASE_VERIFICATION.md](docs/FINAL_RELEASE_VERIFICATION.md) before using results or making research claims.
 
-## Usage Note
+## Test commands
 
-This can be discussed as a personal research and portfolio prototype only if the wording keeps the evidence boundary above. Do not present it as official coursework, a competition result, or a completed publication-level benchmark.
+```powershell
+python -m pytest -q
+python scripts/run_all_checks.py --timeout 300
+```
 
-See `docs/LOCALMAX_V2_RESULTS.md` and `artifacts/localmax_v2_release/`.
+The first command reproduces the known historical LocalMax limitations above; do not remove or hide those failures to represent the project as fully passing.
+
+## License and research-use note
+
+See [LICENSE](LICENSE). This project is a personal research/portfolio prototype, not a completed cloud-scale benchmark or a claim of a data-filtering method win.

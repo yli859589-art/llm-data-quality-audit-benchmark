@@ -14,7 +14,7 @@
   "minimum_methods": 7,
   "minimum_datasets": 2,
   "length_filter": {"min_gpt2_tokens": 32, "max_gpt2_tokens": 2048},
-  "random_same_keep_rate": {"reference_method": "length_filter", "seed": 20260613},
+  "random_same_keep_rate": {"reference_method": "length_filter", "seed": 20260613, "match_mode": "token_budget", "token_budget_tolerance": 2048},
   "c4_quality_filter": {
     "min_gpt2_tokens": 24,
     "max_gpt2_tokens": 4096,

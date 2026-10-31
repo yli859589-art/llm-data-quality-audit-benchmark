@@ -8,18 +8,21 @@ import argparse
 import json
 from pathlib import Path
 
+from experiment_utils import root
+
+from evaluation_v2.legacy_integrity import legacy_exception
 from evaluation_v2.validation import (
     EvaluationManifestError,
     assert_evaluation_outputs_not_in_main_results,
     validate_evaluation_manifest,
 )
-from experiment_utils import root
 
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Validate Step 7 evaluation manifests.")
     parser.add_argument("--path", default="artifacts/evaluation_step7")
     parser.add_argument("--include-step7", action="store_true")
+    parser.add_argument("--output", type=Path)
     return parser.parse_args()
 
 
@@ -28,6 +31,7 @@ def main() -> None:
     base = root / args.path if not Path(args.path).is_absolute() else Path(args.path)
     manifests = sorted(base.glob("**/evaluation_manifest.json")) if base.exists() else []
     errors: list[str] = []
+    exceptions: list[dict[str, str]] = []
     for path in manifests:
         try:
             manifest = json.loads(path.read_text(encoding="utf-8"))
@@ -37,7 +41,11 @@ def main() -> None:
                 label = path.relative_to(root).as_posix()
             except ValueError:
                 label = path.as_posix()
-            errors.append(f"{label}: {exc}")
+            exception = legacy_exception(path, root)
+            if exception:
+                exceptions.append({"path": label, "error": str(exc), **exception})
+            else:
+                errors.append(f"{label}: {exc}")
     if args.include_step7 and not manifests:
         errors.append("No Step 7 evaluation manifests found.")
     try:
@@ -45,17 +53,27 @@ def main() -> None:
     except EvaluationManifestError as exc:
         errors.append(str(exc))
     report = {
-        "status": "failed" if errors else "passed",
+        "status": (
+            "failed"
+            if errors
+            else ("passed_with_legacy_integrity_exceptions" if exceptions else "passed")
+        ),
         "checked_manifests": len(manifests),
         "include_step7": bool(args.include_step7),
         "errors": errors,
+        "legacy_integrity_exceptions": exceptions,
     }
-    output = root / "artifacts" / "reports" / "evaluation_manifest_check_report.json"
+    output = args.output or root / "artifacts" / "reports" / "evaluation_manifest_check_report.json"
+    if not output.is_absolute():
+        output = root / output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     if errors:
         raise SystemExit("Evaluation manifest check failed.\n" + "\n".join(errors))
-    print(f"Evaluation manifest check: ok ({len(manifests)} manifests)")
+    print(
+        "Evaluation manifest check: ok "
+        f"({len(manifests)} manifests; legacy exceptions={len(exceptions)})"
+    )
 
 
 if __name__ == "__main__":

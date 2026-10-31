@@ -26,7 +26,11 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from artifacts_v2.canonical_io import write_canonical_csv, write_canonical_json, write_canonical_text
+from artifacts_v2.canonical_io import (
+    write_canonical_csv,
+    write_canonical_json,
+    write_canonical_text,
+)
 
 REPORTS = ROOT / "artifacts" / "reports"
 LOCALMAX_DATA = ROOT / "artifacts" / "localmax_data"
@@ -40,10 +44,10 @@ LOCALMAX_REPORTS = ROOT / "artifacts" / "localmax_reports"
 LOCALMAX_FIGURES = ROOT / "artifacts" / "localmax_figures"
 
 PROTECTED_RESULT_FILES = {
-    "artifacts/tables/main_results.csv": "EAB3478D19E04CAF97E07FC31FCD3CC36089C19320A64E96F7BAC9EB12D89921",
-    "artifacts/stats/main_results.csv": "E40944BB6476D84E8C3FC65670B2DC5E7DB62CF47CA7FC6D0051768458CD0E32",
-    "artifacts/cross_dataset/cross_dataset_results.csv": "8DA3E015146193FCD5D1F5F47A9E0A5ED84F55A4182B4BB5932DC657B8DAAD4C",
-    "artifacts/runs/run_registry.jsonl": "A05A06FCA305CEDF2C46DBEAD17AC222A5F09E73AB105538479A049DF90A26CE",
+    "artifacts/tables/main_results.csv": "D8E593744EEB95CECB422C600CEC89C70279B28E09FCD3DE96AA8D1C9F2A7C3F",
+    "artifacts/stats/main_results.csv": "38AA59CE82B2511FBF711D4B696E7B47C7C89F94D2ABCA0835D75AC0F14057B4",
+    "artifacts/cross_dataset/cross_dataset_results.csv": "5003F1534231EEDAEE6B501D6F9769C45CEF749CFE37921E8AB10CCE12C73A86",
+    "artifacts/runs/run_registry.jsonl": "D9EF6C857EC44CEF1659F1444752C6B4FC2C86C443F27665621CEA39B45086D8",
 }
 
 
@@ -63,8 +67,16 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest().upper()
 
 
+def canonical_sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest().upper()
+
+
 def protected_hashes() -> dict[str, str]:
-    return {name: sha256_file(ROOT / name) for name in PROTECTED_RESULT_FILES if (ROOT / name).exists()}
+    return {
+        name: canonical_sha256_file(ROOT / name)
+        for name in PROTECTED_RESULT_FILES
+        if (ROOT / name).exists()
+    }
 
 
 def protected_hashes_unchanged() -> bool:
@@ -123,7 +135,11 @@ def import_status(module_name: str) -> dict[str, Any]:
         module = __import__(module_name)
     except Exception as exc:
         return {"available": False, "version": None, "error": str(exc)}
-    return {"available": True, "version": str(getattr(module, "__version__", "unknown")), "error": ""}
+    return {
+        "available": True,
+        "version": str(getattr(module, "__version__", "unknown")),
+        "error": "",
+    }
 
 
 def collect_localmax_environment() -> dict[str, Any]:
@@ -150,9 +166,13 @@ def collect_localmax_environment() -> dict[str, Any]:
     partial_feasible = disk_free_gb >= 20 and not missing and (ram_gb is None or ram_gb >= 8)
     blocking = []
     if missing:
-        blocking.append("Missing required Python modules for LocalMax execution: " + ", ".join(missing))
+        blocking.append(
+            "Missing required Python modules for LocalMax execution: " + ", ".join(missing)
+        )
     if disk_free_gb < 20:
-        blocking.append(f"Disk free space {disk_free_gb}GB is below the 20GB LocalMax partial floor.")
+        blocking.append(
+            f"Disk free space {disk_free_gb}GB is below the 20GB LocalMax partial floor."
+        )
     if ram_gb is not None and ram_gb < 8:
         blocking.append(f"System RAM {ram_gb}GB is below the 8GB LocalMax partial floor.")
     if gpu_memory_gb and gpu_memory_gb < 8:
@@ -272,7 +292,9 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]) -> 
     return write_canonical_csv(path, fieldnames, rows)
 
 
-def status_payload(stage: str, ready: bool, blocking: list[str], extra: dict[str, Any] | None = None) -> dict[str, Any]:
+def status_payload(
+    stage: str, ready: bool, blocking: list[str], extra: dict[str, Any] | None = None
+) -> dict[str, Any]:
     payload: dict[str, Any] = {
         "step": "step10B_localmax_execution",
         "stage": stage,

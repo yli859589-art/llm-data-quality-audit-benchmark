@@ -5,17 +5,24 @@ import subprocess
 import sys
 from pathlib import Path
 
-from analysis_v2.validation import validate_mechanism_manifest
+import pytest
+
+from analysis_v2.validation import MechanismManifestError, validate_mechanism_manifest
+from artifacts_v2.legacy_integrity import legacy_exception
 
 
 def test_repo_mechanism_manifests_validate() -> None:
     manifests = list(Path("artifacts/analysis_step8").glob("**/mechanism_manifest.json"))
     assert len(manifests) >= 9
     for path in manifests:
-        validate_mechanism_manifest(json.loads(path.read_text(encoding="utf-8")), Path.cwd())
+        assert legacy_exception(path, Path.cwd()) is not None
+        with pytest.raises(MechanismManifestError, match="hash mismatch"):
+            validate_mechanism_manifest(json.loads(path.read_text(encoding="utf-8")), Path.cwd())
 
 
-def test_run_mechanism_analysis_v2_can_run_proxy_overfiltering_and_pareto_smoke(tmp_path: Path) -> None:
+def test_run_mechanism_analysis_v2_can_run_proxy_overfiltering_and_pareto_smoke(
+    tmp_path: Path,
+) -> None:
     commands = [
         [
             "--analysis",
@@ -70,4 +77,3 @@ def test_run_mechanism_analysis_v2_can_run_proxy_overfiltering_and_pareto_smoke(
         payload = json.loads(result.stdout)
         assert payload["claim_allowed"] is False
         assert payload["insufficient_evidence"] is True
-

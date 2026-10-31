@@ -54,14 +54,21 @@ def _score_cloze(model: DecoderLM, examples: list[dict[str, Any]], device: str) 
     losses = []
     context = model.config.context_length
     for example in examples:
-        ids = (example["prompt"] + example["target"])[:context]
+        prompt = list(example["prompt"])
+        target = list(example["target"])
+        ids = (prompt + target)[:context]
         if len(ids) < 2:
             continue
         x = torch.tensor([ids[:-1]], dtype=torch.long, device=device)
-        y = torch.tensor([ids[1:]], dtype=torch.long, device=device)
-        _, loss = model(x, y)
-        assert loss is not None
-        losses.append(float(loss.detach().cpu()))
+        labels = torch.tensor([ids[1:]], dtype=torch.long, device=device)
+        # logits[:, i] predicts ids[i + 1]; only target positions are scored.
+        labels[:, : max(0, len(prompt) - 1)] = -100
+        logits, _ = model(x, None)
+        from evaluation_v2.lm_metrics import per_token_cross_entropy
+
+        loss, target_count = per_token_cross_entropy(logits, labels)
+        if target_count:
+            losses.append(float(loss.detach().cpu()))
     if not losses:
         return {"examples_scored": 0, "mean_cloze_nll": "", "mean_cloze_log_ppl": "", "claim_allowed": False}
     mean_loss = sum(losses) / len(losses)

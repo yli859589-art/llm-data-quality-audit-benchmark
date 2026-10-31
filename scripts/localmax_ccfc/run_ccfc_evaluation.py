@@ -140,7 +140,9 @@ def main() -> None:
                 "ci_low": ci_low,
                 "ci_high": ci_high,
                 "ci_crosses_zero": ci_low <= 0 <= ci_high,
-                "improvement_claim_allowed": (ci_low > 0 and mean_diff > 0),
+                "improvement_claim_allowed": False,
+                "evidence_strength": "insufficient_independent_seeds" if len(diffs) < 5 else "exploratory_only_multiple_comparisons_unadjusted",
+                "multiple_comparison_adjustment": "not_applied; result claims disabled",
                 "metric_for_comparison": "valid_nll_nats_per_token",
             }
         )
@@ -153,7 +155,7 @@ def main() -> None:
     CCFC_TABLES.mkdir(parents=True, exist_ok=True)
     fields_lm = ["dataset_id", "method_name", "seed", "model_scale", "steps_completed", "tokens_seen", "valid_nll_nats_per_token", "valid_loss", "valid_log_ppl", "valid_ppl", "ppl_overflow", "metric_for_comparison", "training_manifest_path"]
     fields_summary = ["dataset_id", "method_name", "n_seeds", "mean_valid_nll_nats_per_token", "std_valid_nll_nats_per_token", "ci_low", "ci_high", "mean_valid_log_ppl", "mean_valid_ppl", "ppl_overflow_count", "metric_for_comparison"]
-    fields_stats = ["dataset_id", "comparison", "test_name", "n_seeds", "mean_paired_nll_improvement", "ci_low", "ci_high", "ci_crosses_zero", "improvement_claim_allowed", "metric_for_comparison"]
+    fields_stats = ["dataset_id", "comparison", "test_name", "n_seeds", "mean_paired_nll_improvement", "ci_low", "ci_high", "ci_crosses_zero", "improvement_claim_allowed", "evidence_strength", "multiple_comparison_adjustment", "metric_for_comparison"]
     fields_risk = fields_summary + ["risk", "diversity", "cost", "document_keep_rate", "token_keep_rate"]
     write_csv(CCFC_EVALUATION / "lm_metrics.csv", fields_lm, lm_rows)
     write_csv(CCFC_EVALUATION / "method_summary.csv", fields_summary, summary_rows)

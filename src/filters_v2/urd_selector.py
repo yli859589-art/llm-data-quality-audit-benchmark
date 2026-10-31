@@ -110,7 +110,7 @@ class URDSelectorFilter(BaseFilter):
             row["selection_mode"] = "fixed_weight"
         keep_count = keep_count_for_rate(len(rows), self.config.target_keep_rate)
         ranked = sorted(rows, key=lambda item: (-float(item["urd_score"]), str(item["doc_id"])))
-        return {str(row["doc_id"]) for row in ranked[:keep_count]}
+        return self._bounded_selection(ranked, keep_count)
 
     def _select_pareto(self, rows: list[dict[str, Any]]) -> set[str]:
         payload = pareto_layers(rows)
@@ -123,7 +123,28 @@ class URDSelectorFilter(BaseFilter):
         keep_count = keep_count_for_rate(len(rows), self.config.target_keep_rate)
         ranked = sorted(rows, key=lambda item: (int(item["pareto_rank"]), -float(item["tie_break_score"]), str(item["doc_id"])))
         self._pareto_payload = payload
-        return {str(row["doc_id"]) for row in ranked[:keep_count]}
+        return self._bounded_selection(ranked, keep_count)
+
+    def _bounded_selection(self, ranked: list[dict[str, Any]], keep_count: int) -> set[str]:
+        """Apply explicit risk and indivisible-document token constraints."""
+        max_risk = float(self.config.params.get("max_risk_score", 1.0))
+        budget = self.config.token_budget
+        selected: set[str] = set()
+        used = 0
+        for row in ranked:
+            if len(selected) >= keep_count or float(row["risk_score"]) > max_risk:
+                continue
+            count = int(row["estimated_tokens"])
+            if budget is not None and used + count > budget:
+                row["token_budget_rejected"] = True
+                continue
+            selected.add(str(row["doc_id"]))
+            used += count
+        for row in ranked:
+            row["selected_tokens_cumulative"] = used
+            row["risk_constraint"] = max_risk
+            row["token_budget"] = budget
+        return selected
 
     def filter(self, records: list[FilterInput]):
         started = time.perf_counter()
@@ -140,7 +161,7 @@ class URDSelectorFilter(BaseFilter):
                     doc_id=str(row["doc_id"]),
                     keep=keep,
                     score=float(row["urd_score"]),
-                    reason=f"urd_{self.selection_mode}",
+                    reason=(f"urd_{self.selection_mode}_selected" if keep else f"urd_{self.selection_mode}_rejected_by_rank_risk_or_budget"),
                     metadata={
                         "component_scores": {
                             "utility_score": row["utility_score"],
@@ -154,6 +175,9 @@ class URDSelectorFilter(BaseFilter):
                         "pareto_rank": row.get("pareto_rank"),
                         "disabled_components": sorted(self.disabled_components),
                         "proxy_note": "URD Step 6 smoke selector; effectiveness is not verified.",
+                        "token_budget": row.get("token_budget"),
+                        "risk_constraint": row.get("risk_constraint"),
+                        "token_budget_rejected": bool(row.get("token_budget_rejected", False)),
                     },
                 )
             )

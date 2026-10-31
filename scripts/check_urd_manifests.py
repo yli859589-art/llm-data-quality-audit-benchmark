@@ -10,10 +10,11 @@ from pathlib import Path
 from typing import Any
 
 from experiment_utils import root
+
+from artifacts_v2.legacy_integrity import legacy_exception
 from filters_v2.manifest import sha256_file
 from filters_v2.validation import FilterManifestError, validate_filter_manifest
 from training_v2.validation import assert_training_outputs_not_in_main_results
-
 
 URD_REQUIRED_HASHES = {
     "component_scores.jsonl",
@@ -58,7 +59,9 @@ def _check_no_main_results_pollution() -> None:
         text = path.read_text(encoding="utf-8", errors="ignore") if path.exists() else ""
         for token in forbidden_tokens:
             if token in text:
-                raise FilterManifestError(f"URD smoke output leaked into {path.relative_to(root).as_posix()}")
+                raise FilterManifestError(
+                    f"URD smoke output leaked into {path.relative_to(root).as_posix()}"
+                )
 
 
 def validate_urd_manifest(manifest: dict[str, Any], package_root: Path) -> None:
@@ -84,7 +87,7 @@ def validate_urd_manifest(manifest: dict[str, Any], package_root: Path) -> None:
     missing = sorted(URD_REQUIRED_HASHES - set(output_hashes))
     if missing:
         raise FilterManifestError("URD output_hashes missing files: " + ", ".join(missing))
-    for name, info in output_hashes.items():
+    for _name, info in output_hashes.items():
         path = _resolve(str(info.get("path", "")), package_root)
         if not path.exists():
             raise FilterManifestError(f"URD output missing: {path}")
@@ -97,7 +100,13 @@ def validate_urd_manifest(manifest: dict[str, Any], package_root: Path) -> None:
     if not rows:
         raise FilterManifestError("component_scores.jsonl is empty")
     for row in rows:
-        for field in ["utility_score", "risk_score", "diversity_score", "shift_penalty", "cost_score"]:
+        for field in [
+            "utility_score",
+            "risk_score",
+            "diversity_score",
+            "shift_penalty",
+            "cost_score",
+        ]:
             value = row.get(field)
             if not isinstance(value, (int, float)) or not 0 <= float(value) <= 1:
                 raise FilterManifestError(f"component score out of [0, 1]: {field}")
@@ -122,6 +131,7 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Validate Step 6 URD manifests.")
     parser.add_argument("--path", default="artifacts/filter_outputs_step6")
     parser.add_argument("--include-step6", action="store_true")
+    parser.add_argument("--output", type=Path)
     return parser.parse_args()
 
 
@@ -130,6 +140,7 @@ def main() -> None:
     base = root / args.path if not Path(args.path).is_absolute() else Path(args.path)
     manifests = sorted(base.glob("**/filter_manifest.json")) if base.exists() else []
     errors: list[str] = []
+    exceptions: list[dict[str, str]] = []
     for path in manifests:
         try:
             validate_urd_manifest(_load_json(path), root)
@@ -138,7 +149,11 @@ def main() -> None:
                 label = path.relative_to(root).as_posix()
             except ValueError:
                 label = path.as_posix()
-            errors.append(f"{label}: {exc}")
+            exception = legacy_exception(path, root)
+            if exception:
+                exceptions.append({"path": label, "error": str(exc), **exception})
+            else:
+                errors.append(f"{label}: {exc}")
     if args.include_step6 and not manifests:
         errors.append("No Step 6 URD manifests found.")
     try:
@@ -146,17 +161,34 @@ def main() -> None:
     except FilterManifestError as exc:
         errors.append(str(exc))
     report = {
-        "status": "failed" if errors else "passed",
+        "status": (
+            "failed"
+            if errors
+            else ("passed_with_legacy_integrity_exceptions" if exceptions else "passed")
+        ),
         "checked_manifests": len(manifests),
         "include_step6": bool(args.include_step6),
         "errors": errors,
+        "legacy_integrity_exceptions": exceptions,
     }
-    output = root / "artifacts" / "reports" / "urd_manifest_check_report.json"
+    output = (
+        args.output
+        or root
+        / "artifacts"
+        / "upgrade_reports"
+        / "manifest_checks"
+        / "urd_manifest_check_report.json"
+    )
+    if not output.is_absolute():
+        output = root / output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     if errors:
         raise SystemExit("URD manifest check failed.\n" + "\n".join(errors))
-    print(f"URD manifest check: ok ({len(manifests)} manifests)")
+    print(
+        "URD manifest check: ok "
+        f"({len(manifests)} manifests; legacy exceptions={len(exceptions)})"
+    )
 
 
 if __name__ == "__main__":

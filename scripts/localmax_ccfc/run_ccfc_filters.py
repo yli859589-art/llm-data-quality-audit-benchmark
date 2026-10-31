@@ -6,6 +6,8 @@ import json
 import math
 import random
 import string
+import time
+import tracemalloc
 from typing import Any
 
 from ccfc_utils import (
@@ -21,6 +23,8 @@ from ccfc_utils import (
     write_jsonl_gz,
     write_report,
 )
+
+P0_02_CCFC_FILTERS = ROOT / "artifacts" / "p0_02" / "localmax_ccfc_filters"
 
 
 def _normalize(text: str) -> str:
@@ -149,15 +153,32 @@ def _decisions(dataset_id: str, method: str, docs: list[dict[str, Any]], config:
             row["keep"] = _length_keep(int(row["gpt2_tokens"]), config)
             row["reason"] = "within_length_bounds" if row["keep"] else "outside_length_bounds"
     elif method == "random_same_keep_rate":
-        length_keep_n = sum(1 for row in rows if _length_keep(int(row["gpt2_tokens"]), config))
+        length_kept = [row for row in rows if _length_keep(int(row["gpt2_tokens"]), config)]
+        length_keep_n = len(length_kept)
+        target_tokens = sum(int(row["gpt2_tokens"]) for row in length_kept)
+        policy = config.get("random_same_keep_rate", {})
+        match_mode = str(policy.get("match_mode", "token_budget"))
         seed_material = f"{dataset_id}:{config.get('random_same_keep_rate', {}).get('seed', 20260613)}"
         rng = random.Random(int(hashlib.sha256(seed_material.encode("utf-8")).hexdigest()[:12], 16))
-        shuffled = [row["id"] for row in rows]
+        shuffled = list(rows)
         rng.shuffle(shuffled)
-        keep_ids = set(shuffled[:length_keep_n])
+        if match_mode == "document_count":
+            keep_ids = {str(row["id"]) for row in shuffled[:length_keep_n]}
+        elif match_mode == "token_budget":
+            keep_ids: set[str] = set()
+            used = 0
+            for row in shuffled:
+                count = int(row["gpt2_tokens"])
+                if count <= target_tokens - used:
+                    keep_ids.add(str(row["id"]))
+                    used += count
+        else:
+            raise ValueError(f"Unknown random_same_keep_rate.match_mode: {match_mode}")
         for row in rows:
             row["keep"] = row["id"] in keep_ids
             row["reason"] = "random_same_keep_rate_selected" if row["keep"] else "random_same_keep_rate_rejected"
+            row["random_match_mode"] = match_mode
+            row["random_target_tokens"] = target_tokens
     elif method == "c4_quality_filter":
         for row in rows:
             keep, reason = _c4_quality_keep(row["text"], int(row["gpt2_tokens"]), config)
@@ -191,7 +212,7 @@ def _decisions(dataset_id: str, method: str, docs: list[dict[str, Any]], config:
 
 
 def _existing_ready(dataset_id: str, method: str) -> dict[str, Any] | None:
-    manifest_path = CCFC_FILTERS / dataset_id / method / "filter_manifest.json"
+    manifest_path = P0_02_CCFC_FILTERS / dataset_id / method / "filter_manifest.json"
     if not manifest_path.exists():
         return None
     payload = load_json(manifest_path)
@@ -215,10 +236,15 @@ def _run_one(dataset: dict[str, Any], method: str, config: dict[str, Any]) -> di
     existing = _existing_ready(dataset_id, method)
     if existing:
         return existing
-    output_dir = CCFC_FILTERS / dataset_id / method
+    output_dir = P0_02_CCFC_FILTERS / dataset_id / method
     manifest = load_json(ROOT / dataset["manifest_path"])
     docs = _load_train_docs(manifest)
+    tracemalloc.start()
+    started = time.perf_counter()
     decisions = _decisions(dataset_id, method, docs, config)
+    elapsed = time.perf_counter() - started
+    _, peak_bytes = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
     kept = [row for row in decisions if row["keep"]]
     selected_rows = [{"id": row["id"], "gpt2_tokens": row["gpt2_tokens"]} for row in kept]
     source_tokens = sum(int(row["gpt2_tokens"]) for row in decisions)
@@ -254,8 +280,19 @@ def _run_one(dataset: dict[str, Any], method: str, config: dict[str, Any]) -> di
         "method_name": method,
         "filter_cost_units": len(decisions),
         "cost_proxy": "documents_scored",
+        "proxy_cost_only": True,
+        "elapsed_seconds": elapsed,
+        "documents_per_second": len(decisions) / max(elapsed, 1e-9),
+        "tokens_per_second": source_tokens / max(elapsed, 1e-9),
+        "peak_tracemalloc_bytes": peak_bytes,
+        "gpu_peak_memory_bytes": None,
         "created_at": utc_now(),
     }
+    random_audit: dict[str, Any] = {}
+    if method == "random_same_keep_rate":
+        target = int(decisions[0].get("random_target_tokens", 0)) if decisions else 0
+        tolerance = int(config.get("random_same_keep_rate", {}).get("token_budget_tolerance", 0))
+        random_audit = {"match_mode": decisions[0].get("random_match_mode", "") if decisions else "", "target_tokens": target, "actual_tokens": selected_tokens, "token_delta": selected_tokens - target, "token_budget_tolerance": tolerance, "within_tolerance": abs(selected_tokens - target) <= tolerance, "indivisible_document_note": "Token deltas are reported because documents cannot be split."}
     selected_path = output_dir / "selected_doc_ids.jsonl.gz"
     decisions_path = output_dir / "scores_or_decisions.jsonl.gz"
     write_jsonl_gz(selected_path, selected_rows)
@@ -278,6 +315,7 @@ def _run_one(dataset: dict[str, Any], method: str, config: dict[str, Any]) -> di
         "risk_report": rel(output_dir / "risk_report.json"),
         "diversity_report": rel(output_dir / "diversity_report.json"),
         "cost_report": rel(output_dir / "cost_report.json"),
+        "random_matching_audit": rel(output_dir / "random_matching_audit.json") if random_audit else "",
         "document_keep_rate": keep_rate_report["document_keep_rate"],
         "token_keep_rate": keep_rate_report["token_keep_rate"],
         "selected_gpt2_tokens": selected_tokens,
@@ -290,6 +328,8 @@ def _run_one(dataset: dict[str, Any], method: str, config: dict[str, Any]) -> di
     write_json(output_dir / "risk_report.json", risk_report)
     write_json(output_dir / "diversity_report.json", diversity_report)
     write_json(output_dir / "cost_report.json", cost_report)
+    if random_audit:
+        write_json(output_dir / "random_matching_audit.json", random_audit)
     write_json(output_dir / "filter_manifest.json", manifest_payload)
     return {
         "dataset_id": dataset_id,

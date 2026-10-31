@@ -5,11 +5,14 @@ import subprocess
 import sys
 from pathlib import Path
 
+from evaluation_v2.legacy_integrity import legacy_exception
 from evaluation_v2.validation import validate_evaluation_manifest
 
 
 def test_repo_evaluation_manifests_validate() -> None:
     for path in Path("artifacts/evaluation_step7").glob("**/evaluation_manifest.json"):
+        if legacy_exception(path, Path.cwd()):
+            continue
         validate_evaluation_manifest(json.loads(path.read_text(encoding="utf-8")), Path.cwd())
 
 

@@ -31,6 +31,10 @@ from ccfc_utils import (
 from evaluation_v2.lm_metrics import ppl_from_nll
 from models_v2.config import ModelConfig
 from models_v2.decoder_lm import DecoderLM, count_parameters
+from training_v2.sampling import build_document_token_pool
+
+P0_02_CCFC_FILTERS = ROOT / "artifacts" / "p0_02" / "localmax_ccfc_filters"
+P0_02_CCFC_TRAINING = ROOT / "artifacts" / "p0_02" / "localmax_ccfc_training"
 
 
 def _selected_ids(path: str) -> set[str]:
@@ -59,6 +63,13 @@ def _encode_until(tokenizer: Any, dataset_manifest: dict[str, Any], split: str, 
             if len(token_ids) >= cap:
                 return token_ids[:cap], docs_used
     return token_ids, docs_used
+
+
+def _sample_full_training_pool(tokenizer: Any, dataset_manifest: dict[str, Any], selected: set[str], budget: int, seed: int) -> tuple[list[int], dict[str, Any]]:
+    def records():
+        for rel_path in _split_paths(dataset_manifest, "train"):
+            yield from iter_jsonl_any(ROOT / rel_path)
+    return build_document_token_pool(records, lambda text: tokenizer.encode(text, add_special_tokens=False), token_budget=budget, seed=seed, selected_ids=selected)
 
 
 def _batch(token_ids: list[int], context: int, batch_size: int, rng: random.Random, device: str) -> tuple[torch.Tensor, torch.Tensor]:
@@ -173,21 +184,17 @@ def _run_one(
     training_cfg: dict[str, Any],
     tokenizer: Any,
 ) -> dict[str, Any]:
-    output_dir = CCFC_TRAINING / dataset_id / method / f"seed_{seed}"
+    output_dir = P0_02_CCFC_TRAINING / dataset_id / method / f"seed_{seed}"
     output_dir.mkdir(parents=True, exist_ok=True)
     min_tokens = int(training_cfg["min_tokens_seen_per_run"])
     existing = _existing_result(output_dir, min_tokens)
     if existing:
         return existing
     dataset_manifest = load_json(ROOT / "artifacts" / "localmax_v2_data" / dataset_id / "dataset_manifest.json")
-    filter_manifest = load_json(CCFC_FILTERS / dataset_id / method / "filter_manifest.json")
+    filter_manifest = load_json(P0_02_CCFC_FILTERS / dataset_id / method / "filter_manifest.json")
     selected = _selected_ids(filter_manifest["selected_doc_ids_path"])
-    train_tokens, docs_used = _encode_until(
-        tokenizer,
-        dataset_manifest,
-        "train",
-        int(training_cfg["training_token_sample_cap"]),
-        selected,
+    train_tokens, sampling_audit = _sample_full_training_pool(
+        tokenizer, dataset_manifest, selected, int(training_cfg["training_token_sample_cap"]), seed
     )
     valid_tokens, _ = _encode_until(
         tokenizer,
@@ -214,8 +221,9 @@ def _run_one(
     batch_size = int(training_cfg["micro_batch_size"])
     grad_accum = int(training_cfg["gradient_accumulation_steps"])
     effective_batch_tokens = context * batch_size * grad_accum
-    remaining_tokens = max(0, min_tokens - warm_tokens)
-    additional_steps = math.ceil(remaining_tokens / effective_batch_tokens)
+    # Legacy V2 files only contain weights. They are initialization, never an
+    # exact resume, so prior token/step counts must not be credited here.
+    additional_steps = math.ceil(min_tokens / effective_batch_tokens)
     rng = random.Random(seed + 9973)
     curve: list[dict[str, Any]] = []
     started = time.perf_counter()
@@ -242,15 +250,15 @@ def _run_one(
             optimizer.step()
             local_steps_completed = step
             final_train_loss = sum(step_losses) / max(1, len(step_losses))
-            global_step = warm_steps + step
+            global_step = step
             if step in {1, additional_steps} or step % 250 == 0:
-                curve.append({"step": global_step, "train_loss": final_train_loss, "tokens_seen": warm_tokens + step * effective_batch_tokens})
+                curve.append({"step": global_step, "train_loss": final_train_loss, "tokens_seen": step * effective_batch_tokens})
     except RuntimeError as exc:
         failure_type = "oom" if "out of memory" in str(exc).casefold() else f"runtime_error:{type(exc).__name__}"
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
-    tokens_seen = warm_tokens + local_steps_completed * effective_batch_tokens
-    steps_completed = warm_steps + local_steps_completed
+    tokens_seen = local_steps_completed * effective_batch_tokens
+    steps_completed = local_steps_completed
     eval_fields = _evaluate(model, valid_tokens, context, batch_size, device) if steps_completed else ppl_from_nll(float("inf"))
     finite_eval = isinstance(eval_fields.get("valid_nll_nats_per_token"), (int, float)) and math.isfinite(float(eval_fields["valid_nll_nats_per_token"]))
     if not finite_eval and not failure_type:
@@ -268,12 +276,13 @@ def _run_one(
     checkpoint_hash = _save_checkpoint(checkpoint_path, model, training_manifest_stub) if completed else ""
     checkpoint_manifest = {
         "manifest_version": "localmax_ccfc.checkpoint_manifest.v1",
-        "checkpoint_policy": "final_checkpoint_fp16_plus_state_fingerprint",
+        "checkpoint_policy": "weights_only_initialization_not_exact_resume",
         "checkpoint_materialized": completed,
         "checkpoint_path": rel(checkpoint_path) if completed else "",
         "checkpoint_sha256": checkpoint_hash,
         "model_state_fingerprint": _state_fingerprint(model) if completed else "",
         "warm_start_checkpoint": warm_checkpoint,
+        "resume_capability": "weights_only_initialization" if warm_checkpoint else "none",
         "not_a_fake_checkpoint": True,
         "created_at": utc_now(),
     }
@@ -282,11 +291,16 @@ def _run_one(
         "failed": not completed,
         "failure_type": failure_type,
         "tokens_seen": tokens_seen,
-        "warm_start_tokens_seen": warm_tokens,
+        "warm_start_tokens_seen": 0,
+        "warm_start_source_tokens_not_credited": warm_tokens,
         "additional_tokens_seen": local_steps_completed * effective_batch_tokens,
         "steps_completed": steps_completed,
         "additional_steps_completed": local_steps_completed,
         "effective_batch_tokens": effective_batch_tokens,
+        "unique_training_tokens": min(tokens_seen, len(train_tokens)),
+        "repeated_sampled_tokens": max(0, tokens_seen - len(train_tokens)),
+        "training_pool_tokens": sampling_audit["source_pool_tokens"],
+        "selected_pool_tokens": sampling_audit["selected_pool_tokens"],
         "context_length": context,
         "micro_batch_size": batch_size,
         "gradient_accumulation_steps": grad_accum,
@@ -313,8 +327,9 @@ def _run_one(
     }
     lineage = {
         "dataset_manifest": f"artifacts/localmax_v2_data/{dataset_id}/dataset_manifest.json",
-        "filter_manifest": f"artifacts/localmax_ccfc_filters/{dataset_id}/{method}/filter_manifest.json",
+        "filter_manifest": f"artifacts/p0_02/localmax_ccfc_filters/{dataset_id}/{method}/filter_manifest.json",
         "warm_start_checkpoint": warm_checkpoint,
+        "sampling_audit_path": rel(output_dir / "sampling_audit.json"),
         "tokenizer_manifest": "artifacts/localmax_tokenizers/gpt2/tokenizer_manifest.json",
         "metric_audit_report": "artifacts/reports/localmax_v2_metric_audit.json",
         "metrics_path": rel(output_dir / "metrics.json"),
@@ -339,8 +354,13 @@ def _run_one(
         "seed": seed,
         "tokens_seen": tokens_seen,
         "warm_start_tokens_seen": warm_tokens,
+        "warm_start_mode": "weights_only_initialization" if warm_checkpoint else "none",
         "steps_completed": steps_completed,
         "min_tokens_seen_per_run": min_tokens,
+        "sampling_strategy": sampling_audit["sampling_strategy"],
+        "sampling_seed": sampling_audit["sampling_seed"],
+        "training_pool_tokens": sampling_audit["source_pool_tokens"],
+        "selected_pool_tokens": sampling_audit["selected_pool_tokens"],
         "metrics_path": rel(output_dir / "metrics.json"),
         "runtime_cost_path": rel(output_dir / "runtime_cost.json"),
         "lineage_path": rel(output_dir / "lineage.json"),
@@ -355,6 +375,7 @@ def _run_one(
     write_json(output_dir / "metrics.json", metrics)
     write_json(output_dir / "runtime_cost.json", runtime_cost)
     write_json(output_dir / "checkpoint_manifest.json", checkpoint_manifest)
+    write_json(output_dir / "sampling_audit.json", sampling_audit)
     write_json(output_dir / "lineage.json", lineage)
     write_json(output_dir / "state_fingerprint.json", {"state_fingerprint": checkpoint_manifest["model_state_fingerprint"], "created_at": utc_now()})
     write_json(output_dir / "training_manifest.json", training_manifest)

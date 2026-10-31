@@ -29,6 +29,9 @@ from localmax_v2_utils import (
 )
 from models_v2.config import ModelConfig
 from models_v2.decoder_lm import DecoderLM, count_parameters
+from training_v2.sampling import build_document_token_pool
+
+P0_02_V2_TRAINING = ROOT / "artifacts" / "p0_02" / "localmax_v2_training"
 
 
 def _selected_ids(path: str) -> set[str]:
@@ -57,6 +60,20 @@ def _encode_until(tokenizer: Any, dataset_manifest: dict[str, Any], split: str, 
             if len(token_ids) >= cap:
                 return token_ids[:cap], docs_used
     return token_ids, docs_used
+
+
+def _sample_full_training_pool(tokenizer: Any, dataset_manifest: dict[str, Any], selected: set[str], budget: int, seed: int) -> tuple[list[int], dict[str, Any]]:
+    def records():
+        for rel_path in _split_paths(dataset_manifest, "train"):
+            yield from iter_jsonl_any(ROOT / rel_path)
+
+    return build_document_token_pool(
+        records,
+        lambda text: tokenizer.encode(text, add_special_tokens=False),
+        token_budget=budget,
+        seed=seed,
+        selected_ids=selected,
+    )
 
 
 def _batch(token_ids: list[int], context: int, batch_size: int, rng: random.Random, device: str) -> tuple[torch.Tensor, torch.Tensor]:
@@ -153,25 +170,22 @@ def _run_one(
     model_cfg: ModelConfig,
     training_cfg: dict[str, Any],
     tokenizer: Any,
-    token_cache: dict[tuple[str, str], tuple[list[int], list[int], int]],
+    token_cache: dict[tuple[str, str, int], tuple[list[int], list[int], dict[str, Any]]],
 ) -> dict[str, Any]:
-    output_dir = V2_TRAINING / dataset_id / method / f"seed_{seed}"
+    output_dir = P0_02_V2_TRAINING / dataset_id / method / f"seed_{seed}"
     output_dir.mkdir(parents=True, exist_ok=True)
     min_tokens = int(training_cfg["min_tokens_seen_per_run"])
     existing = _existing_result(output_dir, min_tokens)
     if existing:
         return existing
-    cache_key = (dataset_id, method)
+    cache_key = (dataset_id, method, seed)
     if cache_key not in token_cache:
         dataset_manifest = load_json(ROOT / "artifacts" / "localmax_v2_data" / dataset_id / "dataset_manifest.json")
         filter_manifest = load_json(ROOT / "artifacts" / "localmax_v2_filters" / dataset_id / method / "filter_manifest.json")
         selected = _selected_ids(filter_manifest["selected_doc_ids_path"])
-        train_tokens, docs_used = _encode_until(
-            tokenizer,
-            dataset_manifest,
-            "train",
-            int(training_cfg["training_token_sample_cap"]),
-            selected,
+        train_tokens, sampling_audit = _sample_full_training_pool(
+            tokenizer, dataset_manifest, selected,
+            int(training_cfg["training_token_sample_cap"]), seed,
         )
         valid_tokens, _ = _encode_until(
             tokenizer,
@@ -180,8 +194,8 @@ def _run_one(
             int(training_cfg["validation_token_sample_cap"]),
             None,
         )
-        token_cache[cache_key] = (train_tokens, valid_tokens, docs_used)
-    train_tokens, valid_tokens, docs_used = token_cache[cache_key]
+        token_cache[cache_key] = (train_tokens, valid_tokens, sampling_audit)
+    train_tokens, valid_tokens, sampling_audit = token_cache[cache_key]
     if len(train_tokens) < min_tokens:
         raise RuntimeError(f"{dataset_id}/{method} has only {len(train_tokens)} selected training tokens, below {min_tokens}")
     random.seed(seed)
@@ -255,6 +269,10 @@ def _run_one(
         "failed": not completed,
         "failure_type": failure_type,
         "tokens_seen": tokens_seen,
+        "unique_training_tokens": min(tokens_seen, len(train_tokens)),
+        "repeated_sampled_tokens": max(0, tokens_seen - len(train_tokens)),
+        "training_pool_tokens": sampling_audit["source_pool_tokens"],
+        "selected_pool_tokens": sampling_audit["selected_pool_tokens"],
         "steps_completed": steps_completed,
         "effective_batch_tokens": effective_batch_tokens,
         "context_length": context,
@@ -287,6 +305,7 @@ def _run_one(
         "metric_audit_report": "artifacts/reports/localmax_v2_metric_audit.json",
         "metrics_path": rel(output_dir / "metrics.json"),
         "checkpoint_manifest_path": rel(output_dir / "checkpoint_manifest.json"),
+        "sampling_audit_path": rel(output_dir / "sampling_audit.json"),
         "created_at": utc_now(),
     }
     training_manifest = {
@@ -308,6 +327,10 @@ def _run_one(
         "tokens_seen": tokens_seen,
         "steps_completed": steps_completed,
         "min_tokens_seen_per_run": min_tokens,
+        "sampling_strategy": sampling_audit["sampling_strategy"],
+        "sampling_seed": sampling_audit["sampling_seed"],
+        "training_pool_tokens": sampling_audit["source_pool_tokens"],
+        "selected_pool_tokens": sampling_audit["selected_pool_tokens"],
         "metrics_path": rel(output_dir / "metrics.json"),
         "runtime_cost_path": rel(output_dir / "runtime_cost.json"),
         "lineage_path": rel(output_dir / "lineage.json"),
@@ -323,6 +346,7 @@ def _run_one(
     write_json(output_dir / "runtime_cost.json", runtime_cost)
     write_json(output_dir / "checkpoint_manifest.json", checkpoint_manifest)
     write_json(output_dir / "lineage.json", lineage)
+    write_json(output_dir / "sampling_audit.json", sampling_audit)
     write_json(output_dir / "state_fingerprint.json", {"state_fingerprint": checkpoint_manifest["model_state_fingerprint"], "created_at": utc_now()})
     write_json(output_dir / "training_manifest.json", training_manifest)
     return {
@@ -356,7 +380,7 @@ def main() -> None:
     model_matrix = load_config(config["model_config"])
     model_cfg = ModelConfig.from_mapping(model_matrix["models"][model_matrix["core_model"]])
     tokenizer = gpt2_tokenizer()
-    token_cache: dict[tuple[str, str], tuple[list[int], list[int], int]] = {}
+    token_cache: dict[tuple[str, str, int], tuple[list[int], list[int], dict[str, Any]]] = {}
     results = []
     blocking: list[str] = []
     for dataset_id in config["datasets"]:

@@ -5,8 +5,9 @@ from pathlib import Path
 
 import pytest
 
+from artifacts_v2.legacy_integrity import legacy_exception
 from evaluation_v2.base import EvaluationConfig
-from evaluation_v2.validation import validate_evaluation_manifest
+from evaluation_v2.validation import EvaluationManifestError, validate_evaluation_manifest
 
 
 def test_evaluation_config_requires_smoke_flag_for_smoke_scope() -> None:
@@ -25,12 +26,17 @@ def test_evaluation_config_requires_smoke_flag_for_smoke_scope() -> None:
 
 def test_evaluation_manifest_schema_validates_repo_lm_output() -> None:
     manifest = json.loads(
-        Path("artifacts/evaluation_step7/wikitext2_smoke/lm_bpe_tiny/evaluation_manifest.json").read_text(
-            encoding="utf-8"
-        )
+        Path(
+            "artifacts/evaluation_step7/wikitext2_smoke/lm_bpe_tiny/evaluation_manifest.json"
+        ).read_text(encoding="utf-8")
     )
 
-    validate_evaluation_manifest(manifest, Path.cwd())
+    manifest_path = Path(
+        "artifacts/evaluation_step7/wikitext2_smoke/lm_bpe_tiny/evaluation_manifest.json"
+    )
+    assert legacy_exception(manifest_path, Path.cwd()) is not None
+    with pytest.raises(EvaluationManifestError, match="training_manifest_hash"):
+        validate_evaluation_manifest(manifest, Path.cwd())
 
     assert manifest["manifest_version"] == "step7.evaluation_manifest.v1"
     assert manifest["effectiveness_claim_allowed"] is False

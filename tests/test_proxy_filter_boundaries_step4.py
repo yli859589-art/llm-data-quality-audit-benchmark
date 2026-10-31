@@ -13,8 +13,12 @@ from filters_v2.perplexity_proxy import PerplexityProxyFilter
 
 def _records() -> list[FilterInput]:
     return [
-        FilterInput("a", "The clean document has normal words and useful context.", estimated_tokens=9),
-        FilterInput("b", "The clean document has normal words and useful context.", estimated_tokens=9),
+        FilterInput(
+            "a", "The clean document has normal words and useful context.", estimated_tokens=9
+        ),
+        FilterInput(
+            "b", "The clean document has normal words and useful context.", estimated_tokens=9
+        ),
         FilterInput("c", "<html> $$$ http://example.com 123456789", estimated_tokens=4),
     ]
 
@@ -32,7 +36,6 @@ def _config(name: str, filter_type: str, target_keep_rate: float | None = None) 
 
 def test_proxy_filters_label_proxy_used_true() -> None:
     proxy_classes = [
-        (MinHashNearDedupProxyFilter, "minhash_near_dedup", "minhash_near_dedup_proxy"),
         (C4StyleProxyFilter, "c4_style_proxy", "c4_style_proxy"),
         (GopherStyleProxyFilter, "gopher_style_proxy", "gopher_style_proxy"),
         (CCNetStyleProxyFilter, "ccnet_style_protocol", "ccnet_style_proxy"),
@@ -47,9 +50,22 @@ def test_proxy_filters_label_proxy_used_true() -> None:
         assert result.summary["proxy_used"] is True
 
 
+def test_minhash_lsh_is_labeled_as_an_actual_algorithm_not_a_proxy() -> None:
+    instance = MinHashNearDedupProxyFilter(
+        _config("minhash_near_dedup", "minhash_lsh_near_dedup_v1")
+    )
+    result = instance.filter(_records())
+
+    assert instance.proxy_used is False
+    assert result.summary["proxy_used"] is False
+    assert result.summary["algorithm"] == "minhash_lsh"
+
+
 def test_ccnet_and_classifier_do_not_claim_real_external_baselines() -> None:
     ccnet = CCNetStyleProxyFilter(_config("ccnet_style_protocol", "ccnet_style_proxy"))
-    classifier = ClassifierQualityProxyFilter(_config("classifier_proxy_protocol", "classifier_quality_proxy"))
+    classifier = ClassifierQualityProxyFilter(
+        _config("classifier_proxy_protocol", "classifier_quality_proxy")
+    )
 
     assert ccnet.external_dependency_available is False
     assert ccnet.official_reproduction is False

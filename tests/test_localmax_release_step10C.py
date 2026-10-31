@@ -9,10 +9,15 @@ ROOT = Path.cwd()
 
 
 def test_step10c_release_report_and_docs_exist() -> None:
-    report = json.loads((ROOT / "artifacts/reports/step10C_localmax_release_report.json").read_text(encoding="utf-8"))
+    report = json.loads(
+        (ROOT / "artifacts/reports/step10C_localmax_release_report.json").read_text(
+            encoding="utf-8"
+        )
+    )
 
     assert report["current_readiness"] == "LOCAL_MAX_MINIMAL_TRAINING_EVIDENCE_RELEASED"
-    assert report["status"] == "completed"
+    # The preserved legacy freeze exposes its hash inconsistency as a failure.
+    assert report["status"] == "completed_with_failures"
     assert report["localmax_release_created"] is True
     assert report["level3_completed_artifact"] is False
     assert report["official_downstream_completed"] is False
@@ -45,4 +50,3 @@ def test_step10c_release_main_table_is_manifest_backed() -> None:
         assert row["ppl_comparable"] == "False"
         assert (ROOT / row["training_manifest"]).exists()
         assert (ROOT / row["evaluation_manifest"]).exists()
-

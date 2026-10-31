@@ -10,8 +10,15 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [{name = "YuHan Li"}]
-dependencies = ["numpy>=1.23", "torch>=2.0"]
+dependencies = ["numpy>=1.23", "torch>=2.0", "PyYAML>=6.0"]
 keywords = ["machine-learning", "language-modeling", "data-quality", "attention", "benchmark", "nlp"]
+
+[project.optional-dependencies]
+data = ["datasets>=2.14"]
+tokenizers = ["transformers>=4.38"]
+reports = ["matplotlib>=3.7"]
+ui = ["streamlit>=1.32"]
+dev = ["black==25.1.0", "coverage>=7.0", "mypy>=1.10", "pre-commit>=4.0", "pytest>=8.0", "ruff>=0.11"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -37,3 +44,4 @@ extend-exclude = '''
 pythonpath = ["src", "."]
 cache_dir = "test_tmp/pytest_cache"
 addopts = "-p no:cacheprovider"
+testpaths = ["tests"]
